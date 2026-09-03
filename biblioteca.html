@@ -163,30 +163,27 @@ body::after {
   line-height: 1.65; max-width: 620px;
 }
 
-/* ---- LIBRARY GRID ---- */
-.lib-grid {
-  display: grid; grid-template-columns: repeat(2,1fr);
-  gap: 18px; margin-bottom: 20px;
-}
+/* ---- CATEGORY / FILE BROWSER ---- */
+.lib-list { display: flex; flex-direction: column; gap: 14px; margin-bottom: 20px; }
 
-.lib-card {
+.cat-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 22px 24px;
-  display: flex; flex-direction: column; gap: 14px;
-  transition: 0.25s var(--ease);
+  overflow: hidden;
+  transition: border-color 0.22s ease;
 }
 
-.lib-card:hover {
-  border-color: var(--border-h);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+.cat-card.open { border-color: var(--border-h); }
+
+.cat-header {
+  display: flex; align-items: center; gap: 16px;
+  padding: 18px 22px;
+  cursor: pointer;
+  user-select: none;
 }
 
-.lib-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
-
-.lib-icon {
+.cat-icon {
   width: 42px; height: 42px; flex-shrink: 0;
   border-radius: var(--radius-sm);
   background: rgba(108,179,63,0.1);
@@ -195,25 +192,73 @@ body::after {
   color: var(--g2);
 }
 
-.lib-meta {
+.cat-info { flex: 1; min-width: 0; }
+.cat-name { font-size: 14.5px; font-weight: 700; color: var(--txt); margin-bottom: 3px; }
+.cat-desc { font-size: 12px; color: var(--txt-muted); line-height: 1.5; }
+
+.cat-meta {
   font-size: 10.5px; color: var(--txt-muted);
-  text-align: right; line-height: 1.5;
+  text-align: right; line-height: 1.5; flex-shrink: 0;
+  white-space: nowrap;
 }
 
-.lib-name { font-size: 15px; font-weight: 700; color: var(--txt); }
-.lib-desc { font-size: 12.5px; color: var(--txt-muted); line-height: 1.55; flex: 1; }
+.cat-zip {
+  font-size: 11px; font-weight: 600; color: var(--g2);
+  text-decoration: none; flex-shrink: 0;
+  border: 1px solid rgba(108,179,63,0.25);
+  border-radius: 20px; padding: 6px 12px;
+  white-space: nowrap;
+  transition: 0.2s ease;
+}
+.cat-zip:hover { background: rgba(108,179,63,0.1); border-color: var(--border-h); }
 
-.lib-btn {
-  display: flex; align-items: center; justify-content: center; gap: 8px;
-  background: linear-gradient(135deg, var(--g1), var(--g2));
-  color: #fff; font-size: 13px; font-weight: 700;
-  text-decoration: none;
-  border-radius: var(--radius-sm);
-  padding: 11px 16px;
-  transition: 0.22s ease;
+.cat-chevron {
+  width: 16px; height: 16px; flex-shrink: 0;
+  color: var(--txt-muted);
+  transition: transform 0.22s ease;
+}
+.cat-card.open .cat-chevron { transform: rotate(90deg); color: var(--g2); }
+
+.cat-body {
+  border-top: 1px solid var(--border);
+  padding: 10px 22px 18px;
+  max-height: 480px;
+  overflow-y: auto;
 }
 
-.lib-btn:hover { filter: brightness(1.12); box-shadow: 0 4px 20px var(--shadow-g); }
+.tree-node { }
+.tree-row {
+  display: flex; align-items: center; gap: 9px;
+  padding: 7px 6px;
+  border-radius: 6px;
+  font-size: 12.5px;
+}
+.tree-row.folder { cursor: pointer; color: var(--txt); font-weight: 600; }
+.tree-row.folder:hover { background: rgba(108,179,63,0.06); }
+.tree-row.file { color: var(--txt-muted); }
+.tree-row.file:hover { background: rgba(108,179,63,0.05); }
+
+.tree-caret {
+  width: 12px; height: 12px; flex-shrink: 0; color: var(--txt-muted);
+  transition: transform 0.18s ease;
+}
+.tree-node.open > .tree-row .tree-caret { transform: rotate(90deg); }
+
+.tree-dot { width: 12px; flex-shrink: 0; text-align: center; opacity: 0.5; }
+
+.tree-fname { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.tree-fsize { font-size: 10.5px; color: var(--txt-muted); flex-shrink: 0; }
+
+.tree-dl {
+  flex-shrink: 0; color: var(--g2); display: flex; align-items: center;
+  padding: 3px; border-radius: 5px; text-decoration: none;
+}
+.tree-dl:hover { background: rgba(108,179,63,0.15); }
+
+.tree-children { display: none; padding-left: 20px; border-left: 1px solid var(--border); margin-left: 9px; }
+.tree-node.open > .tree-children { display: block; }
+
+.cat-loading { font-size: 12px; color: var(--txt-muted); padding: 10px 6px; }
 
 .note {
   font-size: 12px; color: var(--txt-muted);
@@ -224,15 +269,13 @@ body::after {
 }
 
 /* ---- RESPONSIVE ---- */
-@media (max-width: 1000px) {
-  .lib-grid { grid-template-columns: 1fr; }
-}
-
 @media (max-width: 768px) {
   .sidebar { display: none; }
   .main { margin-left: 0; }
   .content { padding: 20px 16px; }
   .topbar { padding: 14px 18px; }
+  .cat-header { flex-wrap: wrap; }
+  .cat-meta { display: none; }
 }
 </style>
 </head>
@@ -299,104 +342,148 @@ body::after {
     <div class="hero">
       <div class="hero-text">
         <h1>Biblioteca de Materiais</h1>
-        <p>Acervo completo organizado por categoria: projetos em DWG, documentos editáveis por cidade, planilhas técnicas, laudos, memoriais e vídeos. Clique em cada card para baixar o pacote da categoria.</p>
+        <p>Acervo completo organizado por categoria. Clique numa categoria para abrir a pasta, navegue pelas subpastas e baixe exatamente o arquivo que você precisa — um por um.</p>
       </div>
     </div>
 
-    <div class="lib-grid">
-
-      <div class="lib-card">
-        <div class="lib-top">
-          <div class="lib-icon">
-            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-          </div>
-          <div class="lib-meta">938 arquivos<br>836,6 MB</div>
-        </div>
-        <div class="lib-name">Projetos em DWG</div>
-        <div class="lib-desc">Pacote completo de projetos prontos: clínicas, hospitais, instalações, bares, restaurantes, loteamentos e diversos.</div>
-        <a class="lib-btn" href="https://github.com/mauriciojunior76/fastprev-membros/releases/download/biblioteca-materiais-v1/01-Projetos-DWG.zip">Baixar pacote (.zip)</a>
-      </div>
-
-      <div class="lib-card">
-        <div class="lib-top">
-          <div class="lib-icon">
-            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
-          </div>
-          <div class="lib-meta">483 arquivos<br>826,6 MB</div>
-        </div>
-        <div class="lib-name">Documentos Editáveis por Cidade</div>
-        <div class="lib-desc">Modelos e formulários editáveis organizados por cidade brasileira, prontos para preencher em cada processo.</div>
-        <a class="lib-btn" href="https://github.com/mauriciojunior76/fastprev-membros/releases/download/biblioteca-materiais-v1/02-Documentos-Editaveis-Cidades.zip">Baixar pacote (.zip)</a>
-      </div>
-
-      <div class="lib-card">
-        <div class="lib-top">
-          <div class="lib-icon">
-            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17v-2a4 4 0 014-4h4M9 17H7a2 2 0 01-2-2V7a2 2 0 012-2h10a2 2 0 012 2v3m-6 9l3-3m0 0l-3-3m3 3H9"/></svg>
-          </div>
-          <div class="lib-meta">41 arquivos<br>2,8 MB</div>
-        </div>
-        <div class="lib-name">Planilhas e Modelos de Engenharia</div>
-        <div class="lib-desc">Planilhas de cálculo, dosagem de concreto, controle de estoque, cadastro de clientes e gestão de projetos.</div>
-        <a class="lib-btn" href="https://github.com/mauriciojunior76/fastprev-membros/releases/download/biblioteca-materiais-v1/03-Planilhas-e-Modelos-Engenharia.zip">Baixar pacote (.zip)</a>
-      </div>
-
-      <div class="lib-card">
-        <div class="lib-top">
-          <div class="lib-icon">
-            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-          </div>
-          <div class="lib-meta">5 arquivos<br>0,1 MB</div>
-        </div>
-        <div class="lib-name">Laudos</div>
-        <div class="lib-desc">Modelos de laudos técnicos prontos para adaptar aos seus processos e vistorias.</div>
-        <a class="lib-btn" href="https://github.com/mauriciojunior76/fastprev-membros/releases/download/biblioteca-materiais-v1/04-Laudos.zip">Baixar pacote (.zip)</a>
-      </div>
-
-      <div class="lib-card">
-        <div class="lib-top">
-          <div class="lib-icon">
-            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
-          </div>
-          <div class="lib-meta">5 arquivos<br>0,2 MB</div>
-        </div>
-        <div class="lib-name">Memoriais</div>
-        <div class="lib-desc">Memorial hidrossanitário e memoriais descritivos de remembramento de terreno.</div>
-        <a class="lib-btn" href="https://github.com/mauriciojunior76/fastprev-membros/releases/download/biblioteca-materiais-v1/05-Memoriais.zip">Baixar pacote (.zip)</a>
-      </div>
-
-      <div class="lib-card">
-        <div class="lib-top">
-          <div class="lib-icon">
-            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
-          </div>
-          <div class="lib-meta">7 arquivos<br>4,4 MB</div>
-        </div>
-        <div class="lib-name">Desmembramento de Lotes</div>
-        <div class="lib-desc">Projetos completos de desmembramento: memoriais descritivos, plantas e arquivos de apoio.</div>
-        <a class="lib-btn" href="https://github.com/mauriciojunior76/fastprev-membros/releases/download/biblioteca-materiais-v1/06-Desmembramento-de-Lotes.zip">Baixar pacote (.zip)</a>
-      </div>
-
-      <div class="lib-card">
-        <div class="lib-top">
-          <div class="lib-icon">
-            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
-          </div>
-          <div class="lib-meta">7 arquivos<br>57,3 MB</div>
-        </div>
-        <div class="lib-name">Vídeos</div>
-        <div class="lib-desc">Vídeos de apoio da Academia FastPrev.</div>
-        <a class="lib-btn" href="https://github.com/mauriciojunior76/fastprev-membros/releases/download/biblioteca-materiais-v1/07-Videos.zip">Baixar pacote (.zip)</a>
-      </div>
-
+    <div class="lib-list" id="lib-list">
+      <div class="cat-loading">Carregando biblioteca...</div>
     </div>
 
     <div class="note">
-      Cada card baixa um pacote .zip com os arquivos daquela categoria. Os arquivos são hospedados como anexos de uma release no GitHub — sem limite de banda por usuário.
+      Cada arquivo tem seu próprio botão de download. Se preferir levar a categoria inteira de uma vez, use o link "baixar tudo" no cabeçalho de cada pasta.
     </div>
 
   </div>
 </main>
+
+<script>
+const RAW_BASE = "https://raw.githubusercontent.com/mauriciojunior76/fastprev-membros/master/materiais/";
+const ZIP_BASE = "https://github.com/mauriciojunior76/fastprev-membros/releases/download/biblioteca-materiais-v1/";
+
+const CATS = [
+  { key: "01-Projetos-DWG", name: "Projetos em DWG", desc: "Projetos prontos: clínicas, hospitais, instalações, bares, restaurantes, loteamentos e diversos.",
+    icon: '<svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>' },
+  { key: "02-Documentos-Editaveis-Cidades", name: "Documentos Editáveis por Cidade", desc: "Modelos e formulários editáveis organizados por cidade brasileira.",
+    icon: '<svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>' },
+  { key: "03-Planilhas-e-Modelos-Engenharia", name: "Planilhas e Modelos de Engenharia", desc: "Cálculo, dosagem de concreto, controle de estoque, cadastro de clientes e gestão de projetos.",
+    icon: '<svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17v-2a4 4 0 014-4h4M9 17H7a2 2 0 01-2-2V7a2 2 0 012-2h10a2 2 0 012 2v3m-6 9l3-3m0 0l-3-3m3 3H9"/></svg>' },
+  { key: "04-Laudos", name: "Laudos", desc: "Modelos de laudos técnicos prontos para adaptar aos seus processos e vistorias.",
+    icon: '<svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>' },
+  { key: "05-Memoriais", name: "Memoriais", desc: "Memorial hidrossanitário e memoriais descritivos de remembramento de terreno.",
+    icon: '<svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>' },
+  { key: "06-Desmembramento-de-Lotes", name: "Desmembramento de Lotes", desc: "Projetos completos de desmembramento: memoriais descritivos, plantas e arquivos de apoio.",
+    icon: '<svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>' },
+  { key: "07-Videos", name: "Vídeos", desc: "Vídeos de apoio da Academia FastPrev.",
+    icon: '<svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>' }
+];
+
+function fmtSize(bytes) {
+  if (bytes < 1024) return bytes + " B";
+  if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(0) + " KB";
+  return (bytes / (1024 * 1024)).toLocaleString("pt-BR", { maximumFractionDigits: 1 }) + " MB";
+}
+
+function aggregate(items) {
+  let size = 0, count = 0;
+  for (const it of items) {
+    if (it.t === "d") { size += it.s; count += it.cnt; }
+    else { size += it.s; count += 1; }
+  }
+  return { size, count };
+}
+
+function buildTree(items, pathSegs) {
+  const wrap = document.createElement("div");
+  for (const it of items) {
+    if (it.t === "d") {
+      const node = document.createElement("div");
+      node.className = "tree-node";
+      const row = document.createElement("div");
+      row.className = "tree-row folder";
+      row.innerHTML = `<svg class="tree-caret" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        <span class="tree-fname">${it.n}</span>
+        <span class="tree-fsize">${it.cnt} itens · ${fmtSize(it.s)}</span>`;
+      const childrenWrap = document.createElement("div");
+      childrenWrap.className = "tree-children";
+      let built = false;
+      row.addEventListener("click", () => {
+        node.classList.toggle("open");
+        if (!built) {
+          childrenWrap.appendChild(buildTree(it.c, pathSegs.concat(it.n)));
+          built = true;
+        }
+      });
+      node.appendChild(row);
+      node.appendChild(childrenWrap);
+      wrap.appendChild(node);
+    } else {
+      const row = document.createElement("div");
+      row.className = "tree-row file";
+      const url = RAW_BASE + pathSegs.concat(it.n).map(encodeURIComponent).join("/");
+      row.innerHTML = `<span class="tree-dot">·</span>
+        <span class="tree-fname" title="${it.n}">${it.n}</span>
+        <span class="tree-fsize">${fmtSize(it.s)}</span>
+        <a class="tree-dl" href="${url}" download title="Baixar">
+          <svg width="15" height="15" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3"/></svg>
+        </a>`;
+      wrap.appendChild(row);
+    }
+  }
+  return wrap;
+}
+
+fetch("materiais-manifest.json")
+  .then(r => r.json())
+  .then(manifest => {
+    const list = document.getElementById("lib-list");
+    list.innerHTML = "";
+    for (const cat of CATS) {
+      const items = manifest[cat.key] || [];
+      const agg = aggregate(items);
+
+      const card = document.createElement("div");
+      card.className = "cat-card";
+
+      const header = document.createElement("div");
+      header.className = "cat-header";
+      header.innerHTML = `
+        <div class="cat-icon">${cat.icon}</div>
+        <div class="cat-info">
+          <div class="cat-name">${cat.name}</div>
+          <div class="cat-desc">${cat.desc}</div>
+        </div>
+        <div class="cat-meta">${agg.count} arquivos<br>${fmtSize(agg.size)}</div>
+        <a class="cat-zip" href="${ZIP_BASE}${cat.key}.zip" title="Baixar todos os arquivos desta categoria em um único .zip">baixar tudo</a>
+        <svg class="cat-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+      `;
+      header.querySelector(".cat-zip").addEventListener("click", e => e.stopPropagation());
+
+      const body = document.createElement("div");
+      body.className = "cat-body";
+      body.style.display = "none";
+      let built = false;
+
+      header.addEventListener("click", () => {
+        const open = card.classList.toggle("open");
+        body.style.display = open ? "block" : "none";
+        if (open && !built) {
+          body.appendChild(buildTree(items, [cat.key]));
+          built = true;
+        }
+      });
+
+      card.appendChild(header);
+      card.appendChild(body);
+      list.appendChild(card);
+    }
+  })
+  .catch(err => {
+    document.getElementById("lib-list").innerHTML =
+      '<div class="cat-loading">Não foi possível carregar a lista de arquivos agora. Recarregue a página.</div>';
+    console.error(err);
+  });
+</script>
 
 </body>
 </html>
