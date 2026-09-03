@@ -382,7 +382,7 @@ const CATS = [
     icon: '<svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>' },
   { key: "06-Desmembramento-de-Lotes", name: "Desmembramento de Lotes", desc: "Projetos completos de desmembramento: memoriais descritivos, plantas e arquivos de apoio.",
     icon: '<svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>' },
-  { key: "07-Videos", name: "Vídeos", desc: "Vídeos de apoio da Academia FastPrev.",
+  { key: "07-Videos", name: "Vídeos", desc: "Aulas em vídeo — em breve.",
     icon: '<svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>' }
 ];
 
@@ -403,6 +403,10 @@ function aggregate(items) {
 
 function buildTree(items, pathSegs) {
   const wrap = document.createElement("div");
+  if (items.length === 0) {
+    wrap.innerHTML = '<div class="cat-loading">Pasta vazia por enquanto — aulas e arquivos serão adicionados aqui em breve.</div>';
+    return wrap;
+  }
   for (const it of items) {
     if (it.t === "d") {
       const node = document.createElement("div");
@@ -461,11 +465,12 @@ fetch("materiais-manifest.json")
           <div class="cat-name">${cat.name}</div>
           <div class="cat-desc">${cat.desc}</div>
         </div>
-        <div class="cat-meta">${agg.count} arquivos<br>${fmtSize(agg.size)}</div>
-        <a class="cat-zip" href="${ZIP_BASE}${cat.key}.zip" title="Baixar todos os arquivos desta categoria em um único .zip">baixar tudo</a>
+        <div class="cat-meta">${agg.count ? agg.count + " arquivos<br>" + fmtSize(agg.size) : "em breve"}</div>
+        ${agg.count ? `<a class="cat-zip" href="${ZIP_BASE}${cat.key}.zip" title="Baixar todos os arquivos desta categoria em um único .zip">baixar tudo</a>` : ""}
         <svg class="cat-chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
       `;
-      header.querySelector(".cat-zip").addEventListener("click", e => e.stopPropagation());
+      const zipLink = header.querySelector(".cat-zip");
+      if (zipLink) zipLink.addEventListener("click", e => e.stopPropagation());
 
       const body = document.createElement("div");
       body.className = "cat-body";
