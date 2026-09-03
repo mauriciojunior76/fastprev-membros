@@ -1,0 +1,16 @@
+| Documento                                                                        |       Obrigatório       |
+| -------------------------------------------------------------------------------- | :---------------------: |
+| Requerimento de regularização de obra                                            |            ✔            |
+| Documento de identidade e CPF do proprietário (ou CNPJ, se pessoa jurídica)      |            ✔            |
+| Procuração (quando houver representante legal)                                   |     Quando aplicável    |
+| Matrícula atualizada do imóvel                                                   |            ✔            |
+| Comprovante de propriedade (escritura ou contrato registrado, quando necessário) |            ✔            |
+| Carnê ou certidão de IPTU                                                        |            ✔            |
+| Projeto arquitetônico da edificação existente ("as built")                       |            ✔            |
+| Memorial descritivo                                                              |            ✔            |
+| ART ou RRT do responsável técnico                                                |            ✔            |
+| Laudo técnico de estabilidade e segurança da edificação                          |      Quando exigido     |
+| Certificado de aprovação do Corpo de Bombeiros (quando aplicável)                |      Quando exigido     |
+| Licenciamento ambiental (quando aplicável)                                       |      Quando exigido     |
+| Fotografias da edificação                                                        | Frequentemente exigidas |
+| Comprovante de pagamento das taxas municipais                                    |            ✔            |

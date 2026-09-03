@@ -1,0 +1,14 @@
+| Documento                                                                     | Desdobro | Remembramento |
+| ----------------------------------------------------------------------------- | :------: | :-----------: |
+| Requerimento padrão da Prefeitura                                             |     ✔    |       ✔       |
+| Documento de identidade e CPF do proprietário                                 |     ✔    |       ✔       |
+| Matrícula atualizada do imóvel (emitida pelo Cartório de Registro de Imóveis) |     ✔    |       ✔       |
+| Certidão de ônus reais (quando exigida)                                       |     ✔    |       ✔       |
+| Comprovante de propriedade (escritura, contrato registrado etc.)              |     ✔    |       ✔       |
+| Carnê ou certidão de quitação do IPTU                                         |     ✔    |       ✔       |
+| Planta topográfica ou levantamento planialtimétrico                           |     ✔    |       ✔       |
+| Planta de desdobro/remembramento assinada por profissional habilitado         |     ✔    |       ✔       |
+| Memorial descritivo dos lotes                                                 |     ✔    |       ✔       |
+| ART ou RRT do responsável técnico                                             |     ✔    |       ✔       |
+| Anuência dos confrontantes (quando exigida pela Prefeitura)                   | Eventual |    Eventual   |
+| Licença ambiental (quando aplicável)                                          | Eventual |    Eventual   |
