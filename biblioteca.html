@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FastPrev - Biblioteca de Materiais</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --g1: #2B5C1A;
+  --g2: #6CB33F;
+  --g-accent: #A8D87A;
+  --shadow-g: rgba(108,179,63,0.28);
+  --bg: #030805;
+  --bg-alt: #060F08;
+  --bg-card: #0B1A0D;
+  --bg-sidebar: #050D06;
+  --border: rgba(108,179,63,0.14);
+  --border-h: rgba(108,179,63,0.40);
+  --txt: #E8F4EC;
+  --txt-muted: #7A9A80;
+  --radius: 14px;
+  --radius-sm: 8px;
+  --ease: cubic-bezier(0.16,1,0.3,1);
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--txt);
+  font-family: 'Inter', system-ui, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  overflow-x: hidden;
+}
+
+body::after {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none; z-index: 999; opacity: 0.35;
+}
+
+/* ---- SIDEBAR ---- */
+.sidebar {
+  width: 250px;
+  min-height: 100vh;
+  background: var(--bg-sidebar);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0; left: 0;
+  z-index: 100;
+  padding: 28px 0;
+}
+
+.sidebar-logo {
+  padding: 0 24px 28px;
+  border-bottom: 1px solid var(--border);
+}
+
+.sidebar-logo img {
+  width: 160px;
+  max-width: 100%;
+  display: block;
+  background: #fff;
+  border-radius: 8px;
+  padding: 8px 10px;
+}
+
+.sidebar-nav { padding: 20px 0; flex: 1; }
+
+.nav-label {
+  font-size: 10px; font-weight: 600;
+  color: var(--txt-muted);
+  letter-spacing: 0.13em; text-transform: uppercase;
+  padding: 16px 24px 8px;
+}
+
+.nav-item {
+  display: flex; align-items: center; gap: 11px;
+  padding: 11px 24px;
+  color: var(--txt-muted);
+  cursor: pointer;
+  transition: 0.22s ease;
+  font-size: 13.5px; font-weight: 500;
+  text-decoration: none;
+  border-left: 3px solid transparent;
+}
+
+.nav-item:hover, .nav-item.active {
+  color: var(--txt);
+  background: rgba(108,179,63,0.06);
+  border-left-color: var(--g2);
+}
+
+.nav-item svg { width: 16px; height: 16px; opacity: 0.6; flex-shrink: 0; }
+.nav-item.active svg, .nav-item:hover svg { opacity: 1; }
+
+.sidebar-user {
+  padding: 18px 24px;
+  border-top: 1px solid var(--border);
+  display: flex; align-items: center; gap: 11px;
+}
+
+.user-av {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--g1), var(--g2));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 700; color: #fff; flex-shrink: 0;
+}
+
+.user-name { font-size: 13px; font-weight: 600; color: var(--txt); }
+.user-plan { font-size: 11px; color: var(--g2); font-weight: 500; }
+
+/* ---- MAIN ---- */
+.main { margin-left: 250px; flex: 1; min-height: 100vh; }
+
+.topbar {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(3,8,5,0.90);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 15px 40px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+
+.topbar-title { font-size: 13px; font-weight: 600; color: var(--txt-muted); letter-spacing: 0.05em; }
+
+.content { padding: 36px 40px; }
+
+/* ---- HERO ---- */
+.hero {
+  background: linear-gradient(135deg, var(--bg-alt) 0%, #081A0A 55%, #0E2412 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px 36px;
+  margin-bottom: 40px;
+  position: relative; overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute; right: -80px; top: -80px;
+  width: 360px; height: 360px;
+  background: radial-gradient(circle, rgba(108,179,63,0.09) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.hero-text { position: relative; z-index: 2; }
+
+.hero-text h1 {
+  font-size: 20px; font-weight: 800;
+  color: var(--txt); margin-bottom: 7px; letter-spacing: -0.3px;
+}
+
+.hero-text p {
+  font-size: 13.5px; color: var(--txt-muted);
+  line-height: 1.65; max-width: 620px;
+}
+
+/* ---- LIBRARY GRID ---- */
+.lib-grid {
+  display: grid; grid-template-columns: repeat(2,1fr);
+  gap: 18px; margin-bottom: 20px;
+}
+
+.lib-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px 24px;
+  display: flex; flex-direction: column; gap: 14px;
+  transition: 0.25s var(--ease);
+}
+
+.lib-card:hover {
+  border-color: var(--border-h);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+}
+
+.lib-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+
+.lib-icon {
+  width: 42px; height: 42px; flex-shrink: 0;
+  border-radius: var(--radius-sm);
+  background: rgba(108,179,63,0.1);
+  border: 1px solid rgba(108,179,63,0.2);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--g2);
+}
+
+.lib-meta {
+  font-size: 10.5px; color: var(--txt-muted);
+  text-align: right; line-height: 1.5;
+}
+
+.lib-name { font-size: 15px; font-weight: 700; color: var(--txt); }
+.lib-desc { font-size: 12.5px; color: var(--txt-muted); line-height: 1.55; flex: 1; }
+
+.lib-btn {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  background: linear-gradient(135deg, var(--g1), var(--g2));
+  color: #fff; font-size: 13px; font-weight: 700;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  padding: 11px 16px;
+  transition: 0.22s ease;
+}
+
+.lib-btn:hover { filter: brightness(1.12); box-shadow: 0 4px 20px var(--shadow-g); }
+
+.note {
+  font-size: 12px; color: var(--txt-muted);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 14px 18px; line-height: 1.6;
+  margin-top: 8px;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 1000px) {
+  .lib-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .sidebar { display: none; }
+  .main { margin-left: 0; }
+  .content { padding: 20px 16px; }
+  .topbar { padding: 14px 18px; }
+}
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="sidebar-logo">
+    <img src="img/logo-full.jpg" alt="FastPrev">
+  </div>
+
+  <nav class="sidebar-nav">
+    <div class="nav-label">Principal</div>
+    <a class="nav-item" href="index.html">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+      Início
+    </a>
+    <a class="nav-item" href="index.html">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+      Formações
+    </a>
+    <a class="nav-item" href="index.html">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+      Área Premium
+    </a>
+
+    <div class="nav-label">Recursos</div>
+    <a class="nav-item" href="index.html">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+      Comunidade
+    </a>
+    <a class="nav-item active" href="biblioteca.html">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+      Biblioteca
+    </a>
+    <a class="nav-item" href="index.html">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+      Mentorias ao Vivo
+    </a>
+    <a class="nav-item" href="index.html">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+      Certificações
+    </a>
+  </nav>
+
+  <div class="sidebar-user">
+    <div class="user-av">MJ</div>
+    <div>
+      <div class="user-name">Mauricio Junior</div>
+      <div class="user-plan">Plano Premium</div>
+    </div>
+  </div>
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+
+  <header class="topbar">
+    <span class="topbar-title">Biblioteca de Materiais</span>
+  </header>
+
+  <div class="content">
+
+    <div class="hero">
+      <div class="hero-text">
+        <h1>Biblioteca de Materiais</h1>
+        <p>Acervo completo organizado por categoria: projetos em DWG, documentos editáveis por cidade, planilhas técnicas, laudos, memoriais e vídeos. Clique em cada card para baixar o pacote da categoria.</p>
+      </div>
+    </div>
+
+    <div class="lib-grid">
+
+      <div class="lib-card">
+        <div class="lib-top">
+          <div class="lib-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
+          <div class="lib-meta">938 arquivos<br>836,6 MB</div>
+        </div>
+        <div class="lib-name">Projetos em DWG</div>
+        <div class="lib-desc">Pacote completo de projetos prontos: clínicas, hospitais, instalações, bares, restaurantes, loteamentos e diversos.</div>
+        <a class="lib-btn" href="https://github.com/mauriciojunior76/fastprev-membros/releases/download/biblioteca-materiais-v1/01-Projetos-DWG.zip">Baixar pacote (.zip)</a>
+      </div>
+
+      <div class="lib-card">
+        <div class="lib-top">
+          <div class="lib-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+          </div>
+          <div class="lib-meta">483 arquivos<br>826,6 MB</div>
+        </div>
+        <div class="lib-name">Documentos Editáveis por Cidade</div>
+        <div class="lib-desc">Modelos e formulários editáveis organizados por cidade brasileira, prontos para preencher em cada processo.</div>
+        <a class="lib-btn" href="https://github.com/mauriciojunior76/fastprev-membros/releases/download/biblioteca-materiais-v1/02-Documentos-Editaveis-Cidades.zip">Baixar pacote (.zip)</a>
+      </div>
+
+      <div class="lib-card">
+        <div class="lib-top">
+          <div class="lib-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 17v-2a4 4 0 014-4h4M9 17H7a2 2 0 01-2-2V7a2 2 0 012-2h10a2 2 0 012 2v3m-6 9l3-3m0 0l-3-3m3 3H9"/></svg>
+          </div>
+          <div class="lib-meta">41 arquivos<br>2,8 MB</div>
+        </div>
+        <div class="lib-name">Planilhas e Modelos de Engenharia</div>
+        <div class="lib-desc">Planilhas de cálculo, dosagem de concreto, controle de estoque, cadastro de clientes e gestão de projetos.</div>
+        <a class="lib-btn" href="https://github.com/mauriciojunior76/fastprev-membros/releases/download/biblioteca-materiais-v1/03-Planilhas-e-Modelos-Engenharia.zip">Baixar pacote (.zip)</a>
+      </div>
+
+      <div class="lib-card">
+        <div class="lib-top">
+          <div class="lib-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+          </div>
+          <div class="lib-meta">5 arquivos<br>0,1 MB</div>
+        </div>
+        <div class="lib-name">Laudos</div>
+        <div class="lib-desc">Modelos de laudos técnicos prontos para adaptar aos seus processos e vistorias.</div>
+        <a class="lib-btn" href="https://github.com/mauriciojunior76/fastprev-membros/releases/download/biblioteca-materiais-v1/04-Laudos.zip">Baixar pacote (.zip)</a>
+      </div>
+
+      <div class="lib-card">
+        <div class="lib-top">
+          <div class="lib-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          </div>
+          <div class="lib-meta">5 arquivos<br>0,2 MB</div>
+        </div>
+        <div class="lib-name">Memoriais</div>
+        <div class="lib-desc">Memorial hidrossanitário e memoriais descritivos de remembramento de terreno.</div>
+        <a class="lib-btn" href="https://github.com/mauriciojunior76/fastprev-membros/releases/download/biblioteca-materiais-v1/05-Memoriais.zip">Baixar pacote (.zip)</a>
+      </div>
+
+      <div class="lib-card">
+        <div class="lib-top">
+          <div class="lib-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+          </div>
+          <div class="lib-meta">7 arquivos<br>4,4 MB</div>
+        </div>
+        <div class="lib-name">Desmembramento de Lotes</div>
+        <div class="lib-desc">Projetos completos de desmembramento: memoriais descritivos, plantas e arquivos de apoio.</div>
+        <a class="lib-btn" href="https://github.com/mauriciojunior76/fastprev-membros/releases/download/biblioteca-materiais-v1/06-Desmembramento-de-Lotes.zip">Baixar pacote (.zip)</a>
+      </div>
+
+      <div class="lib-card">
+        <div class="lib-top">
+          <div class="lib-icon">
+            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+          </div>
+          <div class="lib-meta">7 arquivos<br>57,3 MB</div>
+        </div>
+        <div class="lib-name">Vídeos</div>
+        <div class="lib-desc">Vídeos de apoio da Academia FastPrev.</div>
+        <a class="lib-btn" href="https://github.com/mauriciojunior76/fastprev-membros/releases/download/biblioteca-materiais-v1/07-Videos.zip">Baixar pacote (.zip)</a>
+      </div>
+
+    </div>
+
+    <div class="note">
+      Cada card baixa um pacote .zip com os arquivos daquela categoria. Os arquivos são hospedados como anexos de uma release no GitHub — sem limite de banda por usuário.
+    </div>
+
+  </div>
+</main>
+
+</body>
+</html>
