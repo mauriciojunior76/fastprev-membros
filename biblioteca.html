@@ -274,8 +274,16 @@ body::after {
   .main { margin-left: 0; }
   .content { padding: 20px 16px; }
   .topbar { padding: 14px 18px; }
-  .cat-header { flex-wrap: wrap; }
   .cat-meta { display: none; }
+  .cat-header {
+    flex-wrap: wrap;
+    align-items: flex-start;
+    row-gap: 10px;
+  }
+  .cat-info { flex-basis: 100%; order: 1; }
+  .cat-icon { order: 0; }
+  .cat-zip { order: 2; }
+  .cat-chevron { order: 3; margin-left: auto; }
 }
 </style>
 </head>
