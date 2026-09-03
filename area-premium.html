@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FastPrev - Área Premium</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --g1: #2B5C1A;
+  --g2: #6CB33F;
+  --g-accent: #A8D87A;
+  --shadow-g: rgba(108,179,63,0.28);
+  --bg: #030805;
+  --bg-alt: #060F08;
+  --bg-card: #0B1A0D;
+  --bg-sidebar: #050D06;
+  --border: rgba(108,179,63,0.14);
+  --border-h: rgba(108,179,63,0.40);
+  --txt: #E8F4EC;
+  --txt-muted: #7A9A80;
+  --radius: 14px;
+  --radius-sm: 8px;
+  --ease: cubic-bezier(0.16,1,0.3,1);
+  --danger: #E0654F;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--txt);
+  font-family: 'Inter', system-ui, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  overflow-x: hidden;
+}
+
+body::after {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none; z-index: 999; opacity: 0.35;
+}
+
+/* ---- SIDEBAR ---- */
+.sidebar {
+  width: 250px;
+  min-height: 100vh;
+  background: var(--bg-sidebar);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0; left: 0;
+  z-index: 100;
+  padding: 28px 0;
+}
+
+.sidebar-logo { padding: 0 24px 28px; border-bottom: 1px solid var(--border); }
+.sidebar-logo img { width: 160px; max-width: 100%; display: block; background: #fff; border-radius: 8px; padding: 8px 10px; }
+
+.sidebar-nav { padding: 20px 0; flex: 1; }
+.nav-label { font-size: 10px; font-weight: 600; color: var(--txt-muted); letter-spacing: 0.13em; text-transform: uppercase; padding: 16px 24px 8px; }
+
+.nav-item {
+  display: flex; align-items: center; gap: 11px;
+  padding: 11px 24px; color: var(--txt-muted); cursor: pointer;
+  transition: 0.22s ease; font-size: 13.5px; font-weight: 500;
+  text-decoration: none; border-left: 3px solid transparent;
+}
+.nav-item:hover, .nav-item.active { color: var(--txt); background: rgba(108,179,63,0.06); border-left-color: var(--g2); }
+.nav-item svg { width: 16px; height: 16px; opacity: 0.6; flex-shrink: 0; }
+.nav-item.active svg, .nav-item:hover svg { opacity: 1; }
+
+.sidebar-user { padding: 18px 24px; border-top: 1px solid var(--border); display: flex; align-items: center; gap: 11px; }
+.user-av { width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, var(--g1), var(--g2)); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #fff; flex-shrink: 0; }
+.user-name { font-size: 13px; font-weight: 600; color: var(--txt); }
+.user-plan { font-size: 11px; color: var(--g2); font-weight: 500; }
+
+/* ---- MAIN ---- */
+.main { margin-left: 250px; flex: 1; min-height: 100vh; }
+
+.topbar {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(3,8,5,0.90); backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  padding: 15px 40px; display: flex; align-items: center; justify-content: space-between;
+}
+.topbar-title { font-size: 13px; font-weight: 600; color: var(--txt-muted); letter-spacing: 0.05em; }
+
+.content { padding: 36px 40px; }
+
+/* ---- GATE ---- */
+.gate {
+  min-height: calc(100vh - 130px);
+  display: flex; align-items: center; justify-content: center;
+}
+
+.gate-card {
+  width: 100%; max-width: 380px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 40px 34px;
+  text-align: center;
+  position: relative; overflow: hidden;
+}
+
+.gate-card::before {
+  content: '';
+  position: absolute; left: 50%; top: -120px; transform: translateX(-50%);
+  width: 320px; height: 320px;
+  background: radial-gradient(circle, rgba(108,179,63,0.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.gate-icon {
+  width: 56px; height: 56px; margin: 0 auto 18px;
+  border-radius: 50%;
+  background: rgba(108,179,63,0.1);
+  border: 1px solid rgba(108,179,63,0.25);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--g2); position: relative; z-index: 2;
+}
+
+.gate-card h1 { font-size: 18px; font-weight: 800; color: var(--txt); margin-bottom: 8px; position: relative; z-index: 2; }
+.gate-card p { font-size: 12.5px; color: var(--txt-muted); line-height: 1.6; margin-bottom: 24px; position: relative; z-index: 2; }
+
+.gate-form { position: relative; z-index: 2; display: flex; flex-direction: column; gap: 12px; }
+
+.gate-input {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 13px 16px;
+  color: var(--txt);
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+  letter-spacing: 0.05em;
+  outline: none;
+  transition: 0.2s ease;
+}
+.gate-input:focus { border-color: var(--border-h); box-shadow: 0 0 0 3px rgba(108,179,63,0.1); }
+.gate-input.err { border-color: var(--danger); }
+
+.gate-btn {
+  background: linear-gradient(135deg, var(--g1), var(--g2));
+  color: #fff; font-size: 13.5px; font-weight: 700;
+  border: none; border-radius: var(--radius-sm);
+  padding: 13px 16px; cursor: pointer;
+  transition: 0.22s ease;
+}
+.gate-btn:hover { filter: brightness(1.12); box-shadow: 0 4px 20px var(--shadow-g); }
+
+.gate-error {
+  font-size: 11.5px; color: var(--danger);
+  min-height: 14px; margin-top: -4px;
+}
+
+/* ---- PREMIUM CONTENT (unlocked) ---- */
+#premium-content { display: none; }
+
+.hero {
+  background: linear-gradient(135deg, var(--bg-alt) 0%, #081A0A 55%, #0E2412 100%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px 36px;
+  margin-bottom: 40px;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; right: -80px; top: -80px;
+  width: 360px; height: 360px;
+  background: radial-gradient(circle, rgba(108,179,63,0.09) 0%, transparent 65%);
+  pointer-events: none;
+}
+.hero-text { position: relative; z-index: 2; }
+.hero-text h1 { font-size: 20px; font-weight: 800; color: var(--txt); margin-bottom: 7px; letter-spacing: -0.3px; }
+.hero-text p { font-size: 13.5px; color: var(--txt-muted); line-height: 1.65; max-width: 560px; }
+
+.premium-grid { display: grid; grid-template-columns: repeat(2,1fr); gap: 18px; }
+
+.prem-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: 0.25s var(--ease);
+}
+.prem-card:hover { border-color: var(--border-h); transform: translateY(-2px); box-shadow: 0 8px 32px rgba(0,0,0,0.3); }
+.prem-thumb { height: 150px; background-size: cover; background-position: center; position: relative; }
+.prem-label {
+  position: absolute; top: 12px; right: 12px;
+  font-size: 9px; font-weight: 700; letter-spacing: 0.1em;
+  color: var(--g1); background: var(--g-accent);
+  padding: 4px 10px; border-radius: 20px;
+}
+.prem-body { padding: 18px 20px; }
+.prem-name { font-size: 14.5px; font-weight: 700; color: var(--txt); margin-bottom: 6px; }
+.prem-sub { font-size: 12px; color: var(--txt-muted); line-height: 1.55; }
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 1000px) { .premium-grid { grid-template-columns: 1fr; } }
+
+@media (max-width: 768px) {
+  .sidebar { display: none; }
+  .main { margin-left: 0; }
+  .content { padding: 20px 16px; }
+  .topbar { padding: 14px 18px; }
+}
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="sidebar-logo">
+    <img src="img/logo-full.jpg" alt="FastPrev">
+  </div>
+
+  <nav class="sidebar-nav">
+    <div class="nav-label">Principal</div>
+    <a class="nav-item" href="index.html">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+      Início
+    </a>
+    <a class="nav-item" href="index.html">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
+      Formações
+    </a>
+    <a class="nav-item active" href="area-premium.html">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>
+      Área Premium
+    </a>
+
+    <div class="nav-label">Recursos</div>
+    <a class="nav-item" href="index.html">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/></svg>
+      Comunidade
+    </a>
+    <a class="nav-item" href="biblioteca.html">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+      Biblioteca
+    </a>
+    <a class="nav-item" href="index.html">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+      Mentorias ao Vivo
+    </a>
+    <a class="nav-item" href="index.html">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/></svg>
+      Certificações
+    </a>
+  </nav>
+
+  <div class="sidebar-user">
+    <div class="user-av">MJ</div>
+    <div>
+      <div class="user-name">Mauricio Junior</div>
+      <div class="user-plan">Plano Premium</div>
+    </div>
+  </div>
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+
+  <header class="topbar">
+    <span class="topbar-title">Área Premium</span>
+  </header>
+
+  <div class="content">
+
+    <!-- GATE -->
+    <div class="gate" id="gate">
+      <div class="gate-card">
+        <div class="gate-icon">
+          <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>
+        </div>
+        <h1>Área Premium</h1>
+        <p>Conteúdo exclusivo. Digite a senha de acesso para entrar.</p>
+        <form class="gate-form" id="gate-form" autocomplete="off">
+          <input class="gate-input" type="password" id="gate-input" placeholder="Senha de acesso" autocomplete="off">
+          <button class="gate-btn" type="submit">Acessar</button>
+          <div class="gate-error" id="gate-error"></div>
+        </form>
+      </div>
+    </div>
+
+    <!-- PREMIUM CONTENT -->
+    <div id="premium-content">
+
+      <div class="hero">
+        <div class="hero-text">
+          <h1>Bem-vindo à Área Premium.</h1>
+          <p>Acesso liberado. Aqui estão as especializações premium da Academia FastPrev, incluídas no seu plano.</p>
+        </div>
+      </div>
+
+      <div class="premium-grid">
+
+        <div class="prem-card">
+          <div class="prem-thumb" style="background-image:url('https://images.unsplash.com/photo-1590418606746-018840f9eba6?w=700&h=320&fit=crop&auto=format&q=80')">
+            <span class="prem-label">Premium</span>
+          </div>
+          <div class="prem-body">
+            <div class="prem-name">Blindagem de Vizinhança</div>
+            <div class="prem-sub">Laudo cautelar de vizinhança</div>
+          </div>
+        </div>
+
+        <div class="prem-card">
+          <div class="prem-thumb" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=700&h=320&fit=crop&auto=format&q=80')">
+            <span class="prem-label">Premium</span>
+          </div>
+          <div class="prem-body">
+            <div class="prem-name">O Engenheiro Aumentado</div>
+            <div class="prem-sub">IA aplicada à engenharia</div>
+          </div>
+        </div>
+
+        <div class="prem-card">
+          <div class="prem-thumb" style="background-image:url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=700&h=320&fit=crop&auto=format&q=80')">
+            <span class="prem-label">Premium</span>
+          </div>
+          <div class="prem-body">
+            <div class="prem-name">Acesso para Todos</div>
+            <div class="prem-sub">Laudo técnico de acessibilidade</div>
+          </div>
+        </div>
+
+        <div class="prem-card">
+          <div class="prem-thumb" style="background-image:url('https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=700&h=320&fit=crop&auto=format&q=80')">
+            <span class="prem-label">Premium</span>
+          </div>
+          <div class="prem-body">
+            <div class="prem-name">O Prédio por Dentro</div>
+            <div class="prem-sub">Inspeção predial especializada</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<script>
+// Verificação da senha por hash — a senha em texto puro não fica no código-fonte.
+const ACCESS_HASH = "6f5adbb3d3ff7d828cc693d4abfb5d6387a551ddfc0fc2525dce9eeb15acf0b9";
+const SESSION_KEY = "fastprev_premium_unlocked";
+
+async function sha256(text) {
+  const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text));
+  return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, "0")).join("");
+}
+
+function unlock() {
+  document.getElementById("gate").style.display = "none";
+  document.getElementById("premium-content").style.display = "block";
+}
+
+if (sessionStorage.getItem(SESSION_KEY) === "1") {
+  unlock();
+}
+
+document.getElementById("gate-form").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const input = document.getElementById("gate-input");
+  const errBox = document.getElementById("gate-error");
+  const hash = await sha256(input.value.trim());
+  if (hash === ACCESS_HASH) {
+    sessionStorage.setItem(SESSION_KEY, "1");
+    errBox.textContent = "";
+    input.classList.remove("err");
+    unlock();
+  } else {
+    input.classList.add("err");
+    errBox.textContent = "Senha incorreta. Tente novamente.";
+    input.value = "";
+    input.focus();
+  }
+});
+</script>
+
+</body>
+</html>
