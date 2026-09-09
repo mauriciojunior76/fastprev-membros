@@ -1,0 +1,232 @@
+workflow:
+  id: wf-full-launch-pipeline
+  name: "Pipeline Completo do Lancamento Pago"
+  version: "1.0.0"
+  description: |
+    Pipeline end-to-end para lancamento pago.
+    8 fases sequenciais + gate final.
+    Cada fase produz os inputs necessarios para a proxima.
+  trigger: "*start-launch"
+  entry_agent: launch-chief
+  estimated_duration: "5-15 dias de planejamento"
+  type: sequential
+
+phases:
+  - id: fase_0
+    name: "Pesquisa"
+    agent: researcher
+    task: 01-market-research.md
+    description: "Pesquisa de mercado, ICP, concorrencia, dores, gap"
+    outputs:
+      - research: "research-{project}.md"
+      - icp: "icp-{project}.md"
+    checkpoint:
+      gate: "Pesquisa aprovada pelo launch-chief"
+
+  - id: fase_1
+    name: "Estrategia e Promessa"
+    depends_on: [fase_0]
+    description: "Criacao da promessa, Big Idea, arco narrativo e plano mestre"
+    steps:
+      - agent: promise-architect
+        task: 02-create-promise.md
+        creates: "promise-{project}.md"
+      - agent: big-idea-specialist
+        task: 03-create-big-idea.md
+        creates: "big-idea-{project}.md"
+        depends_on: [promise]
+      - agent: narrative-analyst
+        task: 04-design-narrative-arc.md
+        creates: "narrative-arc-{project}.md"
+        depends_on: [big-idea]
+      - agent: strategic-planner
+        task: 05-master-plan.md
+        creates: "master-plan-{project}.md"
+        parallel: true
+    checkpoint:
+      gate: "Promessa + Big Idea aprovados pelo launch-deputy"
+      veto: "Verbos proibidos detectados na promessa"
+
+  - id: fase_2
+    name: "Oferta e Ingresso"
+    depends_on: [fase_1]
+    description: "Construcao da oferta, estrategia de ingresso, bonus e upgrades"
+    parallel: true
+    steps:
+      - agent: offer-architect
+        task: 18-build-offer.md
+        creates: "offer-architecture-{project}.md"
+      - agent: ticket-strategist
+        task: 19-design-ticket.md
+        creates: "ticket-strategy-{project}.md"
+      - agent: bonus-architect
+        task: 20-design-bonuses.md
+        creates: "bonus-plan-{project}.md"
+      - agent: upgrade-designer
+        task: 30-design-upgrades.md
+        creates: "upgrade-plan-{project}.md"
+    checkpoint:
+      gate: "Oferta aprovada pelo launch-deputy"
+
+  - id: fase_3
+    name: "Copy e Linguagem"
+    depends_on: [fase_1, fase_2]
+    description: "Headlines, copy de pagina, emails, WhatsApp, anuncios"
+    steps:
+      - agent: headline-specialist
+        task: 06-write-headlines.md
+        creates: "headlines-{project}.md"
+      - agent: page-copy-specialist
+        task: 07-write-page-copy.md
+        creates: "copy-pagina-{project}.md"
+        depends_on: [headlines]
+      - agent: email-specialist
+        task: 08-write-emails.md
+        creates: "emails-{project}.md"
+        parallel: true
+      - agent: whatsapp-specialist
+        task: 09-write-whatsapp.md
+        creates: "whatsapp-scripts-{project}.md"
+        parallel: true
+      - agent: ad-copy-specialist
+        task: 10-write-ad-copy.md
+        creates: "ad-copy-{project}.md"
+        parallel: true
+      - agent: copy-reviewer
+        task: review
+        description: "Revisao de toda copy contra regras do metodo"
+    checkpoint:
+      gate: "Copy aprovado pelo copy-reviewer + launch-deputy"
+      veto: "Verbos proibidos ou pagina incompleta (< 12 secoes)"
+
+  - id: fase_4
+    name: "Evento e Conteudo"
+    depends_on: [fase_1, fase_2]
+    description: "Estrutura do evento, pitch, assuntos, seeding"
+    steps:
+      - agent: subject-organizer
+        task: 13-plan-curriculum.md
+        creates: "event-agenda-{project}.md"
+      - agent: subject-expert
+        task: 13-plan-curriculum.md
+        creates: "event-content-{project}.md"
+        depends_on: [agenda]
+      - agent: event-architect
+        task: 11-design-event.md
+        creates: "event-structure-{project}.md"
+        depends_on: [content]
+      - agent: pitch-organizer
+        task: 12-design-pitch.md
+        creates: "pitch-scripts-{project}.md"
+        depends_on: [event-structure]
+      - agent: seeding-specialist
+        task: 14-design-seeding.md
+        creates: "seeding-map-{project}.md"
+        depends_on: [pitch-scripts]
+      - agent: event-reviewer
+        task: review
+        description: "Revisao completa do evento"
+    checkpoint:
+      gate: "Evento aprovado pelo event-reviewer + launch-deputy"
+      veto: "Ratio nao e 80/20 ou pitch mal posicionado"
+
+  - id: fase_5
+    name: "Criativos e Trafego"
+    depends_on: [fase_3]
+    description: "Plano de criativos C0-C4, roteiros, remarketing, dados"
+    steps:
+      - agent: creative-planner
+        task: 15-plan-creatives.md
+        creates: "creative-plan-{project}.md"
+      - agent: creative-script-writer
+        task: 16-write-creative-scripts.md
+        creates: "creative-scripts-{project}.md"
+        depends_on: [creative-plan]
+        parallel: true
+      - agent: remarketing-specialist
+        task: 17-design-remarketing.md
+        creates: "remarketing-plan-{project}.md"
+        depends_on: [creative-plan]
+        parallel: true
+      - agent: traffic-data-planner
+        task: tracking-setup
+        creates: "traffic-data-plan-{project}.md"
+        parallel: true
+      - agent: creative-reviewer
+        task: review
+    checkpoint:
+      gate: "Criativos aprovados pelo creative-reviewer"
+
+  - id: fase_6
+    name: "Comercial e Pos-Pitch"
+    depends_on: [fase_4, fase_2]
+    description: "Estrategia comercial, follow-up, lives, gravacoes, VIP"
+    steps:
+      - agent: commercial-strategist
+        task: 21-plan-commercial.md
+        creates: "commercial-plan-{project}.md"
+      - agent: followup-specialist
+        task: 22-plan-followup.md
+        creates: "followup-plan-{project}.md"
+        depends_on: [commercial-plan]
+        parallel: true
+      - agent: recording-vip-specialist
+        task: 23-plan-recording-vip.md
+        creates: "recording-vip-plan-{project}.md"
+        parallel: true
+      - agent: live-post-pitch-specialist
+        task: 24-plan-lives.md
+        creates: "live-plan-{project}.md"
+        depends_on: [commercial-plan]
+        parallel: true
+      - agent: commercial-reviewer
+        task: review
+    checkpoint:
+      gate: "Comercial aprovado pelo commercial-reviewer"
+
+  - id: fase_7
+    name: "Operacao e Metricas"
+    depends_on: [fase_5, fase_6]
+    description: "Dashboard, checklists, CRM, equipe, produto pos-evento, pagina"
+    parallel: true
+    steps:
+      - agent: metrics-analyst
+        task: 25-setup-metrics.md
+        creates: "metrics-dashboard-{project}.md"
+      - agent: checklist-manager
+        task: 26-build-checklists.md
+        creates: "checklists-{project}.md"
+      - agent: crm-operations-specialist
+        task: 27-design-crm.md
+        creates: "crm-plan-{project}.md"
+      - agent: team-operations-planner
+        task: 28-plan-team.md
+        creates: "team-ops-{project}.md"
+      - agent: post-event-product-planner
+        task: 29-design-product-curriculum.md
+        creates: "product-curriculum-{project}.md"
+      - agent: page-builder-coordinator
+        task: 31-build-page-brief.md
+        creates: "page-brief-{project}.md"
+      - agent: decision-notebook-specialist
+        task: 33-decision-review.md
+        creates: "decision-notebook-{project}.md"
+
+  - id: gate_final
+    name: "Gate Final"
+    depends_on: [fase_7]
+    agent: launch-deputy
+    description: "Revisao final de TODOS os outputs contra metodologia"
+    checkpoint:
+      gate: "Todos os deliverables aprovados"
+      blocker: true
+
+completion_criteria:
+  - "Promessa aprovada com formula correta"
+  - "Pagina de vendas com 12 secoes completas"
+  - "Evento estruturado 80/20 com pitch nos horarios corretos"
+  - "Criativos C0-C4 com briefings e scripts"
+  - "Plano comercial com 11 toques unicos"
+  - "Checklists pre-captacao, pre-evento e pos-pitch prontos"
+  - "Dashboard de metricas com benchmarks"
+  - "Equipe com funcoes e ritual diario definidos"

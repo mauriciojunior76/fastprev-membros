@@ -1,0 +1,161 @@
+{
+  "_doc": "Tabela viva do roteador de contexto do ZEUS PRO. Cada item liga palavras que o usuario fala a um arquivo que deve ser lido antes de agir. A ORDEM IMPORTA: os dois primeiros que baterem vencem. Corrija falso positivo AQUI, nunca no codigo do hook. O BOOT DA INTELIGENCIA adiciona gatilhos proprios do dono desta instalacao conforme aprende sobre ele.",
+  "_como_adicionar": "id em kebab-case, keywords em minusculas e sem acento (a comparacao ja normaliza), file relativo a raiz do repositorio, note com uma frase dizendo por que ler.",
+  "triggers": [
+    {
+      "id": "usar-pelo-telegram",
+      "keywords": [
+        "telegram",
+        "botfather",
+        "bot no telegram",
+        "usar pelo celular",
+        "zeus no celular",
+        "o bot caiu"
+      ],
+      "file": "docs/rules-on-demand/usar-pelo-telegram.md",
+      "note": "Passo a passo para criar o bot, autorizar so o seu numero e religar quando cair."
+    },
+    {
+      "id": "chaves-e-limites",
+      "keywords": [
+        "chave de api",
+        "token",
+        "senha",
+        "limite de gasto",
+        "teto de gasto",
+        "conectar conta de anuncios",
+        "credencial"
+      ],
+      "file": "docs/rules-on-demand/chaves-e-limites-de-gasto.md",
+      "note": "Cofre de senhas e teto de gasto definido antes da primeira acao que gasta dinheiro."
+    },
+    {
+      "id": "cruzar-squads",
+      "keywords": [
+        "cruzar squads",
+        "acione o squad",
+        "qual squad",
+        "usar dois times",
+        "trabalho grande",
+        "voce nao pode fazer isso"
+      ],
+      "file": "docs/rules-on-demand/cruzar-squads.md",
+      "note": "Como nomear e encadear times, e como destravar uma recusa por falta de configuracao."
+    },
+    {
+      "id": "explicacao-visual",
+      "keywords": [
+        "me explica",
+        "nao entendi",
+        "me da um passo a passo",
+        "widget",
+        "explicacao visual",
+        "me mostra"
+      ],
+      "file": ".claude/rules/explicacao-visual.md",
+      "note": "Duvida e passo a passo se explicam em widget visual, nao em texto corrido."
+    },
+    {
+      "id": "boot-inteligencia",
+      "keywords": [
+        "boot",
+        "me conhece",
+        "voce me conhece",
+        "comecar do zero",
+        "primeira vez",
+        "configurar o zeus"
+      ],
+      "file": "onboarding/boot-da-inteligencia.md",
+      "note": "Roteiro da entrevista inicial que constroi a memoria central."
+    },
+    {
+      "id": "design-system",
+      "keywords": [
+        "identidade visual",
+        "design system",
+        "paleta",
+        "minha marca",
+        "logo",
+        "tipografia",
+        "cores da marca"
+      ],
+      "file": "templates/DESIGN-SYSTEM-CENTRAL.md",
+      "note": "Fonte unica da MARCA do dono: cor, fonte, forma. O CRITERIO de quando usar cada coisa esta em templates/inteligencia-visual/INDEX.md."
+    },
+    {
+      "id": "inteligencia-visual",
+      "keywords": [
+        "cara de ia",
+        "parece feito por ia",
+        "deixa mais profissional",
+        "melhora o visual",
+        "ficou generico",
+        "vidro fosco",
+        "desfoque",
+        "animacao",
+        "espacamento",
+        "hierarquia visual"
+      ],
+      "file": "templates/inteligencia-visual/INDEX.md",
+      "note": "Mapa dos 10 modulos de criterio visual: fundamentos, material, movimento, recursos modernos seguros, tipografia, grade, bibliotecas com licenca, padroes de secao, o que nunca fazer, e telas de trabalho (aplicativo e painel). Ler FOUNDATIONS.md antes de criar qualquer tela."
+    },
+    {
+      "id": "criar-squad",
+      "keywords": [
+        "criar um squad",
+        "squad novo",
+        "preciso de um time",
+        "especialista em"
+      ],
+      "file": "docs/SQUADS.md",
+      "note": "Pipeline de criacao de squad novo, com autorizacao antes de instalar dependencia."
+    },
+    {
+      "id": "diario-de-bordo",
+      "keywords": [
+        "diario de bordo",
+        "resumo do dia",
+        "o que aconteceu hoje",
+        "fechar o dia"
+      ],
+      "file": "memory/_templates/diario-continuo.md",
+      "note": "Formato do registro diario que alimenta a memoria historica."
+    },
+    {
+      "id": "pesquisa-github",
+      "keywords": [
+        "procura no github",
+        "existe alguma ferramenta",
+        "biblioteca pra",
+        "repositorio que faca"
+      ],
+      "file": "docs/DEPENDENCIAS-E-FONTES.md",
+      "note": "Checklist de auditoria antes de recomendar ou instalar projeto de terceiro."
+    },
+    {
+      "id": "lacunas",
+      "keywords": [
+        "o que voce ainda nao sabe",
+        "lacunas",
+        "o que falta descobrir"
+      ],
+      "file": "memory/LACUNAS-DE-CONHECIMENTO.md",
+      "note": "Lista viva do que o sistema ainda precisa aprender sobre o dono."
+    },
+    {
+      "id": "palestra-telao",
+      "keywords": [
+        "palestra",
+        "deck de palestra",
+        "apresentacao pra telao",
+        "slides da palestra",
+        "aula ao vivo",
+        "workshop",
+        "vou palestrar",
+        "apresentacao presencial"
+      ],
+      "file": "squads/apresentacoes/PADRAO-TELAO.md",
+      "note": "Receita completa de deck de palestra: arco de 4 atos, abertura por prova pessoal com loop aberto, teto de 17 palavras por slide, titulo em 2 metades, tipografia em clamp com vw, revelacao de 1 item por clique, 3 papeis de imagem."
+    }
+  ]
+}

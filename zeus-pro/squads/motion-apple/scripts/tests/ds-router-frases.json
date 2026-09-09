@@ -1,0 +1,82 @@
+{
+  "_doc": "Testes nossos de roteamento, escritos fora do design system. Os 22 testes do proprio design system medem consistencia interna (a estrutura tem candidato?); estes medem se a fala real do o dono do canal cai no recurso certo, e se palavra-gatilho sozinha NAO decide. expectedAny: basta um deles estar entre os candidatos. mustNot: nao pode ser o primeiro candidato.",
+  "version": "1.0",
+  "tests": [
+    {
+      "speech": "Existem tres formas de resolver isso.",
+      "structures": ["RAMIFICACAO"],
+      "expectedAny": ["branch.tree.v1", "set.trio.v1"],
+      "note": "uma origem que abre em tres: ramificacao ou trio, nunca lista longa"
+    },
+    {
+      "speech": "Voce pode continuar fazendo tudo sozinho ou montar uma equipe.",
+      "structures": ["BIFURCACAO"],
+      "expectedAny": ["branch.decision.v1", "branch.tree.v1"],
+      "note": "dois caminhos futuros: decisao, nao comparacao de atributos"
+    },
+    {
+      "speech": "Primeiro voce atrai, depois qualifica, agenda e vende.",
+      "structures": ["SEQUENCIA"],
+      "expectedAny": ["process.steps.v1", "flow.journey-ab.v1"],
+      "mustNot": ["set.grid.v1", "set.trio.v1"],
+      "note": "ordem importa: processo, nunca lista solta"
+    },
+    {
+      "speech": "Tudo comeca no posicionamento, e dele saem quatro pilares.",
+      "structures": ["RAMIFICACAO"],
+      "expectedAny": ["branch.tree.v1", "hierarchy.layers.v1", "set.grid.v1"],
+      "note": "raiz com quatro folhas"
+    },
+    {
+      "speech": "Mandei mensagem no WhatsApp e ele respondeu cinco minutos depois.",
+      "structures": ["WHATSAPP"],
+      "expectedAny": ["interface.chat.text.v1", "interface.chat.audio.v1"],
+      "note": "acao dentro da plataforma, com consequencia: painel, nunca mini-selo"
+    },
+    {
+      "speech": "O faturamento saiu de vinte mil e foi para oitenta mil por mes.",
+      "structures": ["CRESCIMENTO"],
+      "expectedAny": ["interface.chart.growth.v1", "number.count.v1", "compare.mirror.v1"],
+      "note": "a evolucao do numero e o argumento: pode contar"
+    },
+    {
+      "speech": "Sao quatro erros grandes que quase todo mentor comete.",
+      "structures": ["BULLETS"],
+      "expectedAny": ["set.grid.v1", "compare.right-wrong.v1", "set.trio.v1"],
+      "note": "quatro itens da mesma categoria"
+    },
+    {
+      "speech": "Essa decisao gera tres consequencias na operacao.",
+      "structures": ["CAUSA_E_EFEITO"],
+      "expectedAny": ["relation.cause-effect.v1", "branch.tree.v1"],
+      "note": "uma causa, tres efeitos"
+    },
+    {
+      "speech": "O que falta ali e mais clareza no posicionamento.",
+      "structures": [],
+      "mustNot": ["relation.equation.v1"],
+      "expectedAny": [],
+      "note": "regra de relacao: 'mais clareza' e destaque, nunca equacao"
+    },
+    {
+      "speech": "Eu ligo para o cliente antes de mandar a proposta.",
+      "structures": [],
+      "mustNot": ["interface.toggle.v1"],
+      "expectedAny": [],
+      "note": "regra de relacao: 'ligar' para pessoa e acao humana, nao interruptor"
+    },
+    {
+      "speech": "Eu uso WhatsApp no dia a dia.",
+      "structures": [],
+      "expectedAny": [],
+      "note": "regra de relacao: so mencao da plataforma, mini-selo nivel 1, nunca painel"
+    },
+    {
+      "speech": "Ainda tem vagas para a mentoria.",
+      "structures": [],
+      "mustNot": ["interface.countdown.v1"],
+      "expectedAny": [],
+      "note": "regra de relacao: vagas sem prazo nao vira contagem regressiva"
+    }
+  ]
+}

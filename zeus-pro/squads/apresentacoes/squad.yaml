@@ -1,0 +1,54 @@
+# Squad Apresentações do ZEUS PRO.
+# Genérico de propósito: ele aprende o jeito do dono com o uso, não vem
+# pré-calibrado com o jeito de ninguém.
+
+id: apresentacoes
+nome: "Apresentações"
+descrição: >
+  Monta apresentação e slide: estrutura narrativa, hierarquia da informação, densidade por slide e aplicação da identidade visual.
+versão: "1.0.0"
+status: ativo
+
+gatilhos:
+  palavras: [apresentacao, slide, deck, pitch, palestra, webinario, webinar, aula ao vivo]
+  contexto: >
+    Pedido de material para ser projetado ou apresentado a uma plateia, presencial ou remota.
+peso_mínimo: 41
+
+lead: diretor-de-apresentacao
+agentes:
+  - diretor-de-apresentacao
+  - estruturador
+  - designer-de-slide
+
+leitura_obrigatória:
+  - memory/PERFIL.md
+  - memory/posicionamento.md
+  - templates/DESIGN-SYSTEM-CENTRAL.md
+  - squads/apresentacoes/MEMORY.md
+  - squads/apresentacoes/FRAMEWORKS.md
+
+entregáveis:
+  - roteiro de apresentação
+  - slides em HTML
+  - notas do apresentador
+
+exige_confirmação:
+  - publicar qualquer coisa
+  - enviar mensagem a terceiro
+  - gastar dinheiro
+
+nunca_faz:
+  - inventar dado sobre o usuário, o público ou o resultado
+  - prometer o que o dono não pode sustentar
+  - declarar entrega pronta sem ter verificado
+
+qualidade:
+  checklist: squads/apresentacoes/CHECKLIST.md
+  nota_mínima: 60
+  máximo_de_refações: 2
+
+aprendizado:
+  arquivo: squads/apresentacoes/MEMORY.md
+  teto_caracteres: 8000
+  ler_antes_de_agir: true

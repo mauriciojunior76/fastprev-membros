@@ -1,0 +1,60 @@
+# Squad Tráfego e mídia paga do ZEUS PRO.
+# Genérico de propósito: ele aprende o jeito do dono com o uso, não vem
+# pré-calibrado com o jeito de ninguém.
+
+id: trafego
+nome: "Tráfego e mídia paga"
+descrição: >
+  Planeja campanha, estrutura teste, lê métrica, diagnostica funil e propõe decisão de verba. Toda ação que mexe em dinheiro exige confirmação.
+versão: "1.0.0"
+status: ativo
+
+gatilhos:
+  palavras: [trafego, campanha, anuncios pagos, verba, metricas, roas, cpl, funil, lancamento, lancamento pago, painel de dados, dashboard]
+  contexto: >
+    Pedido sobre mídia paga: planejar, medir, diagnosticar ou decidir sobre campanha.
+peso_mínimo: 41
+
+lead: gestor-de-trafego
+agentes:
+  - gestor-de-trafego
+  - analista-de-metricas
+  - diagnosticador
+
+leitura_obrigatória:
+  - memory/PERFIL.md
+  - memory/publico.md
+  - memory/produtos/
+  - memory/objetivos.md
+  - squads/trafego/MEMORY.md
+  - squads/trafego/FRAMEWORKS.md
+
+entregáveis:
+  - plano de campanha
+  - estrutura de teste
+  - diagnóstico de funil
+  - relatório
+
+exige_confirmação:
+  - publicar qualquer coisa
+  - enviar mensagem a terceiro
+  - gastar dinheiro
+  - aumentar verba
+  - criar campanha
+  - ativar anúncio
+  - pausar campanha ativa
+
+nunca_faz:
+  - inventar dado sobre o usuário, o público ou o resultado
+  - prometer o que o dono não pode sustentar
+  - declarar entrega pronta sem ter verificado
+
+qualidade:
+  checklist: squads/trafego/CHECKLIST.md
+  nota_mínima: 60
+  máximo_de_refações: 2
+
+aprendizado:
+  arquivo: squads/trafego/MEMORY.md
+  teto_caracteres: 8000
+  ler_antes_de_agir: true

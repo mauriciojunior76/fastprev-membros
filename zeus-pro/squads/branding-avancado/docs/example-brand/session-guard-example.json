@@ -1,0 +1,389 @@
+{
+  "_comment": "AXIS Brand Session Guard — Exemplo de sessão N1 completa após 3 batches (9 imagens aprovadas)",
+  "_schema": "session-guard/v1.2",
+
+  "session": {
+    "id": "axis-n1-2026-03-05",
+    "brand": "axis",
+    "level": "N1",
+    "level_name": "ESSÊNCIA",
+    "level_reference_price_brl": 2000,
+    "status": "completed",
+    "completion_reason": "N1_BATCH_LIMIT_REACHED",
+    "created_at": "2026-03-05T09:14:22Z",
+    "completed_at": "2026-03-05T17:43:58Z",
+    "total_duration_minutes": 509
+  },
+
+  "brand_config": {
+    "name": "AXIS",
+    "full_name": "AXIS Tecnologia Financeira S.A.",
+    "segment": "B2B Fintech — Plataforma analítica para gestoras de fundos",
+    "archetype_primary": "Governante",
+    "archetype_secondary": "Sábio",
+    "tagline": "Dados que não mentem.",
+    "palette": {
+      "navy": "#0A1628",
+      "graphite": "#1C2B3A",
+      "gold": "#C9A84C",
+      "light_gold": "#E4C87A",
+      "off_white": "#F5F7FA",
+      "electric_blue": "#4A9FD4"
+    },
+    "typography": {
+      "display": "Canela",
+      "body": "Space Grotesk",
+      "data_mono": "JetBrains Mono"
+    },
+    "visual_concept": "Data as power topography — precision, authority, zero noise",
+    "logo_concept": "Two axes (X+Y) intersecting at 7° rotation, goldbar proportions"
+  },
+
+  "batches": {
+    "total_completed": 3,
+    "total_approved_images": 9,
+    "batch_breakdown": [
+
+      {
+        "batch_id": "batch-01",
+        "batch_number": 1,
+        "batch_type": "LOGO",
+        "prompt_block": "L1/L2/L3",
+        "started_at": "2026-03-05T09:14:22Z",
+        "completed_at": "2026-03-05T10:52:44Z",
+        "duration_minutes": 98,
+        "images_generated": 12,
+        "images_approved": 3,
+        "approval_rate_pct": 25,
+        "rejection_reasons": [
+          "Rounded corners on cross symbol — violated no-rounded-corners rule",
+          "Gold too saturated (bright yellow) — must be burnished/muted (#C9A84C range)",
+          "Wordmark serif too decorative — required transitional, not display serif",
+          "Navy background too warm — required cool deep navy #0A1628",
+          "Symbol proportion not goldbar — horizontal was equal to vertical",
+          "Glow effect on intersection point — prohibited atmospheric effect",
+          "Background dark gray instead of navy — wrong surface color",
+          "Wordmark too thin, lost legibility at small scale",
+          "Cross symbol rotation incorrect (appeared horizontal, not 7°)"
+        ],
+        "prompt_used": {
+          "l1_symbol": "Two perpendicular lines intersecting at their center point, rotated 7 degrees from the horizontal axis, forming a precise cross symbol. Lines are equal in visual weight, clean sharp edges. The intersection point marked by a small solid circle. Proportion: horizontal line is 1.618x longer than vertical (golden ratio). Rendered against deep navy background (#0A1628). Lines in burnished muted gold (#C9A84C). Style: Swiss International Style, Bauhaus, technical precision. No gradients, no shadows, no decorative elements. Clean vector-like rendering. High contrast, minimalist.",
+          "negative": "rounded corners, organic shapes, glow, gradients, neon, warm background, yellow gold, decorative serif"
+        },
+        "approved_in_this_batch": [
+          "axis-logo-symbol-v3.png",
+          "axis-logo-horizontal-dark-v2.png",
+          "axis-logo-horizontal-light-v1.png"
+        ]
+      },
+
+      {
+        "batch_id": "batch-02",
+        "batch_number": 2,
+        "batch_type": "MOODBOARD",
+        "prompt_block": "M1/M2/M3",
+        "started_at": "2026-03-05T11:08:17Z",
+        "completed_at": "2026-03-05T13:31:05Z",
+        "duration_minutes": 142,
+        "images_generated": 15,
+        "images_approved": 3,
+        "approval_rate_pct": 20,
+        "rejection_reasons": [
+          "M1: People visible in war room — prohibited (no humans in AXIS imagery)",
+          "M1: Screens showing colorful infographics — must be monochrome data terminals",
+          "M1: Warm ambient lighting — required cold, screen-sourced lighting only",
+          "M2: Compass rendered in chrome/silver — required dark steel or matte black",
+          "M2: Gold ingot replaced by coin — proportion wrong (must be rectangular bar)",
+          "M2: Background warm wood surface — required cool navy/matte black surface",
+          "M3: Grid topography too bright, overwhelming — must recede behind content",
+          "M3: Data towers rendered as 3D glass — required architectural matte forms",
+          "M3: Blue too saturated (neon) — required electric blue #4A9FD4 range",
+          "M2: Lifestyle feel crept in (coffee cup visible) — zero lifestyle props",
+          "M3: Perspective too steep, grid distorted unrealistically",
+          "M1: Sound/audio equipment visible — wrong domain for financial imagery"
+        ],
+        "prompt_used": {
+          "m1_war_room": "Dark, high-contrast financial data room. Multiple screens displaying real-time market data — numbers, charts, line graphs. Bloomberg terminal aesthetic but more refined, more modern. Deep navy and charcoal color palette. Muted gold reflections on screen bezels. Cool white typography on screens. Monospace fonts, dense information hierarchy. No people visible — just the data itself. Dramatic raking light from screens. Black metal and glass surfaces.",
+          "m2_instruments": "Flat lay of precision instruments on deep navy surface: technical drawing compass, set square. Mechanical pencil, fine-tip technical pen. Graph paper with coordinate grid. A rectangular gold ingot as compositional anchor. All objects: matte black or dark steel. Cold directional lighting from upper left. No lifestyle props.",
+          "m3_topography": "Abstract data topography visualization. Cartesian coordinate grid rotated 7 degrees. Fine hairlines in soft electric blue. At grid intersections: small data points, some in muted gold. Rising landscape of data towers as architectural forms. Depth: closer grid brighter, farther fades to black.",
+          "negative": "people, humans, faces, warm lighting, neon, chrome, wood, lifestyle, coffee, warm tones, colorful infographics"
+        },
+        "approved_in_this_batch": [
+          "axis-moodboard-war-room-v4.png",
+          "axis-moodboard-instruments-v3.png",
+          "axis-moodboard-topography-v2.png"
+        ]
+      },
+
+      {
+        "batch_id": "batch-03",
+        "batch_number": 3,
+        "batch_type": "APPLICATIONS",
+        "prompt_block": "S1/S2/R1",
+        "started_at": "2026-03-05T14:05:33Z",
+        "completed_at": "2026-03-05T17:43:58Z",
+        "duration_minutes": 218,
+        "images_generated": 14,
+        "images_approved": 3,
+        "approval_rate_pct": 21.4,
+        "rejection_reasons": [
+          "S1: Grid too visible, competes with imaginary content — must be 4% opacity max",
+          "S1: Gold hairline too thick (3px) — required 1px precision",
+          "S2: Cross symbol centered but scaled incorrectly — appeared too large",
+          "S2: Background not pure navy — purple tint crept into navy",
+          "R1: Number matrix numbers readable as content — must be purely textural",
+          "R1: Central zone not fully clear — texture leaked into content area",
+          "S1: Added decorative border to slide — violated no-frame rule",
+          "S2: Symbol glow added around cross — prohibited atmospheric effect",
+          "R1: Diagonal lines too prominent — must be hairline at 8% max",
+          "S2: Empty space felt incomplete rather than intentional — needs refinement of composition",
+          "R1: Format incorrect (generated as 4:3, not 1:1)"
+        ],
+        "prompt_used": {
+          "s1_dark_slide": "Minimal dark editorial slide background. Deep navy base color. Extremely subtle coordinate grid — hairlines barely visible, 4% opacity. One horizontal precision hairline in muted gold, upper third. Very faint number matrix in right corner, opacity 5%. Zero focal point, pure atmosphere. No gradients, no glow. Flat, matte, dark. 16:9 format.",
+          "s2_gold_accent": "Dark editorial slide with gold geometric element. Deep navy background, 90% of composition. Single cross symbol centered, in burnished gold, occupies 15% of slide area. Faint coordinate grid background. No text. Cinematic, authoritative, silent. Negative space dominates. 16:9 format.",
+          "r1_instagram": "Square dark editorial composition. Deep navy background, full bleed. Top-right corner: subtle number matrix, financial decimals, opacity 5-8%. Three diagonal hairlines at 7 degrees, pale gold, opacity 8%. Bottom-left: small cross symbol in burnished gold, 15% opacity. Central zone 60% of composition: completely clear. 1:1 square format.",
+          "negative": "glow, gradients, warm tones, readable text in texture, borders, frames, purple tint, oversaturated gold"
+        },
+        "approved_in_this_batch": [
+          "axis-slide-bg-dark-v3.png",
+          "axis-slide-chapter-gold-v2.png",
+          "axis-social-instagram-bg-v3.png"
+        ]
+      }
+    ]
+  },
+
+  "approved_assets": {
+    "total": 9,
+    "assets": [
+      {
+        "id": "asset-001",
+        "filename": "axis-logo-symbol-v3.png",
+        "category": "logo",
+        "subcategory": "symbol_isolated",
+        "batch": "batch-01",
+        "dimensions": "2000x2000",
+        "format": "PNG",
+        "transparent_bg": true,
+        "approved_at": "2026-03-05T10:34:12Z",
+        "approved_by": "brand-reviewer",
+        "notes": "Proporção goldbar correta. Rotação 7° precisa. Ouro muted perfeito. Usar como favicon e avatar.",
+        "usage_contexts": ["favicon", "avatar", "watermark", "icon"]
+      },
+      {
+        "id": "asset-002",
+        "filename": "axis-logo-horizontal-dark-v2.png",
+        "category": "logo",
+        "subcategory": "horizontal_complete_dark",
+        "batch": "batch-01",
+        "dimensions": "2400x800",
+        "format": "PNG",
+        "transparent_bg": true,
+        "approved_at": "2026-03-05T10:41:05Z",
+        "approved_by": "brand-reviewer",
+        "notes": "Versão principal para fundos escuros. Símbolo em ouro, wordmark em off-white. Usar em header de site, deck, email sig.",
+        "usage_contexts": ["website_header", "deck_cover", "email_signature", "dark_backgrounds"]
+      },
+      {
+        "id": "asset-003",
+        "filename": "axis-logo-horizontal-light-v1.png",
+        "category": "logo",
+        "subcategory": "horizontal_complete_light",
+        "batch": "batch-01",
+        "dimensions": "2400x800",
+        "format": "PNG",
+        "transparent_bg": true,
+        "approved_at": "2026-03-05T10:52:33Z",
+        "approved_by": "brand-reviewer",
+        "notes": "Versão para fundos claros. Símbolo e wordmark em navy. Sem ouro (1 cor). Usar em impressão, papelaria.",
+        "usage_contexts": ["print", "letterhead", "business_card_light", "light_backgrounds"]
+      },
+      {
+        "id": "asset-004",
+        "filename": "axis-moodboard-war-room-v4.png",
+        "category": "moodboard",
+        "subcategory": "atmosphere_data",
+        "batch": "batch-02",
+        "dimensions": "3840x2160",
+        "format": "PNG",
+        "transparent_bg": false,
+        "approved_at": "2026-03-05T12:48:17Z",
+        "approved_by": "brand-reviewer",
+        "notes": "Perfeito para hero section da landing page. Bloomberg terminal mood sem ser cópia. Nenhuma pessoa visível. Iluminação de tela impecável.",
+        "usage_contexts": ["landing_page_hero", "deck_background", "pr_media", "editorial"]
+      },
+      {
+        "id": "asset-005",
+        "filename": "axis-moodboard-instruments-v3.png",
+        "category": "moodboard",
+        "subcategory": "precision_objects",
+        "batch": "batch-02",
+        "dimensions": "3840x2880",
+        "format": "PNG",
+        "transparent_bg": false,
+        "approved_at": "2026-03-05T13:15:44Z",
+        "approved_by": "brand-reviewer",
+        "notes": "Flat lay impecável. Lingote de ouro retangular em proporção correta. Instrumentos em aço escuro matte. Usar em about page e materials de PR.",
+        "usage_contexts": ["about_page", "pr_media", "press_kit", "editorial_instagram"]
+      },
+      {
+        "id": "asset-006",
+        "filename": "axis-moodboard-topography-v2.png",
+        "category": "moodboard",
+        "subcategory": "abstract_data",
+        "batch": "batch-02",
+        "dimensions": "3840x2160",
+        "format": "PNG",
+        "transparent_bg": false,
+        "approved_at": "2026-03-05T13:31:05Z",
+        "approved_by": "brand-reviewer",
+        "notes": "Abstrato. Grade azul elétrico e pontos dourados criam profundidade. Recua bem para uso como background. Usar em slides de abertura.",
+        "usage_contexts": ["deck_background", "slide_chapter_divider", "hero_abstract"]
+      },
+      {
+        "id": "asset-007",
+        "filename": "axis-slide-bg-dark-v3.png",
+        "category": "applications",
+        "subcategory": "slide_background",
+        "batch": "batch-03",
+        "dimensions": "3840x2160",
+        "format": "PNG",
+        "transparent_bg": false,
+        "approved_at": "2026-03-05T16:22:49Z",
+        "approved_by": "brand-reviewer",
+        "notes": "Fundo escuro minimalista para slides de dado. Grid em 4% opacidade. Hairline ouro no terço superior. Matrix textural imperceptível no canto. Zona central limpa.",
+        "usage_contexts": ["data_slides", "report_pages", "dashboard_background"]
+      },
+      {
+        "id": "asset-008",
+        "filename": "axis-slide-chapter-gold-v2.png",
+        "category": "applications",
+        "subcategory": "slide_chapter_divider",
+        "batch": "batch-03",
+        "dimensions": "3840x2160",
+        "format": "PNG",
+        "transparent_bg": false,
+        "approved_at": "2026-03-05T17:08:33Z",
+        "approved_by": "brand-reviewer",
+        "notes": "Slide de capítulo com símbolo cross em ouro centralizado. Silêncio visual poderoso. Espaço negativo intencional. Usar como divisor entre seções de deck.",
+        "usage_contexts": ["chapter_divider_slides", "section_opener", "title_card"]
+      },
+      {
+        "id": "asset-009",
+        "filename": "axis-social-instagram-bg-v3.png",
+        "category": "applications",
+        "subcategory": "social_instagram",
+        "batch": "batch-03",
+        "dimensions": "2160x2160",
+        "format": "PNG",
+        "transparent_bg": false,
+        "approved_at": "2026-03-05T17:43:58Z",
+        "approved_by": "brand-reviewer",
+        "notes": "Background 1:1 para posts de dado no Instagram. Zona central limpa e segura. Diagonal hairlines dourados em 7°. Matrix no canto superior direito como textura. Pronto para overlay de texto/número.",
+        "usage_contexts": ["instagram_data_posts", "social_media_template", "feed_editorial"]
+      }
+    ]
+  },
+
+  "cost_estimates": {
+    "currency": "USD",
+    "provider": "Luma AI (estimate based on March 2026 pricing)",
+    "batch_costs": [
+      {
+        "batch": "batch-01",
+        "images_generated": 12,
+        "cost_per_image_usd": 0.08,
+        "subtotal_usd": 0.96
+      },
+      {
+        "batch": "batch-02",
+        "images_generated": 15,
+        "cost_per_image_usd": 0.08,
+        "subtotal_usd": 1.20
+      },
+      {
+        "batch": "batch-03",
+        "images_generated": 14,
+        "cost_per_image_usd": 0.08,
+        "subtotal_usd": 1.12
+      }
+    ],
+    "total_images_generated": 41,
+    "total_images_approved": 9,
+    "total_cost_images_usd": 3.28,
+    "human_review_hours": 2.5,
+    "human_review_rate_usd_per_hour": 0,
+    "total_cost_generation_usd": 3.28,
+    "note": "Cost does not include brand strategist or copywriter time — those are separate from image generation. N1 level image generation cost is negligible relative to brand strategy work."
+  },
+
+  "quality_metrics": {
+    "overall_approval_rate_pct": 21.95,
+    "brand_compliance_score": 9.1,
+    "consistency_score": 8.7,
+    "notes": [
+      "Approval rate of ~22% is expected for high-fidelity brand with strict visual rules",
+      "Main rejection source: palette deviations (warm tones, oversaturated gold)",
+      "Second rejection source: atmospheric effects (glow, gradients) prohibited by AXIS rules",
+      "After batch-02, prompts were refined — batch-03 had tighter iteration loops",
+      "All 9 approved assets are production-ready without additional editing"
+    ]
+  },
+
+  "n1_level_deliverables": {
+    "completed": [
+      "brand-strategy.md",
+      "archetypes.md",
+      "brand-voice.md",
+      "typography-system.md",
+      "visual-direction.md",
+      "design-tokens.json",
+      "logo-rationale.md",
+      "briefing.md",
+      "storytelling.md",
+      "ui-guidelines.md",
+      "pattern-library.md",
+      "motion-system.md",
+      "applications.md",
+      "visual-prompts.md",
+      "brandbook-master.md",
+      "session-guard-example.json",
+      "presentation-structure.md"
+    ],
+    "assets_generated": [
+      "axis-logo-symbol-v3.png",
+      "axis-logo-horizontal-dark-v2.png",
+      "axis-logo-horizontal-light-v1.png",
+      "axis-moodboard-war-room-v4.png",
+      "axis-moodboard-instruments-v3.png",
+      "axis-moodboard-topography-v2.png",
+      "axis-slide-bg-dark-v3.png",
+      "axis-slide-chapter-gold-v2.png",
+      "axis-social-instagram-bg-v3.png"
+    ],
+    "pending_for_higher_levels": [
+      "Motion system video files (N2+)",
+      "UI component library in Figma (N2+)",
+      "Full pattern library SVG exports (N2+)",
+      "LinkedIn banner final (requires human review)",
+      "Business card print files (requires human approval before print)",
+      "Full brand deck (20 slides — requires client content)"
+    ]
+  },
+
+  "next_steps": {
+    "for_n1_completion": [
+      "Client reviews and approves all 9 generated assets",
+      "Brand deck built from presentation-structure.md",
+      "Quick guide exported as single-page PDF",
+      "Delivery folder packaged and sent to client"
+    ],
+    "for_n2_upgrade": [
+      "Activate N2 IDENTIDADE level",
+      "Additional 3 batches: UI brand system, 6 applications, full brandbook",
+      "Figma component library build",
+      "Motion system video exports"
+    ]
+  }
+}

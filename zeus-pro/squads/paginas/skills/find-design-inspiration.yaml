@@ -1,0 +1,303 @@
+name: find-design-inspiration
+title: Find Design Inspiration
+description: Discover inspiration from curated design websites and component libraries
+
+type: research-curation
+version: 1.0.0
+tags:
+  - inspiration
+  - design-research
+  - benchmarking
+
+agent: page-visual-specialist
+activated_by:
+  - "find inspiration"
+  - "design inspiration"
+  - "show examples"
+  - "best practices"
+  - "*find-inspiration"
+
+curated_sources:
+  inspiration_websites:
+    - name: Codrops
+      url: https://tympanus.net/codrops/
+      specialty: Advanced CSS & animation tutorials
+      rating: ⭐⭐⭐⭐⭐
+      best_for: Motion design, advanced effects
+
+    - name: Awwwards
+      url: https://www.awwwards.com/websites
+      specialty: Award-winning websites
+      rating: ⭐⭐⭐⭐⭐
+      best_for: Premium design inspiration
+
+    - name: Godly
+      url: https://godly.website
+      specialty: One-page websites showcase
+      rating: ⭐⭐⭐⭐⭐
+      best_for: Landing pages, single-page design
+
+    - name: Lapa Ninja
+      url: https://www.lapa.ninja
+      specialty: Landing page examples
+      rating: ⭐⭐⭐⭐
+      best_for: Copy, layout, CTA design
+
+    - name: One Page Love
+      url: https://onepagelove.com
+      specialty: Single-page website templates
+      rating: ⭐⭐⭐⭐
+      best_for: Design patterns, layouts
+
+    - name: Mobbin
+      url: https://mobbin.com
+      specialty: Mobile app UI/UX patterns
+      rating: ⭐⭐⭐⭐⭐
+      best_for: Mobile design, user flows
+
+    - name: Page Flows
+      url: https://pageflows.com
+      specialty: User flow recordings
+      rating: ⭐⭐⭐⭐
+      best_for: UX patterns, conversions
+
+    - name: Site Inspire
+      url: https://www.siteinspire.com
+      specialty: Web design showcase
+      rating: ⭐⭐⭐⭐
+      best_for: General web design inspiration
+
+    - name: Dark Mode Design
+      url: https://www.darkmodedesign.com
+      specialty: Dark theme websites
+      rating: ⭐⭐⭐⭐
+      best_for: Dark mode implementation
+
+    - name: Visual Journal
+      url: https://visualjournal.it
+      specialty: Visual design trends
+      rating: ⭐⭐⭐⭐
+      best_for: Color, typography, composition
+
+  component_libraries:
+    - name: shadcn/ui
+      url: https://ui.shadcn.com
+      specialty: Copy-paste React components
+      rating: ⭐⭐⭐⭐⭐
+      best_for: Default starting point, high customization
+
+    - name: Magic UI
+      url: https://magicui.design
+      specialty: Beautiful, animated components
+      rating: ⭐⭐⭐⭐⭐
+      best_for: Premium animations, hero sections
+
+    - name: Aceternity UI
+      url: https://ui.aceternity.com
+      specialty: Advanced animations & effects
+      rating: ⭐⭐⭐⭐⭐
+      best_for: Wow factor, premium landing pages
+
+    - name: Cult UI
+      url: https://www.cult-ui.com
+      specialty: Trendy components
+      rating: ⭐⭐⭐⭐
+      best_for: Modern aesthetic
+
+    - name: Chakra UI
+      url: https://chakra-ui.com
+      specialty: Complete component system
+      rating: ⭐⭐⭐⭐⭐
+      best_for: Full app development, dashboards
+
+    - name: Mantine
+      url: https://mantine.dev
+      specialty: Accessible, feature-rich components
+      rating: ⭐⭐⭐⭐⭐
+      best_for: Production-ready apps
+
+    - name: Daisyui
+      url: https://daisyui.com
+      specialty: Tailwind CSS components
+      rating: ⭐⭐⭐⭐
+      best_for: Tailwind-based projects
+
+steps:
+  - step: 1
+    name: Identify Inspiration Needs
+    elicit: true
+    prompt: |
+      What kind of inspiration are you looking for?
+
+      **Design Categories:**
+      1. Landing Pages - Hero, sections, CTAs
+      2. Dashboards - Data viz, tables, charts
+      3. Mobile Apps - Flows, patterns, interactions
+      4. E-commerce - Product pages, cart, checkout
+      5. SaaS - Onboarding, features showcase
+      6. Marketing Sites - Bold, trendy design
+      7. Portfolio - Showcase sites
+      8. Dark Mode - Dark theme implementations
+
+      **Specific Elements:**
+      - Color schemes
+      - Typography
+      - Animation effects
+      - Layout patterns
+      - Button styles
+      - Form designs
+      - Navigation patterns
+      - Card designs
+      - Hero sections
+      - CTAs (Call-to-Action)
+
+      **Aesthetic Preferences:**
+      - Minimalist
+      - Bold & Colorful
+      - Premium/Luxury
+      - Playful/Fun
+      - Corporate
+      - Modern/Trendy
+      - Dark Mode
+      - Glassmorphism
+      - 3D Effects
+      - Sci-Fi/Futuristic
+
+  - step: 2
+    name: Curate Inspiration Sources
+    description: Select best sources based on your needs
+    logic: |
+      IF landing_page & animation THEN Codrops + Magic UI
+      IF premium_design THEN Awwwards + Godly
+      IF mobile THEN Mobbin + Page Flows
+      IF dark_theme THEN Dark Mode Design + shadcn/ui
+      IF dashboard THEN Chakra UI + Mantine
+      IF trendy & modern THEN Cult UI + Aceternity
+      IF full_system THEN Chakra + Mantine + Radix
+
+  - step: 3
+    name: Generate Inspiration Report
+    output: |
+      # Design Inspiration Report
+
+      ## Your Needs
+      - Category: {category}
+      - Style: {aesthetic}
+      - Focus: {specific_elements}
+
+      ## Top Inspiration Sources
+
+      ### 1. {PRIMARY_SOURCE}
+      - **URL:** {url}
+      - **Why:** {reasoning}
+      - **Best Examples:** {top_3_examples_with_links}
+      - **Key Takeaways:**
+        - {insight_1}
+        - {insight_2}
+        - {insight_3}
+
+      ### 2. {SECONDARY_SOURCE}
+      {same_structure}
+
+      ### 3. {TERTIARY_SOURCE}
+      {same_structure}
+
+      ## Component Recommendations
+
+      Based on your needs, these libraries have great examples:
+
+      | Component Type | Library | Rating | Link |
+      |---|---|---|---|
+      | Hero Section | Magic UI | ⭐⭐⭐⭐⭐ | {link} |
+      | Card Layout | Cult UI | ⭐⭐⭐⭐ | {link} |
+      | Button Styles | Aceternity | ⭐⭐⭐⭐⭐ | {link} |
+      | Form Design | Chakra UI | ⭐⭐⭐⭐⭐ | {link} |
+      | Animations | Codrops | ⭐⭐⭐⭐⭐ | {link} |
+
+      ## Design Patterns to Study
+
+      1. **Color Palettes**
+         - Study the color combinations used
+         - Note contrast ratios
+         - Pay attention to accent colors
+
+      2. **Typography**
+         - Font families and weights
+         - Font sizes and line heights
+         - Heading hierarchy
+
+      3. **Spacing & Layout**
+         - Margin/padding consistency
+         - Grid systems
+         - Whitespace usage
+
+      4. **Animation & Interaction**
+         - Hover effects
+         - Scroll animations
+         - Loading states
+         - Transitions
+
+      5. **Components in Context**
+         - How buttons are styled
+         - Form input designs
+         - Card layouts
+         - Navigation patterns
+
+      ## Next Steps
+
+      1. **Browse the sources** - Spend 15-20 min on each site
+      2. **Take screenshots** - Capture patterns you like
+      3. **Document decisions** - Note what you're adopting
+      4. **Reference libraries** - Use component libraries for code
+      5. **Implement** - Use selected library or adapt patterns
+
+  - step: 4
+    name: Create Design Mood Board
+    output: |
+      # Mood Board & Design Guidelines
+
+      ## Color Palette
+      ```
+      Primary:   {color_hex} - {color_name}
+      Secondary: {color_hex} - {color_name}
+      Accent:    {color_hex} - {color_name}
+      Gray:      {color_hex} - {color_name}
+      ```
+
+      ## Typography
+      - **Display**: {font_family}, {weights}
+      - **Body**: {font_family}, {weights}
+      - **Mono**: {font_family}
+
+      ## Component Examples
+
+      ### Button Style
+      [Insert reference button screenshot]
+      - Padding: {value}
+      - Border radius: {value}
+      - Font weight: {value}
+
+      ### Card Layout
+      [Insert reference card screenshot]
+      - Shadow: {value}
+      - Padding: {value}
+      - Border radius: {value}
+
+      ### Animation Preferences
+      - Entrance: {type} ({duration}ms, {easing})
+      - Hover: {type} ({duration}ms, {easing})
+      - Scroll: {type} ({easing})
+
+research_prompts:
+  explore_hero: "Show me 10 hero sections from {source}"
+  color_analysis: "Analyze the color scheme used in {website}"
+  animation_breakdown: "Break down the animations on {website}"
+  component_audit: "Compare how this component is implemented across libraries"
+  layout_patterns: "What layout patterns are most common for {category}?"
+  mobile_patterns: "How is this implemented on mobile?"
+
+---
+
+Powered by: @page-visual-specialist (Vex)
+Knowledge Base: 150+ curated design resources
+Workflow: Inspiration → Analysis → Implementation

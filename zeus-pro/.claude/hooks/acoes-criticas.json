@@ -1,0 +1,56 @@
+{
+  "_doc": "Tabela viva do gate de acoes criticas do ZEUS PRO. negar = bloqueia de vez. perguntar = pede confirmacao ao dono da instalacao. Falso positivo se corrige AQUI, nunca no codigo do hook. Prefixo (?i) liga o modo insensivel a maiuscula.",
+  "negar": [
+    {
+      "id": "delete-recursivo",
+      "regex": "(rm\\s+(-[a-z]*r[a-z]*\\s+)+|Remove-Item[^\\n]*-Recurse|rd\\s+/s|rmdir\\s+/s)",
+      "motivo": "Delete recursivo apaga pasta inteira sem volta.",
+      "alternativa": "Mova para uma pasta _lixo/ ou apague arquivo por arquivo, conferindo antes."
+    },
+    {
+      "id": "git-destrutivo",
+      "regex": "git\\s+(reset\\s+--hard|clean\\s+-[a-z]*f|push\\s+--force(?!-with-lease)|branch\\s+-D)",
+      "motivo": "Comando git destrutivo descarta trabalho sem volta.",
+      "alternativa": "Use git stash, git revert ou --force-with-lease."
+    },
+    {
+      "id": "formatar-disco",
+      "regex": "(?i)(mkfs|format\\s+[a-z]:|diskpart)",
+      "motivo": "Operacao de disco.",
+      "alternativa": "Nenhuma. Isso e feito pelo dono da maquina, na mao."
+    },
+    {
+      "id": "dump-de-segredo",
+      "regex": "(cat|type|Get-Content)\\s+[^\\n|]*\\.env(\\s|$)",
+      "motivo": "Imprimir o arquivo de credenciais inteiro expoe segredo no historico da conversa.",
+      "alternativa": "Verifique so a presenca da variavel, sem imprimir o valor."
+    }
+  ],
+  "perguntar": [
+    {
+      "id": "envio-externo",
+      "regex": "(curl|fetch\\(|Invoke-RestMethod|Invoke-WebRequest|axios)[^\\n]*(send|message|mail|webhook|notify)",
+      "motivo": "Este comando parece enviar algo para fora da maquina."
+    },
+    {
+      "id": "script-de-disparo",
+      "regex": "(node|python|py)\\s+[^\\n]*(enviar|disparo|envio|send-|broadcast)",
+      "motivo": "Script com nome de disparo pode mandar mensagem de verdade."
+    },
+    {
+      "id": "instalar-dependencia",
+      "regex": "(npm\\s+i(nstall)?|pnpm\\s+add|yarn\\s+add|pip3?\\s+install)\\s+(?!--dry-run)\\S",
+      "motivo": "Instalar dependencia nova traz codigo de terceiro para a maquina."
+    },
+    {
+      "id": "publicacao",
+      "regex": "(git\\s+push(?!\\s+--dry-run)|vercel\\s+deploy|wrangler\\s+(publish|deploy)|docker\\s+run)",
+      "motivo": "Isto publica ou coloca algo no ar."
+    },
+    {
+      "id": "banco-destrutivo",
+      "regex": "(?i)(DROP\\s+(TABLE|DATABASE)|TRUNCATE\\s+TABLE|DELETE\\s+FROM(?!.*WHERE))",
+      "motivo": "Operacao de banco que apaga dado."
+    }
+  ]
+}

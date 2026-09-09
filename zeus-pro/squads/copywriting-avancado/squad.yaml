@@ -1,0 +1,368 @@
+name: copy-master-edition
+short_title: "Copy Master Edition"
+folder: squads/copywriting-squad/   # pasta mantida pelo caminho historico, o NOME oficial e Copy Master Edition
+description: >
+  COPY MASTER EDITION: o squad unico de copy do o dono do canal, fonte unica desde 11/08/2026.
+  36 agentes (22 lendas do direct response + 5 hook specialists + 8 agentes nucleo PT +
+  1 orquestrador), 17 regras invioláveis (Lei da Ferida, Lei do Alvo e as tres da aula
+  de 11/08: toda peca vende o encontro, incluso vai o que e o porque, custo da inacao
+  em 4 camadas),
+  12 frameworks, memoria viva de copies campeas com metrica real e quality gate com
+  score 0-100. Substitui um departamento completo de copywriting. Ativa em QUALQUER
+  peso: o peso dimensiona o time, nunca decide se as regras valem.
+version: 2.3.0
+author: "um mentor de referencia / Synkra AIOS"
+license: PROPRIETARY
+
+aios:
+  minVersion: "4.0.0"
+  type: squad
+
+tags:
+  - copywriting
+  - direct-response
+  - sales-letter
+  - email
+  - vsl
+  - funnel
+  - headline
+  - offer
+  - ad-copy
+  - launch
+  - brand-copy
+  - hooks
+  - whatsapp
+  - landing-page
+  - carousel
+  - exemplo
+  - low-ticket
+  - high-ticket
+
+lead:
+  agent: copy-chief
+  role: Diretor geral, briefing, recrutamento, quality control
+
+tiers:
+  tier_0_orchestration:
+    description: "Diretor que recruta agentes por tipo de copy, awareness level e canal"
+    count: 1
+    agents:
+      - copy-chief
+
+  tier_1_core_pt:
+    description: "Nucleo brasileiro especializado no mercado de mentoria/infoproduto"
+    count: 8
+    agents:
+      - hook-warlord            # 15 tipos de gancho, Teste do Estranho
+      - ad-copy-warlord         # Meta Ads, matriz 2+8, padroes campeoes
+      - russell-brunson-agent   # Big Domino, Epiphany Bridge, funil
+      - eugene-schwartz-agent   # Niveis de consciencia, diagnostico de audiencia
+      - hormozi-offer-agent     # Equacao do valor, stack, garantia
+      - whatsapp-humanizer      # DNA o dono do canal, padroes WA aprovados
+      - copy-auditor            # Quality gate score 0-100, threshold 60
+      - icaro-de-carvalho-agent # 12 gatilhos (evolucao Cialdini), buyer trance, lancamento pago pequeno
+
+  tier_2_legends:
+    description: >
+      22 lendas do direct response (USA/UK). BIBLIOTECA DE CONSULTA desde 26/07/2026,
+      nao executoras: o copy-chief indica qual lenda estudar para calibrar estilo e
+      quem escreve e o nucleo Tier 1. Indice em data/biblioteca-lendas.md.
+    papel: biblioteca_de_consulta
+    count: 22
+    sub_tiers:
+      direct_response_legends:
+        focus: "Long-form, print, mail, sales letter classica"
+        agents:
+          - gary-halbert
+          - eugene-schwartz
+          - claude-hopkins
+          - gary-bencivenga
+          - robert-collier
+          - john-carlton
+          - jim-rutz
+      modern_copy_funnels:
+        focus: "VSLs, funis, webinars, launches"
+        agents:
+          - dan-kennedy
+          - frank-kern
+          - russell-brunson
+          - todd-brown
+          - stefan-georgi
+          - jon-benson
+          - ry-schwartz
+      email_relationship:
+        focus: "Email sequences, daily emails, nurture"
+        agents:
+          - ben-settle
+          - andre-chaperon
+          - dan-koe
+      offers_sales_pages:
+        focus: "Offer architecture, print ads, financial/health"
+        agents:
+          - joe-sugarman
+          - david-ogilvy
+          - clayton-makepeace
+          - parris-lampropoulos
+          - david-deutsch
+
+  tier_3_hooks:
+    description: "Hook specialists — primeiros 3 segundos, scroll-stoppers, capas"
+    count: 5
+    agents:
+      - hook-hormozi   # Matematica brutal, contraste cruel
+      - hook-koe       # Filosofico, autoral, observador
+      - hook-cole      # Identidade, comunidade, posicionamento
+      - hook-bourgoin  # Pattern interrupt, polemica
+      - hook-welsh     # Storytelling rapido, gancho narrativo
+
+total_agents: 36
+
+frameworks:
+  count: 12
+  list:
+    - arena                          # Estrutura universal 7 passos
+    - copy-killer-formula            # VMC + Gancho + Crenca Falsa
+    - sexy-canvas                    # 8 gatilhos pecados capitais
+    - vmc                            # Verdadeira Motivacao de Compra
+    - hormozi-offer                  # Equacao do valor
+    - eugene-schwartz-awareness      # 5 niveis de consciencia
+    - russell-brunson-funnels        # Epiphany Bridge, Big Domino
+    - pas                            # Problem, Agitate, Solution
+    - aida                           # Attention, Interest, Desire, Action
+    - pastor                         # Email completo (6 passos)
+    - framework-mixing-guide         # 5 combos aprovados + proibidos
+    - icaro-gatilhos-mentais         # 12 gatilhos (evolucao Cialdini) + buyer trance
+
+modules:
+  count: 9
+  list:
+    - ads          # Meta Ads
+    - hooks        # Ganchos por tipo
+    - email        # Email marketing
+    - whatsapp     # WhatsApp 1:1 e mensagem de venda
+    - convocacao-encontro  # chamada pra aula de terca e aula liberada no portal (NAO vende, chama pra presenca)
+    - scripts      # Roteiros/VSL
+    - landing-pages
+    - carousel     # Carrossel Instagram
+    - copy-review  # Auditoria
+
+tasks:
+  count: 16
+  list:
+    - research-lead      # pesquisa, ICP e mapa da empatia (passo zero, antes de escrever)
+    - extract-heuristics # engenharia reversa de referencia (nao copie a frase)
+    - transform-format   # peca aprovada vira outros formatos, herdando o angulo
+    - write-headline
+    - write-sales-letter
+    - write-vsl-script
+    - write-email-sequence
+    - write-ad-copy
+    - write-landing-page
+    - write-bullets
+    - create-funnel-copy
+    - create-offer
+    - analyze-copy
+    - critique-copy
+    - diagnose
+    - review
+
+workflows:
+  count: 2
+  list:
+    - wf-full-copy-project    # Brief > diagnose > assign > write > review > deliver
+    - wf-copy-review-cycle    # Iterativo write-critique-revise (max 3 iteracoes)
+
+checklists:
+  count: 1
+  list:
+    - output-quality
+
+data:
+  count: 3
+  list:
+    - copy-frameworks.yaml   # Mapeamento de frameworks
+    - routing-catalog.yaml   # Catalogo de roteamento (roteia para o nucleo executor)
+    - biblioteca-lendas.md   # Indice: qual lenda consultar por situacao
+
+memory:
+  description: "Memoria viva: aprende com cada copy validada em producao"
+  files:
+    - MEMORY.md            # ATIVO. Aprendizado do squad (formato memoria-squad-v1)
+    - copies-campeoes.md   # ATIVO. Banco de copies com CPA, CTR, ROAS reais
+    - feedback-log.md      # HISTORICO. Migrado para MEMORY.md em 25/07/2026, nao alimentar mais
+
+# Sensor de resultado (26/07/2026): fecha o ciclo entre copy escrita e venda feita.
+# Sem ele o squad escrevia no escuro (auditoria 02/07/2026, recomendacao 3).
+sensor_resultado:
+  skill: copy-resultado-sync   # roda em sessao do Claude (precisa do MCP Meta)
+  fonte: "MCP Meta 98b3a5ab (nunca API direta)"
+  contas:
+    ht: act_SUA_CONTA_DE_ANUNCIOS   # regua Bijari: custo por agendamento R$150-400
+    lt: act_SUA_CONTA_DE_ANUNCIOS  # regua Maxxima: ROI >= 2.0
+  destinos:
+    - squads/copywriting-squad/memory/copies-campeoes.md
+    - memory/copy-resultados-log.md
+  cadencia: "semanal, junto do pulso de trafego"
+  regra: "padrao que venceu 2x vira referencia; padrao que perdeu 2x vira proibicao no MEMORY.md"
+
+satellite_skills:
+  description: "Skills user-level integradas para chamada direta"
+  list:
+    - sexy-canvas              # 8 gatilhos pecados capitais (trafego direto)
+    - copy-mentoria-killer     # SKILL MASTER v2.0 (Agente Arquiteto, 15 frameworks)
+    - carousel-cover-copy      # Capa de carrossel Instagram
+    - copy-resultado-sync      # Sensor de resultado (26/07/2026)
+  aposentadas:
+    - copy-mentoria            # 26/07/2026: v1 absorvida pela copy-mentoria-killer.
+                               # Gatilhos identicos causavam ambiguidade de roteamento.
+                               # Arquivo preservado como historico, nao usar.
+
+global_rules:
+  file: GLOBAL_COPY_RULES.md
+  count: 10
+  inviolable: true
+  highlights:
+    - "Nunca vender produto high ticket em frio"
+    - "Preco minimo definido contratualmente nao aparece fragmentado em copy"
+    - "Especificidade obrigatoria (3 de 6 ancoras)"
+    - "Uma VMC por copy"
+    - "Urgencia apenas quando real"
+    - "Prova social verificavel"
+    - "Ortografia perfeita / sem travessao"
+    - "CTA unico"
+    - "Publico definido antes do copy"
+    - "Auditoria interna score >= 60"
+
+aliases:
+  # NOME OFICIAL (ordem do o dono do canal, 11/08/2026): Copy Master Edition. Os outros nomes
+  # abaixo sao apelidos herdados e continuam ativando o mesmo squad. A pasta segue
+  # chamando copywriting-squad so pelo caminho no disco, nao e mais o nome do time.
+  - copy master edition
+  - copy master
+  - master edition
+  - squad de copy
+  - copy squad
+  - copywriting squad
+  - copy killer
+
+lt_creative_gate:
+  status: INVIOLAVEL
+  origem: "o dono do canal 10/07/2026, refinado 12/07/2026 (vertical/horizontal)"
+  description: >
+    Todo criativo de produto LOW TICKET gerado por este squad obedece a
+    ANATOMIA UNIVERSAL padrao Sofa Marrom (canonico:
+    docs/rules-on-demand/low-ticket-creative-standard.md; Tier 0:
+    .claude/rules/padrao-maxxima-low-ticket.md):
+    1) TOPO CERTO (regra vertical/horizontal): produto VERTICAL (segmentado
+    por profissao: psicologo, advogado, massoterapeuta) = profissao/area
+    LITERAL na primeira linha do estatico ou nos 3 primeiros segundos do video;
+    produto HORIZONTAL (profissao desconhecida: futuro mentor, futuro trader,
+    empresario que quer usar IA) = topo carrega a DOR, o DESEJO ou o ASSUNTO
+    da palavra-chave (mentoria, trade, IA). Sem NENHUM dos dois = REPROVADO
+    no quality gate.
+    2) ANATOMIA 4 CAMADAS, texto curto, nunca bloco longo: H1 agressivo focado
+    na dor/desejo + H2 menor que justifica ou torna real + preco + CTA.
+    3) PRECO fecha o bloco de leitura em produto baratinho (padrao Sofa Marrom),
+    com o bloco inteiro dentro da area segura do formato.
+
+activation:
+  weight_threshold: 41
+  auto_activate_on_keywords:
+    - copy master edition
+    - copy master
+    - squad de copy
+    - copy
+    - copies
+    - copywriting
+    - anuncio
+    - anuncios
+    - ad
+    - ads
+    - gancho
+    - hook
+    - headline
+    - email de venda
+    - email marketing
+    - landing page
+    - LP
+    - carrossel
+    - roteiro
+    - script
+    - legenda
+    - WhatsApp venda
+    - oferta
+    - VSL
+    - webinar
+    - sales letter
+    - funil
+    - launch
+    - lancamento
+
+quality_gate:
+  agent: copy-auditor
+  minimum_score: 60
+  max_iterations: 2
+  threshold_by_weight:
+    "0-40": 50
+    "41-60": 60
+    "61-80": 70
+    "81-100": 80
+  behavior_below_threshold: rewrite_internally
+
+inherits_from:
+  - squads/_core-team/squad.yaml
+
+core_team_integration:
+  mode: mandatory
+  injection_tier: 0
+  shared_memory: true
+
+cross_squad_routing:
+  description: "Squads parceiros que chamam ou sao chamados por copywriting-squad"
+  partners:
+    - squad: PAGE-FORGE
+      relationship: cliente
+      what: "Copy para landing pages, hero, secoes, CTAs"
+    - squad: ADS-SQUAD
+      relationship: cliente
+      what: "Copy para criativos Meta Ads"
+    - squad: LT-CRIATIVOS
+      relationship: cliente
+      what: "Copy para criativos low ticket + hooks para video"
+    - squad: BOOK-FORGE
+      relationship: cliente
+      what: "Copy para CTAs e venda dentro de ebooks"
+    - squad: MENTOR-ORGANICO
+      relationship: parceiro
+      what: "Copy para carrosseis, posts, reels do Instagram"
+    - squad: SPIN-SALES-FORCE
+      relationship: parceiro
+      what: "Copy para scripts de venda, follow-up"
+
+config:
+  extends: extend
+  fonte_unica: true
+  # 11/08/2026: o ESPELHO ACABOU. A skill global ~/.claude/skills/copy-killer-mega-skill/
+  # virou uma casca fina que so aponta pra ca e nao guarda conteudo nenhum.
+  # Motivo: o espelho de 114 arquivos ficou desatualizado (placar de maio contra placar
+  # de agosto, agentes velhos contra reformados) e virou fonte concorrente. Espelho antigo
+  # preservado em ~/.claude/skills-archive/copy-killer-mega-skill-pre-fusao-2026-08-11/
+  # e o script de sync aposentado em scripts/_arquivo-envios-mortos/.
+  # PROIBIDO recriar espelho: qualquer copia nova nasce como ponteiro, nunca como conteudo.
+  global_skill_entrypoint: "~/.claude/skills/copy-killer-mega-skill/SKILL.md"
+  espelho_aposentado_em: "2026-08-11"
+
+valuation:
+  conservative_estimate_brl: 2400000   # R$2.4M
+  market_equivalent_brl: 5000000        # R$5M
+  annual_cost_substituted_brl: 1800000  # R$1.8M
+  see: README.md
+
+# Autoaprendizado (squads-memory-sync, 2026-07-25)
+learning:
+  memory_file: MEMORY.md
+  format: memoria-squad-v1
+  global_log: memory/erros-aprendidos.md
+  squad_tag: copywriting-squad
+  read_before_acting: true
+  max_chars: 8000

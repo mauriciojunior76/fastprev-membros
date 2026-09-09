@@ -1,0 +1,101 @@
+squad:
+  id: zeus-pitch
+  nome: Zeus Pitch
+  versao: 1.0.0
+  descricao: >
+    Monta a apresentação de vendas do seu negócio, com a mesma estrutura,
+    os mesmos efeitos e a mesma engenharia de decisão de uma apresentação
+    de alto ticket testada, mas com o seu conteúdo, as suas cores e o seu
+    estilo. O squad entrevista você, descobre sozinho o que já existe na
+    sua máquina e só pergunta o que falta.
+
+  ativacao:
+    - "Zeus Pitch, vamos montar minha apresentação de vendas"
+    - "cria minha apresentação de vendas"
+    - "monta meu pitch"
+    - "quero a apresentação da minha mentoria"
+
+  lead: pitch-chief
+
+  agentes:
+    - id: pitch-chief
+      arquivo: agents/pitch-chief.md
+      papel: >
+        Lead. Conduz o fluxo inteiro: manda pesquisar a base, conduz as
+        rodadas de entrevista, fecha o briefing, aciona a geração e a
+        revisão. É quem fala com a pessoa.
+
+    - id: base-scout
+      arquivo: agents/base-scout.md
+      papel: >
+        Vasculha a máquina da pessoa antes de qualquer pergunta: CLAUDE.md,
+        memória, design system, cores, fontes, logo, fotos, depoimentos,
+        páginas anteriores. Devolve o que já sabe e o que falta.
+
+    - id: interviewer
+      arquivo: agents/interviewer.md
+      papel: >
+        Faz as perguntas que sobraram, em rodadas de 3 a 5, quantas forem
+        necessárias. Rejeita resposta vaga e pergunta de novo até ter dado
+        concreto. Nunca preenche campo por conta própria.
+
+    - id: design-adapter
+      arquivo: agents/design-adapter.md
+      papel: >
+        Aplica a identidade visual da pessoa: extrai a paleta do design
+        system se existir, ou monta uma rampa de 3 tons a partir da cor
+        principal. Escolhe as fontes. Nunca inventa marca.
+
+    - id: builder
+      arquivo: agents/builder.md
+      papel: >
+        Preenche o template com o briefing aprovado, roda o build e trata
+        os slides sem material (remove em vez de inventar).
+
+    - id: reviewer
+      arquivo: agents/reviewer.md
+      papel: >
+        Gate final. Confere no navegador de verdade: marcador órfão,
+        acentuação, headline equilibrada, hierarquia dos dois preços,
+        número sem origem no briefing, erro de console.
+
+  workflow:
+    - fase: pesquisa
+      agente: base-scout
+      saida: lista do que já sei e do que falta
+    - fase: entrevista
+      agente: interviewer
+      saida: briefing completo, sem campo inventado
+    - fase: identidade
+      agente: design-adapter
+      saida: bloco _visual do briefing
+    - fase: confirmacao
+      agente: pitch-chief
+      saida: resumo aprovado pela pessoa
+    - fase: geracao
+      agente: builder
+      saida: apresentacao/index.html
+    - fase: revisao
+      agente: reviewer
+      saida: relatório de gates, com correção antes de entregar
+
+  arquivos:
+    metodo:
+      - metodo/FUNDAMENTOS.md
+      - metodo/BLOCOS.md
+      - metodo/REGRAS.md
+    workflow:
+      - workflow/ENTREVISTA.md
+    template: templates/pitch-template.html
+    build: scripts/build.js
+
+  regras_inviolaveis:
+    - Nunca inventar número, prova, depoimento, case ou valor.
+    - Campo sem material real deixa o slide de fora, não vira invenção.
+    - Dois preços. O de "eu te ensino a fazer" destaca o parcelado, o de
+      "eu faço por você" destaca o valor total. Nunca inverter.
+    - Empilhamento só com valor de mercado real e origem que a pessoa
+      consiga sustentar se for perguntada.
+    - Garantia só entra se a pessoa conseguir cumprir.
+    - Português com acentuação perfeita, sem travessão.
+    - Não perguntar o que dá para descobrir sozinho na base da pessoa.

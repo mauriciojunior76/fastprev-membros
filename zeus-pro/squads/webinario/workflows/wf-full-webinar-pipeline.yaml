@@ -1,0 +1,224 @@
+workflow:
+  id: wf-full-webinar-pipeline
+  name: "Pipeline Completo do Webinario Infalivel"
+  version: "1.0.0"
+  description: |
+    Pipeline end-to-end para webinario.
+    8 fases sequenciais + gate final.
+    Cada fase produz os inputs necessarios para a proxima.
+  trigger: "*start-webinar"
+  entry_agent: webinar-chief
+  estimated_duration: "5-15 dias de planejamento"
+  type: sequential
+
+phases:
+  - id: fase_0
+    name: "Briefing"
+    steps:
+      - agent: webinar-intake-specialist
+        task: 01-collect-brief.md
+        creates: "webinar-brief-{project}.md"
+      - agent: webinar-questioner
+        task: 02-question-premises.md
+        creates: "questoes-criticas-{project}.md"
+        depends_on: [webinar-brief]
+    checkpoint:
+      gate: "Briefing aprovado pelo webinar-chief"
+
+  - id: fase_1
+    name: "Pesquisa e Estrategia"
+    depends_on: [fase_0]
+    steps:
+      - agent: researcher
+        task: 03-market-research.md
+        creates: ["research-{project}.md", "icp-{project}.md"]
+      - agent: promise-architect
+        task: 04-create-promise.md
+        creates: "promise-{project}.md"
+        depends_on: [research]
+      - agent: big-idea-specialist
+        task: 05-create-big-idea.md
+        creates: "big-idea-{project}.md"
+        depends_on: [promise]
+      - agent: narrative-analyst
+        task: 06-design-narrative-arc.md
+        creates: "narrative-arc-{project}.md"
+        depends_on: [big-idea]
+      - agent: strategic-planner
+        task: 07-master-plan.md
+        creates: "master-plan-{project}.md"
+        parallel: true
+      - agent: financial-planner
+        task: 08-funnel-economics.md
+        creates: "funnel-economics-{project}.md"
+        parallel: true
+    checkpoint:
+      gate: "Promessa + Big Idea aprovados pelo webinar-deputy"
+
+  - id: fase_2
+    name: "Oferta e Funil"
+    depends_on: [fase_1]
+    parallel: true
+    steps:
+      - agent: offer-architect
+        task: 09-build-offer.md
+        creates: "offer-architecture-{project}.md"
+      - agent: bonus-architect
+        task: 10-design-bonuses.md
+        creates: "bonus-plan-{project}.md"
+      - agent: funnel-architect
+        task: 11-design-funnel.md
+        creates: "funnel-architecture-{project}.md"
+      - agent: evergreen-specialist
+        task: 12-setup-evergreen.md
+        creates: "evergreen-setup-{project}.md"
+        condition: "modelo inclui componente automatizado"
+    checkpoint:
+      gate: "Oferta aprovada pelo webinar-deputy"
+
+  - id: fase_3
+    name: "Copy"
+    depends_on: [fase_1, fase_2]
+    steps:
+      - agent: headline-specialist
+        task: 13-write-headlines.md
+        creates: "headlines-{project}.md"
+      - agent: page-copy-specialist
+        task: 14-write-capture-page-copy.md
+        creates: "copy-captura-{project}.md"
+        depends_on: [headlines]
+      - agent: page-copy-specialist
+        task: 15-write-sales-page-copy.md
+        creates: "copy-vendas-{project}.md"
+        depends_on: [headlines]
+      - agent: email-specialist
+        task: 16-write-emails.md
+        creates: "emails-{project}.md"
+        parallel: true
+      - agent: whatsapp-specialist
+        task: 17-write-whatsapp.md
+        creates: "whatsapp-scripts-{project}.md"
+        parallel: true
+      - agent: ad-copy-specialist
+        task: 18-write-ad-copy.md
+        creates: "ad-copy-{project}.md"
+        parallel: true
+    checkpoint:
+      gate: "Copy aprovada pelo copy-reviewer + webinar-deputy"
+
+  - id: fase_4
+    name: "Webinario e Conteudo"
+    depends_on: [fase_1, fase_3]
+    steps:
+      - agent: webinar-architect
+        task: 19-design-webinar.md
+        creates: "webinar-structure-{project}.md"
+      - agent: script-writer
+        task: 20-write-webinar-script.md
+        creates: "webinar-script-{project}.md"
+        depends_on: [webinar-structure]
+      - agent: pitch-specialist
+        task: 21-design-pitch.md
+        creates: "pitch-plan-{project}.md"
+        depends_on: [webinar-script]
+      - agent: warmup-specialist
+        task: 22-plan-warmup.md
+        creates: "warmup-plan-{project}.md"
+        parallel: true
+      - agent: authority-builder
+        task: 23-build-authority-stack.md
+        creates: "authority-stack-{project}.md"
+        parallel: true
+      - agent: belief-breaker
+        task: 24-map-belief-breaks.md
+        creates: "belief-map-{project}.md"
+        parallel: true
+    checkpoint:
+      gate: "Webinario aprovado pelo webinar-reviewer"
+
+  - id: fase_5
+    name: "Criativos e Trafego"
+    depends_on: [fase_3]
+    steps:
+      - agent: creative-planner
+        task: 25-plan-creatives.md
+        creates: "creative-plan-{project}.md"
+      - agent: creative-script-writer
+        task: 26-write-creative-scripts.md
+        creates: "creative-scripts-{project}.md"
+        depends_on: [creative-plan]
+      - agent: remarketing-specialist
+        task: 27-design-remarketing.md
+        creates: "remarketing-plan-{project}.md"
+        parallel: true
+      - agent: traffic-data-planner
+        task: 28-setup-tracking.md
+        creates: "traffic-data-plan-{project}.md"
+        parallel: true
+    checkpoint:
+      gate: "Criativos aprovados pelo creative-reviewer"
+
+  - id: fase_6
+    name: "Pos-Webinario e Comercial"
+    depends_on: [fase_4]
+    steps:
+      - agent: replay-strategist
+        task: 29-plan-replay.md
+        creates: "replay-strategy-{project}.md"
+      - agent: scarcity-architect
+        task: 30-design-scarcity-calendar.md
+        creates: "scarcity-calendar-{project}.md"
+        parallel: true
+      - agent: commercial-strategist
+        task: 31-plan-commercial.md
+        creates: ["commercial-plan-{project}.md", "followup-plan-{project}.md"]
+      - agent: downsell-specialist
+        task: 32-plan-downsell.md
+        creates: "downsell-plan-{project}.md"
+        parallel: true
+      - agent: objection-handler
+        task: 33-build-objection-matrix.md
+        creates: "objection-matrix-{project}.md"
+        parallel: true
+    checkpoint:
+      gate: "Comercial aprovado pelo commercial-reviewer"
+
+  - id: fase_7
+    name: "Operacao e Metricas"
+    depends_on: [fase_5, fase_6]
+    parallel: true
+    steps:
+      - agent: metrics-analyst
+        task: 34-setup-metrics.md
+        creates: "metrics-dashboard-{project}.md"
+      - agent: checklist-manager
+        task: 35-build-checklists.md
+        creates: "checklists-{project}.md"
+      - agent: crm-operations-specialist
+        task: 36-design-crm.md
+        creates: "crm-plan-{project}.md"
+      - agent: team-operations-planner
+        task: 37-plan-team.md
+        creates: "team-plan-{project}.md"
+      - agent: page-builder-coordinator
+        task: 38-build-page-brief.md
+        creates: "page-brief-{project}.md"
+      - agent: compliance-specialist
+        task: 39-verify-compliance.md
+        creates: "compliance-{project}.md"
+
+  gate_final:
+    name: "Validacao Final"
+    agents: [webinar-final-reviewer, webinar-deputy, webinar-master-planner]
+    criteria:
+      - "Briefing completo e aprovado"
+      - "Promessa + Big Idea validados"
+      - "Oferta estruturada com bonus"
+      - "Copy completa (LP, emails, WhatsApp, ads)"
+      - "Roteiro 14 blocos validado"
+      - "Criativos com briefings"
+      - "Replay + urgencia planejados"
+      - "Comercial + follow-up definidos"
+      - "Metricas + checklists + equipe prontos"
+      - "Compliance verificado"
+    output: "complete-webinar-plan-{project}.md"

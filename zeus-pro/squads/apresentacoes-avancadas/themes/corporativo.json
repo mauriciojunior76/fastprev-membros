@@ -1,0 +1,39 @@
+{
+  "id": "corporativo",
+  "name": "Corporativo",
+  "description": "Azul executivo, cinza, sans serifa sóbria. Apresentação enterprise.",
+  "mood": ["formal", "sóbrio", "enterprise", "confiável"],
+  "tokens": {
+    "bg": "#ffffff",
+    "bg-alt": "#f4f7fa",
+    "bg-card": "#ffffff",
+    "accent-1": "#0f3c71",
+    "accent-2": "#1e6ec7",
+    "accent-3": "#5a9cd6",
+    "text": "#0f3c71",
+    "text-muted": "#4a5568",
+    "text-label": "#1e6ec7",
+    "border": "rgba(15, 60, 113, 0.18)",
+    "divider": "rgba(15, 60, 113, 0.08)"
+  },
+  "fonts": {
+    "title": "Inter",
+    "title-weight": "700",
+    "body": "Inter",
+    "body-weight": "400",
+    "mono": "JetBrains Mono"
+  },
+  "effects": {
+    "grain": false,
+    "grain-opacity": 0,
+    "blur-reveal": false,
+    "word-by-word": false,
+    "motion": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "motion-profile": "gentle"
+  },
+  "icons": {
+    "style": "static",
+    "stroke": 1.5,
+    "library": "lucide"
+  }
+}

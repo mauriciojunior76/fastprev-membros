@@ -1,0 +1,9 @@
+{
+  "_leia": "Imagem que PODE aparecer em mais de uma producao. A licao 'imagem-repetida' vale para imagem de CONTEUDO (objeto de estudio, foto, ilustracao da cena): essa nunca repete. Identidade da nossa marca repete de proposito, senao cada video teria um selo diferente. Lista viva: item novo entra aqui com o motivo, nunca some do relatorio calado.",
+  "atualizado_em": "2026-09-04",
+  "padroes": [
+    { "padrao": "zeus-zspark", "motivo": "o selo da marca Zeus, presente no fecho de toda peca por identidade" },
+    { "padrao": "logo-zeus", "motivo": "logo da marca propria" },
+    { "padrao": "exemplo-logo", "motivo": "logo da Exemplo, marca da casa" }
+  ]
+}

@@ -1,0 +1,589 @@
+{
+  "_doc": "REGISTRO SEMÂNTICO. Entre pela ESTRUTURA DA INFORMAÇÃO que a fala tem, não pela palavra. Cada chave lista os candidatos em ordem de preferência. Depois abra apenas essas entradas no visual-registry.json.",
+  "version": "2.2",
+  "how_to_read": "1) classifique o trecho numa destas estruturas · 2) pegue os candidatos · 3) compare useWhen/dontUseWhen · 4) confira se você TEM os dados de entrada · 5) escolha",
+  "structures": {
+    "ACERTO": {
+      "candidates": [
+        "compare.right-wrong.v1",
+        "interface.checklist.v1",
+        "interface.checks.pure.v1",
+        "interface.checks.list.v1",
+        "interface.confirmation.v1",
+        "interface.approval.v1"
+      ]
+    },
+    "ALERTA": {
+      "candidates": [
+        "proof.annotated.v1",
+        "interface.notification.v1",
+        "interface.countdown.v1",
+        "interface.pointer.v1"
+      ]
+    },
+    "ANTES_E_DEPOIS": {
+      "candidates": [
+        "compare.mirror.v1"
+      ]
+    },
+    "ARVORE": {
+      "candidates": [
+        "branch.tree.v1"
+      ]
+    },
+    "A_VS_B": {
+      "candidates": [
+        "compare.right-wrong.v1",
+        "compare.table.v1",
+        "compare.panels.v1"
+      ]
+    },
+    "BIFURCACAO": {
+      "candidates": [
+        "branch.tree.v1",
+        "branch.decision.v1"
+      ]
+    },
+    "BULLETS": {
+      "candidates": [
+        "set.trio.v1",
+        "set.grid.v1",
+        "interface.checks.list.v1",
+        "interface.list.v1"
+      ]
+    },
+    "BUSCA": {
+      "candidates": [
+        "interface.search.v1"
+      ]
+    },
+    "CALENDARIO": {
+      "candidates": [
+        "interface.calendar.v1",
+        "interface.schedule.v1"
+      ]
+    },
+    "CAMADAS": {
+      "candidates": [
+        "hierarchy.levels.v1",
+        "hierarchy.layers.v1"
+      ]
+    },
+    "CATEGORIAS": {
+      "candidates": [
+        "set.grid.v1",
+        "interface.instagram.highlights.v1",
+        "interface.instagram.feed.v1"
+      ]
+    },
+    "CAUSA_E_EFEITO": {
+      "candidates": [
+        "scheme.equation.v1",
+        "relation.cause-effect.v1"
+      ]
+    },
+    "CHAT": {
+      "candidates": [
+        "interface.chat.audio.v1",
+        "interface.chat.text.v1"
+      ]
+    },
+    "CICLO": {
+      "candidates": [
+        "flow.cycle.v1"
+      ]
+    },
+    "CITACAO": {
+      "candidates": [
+        "emphasis.lettering.v1",
+        "proof.testimonial.v1"
+      ]
+    },
+    "CLIMAX": {
+      "candidates": [
+        "emphasis.word.v1",
+        "emphasis.lettering.v1",
+        "number.hero.v1"
+      ]
+    },
+    "COMPARACAO": {
+      "candidates": [
+        "compare.right-wrong.v1",
+        "compare.table.v1",
+        "compare.balance.v1",
+        "compare.mirror.v1",
+        "compare.manual-auto.v1",
+        "profile.audience-card.v1",
+        "interface.data-table.v1",
+        "interface.ab-test.v1",
+        "compare.panels.v1"
+      ]
+    },
+    "CONEXAO": {
+      "candidates": [
+        "relation.venn.v1"
+      ]
+    },
+    "CRESCIMENTO": {
+      "candidates": [
+        "interface.chart.growth.v1"
+      ]
+    },
+    "CRM": {
+      "candidates": [
+        "interface.leads.v1"
+      ]
+    },
+    "DADO": {
+      "candidates": [
+        "interface.chart.growth.v1",
+        "interface.metrics.v1",
+        "interface.leads.v1",
+        "interface.poll.v1",
+        "interface.data-table.v1",
+        "interface.ranking.v1",
+        "interface.ab-test.v1",
+        "number.money.v1",
+        "number.percent.v1",
+        "number.hero.v1"
+      ]
+    },
+    "DASHBOARD": {
+      "candidates": [
+        "interface.adsmanager.panel.v1",
+        "interface.metrics.v1",
+        "interface.data-table.v1"
+      ]
+    },
+    "DECISAO": {
+      "candidates": [
+        "branch.decision.v1"
+      ]
+    },
+    "DEFINICAO": {
+      "candidates": [
+        "emphasis.icon-phrase.v1",
+        "profile.audience-card.v1",
+        "emphasis.headline-card.v1",
+        "scheme.description.v1"
+      ]
+    },
+    "EMAIL": {
+      "candidates": [
+        "interface.email.v1"
+      ]
+    },
+    "ENTRADA_E_SAIDA": {
+      "candidates": [
+        "flow.journey-ab.v1",
+        "interface.form.v1"
+      ]
+    },
+    "EQUACAO": {
+      "candidates": [
+        "scheme.equation.v1"
+      ]
+    },
+    "ERRO": {
+      "candidates": [
+        "compare.right-wrong.v1",
+        "interface.approval.v1"
+      ]
+    },
+    "ESCALA": {
+      "candidates": [
+        "hierarchy.levels.v1",
+        "scale.intensity.v1"
+      ]
+    },
+    "ESCOLHA": {
+      "candidates": [
+        "compare.balance.v1",
+        "branch.decision.v1",
+        "flow.filter.v1",
+        "interface.schedule.v1",
+        "interface.toggles.v1"
+      ]
+    },
+    "EXEMPLO": {
+      "candidates": [
+        "emphasis.attribute.v1",
+        "compare.right-wrong.v1",
+        "proof.annotated.v1",
+        "profile.audience-card.v1",
+        "proof.testimonial.v1",
+        "interface.videocall.v1",
+        "interface.ab-test.v1",
+        "scheme.description.v1",
+        "interface.pointer.v1"
+      ]
+    },
+    "FEEDBACK": {
+      "candidates": [
+        "interface.confirmation.v1",
+        "interface.toggles.v1",
+        "interface.pointer.v1"
+      ]
+    },
+    "FORMULARIO": {
+      "candidates": [
+        "interface.adsmanager.panel.v1",
+        "interface.form.v1"
+      ]
+    },
+    "FRAMEWORK": {
+      "candidates": [
+        "matrix.quadrants.v1",
+        "hierarchy.layers.v1",
+        "scheme.equation.v1"
+      ]
+    },
+    "FRASE_IMPORTANTE": {
+      "candidates": [
+        "emphasis.icon-phrase.v1",
+        "emphasis.lettering.v1",
+        "emphasis.headline-card.v1"
+      ]
+    },
+    "FUNIL": {
+      "candidates": [
+        "flow.funnel.v1",
+        "flow.bottleneck.v1",
+        "flow.filter.v1"
+      ]
+    },
+    "GRAFICO": {
+      "candidates": [
+        "interface.chart.growth.v1"
+      ]
+    },
+    "HIERARQUIA": {
+      "candidates": [
+        "hierarchy.levels.v1",
+        "hierarchy.layers.v1",
+        "relation.concentric.v1",
+        "interface.ranking.v1"
+      ]
+    },
+    "IDEIA_UNICA": {
+      "candidates": [
+        "emphasis.word.v1",
+        "scheme.description.v1"
+      ]
+    },
+    "INTERFACE": {
+      "candidates": [
+        "interface.chat.audio.v1",
+        "interface.chat.text.v1",
+        "interface.adsmanager.panel.v1",
+        "interface.instagram.profile.v1",
+        "interface.social.post.v1",
+        "interface.notification.v1",
+        "interface.progress.v1",
+        "interface.search.v1",
+        "interface.schedule.v1",
+        "interface.confirmation.v1",
+        "interface.email.v1",
+        "interface.checkout.v1",
+        "interface.player.v1",
+        "interface.videocall.v1",
+        "interface.form.v1",
+        "interface.toggles.v1",
+        "interface.mobile.form.v1",
+        "interface.mobile.chat.v1",
+        "interface.mobile.notification.v1",
+        "interface.mobile.post.v1",
+        "interface.mobile.checkout.v1",
+        "interface.mobile.profile.v1"
+      ]
+    },
+    "INTERSECAO": {
+      "candidates": [
+        "relation.venn.v1"
+      ]
+    },
+    "ITEM_UNICO": {
+      "candidates": [
+        "emphasis.attribute.v1"
+      ]
+    },
+    "JORNADA": {
+      "candidates": [
+        "flow.journey-ab.v1",
+        "flow.gap.v1"
+      ]
+    },
+    "LISTA": {
+      "candidates": [
+        "set.trio.v1",
+        "set.grid.v1",
+        "interface.checklist.v1",
+        "interface.checks.pure.v1",
+        "interface.checks.list.v1",
+        "interface.instagram.highlights.v1",
+        "interface.instagram.feed.v1",
+        "interface.leads.v1",
+        "interface.comments.v1",
+        "interface.ranking.v1",
+        "interface.list.v1",
+        "interface.approval.v1"
+      ]
+    },
+    "LOOP": {
+      "candidates": [
+        "flow.cycle.v1"
+      ]
+    },
+    "MAPA_MENTAL": {
+      "candidates": [
+        "branch.tree.v1"
+      ]
+    },
+    "MATRIZ": {
+      "candidates": [
+        "matrix.quadrants.v1"
+      ]
+    },
+    "META": {
+      "candidates": [
+        "interface.goal.v1"
+      ]
+    },
+    "METAFORA": {
+      "candidates": [
+        "emphasis.lettering.v1"
+      ]
+    },
+    "MOBILE_APP": {
+      "candidates": [
+        "interface.mobile.form.v1",
+        "interface.mobile.chat.v1",
+        "interface.mobile.notification.v1",
+        "interface.mobile.post.v1",
+        "interface.mobile.checkout.v1",
+        "interface.mobile.profile.v1"
+      ]
+    },
+    "NIVEL_DE_CONSCIENCIA": {
+      "candidates": [
+        "scale.intensity.v1"
+      ]
+    },
+    "NOTIFICACAO": {
+      "candidates": [
+        "interface.notification.v1",
+        "interface.email.v1"
+      ]
+    },
+    "NUMERO": {
+      "candidates": [
+        "set.count-grid.v1",
+        "interface.metrics.v1",
+        "interface.goal.v1",
+        "interface.checkout.v1",
+        "interface.countdown.v1",
+        "number.count.v1",
+        "number.money.v1",
+        "number.time.v1",
+        "number.date.v1",
+        "number.percent.v1",
+        "number.hero.v1"
+      ]
+    },
+    "PAGAMENTO": {
+      "candidates": [
+        "interface.checkout.v1",
+        "number.money.v1"
+      ]
+    },
+    "PALAVRA_CHAVE": {
+      "candidates": [
+        "emphasis.word.v1",
+        "emphasis.attribute.v1"
+      ]
+    },
+    "PASSOS": {
+      "candidates": [
+        "process.steps.v1"
+      ]
+    },
+    "PERGUNTA": {
+      "candidates": [
+        "interface.chat.text.v1",
+        "interface.poll.v1",
+        "interface.search.v1"
+      ]
+    },
+    "PIPELINE": {
+      "candidates": [
+        "process.steps.v1",
+        "flow.funnel.v1",
+        "flow.bottleneck.v1"
+      ]
+    },
+    "PLATAFORMA": {
+      "candidates": [
+        "interface.instagram.profile.v1",
+        "interface.player.v1",
+        "interface.videocall.v1",
+        "interface.mobile.form.v1",
+        "interface.mobile.chat.v1",
+        "interface.mobile.notification.v1",
+        "interface.mobile.post.v1",
+        "interface.mobile.checkout.v1",
+        "interface.mobile.profile.v1"
+      ]
+    },
+    "PORCENTAGEM": {
+      "candidates": [
+        "number.percent.v1"
+      ]
+    },
+    "PROBLEMA_E_SOLUCAO": {
+      "candidates": [
+        "flow.gap.v1",
+        "flow.bottleneck.v1",
+        "relation.cause-effect.v1"
+      ]
+    },
+    "PROCESSO": {
+      "candidates": [
+        "process.steps.v1",
+        "flow.cycle.v1",
+        "compare.manual-auto.v1",
+        "interface.checklist.v1",
+        "interface.progress.v1",
+        "interface.player.v1"
+      ]
+    },
+    "PROGRESSAO": {
+      "candidates": [
+        "flow.journey-ab.v1",
+        "hierarchy.levels.v1",
+        "flow.timeline.v1",
+        "scale.intensity.v1",
+        "interface.chart.growth.v1"
+      ]
+    },
+    "PROGRESSO": {
+      "candidates": [
+        "set.count-grid.v1",
+        "interface.progress.v1",
+        "interface.goal.v1"
+      ]
+    },
+    "PROMESSA": {
+      "candidates": [
+        "emphasis.icon-phrase.v1",
+        "emphasis.headline-card.v1"
+      ]
+    },
+    "PROS_E_CONTRAS": {
+      "candidates": [
+        "compare.table.v1",
+        "compare.balance.v1",
+        "interface.approval.v1"
+      ]
+    },
+    "PROVA": {
+      "candidates": [
+        "proof.annotated.v1",
+        "proof.testimonial.v1",
+        "interface.comments.v1"
+      ]
+    },
+    "QUADRANTES": {
+      "candidates": [
+        "matrix.quadrants.v1"
+      ]
+    },
+    "QUALIFICACAO": {
+      "candidates": [
+        "flow.filter.v1"
+      ]
+    },
+    "QUANTIDADE": {
+      "candidates": [
+        "set.count-grid.v1",
+        "flow.funnel.v1",
+        "interface.checks.pure.v1",
+        "interface.instagram.feed.v1",
+        "interface.calendar.v1",
+        "number.count.v1"
+      ]
+    },
+    "QUEDA": {
+      "candidates": [
+        "flow.funnel.v1"
+      ]
+    },
+    "RAMIFICACAO": {
+      "candidates": [
+        "branch.tree.v1"
+      ]
+    },
+    "REDE": {
+      "candidates": [
+        "branch.tree.v1",
+        "relation.concentric.v1"
+      ]
+    },
+    "RELACAO": {
+      "candidates": [
+        "relation.venn.v1",
+        "relation.concentric.v1",
+        "relation.cause-effect.v1"
+      ]
+    },
+    "RESPOSTA": {
+      "candidates": [
+        "interface.chat.text.v1"
+      ]
+    },
+    "SEQUENCIA": {
+      "candidates": [
+        "process.steps.v1",
+        "flow.timeline.v1",
+        "interface.chat.audio.v1"
+      ]
+    },
+    "SOCIAL_MEDIA": {
+      "candidates": [
+        "interface.instagram.profile.v1",
+        "interface.social.post.v1",
+        "interface.instagram.highlights.v1",
+        "interface.instagram.feed.v1",
+        "interface.poll.v1",
+        "interface.comments.v1"
+      ]
+    },
+    "TIMELINE": {
+      "candidates": [
+        "flow.timeline.v1",
+        "interface.calendar.v1",
+        "interface.countdown.v1",
+        "number.time.v1",
+        "number.date.v1"
+      ]
+    },
+    "TRANSFORMACAO": {
+      "candidates": [
+        "flow.journey-ab.v1",
+        "compare.mirror.v1",
+        "flow.gap.v1",
+        "compare.manual-auto.v1"
+      ]
+    },
+    "WHATSAPP": {
+      "candidates": [
+        "interface.chat.audio.v1",
+        "interface.chat.text.v1"
+      ]
+    },
+    "X_TEM_A_B_C": {
+      "candidates": [
+        "set.trio.v1"
+      ]
+    }
+  }
+}

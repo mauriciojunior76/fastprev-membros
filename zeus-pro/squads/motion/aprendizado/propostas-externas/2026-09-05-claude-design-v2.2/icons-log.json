@@ -1,0 +1,40 @@
+{
+  "_doc": "Registro de ícones por vídeo. Um objeto por uso. Consultar antes de escolher (regras em DESIGN-SYSTEM-REELS-APPLE-v2.md §7). IDs de molde = ids do moldes-index.json. 'segundo' obrigatório (inteiro). Repetição no mesmo vídeo só com assinatura:true.",
+  "entries": [
+    {
+      "video": "PauloRuizReels",
+      "segundo": 34,
+      "molde": "trio-atributos",
+      "icone": "crown",
+      "conceito": "experiência",
+      "assinatura": false,
+      "nota": "segundo aproximado; confirmar na timeline"
+    },
+    {
+      "video": "PauloRuizReels",
+      "segundo": 36,
+      "molde": "trio-atributos",
+      "icone": "trophy",
+      "conceito": "resultados",
+      "assinatura": false,
+      "nota": "trophy substituído por award a partir da v2.1"
+    },
+    {
+      "video": "PauloRuizReels",
+      "segundo": 38,
+      "molde": "trio-atributos",
+      "icone": "square-check-big",
+      "conceito": "depoimentos",
+      "assinatura": false
+    },
+    {
+      "video": "PauloRuizReels",
+      "segundo": 44,
+      "molde": "grade-conceitos",
+      "icone": "crown",
+      "conceito": "autoridade",
+      "assinatura": true,
+      "nota": "exceção de assinatura: mesmo ícone em 2 moldes do mesmo vídeo permitido só com assinatura:true"
+    }
+  ]
+}

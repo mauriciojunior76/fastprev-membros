@@ -1,0 +1,311 @@
+id: book-forge
+name: "Book Forge"
+displayName: "BOOK FORGE - Squad de Ebooks Profissionais (Exemplo + Mentorados) v3"
+description: |
+  Squad dedicado 100% a ebooks e PDFs longos profissionais.
+  Refatorado em 02/07/2026 (v3) após auditoria completa. Consolidado de 101 agentes/16 camadas
+  (v2, desenhado para modelo anterior que precisava de granularidade extrema) para 13 papéis
+  fortes otimizados para Sonnet 5. Todo agente antigo preservado em agents/_legacy/ (FULLSAFE,
+  nunca deletado). Ver docs/AUDITORIA-2026-07-02.md para o diagnostico completo.
+
+  Mudanca central da v3: camada ESTRATÉGICA nova e obrigatoria. O squad antigo produzia ebooks
+  tecnicamente excelentes sem nunca perguntar objetivo, tema ou conexão com o funil. Agora todo
+  ebook nasce de um briefing com gate de objetivo e gate de tema bloqueantes (STRATEGY.md), e
+  termina com registro de resultado real (leads, MQL, reuniao, venda), não só custo de token.
+
+  14 papéis (pipeline linear com 4 pausas de aprovacao):
+  0  book-chief (lead, orquestra e loga gates)
+  1  book-strategist (briefing + GATE DE OBJETIVO + GATE DE TEMA + big idea + promessa + persona)
+  2  book-outliner (sumario nos 12 blocos de STRATEGY.md)
+  3  book-writer (capitulos, playbook interno de vozes e frameworks de copy)
+  3  book-cta-funnel (CTA amarrado ao objetivo e ao próximo passo do funil)
+  3  book-tutorial (opcional, só para ebooks-guia técnico)
+  3.5 book-didatico (decide onde o texto vira tabela, fluxo, pirâmide, funil, linha do tempo ou
+      matriz; emite marcadores com orçamento de altura em mm, antes da camada editorial)
+  4  book-editor (clareza, ritmo, humanizacao, voz única)
+  4  book-language-gate (acentuacao + travessao + ortografia + números, bloqueante)
+  4  book-fact-checker (números, citacoes, cases com fonte ou hipotetico)
+  5  book-designer (tema, paleta, tipografia, layout, capa, logo-guard, icones, gráficos, ornamentos)
+  6  book-assembler (HTML final + render PDF)
+  7  book-qa (checklist editorial + checklist visual, última barreira)
+  8  book-learning (estilo, erros, gosto do tenant + registro de resultado real)
+
+  Pausas de aprovacao: 0 briefing estratégico (novo), 1 outline, 2 amostra de tom, 3 PDF final.
+
+  Modos (mantidos):
+  A  (Exemplo): zero perguntas, carrega contexto global
+  B  (Mentorado novo): 3 perguntas de first-use, extract-palette do logo COM aprovacao antes de aplicar
+  B+ (Mentorado recorrente): zero perguntas, aplica padrões aprovados com data+aprovador
+
+version: "3.0.0"
+author: "um mentor de referencia / Synkra AIOS"
+domain: public
+type: squad
+category: ebook-production
+
+# OBRIGATORIO: Core Squad Standard
+# Regra: .claude/rules/standard-squad-team.md
+inherits_from:
+  - squads/_core-team/squad.yaml
+
+core_team_integration:
+  mode: mandatory
+  injection_tier: 0
+  shared_memory: true
+  log_ativacao: true # novo: o chief loga explicitamente quais core team agents rodaram (achado #7 da auditoria)
+
+tags:
+  - ebook
+  - pdf
+  - livro-digital
+  - apostila
+  - low-ticket
+  - lead-magnet
+  - editorial
+  - multi-tenant
+  - auto-learning
+  - exemplo
+  - book-forge
+  - schwartz-copy
+  - core-team-integrated
+  - v3-consolidado
+  - estratégia-de-funil
+
+lead:
+  id: book-chief
+  persona: "Book Chief"
+  role: "Orquestrador: recebe brief, ativa pipeline de 4 pausas, entrega PDF final com registro de resultado"
+  file: agents/book-chief.md
+
+# Core team agentes (injetados automaticamente)
+core_team_agents:
+  - token-economist (Tier 0, gestao tokens)
+  - cost-gatekeeper (Tier 0, bloqueia retrabalho)
+  - accent-verbos (Tier 1, absorvido em book-language-gate)
+  - accent-proparoxitonas (Tier 1, absorvido em book-language-gate)
+  - accent-hiatos (Tier 1, absorvido em book-language-gate)
+  - travessao-hunter (Tier 1, absorvido em book-language-gate)
+  - humanizer (Tier 2, absorvido em book-editor)
+  - ai-detector (Tier 2, absorvido em book-editor, gate threshold 40)
+  - self-correction (Tier 3, absorvido em book-learning)
+  - repeat-preventer (Tier 3, absorvido em book-learning)
+
+agents:
+  - id: book-strategist
+    tier: 1
+    camada: strategy
+    file: agents/book-strategist.md
+    note: "GATE DE OBJETIVO + GATE DE TEMA, bloqueante, PAUSA 0"
+
+  - id: book-outliner
+    tier: 2
+    camada: structure
+    file: agents/book-outliner.md
+    note: "PAUSA 1: outline aprovado"
+
+  - id: book-writer
+    tier: 3
+    camada: content
+    file: agents/book-writer.md
+    note: "Absorve hooks, stories, examples, 8 vozes, 7 copy masters como playbook interno"
+
+  - id: book-cta-funnel
+    tier: 3
+    camada: content
+    file: agents/book-cta-funnel.md
+    note: "CTA amarrado ao objetivo do briefing e ao próximo passo do funil"
+
+  - id: book-tutorial
+    tier: 3
+    camada: tutorial
+    file: agents/book-tutorial.md
+    optional: true
+    note: "Só ativa para ebooks-guia técnico (screenshots, código, passo a passo)"
+
+  - id: book-didatico
+    tier: 3.5
+    camada: content
+    file: agents/book-didatico.md
+    note: "Cérebro didático: decide onde o texto vira esquema e emite marcadores. Roda depois do writer e ANTES do language-gate, para o texto dos esquemas ser revisado. Motor: docs/rules-on-demand/didatica-esquemas-exemplo.md"
+
+  - id: book-editor
+    tier: 4
+    camada: editorial
+    file: agents/book-editor.md
+    note: "Absorve tone-guardian, flow-reviewer, rhythm-doctor, voice-matcher, clichê-killer, naturalness-scorer"
+
+  - id: book-language-gate
+    tier: 4
+    camada: editorial
+    file: agents/book-language-gate.md
+    blocking: true
+    note: "Absorve accent-gate, tracas-gate, spell-checker, spelling-scan, typo-hunter, number-verifier"
+
+  - id: book-fact-checker
+    tier: 4
+    camada: editorial
+    file: agents/book-fact-checker.md
+    note: "Case sem fonte vira hipotetico ou e removido"
+
+  - id: book-designer
+    tier: 5
+    camada: visual
+    file: agents/book-designer.md
+    blocking: true
+    note: "Absorve as 15 agentes das camadas visual-alignment e visual-assets antigas"
+
+  - id: book-assembler
+    tier: 6
+    camada: assembly
+    file: agents/book-assembler.md
+    note: "Absorve html-assembler, css-optimizer, pdf-renderer, render-validator"
+
+  - id: book-qa
+    tier: 7
+    camada: quality
+    file: agents/book-qa.md
+    blocking: true
+    note: "Checklist editorial (novo) + checklist visual (herdado). PAUSA 3: PDF final"
+
+  - id: book-learning
+    tier: 8
+    camada: learning
+    file: agents/book-learning.md
+    note: "Absorve 8 agentes de auto-learning + 3 de economics. Registra resultado real (leads/MQL/reuniao/venda)"
+
+# ============================================================
+# MODOS DE OPERACAO (economia automática, simplificado v3)
+# ============================================================
+execution_modes:
+  micro:
+    weight_range: "0-20"
+    description: "Correcao pontual em ebook existente (acento, palavra, seção curta)"
+    active_agents: [book-language-gate]
+    estimated_tokens: "3k-8k"
+  light:
+    weight_range: "21-40"
+    description: "Ebook curto (<30 páginas) ou seção específica"
+    active_agents: [book-strategist, book-outliner, book-writer, book-didatico, book-editor, book-language-gate, book-designer, book-assembler, book-qa]
+    estimated_tokens: "15k-35k"
+  normal:
+    weight_range: "41-60"
+    description: "Ebook medio (30-80 páginas)"
+    active_agents: all
+    estimated_tokens: "35k-70k"
+  heavy:
+    weight_range: "61-80"
+    description: "Ebook longo (80-180 páginas) com copy estratégica completa"
+    active_agents: all
+    estimated_tokens: "70k-140k"
+  full:
+    weight_range: "81-100"
+    description: "Ebook flagship, lançamento, livro completo"
+    active_agents: all
+    estimated_tokens: "140k-220k"
+
+# ============================================================
+# WORKFLOWS
+# ============================================================
+workflows:
+  create-ebook-exemplo:
+    description: "Modo A: ebook Exemplo com contexto global"
+    trigger: "ebook + dominio D2"
+    core_mode: normal_or_heavy
+
+  create-ebook-mentorado-first-use:
+    description: "Modo B: primeira interacao com mentorado novo"
+    trigger: "ebook + tenant novo (sem _memory/{slug}/brand-profile.md)"
+    special_step: "extract-palette com aprovacao explicita antes de aplicar"
+    core_mode: heavy
+
+  create-ebook-mentorado-recurring:
+    description: "Modo B+: mentorado já conhecido"
+    trigger: "ebook + tenant existente (com _memory completo)"
+    skip_first_use: true
+    core_mode: normal
+
+# ============================================================
+# CROSS-SQUAD
+# ============================================================
+cross_squad:
+  - squad: ICON FORGE
+    via: book-designer
+  - squad: IMAGE FORGE
+    via: book-designer
+  - squad: COLOR LAB
+    via: book-designer
+  - squad: Copy Squad
+    via: book-cta-funnel
+
+# ============================================================
+# CONFIG
+# ============================================================
+config:
+  default_theme: exemplo
+  default_page_format: A4
+  default_page_padding_mm: 18
+  output_dir: "CAMINHO_DA_SUA_PASTA"
+  tenant_memory_dir: "_memory"
+  resultados_dir: "_memory/resultados"
+  render_engine: playwright
+  render_engine_fallback: weasyprint
+  max_pages: 300
+  min_pages: 10
+  language: pt-BR
+
+# ============================================================
+# GATES MARCIAIS
+# ============================================================
+gates:
+  - id: objetivo-gate
+    description: "Objetivo do ebook declarado (1 dos 10 de STRATEGY.md). Novo v3."
+    agent: book-strategist
+    blocking: true
+  - id: tema-gate
+    description: "Tema fora da blacklist de STRATEGY.md. Novo v3."
+    agent: book-strategist
+    blocking: true
+  - id: language-gate
+    description: "Acentuacao PT-BR perfeita + zero travessao + ortografia + números"
+    agent: book-language-gate
+    blocking: true
+  - id: logo-exemplo-gate
+    description: "Logo Exemplo oficial via img src, nunca recriar"
+    agent: book-designer
+    blocking: true
+  - id: cor-coerencia-gate
+    description: "Paleta/contraste WCAG AA, paleta de Modo B aprovada antes de aplicar"
+    agent: book-designer
+    blocking: true
+  - id: qa-editorial-gate
+    description: "Checklist editorial: especificidade, unicidade, CTA alinhado, objetivo atendido"
+    agent: book-qa
+    blocking: true
+  - id: qa-visual-gate
+    description: "Checklist visual: PDF valido, paginacao, contraste, ornamentos"
+    agent: book-qa
+    blocking: true
+  - id: fullsafe-gate
+    description: "FULLSAFE em arquivos existentes"
+    agent: book-chief
+    blocking: true
+
+dependencies:
+  squads:
+    - _core-team # obrigatorio
+
+total_agents: 14
+total_with_core_team: 13 # core team absorvido dentro dos 13 (log_ativacao=true mantem rastreabilidade)
+total_agents_legacy_preservados: 91
+legacy_path: agents/_legacy/
+version_anterior: "2.0.0 (squads/book-forge/_versions/squad.v1.yaml e squad.v2.yaml)"
+motivo_refatoracao: "101 agentes/16 camadas era peso morto de granularidade desenhada para modelo anterior. Sonnet 5 não precisa de 8 vozes e 7 copy masters separados para manter qualidade. Ver docs/AUDITORIA-2026-07-02.md."
+
+# Autoaprendizado (squads-memory-sync, 2026-07-25)
+learning:
+  memory_file: MEMORY.md
+  format: memoria-squad-v1
+  global_log: memory/erros-aprendidos.md
+  squad_tag: book-forge
+  read_before_acting: true
+  max_chars: 8000

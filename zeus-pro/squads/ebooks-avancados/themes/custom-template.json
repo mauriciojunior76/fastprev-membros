@@ -1,0 +1,82 @@
+{
+  "id": "{{TENANT_SLUG}}",
+  "name": "{{TENANT_NAME}}",
+  "owner": "{{TENANT_SLUG}}",
+  "description": "Tema custom gerado automaticamente a partir do logo do mentorado.",
+  "mood": ["{{MOOD_1}}", "{{MOOD_2}}", "{{MOOD_3}}"],
+  "source": {
+    "logo-path": "{{LOGO_PATH}}",
+    "extraction-method": "PIL + K-means (7 cores dominantes)",
+    "extraction-date": "{{ISO_DATE}}",
+    "style-base": "{{STYLE_BASE}}"
+  },
+  "colors": {
+    "bg": "{{COLOR_BG}}",
+    "bg-alt": "{{COLOR_BG_ALT}}",
+    "bg-card": "{{COLOR_BG_CARD}}",
+    "accent-1": "{{COLOR_ACCENT_1}}",
+    "accent-2": "{{COLOR_ACCENT_2}}",
+    "accent-3": "{{COLOR_ACCENT_3}}",
+    "text": "{{COLOR_TEXT}}",
+    "text-muted": "{{COLOR_TEXT_MUTED}}",
+    "text-label": "{{COLOR_ACCENT_2}}",
+    "border": "{{COLOR_BORDER}}",
+    "divider": "{{COLOR_DIVIDER}}"
+  },
+  "fonts": {
+    "title": {
+      "family": "{{FONT_TITLE}}",
+      "weight": "{{FONT_TITLE_WEIGHT}}",
+      "source": "google",
+      "url": "{{FONT_TITLE_URL}}"
+    },
+    "body": {
+      "family": "{{FONT_BODY}}",
+      "weight": "{{FONT_BODY_WEIGHT}}",
+      "source": "google",
+      "url": "{{FONT_BODY_URL}}"
+    },
+    "mono": {
+      "family": "JetBrains Mono",
+      "weight": 400,
+      "source": "google"
+    }
+  },
+  "effects": {
+    "grain": "{{EFFECT_GRAIN}}",
+    "grain-opacity": "{{EFFECT_GRAIN_OPACITY}}",
+    "gradient-titles": "{{EFFECT_GRADIENT_TITLES}}",
+    "corner-lines": "{{EFFECT_CORNER_LINES}}",
+    "footer-diamond": "{{EFFECT_FOOTER_DIAMOND}}",
+    "blur-reveal": "{{EFFECT_BLUR_REVEAL}}",
+    "motion": "cubic-bezier(0.16, 1, 0.3, 1)"
+  },
+  "logo": {
+    "path": "{{LOGO_PATH}}",
+    "width-px": "{{LOGO_WIDTH_PX}}",
+    "position": "{{LOGO_POSITION}}"
+  },
+  "page": {
+    "format": "A4",
+    "width-mm": 210,
+    "height-mm": 297,
+    "padding-mm": 20,
+    "background": "var(--bg)"
+  },
+  "icons": {
+    "style": "{{ICONS_STYLE}}",
+    "stroke-width": "{{ICONS_STROKE}}",
+    "library": "{{ICONS_LIBRARY}}"
+  },
+  "typography-scale": {
+    "h1": "clamp(38px, 6vw, 60px)",
+    "h2": "clamp(28px, 4vw, 42px)",
+    "h3": "clamp(20px, 2.5vw, 28px)",
+    "body": "clamp(15px, 1.4vw, 17px)",
+    "caption": "clamp(11px, 1vw, 13px)"
+  },
+  "cover": {
+    "template": "{{COVER_TEMPLATE}}",
+    "style": "{{COVER_STYLE}}"
+  }
+}

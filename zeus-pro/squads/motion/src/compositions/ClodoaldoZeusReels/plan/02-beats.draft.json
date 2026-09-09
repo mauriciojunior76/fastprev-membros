@@ -1,0 +1,253 @@
+{
+  "composition": "ClodoaldoZeusReels",
+  "fps": 60,
+  "source": "squads/motion/src/compositions/ClodoaldoZeusReels/data/narration.json",
+  "durationSec": 56.03,
+  "proposta": "deterministic-proposal",
+  "video": {
+    "topic": null,
+    "audience": null,
+    "promise": null,
+    "ending": null
+  },
+  "beats": [
+    {
+      "id": "b01",
+      "startFrame": 7,
+      "endFrameExclusive": 489,
+      "words": {
+        "from": 0,
+        "to": 23
+      },
+      "text": "As apresentações que o Zeus faz são bem interessantes. Eu vou palestrar num evento agora em Foz, esse final de semana, e eu pedi",
+      "topic": null,
+      "idea": null,
+      "role": null,
+      "density": null,
+      "structures": [],
+      "anchorWord": {
+        "i": 0,
+        "text": "As",
+        "startFrame": 7
+      },
+      "signals": {
+        "pausaAntesMs": 0,
+        "ppm": 179,
+        "temNumero": false,
+        "plataforma": null,
+        "gatilhos": [
+          "semana",
+          "o zeus faz",
+          "o zeus faz",
+          "semana"
+        ]
+      },
+      "confidence": null
+    },
+    {
+      "id": "b02",
+      "startFrame": 489,
+      "endFrameExclusive": 934,
+      "words": {
+        "from": 24,
+        "to": 36
+      },
+      "text": "para o Zeus construir uma apresentação no padrão visual do estilo do evento.",
+      "topic": null,
+      "idea": null,
+      "role": null,
+      "density": null,
+      "structures": [],
+      "anchorWord": {
+        "i": 24,
+        "text": "para",
+        "startFrame": 489
+      },
+      "signals": {
+        "pausaAntesMs": 0,
+        "ppm": 105,
+        "temNumero": false,
+        "plataforma": null,
+        "gatilhos": []
+      },
+      "confidence": null
+    },
+    {
+      "id": "b03",
+      "startFrame": 945,
+      "endFrameExclusive": 1434,
+      "words": {
+        "from": 37,
+        "to": 57
+      },
+      "text": "E ele foi lá e fez. Ele fez o texto, conforme a aula que eu queria passar, ele fez o prompt",
+      "topic": null,
+      "idea": null,
+      "role": null,
+      "density": null,
+      "structures": [],
+      "anchorWord": {
+        "i": 37,
+        "text": "E",
+        "startFrame": 945
+      },
+      "signals": {
+        "pausaAntesMs": 180,
+        "ppm": 155,
+        "temNumero": false,
+        "plataforma": null,
+        "gatilhos": []
+      },
+      "confidence": null
+    },
+    {
+      "id": "b04",
+      "startFrame": 1434,
+      "endFrameExclusive": 1915,
+      "words": {
+        "from": 58,
+        "to": 84
+      },
+      "text": "da imagem, ele colocou a imagem na apresentação, ele organizou a apresentação, as cores, o estilo, o conceito, do jeito que eu expliquei. Só que olha só",
+      "topic": null,
+      "idea": null,
+      "role": null,
+      "density": null,
+      "structures": [],
+      "anchorWord": {
+        "i": 58,
+        "text": "da",
+        "startFrame": 1434
+      },
+      "signals": {
+        "pausaAntesMs": 0,
+        "ppm": 202,
+        "temNumero": false,
+        "plataforma": null,
+        "gatilhos": [
+          "o que e",
+          "o que e"
+        ]
+      },
+      "confidence": null
+    },
+    {
+      "id": "b05",
+      "startFrame": 1915,
+      "endFrameExclusive": 2253,
+      "words": {
+        "from": 85,
+        "to": 99
+      },
+      "text": "que interessante, eu falei para ele, eu gosto de imagens com alto contraste, com contraluz.",
+      "topic": null,
+      "idea": null,
+      "role": null,
+      "density": null,
+      "structures": [],
+      "anchorWord": {
+        "i": 85,
+        "text": "que",
+        "startFrame": 1915
+      },
+      "signals": {
+        "pausaAntesMs": 0,
+        "ppm": 160,
+        "temNumero": false,
+        "plataforma": null,
+        "gatilhos": []
+      },
+      "confidence": null
+    },
+    {
+      "id": "b06",
+      "startFrame": 2278,
+      "endFrameExclusive": 2763,
+      "words": {
+        "from": 100,
+        "to": 117
+      },
+      "text": "Todas as imagens da apresentação ele fez sozinho do estilo que eu queria que ele fizesse. E era",
+      "topic": null,
+      "idea": null,
+      "role": null,
+      "density": null,
+      "structures": [],
+      "anchorWord": {
+        "i": 100,
+        "text": "Todas",
+        "startFrame": 2278
+      },
+      "signals": {
+        "pausaAntesMs": 420,
+        "ppm": 134,
+        "temNumero": false,
+        "plataforma": null,
+        "gatilhos": [
+          "o que e",
+          "o que e"
+        ]
+      },
+      "confidence": null
+    },
+    {
+      "id": "b07",
+      "startFrame": 2763,
+      "endFrameExclusive": 3217,
+      "words": {
+        "from": 118,
+        "to": 140
+      },
+      "text": "bem o conceito que eu queria passar, não só as minhas cores, mas essas são as cores do evento, da marca do evento.",
+      "topic": null,
+      "idea": null,
+      "role": null,
+      "density": null,
+      "structures": [],
+      "anchorWord": {
+        "i": 118,
+        "text": "bem",
+        "startFrame": 2763
+      },
+      "signals": {
+        "pausaAntesMs": 0,
+        "ppm": 183,
+        "temNumero": false,
+        "plataforma": null,
+        "gatilhos": [
+          "o que e",
+          "o que e"
+        ]
+      },
+      "confidence": null
+    },
+    {
+      "id": "b08",
+      "startFrame": 3233,
+      "endFrameExclusive": 3362,
+      "words": {
+        "from": 141,
+        "to": 146
+      },
+      "text": "Ele fez a apresentação inteira sozinho.",
+      "topic": null,
+      "idea": null,
+      "role": null,
+      "density": null,
+      "structures": [],
+      "anchorWord": {
+        "i": 141,
+        "text": "Ele",
+        "startFrame": 3233
+      },
+      "signals": {
+        "pausaAntesMs": 280,
+        "ppm": 168,
+        "temNumero": false,
+        "plataforma": null,
+        "gatilhos": []
+      },
+      "confidence": null
+    }
+  ]
+}

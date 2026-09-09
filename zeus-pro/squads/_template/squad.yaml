@@ -1,0 +1,73 @@
+# Manifesto de squad do ZEUS PRO.
+# Copie esta pasta inteira para criar um squad novo.
+# Campos marcados como obrigatório não podem faltar.
+
+# ---- IDENTIDADE (obrigatório) ----
+id: nome-do-squad                 # kebab-case, igual ao nome da pasta
+nome: "Nome legível do Squad"
+descrição: >
+  O que este squad faz, para quem, e em que situação ele deve ser acionado.
+  Duas ou três linhas. É isto que o orquestrador lê para decidir se chama.
+versão: "1.0.0"
+status: ativo                     # ativo | rascunho | pausado
+
+# ---- ROTEAMENTO (obrigatório) ----
+# Como o orquestrador decide chamar este squad.
+gatilhos:
+  palavras: [palavra1, palavra2, expressão que o usuário fala]
+  contexto: >
+    Descrição do tipo de necessidade que este squad resolve. O contexto vence
+    a palavra-chave quando os dois discordarem.
+peso_mínimo: 41                   # abaixo disso o ZEUS responde sozinho
+
+# ---- ELENCO ----
+# Regra do ZEUS PRO: poucos agentes e bons. Lead mais 3 a 6.
+# Squad com trinta agentes não é mais inteligente, é mais lento.
+lead: nome-do-lead
+agentes:
+  - nome-do-lead
+  - especialista-a
+  - especialista-b
+  - revisor
+
+# ---- O QUE ELE PRECISA LER ANTES DE AGIR ----
+# Fontes de verdade. Sem isso o squad inventa.
+leitura_obrigatória:
+  - memory/PERFIL.md
+  - templates/DESIGN-SYSTEM-CENTRAL.md    # só nos squads visuais
+  - squads/nome-do-squad/MEMORY.md
+
+# ---- O QUE ELE ENTREGA ----
+entregáveis:
+  - tipo de artefato 1
+  - tipo de artefato 2
+
+# ---- LIMITES (obrigatório) ----
+# O que este squad NUNCA faz sozinho, mesmo com autonomia alta.
+exige_confirmação:
+  - publicar qualquer coisa
+  - enviar mensagem a terceiro
+  - gastar dinheiro
+nunca_faz:
+  - inventar dado sobre o usuário ou o negócio dele
+  - prometer resultado que não pode ser sustentado
+
+# ---- QUALIDADE ----
+qualidade:
+  checklist: squads/nome-do-squad/CHECKLIST.md
+  nota_mínima: 60                 # 0 a 100
+  máximo_de_refações: 2
+
+# ---- APRENDIZADO (obrigatório) ----
+aprendizado:
+  arquivo: squads/nome-do-squad/MEMORY.md
+  teto_caracteres: 8000           # porque é injetado no contexto
+  ler_antes_de_agir: true
+
+# ---- PARCERIAS ----
+# Quando falta capacidade, quem este squad chama.
+parceiros:
+  - squad: branding
+    quando: precisa de decisão visual
+  - squad: pesquisa
+    quando: precisa de dado externo antes de afirmar

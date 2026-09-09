@@ -1,0 +1,1093 @@
+{
+  "composition": "PorOndeComecarReels",
+  "fps": 60,
+  "dsVersion": "3.3",
+  "preset": "dois-videos-palco",
+  "geradoEm": "2026-09-06",
+  "origem": "plan/02-beats.json + plan/04-ds-retrieval.json",
+  "ritmoDeclarado": "faixa RAPIDA (17 afirmacoes por minuto): 15 cenas, media 213 quadros. Todo molde escolhido tem quadroCompleto menor que a duracao da cena menos 60.",
+  "fecho": {
+    "nota": "selo Zeus entra depois do fim da fala (quadro 3204), conforme a regra de duracao total: inicio = max(selo mais 0,27s ; fim da fala mais 0,4s). Nao e cena do plano, e vinheta da composition."
+  },
+  "scenes": [
+    {
+      "id": "s01",
+      "beatId": "b01",
+      "key": "gancho-por-onde-comecar",
+      "structure": "PERGUNTA",
+      "candidates": [
+        {
+          "id": "emphasis.icon-phrase.v1",
+          "score": 8,
+          "confidence": "media",
+          "why": "frase com icone, mas o gancho nao precisa de icone"
+        },
+        {
+          "id": "emphasis.lettering.v1",
+          "score": 3,
+          "confidence": "alta",
+          "why": "a pergunta inteira e o gancho, tipografia em tela cheia"
+        }
+      ],
+      "chosen": {
+        "id": "emphasis.lettering.v1",
+        "version": "3.3",
+        "mode": "motion",
+        "rationale": "o gancho e a pergunta literal da Kamila; lettering em tela cheia crava PORONDE COMECAR A VENDER MENTORIA antes de qualquer explicacao. Teto de 1 lettering por video respeitado (unico do peca)."
+      },
+      "sceneFamily": "FULL_SCREEN_TYPOGRAPHY",
+      "density": 4,
+      "speaker": "2up",
+      "captionPolicy": "none",
+      "dataMode": "real",
+      "componente": "GanchoPorOndeComecar",
+      "transcriptText": "Como começar? Por onde começar? Por onde começar?",
+      "bindings": {
+        "linhas": [
+          "POR ONDE COMEÇAR",
+          "A VENDER MENTORIA?"
+        ]
+      },
+      "anchor": {
+        "wordIndex": 2,
+        "text": "Por",
+        "frame": 107,
+        "lead": 6
+      },
+      "startFrame": 0,
+      "endFrameExclusive": 349,
+      "timing": {
+        "in": 20,
+        "build": 24,
+        "actFrame": 101,
+        "hold": 90,
+        "out": 18
+      },
+      "focusEvents": [
+        {
+          "startFrame": 113,
+          "durationFrames": 20,
+          "fromElementId": null,
+          "toElementId": "linha2"
+        }
+      ],
+      "sfxSchedule": [
+        {
+          "frame": 0,
+          "gesto": "bloco-cascata",
+          "weight": 4
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "beatId": "b02",
+      "key": "passo1-pesquisa",
+      "structure": "PASSOS",
+      "candidates": [
+        {
+          "id": "process.steps.v1",
+          "score": 4,
+          "confidence": "alta",
+          "why": "a fala nomeia o primeiro de uma ordem de passos"
+        },
+        {
+          "id": "emphasis.word.v1",
+          "score": 4,
+          "confidence": "media",
+          "why": "poderia cravar so a palavra pesquisa, mas perde a ordem"
+        }
+      ],
+      "chosen": {
+        "id": "process.steps.v1",
+        "version": "3.3",
+        "mode": "motion",
+        "rationale": "o video inteiro e uma ordem de 5 passos; a trilha nasce aqui com o passo 1 aceso e volta acendendo os proximos. Contêiner invariante entre s02, s05, s07 e s09. Legenda cala: os rotulos do palco SAO as palavras faladas, e o design system proibe a mesma palavra na tela duas vezes."
+      },
+      "sceneFamily": "STAGE_DIAGRAM",
+      "density": 2,
+      "speaker": "1up",
+      "captionPolicy": "none",
+      "dataMode": "real",
+      "componente": "TrilhaPassos",
+      "transcriptText": "Você começa fazendo uma pesquisa de mercado para vender mentoria.",
+      "bindings": {
+        "passos": [
+          "Pesquisa de mercado",
+          "ICP",
+          "Promessa",
+          "Copy",
+          "Construção"
+        ],
+        "aceso": 1
+      },
+      "anchor": {
+        "wordIndex": 12,
+        "text": "pesquisa",
+        "frame": 436,
+        "lead": 6
+      },
+      "startFrame": 349,
+      "endFrameExclusive": 606,
+      "timing": {
+        "in": 18,
+        "build": 20,
+        "actFrame": 430,
+        "hold": 120,
+        "out": 16
+      },
+      "focusEvents": [
+        {
+          "startFrame": 427,
+          "durationFrames": 20,
+          "fromElementId": null,
+          "toElementId": "passo1"
+        }
+      ],
+      "sfxSchedule": [
+        {
+          "frame": 101,
+          "gesto": "anel-migra",
+          "weight": 4
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "beatId": "b03",
+      "key": "trio-o-que-a-pesquisa-entrega",
+      "structure": "X_TEM_A_B_C",
+      "candidates": [
+        {
+          "id": "profile.audience-card.v1",
+          "score": 10,
+          "confidence": "media",
+          "why": "ficha de publico, mas o status e derivado do painel"
+        },
+        {
+          "id": "set.trio.v1",
+          "score": 8,
+          "confidence": "alta",
+          "why": "tres respostas irmas, sem ordem entre elas"
+        }
+      ],
+      "chosen": {
+        "id": "set.trio.v1",
+        "version": "3.3",
+        "mode": "motion",
+        "rationale": "a pesquisa entrega exatamente tres respostas; trio com foco migrando item a item acompanha a fala. Cena de 354 quadros comporta o quadroCompleto 192 mais o hold de 60. Legenda cala: os rotulos do palco SAO as palavras faladas, e o design system proibe a mesma palavra na tela duas vezes."
+      },
+      "sceneFamily": "STAGE_SET",
+      "density": 3,
+      "speaker": "none",
+      "captionPolicy": "none",
+      "dataMode": "real",
+      "componente": "TrioPesquisa",
+      "transcriptText": "Você vai saber quem é o público que vai comprar, o quanto essas pessoas podem pagar, qual produto elas querem.",
+      "bindings": {
+        "itens": [
+          "Quem compra",
+          "Quanto pode pagar",
+          "Qual produto quer"
+        ]
+      },
+      "anchor": {
+        "wordIndex": 21,
+        "text": "quem",
+        "frame": 647,
+        "lead": 6
+      },
+      "startFrame": 606,
+      "endFrameExclusive": 962,
+      "timing": {
+        "in": 18,
+        "build": 192,
+        "actFrame": 641,
+        "hold": 84,
+        "out": 16
+      },
+      "focusEvents": [
+        {
+          "startFrame": 640,
+          "durationFrames": 20,
+          "fromElementId": null,
+          "toElementId": "item1"
+        },
+        {
+          "startFrame": 799,
+          "durationFrames": 20,
+          "fromElementId": "item1",
+          "toElementId": "item2"
+        },
+        {
+          "startFrame": 886,
+          "durationFrames": 20,
+          "fromElementId": "item2",
+          "toElementId": "item3"
+        }
+      ],
+      "sfxSchedule": [
+        {
+          "frame": 102,
+          "gesto": "anel-migra",
+          "weight": 4
+        }
+      ]
+    },
+    {
+      "id": "s04",
+      "beatId": "b04",
+      "key": "respiro-passagem",
+      "structure": null,
+      "candidates": [
+        {
+          "id": "process.steps.v1",
+          "score": 20,
+          "confidence": "baixa",
+          "why": "o roteador pegou a palavra depois, mas o trecho nao afirma nada novo"
+        }
+      ],
+      "chosen": {
+        "id": null,
+        "version": "3.3",
+        "mode": "none",
+        "rationale": "retomada sem afirmacao nova. Depois de um trio de densidade 3, a regra de ritmo pede queda: locutor e legenda, nada no palco."
+      },
+      "sceneFamily": "SPEAKER_ONLY",
+      "density": 0,
+      "speaker": "2up",
+      "captionPolicy": "keep",
+      "dataMode": "real",
+      "componente": null,
+      "transcriptText": "Aí depois de fazer a pesquisa de mercado, você vai fazer",
+      "bindings": {},
+      "anchor": {
+        "wordIndex": 38,
+        "text": "Aí",
+        "frame": 962,
+        "lead": 0
+      },
+      "startFrame": 962,
+      "endFrameExclusive": 1096,
+      "timing": {
+        "in": 0,
+        "build": 0,
+        "actFrame": 956,
+        "hold": 134,
+        "out": 0
+      },
+      "focusEvents": [],
+      "sfxSchedule": []
+    },
+    {
+      "id": "s05",
+      "beatId": "b05",
+      "key": "passo2-icp",
+      "structure": "PALAVRA_CHAVE",
+      "candidates": [
+        {
+          "id": "emphasis.word.v1",
+          "score": 4,
+          "confidence": "alta",
+          "why": "a sigla ICP e a palavra cravada"
+        },
+        {
+          "id": "process.steps.v1",
+          "score": 2,
+          "confidence": "alta",
+          "why": "a trilha ja existe e avanca para o passo 2"
+        }
+      ],
+      "chosen": {
+        "id": "emphasis.word.v1",
+        "version": "3.3",
+        "mode": "motion",
+        "rationale": "cena de 134 quadros (2,2s) nao comporta a trilha de passos, que pede 4s. A sigla ICP e a palavra cravada: entra sozinha, com o passo dito na legenda. Legenda calada: a palavra do palco e a propria palavra falada, e o revisor visual pegou a duplicata na tela."
+      },
+      "sceneFamily": "STAGE_EMPHASIS",
+      "density": 2,
+      "speaker": "1up",
+      "captionPolicy": "none",
+      "dataMode": "real",
+      "componente": "PalavraICP",
+      "transcriptText": "a parte de ICP,",
+      "bindings": {
+        "palavra": "ICP"
+      },
+      "anchor": {
+        "wordIndex": 52,
+        "text": "ICP,",
+        "frame": 1189,
+        "lead": 6
+      },
+      "startFrame": 1096,
+      "endFrameExclusive": 1229,
+      "timing": {
+        "in": 14,
+        "build": 24,
+        "actFrame": 1183,
+        "hold": 40,
+        "out": 14
+      },
+      "focusEvents": [
+        {
+          "startFrame": 1184,
+          "durationFrames": 18,
+          "fromElementId": null,
+          "toElementId": "palavra"
+        }
+      ],
+      "sfxSchedule": [
+        {
+          "frame": 1184,
+          "gesto": "bloco-cascata",
+          "weight": 4
+        }
+      ]
+    },
+    {
+      "id": "s06",
+      "beatId": "b06",
+      "key": "icp-e-o-mapa",
+      "structure": "DEFINICAO",
+      "candidates": [
+        {
+          "id": "interface.instagram.profile.v1",
+          "score": 6,
+          "confidence": "baixa",
+          "why": "perfil aqui e perfil de cliente, nao perfil de rede social"
+        },
+        {
+          "id": "emphasis.icon-phrase.v1",
+          "score": 4,
+          "confidence": "alta",
+          "why": "definicao curta com um icone que carrega o sentido"
+        }
+      ],
+      "chosen": {
+        "id": "emphasis.icon-phrase.v1",
+        "version": "3.3",
+        "mode": "motion",
+        "rationale": "ele define ICP em uma frase e crava a metafora do mapa. Icone de mapa mais a frase, sem inventar interface de rede social (armadilha do roteador na palavra perfil). Legenda calada: a frase do palco ja e a fala do trecho."
+      },
+      "sceneFamily": "STAGE_EMPHASIS",
+      "density": 3,
+      "speaker": "none",
+      "captionPolicy": "none",
+      "dataMode": "real",
+      "componente": "MapaDeQuemCompra",
+      "transcriptText": "que é um perfil do cliente ideal, é um mapa de quem vai comprar de você.",
+      "bindings": {
+        "icone": "mapa",
+        "frase": "O mapa de quem vai comprar de você"
+      },
+      "anchor": {
+        "wordIndex": 62,
+        "text": "mapa",
+        "frame": 1349,
+        "lead": 6
+      },
+      "startFrame": 1229,
+      "endFrameExclusive": 1452,
+      "timing": {
+        "in": 18,
+        "build": 28,
+        "actFrame": 1343,
+        "hold": 90,
+        "out": 16
+      },
+      "focusEvents": [
+        {
+          "startFrame": 1343,
+          "durationFrames": 20,
+          "fromElementId": null,
+          "toElementId": "frase"
+        }
+      ],
+      "sfxSchedule": [
+        {
+          "frame": 1229,
+          "gesto": "bloco-cascata",
+          "weight": 4
+        }
+      ]
+    },
+    {
+      "id": "s07",
+      "beatId": "b07",
+      "key": "passo3-promessa",
+      "structure": "PROMESSA",
+      "candidates": [
+        {
+          "id": "emphasis.headline-card.v1",
+          "score": 9,
+          "confidence": "media",
+          "why": "cartao de promessa, mas repetiria a familia de enfase de s06"
+        },
+        {
+          "id": "process.steps.v1",
+          "score": 8,
+          "confidence": "alta",
+          "why": "terceiro passo da mesma trilha"
+        }
+      ],
+      "chosen": {
+        "id": "emphasis.pill-phrase.v1",
+        "version": "3.3",
+        "mode": "motion",
+        "rationale": "cena de 140 quadros (2,3s) nao comporta a trilha de passos (pede 4s). A promessa publica cabe numa pilula curta, montada em 20 quadros. Legenda calada: a frase do palco ja e a fala do trecho."
+      },
+      "sceneFamily": "STAGE_EMPHASIS",
+      "density": 2,
+      "speaker": "1up",
+      "captionPolicy": "none",
+      "dataMode": "real",
+      "componente": "PromessaPublica",
+      "transcriptText": "Depois você vai ter que fazer uma promessa pública para",
+      "bindings": {
+        "frase": "Promessa pública"
+      },
+      "anchor": {
+        "wordIndex": 76,
+        "text": "promessa",
+        "frame": 1547,
+        "lead": 6
+      },
+      "startFrame": 1452,
+      "endFrameExclusive": 1639,
+      "timing": {
+        "in": 14,
+        "build": 20,
+        "actFrame": 1541,
+        "hold": 44,
+        "out": 14
+      },
+      "focusEvents": [
+        {
+          "startFrame": 1518,
+          "durationFrames": 18,
+          "fromElementId": null,
+          "toElementId": "frase"
+        }
+      ],
+      "sfxSchedule": []
+    },
+    {
+      "id": "s08",
+      "beatId": "b08",
+      "key": "promessa-atrai-quem-tem-o-problema",
+      "structure": "RELACAO",
+      "candidates": [
+        {
+          "id": "relation.venn.v1",
+          "score": 4,
+          "confidence": "media",
+          "why": "intersecao, mas aqui nao ha dois conjuntos que se cruzam"
+        },
+        {
+          "id": "relation.cause-effect.v1",
+          "score": 4,
+          "confidence": "alta",
+          "why": "a promessa causa a atracao de quem tem o problema"
+        }
+      ],
+      "chosen": {
+        "id": "relation.cause-effect.v1",
+        "version": "3.3",
+        "mode": "motion",
+        "rationale": "mecanismo declarado: promessa publica de um lado, quem tem o problema do outro, seta chegando. quadroCompleto 38 cabe folgado nos 234 quadros da cena."
+      },
+      "sceneFamily": "STAGE_DIAGRAM",
+      "density": 3,
+      "speaker": "none",
+      "captionPolicy": "keep",
+      "dataMode": "real",
+      "componente": "PromessaAtrai",
+      "transcriptText": "atrair as pessoas que tem o problema que você resolve.",
+      "bindings": {
+        "causa": "Promessa pública",
+        "efeito": "Quem tem o problema que você resolve"
+      },
+      "anchor": {
+        "wordIndex": 79,
+        "text": "atrair",
+        "frame": 1639,
+        "lead": 6
+      },
+      "startFrame": 1639,
+      "endFrameExclusive": 1868,
+      "timing": {
+        "in": 18,
+        "build": 38,
+        "actFrame": 1633,
+        "hold": 100,
+        "out": 16
+      },
+      "focusEvents": [
+        {
+          "startFrame": 1657,
+          "durationFrames": 20,
+          "fromElementId": "causa",
+          "toElementId": "efeito"
+        }
+      ],
+      "sfxSchedule": [
+        {
+          "frame": 1657,
+          "gesto": "chevron-chega",
+          "weight": 4
+        }
+      ]
+    },
+    {
+      "id": "s09",
+      "beatId": "b09",
+      "key": "passo4-copy",
+      "structure": "PALAVRA_CHAVE",
+      "candidates": [
+        {
+          "id": "process.steps.v1",
+          "score": 10,
+          "confidence": "alta",
+          "why": "quarto passo da mesma trilha"
+        },
+        {
+          "id": "emphasis.word.v1",
+          "score": 4,
+          "confidence": "media",
+          "why": "cravaria COPY, mas perde a ordem"
+        }
+      ],
+      "chosen": {
+        "id": "process.steps.v1",
+        "version": "3.3",
+        "mode": "motion",
+        "rationale": "trilha avanca para o passo 4. Quarta e ultima aparicao do mesmo contêiner antes da construcao. Mesmo contêiner da s02 com o anel no passo 4 (instancia propria para nao colidir de nome no codigo). Legenda cala: os rotulos do palco SAO as palavras faladas, e o design system proibe a mesma palavra na tela duas vezes."
+      },
+      "sceneFamily": "STAGE_DIAGRAM",
+      "density": 2,
+      "speaker": "1up",
+      "captionPolicy": "none",
+      "dataMode": "real",
+      "componente": "TrilhaPassosCopy",
+      "transcriptText": "Depois você vai fazer a parte de copy, que é copywriting, que é todos os textos.",
+      "bindings": {
+        "passos": [
+          "Pesquisa de mercado",
+          "ICP",
+          "Promessa",
+          "Copy",
+          "Construção"
+        ],
+        "aceso": 4
+      },
+      "anchor": {
+        "wordIndex": 96,
+        "text": "copy,",
+        "frame": 1966,
+        "lead": 6
+      },
+      "startFrame": 1868,
+      "endFrameExclusive": 2126,
+      "timing": {
+        "in": 16,
+        "build": 20,
+        "actFrame": 1960,
+        "hold": 130,
+        "out": 16
+      },
+      "focusEvents": [
+        {
+          "startFrame": 1978,
+          "durationFrames": 20,
+          "fromElementId": "passo3",
+          "toElementId": "passo4"
+        }
+      ],
+      "sfxSchedule": [
+        {
+          "frame": 1978,
+          "gesto": "anel-migra",
+          "weight": 4
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "beatId": "b10",
+      "key": "onde-a-copy-vive",
+      "structure": "X_TEM_A_B_C",
+      "candidates": [
+        {
+          "id": "set.trio.v1",
+          "score": 4,
+          "confidence": "media",
+          "why": "sao tres itens, mas quadroCompleto 192 nao cabe em 228 quadros com hold"
+        },
+        {
+          "id": "set.grid.v1",
+          "score": 3,
+          "confidence": "alta",
+          "why": "mesmos tres itens, montagem em 24 quadros"
+        }
+      ],
+      "chosen": {
+        "id": "set.grid.v1",
+        "version": "3.3",
+        "mode": "motion",
+        "rationale": "trio foi reprovado pela regra dura do ritmo rapido: 192 mais 60 nao cabe em 228 quadros. Grade de tres cartoes com icone (pagina, anuncio, bot) monta em 24 e sobra hold. Legenda cala: os rotulos do palco SAO as palavras faladas, e o design system proibe a mesma palavra na tela duas vezes."
+      },
+      "sceneFamily": "STAGE_SET",
+      "density": 3,
+      "speaker": "none",
+      "captionPolicy": "none",
+      "dataMode": "real",
+      "componente": "OndeACopyVive",
+      "transcriptText": "Textos da página, textos do anúncio, textos do bot de captação.",
+      "bindings": {
+        "itens": [
+          "Página",
+          "Anúncio",
+          "Bot de captação"
+        ]
+      },
+      "anchor": {
+        "wordIndex": 107,
+        "text": "página,",
+        "frame": 2164,
+        "lead": 6
+      },
+      "startFrame": 2126,
+      "endFrameExclusive": 2358,
+      "timing": {
+        "in": 16,
+        "build": 24,
+        "actFrame": 2158,
+        "hold": 110,
+        "out": 16
+      },
+      "focusEvents": [
+        {
+          "startFrame": 2156,
+          "durationFrames": 18,
+          "fromElementId": null,
+          "toElementId": "item1"
+        },
+        {
+          "startFrame": 2218,
+          "durationFrames": 18,
+          "fromElementId": "item1",
+          "toElementId": "item2"
+        },
+        {
+          "startFrame": 2287,
+          "durationFrames": 18,
+          "fromElementId": "item2",
+          "toElementId": "item3"
+        }
+      ],
+      "sfxSchedule": [
+        {
+          "frame": 2126,
+          "gesto": "bloco-cascata",
+          "weight": 4
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "beatId": "b11",
+      "key": "so-agora-se-constroi",
+      "structure": "FRASE_IMPORTANTE",
+      "candidates": [
+        {
+          "id": "emphasis.icon-phrase.v1",
+          "score": 4,
+          "confidence": "media",
+          "why": "frase com icone, mas o icone nao acrescenta nada aqui"
+        },
+        {
+          "id": "emphasis.word.v1",
+          "score": 3,
+          "confidence": "alta",
+          "why": "a virada cabe em duas palavras cravadas"
+        }
+      ],
+      "chosen": {
+        "id": "emphasis.word.v1",
+        "version": "3.3",
+        "mode": "motion",
+        "rationale": "AI SIM e a virada do video: so depois dos quatro passos e que se constroi. Palavra cravada, 125 quadros, montagem em 24. Legenda calada: a palavra do palco e a propria palavra falada, e o revisor visual pegou a duplicata na tela."
+      },
+      "sceneFamily": "STAGE_EMPHASIS",
+      "density": 2,
+      "speaker": "1up",
+      "captionPolicy": "none",
+      "dataMode": "real",
+      "componente": "AiSim",
+      "transcriptText": "Aí sim você vai construir páginas,",
+      "bindings": {
+        "palavra": "AÍ SIM"
+      },
+      "anchor": {
+        "wordIndex": 117,
+        "text": "sim",
+        "frame": 2375,
+        "lead": 6
+      },
+      "startFrame": 2358,
+      "endFrameExclusive": 2480,
+      "timing": {
+        "in": 14,
+        "build": 24,
+        "actFrame": 2369,
+        "hold": 60,
+        "out": 14
+      },
+      "focusEvents": [
+        {
+          "startFrame": 2372,
+          "durationFrames": 18,
+          "fromElementId": null,
+          "toElementId": "palavra"
+        }
+      ],
+      "sfxSchedule": [
+        {
+          "frame": 2358,
+          "gesto": "bloco-cascata",
+          "weight": 4
+        }
+      ]
+    },
+    {
+      "id": "s12",
+      "beatId": "b12",
+      "key": "o-que-se-constroi",
+      "structure": "LISTA",
+      "candidates": [
+        {
+          "id": "set.grid.v1",
+          "score": 7,
+          "confidence": "alta",
+          "why": "cinco itens sem ordem entre si"
+        },
+        {
+          "id": "set.trio.v1",
+          "score": 2,
+          "confidence": "baixa",
+          "why": "sao cinco, nao tres"
+        }
+      ],
+      "chosen": {
+        "id": "set.grid.v1",
+        "version": "3.3",
+        "mode": "motion",
+        "rationale": "cinco entregas de construcao: paginas, trafego, automacoes, integracoes e CRM. Grade de 5 e o teto do orcamento por cena, com foco migrando na cadencia da fala. Legenda cala: os rotulos do palco SAO as palavras faladas, e o design system proibe a mesma palavra na tela duas vezes."
+      },
+      "sceneFamily": "STAGE_SET",
+      "density": 3,
+      "speaker": "none",
+      "captionPolicy": "none",
+      "dataMode": "real",
+      "componente": "OQueSeConstroi",
+      "transcriptText": "campanhas de tráfego, automações, integrações CRM.",
+      "bindings": {
+        "itens": [
+          "Páginas",
+          "Tráfego",
+          "Automações",
+          "Integrações",
+          "CRM"
+        ]
+      },
+      "anchor": {
+        "wordIndex": 122,
+        "text": "campanhas",
+        "frame": 2480,
+        "lead": 6
+      },
+      "startFrame": 2480,
+      "endFrameExclusive": 2790,
+      "timing": {
+        "in": 16,
+        "build": 24,
+        "actFrame": 2474,
+        "hold": 150,
+        "out": 16
+      },
+      "focusEvents": [
+        {
+          "startFrame": 2474,
+          "durationFrames": 18,
+          "fromElementId": null,
+          "toElementId": "item2"
+        },
+        {
+          "startFrame": 2574,
+          "durationFrames": 18,
+          "fromElementId": "item2",
+          "toElementId": "item3"
+        },
+        {
+          "startFrame": 2679,
+          "durationFrames": 18,
+          "fromElementId": "item3",
+          "toElementId": "item4"
+        },
+        {
+          "startFrame": 2729,
+          "durationFrames": 18,
+          "fromElementId": "item4",
+          "toElementId": "item5"
+        }
+      ],
+      "sfxSchedule": [
+        {
+          "frame": 2480,
+          "gesto": "bloco-cascata",
+          "weight": 4
+        }
+      ]
+    },
+    {
+      "id": "s13",
+      "beatId": "b13",
+      "key": "seis-meses-sozinha",
+      "structure": "NUMERO",
+      "candidates": [
+        {
+          "id": "interface.approval.v1",
+          "score": 6,
+          "confidence": "baixa",
+          "why": "nao ha aprovacao nenhuma na fala"
+        },
+        {
+          "id": "number.time.v1",
+          "score": 4,
+          "confidence": "alta",
+          "why": "a fala crava um tempo: seis meses"
+        }
+      ],
+      "chosen": {
+        "id": "number.time.v1",
+        "version": "3.3",
+        "mode": "motion",
+        "rationale": "o custo de fazer sozinha e um numero de tempo. Ele entra sozinho aqui para o espelho do fecho ter um lado ja plantado. Legenda calada: a palavra do palco e a propria palavra falada, e o revisor visual pegou a duplicata na tela."
+      },
+      "sceneFamily": "STAGE_NUMBER",
+      "density": 3,
+      "speaker": "1up",
+      "captionPolicy": "none",
+      "dataMode": "real",
+      "componente": "SeisMeses",
+      "transcriptText": "Você pode fazer sozinha e levar seis meses fazendo,",
+      "bindings": {
+        "valor": "6",
+        "unidade": "meses",
+        "rotulo": "sozinha"
+      },
+      "anchor": {
+        "wordIndex": 134,
+        "text": "seis",
+        "frame": 2945,
+        "lead": 6
+      },
+      "startFrame": 2790,
+      "endFrameExclusive": 3025,
+      "timing": {
+        "in": 16,
+        "build": 6,
+        "actFrame": 2939,
+        "hold": 60,
+        "out": 14
+      },
+      "focusEvents": [
+        {
+          "startFrame": 2938,
+          "durationFrames": 18,
+          "fromElementId": null,
+          "toElementId": "valor"
+        }
+      ],
+      "sfxSchedule": [
+        {
+          "frame": 2938,
+          "gesto": "numero-assenta",
+          "weight": 3
+        }
+      ]
+    },
+    {
+      "id": "s14",
+      "beatId": "b14",
+      "key": "ou-contratar-a-equipe",
+      "structure": "FRASE_IMPORTANTE",
+      "candidates": [
+        {
+          "id": "compare.balance.v1",
+          "score": 4,
+          "confidence": "media",
+          "why": "dois pesos, mas o segundo lado so chega no fecho"
+        },
+        {
+          "id": "emphasis.pill-phrase.v1",
+          "score": 2,
+          "confidence": "alta",
+          "why": "a alternativa cabe numa frase curta em pilula"
+        }
+      ],
+      "chosen": {
+        "id": "emphasis.pill-phrase.v1",
+        "version": "3.3",
+        "mode": "motion",
+        "rationale": "queda de densidade obrigatoria antes do fecho de nivel 4. Pilula curta com a alternativa, sem som (molde sem gesto declarado, silencio legitimo). Legenda calada: a palavra do palco e a propria palavra falada, e o revisor visual pegou a duplicata na tela."
+      },
+      "sceneFamily": "STAGE_EMPHASIS",
+      "density": 2,
+      "speaker": "1up",
+      "captionPolicy": "none",
+      "dataMode": "real",
+      "componente": "ContratarEquipe",
+      "transcriptText": "ou você pode contratar a minha equipe e",
+      "bindings": {
+        "frase": "ou contratar a minha equipe"
+      },
+      "anchor": {
+        "wordIndex": 140,
+        "text": "contratar",
+        "frame": 3071,
+        "lead": 6
+      },
+      "startFrame": 3025,
+      "endFrameExclusive": 3176,
+      "timing": {
+        "in": 14,
+        "build": 20,
+        "actFrame": 3065,
+        "hold": 80,
+        "out": 14
+      },
+      "focusEvents": [
+        {
+          "startFrame": 3077,
+          "durationFrames": 18,
+          "fromElementId": null,
+          "toElementId": "frase"
+        }
+      ],
+      "sfxSchedule": []
+    },
+    {
+      "id": "s15",
+      "beatId": "b15",
+      "key": "seis-meses-contra-21-dias",
+      "structure": "A_VS_B",
+      "candidates": [
+        {
+          "id": "compare.right-wrong.v1",
+          "score": 4,
+          "confidence": "baixa",
+          "why": "nao ha certo e errado, ha dois caminhos"
+        },
+        {
+          "id": "compare.mirror.v1",
+          "score": 3,
+          "confidence": "alta",
+          "why": "mesmo eixo, dois estados: sozinha e com a equipe"
+        }
+      ],
+      "chosen": {
+        "id": "compare.mirror.v1",
+        "version": "3.3",
+        "mode": "motion",
+        "rationale": "o fecho e o espelho do mesmo eixo, tempo: 6 meses sozinha contra 21 dias com a equipe. O lado esquerdo ja foi plantado em s13, o direito assenta na palavra 21. Legenda calada: a frase do palco ja e a fala do trecho."
+      },
+      "sceneFamily": "STAGE_COMPARE",
+      "density": 4,
+      "speaker": "2up",
+      "captionPolicy": "none",
+      "dataMode": "real",
+      "componente": "SeisMesesVs21Dias",
+      "transcriptText": "receber essa estrutura. Pronto em 21 dias.",
+      "bindings": {
+        "esquerda": {
+          "rotulo": "Sozinha",
+          "valor": "6 meses"
+        },
+        "direita": {
+          "rotulo": "Com a equipe",
+          "valor": "21 dias"
+        }
+      },
+      "anchor": {
+        "wordIndex": 150,
+        "text": "21",
+        "frame": 3269,
+        "lead": 6
+      },
+      "startFrame": 3176,
+      "endFrameExclusive": 3346,
+      "timing": {
+        "in": 16,
+        "build": 24,
+        "actFrame": 3263,
+        "hold": 68,
+        "out": 0
+      },
+      "focusEvents": [
+        {
+          "startFrame": 3266,
+          "durationFrames": 18,
+          "fromElementId": "esquerda",
+          "toElementId": "direita"
+        }
+      ],
+      "sfxSchedule": [
+        {
+          "frame": 3266,
+          "gesto": "anel-migra",
+          "weight": 4
+        }
+      ]
+    },
+    {
+      "id": "s16",
+      "beatId": null,
+      "key": "zeus-seal",
+      "structure": null,
+      "candidates": [],
+      "chosen": {
+        "id": null,
+        "version": "3.3",
+        "mode": "seal",
+        "rationale": "vinheta de fecho da marca. Entra depois do fim da fala (quadro 3204), fora da cobertura de beats."
+      },
+      "sceneFamily": "SEAL",
+      "density": 5,
+      "speaker": "none",
+      "captionPolicy": "none",
+      "dataMode": "real",
+      "componente": "ZeusSealClose",
+      "transcriptText": "",
+      "bindings": {},
+      "anchor": {
+        "wordIndex": null,
+        "text": null,
+        "frame": 3370,
+        "lead": 0
+      },
+      "startFrame": 3370,
+      "endFrameExclusive": 3691,
+      "timing": {
+        "in": 24,
+        "build": 0,
+        "actFrame": 3228,
+        "hold": 260,
+        "out": 0
+      },
+      "focusEvents": [],
+      "sfxSchedule": []
+    }
+  ]
+}

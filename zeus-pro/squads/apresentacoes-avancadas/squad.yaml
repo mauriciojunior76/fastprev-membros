@@ -1,0 +1,693 @@
+id: zeus-show
+name: "Zeus Show"
+displayName: "ZEUS SHOW - Apresentações sob medida para mentores"
+description: |
+  Squad especializado em criar apresentações impecáveis para mentores.
+  52 agentes + 1 Lead. Cobre prelúdio (loop automático), aula (navegação manual) e ebook (documento visual).
+  Memória persistente por mentor: aprende uma vez, reusa sempre.
+  Orquestração sob demanda: ativa só os especialistas necessários por briefing.
+  Tema padrão Neutro (dark + violeta profissional), 5 variantes visuais (Apple, Vintage, Futurista, Editorial, Corporativo).
+  O mentor pode fornecer material de referência (imagem ou documento) para extração automática de paleta.
+version: "1.0.0"
+author: "um mentor de referencia / Synkra AIOS"
+domain: public
+type: squad
+category: presentation-production
+
+tags:
+  - apresentacao
+  - preludio
+  - aula
+  - ebook
+  - slides
+  - mentores
+  - html
+  - playwright
+  - zeus-show
+
+lead:
+  id: maestro
+  persona: "Maestro"
+  role: "Orquestrador: recebe briefing, classifica formato, monta pool de agentes sob demanda"
+  file: agents/maestro.md
+
+agents:
+  # === CAMADA 1: ONBOARDING POR MENTOR (5) ===
+  - id: client-profiler
+    persona: "Profile"
+    role: "Coleta nicho, produto, avatar, tom de voz do mentor na primeira execução"
+    tier: 1
+    camada: "onboarding"
+    file: agents/client-profiler.md
+
+  - id: brand-loader
+    persona: "BrandIn"
+    role: "Lê logo, paleta, fontes e ativos de marca do mentor se fornecidos"
+    tier: 1
+    camada: "onboarding"
+    file: agents/brand-loader.md
+
+  - id: reference-analyzer
+    persona: "RefScan"
+    role: "Extrai paleta de cores e estilo visual de imagem ou documento fornecido pelo mentor"
+    tier: 1
+    camada: "onboarding"
+    file: agents/reference-analyzer.md
+
+  - id: preference-mapper
+    persona: "Taste"
+    role: "Mapeia estilo desejado: Apple, vintage, editorial, futurista, corporativo, feminino, masculino"
+    tier: 1
+    camada: "onboarding"
+    file: agents/preference-mapper.md
+
+  - id: style-oracle
+    persona: "Oracle"
+    role: "Traduz preferências em tokens CSS: cores, pares de fontes, serifa vs sem serifa, grain, motion"
+    tier: 1
+    camada: "onboarding"
+    file: agents/style-oracle.md
+
+  - id: memory-builder
+    persona: "Mem"
+    role: "Grava _memory/mentores/{slug}.md com perfil e histórico, reusa na próxima sessão"
+    tier: 1
+    camada: "onboarding"
+    file: agents/memory-builder.md
+
+  # === CAMADA 2: INTAKE E PLANEJAMENTO (3) ===
+  - id: intake
+    persona: "Gate"
+    role: "Classifica a demanda: PRELÚDIO (loop), AULA (manual), EBOOK (scroll)"
+    tier: 2
+    camada: "intake"
+    file: agents/intake.md
+
+  - id: briefer
+    persona: "Brief"
+    role: "Organiza a ideia bruta em briefing: objetivo, público, tom, duração, número de slides"
+    tier: 2
+    camada: "intake"
+    file: agents/briefer.md
+
+  - id: structure-architect
+    persona: "Arch"
+    role: "Define estrutura de slides: ordem, tipo de cada slide, tempo por slide"
+    tier: 2
+    camada: "intake"
+    file: agents/structure-architect.md
+
+  # === CAMADA 3: COPY E CONTEÚDO (6) ===
+  - id: hook-writer
+    persona: "Hook"
+    role: "Cria ganchos de abertura irresistíveis para o primeiro slide"
+    tier: 3
+    camada: "copy"
+    file: agents/hook-writer.md
+
+  - id: bullet-writer
+    persona: "Bullet"
+    role: "Transforma ideias brutas em bullets curtos, marcantes, de alto impacto"
+    tier: 3
+    camada: "copy"
+    file: agents/bullet-writer.md
+
+  - id: phrase-crafter
+    persona: "Craft"
+    role: "Cria frases marcantes estilo Hormozi: diretas, sem enrolação, com peso emocional"
+    tier: 3
+    camada: "copy"
+    file: agents/phrase-crafter.md
+
+  - id: number-writer
+    persona: "Num"
+    role: "Formata números de impacto: R$1.800, 60x, 15 horas. Contexto + número + comparação"
+    tier: 3
+    camada: "copy"
+    file: agents/number-writer.md
+
+  - id: curiosity-builder
+    persona: "Curious"
+    role: "Gera curiosidade e desejo nos bullets. Abre loops sem fechar. Promete sem revelar"
+    tier: 3
+    camada: "copy"
+    file: agents/curiosity-builder.md
+
+  - id: cta-writer
+    persona: "Close"
+    role: "Cria chamadas para ação de cada slide e o fechamento final"
+    tier: 3
+    camada: "copy"
+    file: agents/cta-writer.md
+
+  # === CAMADA 4: CONTEÚDO AVANÇADO (5) ===
+  - id: data-visualizer
+    persona: "DataViz"
+    role: "Transforma números em gráficos e charts animados no slide"
+    tier: 4
+    camada: "conteudo-avancado"
+    file: agents/data-visualizer.md
+
+  - id: comparison-builder
+    persona: "Vs"
+    role: "Monta quadros comparativos lado a lado (antes x depois, A x B)"
+    tier: 4
+    camada: "conteudo-avancado"
+    file: agents/comparison-builder.md
+
+  - id: timeline-designer
+    persona: "Time"
+    role: "Cria linhas do tempo e cronogramas animados"
+    tier: 4
+    camada: "conteudo-avancado"
+    file: agents/timeline-designer.md
+
+  - id: story-narrator
+    persona: "Story"
+    role: "Constrói arco narrativo começo-meio-fim da apresentação inteira"
+    tier: 4
+    camada: "conteudo-avancado"
+    file: agents/story-narrator.md
+
+  - id: evidence-curator
+    persona: "Proof"
+    role: "Organiza prints, depoimentos, números sociais como prova visual"
+    tier: 4
+    camada: "conteudo-avancado"
+    file: agents/evidence-curator.md
+
+  # === CAMADA 5: DESIGN VISUAL (6) ===
+  - id: color-guard
+    persona: "Palette"
+    role: "Aplica paleta definida pelo Oracle. Tokens CSS vars. Nunca hex hardcoded"
+    tier: 5
+    camada: "design-visual"
+    file: agents/color-guard.md
+
+  - id: typography-director
+    persona: "Type"
+    role: "Define hierarquia: títulos 700-900, corpo 300-500. Tamanhos clamp()"
+    tier: 5
+    camada: "design-visual"
+    file: agents/typography-director.md
+
+  - id: layout-designer
+    persona: "Grid"
+    role: "Define layout de cada slide: centralizado, split, grid, masonry"
+    tier: 5
+    camada: "design-visual"
+    file: agents/layout-designer.md
+
+  - id: bg-designer
+    persona: "Bg"
+    role: "Cria fundos: dark/light alternados, radial gradients, grain overlay"
+    tier: 5
+    camada: "design-visual"
+    file: agents/bg-designer.md
+
+  - id: contrast-checker
+    persona: "Contrast"
+    role: "Verifica contraste texto vs fundo. WCAG AA mínimo. Corrige problemas"
+    tier: 5
+    camada: "design-visual"
+    file: agents/contrast-checker.md
+
+  - id: responsive-guard
+    persona: "Mobile"
+    role: "Garante funcionamento em 375px mobile, 768px tablet, 1920px desktop"
+    tier: 5
+    camada: "design-visual"
+    file: agents/responsive-guard.md
+
+  # === CAMADA 6: DESIGN REFORÇO (3) ===
+  - id: color-harmonizer
+    persona: "Harm"
+    role: "Adapta paleta do mentor mantendo contraste WCAG e equilíbrio visual"
+    tier: 6
+    camada: "design-reforco"
+    file: agents/color-harmonizer.md
+
+  - id: font-pair-selector
+    persona: "Pair"
+    role: "Escolhe par serifa/sans serifa adequado ao estilo (Apple, vintage, editorial)"
+    tier: 6
+    camada: "design-reforco"
+    file: agents/font-pair-selector.md
+
+  - id: theme-variant
+    persona: "Theme"
+    role: "Aplica variante: Apple, Vintage, Futurista, Editorial, Corporativo, Exemplo"
+    tier: 6
+    camada: "design-reforco"
+    file: agents/theme-variant.md
+
+  # === CAMADA 7: ICONOGRAFIA (4) ===
+  - id: icon-selector
+    persona: "Pick"
+    role: "Seleciona ícones da biblioteca Exemplo por semântica do slide"
+    tier: 7
+    camada: "iconografia"
+    file: agents/icon-selector.md
+
+  - id: icon-animator
+    persona: "Motion"
+    role: "Anima ícones em loop: rotação, pulse, float, scale. Estilo After Effects suave"
+    tier: 7
+    camada: "iconografia"
+    file: agents/icon-animator.md
+
+  - id: icon-placer
+    persona: "Place"
+    role: "Posiciona ícones: tamanho, margem, alinhamento. Nunca sobrepõe texto"
+    tier: 7
+    camada: "iconografia"
+    file: agents/icon-placer.md
+
+  - id: emoji-guard
+    persona: "Emoji"
+    role: "Verifica se ícones são da biblioteca Exemplo e não emojis unicode. Corrige se precisar"
+    tier: 7
+    camada: "iconografia"
+    file: agents/emoji-guard.md
+
+  # === CAMADA 8: ICONOGRAFIA REFORÇO (2) ===
+  - id: icon-style-decider
+    persona: "IconMode"
+    role: "Decide entre ícones animados, estáticos, emojis ou nada conforme tom da apresentação"
+    tier: 8
+    camada: "icon-reforco"
+    file: agents/icon-style-decider.md
+
+  - id: external-icon-integrator
+    persona: "IconExt"
+    role: "Puxa ícones de Tabler, Lucide ou Phosphor se a biblioteca Exemplo não tem o semântico"
+    tier: 8
+    camada: "icon-reforco"
+    file: agents/external-icon-integrator.md
+
+  # === CAMADA 9: IMAGENS EXTERNAS (4) ===
+  - id: image-need-analyzer
+    persona: "NeedPic"
+    role: "Decide se a apresentação precisa de fotos ou só ícones/emojis resolvem"
+    tier: 9
+    camada: "imagens"
+    file: agents/image-need-analyzer.md
+
+  - id: free-stock-hunter
+    persona: "Free"
+    role: "Busca fotos em Unsplash, Pexels e Pixabay via APIs incluso"
+    tier: 9
+    camada: "imagens"
+    file: agents/free-stock-hunter.md
+
+  - id: image-prompt-engineer
+    persona: "Prompt"
+    role: "Gera prompt se precisar criar imagem via Nano Banana ou Lovart"
+    tier: 9
+    camada: "imagens"
+    file: agents/image-prompt-engineer.md
+
+  - id: photo-curator
+    persona: "CurPic"
+    role: "Filtra, trata (rembg se precisar), otimiza peso e formato"
+    tier: 9
+    camada: "imagens"
+    file: agents/photo-curator.md
+
+  # === CAMADA 10: ANIMAÇÃO (5) ===
+  - id: transition-designer
+    persona: "Trans"
+    role: "Define transições entre slides: fade, slide horizontal, scale. Cubic-bezier suave"
+    tier: 10
+    camada: "animacao"
+    file: agents/transition-designer.md
+
+  - id: element-animator
+    persona: "Elem"
+    role: "Anima elementos individuais: stagger, delay, translateY/X com ease-out"
+    tier: 10
+    camada: "animacao"
+    file: agents/element-animator.md
+
+  - id: loop-engine
+    persona: "Loop"
+    role: "Cria loop automático para prelúdios: data-time por slide, reinicia, sem pausar"
+    tier: 10
+    camada: "animacao"
+    file: agents/loop-engine.md
+
+  - id: afterfx-motion
+    persona: "AE"
+    role: "Movimento estilo After Effects: overshoot sutil, spring physics, parallax micro"
+    tier: 10
+    camada: "animacao"
+    file: agents/afterfx-motion.md
+
+  - id: scroll-controller
+    persona: "Scroll"
+    role: "Para aulas: navegação por scroll, seta, teclado. Indica slide atual. Pausa/play"
+    tier: 10
+    camada: "animacao"
+    file: agents/scroll-controller.md
+
+  # === CAMADA 11: QUALIDADE (6) ===
+  - id: spell-checker
+    persona: "Spell"
+    role: "Verifica ortografia e acentuação em CADA slide. Gate obrigatório"
+    tier: 11
+    camada: "qualidade"
+    file: agents/spell-checker.md
+
+  - id: brand-checker
+    persona: "Brand"
+    role: "Verifica se visual está dentro do tema escolhido: cores, fontes, ícones, espaçamento"
+    tier: 11
+    camada: "qualidade"
+    file: agents/brand-checker.md
+
+  - id: content-reviewer
+    persona: "Review"
+    role: "Revisa conteúdo: frases fazem sentido? Ordem lógica? Curiosidade mantida? CTA forte?"
+    tier: 11
+    camada: "qualidade"
+    file: agents/content-reviewer.md
+
+  - id: accessibility-auditor
+    persona: "A11y"
+    role: "Contraste AA, tamanho mínimo de texto, navegação por teclado, foco visível"
+    tier: 11
+    camada: "qualidade"
+    file: agents/accessibility-auditor.md
+
+  - id: final-qa
+    persona: "QA"
+    role: "Gate FINAL: 14 pontos de conferência. Nada sai sem aprovação"
+    tier: 11
+    camada: "qualidade"
+    file: agents/final-qa.md
+
+  - id: deploy-agent
+    persona: "Ship"
+    role: "Deploy na VPS via deploy-vps.js. Valida HTTP 200. Entrega link pronto"
+    tier: 11
+    camada: "qualidade"
+    file: agents/deploy-agent.md
+
+  # === CAMADA 12: ESPECIALISTAS DE FORMATO (3) ===
+  - id: preludio-specialist
+    persona: "Pre"
+    role: "Especialista em prelúdios: loop, curiosidade, antecipação. Slides curtos, ícones em movimento"
+    tier: 12
+    camada: "formato"
+    file: agents/preludio-specialist.md
+
+  - id: aula-specialist
+    persona: "Aula"
+    role: "Especialista em aulas: navegação manual, esquemas visuais, passo a passo, comparativos"
+    tier: 12
+    camada: "formato"
+    file: agents/aula-specialist.md
+
+  - id: ebook-specialist
+    persona: "Ebook"
+    role: "Especialista em ebooks visuais: páginas scrolláveis, índice, seções, design editorial"
+    tier: 12
+    camada: "formato"
+    file: agents/ebook-specialist.md
+
+# Total: 52 agentes + 1 Lead (Maestro)
+
+orchestration:
+  mode: on-demand
+  description: |
+    Maestro analisa o briefing na abertura e monta o pool ativo.
+    Agente não chamado custa zero contexto. Quality Gate roda sempre.
+  rules:
+    - Primeira vez do mentor: ativar onboarding completo (5 agentes)
+    - Mentor já tem _memory/mentores/{slug}.md: pular onboarding
+    - Sem números no briefing: dormir Data Visualizer e Number Writer
+    - Sem foto necessária: dormir toda Camada 9 (Imagens)
+    - Prelúdio: ativar Loop Engine, dormir Scroll Controller
+    - Aula: ativar Scroll Controller, dormir Loop Engine
+    - Ebook: ativar Ebook Specialist + Layout, dormir Loop e Scroll
+
+workflows:
+  first-time:
+    description: "Primeira execução do mentor. Onboarding completo antes de qualquer coisa"
+    sequence:
+      - client-profiler
+      - brand-loader
+      - preference-mapper
+      - style-oracle
+      - memory-builder
+      - intake
+      - briefer
+
+  preludio:
+    description: "Prelúdio em loop automático para antes da aula"
+    sequence:
+      - intake
+      - briefer
+      - structure-architect
+      - hook-writer
+      - bullet-writer
+      - curiosity-builder
+      - icon-style-decider
+      - icon-selector
+      - icon-animator
+      - icon-placer
+      - color-guard
+      - typography-director
+      - layout-designer
+      - bg-designer
+      - loop-engine
+      - afterfx-motion
+      - element-animator
+      - preludio-specialist
+      - spell-checker
+      - brand-checker
+      - accessibility-auditor
+      - final-qa
+      - deploy-agent
+
+  aula:
+    description: "Aula interativa com navegação manual"
+    sequence:
+      - intake
+      - briefer
+      - structure-architect
+      - story-narrator
+      - hook-writer
+      - phrase-crafter
+      - number-writer
+      - cta-writer
+      - comparison-builder
+      - timeline-designer
+      - evidence-curator
+      - data-visualizer
+      - icon-style-decider
+      - icon-selector
+      - icon-animator
+      - color-guard
+      - typography-director
+      - layout-designer
+      - bg-designer
+      - contrast-checker
+      - scroll-controller
+      - afterfx-motion
+      - element-animator
+      - responsive-guard
+      - aula-specialist
+      - spell-checker
+      - brand-checker
+      - content-reviewer
+      - accessibility-auditor
+      - final-qa
+      - deploy-agent
+
+  ebook:
+    description: "Ebook/guia visual scrollável"
+    sequence:
+      - intake
+      - briefer
+      - structure-architect
+      - story-narrator
+      - phrase-crafter
+      - evidence-curator
+      - icon-selector
+      - icon-animator
+      - color-guard
+      - typography-director
+      - layout-designer
+      - bg-designer
+      - contrast-checker
+      - responsive-guard
+      - ebook-specialist
+      - spell-checker
+      - brand-checker
+      - content-reviewer
+      - accessibility-auditor
+      - final-qa
+      - deploy-agent
+
+themes:
+  neutro:
+    name: "Neutro (padrão)"
+    description: "Dark profissional com violeta suave. Ideal como ponto de partida para qualquer mentor"
+    tokens:
+      bg: "#0c0e1a"
+      bg-alt: "#10121f"
+      bg-card: "#161924"
+      accent-1: "#7c6ee6"
+      accent-2: "#9d8df0"
+      accent-3: "#c4bcf8"
+      text: "#f0eeff"
+      text-muted: "rgba(220,215,255,0.55)"
+      font-title: "Inter"
+      font-body: "DM Sans"
+      grain: true
+      motion: "smooth"
+
+  apple:
+    name: "Apple"
+    description: "Claro, limpo, tipografia SF estilo. Minimalista e premium"
+    tokens:
+      bg: "#ffffff"
+      bg-alt: "#f5f5f7"
+      bg-card: "#fafafa"
+      accent-1: "#0071e3"
+      accent-2: "#1d1d1f"
+      accent-3: "#86868b"
+      text: "#1d1d1f"
+      text-muted: "#6e6e73"
+      font-title: "Inter"
+      font-body: "Inter"
+      grain: false
+      motion: "smooth"
+
+  vintage:
+    name: "Vintage"
+    description: "Tons terra, serifa clássica, textura papel, nostalgia editorial"
+    tokens:
+      bg: "#f5ede0"
+      bg-alt: "#ebe0cc"
+      bg-card: "#fff9ed"
+      accent-1: "#8b4513"
+      accent-2: "#c97a4a"
+      accent-3: "#d4a574"
+      text: "#2c1810"
+      text-muted: "#5c4433"
+      font-title: "Playfair Display"
+      font-body: "Lora"
+      grain: true
+      motion: "gentle"
+
+  futurista:
+    name: "Futurista"
+    description: "Dark neon, glow, cyberpunk sutil, tipografia geométrica"
+    tokens:
+      bg: "#050510"
+      bg-alt: "#0a0a1f"
+      bg-card: "#101028"
+      accent-1: "#00f5ff"
+      accent-2: "#b400ff"
+      accent-3: "#ff006e"
+      text: "#ffffff"
+      text-muted: "rgba(255,255,255,0.6)"
+      font-title: "Space Grotesk"
+      font-body: "Inter"
+      grain: false
+      motion: "sharp"
+
+  editorial:
+    name: "Editorial"
+    description: "Revista premium, serifa + sans, contraste branco e preto"
+    tokens:
+      bg: "#ffffff"
+      bg-alt: "#f8f8f8"
+      bg-card: "#fafafa"
+      accent-1: "#000000"
+      accent-2: "#c41e3a"
+      accent-3: "#666666"
+      text: "#000000"
+      text-muted: "#444444"
+      font-title: "Playfair Display"
+      font-body: "Inter"
+      grain: false
+      motion: "gentle"
+
+  corporativo:
+    name: "Corporativo"
+    description: "Azul, cinza, sans serifa sóbria. Apresentação executiva"
+    tokens:
+      bg: "#ffffff"
+      bg-alt: "#f4f7fa"
+      bg-card: "#ffffff"
+      accent-1: "#0f3c71"
+      accent-2: "#1e6ec7"
+      accent-3: "#5a9cd6"
+      text: "#0f3c71"
+      text-muted: "#4a5568"
+      font-title: "Inter"
+      font-body: "Inter"
+      grain: false
+      motion: "gentle"
+
+visual_tokens_default:
+  palette: "tema Neutro (violeta profissional) como padrão, ou paleta extraída do material de referência do mentor"
+  backgrounds: "dark principal + alternativo + card"
+  fonts: "título 700-900, corpo 300-500"
+  icons: "Tabler como padrão + Lucide/Phosphor como fallback"
+  grain: "body::after feTurbulence opacity 0.3 (ativar conforme tema)"
+  motion: "cubic-bezier(0.16, 1, 0.3, 1) ease-out suave"
+  referencia: "mentor pode fornecer imagem ou PDF para extração automática de paleta pelo Reference Analyzer"
+
+references:
+  preludio_master: "../../clientes/zeus/preludio-claude-code/index.html"
+  aula_master: "../../clientes/zeus/aula-claude-code-2/index.html"
+  guia_master: "../../clientes/zeus/aula-criativos-lt/index.html"
+  icones: "../../squads/iconografia/pipeline/data/exemplo-icon-library.md"
+
+capabilities:
+  onboarding_mentor: true
+  memory_persistent: true
+  multi_theme: true
+  on_demand_orchestration: true
+  external_images: true
+  external_icons: true
+  data_visualization: true
+  accessibility_auditing: true
+  auto_deploy_vps: true
+
+deliverables:
+  formats:
+    preludio:
+      duration: "30-60s por loop"
+      slides: "5-8 slides curtos"
+      navigation: "automática + manual + pausa"
+    aula:
+      duration: "15-45 minutos"
+      slides: "10-30 slides detalhados"
+      navigation: "seta, scroll, teclado"
+    ebook:
+      duration: "leitura livre"
+      pages: "scroll infinito com nav fixa"
+
+verification:
+  gates:
+    - spell-checker (acentuação perfeita)
+    - brand-checker (tema aplicado)
+    - contrast-checker (WCAG AA)
+    - responsive-guard (375px sem overflow)
+    - accessibility-auditor (navegação por teclado)
+    - final-qa (14 pontos)
+    - deploy-agent (HTTP 200)
+
+# Autoaprendizado (squads-memory-sync, 2026-07-25)
+learning:
+  memory_file: MEMORY.md
+  format: memoria-squad-v1
+  global_log: memory/erros-aprendidos.md
+  squad_tag: zeus-show
+  read_before_acting: true
+  max_chars: 8000

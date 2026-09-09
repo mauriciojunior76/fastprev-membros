@@ -1,0 +1,23 @@
+name: "Pipeline Carrossel Instagram"
+version: "1.0.0"
+max_review_cycles: 2
+
+steps:
+  - id: research-focus
+    file: steps/step-01-research-focus.md
+  - id: research
+    file: steps/step-02-research.md
+  - id: news-selection
+    file: steps/step-03-news-selection.md
+  - id: generate-angles
+    file: steps/step-04-generate-angles.md
+  - id: angle-selection
+    file: steps/step-05-angle-selection.md
+  - id: create-carousel
+    file: steps/step-06-create-carousel.md
+  - id: content-approval
+    file: steps/step-07-content-approval.md
+  - id: review
+    file: steps/step-08-review.md
+  - id: final-approval
+    file: steps/step-09-final-approval.md

@@ -1,0 +1,457 @@
+{
+  "_doc": "PONTE DE SOM. Liga o vocabulario de eventos do pacote (build-registry → sound.eventos.gesto) ao vocabulario FECHADO do motor (12 pares) e aos 6 arquivos aprovados pelo dono. O catalogo do motor manda: onde o pacote pede um par que nao existe, a entrada esta em falta_no_motor com a reducao proposta. Nenhum arquivo novo foi inventado.",
+  "versao": "3.1",
+  "autoridade": "o catalogo do motor (public/_sfx/catalogo.json) prevalece sobre o campo sound dos specs; categoria nova e decisao do dono, nunca do agente",
+  "pares_do_motor": [
+    "selo-marca/entrada",
+    "frase-grande/entrada",
+    "palavra-conceito/entrada",
+    "palavra-conceito/traco",
+    "numero-protagonista/entrada",
+    "numero-protagonista/fechamento",
+    "serie-itens/item",
+    "jornada/partida",
+    "jornada/chegada",
+    "interface-mensagem/abre",
+    "interface-mensagem/chega",
+    "interface-mensagem/fechamento"
+  ],
+  "arquivos_aprovados": [
+    "peso-03-ding",
+    "peso-04-stamp",
+    "peso-04-whoosh-medio",
+    "peso-06-whoosh-forte",
+    "peso-07-whoosh-grave",
+    "peso-10-whoosh-longo"
+  ],
+  "escolha_do_arquivo": {
+    "regra": "pelo peso do evento, sem passar do teto: peso 1-2 fica silencioso (abaixo do arquivo mais leve), 3 = peso-03-ding, 4 = peso-04-whoosh-medio, 5-6 = peso-06-whoosh-forte, 7-8 = peso-07-whoosh-grave, 9-10 = peso-10-whoosh-longo",
+    "nota_sobre_stamp": "peso-04-stamp fica reservado para confirmacao seca (check, badge, selo de aprovacao): mesmo peso do whoosh-medio, ataque diferente. A escolha entre os dois e do dono, por cena",
+    "volume": {
+      "1-2": -21,
+      "3-4": -16,
+      "5-6": -13,
+      "7-8": -10,
+      "9-10": -9,
+      "unidade": "dB, referencia do mix do motor"
+    }
+  },
+  "disparo": {
+    "regra": "o som comeca no quadro do gesto menos o tempo de pico do arquivo, para o pico coincidir com o frame do movimento",
+    "formula": "quadroDoSom = quadroDoGesto - picoDoArquivo(arquivo)",
+    "pendencia": "o pacote nao mede audio: picoDoArquivo vem do motor. Enquanto nao vier, use 0 e o pico chega atrasado"
+  },
+  "densidade": {
+    "min_intervalo_segundos": 2.5,
+    "corte_por_proximidade": "eventos a menos de 8 quadros: corta o de menor peso, nunca soma",
+    "cascata_longa": "6 ou mais irmaos: soam o primeiro, o do meio e o ultimo",
+    "soma_max_por_cena": 22,
+    "nunca": "dois eventos de peso 7 ou mais em menos de 3 segundos"
+  },
+  "total": {
+    "pares_mapeados": 21,
+    "em_falta_no_motor": 23
+  },
+  "mapeamento": [
+    {
+      "evento_do_pacote": "selo-fecho",
+      "peso": 10,
+      "arquivo": "peso-10-whoosh-longo",
+      "volume_db": -9,
+      "quadro_de_disparo": "quadro do gesto − pico_do_arquivo (o pico é medido no motor; o pacote não mede áudio)",
+      "par_do_motor": "selo-marca/entrada"
+    },
+    {
+      "evento_do_pacote": "palavra-conceito",
+      "peso": 10,
+      "arquivo": "peso-10-whoosh-longo",
+      "volume_db": -9,
+      "quadro_de_disparo": "quadro do gesto − pico_do_arquivo (o pico é medido no motor; o pacote não mede áudio)",
+      "par_do_motor": "palavra-conceito/entrada"
+    },
+    {
+      "evento_do_pacote": "traco-desenha",
+      "peso": 0,
+      "arquivo": null,
+      "volume_db": null,
+      "quadro_de_disparo": null,
+      "par_do_motor": "palavra-conceito/traco"
+    },
+    {
+      "evento_do_pacote": "frase-icone",
+      "peso": 7,
+      "arquivo": "peso-07-whoosh-grave",
+      "volume_db": -10,
+      "quadro_de_disparo": "quadro do gesto − pico_do_arquivo (o pico é medido no motor; o pacote não mede áudio)",
+      "par_do_motor": "frase-grande/entrada"
+    },
+    {
+      "evento_do_pacote": "lettering-tonica",
+      "peso": 8,
+      "arquivo": "peso-07-whoosh-grave",
+      "volume_db": -10,
+      "quadro_de_disparo": "quadro do gesto − pico_do_arquivo (o pico é medido no motor; o pacote não mede áudio)",
+      "par_do_motor": "frase-grande/entrada"
+    },
+    {
+      "evento_do_pacote": "lettering-linha",
+      "peso": 3,
+      "arquivo": "peso-03-ding",
+      "volume_db": -16,
+      "quadro_de_disparo": "quadro do gesto − pico_do_arquivo (o pico é medido no motor; o pacote não mede áudio)",
+      "par_do_motor": "serie-itens/item"
+    },
+    {
+      "evento_do_pacote": "numero-conta",
+      "peso": 0,
+      "arquivo": null,
+      "volume_db": null,
+      "quadro_de_disparo": null,
+      "par_do_motor": "numero-protagonista/entrada"
+    },
+    {
+      "evento_do_pacote": "numero-assenta",
+      "peso": 5,
+      "arquivo": "peso-06-whoosh-forte",
+      "volume_db": -13,
+      "quadro_de_disparo": "quadro do gesto − pico_do_arquivo (o pico é medido no motor; o pacote não mede áudio)",
+      "par_do_motor": "numero-protagonista/fechamento"
+    },
+    {
+      "evento_do_pacote": "celula-preenche",
+      "peso": 2,
+      "arquivo": "peso-03-ding",
+      "volume_db": -21,
+      "quadro_de_disparo": "quadro do gesto − pico_do_arquivo (o pico é medido no motor; o pacote não mede áudio)",
+      "par_do_motor": "serie-itens/item"
+    },
+    {
+      "evento_do_pacote": "bloco-cascata",
+      "peso": 3,
+      "arquivo": "peso-03-ding",
+      "volume_db": -16,
+      "quadro_de_disparo": "quadro do gesto − pico_do_arquivo (o pico é medido no motor; o pacote não mede áudio)",
+      "par_do_motor": "serie-itens/item"
+    },
+    {
+      "evento_do_pacote": "item-lista-entra",
+      "peso": 3,
+      "arquivo": "peso-03-ding",
+      "volume_db": -16,
+      "quadro_de_disparo": "quadro do gesto − pico_do_arquivo (o pico é medido no motor; o pacote não mede áudio)",
+      "par_do_motor": "serie-itens/item"
+    },
+    {
+      "evento_do_pacote": "no-nasce",
+      "peso": 4,
+      "arquivo": "peso-04-whoosh-medio",
+      "volume_db": -16,
+      "quadro_de_disparo": "quadro do gesto − pico_do_arquivo (o pico é medido no motor; o pacote não mede áudio)",
+      "par_do_motor": "jornada/partida"
+    },
+    {
+      "evento_do_pacote": "conector-desenha",
+      "peso": 4,
+      "arquivo": "peso-04-whoosh-medio",
+      "volume_db": -16,
+      "quadro_de_disparo": "quadro do gesto − pico_do_arquivo (o pico é medido no motor; o pacote não mede áudio)",
+      "par_do_motor": "jornada/partida"
+    },
+    {
+      "evento_do_pacote": "chevron-chega",
+      "peso": 5,
+      "arquivo": "peso-06-whoosh-forte",
+      "volume_db": -13,
+      "quadro_de_disparo": "quadro do gesto − pico_do_arquivo (o pico é medido no motor; o pacote não mede áudio)",
+      "par_do_motor": "jornada/chegada"
+    },
+    {
+      "evento_do_pacote": "anel-nasce",
+      "peso": 5,
+      "arquivo": "peso-06-whoosh-forte",
+      "volume_db": -13,
+      "quadro_de_disparo": "quadro do gesto − pico_do_arquivo (o pico é medido no motor; o pacote não mede áudio)",
+      "par_do_motor": "jornada/chegada"
+    },
+    {
+      "evento_do_pacote": "painel-interface",
+      "peso": 5,
+      "arquivo": "peso-06-whoosh-forte",
+      "volume_db": -13,
+      "quadro_de_disparo": "quadro do gesto − pico_do_arquivo (o pico é medido no motor; o pacote não mede áudio)",
+      "par_do_motor": "interface-mensagem/abre"
+    },
+    {
+      "evento_do_pacote": "balao-chega",
+      "peso": 4,
+      "arquivo": "peso-04-whoosh-medio",
+      "volume_db": -16,
+      "quadro_de_disparo": "quadro do gesto − pico_do_arquivo (o pico é medido no motor; o pacote não mede áudio)",
+      "par_do_motor": "interface-mensagem/chega"
+    },
+    {
+      "evento_do_pacote": "notificacao-chega",
+      "peso": 5,
+      "arquivo": "peso-06-whoosh-forte",
+      "volume_db": -13,
+      "quadro_de_disparo": "quadro do gesto − pico_do_arquivo (o pico é medido no motor; o pacote não mede áudio)",
+      "par_do_motor": "interface-mensagem/chega"
+    },
+    {
+      "evento_do_pacote": "check-confirma",
+      "peso": 6,
+      "arquivo": "peso-06-whoosh-forte",
+      "volume_db": -13,
+      "quadro_de_disparo": "quadro do gesto − pico_do_arquivo (o pico é medido no motor; o pacote não mede áudio)",
+      "par_do_motor": "interface-mensagem/fechamento"
+    },
+    {
+      "evento_do_pacote": "progresso-conclui",
+      "peso": 6,
+      "arquivo": "peso-06-whoosh-forte",
+      "volume_db": -13,
+      "quadro_de_disparo": "quadro do gesto − pico_do_arquivo (o pico é medido no motor; o pacote não mede áudio)",
+      "par_do_motor": "interface-mensagem/fechamento"
+    },
+    {
+      "evento_do_pacote": "comparacao-certo",
+      "peso": 7,
+      "arquivo": "peso-07-whoosh-grave",
+      "volume_db": -10,
+      "quadro_de_disparo": "quadro do gesto − pico_do_arquivo (o pico é medido no motor; o pacote não mede áudio)",
+      "par_do_motor": "interface-mensagem/fechamento"
+    }
+  ],
+  "em_falta_no_motor": [
+    {
+      "evento_do_pacote": "cena-entra",
+      "peso": 6,
+      "arquivo": "peso-06-whoosh-forte",
+      "volume_db": -13,
+      "quadro_de_disparo": "quadro do gesto − pico_do_arquivo (o pico é medido no motor; o pacote não mede áudio)",
+      "par_do_motor": null,
+      "falta_no_motor": true,
+      "reduzir_para": "interface-mensagem/abre"
+    },
+    {
+      "evento_do_pacote": "cena-sai",
+      "peso": 4,
+      "arquivo": null,
+      "volume_db": null,
+      "quadro_de_disparo": "quadro do gesto − pico_do_arquivo (o pico é medido no motor; o pacote não mede áudio)",
+      "par_do_motor": null,
+      "falta_no_motor": true,
+      "reduzir_para": "nenhum: o motor não tem par de saída; a saída fica silenciosa e o próximo cena-entra marca a troca"
+    },
+    {
+      "evento_do_pacote": "atributo-solo",
+      "peso": 4,
+      "arquivo": "peso-04-whoosh-medio",
+      "volume_db": -16,
+      "quadro_de_disparo": "quadro do gesto − pico_do_arquivo (o pico é medido no motor; o pacote não mede áudio)",
+      "par_do_motor": null,
+      "falta_no_motor": true,
+      "reduzir_para": "frase-grande/entrada"
+    },
+    {
+      "evento_do_pacote": "anel-migra",
+      "peso": 3,
+      "arquivo": "peso-03-ding",
+      "volume_db": -16,
+      "quadro_de_disparo": "quadro do gesto − pico_do_arquivo (o pico é medido no motor; o pacote não mede áudio)",
+      "par_do_motor": null,
+      "falta_no_motor": true,
+      "reduzir_para": "serie-itens/item"
+    },
+    {
+      "evento_do_pacote": "barra-cresce",
+      "peso": 3,
+      "arquivo": "peso-03-ding",
+      "volume_db": -16,
+      "quadro_de_disparo": "quadro do gesto − pico_do_arquivo (o pico é medido no motor; o pacote não mede áudio)",
+      "par_do_motor": null,
+      "falta_no_motor": true,
+      "reduzir_para": "serie-itens/item"
+    },
+    {
+      "evento_do_pacote": "slider-desliza",
+      "peso": 3,
+      "arquivo": "peso-03-ding",
+      "volume_db": -16,
+      "quadro_de_disparo": "quadro do gesto − pico_do_arquivo (o pico é medido no motor; o pacote não mede áudio)",
+      "par_do_motor": null,
+      "falta_no_motor": true,
+      "reduzir_para": "serie-itens/item"
+    },
+    {
+      "evento_do_pacote": "digitacao-campo",
+      "peso": 2,
+      "arquivo": "peso-03-ding",
+      "volume_db": -21,
+      "quadro_de_disparo": "quadro do gesto − pico_do_arquivo (o pico é medido no motor; o pacote não mede áudio)",
+      "par_do_motor": null,
+      "falta_no_motor": true,
+      "reduzir_para": "serie-itens/item"
+    },
+    {
+      "evento_do_pacote": "digitando",
+      "peso": 1,
+      "arquivo": null,
+      "volume_db": null,
+      "quadro_de_disparo": "quadro do gesto − pico_do_arquivo (o pico é medido no motor; o pacote não mede áudio)",
+      "par_do_motor": null,
+      "falta_no_motor": true,
+      "reduzir_para": "nenhum: peso 1 fica abaixo do arquivo mais leve (peso-03-ding); silencioso"
+    },
+    {
+      "evento_do_pacote": "toggle-liga",
+      "peso": 4,
+      "arquivo": "peso-04-whoosh-medio",
+      "volume_db": -16,
+      "quadro_de_disparo": "quadro do gesto − pico_do_arquivo (o pico é medido no motor; o pacote não mede áudio)",
+      "par_do_motor": null,
+      "falta_no_motor": true,
+      "reduzir_para": "interface-mensagem/fechamento"
+    },
+    {
+      "evento_do_pacote": "botao-aciona",
+      "peso": 6,
+      "arquivo": "peso-06-whoosh-forte",
+      "volume_db": -13,
+      "quadro_de_disparo": "quadro do gesto − pico_do_arquivo (o pico é medido no motor; o pacote não mede áudio)",
+      "par_do_motor": null,
+      "falta_no_motor": true,
+      "reduzir_para": "interface-mensagem/fechamento"
+    },
+    {
+      "evento_do_pacote": "audio-playback",
+      "peso": 0,
+      "arquivo": null,
+      "volume_db": null,
+      "quadro_de_disparo": null,
+      "par_do_motor": null,
+      "falta_no_motor": true,
+      "reduzir_para": "nenhum: peso 0 é silêncio obrigatório"
+    },
+    {
+      "evento_do_pacote": "legenda-entra",
+      "peso": 0,
+      "arquivo": null,
+      "volume_db": null,
+      "quadro_de_disparo": null,
+      "par_do_motor": null,
+      "falta_no_motor": true,
+      "reduzir_para": "nenhum: peso 0 é silêncio obrigatório"
+    },
+    {
+      "evento_do_pacote": "zoom-entra",
+      "peso": 5,
+      "arquivo": "peso-06-whoosh-forte",
+      "volume_db": -13,
+      "quadro_de_disparo": "quadro do gesto − pico_do_arquivo (o pico é medido no motor; o pacote não mede áudio)",
+      "par_do_motor": null,
+      "falta_no_motor": true,
+      "reduzir_para": "interface-mensagem/abre"
+    },
+    {
+      "evento_do_pacote": "anotacao-entra",
+      "peso": 3,
+      "arquivo": "peso-03-ding",
+      "volume_db": -16,
+      "quadro_de_disparo": "quadro do gesto − pico_do_arquivo (o pico é medido no motor; o pacote não mede áudio)",
+      "par_do_motor": null,
+      "falta_no_motor": true,
+      "reduzir_para": "serie-itens/item"
+    },
+    {
+      "evento_do_pacote": "balanca-inclina",
+      "peso": 5,
+      "arquivo": "peso-06-whoosh-forte",
+      "volume_db": -13,
+      "quadro_de_disparo": "quadro do gesto − pico_do_arquivo (o pico é medido no motor; o pacote não mede áudio)",
+      "par_do_motor": null,
+      "falta_no_motor": true,
+      "reduzir_para": "jornada/chegada"
+    },
+    {
+      "evento_do_pacote": "filtro-rejeita",
+      "peso": 2,
+      "arquivo": "peso-03-ding",
+      "volume_db": -21,
+      "quadro_de_disparo": "quadro do gesto − pico_do_arquivo (o pico é medido no motor; o pacote não mede áudio)",
+      "par_do_motor": null,
+      "falta_no_motor": true,
+      "reduzir_para": "serie-itens/item"
+    },
+    {
+      "evento_do_pacote": "gargalo-libera",
+      "peso": 7,
+      "arquivo": "peso-07-whoosh-grave",
+      "volume_db": -10,
+      "quadro_de_disparo": "quadro do gesto − pico_do_arquivo (o pico é medido no motor; o pacote não mede áudio)",
+      "par_do_motor": null,
+      "falta_no_motor": true,
+      "reduzir_para": "jornada/chegada"
+    },
+    {
+      "evento_do_pacote": "comparacao-errado",
+      "peso": 6,
+      "arquivo": "peso-06-whoosh-forte",
+      "volume_db": -13,
+      "quadro_de_disparo": "quadro do gesto − pico_do_arquivo (o pico é medido no motor; o pacote não mede áudio)",
+      "par_do_motor": null,
+      "falta_no_motor": true,
+      "reduzir_para": "interface-mensagem/chega"
+    },
+    {
+      "evento_do_pacote": "erro-indica",
+      "peso": 6,
+      "arquivo": "peso-06-whoosh-forte",
+      "volume_db": -13,
+      "quadro_de_disparo": "quadro do gesto − pico_do_arquivo (o pico é medido no motor; o pacote não mede áudio)",
+      "par_do_motor": null,
+      "falta_no_motor": true,
+      "reduzir_para": "interface-mensagem/chega"
+    },
+    {
+      "evento_do_pacote": "vela/coluna-cresce",
+      "peso": 3,
+      "arquivo": "peso-03-ding",
+      "volume_db": -16,
+      "quadro_de_disparo": "quadro do gesto − pico_do_arquivo (o pico é medido no motor; o pacote não mede áudio)",
+      "par_do_motor": null,
+      "falta_no_motor": true,
+      "reduzir_para": "serie-itens/item"
+    },
+    {
+      "evento_do_pacote": "fatia-desenha",
+      "peso": 4,
+      "arquivo": "peso-04-whoosh-medio",
+      "volume_db": -16,
+      "quadro_de_disparo": "quadro do gesto − pico_do_arquivo (o pico é medido no motor; o pacote não mede áudio)",
+      "par_do_motor": null,
+      "falta_no_motor": true,
+      "reduzir_para": "jornada/partida"
+    },
+    {
+      "evento_do_pacote": "vertice-foco",
+      "peso": 3,
+      "arquivo": "peso-03-ding",
+      "volume_db": -16,
+      "quadro_de_disparo": "quadro do gesto − pico_do_arquivo (o pico é medido no motor; o pacote não mede áudio)",
+      "par_do_motor": null,
+      "falta_no_motor": true,
+      "reduzir_para": "serie-itens/item"
+    },
+    {
+      "evento_do_pacote": "ponto-marcado",
+      "peso": 5,
+      "arquivo": "peso-06-whoosh-forte",
+      "volume_db": -13,
+      "quadro_de_disparo": "quadro do gesto − pico_do_arquivo (o pico é medido no motor; o pacote não mede áudio)",
+      "par_do_motor": null,
+      "falta_no_motor": true,
+      "reduzir_para": "jornada/chegada"
+    }
+  ]
+}

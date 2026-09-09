@@ -1,0 +1,31 @@
+# Time transversal: roda em TODOS os squads, sem ser chamado.
+# Enxuto de propósito. Cada agente aqui custa contexto em toda entrega, então
+# só entra quem resolve um problema que aparece em qualquer tipo de trabalho.
+
+id: _core-team
+nome: "Time transversal"
+descrição: >
+  Agentes que acompanham toda produção, independentemente do squad: economia,
+  idioma, qualidade e aprendizado. São injetados automaticamente.
+versão: "1.0.0"
+status: ativo
+silencioso: true
+
+agentes:
+  - economista-de-contexto
+  - revisor-de-idioma
+  - detector-de-generico
+  - registrador-de-aprendizado
+
+# Ordem de execução em toda entrega
+pipeline:
+  antes:
+    - economista-de-contexto      # decide quanto esforço a tarefa merece
+  depois:
+    - revisor-de-idioma           # ortografia e tom
+    - detector-de-generico        # cara de texto de IA
+    - registrador-de-aprendizado  # o que aprendemos aqui
+
+herança: >
+  Todo squad novo herda este time automaticamente. Não é preciso declarar nada
+  no manifesto do squad: o orquestrador injeta.

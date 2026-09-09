@@ -1,0 +1,424 @@
+id: brand
+name: "Brand Squad Supremo — Sistema Premium de Criação de Marca"
+version: 1.0.0
+description: |
+  Sistema multi-agente para transformar briefings mínimos em ecossistemas de marca
+  completos, estratégicos e visualmente premium. Opera em 3 níveis (Essência / Identidade / Supremo)
+  com profundidade de consultoria, rigor de design system e acabamento de brandbook de alto nível.
+
+  Princípio central: qualidade visual é constante em todos os níveis.
+  A diferença entre os níveis é profundidade, volume e detalhamento — nunca qualidade.
+
+agents:
+  lead: brand-master
+  members:
+    # Fase 0.5 — Brand Soul (marca como pessoa) — NOVO
+    - brand-soul
+    # Fase 1 — Estratégia e Personalidade
+    - brand-strategist
+    - archetype-designer
+    - naming-semantics
+    - storytelling
+    # Fase 2 — Direção Visual
+    - visual-identity
+    - logo-symbol
+    - color-tokens
+    - typography
+    # Fase 3 — Sistema e Aplicações (N2/N3)
+    - ui-brand-system
+    - pattern-library
+    - motion-system
+    - brand-applications
+    # Fase 4 — Entrega Final
+    - visual-prompts
+    - brand-deck
+    - living-docs
+    - quality-consistency
+    # Pipeline de Imagem (todos os niveis)
+    - image-describer
+    - image-prompt-architect
+    - image-reviewer
+    - image-safety-guard
+    # Revisao de Isotipo (todos os niveis)
+    - symbol-critic
+    # Arte Finalista (pos-aprovacao, todos os niveis)
+    - art-finalizer
+
+  # Cross-call: Icon Forge (Fase 2.5, condicional)
+  # Cross-call: Typography Squad (Fase 2, tipografia profunda)
+  # Cross-call: Mockup Squad (Fase 4, mockups de entrega)
+  # Cross-call: Isotipo Squad (Fase 2, criação de símbolo)
+  cross_squads:
+    - id: icon-forge
+      trigger: "iconography-decision-gate approved"
+      agents_used: [icon-master, icon-designer, icon-system, icon-optimizer]
+      reference: "squads/iconografia/"
+    - id: typography
+      trigger: "typography-depth-needed"
+      agents_used: [type-chief, brand-persona-reader, font-pairing-specialist, typography-echo]
+      reference: "squads/typography/"
+    - id: mockup
+      trigger: "delivery-mockup-needed"
+      agents_used: [mockup-chief, product-mockup, prompt-engineer]
+      reference: "squads/mockup/"
+    - id: isotipo
+      trigger: "symbol-creation-needed"
+      agents_used: [isotipo-master, brand-soul-synthesizer, prompt-forge]
+      reference: "squads/isotipo/"
+
+human_roles:
+  - id: brand-owner
+    name: "Dono da Marca / Cliente"
+    tools: []
+    responsibilities:
+      - Fornecer briefing mínimo (11 campos)
+      - Selecionar nível do projeto (1, 2 ou 3)
+      - Aprovar direção visual antes da Fase 3
+      - Aprovação final antes da arte finalista
+    gates:
+      - level-selection-gate
+      - visual-direction-approval-gate
+      - final-approval-gate
+
+gates:
+  human_required:
+    - id: level-selection-gate
+      name: "Seleção do Nível"
+      phase: intake
+      blocker: true
+      description: "Zeus apresenta os 3 níveis. Usuário deve selecionar 1, 2 ou 3 antes de qualquer output."
+
+    - id: visual-direction-approval-gate
+      name: "Aprovação da Direção Visual"
+      phase: visual-direction
+      blocker: true
+      description: |
+        Após Fase 2 (Veda, Mark, Chroma, Typo), apresentar síntese visual para aprovação.
+        Se reprovado: ajustar e re-apresentar. Máx 2 rodadas.
+
+    - id: iconography-decision-gate
+      name: "Decisao de Iconografia"
+      phase: post-visual-direction
+      blocker: false
+      description: |
+        Zeus avalia se a marca precisa de iconografia custom baseado no segmento,
+        conceito e materiais previstos. Apresenta recomendacao ao usuario.
+        Se aprovado: cross-call para Icon Forge. Se recusado: pula e registra.
+
+    - id: iconography-approval-gate
+      name: "Aprovacao da Iconografia"
+      phase: iconography
+      blocker: false
+      description: |
+        Zeus apresenta preview dos icones criados. Usuario aprova ou pede ajustes.
+        Max 2 rodadas de ajuste. Se aprovado: icones incluidos na entrega.
+
+    - id: final-approval-gate
+      name: "Aprovação Final para Arte Finalista"
+      phase: delivery
+      blocker: true
+      description: |
+        Quinn valida consistência. Art SOMENTE é acionado após aprovação explícita do usuário.
+        Aprovação implícita ('ok', 'massa') não é suficiente.
+        Aprovação explícita: 'pode finalizar', 'aprovado', 'gera a entrega', 'vai'.
+
+pipeline:
+  workflow: brand-creation-pipeline
+
+  level_1_phases:
+    - id: intake
+      name: "Fase 0 — Intake e Expansão"
+      parallel: false
+      agents: [brand-master, brand-strategist]
+      tasks:
+        - 00-briefing-intake
+        - 01-brand-strategy
+
+    - id: personality
+      name: "Fase 1 — Estratégia e Personalidade"
+      parallel: true
+      agents: [archetype-designer, naming-semantics]
+      tasks:
+        - 02-archetypes
+        - 03-naming-voice
+
+    - id: visual_core
+      name: "Fase 2 — Direção Visual Core"
+      parallel: true
+      agents: [visual-identity, logo-symbol, color-tokens, typography]
+      tasks:
+        - 05-visual-direction
+        - 06-logo-system
+        - 07-color-tokens
+        - 08-typography
+
+    - id: iconography_assessment
+      name: "Fase 2.5 — Iconografia (condicional)"
+      parallel: false
+      conditional: true
+      agents: [brand-master]
+      cross_call: icon-forge
+      tasks:
+        - 16-iconography-assessment
+
+    - id: delivery_n1
+      name: "Fase 3 — Deck e Docs (N1)"
+      parallel: false
+      agents: [brand-deck, living-docs, quality-consistency]
+      tasks:
+        - 13-brand-deck
+        - 14-living-docs
+        - 15-quality-gate
+
+    - id: art_finalization
+      name: "Arte Finalista (pós-aprovação)"
+      parallel: false
+      agents: [art-finalizer]
+      tasks: []
+
+  level_2_phases:
+    - id: intake
+      name: "Fase 0 — Intake e Expansão"
+      parallel: false
+      agents: [brand-master, brand-strategist]
+      tasks:
+        - 00-briefing-intake
+        - 01-brand-strategy
+
+    - id: personality
+      name: "Fase 1 — Estratégia e Personalidade"
+      parallel: true
+      agents: [archetype-designer, naming-semantics, storytelling]
+      tasks:
+        - 02-archetypes
+        - 03-naming-voice
+        - 04-storytelling
+
+    - id: visual_system
+      name: "Fase 2 — Direção Visual Completa"
+      parallel: true
+      agents: [visual-identity, logo-symbol, color-tokens, typography]
+      tasks:
+        - 05-visual-direction
+        - 06-logo-system
+        - 07-color-tokens
+        - 08-typography
+
+    - id: iconography_assessment_n2
+      name: "Fase 2.5 — Iconografia (condicional)"
+      parallel: false
+      conditional: true
+      agents: [brand-master]
+      cross_call: icon-forge
+      tasks:
+        - 16-iconography-assessment
+
+    - id: system_applications
+      name: "Fase 3 — Sistema e Aplicações (N2)"
+      parallel: true
+      agents: [ui-brand-system, pattern-library, brand-applications]
+      tasks:
+        - 09-ui-brand-system
+        - 10-patterns-motion
+        - 11-applications
+
+    - id: delivery_n2
+      name: "Fase 4 — Prompts, Deck e Docs (N2)"
+      parallel: false
+      agents: [visual-prompts, brand-deck, living-docs, quality-consistency]
+      tasks:
+        - 12-visual-prompts
+        - 13-brand-deck
+        - 14-living-docs
+        - 15-quality-gate
+
+    - id: art_finalization
+      name: "Arte Finalista (pós-aprovação)"
+      parallel: false
+      agents: [art-finalizer]
+      tasks: []
+
+  level_3_phases:
+    - id: intake
+      name: "Fase 0 — Intake e Expansão"
+      parallel: false
+      agents: [brand-master, brand-strategist]
+      tasks:
+        - 00-briefing-intake
+        - 01-brand-strategy
+
+    - id: personality
+      name: "Fase 1 — Estratégia, Personalidade e Narrativa"
+      parallel: true
+      agents: [archetype-designer, naming-semantics, storytelling]
+      tasks:
+        - 02-archetypes
+        - 03-naming-voice
+        - 04-storytelling
+
+    - id: visual_full
+      name: "Fase 2 — Direção Visual Premium"
+      parallel: true
+      agents: [visual-identity, logo-symbol, color-tokens, typography]
+      tasks:
+        - 05-visual-direction
+        - 06-logo-system
+        - 07-color-tokens
+        - 08-typography
+
+    - id: iconography_assessment_n3
+      name: "Fase 2.5 — Iconografia (condicional)"
+      parallel: false
+      conditional: true
+      agents: [brand-master]
+      cross_call: icon-forge
+      tasks:
+        - 16-iconography-assessment
+
+    - id: system_full
+      name: "Fase 3 — Sistema Completo de Marca"
+      parallel: true
+      agents: [ui-brand-system, pattern-library, motion-system, brand-applications]
+      tasks:
+        - 09-ui-brand-system
+        - 10-patterns-motion
+        - 11-applications
+
+    - id: delivery_n3
+      name: "Fase 4 — Entrega Final Suprema"
+      parallel: true
+      agents: [visual-prompts, brand-deck, living-docs, quality-consistency]
+      tasks:
+        - 12-visual-prompts
+        - 13-brand-deck
+        - 14-living-docs
+        - 15-quality-gate
+
+    - id: art_finalization
+      name: "Arte Finalista (pós-aprovação)"
+      parallel: false
+      agents: [art-finalizer]
+      tasks: []
+
+deliverables:
+  level_1:
+    documents:
+      - "brand-strategy.md"
+      - "archetypes.md"
+      - "brand-voice.md"
+      - "visual-direction.md"
+      - "logo-rationale.md"
+      - "design-tokens.json (básico, 8–12 tokens)"
+      - "typography-system.md"
+      - "quick-guide.md"
+      - "presentation-structure.md (8–10 slides)"
+    assets:
+      - "Pasta de entrega: logo positivo/negativo/branco/preto"
+      - "Isotipo separado (mesmas variações)"
+      - "Favicon básico"
+    final:
+      - "PDF brandbook básico (8–10 slides)"
+      - "Quick guide de uso da marca (1–2 páginas)"
+
+  level_2:
+    documents:
+      - "Todos do Nível 1"
+      - "ui-guidelines.md (básico)"
+      - "pattern-library.md (básico)"
+      - "applications.md (6 aplicações)"
+      - "design-tokens.json (20–30 tokens)"
+      - "brandbook-master.md (8–12 páginas)"
+      - "visual-prompts.md (3–5 prompts)"
+      - "presentation-structure.md (14–16 slides)"
+    assets:
+      - "Todos do Nível 1"
+      - "Wordmark separado"
+      - "Paleta completa com HEX/RGB/CMYK"
+    final:
+      - "PDF brandbook médio (14–16 slides)"
+      - "Quick guide (2–3 páginas)"
+      - "Style guide básico"
+
+  level_3:
+    documents:
+      - "Todos do Nível 1 e 2"
+      - "ui-guidelines.md (completo, dark mode)"
+      - "pattern-library.md (completa)"
+      - "motion-system.md"
+      - "applications.md (10+ aplicações)"
+      - "design-tokens.json (50+ tokens)"
+      - "brandbook-master.md (documentação viva completa)"
+      - "visual-prompts.md (biblioteca completa)"
+      - "presentation-structure.md (20 slides)"
+    assets:
+      - "Todos do Nível 1 e 2"
+      - "Todos os formatos de logo e isotipo"
+      - "Todos os formatos de wordmark"
+      - "Assets de aplicação (covers, templates)"
+    final:
+      - "PDF brandbook premium (20 slides)"
+      - "Style guide completo"
+      - "Living docs atualizável"
+      - "Brand rules completas"
+      - "Checklist de consistência"
+
+folder_structure:
+  root: "clientes/{nome-marca}/brand/"
+  folders:
+    - "brand-core/"
+    - "visual-identity/"
+    - "design-system/"
+    - "motion/"
+    - "applications/"
+    - "prompts/"
+    - "presentations/"
+    - "exports/"
+    - "docs/"
+    - "entrega/{nome-marca}/"
+    - "entrega/{nome-marca}/01-logo-principal/"
+    - "entrega/{nome-marca}/02-isotipo-simbolo/"
+    - "entrega/{nome-marca}/03-wordmark/"
+    - "entrega/{nome-marca}/04-cores-oficiais/"
+    - "entrega/{nome-marca}/05-tipografia/"
+    - "entrega/{nome-marca}/06-apresentacao/"
+    - "entrega/{nome-marca}/07-instrucoes/"
+
+skills_diagnosis:
+  total_human_min: 3
+  human_roles:
+    - "Fornecer briefing (11 campos)"
+    - "Selecionar nível (1, 2 ou 3)"
+    - "Aprovar direção visual (gate obrigatório)"
+    - "Aprovação final antes da arte finalista"
+  ia_handled:
+    - "Expansão do briefing com inferência inteligente"
+    - "Estratégia de marca completa"
+    - "Arquétipos e personalidade"
+    - "Naming e semântica"
+    - "Manifesto e narrativa"
+    - "Direção visual e moodboard"
+    - "Racional de logo e símbolo"
+    - "Sistema de cores e design tokens"
+    - "Sistema tipográfico"
+    - "UI Brand System"
+    - "Pattern library e grafismos"
+    - "Motion system"
+    - "Aplicações de marca"
+    - "Prompts para geração visual com IA"
+    - "Brand deck estruturado"
+    - "Documentação viva"
+    - "QA de consistência"
+    - "Instruções e nomenclatura de entrega profissional"
+  must_be_human:
+    - "Decisão final sobre direção visual"
+    - "Aprovação do brandbook"
+    - "Autorização para arte finalista"
+
+# Autoaprendizado (squads-memory-sync, 2026-07-25)
+learning:
+  memory_file: MEMORY.md
+  format: memoria-squad-v1
+  global_log: memory/erros-aprendidos.md
+  squad_tag: brand
+  read_before_acting: true
+  max_chars: 8000

@@ -1,0 +1,157 @@
+workflow:
+  id: wf-pre-webinar-check
+  name: "Verificacao Pre-Webinario"
+  version: "1.0.0"
+  description: |
+    Executa os checklists de pre-captacao e pre-webinario de forma estruturada.
+    Cada item e verificado por um agente responsavel.
+    Itens reprovados geram tarefa de correcao imediata.
+  trigger: "*pre-check"
+  entry_agent: checklist-manager
+  estimated_duration: "2-4 horas"
+  type: checklist-driven
+
+  input_required:
+    - "Projeto do webinario (nome e pasta)"
+    - "Fase atual (pre-captacao ou pre-webinario)"
+
+phases:
+  - id: check_captacao
+    name: "Verificacao Pre-Captacao"
+    condition: "fase = pre-captacao"
+    checklist_source: "checklists/pre-captation.md"
+    agents_by_item:
+      promessa_central:
+        agent: promise-architect
+        verification: "Promessa tem resultado concreto + tempo definido?"
+        fix_if_fail: "Reescrever promessa com formula aprovada"
+      headline:
+        agent: headline-specialist
+        verification: "Headline segue formula: o que + tempo + resultado + por que agora?"
+        fix_if_fail: "Gerar 3 opcoes de headline e submeter para aprovacao"
+      pagina_captura:
+        agent: page-copy-specialist
+        verification: "Pagina carrega em menos de 3s, mobile-first, formulario funcional?"
+        fix_if_fail: "Identificar gargalo e corrigir"
+      pagina_obrigado:
+        agent: page-copy-specialist
+        verification: "Instrucoes claras (grupo, lembrete, bonus)?"
+        fix_if_fail: "Reescrever pagina de obrigado"
+      modelo_definido:
+        agent: webinar-architect
+        verification: "Modelo documentado e aprovado?"
+        fix_if_fail: "Definir modelo com webinar-chief"
+      criativos:
+        agent: creative-planner
+        verification: "Briefings de criativos prontos?"
+        fix_if_fail: "Criar briefings usando creative-plan"
+      pixel_eventos:
+        agent: traffic-data-planner
+        verification: "Pixel instalado, eventos de conversao disparando?"
+        fix_if_fail: "Configurar e testar eventos"
+      checkout:
+        agent: funnel-architect
+        verification: "Fluxo completo de checkout funcional (teste real)?"
+        fix_if_fail: "Corrigir checkout e retestar"
+      grupo_whatsapp:
+        agent: whatsapp-specialist
+        verification: "Grupo criado, descricao, regras, link funcional?"
+        fix_if_fail: "Criar e configurar grupo"
+      enquete:
+        agent: whatsapp-specialist
+        verification: "Enquete de qualificacao pronta?"
+        fix_if_fail: "Criar enquete com perguntas estrategicas"
+      emails_automatizados:
+        agent: email-specialist
+        verification: "Sequencia configurada e testada (confirmacao + lembretes)?"
+        fix_if_fail: "Configurar automacao de emails"
+      utms:
+        agent: traffic-data-planner
+        verification: "UTMs configurados por origem e campanha?"
+        fix_if_fail: "Criar planilha de UTMs e configurar"
+      metas:
+        agent: metrics-analyst
+        verification: "Metas numericas definidas (CPL, captura, comparecimento)?"
+        fix_if_fail: "Calcular metas baseadas na economia do funil"
+      stack_tecnico:
+        agent: crm-operations-specialist
+        verification: "Plataforma de webinario, streaming e API validados?"
+        fix_if_fail: "Testar stack completo com simulacao"
+      compliance:
+        agent: compliance-specialist
+        verification: "LGPD, termos de uso, politica de privacidade?"
+        fix_if_fail: "Criar ou atualizar documentos de compliance"
+    gate:
+      agents: [checklist-manager, webinar-chief]
+      rule: "Todos os 15 itens devem estar aprovados para iniciar captacao"
+      action_if_fail: "Lista de itens reprovados com responsavel e prazo para correcao"
+
+  - id: check_webinario
+    name: "Verificacao Pre-Webinario (48h antes)"
+    condition: "fase = pre-webinario"
+    checklist_source: "checklists/pre-webinar.md"
+    agents_by_item:
+      confirmacao_presenca:
+        agent: email-specialist
+        verification: "Email e WhatsApp de confirmacao enviados?"
+        fix_if_fail: "Disparar imediatamente"
+      lembretes:
+        agent: warmup-specialist
+        verification: "Lembretes com beneficio concreto (nao contagem regressiva)?"
+        fix_if_fail: "Reescrever lembretes com gancho de valor"
+      links:
+        agent: checklist-manager
+        verification: "Todos os links funcionam (sala, checkout, oferta, bonus)?"
+        fix_if_fail: "Corrigir links quebrados"
+      slides:
+        agent: script-writer
+        verification: "Slides prontos, revisados, sem erros?"
+        fix_if_fail: "Corrigir slides"
+      roteiro:
+        agent: script-writer
+        verification: "14 blocos do roteiro revisados e ensaiados?"
+        fix_if_fail: "Revisar roteiro e marcar ensaio"
+      bonus:
+        agent: bonus-architect
+        verification: "Bonus aprovados e paginas de entrega prontas?"
+        fix_if_fail: "Finalizar paginas de bonus"
+      regras_comerciais:
+        agent: commercial-strategist
+        verification: "Limites, condicoes, parcelamento definidos e claros?"
+        fix_if_fail: "Documentar regras comerciais"
+      moderacao:
+        agent: team-operations-planner
+        verification: "Equipe de moderacao escalada e briefada?"
+        fix_if_fail: "Escalar e briefar moderadores"
+      pagina_oferta:
+        agent: page-copy-specialist
+        verification: "Pagina de oferta pos-webinario revisada e funcional?"
+        fix_if_fail: "Revisar e testar pagina"
+      replay:
+        agent: replay-strategist
+        verification: "Replay configurado com delay estrategico?"
+        fix_if_fail: "Configurar replay com delay de 12-24h"
+      monitoramento:
+        agent: metrics-analyst
+        verification: "Dashboard de monitoramento ao vivo configurado?"
+        fix_if_fail: "Configurar monitoramento"
+      contingencia:
+        agent: crm-operations-specialist
+        verification: "Plano de contingencia tecnica documentado?"
+        fix_if_fail: "Criar plano B (queda de streaming, checkout fora, etc.)"
+    gate:
+      agents: [checklist-manager, webinar-chief]
+      rule: "Todos os 12 itens devem estar aprovados ate 24h antes do evento"
+      action_if_fail: "Alerta critico para webinar-chief com itens pendentes"
+
+  summary:
+    name: "Relatorio de Verificacao"
+    agent: checklist-manager
+    output: "pre-check-report-{project}.md"
+    format:
+      - "Data da verificacao"
+      - "Fase verificada"
+      - "Itens aprovados (com evidencia)"
+      - "Itens reprovados (com responsavel e prazo)"
+      - "Status geral: LIBERADO ou BLOQUEADO"
+      - "Proximo checkpoint"

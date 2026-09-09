@@ -1,0 +1,2357 @@
+{
+  "_doc": "Índice combinável de moldes, esquemas e simulações. Buscar por tags do trecho da fala; compor quando nenhuma entrada cobre a ideia (painel de uma + gesto de outra + peças de terceira). Novas entradas: mesmo formato + specimen no painel. Campo 'where' aponta seção do guia e âncora do painel; 'triggers' são frases da fala que ativam a entrada (ver design-router.json para o algoritmo).",
+  "pieces": [
+    "painel",
+    "balao",
+    "barra",
+    "trilho",
+    "circulo-check",
+    "anel",
+    "no",
+    "conector",
+    "rotulo",
+    "pill",
+    "linha-item",
+    "avatar",
+    "miniatura",
+    "numero",
+    "traco",
+    "selo"
+  ],
+  "gestures": [
+    "range",
+    "lista",
+    "contador",
+    "tracado",
+    "playback",
+    "digitacao",
+    "confirmacao",
+    "foco",
+    "cascata",
+    "contagem",
+    "reveal"
+  ],
+  "entries": [
+    {
+      "id": "palavra-conceito",
+      "family": "destaque",
+      "level": "N3",
+      "tags": [
+        "#palavra",
+        "#conceito",
+        "#abstrato",
+        "#anota-isso"
+      ],
+      "pieces": [
+        "traco"
+      ],
+      "gesture": "cascata",
+      "combine": [
+        "mini-selo"
+      ],
+      "where": {
+        "guide": "§6 + §6a",
+        "panel": "#s04-moldes / #s04d-enfase"
+      },
+      "triggers": [
+        "anota isso",
+        "presta atenção",
+        "o nome disso é",
+        "isso se chama"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "frase-com-icone",
+      "family": "destaque",
+      "level": "N2",
+      "tags": [
+        "#frase",
+        "#tese",
+        "#definicao"
+      ],
+      "pieces": [
+        "anel",
+        "rotulo"
+      ],
+      "gesture": "cascata",
+      "where": {
+        "guide": "§6a",
+        "panel": "#s04d-enfase"
+      },
+      "triggers": [
+        "promessa específica",
+        "isca de sardinha",
+        "frase de 2 a 4 palavras com pausa"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "atributo-solo",
+      "family": "destaque",
+      "level": "N1",
+      "tags": [
+        "#simbolo",
+        "#enfase-voz"
+      ],
+      "pieces": [
+        "anel",
+        "pill"
+      ],
+      "gesture": "foco",
+      "where": {
+        "guide": "§6a",
+        "panel": "#s04d-enfase"
+      },
+      "triggers": [
+        "ênfase de voz em UMA coisa que se desenha"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "trio-atributos",
+      "family": "molde",
+      "tags": [
+        "#tres",
+        "#lista-curta",
+        "#atributos"
+      ],
+      "pieces": [
+        "anel",
+        "pill"
+      ],
+      "gesture": "foco",
+      "combine": [
+        "grade-conceitos"
+      ],
+      "where": {
+        "guide": "§6",
+        "panel": "#s04-moldes"
+      },
+      "triggers": [
+        "três coisas",
+        "tem que ter a, b e c",
+        "três pilares",
+        "alguns pontos"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "grade-conceitos",
+      "family": "molde",
+      "tags": [
+        "#quatro-a-seis",
+        "#conceitos",
+        "#lista"
+      ],
+      "pieces": [
+        "anel",
+        "rotulo"
+      ],
+      "gesture": "cascata",
+      "where": {
+        "guide": "§6",
+        "panel": "#s04-moldes"
+      },
+      "triggers": [
+        "quatro",
+        "cinco",
+        "seis",
+        "vários conceitos",
+        "cada conteúdo",
+        "um para… outro para"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "grade-contagem",
+      "family": "molde",
+      "tags": [
+        "#numero",
+        "#quantidade",
+        "#12",
+        "#feed"
+      ],
+      "pieces": [
+        "numero",
+        "miniatura"
+      ],
+      "gesture": "contagem",
+      "combine": [
+        "feed-capas"
+      ],
+      "where": {
+        "guide": "§6",
+        "panel": "#s04-moldes"
+      },
+      "triggers": [
+        "12 conteúdos",
+        "quantos",
+        "pelo menos",
+        "número de"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "comparacao-certo-errado",
+      "family": "molde",
+      "tags": [
+        "#certo",
+        "#errado",
+        "#nao-faca",
+        "#foto"
+      ],
+      "pieces": [
+        "avatar",
+        "pill"
+      ],
+      "gesture": "cascata",
+      "where": {
+        "guide": "§6",
+        "panel": "#s04-moldes"
+      },
+      "triggers": [
+        "não tenha",
+        "tem que ter",
+        "errado",
+        "certo",
+        "em vez de"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "jornada-ab",
+      "family": "esquema",
+      "tags": [
+        "#de-para",
+        "#transformacao",
+        "#antes-depois"
+      ],
+      "pieces": [
+        "no",
+        "conector",
+        "rotulo"
+      ],
+      "gesture": "tracado",
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "triggers": [
+        "de onde ela sai",
+        "onde ela chega",
+        "de x para y",
+        "sair do",
+        "chegar em",
+        "transformação",
+        "antes e depois"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "tabela-comparativa",
+      "family": "esquema",
+      "tags": [
+        "#versus",
+        "#diferenca",
+        "#mentoria-vs-curso"
+      ],
+      "pieces": [
+        "pill",
+        "linha-item",
+        "painel"
+      ],
+      "gesture": "lista",
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "triggers": [
+        "diferença entre",
+        "mentoria é",
+        "curso é",
+        "de um lado",
+        "do outro",
+        "versus"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "passos",
+      "family": "esquema",
+      "tags": [
+        "#primeiro-depois",
+        "#passo-a-passo",
+        "#metodo"
+      ],
+      "pieces": [
+        "no",
+        "conector"
+      ],
+      "gesture": "foco",
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "triggers": [
+        "primeiro",
+        "depois",
+        "então",
+        "passo",
+        "etapa",
+        "em seguida"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "funil",
+      "family": "esquema",
+      "tags": [
+        "#funil",
+        "#poucos-chegam",
+        "#conversao"
+      ],
+      "pieces": [
+        "barra",
+        "numero"
+      ],
+      "gesture": "foco",
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "triggers": [
+        "poucos chegam",
+        "funil",
+        "filtrar",
+        "qualificar",
+        "dos que entram"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "ciclo",
+      "family": "esquema",
+      "tags": [
+        "#ciclo",
+        "#gera",
+        "#volta",
+        "#loop"
+      ],
+      "pieces": [
+        "no",
+        "conector"
+      ],
+      "gesture": "tracado",
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "triggers": [
+        "gera",
+        "que gera",
+        "volta",
+        "ciclo",
+        "roda",
+        "de novo"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "niveis",
+      "family": "esquema",
+      "tags": [
+        "#nivel",
+        "#consciencia",
+        "#estagio"
+      ],
+      "pieces": [
+        "barra",
+        "conector"
+      ],
+      "gesture": "foco",
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "triggers": [
+        "nível",
+        "estágio",
+        "consciência",
+        "do básico",
+        "avançado",
+        "sobe"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "ramificacao",
+      "family": "esquema",
+      "tags": [
+        "#um-vira-tres",
+        "#causas",
+        "#formatos"
+      ],
+      "pieces": [
+        "no",
+        "conector"
+      ],
+      "gesture": "foco",
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "triggers": [
+        "um vira três",
+        "vários formatos",
+        "três causas",
+        "se divide",
+        "desdobra",
+        "ramifica"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "chat-audio",
+      "family": "interface",
+      "tags": [
+        "#telegram",
+        "#whatsapp",
+        "#audio",
+        "#zeus",
+        "#conversa"
+      ],
+      "pieces": [
+        "painel",
+        "balao",
+        "barra",
+        "selo"
+      ],
+      "gesture": "playback",
+      "combine": [
+        "chat-texto",
+        "progresso"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "triggers": [
+        "telegram",
+        "whatsapp",
+        "manda um áudio",
+        "por áudio",
+        "ele responde"
+      ],
+      "modes": [
+        "completa",
+        "motion"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "chat-texto",
+      "family": "interface",
+      "tags": [
+        "#telegram",
+        "#whatsapp",
+        "#dm",
+        "#zeus",
+        "#digitando"
+      ],
+      "pieces": [
+        "painel",
+        "balao",
+        "selo"
+      ],
+      "gesture": "digitacao",
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "triggers": [
+        "digita",
+        "escreve pra ele",
+        "pergunta pra ele",
+        "ele vai dizer"
+      ],
+      "modes": [
+        "completa",
+        "motion"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "painel-configuracao",
+      "family": "interface",
+      "tags": [
+        "#gerenciador",
+        "#ads",
+        "#ajuste",
+        "#orcamento",
+        "#zeus-configura"
+      ],
+      "pieces": [
+        "painel",
+        "trilho",
+        "anel",
+        "numero"
+      ],
+      "gesture": "range",
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "triggers": [
+        "gerenciador",
+        "configura",
+        "orçamento",
+        "ajusta",
+        "campanha",
+        "otimiza"
+      ],
+      "modes": [
+        "completa",
+        "motion"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "grafico",
+      "family": "interface",
+      "tags": [
+        "#crescimento",
+        "#dados",
+        "#resultado",
+        "#evolucao"
+      ],
+      "pieces": [
+        "painel",
+        "numero",
+        "anel"
+      ],
+      "gesture": "tracado",
+      "combine": [
+        "metricas"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "triggers": [
+        "cresceu",
+        "crescimento",
+        "evolução",
+        "subiu",
+        "resultado ao longo",
+        "dados",
+        "análise"
+      ],
+      "modes": [
+        "completa",
+        "motion"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "checklist-minimo",
+      "family": "interface",
+      "tags": [
+        "#etapas",
+        "#feito",
+        "#pronto"
+      ],
+      "pieces": [
+        "painel",
+        "circulo-check"
+      ],
+      "gesture": "contador",
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "triggers": [
+        "já tá feito",
+        "pronto",
+        "concluído",
+        "isso, isso, isso",
+        "feito"
+      ],
+      "modes": [
+        "completa",
+        "motion"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "checks-puros",
+      "family": "interface",
+      "tags": [
+        "#contar",
+        "#uma-duas-tres"
+      ],
+      "pieces": [
+        "circulo-check"
+      ],
+      "gesture": "contador",
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "triggers": [],
+      "modes": [
+        "completa",
+        "motion"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "checks-lista",
+      "family": "interface",
+      "tags": [
+        "#isso-isso-isso",
+        "#lista-vertical"
+      ],
+      "pieces": [
+        "circulo-check"
+      ],
+      "gesture": "contador",
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "triggers": [],
+      "modes": [
+        "completa",
+        "motion"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "perfil-instagram",
+      "family": "interface",
+      "tags": [
+        "#instagram",
+        "#perfil",
+        "#bio",
+        "#seguidores"
+      ],
+      "pieces": [
+        "painel",
+        "avatar",
+        "numero",
+        "miniatura"
+      ],
+      "gesture": "foco",
+      "combine": [
+        "feed-capas",
+        "destaques"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "triggers": [
+        "perfil",
+        "bio",
+        "foto de perfil",
+        "seguidores"
+      ],
+      "modes": [
+        "completa",
+        "motion"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "post-reel",
+      "family": "interface",
+      "tags": [
+        "#post",
+        "#reel",
+        "#curtida",
+        "#salvar"
+      ],
+      "pieces": [
+        "painel",
+        "avatar",
+        "anel"
+      ],
+      "gesture": "foco",
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "triggers": [
+        "post",
+        "reel",
+        "curtida",
+        "salvou",
+        "compartilhou"
+      ],
+      "modes": [
+        "completa",
+        "motion"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "notificacao",
+      "family": "interface",
+      "tags": [
+        "#notificacao",
+        "#chegou",
+        "#aviso",
+        "#lead"
+      ],
+      "pieces": [
+        "selo",
+        "rotulo"
+      ],
+      "gesture": "lista",
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "triggers": [
+        "chegou",
+        "notificação",
+        "avisou",
+        "novo lead"
+      ],
+      "modes": [
+        "completa",
+        "motion"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "metricas-kpi",
+      "family": "interface",
+      "tags": [
+        "#metricas",
+        "#alcance",
+        "#leads",
+        "#custo"
+      ],
+      "pieces": [
+        "painel",
+        "numero",
+        "anel"
+      ],
+      "gesture": "contagem",
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "triggers": [
+        "alcance",
+        "leads",
+        "custo por",
+        "métrica",
+        "kpi",
+        "resultado do mês"
+      ],
+      "modes": [
+        "completa",
+        "motion"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "destaques",
+      "family": "interface",
+      "tags": [
+        "#destaques",
+        "#stories",
+        "#experiencia",
+        "#depoimentos"
+      ],
+      "pieces": [
+        "painel",
+        "avatar",
+        "pill"
+      ],
+      "gesture": "foco",
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "triggers": [
+        "destaques",
+        "stories fixados",
+        "experiência, resultados, depoimentos"
+      ],
+      "modes": [
+        "completa",
+        "motion"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "feed-capas",
+      "family": "interface",
+      "tags": [
+        "#feed",
+        "#capas",
+        "#12-conteudos",
+        "#estrategia"
+      ],
+      "pieces": [
+        "painel",
+        "miniatura",
+        "rotulo"
+      ],
+      "gesture": "cascata",
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "triggers": [
+        "feed",
+        "capas",
+        "últimas postagens",
+        "posts"
+      ],
+      "modes": [
+        "completa",
+        "motion"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "cartao-publico",
+      "family": "interface",
+      "tags": [
+        "#publico",
+        "#isca",
+        "#baleia",
+        "#sardinha",
+        "#persona"
+      ],
+      "pieces": [
+        "painel",
+        "anel",
+        "rotulo"
+      ],
+      "gesture": "foco",
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "triggers": [
+        "isca",
+        "baleia",
+        "sardinha",
+        "público que",
+        "quem já tem",
+        "quem ainda"
+      ],
+      "modes": [
+        "completa",
+        "motion"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "cartao-headline",
+      "family": "interface",
+      "tags": [
+        "#promessa",
+        "#oferta",
+        "#headline",
+        "#frase"
+      ],
+      "pieces": [
+        "painel",
+        "traco",
+        "selo"
+      ],
+      "gesture": "cascata",
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "triggers": [
+        "promessa",
+        "te ajudo a",
+        "eu te ensino",
+        "headline",
+        "oferta"
+      ],
+      "modes": [
+        "completa",
+        "motion"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "progresso",
+      "family": "interface",
+      "tags": [
+        "#minutos",
+        "#configurando",
+        "#carregando",
+        "#zeus-trabalhando"
+      ],
+      "pieces": [
+        "painel",
+        "barra",
+        "anel",
+        "numero"
+      ],
+      "gesture": "playback",
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "triggers": [
+        "5 minutos",
+        "enquanto",
+        "configurando",
+        "tomando um café",
+        "ele faz"
+      ],
+      "modes": [
+        "completa",
+        "motion"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "calendario",
+      "family": "interface",
+      "tags": [
+        "#rotina",
+        "#todo-dia",
+        "#consistencia",
+        "#dias"
+      ],
+      "pieces": [
+        "painel",
+        "circulo-check",
+        "numero"
+      ],
+      "gesture": "contador",
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "triggers": [
+        "todo dia",
+        "rotina",
+        "consistência",
+        "dias seguidos",
+        "semana"
+      ],
+      "modes": [
+        "completa",
+        "motion"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "depoimento",
+      "family": "interface",
+      "tags": [
+        "#depoimento",
+        "#aluno",
+        "#prova-social"
+      ],
+      "pieces": [
+        "painel",
+        "avatar",
+        "anel"
+      ],
+      "gesture": "cascata",
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "triggers": [
+        "aluno",
+        "depoimento",
+        "ele disse",
+        "o que achou",
+        "agradecer"
+      ],
+      "modes": [
+        "completa",
+        "motion"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "lista-leads",
+      "family": "interface",
+      "tags": [
+        "#leads",
+        "#novo",
+        "#respondeu",
+        "#agendou"
+      ],
+      "pieces": [
+        "painel",
+        "avatar",
+        "linha-item"
+      ],
+      "gesture": "lista",
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "triggers": [
+        "lista de leads",
+        "respondeu",
+        "agendou",
+        "novos contatos"
+      ],
+      "modes": [
+        "completa",
+        "motion"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "meta-progresso",
+      "family": "interface",
+      "tags": [
+        "#meta",
+        "#50-mil",
+        "#faturar",
+        "#por-mes"
+      ],
+      "pieces": [
+        "painel",
+        "numero",
+        "trilho",
+        "anel"
+      ],
+      "gesture": "range",
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "triggers": [
+        "meta",
+        "50 mil",
+        "por mês",
+        "faturar",
+        "chegar em"
+      ],
+      "modes": [
+        "completa",
+        "motion"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "enquete",
+      "family": "interface",
+      "tags": [
+        "#enquete",
+        "#pergunta",
+        "#story",
+        "#audiencia"
+      ],
+      "pieces": [
+        "painel",
+        "barra",
+        "numero"
+      ],
+      "gesture": "range",
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "triggers": [
+        "enquete",
+        "caixa de perguntas",
+        "pergunta pro público",
+        "o que trava"
+      ],
+      "modes": [
+        "completa",
+        "motion"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "busca",
+      "family": "interface",
+      "tags": [
+        "#busca",
+        "#explorar",
+        "#nicho",
+        "#encontrar"
+      ],
+      "pieces": [
+        "painel",
+        "avatar",
+        "linha-item"
+      ],
+      "gesture": "digitacao",
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "triggers": [
+        "busca",
+        "procura",
+        "explorar",
+        "encontrar",
+        "nicho"
+      ],
+      "modes": [
+        "completa",
+        "motion"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "comentarios",
+      "family": "interface",
+      "tags": [
+        "#comentarios",
+        "#engajamento",
+        "#pergunta-do-publico"
+      ],
+      "pieces": [
+        "painel",
+        "avatar",
+        "linha-item"
+      ],
+      "gesture": "lista",
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "triggers": [
+        "comentário",
+        "comentaram",
+        "perguntaram no post"
+      ],
+      "modes": [
+        "completa",
+        "motion"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "agenda",
+      "family": "interface",
+      "tags": [
+        "#agenda",
+        "#horario",
+        "#sessao",
+        "#vagas"
+      ],
+      "pieces": [
+        "painel",
+        "numero",
+        "anel"
+      ],
+      "gesture": "contador",
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "triggers": [
+        "agenda",
+        "horário",
+        "sessão",
+        "vaga",
+        "marca uma"
+      ],
+      "modes": [
+        "completa",
+        "motion"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "confirmacao",
+      "family": "interface",
+      "tags": [
+        "#venda",
+        "#fechou",
+        "#pagamento",
+        "#inscricao"
+      ],
+      "pieces": [
+        "circulo-check",
+        "numero",
+        "anel"
+      ],
+      "gesture": "confirmacao",
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "triggers": [
+        "fechou",
+        "vendeu",
+        "pagamento",
+        "entrou aluno",
+        "inscrição"
+      ],
+      "modes": [
+        "completa",
+        "motion"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "lettering",
+      "family": "destaque",
+      "tags": [
+        "#climax",
+        "#frase-resumo",
+        "#quebra-de-padrao"
+      ],
+      "pieces": [
+        "pill",
+        "anel"
+      ],
+      "gesture": "cascata",
+      "where": {
+        "guide": "§5c",
+        "panel": "#s04e-lettering"
+      },
+      "triggers": [
+        "frase que resume o vídeo",
+        "6 a 22 palavras",
+        "clímax"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "balanca",
+      "family": "esquema",
+      "tags": [
+        "#trade-off",
+        "#pesa-mais",
+        "#preco-valor"
+      ],
+      "pieces": [
+        "conector",
+        "pill"
+      ],
+      "gesture": "foco",
+      "triggers": [
+        "pesa mais",
+        "x ou y",
+        "preço ou valor",
+        "vale mais"
+      ],
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "linha-do-tempo",
+      "family": "esquema",
+      "tags": [
+        "#tempo",
+        "#dias",
+        "#marcos",
+        "#prazo"
+      ],
+      "pieces": [
+        "conector",
+        "no",
+        "rotulo"
+      ],
+      "gesture": "tracado",
+      "triggers": [
+        "no dia 1",
+        "em 30 dias",
+        "primeira semana",
+        "depois de 90 dias"
+      ],
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "venn",
+      "family": "esquema",
+      "tags": [
+        "#intersecao",
+        "#encontro",
+        "#onde-x-encontra-y"
+      ],
+      "pieces": [
+        "no",
+        "anel",
+        "rotulo"
+      ],
+      "gesture": "cascata",
+      "triggers": [
+        "onde x encontra y",
+        "a interseção",
+        "o que você sabe e o que pagam"
+      ],
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "matriz-2x2",
+      "family": "esquema",
+      "tags": [
+        "#quadrantes",
+        "#esforco-resultado",
+        "#dois-eixos"
+      ],
+      "pieces": [
+        "conector",
+        "rotulo"
+      ],
+      "gesture": "cascata",
+      "triggers": [
+        "muito esforço pouco resultado",
+        "quatro cenários",
+        "quadrante"
+      ],
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "escala-intensidade",
+      "family": "esquema",
+      "tags": [
+        "#frio-morno-quente",
+        "#de-1-a-10",
+        "#intensidade"
+      ],
+      "pieces": [
+        "trilho",
+        "anel",
+        "rotulo"
+      ],
+      "gesture": "range",
+      "triggers": [
+        "frio",
+        "morno",
+        "quente",
+        "de 1 a 10",
+        "nível de"
+      ],
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "espelho",
+      "family": "esquema",
+      "tags": [
+        "#sem-com",
+        "#estado",
+        "#contraste-sem-seta"
+      ],
+      "pieces": [
+        "painel",
+        "anel",
+        "rotulo"
+      ],
+      "gesture": "foco",
+      "triggers": [
+        "sem x",
+        "com x",
+        "quem não tem",
+        "quem tem"
+      ],
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "camadas",
+      "family": "esquema",
+      "tags": [
+        "#empilhar",
+        "#em-cima-disso",
+        "#base"
+      ],
+      "pieces": [
+        "barra",
+        "rotulo"
+      ],
+      "gesture": "cascata",
+      "triggers": [
+        "em cima disso",
+        "a base é",
+        "primeiro a base",
+        "camada"
+      ],
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "equacao",
+      "family": "esquema",
+      "tags": [
+        "#soma",
+        "#x-mais-y",
+        "#resultado"
+      ],
+      "pieces": [
+        "no",
+        "anel",
+        "rotulo"
+      ],
+      "gesture": "cascata",
+      "triggers": [
+        "mais",
+        "é igual a",
+        "x mais y é",
+        "a soma"
+      ],
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "lacuna",
+      "family": "esquema",
+      "tags": [
+        "#gap",
+        "#onde-esta-onde-deveria",
+        "#distancia"
+      ],
+      "pieces": [
+        "barra",
+        "conector",
+        "rotulo"
+      ],
+      "gesture": "tracado",
+      "triggers": [
+        "onde está",
+        "onde deveria",
+        "a distância entre",
+        "o gap"
+      ],
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "concentrico",
+      "family": "esquema",
+      "tags": [
+        "#proximidade",
+        "#circulos",
+        "#audiencia"
+      ],
+      "pieces": [
+        "anel",
+        "rotulo"
+      ],
+      "gesture": "cascata",
+      "triggers": [
+        "quem te segue",
+        "quem não te conhece",
+        "círculo de",
+        "mais próximo"
+      ],
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "email",
+      "family": "interface",
+      "tags": [
+        "#email",
+        "#relatorio",
+        "#segunda"
+      ],
+      "pieces": [
+        "painel",
+        "selo",
+        "rotulo"
+      ],
+      "gesture": "lista",
+      "triggers": [
+        "e-mail",
+        "relatório",
+        "chega na caixa"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "modes": [
+        "completa",
+        "motion"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "checkout",
+      "family": "interface",
+      "tags": [
+        "#oferta",
+        "#preco",
+        "#botao",
+        "#comprar"
+      ],
+      "pieces": [
+        "painel",
+        "numero",
+        "anel"
+      ],
+      "gesture": "contagem",
+      "triggers": [
+        "quero entrar",
+        "o preço é",
+        "parcela",
+        "checkout"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "modes": [
+        "completa",
+        "motion"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "player-aula",
+      "family": "interface",
+      "tags": [
+        "#aula",
+        "#area-de-membros",
+        "#video"
+      ],
+      "pieces": [
+        "painel",
+        "anel",
+        "barra",
+        "numero"
+      ],
+      "gesture": "playback",
+      "triggers": [
+        "na aula",
+        "área de membros",
+        "assiste",
+        "módulo"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "modes": [
+        "completa",
+        "motion"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "videochamada",
+      "family": "interface",
+      "tags": [
+        "#sessao",
+        "#call",
+        "#ao-vivo",
+        "#acompanhamento"
+      ],
+      "pieces": [
+        "painel",
+        "anel",
+        "pill",
+        "numero"
+      ],
+      "gesture": "foco",
+      "triggers": [
+        "na sessão",
+        "na call",
+        "ao vivo",
+        "encontro"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "modes": [
+        "completa",
+        "motion"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "tabela-dados",
+      "family": "interface",
+      "tags": [
+        "#planilha",
+        "#dados",
+        "#colunas",
+        "#cpl"
+      ],
+      "pieces": [
+        "painel",
+        "linha-item",
+        "numero"
+      ],
+      "gesture": "cascata",
+      "triggers": [
+        "na planilha",
+        "os dados",
+        "por criativo",
+        "tabela"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "modes": [
+        "completa",
+        "motion"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "ranking",
+      "family": "interface",
+      "tags": [
+        "#top-3",
+        "#o-que-mais-funciona",
+        "#ranking"
+      ],
+      "pieces": [
+        "painel",
+        "anel",
+        "barra"
+      ],
+      "gesture": "cascata",
+      "triggers": [
+        "o que mais funciona",
+        "top 3",
+        "em primeiro lugar",
+        "ranking"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "modes": [
+        "completa",
+        "motion"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "formulario",
+      "family": "interface",
+      "tags": [
+        "#captura",
+        "#formulario",
+        "#whatsapp",
+        "#lead"
+      ],
+      "pieces": [
+        "painel",
+        "anel",
+        "rotulo"
+      ],
+      "gesture": "digitacao",
+      "triggers": [
+        "deixa o whatsapp",
+        "página de captura",
+        "preenche",
+        "formulário"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "modes": [
+        "completa",
+        "motion"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "toggles",
+      "family": "interface",
+      "tags": [
+        "#configuracoes",
+        "#automatico",
+        "#ativa"
+      ],
+      "pieces": [
+        "painel",
+        "anel",
+        "linha-item"
+      ],
+      "gesture": "range",
+      "triggers": [
+        "ativa isso",
+        "deixa automático",
+        "liga",
+        "configurações"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "modes": [
+        "completa",
+        "motion"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "teste-ab",
+      "family": "interface",
+      "tags": [
+        "#teste",
+        "#ab",
+        "#criativo",
+        "#converteu"
+      ],
+      "pieces": [
+        "painel",
+        "anel",
+        "numero"
+      ],
+      "gesture": "contagem",
+      "triggers": [
+        "testei dois",
+        "a/b",
+        "qual converteu",
+        "o b ganhou"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "modes": [
+        "completa",
+        "motion"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "contagem-regressiva",
+      "family": "interface",
+      "tags": [
+        "#vagas",
+        "#encerra",
+        "#urgencia",
+        "#tempo"
+      ],
+      "pieces": [
+        "anel",
+        "numero"
+      ],
+      "gesture": "playback",
+      "triggers": [
+        "vagas",
+        "encerra em",
+        "últimas",
+        "sobraram"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "modes": [
+        "completa",
+        "motion"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "lista-motion",
+      "family": "interface",
+      "mode": "motion",
+      "tags": [
+        "#lista",
+        "#leads",
+        "#comentarios",
+        "#ranking",
+        "#generico"
+      ],
+      "pieces": [
+        "painel",
+        "avatar",
+        "linha-item",
+        "anel"
+      ],
+      "gesture": "lista",
+      "where": {
+        "guide": "§6b3",
+        "panel": "#s04h-motion"
+      },
+      "triggers": [
+        "lista",
+        "vários",
+        "um por um"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "aprovacao-reprovacao",
+      "family": "interface",
+      "mode": "motion",
+      "tags": [
+        "#sim-nao",
+        "#aprovado",
+        "#reprovado",
+        "#certo-errado-lista"
+      ],
+      "pieces": [
+        "circulo-check",
+        "linha-item"
+      ],
+      "gesture": "contador",
+      "where": {
+        "guide": "§6b3",
+        "panel": "#s04h-motion"
+      },
+      "triggers": [
+        "isso sim isso não",
+        "aprova",
+        "reprova",
+        "pode",
+        "não pode"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "comparativo-ab",
+      "family": "interface",
+      "mode": "motion",
+      "tags": [
+        "#a-vs-b",
+        "#dois-paineis",
+        "#x-faz-y-faz"
+      ],
+      "pieces": [
+        "painel",
+        "anel"
+      ],
+      "gesture": "foco",
+      "where": {
+        "guide": "§6b3",
+        "panel": "#s04h-motion"
+      },
+      "triggers": [
+        "x faz isso y faz aquilo",
+        "de um lado do outro",
+        "comparando"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "descricao",
+      "family": "interface",
+      "mode": "motion",
+      "tags": [
+        "#conceito",
+        "#explicando",
+        "#o-que-e"
+      ],
+      "pieces": [
+        "painel",
+        "anel",
+        "rotulo"
+      ],
+      "gesture": "cascata",
+      "where": {
+        "guide": "§6b3",
+        "panel": "#s04h-motion"
+      },
+      "triggers": [
+        "o que é",
+        "significa",
+        "funciona assim",
+        "explico"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "apontamento",
+      "family": "interface",
+      "mode": "motion",
+      "tags": [
+        "#olha-esse",
+        "#este-aqui",
+        "#destacar-linha"
+      ],
+      "pieces": [
+        "painel",
+        "linha-item"
+      ],
+      "gesture": "foco",
+      "where": {
+        "guide": "§6b3",
+        "panel": "#s04h-motion"
+      },
+      "triggers": [
+        "olha esse",
+        "esse aqui",
+        "repara nisso",
+        "este ponto"
+      ],
+      "version": "2.1",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "gargalo",
+      "family": "esquema",
+      "tags": [
+        "#gargalo",
+        "#fila",
+        "#problema-nesta-etapa",
+        "#vazao"
+      ],
+      "pieces": [
+        "no",
+        "conector",
+        "rotulo"
+      ],
+      "gesture": "tracado",
+      "version": "2.1",
+      "status": "aprovado-visual",
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "triggers": [
+        "o problema está nesta etapa",
+        "trava aqui",
+        "gargalo",
+        "fila"
+      ]
+    },
+    {
+      "id": "causa-efeito",
+      "family": "esquema",
+      "tags": [
+        "#porque",
+        "#causa",
+        "#efeito",
+        "#mecanismo"
+      ],
+      "pieces": [
+        "no",
+        "conector",
+        "rotulo"
+      ],
+      "gesture": "tracado",
+      "version": "2.1",
+      "status": "aprovado-visual",
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "triggers": [
+        "isso acontece porque",
+        "por isso",
+        "o que causa",
+        "consequência"
+      ]
+    },
+    {
+      "id": "arvore-decisao",
+      "family": "esquema",
+      "tags": [
+        "#se",
+        "#senao",
+        "#dois-caminhos",
+        "#condicao"
+      ],
+      "pieces": [
+        "no",
+        "conector",
+        "rotulo"
+      ],
+      "gesture": "foco",
+      "version": "2.1",
+      "status": "aprovado-visual",
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "triggers": [
+        "se já tem",
+        "se não tem",
+        "depende",
+        "dois caminhos"
+      ]
+    },
+    {
+      "id": "filtro-criterios",
+      "family": "esquema",
+      "tags": [
+        "#nao-e-qualquer",
+        "#criterios",
+        "#quem-passa",
+        "#qualificar"
+      ],
+      "pieces": [
+        "no",
+        "conector",
+        "rotulo"
+      ],
+      "gesture": "cascata",
+      "version": "2.1",
+      "status": "aprovado-visual",
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "triggers": [
+        "não é qualquer pessoa",
+        "critério",
+        "quem passa",
+        "qualificado"
+      ]
+    },
+    {
+      "id": "evidencia-anotada",
+      "family": "esquema",
+      "tags": [
+        "#repara",
+        "#print",
+        "#prova",
+        "#trecho"
+      ],
+      "pieces": [
+        "painel",
+        "anel",
+        "rotulo"
+      ],
+      "gesture": "reveal",
+      "version": "2.1",
+      "status": "aprovado-visual",
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "triggers": [
+        "repara nesse trecho",
+        "olha o print",
+        "aqui a prova",
+        "veja isso"
+      ]
+    },
+    {
+      "id": "manual-automatizado",
+      "family": "esquema",
+      "tags": [
+        "#manual",
+        "#automatico",
+        "#passos",
+        "#zeus-faz"
+      ],
+      "pieces": [
+        "no",
+        "conector",
+        "anel"
+      ],
+      "gesture": "tracado",
+      "version": "2.1",
+      "status": "aprovado-visual",
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "triggers": [
+        "manualmente",
+        "automático",
+        "o zeus faz",
+        "em vez de você"
+      ]
+    },
+    {
+      "id": "formulario-celular",
+      "family": "interface",
+      "mode": "motion",
+      "tags": [
+        "#no-celular",
+        "#tela-dela",
+        "#formulario"
+      ],
+      "pieces": [
+        "painel",
+        "anel"
+      ],
+      "gesture": "digitacao",
+      "version": "2.1",
+      "status": "aprovado-visual",
+      "where": {
+        "guide": "§6b3",
+        "panel": "#s04h-motion"
+      },
+      "triggers": [
+        "no celular",
+        "na tela dela",
+        "a pessoa abre"
+      ]
+    },
+    {
+      "id": "chat-celular",
+      "family": "interface",
+      "mode": "motion",
+      "tags": [
+        "#no-celular",
+        "#chat",
+        "#responde"
+      ],
+      "pieces": [
+        "painel",
+        "balao",
+        "selo"
+      ],
+      "gesture": "lista",
+      "version": "2.1",
+      "status": "aprovado-visual",
+      "where": {
+        "guide": "§6b3",
+        "panel": "#s04h-motion"
+      },
+      "triggers": [
+        "no celular",
+        "ele responde no telegram"
+      ]
+    },
+    {
+      "id": "notificacao-celular",
+      "family": "interface",
+      "mode": "motion",
+      "tags": [
+        "#no-celular",
+        "#chegou",
+        "#pilha"
+      ],
+      "pieces": [
+        "selo",
+        "rotulo"
+      ],
+      "gesture": "lista",
+      "version": "2.1",
+      "status": "aprovado-visual",
+      "where": {
+        "guide": "§6b3",
+        "panel": "#s04h-motion"
+      },
+      "triggers": [
+        "aparece a notificação",
+        "chega no celular"
+      ]
+    },
+    {
+      "id": "post-celular",
+      "family": "interface",
+      "mode": "motion",
+      "tags": [
+        "#no-celular",
+        "#post",
+        "#reel"
+      ],
+      "pieces": [
+        "painel",
+        "anel"
+      ],
+      "gesture": "foco",
+      "version": "2.1",
+      "status": "aprovado-visual",
+      "where": {
+        "guide": "§6b3",
+        "panel": "#s04h-motion"
+      },
+      "triggers": [
+        "a pessoa vê o post",
+        "no feed dela"
+      ]
+    },
+    {
+      "id": "checkout-celular",
+      "family": "interface",
+      "mode": "motion",
+      "tags": [
+        "#no-celular",
+        "#compra",
+        "#pagamento"
+      ],
+      "pieces": [
+        "painel",
+        "numero",
+        "anel"
+      ],
+      "gesture": "confirmacao",
+      "version": "2.1",
+      "status": "aprovado-visual",
+      "where": {
+        "guide": "§6b3",
+        "panel": "#s04h-motion"
+      },
+      "triggers": [
+        "compra pelo celular",
+        "paga ali"
+      ]
+    },
+    {
+      "id": "perfil-celular",
+      "family": "interface",
+      "mode": "motion",
+      "tags": [
+        "#no-celular",
+        "#perfil"
+      ],
+      "pieces": [
+        "painel",
+        "avatar"
+      ],
+      "gesture": "foco",
+      "version": "2.1",
+      "status": "aprovado-visual",
+      "where": {
+        "guide": "§6b3",
+        "panel": "#s04h-motion"
+      },
+      "triggers": [
+        "abre o seu perfil",
+        "entra no perfil"
+      ]
+    }
+  ],
+  "modes": {
+    "completa": {
+      "use": "landing, apresentação, site",
+      "panel": "#s04g-interfaces",
+      "guide": "§6b2"
+    },
+    "motion": {
+      "use": "vídeo (Remotion) — padrão",
+      "panel": "#s04h-motion",
+      "guide": "§6b3",
+      "derive": "texto→barra 10/8 (60%/40%), avatar→círculo gray100, imagem→bloco gray100, número→barra black 20; só o dado lido pela fala vira texto real",
+      "count": 30
+    }
+  },
+  "version": "2.1",
+  "deprecations": [
+    {
+      "old": "foco-migra",
+      "new": "foco",
+      "since": "2.1"
+    },
+    {
+      "old": "gancho 1B (texto colorido)",
+      "new": "gancho A ou C",
+      "since": "2.1"
+    },
+    {
+      "old": "anel aninhado (ícone + cartão)",
+      "new": "um contorno só (cartão)",
+      "since": "2.1"
+    },
+    {
+      "old": "ponto sólido de espectro 10/12",
+      "new": "mini-anel 14",
+      "since": "2.1"
+    }
+  ],
+  "counts": {
+    "moldes": 5,
+    "esquemas": 23,
+    "logicas_gramatica": 25,
+    "interfaces_completa": 35,
+    "interfaces_motion": 31,
+    "interfaces_celular": 6,
+    "nota": "'certo/errado' e 'X tem A,B,C' são lógicas atendidas pelos moldes da seção 04 (comparacao-certo-errado, trio-atributos/grade-conceitos), não por esquemas próprios"
+  }
+}

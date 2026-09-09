@@ -1,0 +1,59 @@
+# ZEUS PRO: o que NUNCA entra no versionamento
+# Regra de ouro: o repositório guarda a ARQUITETURA. A memória é do dono da máquina.
+
+# ---- Credenciais e ambiente ----
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+credenciais*
+segredos*
+.zeus/
+
+# ---- Memória pessoal (tudo que o sistema aprende sobre o dono) ----
+memory/**
+!memory/README.md
+!memory/_templates/
+!memory/_templates/**
+!memory/LACUNAS-DE-CONHECIMENTO.md
+!memory/DIARIO-DE-BORDO-INICIAL.md
+!memory/.gitkeep
+
+# ---- Vault do Obsidian preenchida (o template fica, o conteúdo não) ----
+obsidian/ZEUS-VAULT/**/*.md
+!obsidian/ZEUS-VAULT/**/README.md
+obsidian/vault-local/
+.obsidian/
+
+# ---- Design system preenchido com a marca do dono ----
+templates/design-tokens/brands/*.json
+!templates/design-tokens/brands/exemplo.json
+DESIGN-SYSTEM-CENTRAL.md
+
+# ---- Estado de execução ----
+.claude/hooks/*-stats.json
+.claude/settings.local.json
+_versions/
+_learning/
+*.jsonl
+logs/
+*.log
+
+# ---- Material ingerido e produzido ----
+transcricoes/
+uploads/
+entregas/
+output/
+cache/
+.cache/
+
+# ---- Sistema ----
+node_modules/
+package-lock.json
+.DS_Store
+Thumbs.db
+*.tmp
+
+# Pasta de entrada da importação de histórico de outras IAs (fica só na máquina do dono)
+importar/

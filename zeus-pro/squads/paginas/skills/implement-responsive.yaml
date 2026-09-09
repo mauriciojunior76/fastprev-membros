@@ -1,0 +1,375 @@
+name: implement-responsive
+title: Implement Responsive Design
+description: Build mobile-first, accessible responsive layouts following best practices
+
+type: responsive-architecture
+version: 1.0.0
+tags:
+  - responsive-design
+  - mobile-first
+  - breakpoints
+
+agent: page-visual-specialist
+activated_by:
+  - "make it responsive"
+  - "mobile layout"
+  - "responsive design"
+  - "*implement-responsive"
+
+prerequisites:
+  - tailwind_configured: true
+  - ui_library_selected: true
+
+responsive_system:
+  mobile_first: true
+  philosophy: |
+    Start with mobile (smallest screen).
+    Add complexity as screen grows.
+    Use min-width media queries, NOT max-width.
+
+  standard_breakpoints:
+    xs: 320px   # Extra small phones (iPhone 5/SE)
+    sm: 640px   # Portrait tablets, landscape phones (iPhone 12/13)
+    md: 768px   # iPad portrait, large phones landscape
+    lg: 1024px  # iPad landscape, small laptops
+    xl: 1280px  # Laptops, desktops
+    "2xl": 1536px # Large desktops, ultrawide
+
+  tailwind_reference:
+    mobile: "default (no prefix)"
+    sm: "sm:"
+    md: "md:"
+    lg: "lg:"
+    xl: "xl:"
+    "2xl": "2xl:"
+
+steps:
+  - step: 1
+    name: Plan Responsive Strategy
+    elicit: true
+    prompt: |
+      Let's plan your responsive layout:
+
+      1. **Primary Device Target**:
+         - Mobile-first (recommended)
+         - Desktop-first
+         - Specific device (iPhone 14, iPad Air, etc)
+
+      2. **Key Breakpoints You Need**:
+         - Always: Mobile (320px+)
+         - Always: Tablet (768px+)
+         - Always: Desktop (1024px+)
+         - Optional: Large desktop (1280px+)
+         - Optional: Ultrawide (1536px+)
+
+      3. **Content Priority**:
+         - What's essential on mobile?
+         - What's nice-to-have on desktop?
+         - Any content hiding/showing at different sizes?
+
+      4. **Performance Constraints**:
+         - Images: How to optimize for mobile?
+         - Data: Mobile-first loading?
+         - Interaction: Touch vs mouse?
+
+      5. **Team Consistency**:
+         - Are you using Tailwind CSS?
+         - Component library with responsive support?
+         - Custom breakpoints needed?
+
+  - step: 2
+    name: Design Responsive Layout
+    output: |
+      # Responsive Layout Architecture
+
+      ## Breakpoint Strategy
+
+      \`\`\`
+      ┌─────────────────────────────────────────────────────────┐
+      │ Mobile (320px - 639px)                                  │
+      │ - Single column                                         │
+      │ - Touch-friendly spacing (min 44px tap targets)         │
+      │ - Simplified navigation (hamburger menu)                │
+      │ - Full-width elements                                   │
+      └─────────────────────────────────────────────────────────┘
+
+      ┌─────────────────────────────────────────────────────────┐
+      │ Tablet (640px - 1023px)                                 │
+      │ - Two columns possible                                  │
+      │ - Increased whitespace                                  │
+      │ - Visible navigation                                    │
+      │ - Optimized images                                      │
+      └─────────────────────────────────────────────────────────┘
+
+      ┌─────────────────────────────────────────────────────────┐
+      │ Desktop (1024px+)                                       │
+      │ - Multi-column layouts                                  │
+      │ - Sidebar navigation                                    │
+      │ - Full-sized images                                     │
+      │ - Desktop-optimized spacing                             │
+      └─────────────────────────────────────────────────────────┘
+      \`\`\`
+
+  - step: 3
+    name: Generate Responsive Code
+    output: |
+      ## Mobile-First Responsive Example
+
+      ### Layout Structure
+
+      \`\`\`tsx
+      // Grid that changes from 1 → 2 → 3 columns
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-8">
+        {items.map(item => (
+          <Card key={item.id} {...item} />
+        ))}
+      </div>
+      \`\`\`
+
+      **Breakdown:**
+      - `grid-cols-1` — Mobile: 1 column
+      - `sm:grid-cols-2` — Tablet (640px+): 2 columns
+      - `md:grid-cols-3` — iPad portrait (768px+): 3 columns
+      - `lg:grid-cols-4` — Desktop (1024px+): 4 columns
+      - `gap-4 md:gap-6 lg:gap-8` — Responsive spacing
+
+      ### Responsive Typography
+
+      \`\`\`tsx
+      <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
+        Your Heading
+      </h1>
+
+      <p className="text-sm sm:text-base md:text-lg leading-relaxed text-gray-600">
+        Your paragraph text
+      </p>
+      \`\`\`
+
+      **Sizing Guide:**
+      - Mobile: `text-sm` (12px) or `text-base` (16px)
+      - Tablet: `text-base` (16px) or `text-lg` (18px)
+      - Desktop: `text-lg` (18px) or `text-xl` (20px)
+
+      ### Responsive Padding/Margin
+
+      \`\`\`tsx
+      <div className="px-4 sm:px-6 md:px-8 lg:px-12 py-8 sm:py-12 md:py-16 lg:py-20">
+        Content with responsive padding
+      </div>
+      \`\`\`
+
+      **Spacing Guide:**
+      - Mobile: `px-4 py-6` (16px padding, 24px vertical)
+      - Tablet: `sm:px-6 sm:py-10` (24px, 40px)
+      - Desktop: `md:px-8 md:py-14` (32px, 56px)
+      - Large: `lg:px-12 lg:py-20` (48px, 80px)
+
+      ### Responsive Navigation
+
+      \`\`\`tsx
+      export function Navigation() {
+        const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
+        return (
+          <nav className="flex items-center justify-between px-4 py:3 sm:px-6">
+            <Logo />
+
+            {/* Mobile Menu Button */}
+            <button
+              className="md:hidden"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              ☰
+            </button>
+
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex gap-6">
+              <a href="#">Home</a>
+              <a href="#">About</a>
+              <a href="#">Contact</a>
+            </div>
+
+            {/* Mobile Navigation */}
+            {mobileMenuOpen && (
+              <div className="md:hidden absolute top-16 left-0 right-0 bg-white border-b">
+                <a href="#" className="block px-4 py-2">Home</a>
+                <a href="#" className="block px-4 py-2">About</a>
+                <a href="#" className="block px-4 py-2">Contact</a>
+              </div>
+            )}
+          </nav>
+        );
+      }
+      \`\`\`
+
+      ### Responsive Images
+
+      \`\`\`tsx
+      <picture>
+        {/* Mobile */}
+        <source media="(max-width: 640px)" srcSet="/image-mobile.jpg" />
+        {/* Tablet */}
+        <source media="(max-width: 1024px)" srcSet="/image-tablet.jpg" />
+        {/* Desktop */}
+        <img
+          src="/image-desktop.jpg"
+          alt="Description"
+          className="w-full h-auto object-cover"
+        />
+      </picture>
+
+      {/* Or with Next.js Image */}
+      <Image
+        src="/image.jpg"
+        alt="Description"
+        width={1200}
+        height={600}
+        className="w-full h-auto"
+        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 80vw, 1200px"
+        priority={false}
+      />
+      \`\`\`
+
+      ### Responsive Flex Layout
+
+      \`\`\`tsx
+      <div className="flex flex-col sm:flex-row gap-4 md:gap-6">
+        {/* These stack on mobile, side-by-side on tablet+ */}
+        <div className="flex-1">Column 1</div>
+        <div className="flex-1">Column 2</div>
+        <div className="flex-1">Column 3</div>
+      </div>
+      \`\`\`
+
+      ### Hidden/Visible Elements
+
+      \`\`\`tsx
+      {/* Show only on mobile */}
+      <div className="sm:hidden">Mobile only navigation</div>
+
+      {/* Show only on desktop */}
+      <div className="hidden md:block">Desktop sidebar</div>
+
+      {/* Different content for different sizes */}
+      <h1 className="text-2xl sm:hidden">Mobile title</h1>
+      <h1 className="hidden sm:block text-4xl">Desktop title</h1>
+      \`\`\`
+
+  - step: 4
+    name: Mobile Performance Optimization
+    checklist: |
+      ### Image Optimization
+      - [ ] Use WebP format with PNG fallback
+      - [ ] Responsive images with `srcset`
+      - [ ] Lazy loading: `loading="lazy"`
+      - [ ] Next.js Image: Use `sizes` prop
+      - [ ] Compress: TinyPNG, Squoosh, etc
+
+      ### CSS Optimization
+      - [ ] Tailwind: Purge unused styles
+      - [ ] Critical CSS: Inline above-the-fold
+      - [ ] Minimize animations on mobile
+      - [ ] No custom fonts on slow connections
+
+      ### JavaScript
+      - [ ] Code split by route
+      - [ ] Lazy load non-critical components
+      - [ ] Remove unused libraries
+      - [ ] Defer non-critical JavaScript
+      - [ ] Minimize bundle size
+
+      ### Performance Metrics
+      - [ ] LCP (Largest Contentful Paint): < 2.5s
+      - [ ] FID (First Input Delay): < 100ms
+      - [ ] CLS (Cumulative Layout Shift): < 0.1
+      - [ ] Mobile PageSpeed: 80+
+
+  - step: 5
+    name: Accessibility & Touch Targets
+    requirements: |
+      ### Touch Friendly (Mobile)
+      - [ ] Minimum tap target: 44x44 px (Apple)
+      - [ ] Touch spacing: 8px minimum between targets
+      - [ ] Text: Minimum 16px (prevents zoom on iOS)
+      - [ ] Form inputs: Visible focus, large enough
+
+      ### Keyboard Navigation
+      - [ ] Tab order logical on all screen sizes
+      - [ ] Focus visible everywhere
+      - [ ] Escape key closes modals
+      - [ ] Enter/Space activates buttons
+
+      ### Screen Readers
+      - [ ] Semantic HTML: `<nav>`, `<main>`, `<article>`
+      - [ ] Alt text on all images
+      - [ ] ARIA labels for icon buttons
+      - [ ] Form labels associated with inputs
+      - [ ] Skip to main content link
+
+      ### Testing
+      - [ ] Test on real devices (iPhone, iPad, Android)
+      - [ ] Test on slow 3G (DevTools throttling)
+      - [ ] Keyboard only navigation
+      - [ ] Screen reader (NVDA, JAWS)
+
+  - step: 6
+    name: Test Across Devices
+    testing_devices: |
+      ### Phones
+      - iPhone 14 Pro (390x844)
+      - iPhone SE (375x667)
+      - Samsung S23 (360x800)
+      - Google Pixel 6 (412x892)
+
+      ### Tablets
+      - iPad Air (768x1024)
+      - iPad Pro (1024x1366)
+      - Samsung Galaxy Tab (800x1280)
+
+      ### Browsers
+      - Chrome (mobile & desktop)
+      - Safari (iOS & macOS)
+      - Firefox (mobile & desktop)
+      - Edge
+
+      ### Testing Tools
+      - Chrome DevTools (Responsive Mode)
+      - BrowserStack
+      - Physical devices
+      - Lighthouse (PageSpeed)
+      - Wave (Accessibility)
+
+---
+
+## Quick Reference: Common Responsive Patterns
+
+### Hero Section
+\`\`\`tsx
+<section className="min-h-screen md:min-h-96 flex items-center justify-center px-4 py-12 md:py-24">
+  <div className="max-w-4xl mx-auto text-center">
+    <h1 className="text-4xl md:text-6xl font-bold mb-4">Your Hero Title</h1>
+    <p className="text-lg md:text-xl text-gray-600 mb-8">Subtitle here</p>
+  </div>
+</section>
+\`\`\`
+
+### Card Grid
+\`\`\`tsx
+<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+  {/* Cards auto-layout */}
+</div>
+\`\`\`
+
+### Sidebar Layout
+\`\`\`tsx
+<div className="flex flex-col lg:flex-row gap-6">
+  <aside className="w-full lg:w-64 flex-shrink-0">Sidebar</aside>
+  <main className="flex-1">Main content</main>
+</div>
+\`\`\`
+
+---
+
+Powered by: @page-visual-specialist (Vex) + @responsive-guard (Breeze)
+Framework: Tailwind CSS (mobile-first breakpoints)
+Standard: WCAG 2.1 AA, 60+ Lighthouse score on mobile

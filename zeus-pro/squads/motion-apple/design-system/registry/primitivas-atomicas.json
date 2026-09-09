@@ -1,0 +1,350 @@
+{
+  "_doc": "Primitivas atomicas da cena sob demanda (DIRECAO-DINAMICA secao 11). Quando a fala descreve um processo que o catalogo de moldes nao cobre, a cena e COMPOSTA a partir destas doze pecas, no traco do sistema. Nao e um catalogo de moldes rival: e o alfabeto que o gerador usa quando nao existe palavra pronta. Lido por scripts/cena-sob-demanda.js e implementado em squads/motion/src/modules/primitivas-atomicas/.",
+  "version": "1.0",
+  "updated_at": "2026-09-08",
+  "regras_gerais": [
+    "Tudo em cinza do sistema, traco da secao 9c do guia visual.",
+    "Sem logo real e sem cor de app: o app real e colorido, a simulacao nao.",
+    "Nenhuma primitiva tem movimento proprio: o gesto vem do verbo da fala.",
+    "Objeto nasce em t menos 6 quadros da palavra que o nomeia.",
+    "O verbo manda no que a coisa E naquele momento: 'coloca o Zeus' faz do Zeus um item entrando, mesmo que o nome sozinho parecesse uma janela. A pista do substantivo so vale quando o verbo nao tem preferencia."
+  ],
+  "primitivas": [
+    {
+      "id": "janela",
+      "nome": "Janela",
+      "oQueE": "moldura de programa ou site, barra de titulo e area vazia",
+      "nasceDe": [
+        "nome de programa",
+        "nome de site",
+        "nome de app"
+      ],
+      "entra": "vazia, recebe conteudo depois",
+      "tamanhoPx": [
+        720,
+        480
+      ]
+    },
+    {
+      "id": "cartao",
+      "nome": "Cartao",
+      "oQueE": "bloco com titulo e uma ou duas linhas",
+      "nasceDe": [
+        "resposta",
+        "resultado",
+        "mensagem",
+        "aviso"
+      ],
+      "entra": "settle",
+      "tamanhoPx": [
+        640,
+        220
+      ]
+    },
+    {
+      "id": "lista",
+      "nome": "Lista",
+      "oQueE": "coluna de tres a cinco linhas iguais",
+      "nasceDe": [
+        "lista",
+        "conjunto",
+        "varios"
+      ],
+      "entra": "cascata com teto de 24q",
+      "tamanhoPx": [
+        560,
+        320
+      ]
+    },
+    {
+      "id": "item",
+      "nome": "Item",
+      "oQueE": "uma linha de lista, com rotulo",
+      "nasceDe": [
+        "coisa que entra numa lista",
+        "opcao",
+        "arquivo dentro de pasta"
+      ],
+      "entra": "empilha",
+      "tamanhoPx": [
+        560,
+        72
+      ]
+    },
+    {
+      "id": "campo",
+      "nome": "Campo",
+      "oQueE": "caixa de texto com cursor",
+      "nasceDe": [
+        "coisa que se digita",
+        "prompt",
+        "busca",
+        "comando"
+      ],
+      "entra": "digitacao linear",
+      "tamanhoPx": [
+        640,
+        96
+      ]
+    },
+    {
+      "id": "botao",
+      "nome": "Botao",
+      "oQueE": "botao unico com rotulo curto",
+      "nasceDe": [
+        "coisa que se clica",
+        "acao",
+        "envio"
+      ],
+      "entra": "anticipate 12q",
+      "tamanhoPx": [
+        220,
+        64
+      ]
+    },
+    {
+      "id": "arquivo",
+      "nome": "Arquivo",
+      "oQueE": "retangulo com canto dobrado e extensao",
+      "nasceDe": [
+        "nome de arquivo",
+        "extensao",
+        "download",
+        "zip",
+        "pdf"
+      ],
+      "entra": "desaba (gravity)",
+      "tamanhoPx": [
+        140,
+        176
+      ]
+    },
+    {
+      "id": "pasta",
+      "nome": "Pasta",
+      "oQueE": "pasta aberta, destino de arquivo",
+      "nasceDe": [
+        "pasta",
+        "destino",
+        "diretorio",
+        "onde salvar"
+      ],
+      "entra": "reveal",
+      "tamanhoPx": [
+        200,
+        160
+      ]
+    },
+    {
+      "id": "badge",
+      "nome": "Selo de confirmacao",
+      "oQueE": "pastilha com check e rotulo curto",
+      "nasceDe": [
+        "confirmacao",
+        "pronto",
+        "feito",
+        "instalado"
+      ],
+      "entra": "confirmacao (overshootMicro ate 48px)",
+      "tamanhoPx": [
+        180,
+        48
+      ]
+    },
+    {
+      "id": "seta",
+      "nome": "Seta",
+      "oQueE": "traco com ponta, ligando dois objetos",
+      "nasceDe": [
+        "relacao de origem e destino",
+        "vira",
+        "leva para"
+      ],
+      "entra": "tracado (settleSoft)",
+      "tamanhoPx": [
+        200,
+        24
+      ]
+    },
+    {
+      "id": "passo",
+      "nome": "Passo",
+      "oQueE": "circulo numerado com rotulo abaixo",
+      "nasceDe": [
+        "etapa",
+        "primeiro, depois, por fim",
+        "processo"
+      ],
+      "entra": "cascata, anel migra na tonica",
+      "tamanhoPx": [
+        96,
+        140
+      ]
+    },
+    {
+      "id": "cursor",
+      "nome": "Cursor",
+      "oQueE": "ponteiro do mouse",
+      "nasceDe": [
+        "clicar",
+        "arrastar",
+        "apontar"
+      ],
+      "entra": "desloca (ate 16px)",
+      "tamanhoPx": [
+        32,
+        40
+      ]
+    }
+  ],
+  "verbo_para_gesto": [
+    {
+      "verbos": [
+        "baixar",
+        "baixa",
+        "salvar",
+        "salva",
+        "download"
+      ],
+      "gesto": "desaba",
+      "ease": "gravity",
+      "durQ": 18,
+      "peso": 5,
+      "seVe": "o arquivo cai na pasta",
+      "primitivaPreferida": "arquivo"
+    },
+    {
+      "verbos": [
+        "abrir",
+        "abre",
+        "iniciar",
+        "inicia",
+        "rodar o programa"
+      ],
+      "gesto": "expande",
+      "ease": "settleSoft",
+      "durQ": 22,
+      "peso": 3,
+      "seVe": "a janela cresce e recebe conteudo depois",
+      "primitivaPreferida": "janela"
+    },
+    {
+      "verbos": [
+        "colocar",
+        "coloca",
+        "instalar",
+        "instala",
+        "adicionar",
+        "adiciona",
+        "jogar dentro",
+        "por dentro"
+      ],
+      "gesto": "empilha",
+      "ease": "inertia",
+      "durQ": 22,
+      "peso": 3,
+      "seVe": "o item entra na lista, vizinhos deslocam, selo confirma",
+      "primitivaPreferida": "item"
+    },
+    {
+      "verbos": [
+        "digitar",
+        "digita",
+        "escrever",
+        "escreve",
+        "pedir",
+        "pede"
+      ],
+      "gesto": "digitacao",
+      "ease": "linear",
+      "durQ": null,
+      "peso": 2,
+      "seVe": "o campo enche caractere a caractere",
+      "primitivaPreferida": "campo"
+    },
+    {
+      "verbos": [
+        "enviar",
+        "envia",
+        "clicar",
+        "clica",
+        "rodar",
+        "roda",
+        "executar",
+        "executa"
+      ],
+      "gesto": "envio",
+      "ease": "anticipate",
+      "durQ": 18,
+      "peso": 6,
+      "seVe": "o botao recua, dispara, e o destino reage",
+      "primitivaPreferida": "botao"
+    },
+    {
+      "verbos": [
+        "escolher",
+        "escolhe",
+        "selecionar",
+        "seleciona",
+        "marcar",
+        "marca"
+      ],
+      "gesto": "foco",
+      "ease": "smooth",
+      "durQ": 20,
+      "peso": 3,
+      "seVe": "o anel migra ate o item",
+      "primitivaPreferida": "item"
+    },
+    {
+      "verbos": [
+        "copiar",
+        "copia",
+        "mover",
+        "move",
+        "arrastar",
+        "arrasta"
+      ],
+      "gesto": "desloca",
+      "ease": "smooth",
+      "durQ": 20,
+      "peso": 2,
+      "seVe": "o item viaja de um lugar ao outro",
+      "primitivaPreferida": "item"
+    },
+    {
+      "verbos": [
+        "apagar",
+        "apaga",
+        "remover",
+        "remove",
+        "deletar",
+        "deleta",
+        "tirar",
+        "tira"
+      ],
+      "gesto": "remove",
+      "ease": "easy",
+      "durQ": 14,
+      "peso": 4,
+      "seVe": "o item some e os vizinhos fecham",
+      "primitivaPreferida": "item"
+    },
+    {
+      "verbos": [
+        "conferir",
+        "confere",
+        "verificar",
+        "verifica",
+        "conectar",
+        "conecta"
+      ],
+      "gesto": "confirmacao",
+      "ease": "overshootMicro",
+      "durQ": 16,
+      "peso": 6,
+      "seVe": "o selo de confirmacao aparece",
+      "primitivaPreferida": "badge"
+    }
+  ]
+}

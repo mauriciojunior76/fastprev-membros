@@ -1,0 +1,84 @@
+# Squad Low Ticket do ZEUS PRO.
+# Método comercial completo de produto de entrada: preço, oferta, página,
+# criativo e estrutura de tráfego. Referência central: método Maxxima
+# (Ricardo Maxxima), cruzado com Baldan, Bijari, Tayoba e Renan Vieira quando
+# aplicável. NÃO cuida da construção técnica do produto (isso é squads/aplicativos).
+
+# ---- IDENTIDADE (obrigatório) ----
+id: low-ticket
+nome: "Low Ticket: Método de Venda de Produto de Entrada"
+descrição: >
+  Cria e escala a venda de produto de entrada (preço baixo, alto volume):
+  lógica do produto, engenharia de oferta, escada de preço, página de vendas,
+  criativo e estrutura de campanha de tráfego. Acionar quando o pedido for
+  sobre o MÉTODO COMERCIAL (vender), não sobre construir o software em si
+  (isso é squads/aplicativos). Os dois podem trabalhar juntos quando o
+  produto de entrada é um aplicativo.
+versão: "1.0.0"
+status: ativo
+
+# ---- ROTEAMENTO (obrigatório) ----
+gatilhos:
+  palavras: [low ticket, produto de entrada, produto barato, esteira de preços, oferta, funil de vendas, tráfego low ticket, ABO, CBO]
+  contexto: >
+    Pedido sobre o método comercial de um produto de baixo preço e alto
+    volume: quanto cobrar, qual oferta, como estruturar a página de vendas,
+    qual criativo gravar, como montar a campanha de tráfego. Quando o pedido
+    é sobre construir a ferramenta em si (tela, banco de dados, funcionalidade
+    do aplicativo), o contexto aponta para squads/aplicativos, não para este
+    squad, mesmo que a palavra "app" apareça. O contexto vence a palavra-chave.
+peso_mínimo: 41
+
+# ---- ELENCO ----
+lead: arquiteto-low-ticket
+agentes:
+  - arquiteto-low-ticket
+  - engenheiro-de-oferta
+  - redator-pagina-low-ticket
+  - gestor-trafego-low-ticket
+
+# ---- O QUE ELE PRECISA LER ANTES DE AGIR ----
+leitura_obrigatória:
+  - memory/PERFIL.md
+  - squads/low-ticket/METODO.md
+  - squads/low-ticket/MEMORY.md
+
+# ---- O QUE ELE ENTREGA ----
+entregáveis:
+  - decisão de preço e escada de preço
+  - oferta (ângulo, promessa, nome do produto)
+  - estrutura de página de vendas nos 14 blocos
+  - roteiro de criativo no formato P.R.S-A
+  - estrutura de campanha de tráfego (ABO, CBO ou ADV) com orçamento e janela de decisão
+
+# ---- LIMITES (obrigatório) ----
+exige_confirmação:
+  - publicar qualquer coisa
+  - enviar mensagem a terceiro
+  - gastar dinheiro (subir ou alterar verba de tráfego)
+nunca_faz:
+  - inventar dado sobre o produto, o público ou o resultado
+  - prometer transformação em produto de entrada (produto de entrada é alívio rápido de uma dor, não jornada completa)
+  - misturar a régua de low ticket com a régua de alto ticket
+  - desativar campanha ou conjunto antes da janela de decisão da estrutura escolhida
+
+# ---- QUALIDADE ----
+qualidade:
+  checklist: squads/low-ticket/CHECKLIST.md
+  nota_mínima: 60
+  máximo_de_refações: 2
+
+# ---- APRENDIZADO (obrigatório) ----
+aprendizado:
+  arquivo: squads/low-ticket/MEMORY.md
+  teto_caracteres: 8000
+  ler_antes_de_agir: true
+
+# ---- PARCERIAS ----
+parceiros:
+  - squad: aplicativos
+    quando: o produto de entrada é um aplicativo e precisa de construção técnica (tela, banco de dados, funcionalidade)
+  - squad: gestor-trafego
+    quando: precisa de leitura de conta real, ajuste fino de campanha ativa ou diagnóstico de verba além da estrutura padrão
+  - squad: copywriting-squad
+    quando: precisa de copy fora do escopo de página e criativo de produto de entrada

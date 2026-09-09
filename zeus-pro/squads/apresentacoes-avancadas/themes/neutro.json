@@ -1,0 +1,39 @@
+{
+  "id": "neutro",
+  "name": "Neutro",
+  "description": "Dark profissional neutro. Ideal para quem ainda nao tem marca definida ou prefere um canvas limpo para seu conteudo.",
+  "mood": ["profissional", "neutro", "dark", "moderno"],
+  "tokens": {
+    "bg": "#0c0e1a",
+    "bg-alt": "#10121f",
+    "bg-card": "#161924",
+    "accent-1": "#7c6ee6",
+    "accent-2": "#9d8df0",
+    "accent-3": "#c4bcf8",
+    "text": "#f0eeff",
+    "text-muted": "rgba(220, 215, 255, 0.55)",
+    "text-label": "#9d8df0",
+    "border": "rgba(124, 110, 230, 0.18)",
+    "divider": "rgba(255, 255, 255, 0.08)"
+  },
+  "fonts": {
+    "title": "Inter",
+    "title-weight": "800",
+    "body": "DM Sans",
+    "body-weight": "400",
+    "mono": "JetBrains Mono"
+  },
+  "effects": {
+    "grain": true,
+    "grain-opacity": 0.3,
+    "blur-reveal": true,
+    "word-by-word": true,
+    "motion": "cubic-bezier(0.16, 1, 0.3, 1)",
+    "motion-profile": "smooth"
+  },
+  "icons": {
+    "style": "animated",
+    "stroke": 1.0,
+    "library": "tabler"
+  }
+}

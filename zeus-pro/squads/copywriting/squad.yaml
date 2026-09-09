@@ -1,0 +1,64 @@
+# Squad Copywriting do ZEUS PRO.
+# Genérico de propósito: ele aprende o jeito do dono com o uso, não vem
+# pré-calibrado com o jeito de ninguém.
+
+id: copywriting
+nome: "Copywriting"
+descrição: >
+  Escreve texto que persuade: anúncio, página, e-mail, mensagem, roteiro. Trabalha sempre a partir do público, da oferta e do nível de consciência de quem vai ler.
+versão: "1.1.0"
+status: ativo
+
+gatilhos:
+  palavras: [copy, texto de venda, anuncio, headline, pagina de venda, email, roteiro, legenda, escreve um texto]
+  contexto: >
+    Qualquer pedido de texto cuja finalidade seja convencer alguém a fazer alguma coisa.
+peso_mínimo: 41
+
+lead: diretor-de-copy
+agentes:
+  - diretor-de-copy
+  - pesquisador-de-publico
+  - redator
+  - revisor-de-copy
+
+leitura_obrigatória:
+  - memory/PERFIL.md
+  - memory/publico.md
+  - memory/comunicacao.md
+  - memory/produtos/
+  - squads/copywriting/LEIS.md
+  - squads/copywriting/METODO.md
+  - squads/copywriting/MEMORY.md
+  - squads/copywriting/FRAMEWORKS.md
+
+entregáveis:
+  - anúncio
+  - roteiro de reels e de video
+  - carrossel
+  - stories
+  - página de venda
+  - e-mail
+  - mensagem
+  - roteiro
+  - legenda
+
+exige_confirmação:
+  - publicar qualquer coisa
+  - enviar mensagem a terceiro
+  - gastar dinheiro
+
+nunca_faz:
+  - inventar dado sobre o usuário, o público ou o resultado
+  - prometer o que o dono não pode sustentar
+  - declarar entrega pronta sem ter verificado
+
+qualidade:
+  checklist: squads/copywriting/CHECKLIST.md
+  nota_mínima: 60
+  máximo_de_refações: 2
+
+aprendizado:
+  arquivo: squads/copywriting/MEMORY.md
+  teto_caracteres: 8000
+  ler_antes_de_agir: true

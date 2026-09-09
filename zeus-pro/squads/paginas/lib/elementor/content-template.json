@@ -1,0 +1,173 @@
+{
+  "_instrucoes": "Template em branco para novo cliente Exemplo. Preencher todos os campos. Ver EXEMPLO-CLIENT-STANDARD.md para guia de intake (copy / transcricao / apresentacao).",
+  "title": "NOME DO PRODUTO — PROPOSTA DE VALOR CURTA",
+  "fonts": {
+    "display": "Inter",
+    "body": "Inter",
+    "accent": "DM Sans"
+  },
+  "sections": {
+    "alert-banner": {
+      "text": "🔥 [URGÊNCIA OU PROVA SOCIAL] — Ex: ÚLTIMAS VAGAS / XX ALUNOS APROVADOS"
+    },
+    "hero": {
+      "logoUrl": "",
+      "title": "[PROMESSA PRINCIPAL — O que o cliente vai conquistar, em quanto tempo, mesmo que X obstáculo]",
+      "subtitle": "[Detalhe da promessa — como funciona, para quem é, prova social]",
+      "ctaText": "QUERO [RESULTADO] AGORA",
+      "ctaUrl": "#formulario",
+      "bgImageUrl": "",
+      "heroImageUrl": ""
+    },
+    "pain-points": {
+      "title": "Você se identifica com algum desses problemas?",
+      "items": [
+        {
+          "icon": "fas fa-clock",
+          "title": "[Dor 1 — curto, direto]",
+          "description": "[Descrição da dor 1 — 2-3 frases que o avatar reconhece em si mesmo]"
+        },
+        {
+          "icon": "fas fa-times-circle",
+          "title": "[Dor 2 — curto, direto]",
+          "description": "[Descrição da dor 2]"
+        },
+        {
+          "icon": "fas fa-chart-line",
+          "title": "[Dor 3 — curto, direto]",
+          "description": "[Descrição da dor 3]"
+        },
+        {
+          "icon": "fas fa-fire",
+          "title": "[Dor 4 — curto, direto]",
+          "description": "[Descrição da dor 4]"
+        }
+      ]
+    },
+    "features": {
+      "title": "O que você vai conquistar com [Nome do Produto]",
+      "subtitle": "[Subtítulo da seção — reforça o diferencial do método]",
+      "ctaText": "GARANTIR MINHA VAGA",
+      "ctaUrl": "#formulario",
+      "items": [
+        {
+          "imageUrl": "",
+          "title": "[Benefício 1]",
+          "description": "[Como este benefício resolve a vida do avatar]"
+        },
+        {
+          "imageUrl": "",
+          "title": "[Benefício 2]",
+          "description": "[Como este benefício resolve a vida do avatar]"
+        },
+        {
+          "imageUrl": "",
+          "title": "[Benefício 3]",
+          "description": "[Como este benefício resolve a vida do avatar]"
+        },
+        {
+          "imageUrl": "",
+          "title": "[Benefício 4]",
+          "description": "[Como este benefício resolve a vida do avatar]"
+        }
+      ]
+    },
+    "how-it-works": {
+      "title": "[N] Passos para [Resultado Final]",
+      "steps": [
+        {
+          "imageUrl": "",
+          "title": "Passo 1 — [Nome]",
+          "description": "[O que acontece neste passo e como beneficia o aluno]"
+        },
+        {
+          "imageUrl": "",
+          "title": "Passo 2 — [Nome]",
+          "description": "[O que acontece neste passo]"
+        },
+        {
+          "imageUrl": "",
+          "title": "Passo 3 — [Nome]",
+          "description": "[O que acontece neste passo]"
+        },
+        {
+          "imageUrl": "",
+          "title": "Passo 4 — [Nome/Resultado]",
+          "description": "[O que acontece neste passo — deve ser o resultado final]"
+        }
+      ],
+      "detailsHtml": ""
+    },
+    "offer": {
+      "title": "Tudo que você recebe ao entrar",
+      "items": [
+        {
+          "icon": "fas fa-play-circle",
+          "title": "[Entregável 1 — ex: Aulas, Módulos, Curso]",
+          "bulletPoints": [
+            "[Detalhe 1 do entregável]",
+            "[Detalhe 2 do entregável]",
+            "[Detalhe 3 do entregável]"
+          ]
+        },
+        {
+          "icon": "fas fa-book",
+          "title": "[Entregável 2 — ex: Material, PDF, Planilhas]",
+          "bulletPoints": [
+            "[Detalhe 1]",
+            "[Detalhe 2]",
+            "[Detalhe 3]"
+          ]
+        },
+        {
+          "icon": "fas fa-users",
+          "title": "[Entregável 3 — ex: Mentoria, Comunidade, Suporte]",
+          "bulletPoints": [
+            "[Detalhe 1]",
+            "[Detalhe 2]",
+            "[Detalhe 3]"
+          ]
+        },
+        {
+          "icon": "fas fa-star",
+          "title": "[Bônus ou Entregável 4]",
+          "bulletPoints": [
+            "[Detalhe 1]",
+            "[Detalhe 2]",
+            "[Detalhe 3]"
+          ]
+        }
+      ],
+      "anchorLabel": "Valor total do programa",
+      "anchorPrice": "R$ X.XXX",
+      "savingsLabel": "Você economiza",
+      "savingsValue": "R$ X.XXX",
+      "investLabel": "Você investe apenas",
+      "installmentPrefix": "12x de",
+      "priceCurrency": "R$",
+      "installmentValue": "XXX",
+      "cashLabel": "Ou à vista por apenas",
+      "cashPrice": "R$ X.XXX",
+      "cashBonus": "Economize R$ XXX no pagamento à vista",
+      "guarantee": "7 dias de garantia — risco zero",
+      "ctaText": "GARANTIR MINHA VAGA AGORA",
+      "ctaUrl": "#formulario"
+    },
+    "bio": {
+      "name": "[Nome do Especialista]",
+      "title": "[Credencial — ex: Aprovado em X / Especialista em Y / X anos de mercado]",
+      "bio": "[História de transformação do especialista — começa com o problema, passa pela virada, chega ao resultado. 3-5 frases. Falar como humano, não como currículo.]",
+      "imageUrl": ""
+    },
+    "cta-final": {
+      "title": "[Urgência real — vagas, data, bônus expirando]",
+      "subtitle": "[Por que agir agora — custo de não agir, oportunidade que passa]",
+      "ctaText": "QUERO [RESULTADO] AGORA",
+      "ctaUrl": "#formulario"
+    },
+    "footer": {
+      "logoUrl": "",
+      "copyrightText": "© 2025 [Nome do Produto] — Todos os direitos reservados. [Disclaimer se necessário]"
+    }
+  }
+}

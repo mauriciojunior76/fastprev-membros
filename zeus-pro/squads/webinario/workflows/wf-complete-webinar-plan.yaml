@@ -1,0 +1,179 @@
+workflow:
+  id: wf-complete-webinar-plan
+  name: "Plano Completo do Webinario - Documento Unico"
+  version: "1.0.0"
+  description: |
+    Compila todo o output do pipeline em um documento unico de 14 capitulos.
+    Usa os mesmos agentes e fases do wf-full-webinar-pipeline,
+    mas consolida tudo em um entregavel final coeso.
+  trigger: "pedido de plano completo de webinario"
+  entry_agent: webinar-chief
+  estimated_duration: "5-15 dias de planejamento"
+  type: sequential
+  output_format: single-document
+
+  references:
+    pipeline: wf-full-webinar-pipeline.yaml
+
+chapters:
+  - id: cap_01
+    name: "Big Idea e Promessa"
+    source_phases: [fase_0, fase_1]
+    agents: [promise-architect, big-idea-specialist]
+    content:
+      - Promessa central com resultado concreto
+      - Big Idea diferenciadora
+      - Mecanismo unico explicado
+      - Por que agora (urgencia natural)
+
+  - id: cap_02
+    name: "Posicionamento e Narrativa"
+    source_phases: [fase_1]
+    agents: [narrative-analyst, researcher]
+    content:
+      - Arco narrativo do webinario
+      - Posicionamento contra alternativas
+      - Inimigo comum identificado
+      - Historia de origem do expert
+
+  - id: cap_03
+    name: "Economia do Funil"
+    source_phases: [fase_1]
+    agents: [financial-planner, strategic-planner]
+    content:
+      - Projecao de leads, comparecimento, conversao
+      - CPL alvo e orcamento por fase
+      - Cenarios (conservador, realista, otimista)
+      - Break-even e ROI projetado
+
+  - id: cap_04
+    name: "Estrutura do Webinario"
+    source_phases: [fase_4]
+    agents: [webinar-architect]
+    content:
+      - Modelo escolhido (ao vivo, hibrido, evergreen, pago)
+      - Duracao e divisao de blocos
+      - Momentos de interacao
+      - Stack tecnico necessario
+
+  - id: cap_05
+    name: "Roteiro Completo"
+    source_phases: [fase_4]
+    agents: [script-writer, pitch-specialist]
+    content:
+      - 14 blocos do roteiro
+      - Transicoes entre blocos
+      - Pontos de prova social
+      - Momento exato do pitch
+      - Quebras de crenca mapeadas
+
+  - id: cap_06
+    name: "Oferta + Bonus"
+    source_phases: [fase_2]
+    agents: [offer-architect, bonus-architect]
+    content:
+      - Stack de valor completo
+      - Bonus estrategicos (com justificativa)
+      - Ancoragem de preco
+      - Garantia e reversao de risco
+      - Condicoes especiais (lote, limite, parcelamento)
+
+  - id: cap_07
+    name: "Copy Pagina de Captura"
+    source_phases: [fase_3]
+    agents: [headline-specialist, page-copy-specialist]
+    content:
+      - Headline principal + variacoes
+      - Subheadline
+      - Bullets de beneficio
+      - Prova social
+      - CTA e formulario
+
+  - id: cap_08
+    name: "Copy Pagina de Vendas"
+    source_phases: [fase_3]
+    agents: [headline-specialist, page-copy-specialist]
+    content:
+      - Estrutura completa da pagina pos-webinario
+      - Headline de oferta
+      - Descricao do produto
+      - Stack de valor visual
+      - Depoimentos
+      - FAQ
+      - CTAs multiplos
+
+  - id: cap_09
+    name: "Emails"
+    source_phases: [fase_3]
+    agents: [email-specialist]
+    content:
+      - Confirmacao de inscricao
+      - Sequencia de lembretes (3-5 emails)
+      - Email de replay
+      - Sequencia de urgencia (3-4 emails)
+      - Email de encerramento
+
+  - id: cap_10
+    name: "WhatsApp"
+    source_phases: [fase_3]
+    agents: [whatsapp-specialist]
+    content:
+      - Mensagem de boas-vindas ao grupo
+      - Enquete de qualificacao
+      - Lembretes pre-webinario
+      - Mensagens durante o evento
+      - Follow-up pos-webinario
+
+  - id: cap_11
+    name: "Criativos"
+    source_phases: [fase_5]
+    agents: [creative-planner, creative-script-writer]
+    content:
+      - Briefing de criativos (estaticos + video)
+      - Scripts de video ads
+      - Angulos de copy para anuncios
+      - Remarketing segmentado
+
+  - id: cap_12
+    name: "Replay e Urgencia"
+    source_phases: [fase_6]
+    agents: [replay-strategist, scarcity-architect]
+    content:
+      - Estrategia de replay (delay, acesso, cortes)
+      - Calendario de urgencia (7 dias)
+      - Gatilhos de escassez (vagas, preco, bonus)
+      - Sequencia de fechamento
+
+  - id: cap_13
+    name: "Comercial e Follow-up"
+    source_phases: [fase_6]
+    agents: [commercial-strategist, objection-handler, downsell-specialist]
+    content:
+      - Script de follow-up 1:1
+      - Matriz de objecoes com respostas
+      - Priorizacao de leads (quente, morno, frio)
+      - Downsell (se aplicavel)
+      - Plano de reativacao
+
+  - id: cap_14
+    name: "Checklists e Operacao"
+    source_phases: [fase_7]
+    agents: [checklist-manager, metrics-analyst, team-operations-planner]
+    content:
+      - Checklist pre-captacao (15 itens)
+      - Checklist pre-webinario (12 itens)
+      - Checklist pos-webinario (10 itens)
+      - Checklist operacional diario (8 perguntas)
+      - Dashboard de metricas
+      - Plano de equipe e responsabilidades
+
+gate_final:
+  name: "Validacao do Documento Completo"
+  agents: [webinar-final-reviewer, webinar-deputy]
+  criteria:
+    - "14 capitulos completos e coesos"
+    - "Nenhum capitulo com placeholder ou conteudo generico"
+    - "Numeros e projecoes consistentes entre capitulos"
+    - "Copy revisada e sem erros de acentuacao"
+    - "Checklists com itens concretos e verificaveis"
+  output: "plano-completo-webinario-{project}.md"

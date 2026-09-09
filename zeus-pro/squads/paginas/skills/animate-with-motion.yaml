@@ -1,0 +1,345 @@
+name: animate-with-motion
+title: Animate with Motion
+description: Create sophisticated animations using GSAP, Motion Primitives, Framer Motion
+
+type: animation-generation
+version: 1.0.0
+tags:
+  - animations
+  - motion-design
+  - microinteractions
+
+agent: animation-specialist
+activated_by:
+  - "animate this"
+  - "add animation"
+  - "make it move"
+  - "smooth animation"
+  - "*build-animation"
+
+prerequisites:
+  - ui_library_configured: true
+  - tailwind_or_css: true
+
+steps:
+  - step: 1
+    name: Understand Animation Intent
+    elicit: true
+    prompt: |
+      What animation do you need? Describe:
+
+      1. **Animation Type**:
+         - Entrance (element appears)
+         - Exit (element disappears)
+         - Hover (on mouse over)
+         - Scroll (triggered by scroll)
+         - Click/Interaction (user-triggered)
+         - Continuous (infinite loop)
+         - Micro-interaction (button feedback)
+
+      2. **Element(s) to Animate**: What should move?
+         - Single element
+         - Multiple elements (sequenced/staggered)
+         - Parent + children
+         - SVG shapes
+
+      3. **Animation Style**: How should it feel?
+         - Smooth & subtle (corporate)
+         - Snappy & responsive (SaaS)
+         - Playful & bouncy (startup)
+         - Premium & smooth (luxury)
+         - Sci-fi / Futuristic (Warframe-inspired)
+
+      4. **Duration**: How long?
+         - Quick: 0.2-0.4s (microinteractions)
+         - Normal: 0.5-0.8s (standard)
+         - Slow: 1-2s (impressive)
+         - Very Slow: 2-5s (parallax/scroll)
+
+      5. **Performance**: Any constraints?
+         - Mobile performance critical?
+         - 60fps required?
+         - Battery-conscious animation?
+
+  - step: 2
+    name: Select Animation Technology
+    description: Choose best tool for the job
+    decision_tree:
+      simple_entrance: Tailwind CSS animations
+      scroll_triggered: GSAP + ScrollTrigger
+      interactive: Framer Motion with gestures
+      complex_timeline: GSAP timeline
+      component_native: Motion Primitives
+      3d_required: Three.js / Babylon
+
+  - step: 3
+    name: Generate Animation Code
+    output: |
+      ✨ **Animation Created**
+
+      ---
+
+      ### Option 1: Framer Motion (React Native)
+
+      \`\`\`tsx
+      import { motion } from 'framer-motion';
+
+      export function AnimatedComponent() {
+        return (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{
+              type: 'spring',
+              stiffness: 100,
+              damping: 12,
+              duration: 0.5
+            }}
+          >
+            Content here
+          </motion.div>
+        );
+      }
+      \`\`\`
+
+      **Pros:**
+      - Native React syntax
+      - Gesture support (drag, hover, tap)
+      - Layout animations
+      - Easy transitions
+
+      **Cons:**
+      - Larger bundle size
+      - More overhead than CSS
+      - Less control over timeline
+
+      ---
+
+      ### Option 2: GSAP (Most Powerful)
+
+      \`\`\`tsx
+      import { useEffect, useRef } from 'react';
+      import gsap from 'gsap';
+      import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      export function AnimatedComponent() {
+        const ref = useRef(null);
+
+        useEffect(() => {
+          // Scroll Animation
+          gsap.to(ref.current, {
+            scrollTrigger: {
+              trigger: ref.current,
+              start: 'top center',
+              markers: false,
+            },
+            y: -50,
+            opacity: 1,
+            duration: 1,
+            ease: 'power2.out',
+          });
+
+          // Entrance Animation
+          gsap.from(ref.current, {
+            opacity: 0,
+            y: 30,
+            duration: 0.8,
+            ease: 'power2.out',
+          });
+        }, []);
+
+        return <div ref={ref}>Content here</div>;
+      }
+      \`\`\`
+
+      **Pros:**
+      - Maximum control
+      - ScrollTrigger (unmatched scroll animations)
+      - Timeline sequencing
+      - Morphing SVG, physics, plugins
+      - Best performance
+
+      **Cons:**
+      - Requires useEffect (non-declarative)
+      - Larger learning curve
+      - More verbose
+
+      ---
+
+      ### Option 3: Tailwind CSS Animations
+
+      \`\`\`tsx
+      export function AnimatedComponent() {
+        return (
+          <div className="animate-fade-in animate-slide-up">
+            Content here
+          </div>
+        );
+      }
+
+      // tailwind.config.js
+      export default {
+        theme: {
+          extend: {
+            animation: {
+              'fade-in': 'fadeIn 0.5s ease-in-out',
+              'slide-up': 'slideUp 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              slideUp: {
+                '0%': { transform: 'translateY(20px)', opacity: '0' },
+                '100%': { transform: 'translateY(0)', opacity: '1' },
+              },
+            },
+          },
+        },
+      };
+      \`\`\`
+
+      **Pros:**
+      - Zero JavaScript
+      - Tiny bundle
+      - GPU accelerated
+      - Perfect for simple animations
+
+      **Cons:**
+      - Limited control
+      - No interaction
+      - No timeline sequencing
+
+      ---
+
+      ### Option 4: Motion Primitives (React Components)
+
+      \`\`\`tsx
+      import { Transition } from '@react-three/fiber';
+      import { motion } from 'motion/react';
+
+      export function AnimatedComponent() {
+        return (
+          <motion.div
+            layout
+            initial={{ scale: 0, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0, opacity: 0 }}
+            layoutId="shared"
+          >
+            Animates automatically
+          </motion.div>
+        );
+      }
+      \`\`\`
+
+      **Pros:**
+      - Declarative
+      - Shared layout animations
+      - Built-in best practices
+      - Great DX
+
+      **Cons:**
+      - Fewer features than GSAP
+      - Less community resources
+
+      ---
+
+      ### Easing Function Recommendations
+
+      Based on animation type:
+
+      | Animation Type | Recommended Easing | Feeling |
+      |---|---|---|
+      | Entrance | `power2.out` | Smooth arrival |
+      | Exit | `sine.inOut` | Gentle departure |
+      | Bounce/Playful | `elastic.out` | Springy, fun |
+      | Scroll reveal | `sine.inOut` | Natural flow |
+      | Button click | `back.out` | Dynamic response |
+      | Sci-fi effect | `[0.34, 1.56, 0.64, 1]` | Warframe-style |
+
+  - step: 4
+    name: Add Microinteractions
+    output: |
+      ### Hover Effects
+
+      \`\`\`tsx
+      <motion.button
+        whileHover={{ scale: 1.05, y: -2 }}
+        whileTap={{ scale: 0.98 }}
+        transition={{ type: 'spring', stiffness: 200, damping: 10 }}
+      >
+        Hover me
+      </motion.button>
+      \`\`\`
+
+      ### Loading Animation
+
+      \`\`\`tsx
+      <motion.div
+        animate={{ rotate: 360 }}
+        transition={{ repeat: Infinity, duration: 1, ease: 'linear' }}
+      >
+        Loading...
+      </motion.div>
+      \`\`\`
+
+      ### Staggered Children
+
+      \`\`\`tsx
+      const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+          opacity: 1,
+          transition: {
+            staggerChildren: 0.1,
+            delayChildren: 0.2,
+          },
+        },
+      };
+
+      const itemVariants = {
+        hidden: { opacity: 0, y: 10 },
+        visible: { opacity: 1, y: 0 },
+      };
+
+      <motion.ul
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+      >
+        {items.map(item => (
+          <motion.li key={item.id} variants={itemVariants}>
+            {item.name}
+          </motion.li>
+        ))}
+      </motion.ul>
+      \`\`\`
+
+  - step: 5
+    name: Performance Verification
+    checklist:
+      - "Using `transform` and `opacity` (GPU accelerated)"
+      - "Not animating expensive properties (width, height, left, top)"
+      - "Using `will-change` CSS for heavy animations"
+      - "Testing on lower-end devices"
+      - "Chrome DevTools Performance tab: 60fps target"
+      - "No jank or stuttering"
+
+performance_tips:
+  - Use transform (translateY, scale) instead of top/left
+  - Use opacity instead of visibility changes
+  - Add will-change only during animation
+  - Use requestAnimationFrame for custom animations
+  - Debounce scroll event listeners
+  - Lazy load animation libraries (GSAP can be lazy-loaded)
+
+---
+
+Powered by: @animation-specialist (Anim)
+Tools: GSAP, Framer Motion, Motion Primitives, Tailwind CSS
+Performance Standard: 60 FPS minimum, GPU accelerated

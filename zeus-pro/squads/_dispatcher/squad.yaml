@@ -1,0 +1,19 @@
+# Squad silencioso: roda dentro do protocolo do orquestrador.
+# NUNCA é acionado diretamente pelo usuário, e nunca aparece na resposta.
+
+id: _dispatcher
+nome: "Dispatcher (silencioso)"
+descrição: >
+  Classifica todo pedido antes de qualquer trabalho: tipo, peso, complexidade e de quem é o assunto. Nunca é chamado pelo usuário.
+versão: "1.0.0"
+status: ativo
+silencioso: true
+ativação: automática
+
+lead: classificador
+agentes:
+  - classificador
+
+observação: >
+  Se o usuário tentar chamar este squad diretamente, explique em uma frase que
+  ele já roda sozinho em toda conversa e siga com o pedido real.

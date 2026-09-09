@@ -1,0 +1,74 @@
+{
+  "id": "corporate",
+  "name": "Corporate",
+  "owner": "generico",
+  "description": "Azul profissional + branco. Autoridade, confiabilidade, consultoria.",
+  "mood": ["profissional", "autoridade", "consultoria", "b2b"],
+  "colors": {
+    "bg": "#ffffff",
+    "bg-alt": "#f8fafc",
+    "bg-card": "#f1f5f9",
+    "accent-1": "#1e3a8a",
+    "accent-2": "#2563eb",
+    "accent-3": "#60a5fa",
+    "text": "#0f172a",
+    "text-muted": "rgba(15, 23, 42, 0.7)",
+    "text-label": "#2563eb",
+    "border": "rgba(37, 99, 235, 0.2)",
+    "divider": "rgba(37, 99, 235, 0.1)"
+  },
+  "fonts": {
+    "title": {
+      "family": "IBM Plex Sans",
+      "weight": 700,
+      "source": "google",
+      "url": "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&display=swap"
+    },
+    "body": {
+      "family": "IBM Plex Sans",
+      "weight": 400,
+      "source": "google"
+    },
+    "mono": {
+      "family": "IBM Plex Mono",
+      "weight": 400,
+      "source": "google"
+    }
+  },
+  "effects": {
+    "grain": false,
+    "gradient-titles": false,
+    "corner-lines": false,
+    "footer-diamond": false,
+    "blur-reveal": false,
+    "motion": "ease-in-out"
+  },
+  "logo": {
+    "path": null,
+    "width-px": 110,
+    "position": "top-left"
+  },
+  "page": {
+    "format": "A4",
+    "width-mm": 210,
+    "height-mm": 297,
+    "padding-mm": 20,
+    "background": "var(--bg)"
+  },
+  "icons": {
+    "style": "filled",
+    "stroke-width": 2,
+    "library": "heroicons"
+  },
+  "typography-scale": {
+    "h1": "44px",
+    "h2": "30px",
+    "h3": "22px",
+    "body": "15px",
+    "caption": "12px"
+  },
+  "cover": {
+    "template": "cover-corporate.html",
+    "style": "logo-top-title-center-subtitle-bottom"
+  }
+}

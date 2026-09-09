@@ -1,0 +1,81 @@
+{
+  "title": "LP - Cliente Teste",
+  "fonts": {
+    "display": "Inter",
+    "body": "Inter",
+    "accent": "DM Sans"
+  },
+  "sections": {
+    "alert-banner": {
+      "text": "PAGINA EXCLUSIVA PARA PROFISSIONAIS QUE QUEREM ESCALAR COM MENTORIA"
+    },
+    "hero": {
+      "logoUrl": "",
+      "title": "Transforme sua expertise em uma mentoria de alto valor",
+      "subtitle": "Descubra o metodo comprovado para criar, lancar e escalar sua mentoria mesmo sem audiencia, sem equipe e sem investir em anuncios.",
+      "ctaText": "QUERO COMECAR AGORA",
+      "ctaUrl": "#formulario",
+      "bgImageUrl": ""
+    },
+    "pain-points": {
+      "title": "Voce se identifica com algum desses problemas?",
+      "items": [
+        { "icon": "fas fa-times-circle", "title": "Conhecimento desperdicado", "description": "Voce tem anos de experiencia mas nao sabe como transformar isso em renda recorrente." },
+        { "icon": "fas fa-clock", "title": "Tempo trocado por dinheiro", "description": "Trabalha horas demais para ganhar pouco porque depende de atendimentos individuais." },
+        { "icon": "fas fa-chart-line", "title": "Dificuldade em escalar", "description": "Ja tentou criar produtos digitais mas nao conseguiu vender de forma previsivel." },
+        { "icon": "fas fa-user-slash", "title": "Sem posicionamento", "description": "Nao tem clareza de como se posicionar no mercado e atrair os clientes certos." }
+      ]
+    },
+    "features": {
+      "title": "O que voce vai conquistar",
+      "subtitle": "Nosso metodo ja ajudou mais de 200 profissionais a criarem mentorias lucrativas.",
+      "ctaText": "GARANTIR MINHA VAGA",
+      "ctaUrl": "#formulario",
+      "items": [
+        { "imageUrl": "", "title": "Clareza total", "description": "Saiba exatamente o que fazer em cada etapa" },
+        { "imageUrl": "", "title": "Funil validado", "description": "Modelo de funil testado e aprovado" },
+        { "imageUrl": "", "title": "Copy que converte", "description": "Textos prontos para usar nas suas campanhas" },
+        { "imageUrl": "", "title": "Suporte continuo", "description": "Acompanhamento semanal com especialistas" }
+      ]
+    },
+    "how-it-works": {
+      "title": "Como funciona? 4 passos simples",
+      "steps": [
+        { "imageUrl": "", "title": "1. Diagnostico", "description": "Analisamos seu negocio e definimos o melhor caminho" },
+        { "imageUrl": "", "title": "2. Estruturacao", "description": "Criamos sua mentoria com metodologia validada" },
+        { "imageUrl": "", "title": "3. Lancamento", "description": "Colocamos sua mentoria no ar com funil otimizado" },
+        { "imageUrl": "", "title": "4. Escala", "description": "Escalamos com trafego pago e automacoes" }
+      ],
+      "detailsHtml": ""
+    },
+    "offer": {
+      "title": "O que esta incluso",
+      "items": [
+        { "icon": "fas fa-video", "title": "Mentorias ao vivo", "bulletPoints": ["4 encontros mensais", "Acesso direto ao mentor", "Gravacao de todas as sessoes"] },
+        { "icon": "fas fa-book", "title": "Material completo", "bulletPoints": ["Templates prontos", "Scripts de vendas", "Modelos de anuncios"] },
+        { "icon": "fas fa-users", "title": "Comunidade VIP", "bulletPoints": ["Grupo exclusivo", "Networking qualificado", "Desafios semanais"] },
+        { "icon": "fas fa-headset", "title": "Suporte dedicado", "bulletPoints": ["Atendimento prioritario", "Revisao de materiais", "Feedback personalizado"] }
+      ],
+      "priceLabel": "Investimento",
+      "priceValue": "12x de R$ 197",
+      "ctaText": "GARANTIR MINHA VAGA AGORA",
+      "ctaUrl": "#formulario"
+    },
+    "bio": {
+      "name": "Seu Nome Aqui",
+      "title": "Fundador e Mentor Principal",
+      "bio": "Mais de 10 anos de experiencia no mercado digital. Ja ajudou centenas de profissionais a transformarem seu conhecimento em mentorias de alto valor. Especialista em estrategias de escala e posicionamento digital.",
+      "imageUrl": ""
+    },
+    "cta-final": {
+      "title": "Nao deixe para depois. Sua transformacao comeca agora.",
+      "subtitle": "Vagas limitadas. Quanto mais voce espera, mais oportunidades voce perde.",
+      "ctaText": "QUERO MINHA VAGA",
+      "ctaUrl": "#formulario"
+    },
+    "footer": {
+      "logoUrl": "",
+      "copyrightText": "2025 Todos os direitos reservados. Este site nao faz parte do website do Facebook ou do Facebook Inc."
+    }
+  }
+}

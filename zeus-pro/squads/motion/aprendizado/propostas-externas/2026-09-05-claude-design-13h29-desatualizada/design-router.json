@@ -1,0 +1,776 @@
+{
+  "_doc": "ROTEADOR do design system Zeus Reels. Entrada: um beat da transcrição (texto + t_inicio + t_fim). Saída: {entrada do índice, arquivos/seções onde está tudo, peças, gesto, restrições}. Ordem: 1) classificar o beat pelas perguntas; 2) casar triggers; 3) resolver 'where'; 4) se score 0, compor pelas peças (compose) e registrar. Nunca criar fora deste roteador.",
+  "files": {
+    "guide": "DESIGN-SYSTEM-REELS-APPLE-v2.md",
+    "panel": "Zeus Reels Design System.dc.html",
+    "tokens": "tokens/reels-tokens.css",
+    "icons_map": "icons-map.json",
+    "icons_log": "icons-log.json",
+    "moldes_index": "moldes-index.json",
+    "assets": "assets/"
+  },
+  "classify": [
+    {
+      "q": "A fala descreve o uso de um app ou mostra dados/números de um sistema?",
+      "yes": "family=interface → moldes-index family:interface; guide §6b2; panel #s04g-interfaces"
+    },
+    {
+      "q": "A fala anuncia estrutura (três coisas / de X para Y / primeiro depois / muitos entram poucos chegam / gera e volta / níveis / um vira três / certo errado)?",
+      "yes": "family=esquema|molde → guide §6b; panel #s04c-esquemas / #s04-moldes"
+    },
+    {
+      "q": "A fala tem UMA ideia com peso (palavra, frase de 2–4 palavras, ou símbolo)?",
+      "yes": "family=destaque → guide §6a (N1/N2/N3); panel #s04d-enfase"
+    },
+    {
+      "q": "É o primeiro beat (0–5s)?",
+      "yes": "gancho → guide §5b; panel #s04b-gancho"
+    },
+    {
+      "q": "É a frase-resumo do vídeo, no clímax, com 6–22 palavras?",
+      "yes": "lettering → guide §5c; panel #s04e-lettering (máx. 1 por vídeo)"
+    },
+    {
+      "q": "É sensação, opinião ou fala corrida sem objeto?",
+      "yes": "só legenda → guide §3a; nada no palco"
+    }
+  ],
+  "always": {
+    "legenda": "guide §3a/§3b · tokens --z-t-caption* --z-caption-*",
+    "cor": "guide §1 · tokens --z-spectrum --z-ring*",
+    "foco": "guide §2 · tokens --z-state-*",
+    "movimento": "guide §9/§9d · tokens --z-ease-* --z-scene-* --z-focus-*",
+    "simetria": "guide §6c",
+    "massa": "guide §9b · token --z-solid-max",
+    "traco": "guide §9c · tokens --z-icon-stroke-*",
+    "icones": "guide §7 · icons-map.json → icons-log.json",
+    "gabarito": "guide §8 · panel #s03-gabarito · tokens --z-stage-* --z-video-* --z-caption-center"
+  },
+  "pieces": {
+    "painel": {
+      "guide": "§6b2 (topo)",
+      "tokens": "--z-ui-panel-w --z-r-cell --z-glass-*",
+      "spec": "glass 700 raio 24 padding 24; interno escala 4; nunca vidro sobre vidro"
+    },
+    "balao": {
+      "guide": "§6b2 chat",
+      "tokens": "--z-ui-bubble-r --z-ui-bubble-r-tail",
+      "spec": "raio 18, canto 4 no lado de quem fala; usuário gray50 direita; Zeus branco+borda esquerda"
+    },
+    "barra": {
+      "guide": "§6b2 áudio/gráfico/funil",
+      "tokens": "--z-ui-bar-* --z-chart-bar-*",
+      "spec": "largura fixa, alturas de tabela; progresso black sobre gray200"
+    },
+    "trilho": {
+      "guide": "§6b2 configuração/meta",
+      "tokens": "--z-ui-slider-track --z-ui-slider-knob",
+      "spec": "6 gray100, preenchido black, botão 28 branco; botão em foco = anel 3 (34)"
+    },
+    "circulo-check": {
+      "guide": "§6b2 checklist/checks",
+      "tokens": "--z-check-*",
+      "spec": "feito ≤64 sólido black + check branco; >64 vazado borda 3 + check black; agora = anel; futuro vazio"
+    },
+    "anel": {
+      "guide": "§1",
+      "tokens": "--z-ring --z-ring-md --z-ring-sm --z-spectrum",
+      "spec": "3 ≤48 · 4 ≤100 · 6 >100; miolo branco; um por quadro; migra"
+    },
+    "no": {
+      "guide": "§6b",
+      "tokens": "--z-node",
+      "spec": "círculo 148 (esquema) / 112 (passos, ciclo) / 80 (ramo); borda gray200 2 quando sem anel"
+    },
+    "conector": {
+      "guide": "§6b",
+      "tokens": "--z-connector --z-connector-w",
+      "spec": "6 gray200, chevron 18 quando há direção; sempre cinza; desenha por dashoffset"
+    },
+    "rotulo": {
+      "guide": "§5 (escala de rótulos)",
+      "tokens": "--z-label-*",
+      "spec": "Inter 600 caixa alta: 30 palco · 24 esquema · 22 interface · 18 meta · 16 micro"
+    },
+    "pill": {
+      "guide": "§6 trio",
+      "tokens": "--z-pill-h --z-r-pill",
+      "spec": "64 alto, padding 24, glass; 44 dentro de painel (16/600)"
+    },
+    "linha-item": {
+      "guide": "§6b tabela / §6b2 listas",
+      "tokens": "--z-table-row",
+      "spec": "60 (esquema) / 56–64 (interface), hairline gray100 entre"
+    },
+    "avatar": {
+      "guide": "§6b2 perfil/leads",
+      "tokens": "--z-ui-avatar",
+      "spec": "círculo gray100 36–88; anel 3 quando em foco; anel do Instagram só citação"
+    },
+    "miniatura": {
+      "guide": "§6b2 feed/perfil",
+      "tokens": "--z-r-ui-thumb",
+      "spec": "quadrado raio 8 gray100; em foco = branco borda 2 + anel 4; nunca preto"
+    },
+    "numero": {
+      "guide": "§6b2 (tipo)",
+      "tokens": "--z-t-ui-number --z-t-number",
+      "spec": "Inter 700 tabular −0,01em; 24 interface · 34 KPI · 64 meta · 200 contagem (900)"
+    },
+    "traco": {
+      "guide": "§6 palavra",
+      "tokens": "--z-underline-*",
+      "spec": "6 a 95% da palavra, 12 abaixo, curva 3; 4 sob frase"
+    },
+    "selo": {
+      "guide": "§1 / v1 §4",
+      "tokens": "--z-r-seal --z-icon-seal --z-ring-spin",
+      "spec": "220 raio 52 anel 6 (fecho) · 44 anel 3 (mini, cabeçalho); cinza quando outro item tem anel"
+    },
+    "icone": {
+      "guide": "§7",
+      "tokens": "--z-icon-* --z-icon-stroke-*",
+      "spec": "Lucide, stroke clamp(1.25,2,160/tamanho); sempre em contêiner; escolhido por icons-map"
+    }
+  },
+  "gestures": {
+    "range": "trilho/preenchimento desliza + número conta junto, settle 30q",
+    "lista": "item entra por uma ponta (y ±16→0, settle 20q) e empurra",
+    "contador": "preenche na palavra (scale .9→1, settle 16q), check desenha 12q",
+    "tracado": "dashoffset até o ponto dito (settleSoft), espera a fala",
+    "playback": "tempo real, única linear",
+    "digitacao": "letra a letra 1,5q, sem blur",
+    "confirmacao": "círculo preenche/vaza + check + número conta",
+    "foco": "anel desliza 24q smoothInOut; recuo acompanha",
+    "cascata": "irmãos entram a 4q (blocos) / 1,5q (letras) / 3q (palavras)",
+    "contagem": "células preenchem a 4q; número interpola settleSoft"
+  },
+  "triggers": [
+    {
+      "match": [
+        "três coisas",
+        "tem que ter a, b e c",
+        "três pilares",
+        "alguns pontos"
+      ],
+      "entry": "trio-atributos",
+      "alt": [
+        "grade-conceitos"
+      ]
+    },
+    {
+      "match": [
+        "quatro",
+        "cinco",
+        "seis",
+        "vários conceitos",
+        "cada conteúdo",
+        "um para… outro para"
+      ],
+      "entry": "grade-conceitos",
+      "alt": [
+        "feed-capas"
+      ]
+    },
+    {
+      "match": [
+        "12 conteúdos",
+        "quantos",
+        "pelo menos",
+        "número de"
+      ],
+      "entry": "grade-contagem",
+      "alt": [
+        "metricas-kpi"
+      ]
+    },
+    {
+      "match": [
+        "não tenha",
+        "tem que ter",
+        "errado",
+        "certo",
+        "em vez de"
+      ],
+      "entry": "comparacao-certo-errado"
+    },
+    {
+      "match": [
+        "de onde ela sai",
+        "onde ela chega",
+        "de x para y",
+        "sair do",
+        "chegar em",
+        "transformação",
+        "antes e depois"
+      ],
+      "entry": "jornada-ab"
+    },
+    {
+      "match": [
+        "diferença entre",
+        "mentoria é",
+        "curso é",
+        "de um lado",
+        "do outro",
+        "versus"
+      ],
+      "entry": "tabela-comparativa",
+      "alt": [
+        "cartao-publico"
+      ]
+    },
+    {
+      "match": [
+        "primeiro",
+        "depois",
+        "então",
+        "passo",
+        "etapa",
+        "em seguida"
+      ],
+      "entry": "passos",
+      "alt": [
+        "checklist-minimo"
+      ]
+    },
+    {
+      "match": [
+        "poucos chegam",
+        "funil",
+        "filtrar",
+        "qualificar",
+        "dos que entram"
+      ],
+      "entry": "funil"
+    },
+    {
+      "match": [
+        "gera",
+        "que gera",
+        "volta",
+        "ciclo",
+        "roda",
+        "de novo"
+      ],
+      "entry": "ciclo",
+      "alt": [
+        "calendario"
+      ]
+    },
+    {
+      "match": [
+        "nível",
+        "estágio",
+        "consciência",
+        "do básico",
+        "avançado",
+        "sobe"
+      ],
+      "entry": "niveis"
+    },
+    {
+      "match": [
+        "um vira três",
+        "vários formatos",
+        "três causas",
+        "se divide",
+        "desdobra",
+        "ramifica"
+      ],
+      "entry": "ramificacao"
+    },
+    {
+      "match": [
+        "telegram",
+        "whatsapp",
+        "manda um áudio",
+        "por áudio",
+        "ele responde"
+      ],
+      "entry": "chat-audio",
+      "alt": [
+        "chat-texto"
+      ]
+    },
+    {
+      "match": [
+        "digita",
+        "escreve pra ele",
+        "pergunta pra ele",
+        "ele vai dizer"
+      ],
+      "entry": "chat-texto"
+    },
+    {
+      "match": [
+        "gerenciador",
+        "configura",
+        "orçamento",
+        "ajusta",
+        "campanha",
+        "otimiza"
+      ],
+      "entry": "painel-configuracao",
+      "alt": [
+        "progresso"
+      ]
+    },
+    {
+      "match": [
+        "cresceu",
+        "crescimento",
+        "evolução",
+        "subiu",
+        "resultado ao longo",
+        "dados",
+        "análise"
+      ],
+      "entry": "grafico",
+      "alt": [
+        "metricas-kpi"
+      ]
+    },
+    {
+      "match": [
+        "já tá feito",
+        "pronto",
+        "concluído",
+        "isso, isso, isso",
+        "feito"
+      ],
+      "entry": "checklist-minimo",
+      "alt": [
+        "checks-puros",
+        "checks-lista"
+      ]
+    },
+    {
+      "match": [
+        "perfil",
+        "bio",
+        "foto de perfil",
+        "seguidores"
+      ],
+      "entry": "perfil-instagram",
+      "alt": [
+        "destaques",
+        "comparacao-certo-errado"
+      ]
+    },
+    {
+      "match": [
+        "destaques",
+        "stories fixados",
+        "experiência, resultados, depoimentos"
+      ],
+      "entry": "destaques"
+    },
+    {
+      "match": [
+        "feed",
+        "capas",
+        "últimas postagens",
+        "posts"
+      ],
+      "entry": "feed-capas",
+      "alt": [
+        "grade-contagem"
+      ]
+    },
+    {
+      "match": [
+        "post",
+        "reel",
+        "curtida",
+        "salvou",
+        "compartilhou"
+      ],
+      "entry": "post-reel"
+    },
+    {
+      "match": [
+        "chegou",
+        "notificação",
+        "avisou",
+        "novo lead"
+      ],
+      "entry": "notificacao",
+      "alt": [
+        "lista-leads"
+      ]
+    },
+    {
+      "match": [
+        "alcance",
+        "leads",
+        "custo por",
+        "métrica",
+        "kpi",
+        "resultado do mês"
+      ],
+      "entry": "metricas-kpi",
+      "alt": [
+        "grafico"
+      ]
+    },
+    {
+      "match": [
+        "isca",
+        "baleia",
+        "sardinha",
+        "público que",
+        "quem já tem",
+        "quem ainda"
+      ],
+      "entry": "cartao-publico"
+    },
+    {
+      "match": [
+        "promessa",
+        "te ajudo a",
+        "eu te ensino",
+        "headline",
+        "oferta"
+      ],
+      "entry": "cartao-headline"
+    },
+    {
+      "match": [
+        "5 minutos",
+        "enquanto",
+        "configurando",
+        "tomando um café",
+        "ele faz"
+      ],
+      "entry": "progresso"
+    },
+    {
+      "match": [
+        "todo dia",
+        "rotina",
+        "consistência",
+        "dias seguidos",
+        "semana"
+      ],
+      "entry": "calendario"
+    },
+    {
+      "match": [
+        "aluno",
+        "depoimento",
+        "ele disse",
+        "o que achou",
+        "agradecer"
+      ],
+      "entry": "depoimento"
+    },
+    {
+      "match": [
+        "lista de leads",
+        "respondeu",
+        "agendou",
+        "novos contatos"
+      ],
+      "entry": "lista-leads"
+    },
+    {
+      "match": [
+        "meta",
+        "50 mil",
+        "por mês",
+        "faturar",
+        "chegar em"
+      ],
+      "entry": "meta-progresso",
+      "alt": [
+        "confirmacao"
+      ]
+    },
+    {
+      "match": [
+        "enquete",
+        "caixa de perguntas",
+        "pergunta pro público",
+        "o que trava"
+      ],
+      "entry": "enquete"
+    },
+    {
+      "match": [
+        "busca",
+        "procura",
+        "explorar",
+        "encontrar",
+        "nicho"
+      ],
+      "entry": "busca"
+    },
+    {
+      "match": [
+        "comentário",
+        "comentaram",
+        "perguntaram no post"
+      ],
+      "entry": "comentarios"
+    },
+    {
+      "match": [
+        "agenda",
+        "horário",
+        "sessão",
+        "vaga",
+        "marca uma"
+      ],
+      "entry": "agenda"
+    },
+    {
+      "match": [
+        "fechou",
+        "vendeu",
+        "pagamento",
+        "entrou aluno",
+        "inscrição"
+      ],
+      "entry": "confirmacao"
+    },
+    {
+      "match": [
+        "anota isso",
+        "presta atenção",
+        "o nome disso é",
+        "isso se chama"
+      ],
+      "entry": "palavra-conceito"
+    },
+    {
+      "match": [
+        "promessa específica",
+        "isca de sardinha",
+        "frase de 2 a 4 palavras com pausa"
+      ],
+      "entry": "frase-com-icone"
+    },
+    {
+      "match": [
+        "ênfase de voz em UMA coisa que se desenha"
+      ],
+      "entry": "atributo-solo"
+    },
+    {
+      "match": [
+        "frase que resume o vídeo",
+        "6 a 22 palavras",
+        "clímax"
+      ],
+      "entry": "lettering"
+    },
+    {
+      "match": [
+        "pesa mais",
+        "x ou y",
+        "preço ou valor",
+        "vale mais"
+      ],
+      "entry": "balanca"
+    },
+    {
+      "match": [
+        "no dia 1",
+        "em 30 dias",
+        "primeira semana",
+        "depois de 90 dias"
+      ],
+      "entry": "linha-do-tempo"
+    },
+    {
+      "match": [
+        "onde x encontra y",
+        "a interseção",
+        "o que você sabe e o que pagam"
+      ],
+      "entry": "venn"
+    },
+    {
+      "match": [
+        "muito esforço pouco resultado",
+        "quatro cenários",
+        "quadrante"
+      ],
+      "entry": "matriz-2x2"
+    },
+    {
+      "match": [
+        "frio",
+        "morno",
+        "quente",
+        "de 1 a 10",
+        "nível de"
+      ],
+      "entry": "escala-intensidade"
+    },
+    {
+      "match": [
+        "sem x",
+        "com x",
+        "quem não tem",
+        "quem tem"
+      ],
+      "entry": "espelho"
+    },
+    {
+      "match": [
+        "em cima disso",
+        "a base é",
+        "primeiro a base",
+        "camada"
+      ],
+      "entry": "camadas"
+    },
+    {
+      "match": [
+        "mais",
+        "é igual a",
+        "x mais y é",
+        "a soma"
+      ],
+      "entry": "equacao"
+    },
+    {
+      "match": [
+        "onde está",
+        "onde deveria",
+        "a distância entre",
+        "o gap"
+      ],
+      "entry": "lacuna"
+    },
+    {
+      "match": [
+        "quem te segue",
+        "quem não te conhece",
+        "círculo de",
+        "mais próximo"
+      ],
+      "entry": "concentrico"
+    },
+    {
+      "match": [
+        "e-mail",
+        "relatório",
+        "chega na caixa"
+      ],
+      "entry": "email"
+    },
+    {
+      "match": [
+        "quero entrar",
+        "o preço é",
+        "parcela",
+        "checkout"
+      ],
+      "entry": "checkout"
+    },
+    {
+      "match": [
+        "na aula",
+        "área de membros",
+        "assiste",
+        "módulo"
+      ],
+      "entry": "player-aula"
+    },
+    {
+      "match": [
+        "na sessão",
+        "na call",
+        "ao vivo",
+        "encontro"
+      ],
+      "entry": "videochamada"
+    },
+    {
+      "match": [
+        "na planilha",
+        "os dados",
+        "por criativo",
+        "tabela"
+      ],
+      "entry": "tabela-dados"
+    },
+    {
+      "match": [
+        "o que mais funciona",
+        "top 3",
+        "em primeiro lugar",
+        "ranking"
+      ],
+      "entry": "ranking"
+    },
+    {
+      "match": [
+        "deixa o whatsapp",
+        "página de captura",
+        "preenche",
+        "formulário"
+      ],
+      "entry": "formulario"
+    },
+    {
+      "match": [
+        "ativa isso",
+        "deixa automático",
+        "liga",
+        "configurações"
+      ],
+      "entry": "toggles"
+    },
+    {
+      "match": [
+        "testei dois",
+        "a/b",
+        "qual converteu",
+        "o b ganhou"
+      ],
+      "entry": "teste-ab"
+    },
+    {
+      "match": [
+        "vagas",
+        "encerra em",
+        "últimas",
+        "sobraram"
+      ],
+      "entry": "contagem-regressiva"
+    }
+  ],
+  "compose": {
+    "rule": "Se nenhum trigger casa (score 0): escolha família pela classificação; monte com peças do dicionário acima, com as medidas do guia; escolha o gesto pela natureza (o que o olho espera); passe por §6c e §10; registre em moldes-index.json + specimen no painel (#s04g ou #s04c).",
+    "examples": [
+      {
+        "beat": "ele manda o relatório por e-mail toda segunda",
+        "compose": "painel + linha-item(avatar=selo) + numero(data) · gesto lista · família interface · tags #email #relatorio #rotina"
+      },
+      {
+        "beat": "a mentoria tem 3 fases e cada fase tem 2 entregas",
+        "compose": "passos (3 nós) + ramificacao (2 por nó, 2º nível) · gesto tracado+foco · família esquema"
+      }
+    ]
+  },
+  "budget": {
+    "per_scene": [
+      "1 protagonista",
+      "1 portador de cor",
+      "≤ 904×374 (497 lettering)",
+      "≤ 5 itens",
+      "≤ 3 sólidos ≤64px"
+    ],
+    "per_video": [
+      "N3 2–3",
+      "N2 3–4",
+      "lettering ≤1",
+      "mesmo molde nunca seguido",
+      "ícone nunca em 2 moldes"
+    ]
+  }
+}

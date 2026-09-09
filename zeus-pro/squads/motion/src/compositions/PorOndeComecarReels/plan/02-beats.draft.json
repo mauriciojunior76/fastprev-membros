@@ -1,0 +1,288 @@
+{
+  "composition": "PorOndeComecarReels",
+  "fps": 60,
+  "source": "squads/motion/src/compositions/PorOndeComecarReels/data/narration.json",
+  "durationSec": 53.34,
+  "proposta": "deterministic-proposal",
+  "video": {
+    "topic": null,
+    "audience": null,
+    "promise": null,
+    "ending": null
+  },
+  "beats": [
+    {
+      "id": "b01",
+      "startFrame": 0,
+      "endFrameExclusive": 182,
+      "words": {
+        "from": 0,
+        "to": 5
+      },
+      "text": "Como começar, né? Por onde começar?",
+      "topic": null,
+      "idea": null,
+      "role": null,
+      "density": null,
+      "structures": [],
+      "anchorWord": {
+        "i": 0,
+        "text": "Como",
+        "startFrame": 0
+      },
+      "signals": {
+        "pausaAntesMs": 0,
+        "ppm": 118,
+        "temNumero": false,
+        "plataforma": null,
+        "gatilhos": []
+      },
+      "confidence": null
+    },
+    {
+      "id": "b02",
+      "startFrame": 208,
+      "endFrameExclusive": 493,
+      "words": {
+        "from": 6,
+        "to": 17
+      },
+      "text": "Como começar? Você começa fazendo uma pesquisa de mercado pra vender mentoria.",
+      "topic": null,
+      "idea": null,
+      "role": null,
+      "density": null,
+      "structures": [],
+      "anchorWord": {
+        "i": 6,
+        "text": "Como",
+        "startFrame": 208
+      },
+      "signals": {
+        "pausaAntesMs": 420,
+        "ppm": 151,
+        "temNumero": false,
+        "plataforma": null,
+        "gatilhos": []
+      },
+      "confidence": null
+    },
+    {
+      "id": "b03",
+      "startFrame": 504,
+      "endFrameExclusive": 992,
+      "words": {
+        "from": 18,
+        "to": 49
+      },
+      "text": "Você vai saber quem que é o público que vai comprar, o quanto essas pessoas podem pagar, qual produto elas querem. Aí depois de fazer a pesquisa de mercado, você vai fazer",
+      "topic": null,
+      "idea": null,
+      "role": null,
+      "density": null,
+      "structures": [],
+      "anchorWord": {
+        "i": 18,
+        "text": "Você",
+        "startFrame": 504
+      },
+      "signals": {
+        "pausaAntesMs": 180,
+        "ppm": 236,
+        "temNumero": false,
+        "plataforma": null,
+        "gatilhos": [
+          "depois",
+          "publico que",
+          "pode",
+          "depois"
+        ]
+      },
+      "confidence": null
+    },
+    {
+      "id": "b04",
+      "startFrame": 992,
+      "endFrameExclusive": 1349,
+      "words": {
+        "from": 50,
+        "to": 69
+      },
+      "text": "a parte de ICP, que é um perfil do cliente ideal, é um mapa de quem vai comprar de você.",
+      "topic": null,
+      "idea": null,
+      "role": null,
+      "density": null,
+      "structures": [],
+      "anchorWord": {
+        "i": 50,
+        "text": "a",
+        "startFrame": 992
+      },
+      "signals": {
+        "pausaAntesMs": 0,
+        "ppm": 202,
+        "temNumero": true,
+        "plataforma": null,
+        "gatilhos": [
+          "perfil",
+          "perfil"
+        ]
+      },
+      "confidence": null
+    },
+    {
+      "id": "b05",
+      "startFrame": 1372,
+      "endFrameExclusive": 1862,
+      "words": {
+        "from": 70,
+        "to": 96
+      },
+      "text": "Depois você vai ter que fazer uma promessa pública pra atrair as pessoas que têm o problema que você resolve. Depois você vai fazer a parte de",
+      "topic": null,
+      "idea": null,
+      "role": null,
+      "density": null,
+      "structures": [],
+      "anchorWord": {
+        "i": 70,
+        "text": "Depois",
+        "startFrame": 1372
+      },
+      "signals": {
+        "pausaAntesMs": 380,
+        "ppm": 198,
+        "temNumero": false,
+        "plataforma": null,
+        "gatilhos": [
+          "depois",
+          "promessa",
+          "depois",
+          "promessa"
+        ]
+      },
+      "confidence": null
+    },
+    {
+      "id": "b06",
+      "startFrame": 1862,
+      "endFrameExclusive": 2377,
+      "words": {
+        "from": 97,
+        "to": 123
+      },
+      "text": "copy, né? Que é copywriting, que é todos os textos. Textos da página, textos do anúncio, textos do bot de captação. Aí sim você vai construir páginas,",
+      "topic": null,
+      "idea": null,
+      "role": null,
+      "density": null,
+      "structures": [],
+      "anchorWord": {
+        "i": 97,
+        "text": "copy,",
+        "startFrame": 1862
+      },
+      "signals": {
+        "pausaAntesMs": 0,
+        "ppm": 189,
+        "temNumero": false,
+        "plataforma": null,
+        "gatilhos": []
+      },
+      "confidence": null
+    },
+    {
+      "id": "b07",
+      "startFrame": 2377,
+      "endFrameExclusive": 2666,
+      "words": {
+        "from": 124,
+        "to": 129
+      },
+      "text": "campanhas de tráfego, automações, integrações CRM.",
+      "topic": null,
+      "idea": null,
+      "role": null,
+      "density": null,
+      "structures": [],
+      "anchorWord": {
+        "i": 124,
+        "text": "campanhas",
+        "startFrame": 2377
+      },
+      "signals": {
+        "pausaAntesMs": 0,
+        "ppm": 75,
+        "temNumero": false,
+        "plataforma": "crm",
+        "gatilhos": [
+          "campanha",
+          "campanha"
+        ]
+      },
+      "confidence": null
+    },
+    {
+      "id": "b08",
+      "startFrame": 2688,
+      "endFrameExclusive": 3180,
+      "words": {
+        "from": 130,
+        "to": 152
+      },
+      "text": "Você pode fazer sozinha e levar seis meses fazendo, ou você pode contratar a minha equipe e receber essa estrutura pronta em 21",
+      "topic": null,
+      "idea": null,
+      "role": null,
+      "density": null,
+      "structures": [],
+      "anchorWord": {
+        "i": 130,
+        "text": "Você",
+        "startFrame": 2688
+      },
+      "signals": {
+        "pausaAntesMs": 360,
+        "ppm": 168,
+        "temNumero": true,
+        "plataforma": null,
+        "gatilhos": [
+          "seis",
+          "pode",
+          "seis",
+          "pode"
+        ]
+      },
+      "confidence": null
+    },
+    {
+      "id": "b09",
+      "startFrame": 3180,
+      "endFrameExclusive": 3200,
+      "words": {
+        "from": 153,
+        "to": 153
+      },
+      "text": "dias.",
+      "topic": null,
+      "idea": null,
+      "role": null,
+      "density": null,
+      "structures": [],
+      "anchorWord": {
+        "i": 153,
+        "text": "dias.",
+        "startFrame": 3180
+      },
+      "signals": {
+        "pausaAntesMs": 0,
+        "ppm": 176,
+        "temNumero": false,
+        "plataforma": null,
+        "gatilhos": []
+      },
+      "confidence": null
+    }
+  ]
+}

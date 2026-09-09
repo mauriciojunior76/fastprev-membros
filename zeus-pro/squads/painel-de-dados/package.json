@@ -1,0 +1,22 @@
+{
+  "name": "zeus-dash",
+  "version": "1.0.0",
+  "description": "Dashboard de trafego e vendas em tempo real (high ticket e low ticket). Configure com: node setup/wizard.js",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "setup": "node setup/wizard.js",
+    "coletor:meta": "node collectors/coletor-meta.js",
+    "coletor:utmify": "node collectors/coletor-utmify.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "express": "^4.22.2"
+  },
+  "optionalDependencies": {
+    "pg": "^8.11.3"
+  },
+  "license": "MIT"
+}

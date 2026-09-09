@@ -1,0 +1,54 @@
+# Squad Vídeo do ZEUS PRO.
+# Genérico de propósito: ele aprende o jeito do dono com o uso, não vem
+# pré-calibrado com o jeito de ninguém.
+
+id: video
+nome: "Vídeo"
+descrição: >
+  Cuida de vídeo: roteiro, estrutura narrativa, seleção de trechos, legenda, direção de edição e formato por plataforma.
+versão: "1.0.0"
+status: ativo
+
+gatilhos:
+  palavras: [video, roteiro de video, reels, corte, edicao, legenda, youtube, motion, animacao, vinheta]
+  contexto: >
+    Pedido que envolve conteúdo audiovisual, do roteiro à orientação de edição.
+peso_mínimo: 41
+
+lead: diretor-de-video
+agentes:
+  - diretor-de-video
+  - roteirista
+  - diretor-de-edicao
+
+leitura_obrigatória:
+  - memory/PERFIL.md
+  - memory/comunicacao.md
+  - templates/DESIGN-SYSTEM-CENTRAL.md
+  - squads/video/MEMORY.md
+  - squads/video/FRAMEWORKS.md
+
+entregáveis:
+  - roteiro com marcação de tempo
+  - orientação de edição
+  - texto de legenda
+
+exige_confirmação:
+  - publicar qualquer coisa
+  - enviar mensagem a terceiro
+  - gastar dinheiro
+
+nunca_faz:
+  - inventar dado sobre o usuário, o público ou o resultado
+  - prometer o que o dono não pode sustentar
+  - declarar entrega pronta sem ter verificado
+
+qualidade:
+  checklist: squads/video/CHECKLIST.md
+  nota_mínima: 60
+  máximo_de_refações: 2
+
+aprendizado:
+  arquivo: squads/video/MEMORY.md
+  teto_caracteres: 8000
+  ler_antes_de_agir: true

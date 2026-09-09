@@ -1,0 +1,25 @@
+{
+  "_comment": "FONTE ÚNICA do ESTILO Deluxe Aristocratic (uma das filosofias rosegold da Exemplo, escopo EDS e Reels face-cam, ver docs/rules-on-demand/video-router.md). Criada 03/07/2026. Qualquer squad de vídeo (zeus-motion, video-editor-exemplo, reels-zoom, iconografia) que use ESTE estilo especificamente referencia ESTE arquivo. Mudança de cor: alterar aqui e propagar; nunca editar hex avulso em outro arquivo sem atualizar este.",
+  "_nao_confundir_com": "templates/design-tokens/brands/exemplo-1.json ('Exemplo Rose Gold', identidade principal da marca: decks, carrosséis, presença geral) e exemplo-2.json ('Exemplo Terracota/Cobre', Programa Black). São 3 paletas rosegold DIFERENTES E INTENCIONAIS, hex e fonte de destaque diferentes de propósito (esta usa Cormorant Garamond no display, exemplo-1/2 usam Inter). Corrigido em 27/08/2026, Fase 5 da auditoria audiovisual: as duas se declaravam 'fonte única' sem se referenciar, o que lia como conflito. Não são conflito: são estilos com escopo diferente que compartilham a família rosegold.",
+  "name": "deluxe-aristocratic",
+  "bg": "#0a0806",
+  "bg_editor": "#040303",
+  "gold1": "#8a7260",
+  "gold2": "#c4a88a",
+  "gold3": "#e0cdb8",
+  "champagne": "#f0e6d8",
+  "gradient_svg": ["#c4a88a", "#e0cdb8", "#8a7260"],
+  "fonts": {
+    "display": "Cormorant Garamond",
+    "body": "DM Sans",
+    "caption": "DM Sans"
+  },
+  "icons": "Exemplo Deluxe 300 (stroke 0.45, square/miter, fill none)",
+  "usado_por": [
+    "squads/video-editor-exemplo/squad.yaml (EDS / ExemploEditV2)",
+    "squads/reels-zoom/squad.yaml + config/branding-standard.md",
+    "squads/iconografia/agents/*.md",
+    "squads/motion/src/modules/text-system/Captions.tsx (accent default)",
+    "memory/exemplo-videos-taxonomia.md (DNA visual EDS)"
+  ]
+}

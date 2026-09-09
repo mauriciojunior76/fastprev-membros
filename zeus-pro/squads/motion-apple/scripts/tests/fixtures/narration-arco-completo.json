@@ -1,0 +1,910 @@
+{
+ "words": [
+  {
+   "i": 0,
+   "text": "o",
+   "start": 9,
+   "end": 9.429
+  },
+  {
+   "i": 1,
+   "text": "novo",
+   "start": 9.429,
+   "end": 9.857
+  },
+  {
+   "i": 2,
+   "text": "chat",
+   "start": 9.857,
+   "end": 10.286
+  },
+  {
+   "i": 3,
+   "text": "gpt",
+   "start": 10.286,
+   "end": 10.714
+  },
+  {
+   "i": 4,
+   "text": "6",
+   "start": 10.714,
+   "end": 11.143
+  },
+  {
+   "i": 5,
+   "text": "foi",
+   "start": 11.143,
+   "end": 11.571
+  },
+  {
+   "i": 6,
+   "text": "lancado",
+   "start": 11.571,
+   "end": 12
+  },
+  {
+   "i": 7,
+   "text": "e",
+   "start": 12,
+   "end": 12.429
+  },
+  {
+   "i": 8,
+   "text": "cara",
+   "start": 12.429,
+   "end": 12.857
+  },
+  {
+   "i": 9,
+   "text": "eu",
+   "start": 12.857,
+   "end": 13.286
+  },
+  {
+   "i": 10,
+   "text": "acho",
+   "start": 13.286,
+   "end": 13.714
+  },
+  {
+   "i": 11,
+   "text": "que",
+   "start": 13.714,
+   "end": 14.143
+  },
+  {
+   "i": 12,
+   "text": "tem",
+   "start": 14.143,
+   "end": 14.571
+  },
+  {
+   "i": 13,
+   "text": "uma",
+   "start": 14.571,
+   "end": 15
+  },
+  {
+   "i": 14,
+   "text": "coisa",
+   "start": 15,
+   "end": 15.294
+  },
+  {
+   "i": 15,
+   "text": "acontecendo",
+   "start": 15.294,
+   "end": 15.588
+  },
+  {
+   "i": 16,
+   "text": "aqui",
+   "start": 15.588,
+   "end": 15.882
+  },
+  {
+   "i": 17,
+   "text": "que",
+   "start": 15.882,
+   "end": 16.176
+  },
+  {
+   "i": 18,
+   "text": "e",
+   "start": 16.176,
+   "end": 16.471
+  },
+  {
+   "i": 19,
+   "text": "muito",
+   "start": 16.471,
+   "end": 16.765
+  },
+  {
+   "i": 20,
+   "text": "maior",
+   "start": 16.765,
+   "end": 17.059
+  },
+  {
+   "i": 21,
+   "text": "do",
+   "start": 17.059,
+   "end": 17.353
+  },
+  {
+   "i": 22,
+   "text": "que",
+   "start": 17.353,
+   "end": 17.647
+  },
+  {
+   "i": 23,
+   "text": "so",
+   "start": 17.647,
+   "end": 17.941
+  },
+  {
+   "i": 24,
+   "text": "um",
+   "start": 17.941,
+   "end": 18.235
+  },
+  {
+   "i": 25,
+   "text": "modelo",
+   "start": 18.235,
+   "end": 18.529
+  },
+  {
+   "i": 26,
+   "text": "novo",
+   "start": 18.529,
+   "end": 18.824
+  },
+  {
+   "i": 27,
+   "text": "eu",
+   "start": 18.824,
+   "end": 19.118
+  },
+  {
+   "i": 28,
+   "text": "comecei",
+   "start": 19.118,
+   "end": 19.412
+  },
+  {
+   "i": 29,
+   "text": "a",
+   "start": 19.412,
+   "end": 19.706
+  },
+  {
+   "i": 30,
+   "text": "testar",
+   "start": 19.706,
+   "end": 20
+  },
+  {
+   "i": 31,
+   "text": "e",
+   "start": 20,
+   "end": 20.333
+  },
+  {
+   "i": 32,
+   "text": "pedir",
+   "start": 20.333,
+   "end": 20.667
+  },
+  {
+   "i": 33,
+   "text": "para",
+   "start": 20.667,
+   "end": 21
+  },
+  {
+   "i": 34,
+   "text": "ele",
+   "start": 21,
+   "end": 21.333
+  },
+  {
+   "i": 35,
+   "text": "criar",
+   "start": 21.333,
+   "end": 21.667
+  },
+  {
+   "i": 36,
+   "text": "algumas",
+   "start": 21.667,
+   "end": 22
+  },
+  {
+   "i": 37,
+   "text": "coisas",
+   "start": 22,
+   "end": 22.333
+  },
+  {
+   "i": 38,
+   "text": "que",
+   "start": 22.333,
+   "end": 22.667
+  },
+  {
+   "i": 39,
+   "text": "ate",
+   "start": 22.667,
+   "end": 23
+  },
+  {
+   "i": 40,
+   "text": "pouco",
+   "start": 23,
+   "end": 23.333
+  },
+  {
+   "i": 41,
+   "text": "tempo",
+   "start": 23.333,
+   "end": 23.667
+  },
+  {
+   "i": 42,
+   "text": "atras",
+   "start": 23.667,
+   "end": 24
+  },
+  {
+   "i": 43,
+   "text": "eu",
+   "start": 24,
+   "end": 24.333
+  },
+  {
+   "i": 44,
+   "text": "precisaria",
+   "start": 24.333,
+   "end": 24.667
+  },
+  {
+   "i": 45,
+   "text": "dominar",
+   "start": 24.667,
+   "end": 25
+  },
+  {
+   "i": 46,
+   "text": "um",
+   "start": 25,
+   "end": 25.25
+  },
+  {
+   "i": 47,
+   "text": "software",
+   "start": 25.25,
+   "end": 25.5
+  },
+  {
+   "i": 48,
+   "text": "inteiro",
+   "start": 25.5,
+   "end": 25.75
+  },
+  {
+   "i": 49,
+   "text": "para",
+   "start": 25.75,
+   "end": 26
+  },
+  {
+   "i": 50,
+   "text": "conseguir",
+   "start": 26,
+   "end": 26.25
+  },
+  {
+   "i": 51,
+   "text": "fazer",
+   "start": 26.25,
+   "end": 26.5
+  },
+  {
+   "i": 52,
+   "text": "e",
+   "start": 26.5,
+   "end": 26.75
+  },
+  {
+   "i": 53,
+   "text": "foi",
+   "start": 26.75,
+   "end": 27
+  },
+  {
+   "i": 54,
+   "text": "ai",
+   "start": 27,
+   "end": 27.25
+  },
+  {
+   "i": 55,
+   "text": "que",
+   "start": 27.25,
+   "end": 27.5
+  },
+  {
+   "i": 56,
+   "text": "caiu",
+   "start": 27.5,
+   "end": 27.75
+  },
+  {
+   "i": 57,
+   "text": "a",
+   "start": 27.75,
+   "end": 28
+  },
+  {
+   "i": 58,
+   "text": "ficha",
+   "start": 28,
+   "end": 28.25
+  },
+  {
+   "i": 59,
+   "text": "a",
+   "start": 28.25,
+   "end": 28.5
+  },
+  {
+   "i": 60,
+   "text": "barreira",
+   "start": 28.5,
+   "end": 28.75
+  },
+  {
+   "i": 61,
+   "text": "tecnica",
+   "start": 28.75,
+   "end": 29
+  },
+  {
+   "i": 62,
+   "text": "esta",
+   "start": 29,
+   "end": 29.308
+  },
+  {
+   "i": 63,
+   "text": "comecando",
+   "start": 29.308,
+   "end": 29.615
+  },
+  {
+   "i": 64,
+   "text": "a",
+   "start": 29.615,
+   "end": 29.923
+  },
+  {
+   "i": 65,
+   "text": "desaparecer",
+   "start": 29.923,
+   "end": 30.231
+  },
+  {
+   "i": 66,
+   "text": "porque",
+   "start": 30.231,
+   "end": 30.538
+  },
+  {
+   "i": 67,
+   "text": "se",
+   "start": 30.538,
+   "end": 30.846
+  },
+  {
+   "i": 68,
+   "text": "voce",
+   "start": 30.846,
+   "end": 31.154
+  },
+  {
+   "i": 69,
+   "text": "consegue",
+   "start": 31.154,
+   "end": 31.462
+  },
+  {
+   "i": 70,
+   "text": "explicar",
+   "start": 31.462,
+   "end": 31.769
+  },
+  {
+   "i": 71,
+   "text": "uma",
+   "start": 31.769,
+   "end": 32.077
+  },
+  {
+   "i": 72,
+   "text": "ideia",
+   "start": 32.077,
+   "end": 32.385
+  },
+  {
+   "i": 73,
+   "text": "voce",
+   "start": 32.385,
+   "end": 32.692
+  },
+  {
+   "i": 74,
+   "text": "comeca",
+   "start": 32.692,
+   "end": 33
+  },
+  {
+   "i": 75,
+   "text": "a",
+   "start": 33,
+   "end": 33.313
+  },
+  {
+   "i": 76,
+   "text": "conseguir",
+   "start": 33.313,
+   "end": 33.625
+  },
+  {
+   "i": 77,
+   "text": "construir",
+   "start": 33.625,
+   "end": 33.938
+  },
+  {
+   "i": 78,
+   "text": "ela",
+   "start": 33.938,
+   "end": 34.25
+  },
+  {
+   "i": 79,
+   "text": "e",
+   "start": 34.25,
+   "end": 34.563
+  },
+  {
+   "i": 80,
+   "text": "isso",
+   "start": 34.563,
+   "end": 34.875
+  },
+  {
+   "i": 81,
+   "text": "muda",
+   "start": 34.875,
+   "end": 35.188
+  },
+  {
+   "i": 82,
+   "text": "muita",
+   "start": 35.188,
+   "end": 35.5
+  },
+  {
+   "i": 83,
+   "text": "coisa",
+   "start": 35.5,
+   "end": 35.813
+  },
+  {
+   "i": 84,
+   "text": "uma",
+   "start": 35.813,
+   "end": 36.125
+  },
+  {
+   "i": 85,
+   "text": "nova",
+   "start": 36.125,
+   "end": 36.438
+  },
+  {
+   "i": 86,
+   "text": "forma",
+   "start": 36.438,
+   "end": 36.75
+  },
+  {
+   "i": 87,
+   "text": "de",
+   "start": 36.75,
+   "end": 37.063
+  },
+  {
+   "i": 88,
+   "text": "criar",
+   "start": 37.063,
+   "end": 37.375
+  },
+  {
+   "i": 89,
+   "text": "atraves",
+   "start": 37.375,
+   "end": 37.688
+  },
+  {
+   "i": 90,
+   "text": "da",
+   "start": 37.688,
+   "end": 38
+  },
+  {
+   "i": 91,
+   "text": "linguagem",
+   "start": 38,
+   "end": 38.308
+  },
+  {
+   "i": 92,
+   "text": "talvez",
+   "start": 38.308,
+   "end": 38.615
+  },
+  {
+   "i": 93,
+   "text": "a",
+   "start": 38.615,
+   "end": 38.923
+  },
+  {
+   "i": 94,
+   "text": "habilidade",
+   "start": 38.923,
+   "end": 39.231
+  },
+  {
+   "i": 95,
+   "text": "do",
+   "start": 39.231,
+   "end": 39.538
+  },
+  {
+   "i": 96,
+   "text": "futuro",
+   "start": 39.538,
+   "end": 39.846
+  },
+  {
+   "i": 97,
+   "text": "nao",
+   "start": 39.846,
+   "end": 40.154
+  },
+  {
+   "i": 98,
+   "text": "seja",
+   "start": 40.154,
+   "end": 40.462
+  },
+  {
+   "i": 99,
+   "text": "dominar",
+   "start": 40.462,
+   "end": 40.769
+  },
+  {
+   "i": 100,
+   "text": "dez",
+   "start": 40.769,
+   "end": 41.077
+  },
+  {
+   "i": 101,
+   "text": "ferramentas",
+   "start": 41.077,
+   "end": 41.385
+  },
+  {
+   "i": 102,
+   "text": "diferentes",
+   "start": 41.385,
+   "end": 41.692
+  },
+  {
+   "i": 103,
+   "text": "vai",
+   "start": 41.692,
+   "end": 42
+  },
+  {
+   "i": 104,
+   "text": "ser",
+   "start": 42,
+   "end": 42.357
+  },
+  {
+   "i": 105,
+   "text": "saber",
+   "start": 42.357,
+   "end": 42.714
+  },
+  {
+   "i": 106,
+   "text": "pensar",
+   "start": 42.714,
+   "end": 43.071
+  },
+  {
+   "i": 107,
+   "text": "ter",
+   "start": 43.071,
+   "end": 43.429
+  },
+  {
+   "i": 108,
+   "text": "repertorio",
+   "start": 43.429,
+   "end": 43.786
+  },
+  {
+   "i": 109,
+   "text": "e",
+   "start": 43.786,
+   "end": 44.143
+  },
+  {
+   "i": 110,
+   "text": "principalmente",
+   "start": 44.143,
+   "end": 44.5
+  },
+  {
+   "i": 111,
+   "text": "conseguir",
+   "start": 44.5,
+   "end": 44.857
+  },
+  {
+   "i": 112,
+   "text": "explicar",
+   "start": 44.857,
+   "end": 45.214
+  },
+  {
+   "i": 113,
+   "text": "muito",
+   "start": 45.214,
+   "end": 45.571
+  },
+  {
+   "i": 114,
+   "text": "bem",
+   "start": 45.571,
+   "end": 45.929
+  },
+  {
+   "i": 115,
+   "text": "aquilo",
+   "start": 45.929,
+   "end": 46.286
+  },
+  {
+   "i": 116,
+   "text": "que",
+   "start": 46.286,
+   "end": 46.643
+  },
+  {
+   "i": 117,
+   "text": "esta",
+   "start": 46.643,
+   "end": 47
+  },
+  {
+   "i": 118,
+   "text": "na",
+   "start": 47,
+   "end": 47.235
+  },
+  {
+   "i": 119,
+   "text": "sua",
+   "start": 47.235,
+   "end": 47.471
+  },
+  {
+   "i": 120,
+   "text": "cabeca",
+   "start": 47.471,
+   "end": 47.706
+  },
+  {
+   "i": 121,
+   "text": "e",
+   "start": 47.706,
+   "end": 47.941
+  },
+  {
+   "i": 122,
+   "text": "quer",
+   "start": 47.941,
+   "end": 48.176
+  },
+  {
+   "i": 123,
+   "text": "uma",
+   "start": 48.176,
+   "end": 48.412
+  },
+  {
+   "i": 124,
+   "text": "prova",
+   "start": 48.412,
+   "end": 48.647
+  },
+  {
+   "i": 125,
+   "text": "esse",
+   "start": 48.647,
+   "end": 48.882
+  },
+  {
+   "i": 126,
+   "text": "video",
+   "start": 48.882,
+   "end": 49.118
+  },
+  {
+   "i": 127,
+   "text": "que",
+   "start": 49.118,
+   "end": 49.353
+  },
+  {
+   "i": 128,
+   "text": "voce",
+   "start": 49.353,
+   "end": 49.588
+  },
+  {
+   "i": 129,
+   "text": "acabou",
+   "start": 49.588,
+   "end": 49.824
+  },
+  {
+   "i": 130,
+   "text": "de",
+   "start": 49.824,
+   "end": 50.059
+  },
+  {
+   "i": 131,
+   "text": "assistir",
+   "start": 50.059,
+   "end": 50.294
+  },
+  {
+   "i": 132,
+   "text": "foi",
+   "start": 50.294,
+   "end": 50.529
+  },
+  {
+   "i": 133,
+   "text": "editado",
+   "start": 50.529,
+   "end": 50.765
+  },
+  {
+   "i": 134,
+   "text": "usando",
+   "start": 50.765,
+   "end": 51
+  },
+  {
+   "i": 135,
+   "text": "esse",
+   "start": 51,
+   "end": 51.313
+  },
+  {
+   "i": 136,
+   "text": "novo",
+   "start": 51.313,
+   "end": 51.625
+  },
+  {
+   "i": 137,
+   "text": "modelo",
+   "start": 51.625,
+   "end": 51.938
+  },
+  {
+   "i": 138,
+   "text": "e",
+   "start": 51.938,
+   "end": 52.25
+  },
+  {
+   "i": 139,
+   "text": "se",
+   "start": 52.25,
+   "end": 52.563
+  },
+  {
+   "i": 140,
+   "text": "voce",
+   "start": 52.563,
+   "end": 52.875
+  },
+  {
+   "i": 141,
+   "text": "quer",
+   "start": 52.875,
+   "end": 53.188
+  },
+  {
+   "i": 142,
+   "text": "aprender",
+   "start": 53.188,
+   "end": 53.5
+  },
+  {
+   "i": 143,
+   "text": "a",
+   "start": 53.5,
+   "end": 53.813
+  },
+  {
+   "i": 144,
+   "text": "fazer",
+   "start": 53.813,
+   "end": 54.125
+  },
+  {
+   "i": 145,
+   "text": "isso",
+   "start": 54.125,
+   "end": 54.438
+  },
+  {
+   "i": 146,
+   "text": "tambem",
+   "start": 54.438,
+   "end": 54.75
+  },
+  {
+   "i": 147,
+   "text": "entra",
+   "start": 54.75,
+   "end": 55.063
+  },
+  {
+   "i": 148,
+   "text": "pra",
+   "start": 55.063,
+   "end": 55.375
+  },
+  {
+   "i": 149,
+   "text": "brabo",
+   "start": 55.375,
+   "end": 55.688
+  },
+  {
+   "i": 150,
+   "text": "space",
+   "start": 55.688,
+   "end": 56
+  }
+ ]
+}

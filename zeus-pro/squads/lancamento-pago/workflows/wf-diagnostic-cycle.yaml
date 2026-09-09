@@ -1,0 +1,55 @@
+workflow:
+  id: wf-diagnostic-cycle
+  name: "Ciclo de Diagnostico do Lancamento"
+  version: "1.0.0"
+  description: |
+    Diagnostica problemas por etapa do lancamento.
+    Identifica causa raiz, nao sintoma.
+    Prescreve acoes corretivas especificas.
+  trigger: "*diagnose"
+  entry_agent: launch-chief
+  estimated_duration: "15-30 minutos"
+  type: sequential
+
+phases:
+  - id: coleta
+    name: "Coleta de Metricas"
+    agent: metrics-analyst
+    description: "Coletar numeros atuais: ingressos, comparecimento, conversao, CTR, CPA, ROAS"
+    outputs:
+      - current_metrics: "metricas atuais do lancamento"
+
+  - id: diagnostico
+    name: "Diagnostico por Estagio"
+    agent: diagnostics-specialist
+    depends_on: [coleta]
+    description: |
+      Identificar estagio do problema:
+      1. Baixa venda ingressos (promessa/criativo/pagina)
+      2. Boa venda/baixa presenca (preparacao/lembretes)
+      3. Boa presenca/baixa conversao (pitch/bonus/oferta)
+      4. Boa conversao D1/queda depois (comercial/lives/recuperacao)
+    outputs:
+      - diagnosis: "estagio identificado + causas provaveis"
+
+  - id: prescricao
+    name: "Prescricao Corretiva"
+    agent: "{specialist_by_stage}"
+    depends_on: [diagnostico]
+    description: "Agente especialista propoe correcao baseada no estagio"
+    outputs:
+      - prescription: "acoes corretivas com responsavel e prazo"
+
+  - id: validacao
+    name: "Validacao da Correcao"
+    agent: launch-deputy
+    depends_on: [prescricao]
+    description: "Validar que a correcao esta alinhada com a metodologia"
+    checkpoint:
+      gate: "Correcao aprovada"
+
+  - id: registro
+    name: "Registro da Decisao"
+    agent: decision-notebook-specialist
+    depends_on: [validacao]
+    description: "Registrar: decisao + responsavel + prazo + metrica de validacao"

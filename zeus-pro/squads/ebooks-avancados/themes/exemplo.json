@@ -1,0 +1,106 @@
+{
+  "id": "exemplo",
+  "SOURCE-OF-TRUTH": "LER PRIMEIRO squads/book-forge/SOURCE-OF-TRUTH.md. A lei e docs/rules-on-demand/ebook-exemplo-padrao-oficial.md. O codigo canonico e templates/_oficiais-aprovados/exemplo-v2-template-oficial.html (clonar, nunca recriar CSS). Este JSON e metadado subordinado.",
+  "name": "Exemplo",
+  "owner": "o dono do canal",
+  "description": "Rosegold + dark editorial. Luxo minimalista. Tema padrao o dono do canal/Exemplo.",
+  "mood": ["luxo", "dark", "editorial", "sofisticado", "rosegold"],
+  "colors": {
+    "bg": "#0a0806",
+    "bg-alt": "#0e0c08",
+    "bg-card": "#141210",
+    "accent-1": "#b8887a",
+    "accent-2": "#d4a08a",
+    "accent-3": "#f0c8b0",
+    "text": "#ffffff",
+    "text-muted": "rgba(255, 255, 255, 0.55)",
+    "text-label": "#d4a08a",
+    "border": "rgba(212, 160, 138, 0.18)",
+    "divider": "rgba(255, 255, 255, 0.08)",
+    "off-white": "#FAF8F3"
+  },
+  "color-rules": {
+    "FORBIDDEN": "DOURADO/GOLD em qualquer texto, gradiente, divisor ou elemento visual. O padrao Exemplo e ROSE GOLD (accent-1, accent-2, accent-3). Dourado existe APENAS dentro do arquivo de logo oficial (PNG), nunca recriado em CSS/SVG/texto.",
+    "gradient-titles": "linear-gradient(170deg, #f0c8b0 0%, #d4a08a 45%, #b8887a 100%)",
+    "note": "Escala gold-1..gold-5 REMOVIDA em 2026-06-10 apos erro registrado (e-book Lucas saiu com titulos dourados). Regra: docs/rules-on-demand/exemplo-color-standard.md"
+  },
+  "fonts": {
+    "title": {
+      "family": "Playfair Display",
+      "weight": 700,
+      "source": "google",
+      "url": "https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;800;900&display=swap"
+    },
+    "title-alt": {
+      "family": "Cormorant Garamond",
+      "weight": 700,
+      "source": "google",
+      "url": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap"
+    },
+    "body": {
+      "family": "DM Sans",
+      "weight": 400,
+      "source": "google",
+      "url": "https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&display=swap"
+    },
+    "body-alt": {
+      "family": "Inter",
+      "weight": 400,
+      "source": "google",
+      "url": "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    },
+    "mono": {
+      "family": "JetBrains Mono",
+      "weight": 400,
+      "source": "google"
+    }
+  },
+  "effects": {
+    "grain": true,
+    "grain-opacity": 0.4,
+    "gradient-titles": true,
+    "corner-lines": true,
+    "footer-diamond": true,
+    "blur-reveal": true,
+    "motion": "cubic-bezier(0.16, 1, 0.3, 1)"
+  },
+  "logo": {
+    "path": "CAMINHO_DA_SUA_PASTA OFICIAL dourado vivo.png",
+    "width-px": 120,
+    "position": "center",
+    "filter": "none"
+  },
+  "page": {
+    "format": "A4",
+    "width-mm": 210,
+    "height-mm": 297,
+    "padding-mm": 18,
+    "background": "var(--bg)"
+  },
+  "icons": {
+    "style": "stroke-square-corners",
+    "viewBox": "0 0 24 24",
+    "fill": "none",
+    "stroke": "currentColor",
+    "stroke-width": 1.2,
+    "stroke-linecap": "square",
+    "stroke-linejoin": "miter",
+    "max-paths": 5,
+    "live-area": "20x20",
+    "library": "exemplo-300-official",
+    "library-path": "squads/iconografia/pipeline/data/exemplo-icon-library.md",
+    "emoji-forbidden": true,
+    "note": "Cantos vivos sao o DNA luxury Exemplo. NUNCA usar round. SEMPRE SVG inline. ZERO emojis."
+  },
+  "typography-scale": {
+    "h1": "clamp(36px, 6vw, 64px)",
+    "h2": "clamp(28px, 4vw, 44px)",
+    "h3": "clamp(20px, 2.5vw, 28px)",
+    "body": "clamp(15px, 1.4vw, 17px)",
+    "caption": "clamp(11px, 1vw, 13px)"
+  },
+  "cover": {
+    "template": "cover-exemplo.html",
+    "style": "big-idea-center-logo-top"
+  }
+}

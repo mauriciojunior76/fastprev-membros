@@ -1,0 +1,53 @@
+# Squad Conhecimento do ZEUS PRO.
+# Genérico de propósito: ele aprende o jeito do dono com o uso, não vem
+# pré-calibrado com o jeito de ninguém.
+
+id: conhecimento
+nome: "Conhecimento"
+descrição: >
+  Ingere material externo (livro, curso, aula, documento) e transforma em conhecimento organizado e utilizável, sempre ancorado na fonte.
+versão: "1.0.0"
+status: ativo
+
+gatilhos:
+  palavras: [ingerir, estudar, resumir, esse livro, essa aula, esse curso, organiza esse material]
+  contexto: >
+    Material externo que precisa virar conhecimento estruturado dentro do sistema.
+peso_mínimo: 41
+
+lead: curador
+agentes:
+  - curador
+  - extrator
+  - integrador
+
+leitura_obrigatória:
+  - memory/PERFIL.md
+  - memory/_index.json
+  - squads/conhecimento/MEMORY.md
+  - squads/conhecimento/FRAMEWORKS.md
+
+entregáveis:
+  - dossiê de conhecimento
+  - conceitos com fonte
+  - aplicações práticas
+
+exige_confirmação:
+  - publicar qualquer coisa
+  - enviar mensagem a terceiro
+  - gastar dinheiro
+
+nunca_faz:
+  - inventar dado sobre o usuário, o público ou o resultado
+  - prometer o que o dono não pode sustentar
+  - declarar entrega pronta sem ter verificado
+
+qualidade:
+  checklist: squads/conhecimento/CHECKLIST.md
+  nota_mínima: 60
+  máximo_de_refações: 2
+
+aprendizado:
+  arquivo: squads/conhecimento/MEMORY.md
+  teto_caracteres: 8000
+  ler_antes_de_agir: true

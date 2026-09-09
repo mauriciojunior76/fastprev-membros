@@ -1,0 +1,193 @@
+workflow:
+  id: wf-diagnostic-cycle
+  name: "Ciclo de Diagnostico do Webinario"
+  version: "1.0.0"
+  description: |
+    Diagnostico completo de um webinario que ja rodou.
+    6 estagios sequenciais cobrindo todo o funil.
+    Cada estagio segue: sintoma > causa imediata > causa raiz > correcao.
+  trigger: "*diagnose"
+  entry_agent: webinar-chief
+  estimated_duration: "2-4 horas"
+  type: sequential
+
+  input_required:
+    - "Metricas do webinario (leads, comparecimento, retencao, conversao)"
+    - "Links das paginas (captura, vendas, replay)"
+    - "Copy utilizada (emails, WhatsApp, ads)"
+    - "Gravacao do webinario (se disponivel)"
+
+stages:
+  - id: diag_01
+    name: "Baixa Captura"
+    condition: "taxa de captura < 25% ou CPL acima do alvo"
+    agents: [webinar-questioner, headline-specialist, creative-planner]
+    analysis:
+      sintomas:
+        - "CPL alto (acima de R$10-15 dependendo do nicho)"
+        - "Taxa de conversao da pagina de captura abaixo de 25%"
+        - "Volume de leads insuficiente para meta"
+      causas_imediatas:
+        - "Headline fraca ou generica"
+        - "Criativos sem gancho forte"
+        - "Segmentacao de trafego mal feita"
+        - "Pagina de captura com atrito (lenta, confusa, formulario longo)"
+      causas_raiz:
+        - "Promessa nao ressoa com a dor real do ICP"
+        - "Big Idea fraca ou inexistente"
+        - "Desconexao entre criativo e pagina"
+      correcoes:
+        - "Reescrever headline com formula: resultado + tempo + mecanismo"
+        - "Testar 3-5 angulos de criativo novos"
+        - "Simplificar pagina (menos campos, mais urgencia)"
+        - "Revisar promessa contra pesquisa de mercado"
+    output: "diagnostico-captura-{project}.md"
+
+  - id: diag_02
+    name: "Baixo Comparecimento"
+    condition: "taxa de comparecimento < 30%"
+    agents: [webinar-questioner, warmup-specialist, whatsapp-specialist]
+    analysis:
+      sintomas:
+        - "Menos de 30% dos inscritos comparecem"
+        - "Pico de entrada nos primeiros 5 min, queda rapida"
+        - "Grupo de WhatsApp com baixa interacao"
+      causas_imediatas:
+        - "Lembretes fracos ou genericos"
+        - "Sem aquecimento pre-evento"
+        - "Horario inadequado"
+        - "Tempo entre inscricao e evento muito longo"
+      causas_raiz:
+        - "Lead nao percebe valor suficiente para reservar o tempo"
+        - "Expectativa criada na captura nao se manteve"
+        - "Sem investimento emocional do lead antes do evento"
+      correcoes:
+        - "Implementar sequencia de aquecimento (conteudo + enquete + desafio)"
+        - "Lembretes com beneficio concreto (nao apenas contagem regressiva)"
+        - "Criar micro-compromisso antes do evento (tarefa, reflexao)"
+        - "Testar horarios diferentes"
+        - "Reduzir janela inscricao-evento para 3-5 dias"
+    output: "diagnostico-comparecimento-{project}.md"
+
+  - id: diag_03
+    name: "Baixa Retencao"
+    condition: "mais de 50% saem antes do pitch"
+    agents: [webinar-questioner, script-writer, webinar-architect]
+    analysis:
+      sintomas:
+        - "Mais de 50% abandonam antes do pitch"
+        - "Queda acentuada nos primeiros 15 minutos"
+        - "Chat com pouca interacao"
+        - "Perguntas desconectadas do conteudo"
+      causas_imediatas:
+        - "Abertura longa e sem gancho"
+        - "Conteudo teorico demais sem aplicacao pratica"
+        - "Slides poluidos ou monotonos"
+        - "Expert sem energia ou conexao"
+      causas_raiz:
+        - "Roteiro nao segue arco narrativo (tensao > resolucao)"
+        - "Conteudo nao entrega valor rapido o suficiente"
+        - "Falta de loops abertos que mantenham atencao"
+        - "Publico errado (problema de captura, nao de retencao)"
+      correcoes:
+        - "Reestruturar primeiros 10 min (gancho + promessa + prova rapida)"
+        - "Inserir interacoes a cada 5-7 minutos (enquete, pergunta, exercicio)"
+        - "Usar loops abertos entre blocos"
+        - "Reduzir slides de texto, aumentar demonstracoes"
+        - "Verificar se o publico captado e realmente o ICP"
+    output: "diagnostico-retencao-{project}.md"
+
+  - id: diag_04
+    name: "Baixa Conversao"
+    condition: "taxa de conversao < 3% dos presentes"
+    agents: [webinar-questioner, pitch-specialist, offer-architect, objection-handler]
+    analysis:
+      sintomas:
+        - "Conversao abaixo de 3% dos presentes"
+        - "Muitos cliques no checkout sem finalizacao"
+        - "Perguntas sobre preco ou condicoes no chat"
+        - "Audiencia engajada mas nao compra"
+      causas_imediatas:
+        - "Pitch abrupto (transicao ruim do conteudo para oferta)"
+        - "Oferta confusa ou com muito item"
+        - "Preco sem ancoragem adequada"
+        - "Falta de urgencia real"
+        - "Checkout com atrito"
+      causas_raiz:
+        - "Conteudo nao criou desejo suficiente pelo resultado"
+        - "Crencas limitantes nao foram quebradas durante o webinario"
+        - "Oferta nao resolve o problema revelado no conteudo"
+        - "Expert nao construiu autoridade suficiente"
+      correcoes:
+        - "Redesenhar transicao conteudo-pitch (ponte natural)"
+        - "Simplificar oferta (menos itens, mais clareza)"
+        - "Adicionar ancoragem de preco com comparacao real"
+        - "Mapear e quebrar 3-5 crencas limitantes durante o conteudo"
+        - "Adicionar prova social no momento do pitch"
+        - "Simplificar checkout (menos passos, mais opcoes de pagamento)"
+    output: "diagnostico-conversao-{project}.md"
+
+  - id: diag_05
+    name: "Replay Fraco"
+    condition: "conversao de replay < 1% ou abertura de email replay < 30%"
+    agents: [webinar-questioner, replay-strategist, scarcity-architect]
+    analysis:
+      sintomas:
+        - "Poucos acessos ao replay"
+        - "Quem acessa nao assiste ate o pitch"
+        - "Conversao de replay proxima de zero"
+        - "Emails de replay com baixa abertura"
+      causas_imediatas:
+        - "Replay disponivel imediatamente (sem urgencia)"
+        - "Email de replay generico"
+        - "Sem segmentacao (mesmo email pra quem assistiu e quem nao assistiu)"
+        - "Replay longo demais sem edicao"
+      causas_raiz:
+        - "Sem estrategia de replay definida"
+        - "Replay tratado como afterthought, nao como fase do funil"
+        - "Urgencia artificial que ninguem acredita"
+      correcoes:
+        - "Implementar delay estrategico (replay disponivel em 12-24h)"
+        - "Segmentar: quem nao veio, quem saiu cedo, quem ficou sem comprar"
+        - "Editar replay com cortes e destaques do melhor momento"
+        - "Email de replay com gancho forte (nao apenas 'assista o replay')"
+        - "Criar deadline real para replay (e cumprir)"
+    output: "diagnostico-replay-{project}.md"
+
+  - id: diag_06
+    name: "Follow-up Fraco"
+    condition: "taxa de conversao pos-evento < 2% ou follow-up inexistente"
+    agents: [webinar-questioner, commercial-strategist, downsell-specialist]
+    analysis:
+      sintomas:
+        - "Vendas concentradas so no dia do evento"
+        - "Follow-up 1:1 com baixa resposta"
+        - "Leads esfriam rapido apos o evento"
+        - "Sem vendas apos 48h do webinario"
+      causas_imediatas:
+        - "Follow-up generico (mesmo script pra todo lead)"
+        - "Demora para iniciar contato pos-evento"
+        - "Sem calendario de urgencia"
+        - "Equipe comercial nao preparada"
+      causas_raiz:
+        - "Sem segmentacao por comportamento (quem clicou, quem ficou, quem perguntou)"
+        - "Sem plano comercial estruturado"
+        - "Follow-up tratado como spam, nao como continuacao da conversa"
+      correcoes:
+        - "Segmentar leads por comportamento no webinario"
+        - "Iniciar follow-up em ate 2h pos-evento para leads quentes"
+        - "Script personalizado por segmento (objecao especifica)"
+        - "Implementar calendario de urgencia de 7 dias"
+        - "Preparar downsell para quem nao converter na oferta principal"
+        - "Treinar equipe com matriz de objecoes antes do evento"
+    output: "diagnostico-followup-{project}.md"
+
+  compilation:
+    name: "Relatorio Consolidado"
+    agents: [webinar-chief, webinar-questioner]
+    steps:
+      - "Compilar diagnosticos individuais"
+      - "Identificar causa raiz principal do funil"
+      - "Priorizar correcoes por impacto (quick wins primeiro)"
+      - "Gerar plano de acao com responsaveis e prazos"
+    output: "diagnostico-completo-{project}.md"

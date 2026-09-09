@@ -1,0 +1,19 @@
+{
+  "_doc": "Marca de EXEMPLO, ficticia, so para mostrar o formato. Crie o seu proprio arquivo com o nome da sua marca e nao versione: o .gitignore ja cuida disso.",
+  "nome": "exemplo",
+  "perfil_tipografico": "sobrio",
+  "cores": {
+    "primaria": "#2F5D50",
+    "secundaria": "#8A9A5B",
+    "fundo_claro": "#FAF9F6",
+    "fundo_escuro": "#1C1F1E",
+    "texto_principal": "#1C1F1E",
+    "texto_secundario": "#5A6260",
+    "destaque": "#C77D3A",
+    "sucesso": "#3E7C4A",
+    "alerta": "#B8860B",
+    "erro": "#A93226"
+  },
+  "geometria_preferida": "raio_medio",
+  "densidade": "equilibrada"
+}

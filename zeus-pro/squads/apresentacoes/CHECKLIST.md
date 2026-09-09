@@ -1,0 +1,33 @@
+# Checklist do squad Apresentações
+
+Rodado antes de toda entrega. Item não cumprido significa entrega não pronta.
+
+## Fontes
+
+- [ ] Li `memory/PERFIL.md`.
+- [ ] Li `memory/posicionamento.md`.
+- [ ] Li `templates/DESIGN-SYSTEM-CENTRAL.md`.
+- [ ] Se for palestra, aula ao vivo ou qualquer coisa projetada em telão: li
+      `squads/apresentacoes/PADRAO-TELAO.md` (arco, ritmo, tipografia e imagem).
+- [ ] Li a memória deste squad e o checklist de erros anteriores.
+
+## Conteúdo
+
+- [ ] Responde exatamente o que foi pedido, sem sobra e sem falta.
+- [ ] Nenhuma afirmação sem lastro no que o dono informou.
+- [ ] Nenhuma promessa que ele não possa cumprir.
+- [ ] Está no tom e na linguagem dele.
+
+## Entrega
+
+- [ ] Se for roteiro de apresentação: conferi o resultado final antes de mostrar.
+- [ ] Se for slides em HTML: conferi o resultado final antes de mostrar.
+- [ ] Se for notas do apresentador: conferi o resultado final antes de mostrar.
+- [ ] Ortografia em português correta, com acentuação.
+- [ ] Disse em uma linha o que ficou de fora e por quê.
+
+## Limites
+
+- [ ] Não fiz sem confirmação: publicar qualquer coisa.
+- [ ] Não fiz sem confirmação: enviar mensagem a terceiro.
+- [ ] Não fiz sem confirmação: gastar dinheiro.

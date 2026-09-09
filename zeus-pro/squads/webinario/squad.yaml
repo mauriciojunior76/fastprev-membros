@@ -1,0 +1,174 @@
+name: webinar-infalivel
+version: "1.0.0"
+short-title: "Webinar Infalivel Squad"
+description: "Squad de 50 agentes especializados no metodo Webinario Infalivel (Tayoba). Cobre briefing, promessa, copy, roteiro de webinario 14 blocos, pitch, aquecimento, replay, follow-up, downsell, metricas, oferta, funil evergreen e operacao completa."
+author: "Synkra AIOS"
+license: MIT
+slashPrefix: "webinar-infalivel"
+
+aios:
+  minVersion: "4.0.0"
+  type: squad
+
+tags:
+  - webinario
+  - webinar
+  - tayoba
+  - funil-webinario
+  - pitch
+  - replay
+  - evergreen
+  - comparecimento
+  - conversao
+  - trafego
+  - comercial
+  - metricas
+
+components:
+  agents:
+    # Tier 0 - Comando Central
+    - webinar-chief.md
+    - webinar-deputy.md
+    - webinar-master-planner.md
+    - webinar-questioner.md
+    - webinar-intake-specialist.md
+    - webinar-final-reviewer.md
+    # Tier 1A - Estrategia e Promessa
+    - researcher.md
+    - promise-architect.md
+    - big-idea-specialist.md
+    - narrative-analyst.md
+    - strategic-planner.md
+    - financial-planner.md
+    # Tier 1B - Copy e Linguagem
+    - headline-specialist.md
+    - page-copy-specialist.md
+    - email-specialist.md
+    - whatsapp-specialist.md
+    - ad-copy-specialist.md
+    - copy-reviewer.md
+    # Tier 1C - Webinario e Conteudo
+    - webinar-architect.md
+    - script-writer.md
+    - pitch-specialist.md
+    - warmup-specialist.md
+    - authority-builder.md
+    - belief-breaker.md
+    - webinar-reviewer.md
+    # Tier 1D - Trafego e Criativos
+    - creative-planner.md
+    - creative-script-writer.md
+    - remarketing-specialist.md
+    - traffic-data-planner.md
+    - creative-reviewer.md
+    # Tier 1E - Pos-Webinario e Follow-up
+    - replay-strategist.md
+    - scarcity-architect.md
+    - followup-specialist.md
+    - downsell-specialist.md
+    - commercial-strategist.md
+    - objection-handler.md
+    - commercial-reviewer.md
+    # Tier 1F - Metricas, Dados e Operacao
+    - metrics-analyst.md
+    - diagnostics-specialist.md
+    - checklist-manager.md
+    - crm-operations-specialist.md
+    - team-operations-planner.md
+    - decision-notebook-specialist.md
+    # Tier 1G - Oferta, Produto e Automacao
+    - offer-architect.md
+    - bonus-architect.md
+    - funnel-architect.md
+    - evergreen-specialist.md
+    - page-builder-coordinator.md
+    - compliance-specialist.md
+    - post-webinar-product-planner.md
+  tasks:
+    # Fase 0: Briefing
+    - 01-collect-brief.md
+    - 02-question-premises.md
+    # Fase 1: Pesquisa e Estrategia
+    - 03-market-research.md
+    - 04-create-promise.md
+    - 05-create-big-idea.md
+    - 06-design-narrative-arc.md
+    - 07-master-plan.md
+    - 08-funnel-economics.md
+    # Fase 2: Oferta e Funil
+    - 09-build-offer.md
+    - 10-design-bonuses.md
+    - 11-design-funnel.md
+    - 12-setup-evergreen.md
+    # Fase 3: Copy
+    - 13-write-headlines.md
+    - 14-write-capture-page-copy.md
+    - 15-write-sales-page-copy.md
+    - 16-write-emails.md
+    - 17-write-whatsapp.md
+    - 18-write-ad-copy.md
+    # Fase 4: Webinario e Conteudo
+    - 19-design-webinar.md
+    - 20-write-webinar-script.md
+    - 21-design-pitch.md
+    - 22-plan-warmup.md
+    - 23-build-authority-stack.md
+    - 24-map-belief-breaks.md
+    # Fase 5: Criativos e Trafego
+    - 25-plan-creatives.md
+    - 26-write-creative-scripts.md
+    - 27-design-remarketing.md
+    - 28-setup-tracking.md
+    # Fase 6: Pos-Webinario e Comercial
+    - 29-plan-replay.md
+    - 30-design-scarcity-calendar.md
+    - 31-plan-commercial.md
+    - 32-plan-downsell.md
+    - 33-build-objection-matrix.md
+    # Fase 7: Operacao e Metricas
+    - 34-setup-metrics.md
+    - 35-build-checklists.md
+    - 36-design-crm.md
+    - 37-plan-team.md
+    - 38-build-page-brief.md
+    - 39-verify-compliance.md
+    # Diagnostico e Revisao
+    - 40-run-diagnostic.md
+    - 41-decision-review.md
+  workflows:
+    - wf-full-webinar-pipeline.yaml
+    - wf-complete-webinar-plan.yaml
+    - wf-diagnostic-cycle.yaml
+    - wf-copy-review-cycle.yaml
+    - wf-pre-webinar-check.yaml
+    - wf-daily-decision-review.yaml
+  checklists:
+    - pre-captation.md
+    - pre-webinar.md
+    - post-webinar.md
+    - operational-daily.md
+  data:
+    - benchmark-tables.md
+    - methodology-rules.md
+    - webinar-script-structure.md
+    - landing-page-structure.md
+    - funnel-architecture.md
+    - objection-matrix-template.md
+    - error-patterns.md
+    - tools-stack.md
+    - comparison-vs-launch-paid.md
+    - sop-event-day.md
+    - ab-testing-protocol.md
+    - segmentation-matrix.md
+
+config:
+  extends: extend
+
+# Autoaprendizado (squads-memory-sync, 2026-07-25)
+learning:
+  memory_file: MEMORY.md
+  format: memoria-squad-v1
+  global_log: memory/erros-aprendidos.md
+  squad_tag: webinar-infalivel
+  read_before_acting: true
+  max_chars: 8000

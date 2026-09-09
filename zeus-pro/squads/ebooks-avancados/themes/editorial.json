@@ -1,0 +1,81 @@
+{
+  "id": "editorial",
+  "name": "Editorial",
+  "owner": "generico",
+  "description": "Creme + terracota. Jornalistico, revista, feminino sofisticado.",
+  "mood": ["editorial", "revista", "feminino", "sofisticado", "papel"],
+  "colors": {
+    "bg": "#faf7f2",
+    "bg-alt": "#f5efe6",
+    "bg-card": "#efe7d9",
+    "accent-1": "#9b4a1f",
+    "accent-2": "#c66b38",
+    "accent-3": "#e89968",
+    "text": "#2b1d12",
+    "text-muted": "rgba(43, 29, 18, 0.68)",
+    "text-label": "#9b4a1f",
+    "border": "rgba(155, 74, 31, 0.2)",
+    "divider": "rgba(43, 29, 18, 0.1)"
+  },
+  "fonts": {
+    "title": {
+      "family": "Fraunces",
+      "weight": 700,
+      "source": "google",
+      "url": "https://fonts.googleapis.com/css2?family=Fraunces:wght@300;400;500;600;700;800;900&display=swap"
+    },
+    "title-alt": {
+      "family": "Playfair Display",
+      "weight": 700,
+      "source": "google"
+    },
+    "body": {
+      "family": "Source Serif 4",
+      "weight": 400,
+      "source": "google",
+      "url": "https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@300;400;500;600;700&display=swap"
+    },
+    "mono": {
+      "family": "JetBrains Mono",
+      "weight": 400,
+      "source": "google"
+    }
+  },
+  "effects": {
+    "grain": true,
+    "grain-opacity": 0.2,
+    "gradient-titles": false,
+    "corner-lines": false,
+    "footer-diamond": false,
+    "blur-reveal": false,
+    "motion": "ease-out"
+  },
+  "logo": {
+    "path": null,
+    "width-px": 110,
+    "position": "top-left"
+  },
+  "page": {
+    "format": "A4",
+    "width-mm": 210,
+    "height-mm": 297,
+    "padding-mm": 24,
+    "background": "var(--bg)"
+  },
+  "icons": {
+    "style": "filled-editorial",
+    "stroke-width": 1,
+    "library": "custom-editorial"
+  },
+  "typography-scale": {
+    "h1": "clamp(38px, 6vw, 56px)",
+    "h2": "clamp(28px, 4vw, 40px)",
+    "h3": "clamp(20px, 2.5vw, 26px)",
+    "body": "clamp(15px, 1.4vw, 17px)",
+    "caption": "clamp(11px, 1vw, 13px)"
+  },
+  "cover": {
+    "template": "cover-editorial.html",
+    "style": "magazine-split-image-title"
+  }
+}

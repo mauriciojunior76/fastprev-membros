@@ -1,0 +1,77 @@
+{
+  "id": "luxury",
+  "name": "Luxury",
+  "owner": "generico",
+  "description": "Preto profundo + dourado vivo. Premium, alto padrao, exclusivo.",
+  "mood": ["luxo", "premium", "exclusivo", "alto-ticket"],
+  "colors": {
+    "bg": "#0a0a0a",
+    "bg-alt": "#111111",
+    "bg-card": "#1a1a1a",
+    "accent-1": "#b8860b",
+    "accent-2": "#d4af37",
+    "accent-3": "#ffd700",
+    "text": "#fafafa",
+    "text-muted": "rgba(250, 250, 250, 0.6)",
+    "text-label": "#d4af37",
+    "border": "rgba(212, 175, 55, 0.25)",
+    "divider": "rgba(255, 215, 0, 0.1)"
+  },
+  "fonts": {
+    "title": {
+      "family": "Cormorant Garamond",
+      "weight": 700,
+      "source": "google",
+      "url": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap"
+    },
+    "body": {
+      "family": "Lato",
+      "weight": 400,
+      "source": "google",
+      "url": "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap"
+    },
+    "mono": {
+      "family": "Fira Code",
+      "weight": 400,
+      "source": "google"
+    }
+  },
+  "effects": {
+    "grain": true,
+    "grain-opacity": 0.3,
+    "gradient-titles": true,
+    "corner-lines": true,
+    "footer-diamond": true,
+    "blur-reveal": true,
+    "motion": "cubic-bezier(0.16, 1, 0.3, 1)"
+  },
+  "logo": {
+    "path": null,
+    "width-px": 130,
+    "position": "center"
+  },
+  "page": {
+    "format": "A4",
+    "width-mm": 210,
+    "height-mm": 297,
+    "padding-mm": 20,
+    "background": "var(--bg)"
+  },
+  "icons": {
+    "style": "thin-stroke",
+    "stroke-width": 0.5,
+    "stroke-linecap": "square",
+    "library": "custom-luxury"
+  },
+  "typography-scale": {
+    "h1": "clamp(40px, 6vw, 72px)",
+    "h2": "clamp(30px, 4vw, 48px)",
+    "h3": "clamp(22px, 2.5vw, 30px)",
+    "body": "clamp(16px, 1.4vw, 18px)",
+    "caption": "clamp(12px, 1vw, 14px)"
+  },
+  "cover": {
+    "template": "cover-luxury.html",
+    "style": "big-idea-serif-gold-gradient"
+  }
+}

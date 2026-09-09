@@ -1,0 +1,136 @@
+{
+  "_doc": "REGISTRO DE MOTION. Cada gesto tem função, propriedade primária, curva e duração. Detalhe completo: guia §9e/§9e2 e painel #s05b-motion-semantico. Som por peso: sfx-map.json.",
+  "version": "2.2",
+  "functions": [
+    "ENTRADA",
+    "SAIDA",
+    "ENFASE",
+    "RELACAO",
+    "PROGRESSO",
+    "TRANSFORMACAO",
+    "FEEDBACK",
+    "CONTINUIDADE",
+    "NARRATIVA",
+    "TRANSICAO"
+  ],
+  "easing": {
+    "response": "cubic-bezier(.1,.45,.75,1) — feedback, item entrando",
+    "transfer": "cubic-bezier(.45,0,.15,1) — foco, reposicionamento",
+    "reveal": "cubic-bezier(.12,.4,.8,1) — traço, painel, contexto",
+    "exit": "cubic-bezier(.33,0,.67,1)",
+    "linear": "só tempo uniforme (playback, cronômetro, progresso real)"
+  },
+  "scene_recipe": [
+    "[in] contexto entra pronto: opacity 0→1, scale .98→1, blur 6→0, reveal 12–18q",
+    "[build] estrutura em cascata: response 20q, round(i×4)",
+    "[act] a ação narrada, um gesto só, em t−6q da palavra",
+    "[focus] anel único interpolando x,y,w,h,r: transfer 20–24q, recuo no mesmo intervalo",
+    "[hold] sustentação ≥60q, imóvel e legível",
+    "[out] saída junta: opacity 1→0, scale 1→1,02, blur 0→6, exit 24q, overlap 10q"
+  ],
+  "gestures": {
+    "foco": {
+      "fn": "ENFASE",
+      "prop": "posição+tamanho do anel",
+      "easing": "transfer",
+      "frames": [
+        16,
+        24
+      ],
+      "sfx": "anel-migra (3)"
+    },
+    "cascata": {
+      "fn": "ENTRADA",
+      "prop": "opacity+scale por irmão",
+      "easing": "response",
+      "frames": [
+        20,
+        20
+      ],
+      "sfx": "bloco-cascata (3), 1º/meio/último"
+    },
+    "tracado": {
+      "fn": "RELACAO",
+      "prop": "strokeDashoffset",
+      "easing": "reveal",
+      "frames": [
+        20,
+        34
+      ],
+      "sfx": "conector-desenha (4) + chevron (5)"
+    },
+    "reveal": {
+      "fn": "ENTRADA",
+      "prop": "opacity+blur",
+      "easing": "reveal",
+      "frames": [
+        10,
+        18
+      ],
+      "sfx": "cena-entra (6)"
+    },
+    "contador": {
+      "fn": "PROGRESSO",
+      "prop": "valor numérico",
+      "easing": "reveal (settleSoft)",
+      "frames": [
+        40,
+        60
+      ],
+      "sfx": "0 em curso, ding 5 ao parar"
+    },
+    "digitacao": {
+      "fn": "NARRATIVA",
+      "prop": "largura da barra",
+      "easing": "linear por caractere",
+      "frames": [
+        1.5,
+        1.5
+      ],
+      "sfx": "digitacao-campo (2), a cada 3 letras"
+    },
+    "lista": {
+      "fn": "CONTINUIDADE",
+      "prop": "inserção + deslocamento dos vizinhos",
+      "easing": "response",
+      "frames": [
+        20,
+        20
+      ],
+      "sfx": "item-lista-entra (3)"
+    },
+    "confirmacao": {
+      "fn": "FEEDBACK",
+      "prop": "preenchimento + desenho do check",
+      "easing": "response",
+      "frames": [
+        12,
+        16
+      ],
+      "sfx": "check-confirma (6)"
+    },
+    "playback": {
+      "fn": "PROGRESSO",
+      "prop": "avanço real",
+      "easing": "linear",
+      "frames": null,
+      "sfx": "0 (o áudio real é o som)"
+    }
+  },
+  "nature_rules": [
+    "relógio: ponteiros se movem; não gire sem prazo real",
+    "gráfico: dados crescem da base, baseline fixa",
+    "download/seta: desce/aponta na direção do fato",
+    "mensagem: aparece do lado de quem fala",
+    "árvore: ramos desenham da raiz para a folha",
+    "timeline: progressão avança sempre para frente",
+    "mapa mental: nós aparecem por relação, não por estética"
+  ],
+  "forbidden": [
+    "respiração/rotação/brilho como repouso",
+    "overshoot",
+    "motion blur",
+    "blur em rótulo que precisa ser lido",
+    "animação sem informação nova"
+  ]
+}

@@ -1,0 +1,109 @@
+workflow:
+  id: wf-daily-decision-review
+  name: "Revisao Diaria de Decisoes do Webinario"
+  version: "1.0.0"
+  description: |
+    Fluxo diario para coleta de metricas, questionamento estrategico
+    e registro de decisoes. Roda todos os dias durante captacao,
+    webinario e pos-webinario.
+  trigger: "*daily-review"
+  entry_agent: metrics-analyst
+  estimated_duration: "30-60 minutos"
+  type: sequential
+  frequency: daily
+
+  input_required:
+    - "Acesso as metricas do dia (ads, plataforma, checkout, grupo)"
+
+steps:
+  - id: step_1
+    name: "Coleta de Metricas"
+    agent: metrics-analyst
+    checklist_source: "checklists/operational-daily.md"
+    actions:
+      - "Coletar metricas de trafego (leads, CPL, CTR por criativo)"
+      - "Coletar metricas de engajamento (grupo WhatsApp, emails abertos)"
+      - "Coletar metricas de vendas (conversoes, ticket medio, checkout abandonado)"
+      - "Coletar metricas de replay (acessos, retencao, cliques)"
+      - "Coletar metricas de follow-up (contatos feitos, respostas, conversoes)"
+    output: "metricas-dia-{date}-{project}.md"
+    format:
+      leads_hoje: "{numero}"
+      cpl_dia: "R${valor}"
+      criativo_campeao: "{nome} - CTR {valor}% - CPL R${valor}"
+      entradas_grupo: "{numero}"
+      objecao_top: "{texto da objecao mais frequente}"
+      vendas_hoje: "{numero} - R${valor total}"
+      replay_views: "{numero}"
+      replay_conversoes: "{numero}"
+      followup_contatos: "{numero}"
+      followup_respostas: "{numero}"
+
+  - id: step_2
+    name: "Questionamento Estrategico"
+    agent: webinar-questioner
+    depends_on: [step_1]
+    actions:
+      - "Analisar metricas coletadas contra metas definidas"
+      - "Identificar desvios (positivos e negativos)"
+      - "Formular 3-5 perguntas estrategicas baseadas nos dados"
+      - "Propor hipoteses para cada desvio"
+    questions_framework:
+      - "O que mudou em relacao a ontem? Por que?"
+      - "Estamos no ritmo para bater a meta? Se nao, qual o gap?"
+      - "Qual acao de ontem gerou mais resultado? Devemos dobrar?"
+      - "Qual acao de ontem nao funcionou? Devemos parar ou ajustar?"
+      - "O que sabemos hoje que nao sabiamos ontem?"
+    output: "questionamento-dia-{date}-{project}.md"
+
+  - id: step_3
+    name: "Registro de Decisao"
+    agent: webinar-chief
+    depends_on: [step_2]
+    actions:
+      - "Avaliar metricas + questionamento"
+      - "Tomar decisoes concretas para as proximas 24h"
+      - "Atribuir responsavel e prazo para cada decisao"
+      - "Definir metrica de validacao (como saber se a decisao funcionou)"
+    output: "decisao-dia-{date}-{project}.md"
+    format:
+      decisoes:
+        - decisao: "{texto da decisao}"
+          responsavel: "{agente ou pessoa}"
+          prazo: "{data/hora}"
+          metrica_validacao: "{como medir se funcionou}"
+          prioridade: "{alta/media/baixa}"
+
+  - id: step_4
+    name: "Consolidacao no Diario"
+    agent: metrics-analyst
+    depends_on: [step_3]
+    actions:
+      - "Adicionar entrada ao diario do webinario"
+      - "Atualizar dashboard com metricas acumuladas"
+      - "Marcar decisoes do dia anterior como executadas ou pendentes"
+    output: "diario-webinario-{project}.md"
+    mode: append
+
+alerts:
+  critical:
+    conditions:
+      - "CPL subiu mais de 50% em relacao ao dia anterior"
+      - "Zero vendas em dia de captacao ativa"
+      - "Comparecimento abaixo de 20%"
+      - "Checkout com erro reportado"
+    action: "Notificacao imediata para webinar-chief + diagnostico automatico"
+
+  warning:
+    conditions:
+      - "CPL subiu mais de 20% em relacao ao dia anterior"
+      - "Taxa de abertura de email abaixo de 20%"
+      - "Grupo WhatsApp com menos de 50% dos leads"
+    action: "Registro no questionamento + sugestao de correcao"
+
+  positive:
+    conditions:
+      - "CPL caiu mais de 20%"
+      - "Conversao acima da meta"
+      - "Criativo com CTR acima de 3%"
+    action: "Registrar como acerto + avaliar se deve escalar"

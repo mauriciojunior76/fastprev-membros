@@ -1,0 +1,431 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "motion-spec.schema.json",
+  "title": "Zeus Reels · motionSpec v3.0",
+  "description": "Contrato de movimento por objeto. Toda cena Remotion emite um array destes.",
+  "type": "object",
+  "required": [
+    "elementId",
+    "nature",
+    "verb",
+    "gesture",
+    "sizePx",
+    "startFrame",
+    "durationFrames",
+    "easing",
+    "primaryProperty",
+    "finalReadableState",
+    "weight"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "elementId": {
+      "type": "string",
+      "description": "id único no escopo da cena"
+    },
+    "nature": {
+      "type": "string",
+      "enum": [
+        "tempo-real",
+        "quantidade",
+        "dado-baseline",
+        "trajetoria",
+        "proporcao",
+        "direcao",
+        "fala",
+        "fila",
+        "grade",
+        "acao",
+        "estado-binario",
+        "veredito",
+        "interrupcao",
+        "identidade",
+        "relacao",
+        "estrutura",
+        "progressao",
+        "objeto",
+        "contexto",
+        "atencao",
+        "leitura",
+        "simbolo",
+        "evidencia",
+        "assinatura",
+        "ajuste",
+        "colecao"
+      ]
+    },
+    "verb": {
+      "type": "string",
+      "enum": [
+        "revelar",
+        "construir",
+        "conectar",
+        "preencher",
+        "deslocar",
+        "comparar",
+        "acumular",
+        "crescer",
+        "cair",
+        "romper",
+        "substituir",
+        "selecionar",
+        "confirmar",
+        "medir",
+        "esperar",
+        "enviar",
+        "escrever",
+        "expandir",
+        "remover",
+        "alertar",
+        "nascer",
+        "continuar"
+      ]
+    },
+    "gesture": {
+      "type": "string",
+      "description": "nome do gesto da tabela §6"
+    },
+    "phase": {
+      "type": "string",
+      "enum": [
+        "in",
+        "build",
+        "act",
+        "focus",
+        "hold",
+        "out"
+      ]
+    },
+    "sizePx": {
+      "type": "number",
+      "minimum": 1,
+      "description": "maior lado na tela; define massFactor"
+    },
+    "tonicFrame": {
+      "type": "integer",
+      "description": "onset da sílaba tônica da palavra que dispara"
+    },
+    "syncKind": {
+      "type": "string",
+      "enum": [
+        "act",
+        "context",
+        "build",
+        "focus",
+        "confirm"
+      ]
+    },
+    "startFrame": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "= tonicFrame + SYNC_OFFSET[syncKind], arredondado uma vez"
+    },
+    "durationFrames": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 300
+    },
+    "easing": {
+      "type": "string",
+      "enum": [
+        "settle",
+        "smooth",
+        "settleSoft",
+        "easy",
+        "anticipate",
+        "overshootMicro",
+        "brake",
+        "gravity",
+        "lift",
+        "linear",
+        "elasticSoft",
+        "inertia"
+      ]
+    },
+    "intensity": {
+      "type": "string",
+      "enum": [
+        "sutil",
+        "padrao",
+        "dramatico"
+      ],
+      "default": "padrao",
+      "description": "derivada do peso: 0–4 sutil · 5–6 padrao · 7–10 dramatico"
+    },
+    "primaryProperty": {
+      "type": "string"
+    },
+    "supportingProperties": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 3
+    },
+    "transformOrigin": {
+      "type": "string"
+    },
+    "coordinateSpace": {
+      "type": "string",
+      "enum": [
+        "canvas",
+        "parent",
+        "self"
+      ]
+    },
+    "anchorElementId": {
+      "type": "string"
+    },
+    "parentGroupId": {
+      "type": "string",
+      "description": "se presente, o filho NÃO tem stagger nem curva próprios"
+    },
+    "siblings": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "staggerStep": {
+      "type": "number",
+      "description": "min(stepBase, 24/(n-1))"
+    },
+    "ownerOfFocus": {
+      "type": "boolean",
+      "default": false
+    },
+    "holdFrames": {
+      "type": "integer",
+      "description": "≥ 60 + max(0, palavras-4)*12"
+    },
+    "holdUntilEventId": {
+      "type": "string"
+    },
+    "finalReadableState": {
+      "type": "string",
+      "description": "o que se lê quando o movimento termina"
+    },
+    "invariants": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "o que NÃO pode mudar durante o gesto"
+    },
+    "exitReason": {
+      "type": "string",
+      "enum": [
+        "fim-de-cena",
+        "substituido",
+        "removido",
+        "perdeu-foco"
+      ]
+    },
+    "reducedMotionFallback": {
+      "type": "string",
+      "enum": [
+        "hold-estatico",
+        "fade-simples"
+      ],
+      "default": "hold-estatico"
+    },
+    "weight": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 10,
+      "description": "importância visual do gesto = peso do som (sfx-map.json). 0 = silêncio obrigatório. Soma por cena ≤ 22; ≥7 espaçados ≥180q; 9–10 no máx. 2 por vídeo"
+    },
+    "orientation": {
+      "type": "string",
+      "enum": [
+        "portrait",
+        "landscape"
+      ],
+      "default": "portrait"
+    },
+    "stageState": {
+      "type": "string",
+      "enum": [
+        "full",
+        "face-mold",
+        "face-small",
+        "darkened"
+      ],
+      "description": "landscape: estado do palco após este gesto (§12c)"
+    },
+    "faceBox": {
+      "type": "object",
+      "properties": {
+        "x": {
+          "type": "number"
+        },
+        "y": {
+          "type": "number"
+        },
+        "w": {
+          "type": "number"
+        },
+        "h": {
+          "type": "number"
+        }
+      },
+      "required": [
+        "x",
+        "y",
+        "w",
+        "h"
+      ],
+      "description": "landscape: caixa do rosto em px no frame 1920×1080"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "easing": {
+            "enum": [
+              "overshootMicro",
+              "elasticSoft"
+            ]
+          }
+        },
+        "required": [
+          "easing"
+        ]
+      },
+      "then": {
+        "properties": {
+          "sizePx": {
+            "maximum": 120
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "nature": {
+            "const": "dado-baseline"
+          }
+        },
+        "required": [
+          "nature"
+        ]
+      },
+      "then": {
+        "properties": {
+          "transformOrigin": {
+            "const": "bottom center"
+          }
+        },
+        "required": [
+          "transformOrigin"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "nature": {
+            "const": "tempo-real"
+          }
+        },
+        "required": [
+          "nature"
+        ]
+      },
+      "then": {
+        "properties": {
+          "easing": {
+            "const": "linear"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "nature": {
+            "const": "atencao"
+          }
+        },
+        "required": [
+          "nature"
+        ]
+      },
+      "then": {
+        "properties": {
+          "easing": {
+            "const": "smooth"
+          },
+          "ownerOfFocus": {
+            "const": true
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "verb": {
+            "enum": [
+              "esperar"
+            ]
+          }
+        },
+        "required": [
+          "verb"
+        ]
+      },
+      "then": {
+        "properties": {
+          "weight": {
+            "const": 0
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "weight": {
+            "minimum": 9
+          }
+        },
+        "required": [
+          "weight"
+        ]
+      },
+      "then": {
+        "properties": {
+          "nature": {
+            "enum": [
+              "leitura",
+              "assinatura"
+            ]
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "orientation": {
+            "const": "landscape"
+          },
+          "phase": {
+            "const": "in"
+          }
+        },
+        "required": [
+          "orientation",
+          "phase"
+        ]
+      },
+      "then": {
+        "required": [
+          "stageState",
+          "faceBox"
+        ]
+      }
+    }
+  ]
+}

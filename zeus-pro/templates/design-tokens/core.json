@@ -1,0 +1,47 @@
+{
+  "_doc": "Tokens neutros do ZEUS PRO. Estes valores NAO sao a marca de ninguem: sao um ponto de partida sobrio que funciona ate o dono definir a identidade dele. Edite os JSON e rode 'node templates/design-tokens/build.js'. NUNCA edite o CSS gerado na mao.",
+  "escala_tipografica": {
+    "_doc": "A escala e calculada, nao escrita a mao. O build gera clamp() fluido entre os dois viewports.",
+    "base_min_px": 16,
+    "base_max_px": 18,
+    "razao_min": 1.2,
+    "razao_max": 1.25,
+    "viewport_min_px": 360,
+    "viewport_max_px": 1440,
+    "degraus": [-1, 0, 1, 2, 3, 4, 5]
+  },
+  "espacamento": {
+    "_doc": "Unidade base multiplicada por uma escala. Consistencia de espaco e o que mais separa material profissional de amador.",
+    "base_px": 8,
+    "escala": [0, 0.5, 1, 1.5, 2, 3, 4, 6, 8, 12, 16]
+  },
+  "geometria": {
+    "raio_nenhum": "0",
+    "raio_pequeno": "4px",
+    "raio_medio": "10px",
+    "raio_grande": "20px",
+    "raio_total": "999px",
+    "borda_fina": "1px",
+    "borda_media": "2px"
+  },
+  "transicoes": {
+    "rapida": "120ms",
+    "media": "240ms",
+    "lenta": "420ms",
+    "suave": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "saida": "cubic-bezier(0, 0, 0.2, 1)",
+    "entrada": "cubic-bezier(0.4, 0, 1, 1)"
+  },
+  "perfis_tipograficos": {
+    "sobrio": {
+      "titulo": "Georgia, 'Times New Roman', serif",
+      "texto": "system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif",
+      "apoio": "ui-monospace, 'Cascadia Code', Consolas, monospace"
+    },
+    "moderno": {
+      "titulo": "system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif",
+      "texto": "system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif",
+      "apoio": "ui-monospace, 'Cascadia Code', Consolas, monospace"
+    }
+  }
+}

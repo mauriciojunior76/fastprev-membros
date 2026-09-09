@@ -1,0 +1,289 @@
+name: build-component-block
+title: Build Component Block
+description: Generate production-ready component code with all best practices
+
+type: code-generation
+version: 1.0.0
+tags:
+  - component-generation
+  - code-quality
+  - reusability
+
+agent: component-architect
+activated_by:
+  - "generate component"
+  - "build button component"
+  - "create card component"
+  - "*build-component"
+
+prerequisites:
+  - ui_library_selected: true
+  - typescript_available: true
+  - storybook_configured: optional
+
+steps:
+  - step: 1
+    name: Define Component
+    elicit: true
+    prompt: |
+      What component do you need? Provide:
+
+      1. **Component Name**: Button, Card, Modal, Input, etc
+      2. **Description**: What does it do?
+      3. **Variants**: Default, Primary, Secondary, Outline, Ghost, Destructive, etc
+      4. **Sizes**: sm, md, lg (if applicable)
+      5. **States**: Normal, Hover, Active, Disabled, Loading, Error
+      6. **Props Interface**: What should users be able to customize?
+      7. **Use Cases**: Where will this be used?
+
+  - step: 2
+    name: Design Component Architecture
+    description: Plan component structure, props, and composition
+    planning:
+      - accessibility: WCAG 2.1 AAA compliance
+      - type_safety: TypeScript with strict mode
+      - composition: Compound components if applicable
+      - theming: Design tokens integration
+      - performance: Memo, useMemo optimization
+
+  - step: 3
+    name: Generate Component Code
+    output: |
+      ✨ **Component Generated: {ComponentName}**
+
+      **Files Created:**
+      1. `{name}.tsx` - Main component
+      2. `{name}.stories.tsx` - Storybook stories
+      3. `{name}.test.tsx` - Unit tests (optional)
+      4. `{name}.types.ts` - Type definitions
+
+      ---
+
+      ### Component Code
+
+      \`\`\`tsx
+      // {name}.tsx
+      import React from 'react';
+      import { cva, type VariantProps } from 'class-variance-authority';
+      import { cn } from '@/lib/utils';
+
+      const {camelCase}Variants = cva(
+        'base-classes-here',
+        {
+          variants: {
+            variant: {
+              default: 'default-styles',
+              primary: 'primary-styles',
+              outline: 'outline-styles',
+              ghost: 'ghost-styles',
+            },
+            size: {
+              sm: 'sm-styles',
+              md: 'md-styles',
+              lg: 'lg-styles',
+            },
+          },
+          defaultVariants: {
+            variant: 'default',
+            size: 'md',
+          },
+        }
+      );
+
+      export interface {ComponentName}Props
+        extends React.HTMLAttributes<HTMLElement>,
+          VariantProps<typeof {camelCase}Variants> {
+        asChild?: boolean;
+        disabled?: boolean;
+        loading?: boolean;
+      }
+
+      const {ComponentName} = React.forwardRef<HTMLElement, {ComponentName}Props>(
+        ({ className, variant, size, disabled, loading, ...props }, ref) => (
+          <element
+            ref={ref}
+            className={cn({camelCase}Variants({ variant, size }), className)}
+            disabled={disabled || loading}
+            aria-disabled={disabled || loading}
+            data-state={loading ? 'loading' : undefined}
+            {...props}
+          />
+        )
+      );
+      {ComponentName}.displayName = '{ComponentName}';
+
+      export { {ComponentName}, {camelCase}Variants };
+      \`\`\`
+
+      ### Types File
+
+      \`\`\`tsx
+      // {name}.types.ts
+      export type {ComponentName}Variant = 'default' | 'primary' | 'outline' | 'ghost';
+      export type {ComponentName}Size = 'sm' | 'md' | 'lg';
+
+      export interface {ComponentName}Props {
+        // Props here
+      }
+      \`\`\`
+
+      ### Storybook Stories
+
+      \`\`\`tsx
+      // {name}.stories.tsx
+      import type { Meta, StoryObj } from '@storybook/react';
+      import { {ComponentName} } from './{name}';
+
+      const meta: Meta<typeof {ComponentName}> = {
+        component: {ComponentName},
+        title: 'Components/{ComponentName}',
+        tags: ['autodocs'],
+      };
+
+      export default meta;
+      type Story = StoryObj<typeof meta>;
+
+      export const Default: Story = {
+        args: {
+          variant: 'default',
+          size: 'md',
+          children: 'Click me',
+        },
+      };
+
+      export const Primary: Story = {
+        args: {
+          variant: 'primary',
+          children: 'Primary Button',
+        },
+      };
+
+      export const Loading: Story = {
+        args: {
+          loading: true,
+          children: 'Loading...',
+        },
+      };
+
+      export const Disabled: Story = {
+        args: {
+          disabled: true,
+          children: 'Disabled',
+        },
+      };
+      \`\`\`
+
+      ### Accessibility Features
+      - ✅ Semantic HTML structure
+      - ✅ ARIA attributes implemented
+      - ✅ Keyboard navigation support
+      - ✅ Focus management
+      - ✅ Color contrast compliant (WCAG AAA)
+      - ✅ Screen reader friendly
+
+      ### Performance Optimizations
+      - ✅ React.forwardRef for ref passing
+      - ✅ Memoized with React.memo (if applicable)
+      - ✅ CSS classes with CVA (no runtime styles)
+      - ✅ Tree-shaking ready
+      - ✅ TypeScript strict mode
+
+  - step: 4
+    name: Test Setup
+    description: Create unit tests with Vitest/Jest
+    output: |
+      \`\`\`tsx
+      // {name}.test.tsx
+      import { render, screen } from '@testing-library/react';
+      import userEvent from '@testing-library/user-event';
+      import { {ComponentName} } from './{name}';
+
+      describe('{ComponentName}', () => {
+        it('renders with default variant', () => {
+          render(<{ComponentName}>Click me</{ComponentName}>);
+          expect(screen.getByText('Click me')).toBeInTheDocument();
+        });
+
+        it('handles disabled state', () => {
+          render(<{ComponentName} disabled>Disabled</{ComponentName}>);
+          expect(screen.getByRole('button')).toBeDisabled();
+        });
+
+        it('supports all variants', () => {
+          const variants = ['default', 'primary', 'outline', 'ghost'];
+          variants.forEach((variant) => {
+            const { rerender } = render(
+              <{ComponentName} variant={variant as any}>Test</{ComponentName}>
+            );
+            expect(screen.getByText('Test')).toBeInTheDocument();
+            rerender(<>{null}</>);
+          });
+        });
+
+        it('is keyboard accessible', async () => {
+          const user = userEvent.setup();
+          const handleClick = vi.fn();
+          render(<{ComponentName} onClick={handleClick}>Click me</{ComponentName}>);
+
+          await user.keyboard('{Enter}');
+          expect(handleClick).toHaveBeenCalled();
+        });
+      });
+      \`\`\`
+
+  - step: 5
+    name: Documentation
+    description: Generate component documentation
+    output: |
+      # {ComponentName}
+
+      A {description} component with {number_of_variants} variants.
+
+      ## Installation
+
+      The {ComponentName} component comes with {ui_library}.
+
+      ## Usage
+
+      \`\`\`tsx
+      import { {ComponentName} } from '@/components/ui/{name}';
+
+      export function MyComponent() {
+        return <{ComponentName} variant="primary">Click me</{ComponentName}>;
+      }
+      \`\`\`
+
+      ## Variants
+
+      | Variant | Use Case |
+      |---------|----------|
+      | default | Standard action |
+      | primary | Primary action |
+      | outline | Secondary action |
+      | ghost | Tertiary action |
+
+      ## Accessibility
+
+      - Fully WCAG 2.1 AAA compliant
+      - Keyboard navigation: Tab, Enter, Space, Escape
+      - Screen reader support: ARIA labels and descriptions
+      - Focus indicators: Always visible
+
+      ## Props
+
+      See {ComponentName}Props interface in {name}.types.ts
+
+components_generated: 1
+success_metrics:
+  - Code follows project patterns
+  - All variants implemented
+  - Accessibility verified
+  - Tests included
+  - Storybook stories created
+  - Documentation complete
+
+---
+
+Powered by: @component-architect (Comp)
+Library Integration: Shadcn/ui, Chakra, Radix, HeadlessUI
+Quality Standards: TypeScript strict, WCAG AAA, 100% test coverage recommended

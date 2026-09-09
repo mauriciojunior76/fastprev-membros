@@ -1,0 +1,351 @@
+{
+  "_doc": "REGISTRO DE CENAS. Uma cena = um beat da fala. O vídeo deve ALTERNAR densidade: nunca 3 cenas seguidas no mesmo nível, nunca dois níveis 4/5 em 15s. speaker: 2up = dois vídeos no topo (gabarito padrão), 1up = um vídeo, none = tela cheia.",
+  "version": "3.3",
+  "density_levels": {
+    "0": "só speaker + legenda: respiro, transição de assunto, fala sem objeto concreto (ex.: depoimento emocional)",
+    "1": "micro destaque OU acento de passagem: um icone, um mini-selo, um numero pequeno, ou uma variante motion de interface entrando por 40 a 60 quadros sobre a cena atual; nao muda a composicao nem o molde principal",
+    "2": "visual de apoio: lista, checks, apontamento, toggles; o palco tem um objeto simples",
+    "3": "cena estruturada: esquema, interface, trio, grade; o palco carrega a informação",
+    "4": "visual dominante: tela cheia ou palco expandido (comparação com imagem, matriz, feed 12, filtro)",
+    "5": "excepcional: lettering ou selo de fecho; 1 a 2 vezes por vídeo, nunca em sequência"
+  },
+  "rhythm_rules": [
+    "nunca 3 cenas seguidas no mesmo nível de densidade",
+    "nunca dois níveis 4 ou 5 em menos de 15s",
+    "depois de um nível 4/5, a próxima cai para 0–2",
+    "um vídeo de 60s típico: 0,2,3,2,4,1,3,0,5 (aprox. 9 a 12 cenas)",
+    "o gancho é função (role=hook), não nível: pode ser 3, 4 ou 5",
+    "o acento de passagem conta como variacao de densidade: uma cena de densidade 3 com acento lê como 3 → 1 → 3 e quebra a monotonia sem trocar o palco",
+    "use acento quando a fala mencionar plataforma e o beat for de outro assunto: sem ele, as 31 variantes motion so aparecem em cena de interface",
+    "maximo 3 acentos por video de 1 minuto"
+  ],
+  "families": [
+    {
+      "id": "SPEAKER_ONLY",
+      "density": 0,
+      "speaker": "2up",
+      "caption": "legenda protagonista",
+      "useWhen": "a fala é sensação, opinião ou transição sem objeto concreto",
+      "avoid": "forçar visual quando não há o que mostrar",
+      "durationFrames": [
+        90,
+        180
+      ],
+      "components": [],
+      "transition": "corte seco"
+    },
+    {
+      "id": "SPEAKER_PLUS_MICRO",
+      "density": 1,
+      "speaker": "2up",
+      "caption": "legenda continua",
+      "useWhen": "a fala cita uma plataforma ou um número pequeno de passagem",
+      "avoid": "usar quando a fala DESCREVE uma ação na plataforma (suba para 3)",
+      "durationFrames": [
+        90,
+        160
+      ],
+      "components": [
+        "interface.*  (mini-selo)",
+        "number.*"
+      ],
+      "transition": "reveal 12q"
+    },
+    {
+      "id": "SPEAKER_PLUS_LIST",
+      "density": 2,
+      "speaker": "2up",
+      "caption": "legenda troca por item",
+      "useWhen": "lista, checks, apontamento, toggles",
+      "avoid": "lista com 7+ itens",
+      "durationFrames": [
+        160,
+        300
+      ],
+      "components": [
+        "interface.checks.*",
+        "interface.list.v1",
+        "set.trio.v1"
+      ],
+      "transition": "reveal 18q"
+    },
+    {
+      "id": "SPEAKER_PLUS_DIAGRAM",
+      "density": 3,
+      "speaker": "2up",
+      "caption": "legenda continua",
+      "useWhen": "a fala afirma uma RELAÇÃO (causa, ordem, hierarquia, escolha)",
+      "avoid": "diagrama com 3 níveis ou 6+ nós (vá para FULL_SCREEN_DIAGRAM)",
+      "durationFrames": [
+        200,
+        360
+      ],
+      "components": [
+        "flow.*",
+        "process.*",
+        "branch.*",
+        "hierarchy.*",
+        "relation.*"
+      ],
+      "transition": "reveal 18q"
+    },
+    {
+      "id": "SPEAKER_PLUS_INTERFACE",
+      "density": 3,
+      "speaker": "2up",
+      "caption": "legenda continua",
+      "useWhen": "a fala descreve uma AÇÃO dentro de uma plataforma",
+      "avoid": "só menção à plataforma (nível 1)",
+      "durationFrames": [
+        200,
+        360
+      ],
+      "components": [
+        "interface.*"
+      ],
+      "transition": "reveal 18q"
+    },
+    {
+      "id": "SPEAKER_PLUS_COMPARISON",
+      "density": 3,
+      "speaker": "2up",
+      "caption": "legenda continua",
+      "useWhen": "dois lados, 2–5 atributos",
+      "avoid": "com imagem real (vá para FULL_SCREEN)",
+      "durationFrames": [
+        200,
+        400
+      ],
+      "components": [
+        "compare.table.v1",
+        "compare.mirror.v1",
+        "compare.panels.v1"
+      ],
+      "transition": "reveal 18q"
+    },
+    {
+      "id": "SPEAKER_PLUS_NUMBER",
+      "density": 3,
+      "speaker": "2up",
+      "caption": "legenda continua",
+      "useWhen": "a fala dá um número que sustenta o argumento",
+      "avoid": "3+ números (dividir a cena)",
+      "durationFrames": [
+        150,
+        260
+      ],
+      "components": [
+        "number.*",
+        "interface.metrics.v1",
+        "interface.goal.v1"
+      ],
+      "transition": "reveal 12q"
+    },
+    {
+      "id": "FULL_SCREEN_TYPOGRAPHY",
+      "density": 4,
+      "speaker": "none",
+      "caption": "legenda desliga",
+      "useWhen": "palavra-conceito, headline ou frase que é o clímax do beat",
+      "avoid": "duas vezes em 15s",
+      "durationFrames": [
+        60,
+        120
+      ],
+      "components": [
+        "emphasis.word.v1",
+        "emphasis.headline-card.v1"
+      ],
+      "transition": "exit 24q, overlap 10q"
+    },
+    {
+      "id": "FULL_SCREEN_DIAGRAM",
+      "density": 4,
+      "speaker": "1up",
+      "caption": "legenda no topo",
+      "useWhen": "esquema complexo: filtro, gargalo, matriz, ramificação de 2 níveis",
+      "avoid": "esquema simples (fica no palco com 2 vídeos)",
+      "durationFrames": [
+        240,
+        420
+      ],
+      "components": [
+        "flow.filter.v1",
+        "flow.bottleneck.v1",
+        "matrix.quadrants.v1",
+        "branch.tree.v1"
+      ],
+      "transition": "reveal 24q"
+    },
+    {
+      "id": "FULL_SCREEN_INTERFACE",
+      "density": 4,
+      "speaker": "1up",
+      "caption": "legenda no topo",
+      "useWhen": "perfil, feed de 12, tabela de dados, close de formulário/checkout",
+      "avoid": "interface simples (palco padrão)",
+      "durationFrames": [
+        240,
+        420
+      ],
+      "components": [
+        "interface.instagram.*",
+        "interface.data-table.v1",
+        "interface.mobile.*"
+      ],
+      "transition": "reveal 24q"
+    },
+    {
+      "id": "FULL_SCREEN_FRAMEWORK",
+      "density": 4,
+      "speaker": "none",
+      "caption": "legenda continua",
+      "useWhen": "framework nomeado: camadas, níveis, equação",
+      "avoid": "conceito solto sem estrutura",
+      "durationFrames": [
+        240,
+        400
+      ],
+      "components": [
+        "hierarchy.*",
+        "scheme.equation.v1",
+        "matrix.quadrants.v1"
+      ],
+      "transition": "reveal 24q"
+    },
+    {
+      "id": "FULL_SCREEN_METRIC",
+      "density": 4,
+      "speaker": "none",
+      "caption": "legenda desliga",
+      "useWhen": "um número que É o beat (resultado, meta batida)",
+      "avoid": "número de apoio (nível 3)",
+      "durationFrames": [
+        150,
+        240
+      ],
+      "components": [
+        "number.hero.v1",
+        "number.percent.v1"
+      ],
+      "transition": "reveal 12q"
+    },
+    {
+      "id": "VISUAL_RESET",
+      "density": 0,
+      "speaker": "2up",
+      "caption": "legenda protagonista",
+      "useWhen": "depois de um nível 4/5, para o olho descansar",
+      "avoid": "usar como desculpa para não desenhar",
+      "durationFrames": [
+        60,
+        120
+      ],
+      "components": [],
+      "transition": "corte seco"
+    },
+    {
+      "id": "HOOK",
+      "density": 3,
+      "speaker": "2up",
+      "caption": "legenda desliga no palco tipográfico",
+      "useWhen": "os primeiros 3s: promessa, número ou palavra que abre o vídeo",
+      "avoid": "gancho genérico sem substantivo concreto",
+      "durationFrames": [
+        90,
+        180
+      ],
+      "components": [
+        "emphasis.*",
+        "number.hero.v1",
+        "interface.instagram.profile.v1"
+      ],
+      "transition": "entra em reveal 12q"
+    },
+    {
+      "id": "EXAMPLE",
+      "density": 3,
+      "speaker": "2up",
+      "caption": "legenda continua",
+      "useWhen": "a fala dá um exemplo concreto (isca de baleia, print do aluno)",
+      "avoid": "exemplo inventado",
+      "durationFrames": [
+        200,
+        360
+      ],
+      "components": [
+        "proof.*",
+        "profile.audience-card.v1",
+        "compare.right-wrong.v1"
+      ],
+      "transition": "reveal 18q"
+    },
+    {
+      "id": "CLIMAX",
+      "density": 5,
+      "speaker": "none",
+      "caption": "legenda desliga",
+      "useWhen": "o ponto alto: lettering ou a frase-tese",
+      "avoid": "mais de uma vez por vídeo",
+      "durationFrames": [
+        150,
+        240
+      ],
+      "components": [
+        "emphasis.lettering.v1",
+        "emphasis.word.v1"
+      ],
+      "transition": "exit 24q"
+    },
+    {
+      "id": "CTA",
+      "density": 3,
+      "speaker": "2up",
+      "caption": "legenda continua",
+      "useWhen": "a chamada final (comenta, clica, entra)",
+      "avoid": "CTA sem objeto (usar nível 0)",
+      "durationFrames": [
+        150,
+        260
+      ],
+      "components": [
+        "interface.checkout.v1",
+        "interface.form.v1",
+        "interface.comments.v1"
+      ],
+      "transition": "reveal 18q"
+    },
+    {
+      "id": "BRAND_CLOSE",
+      "density": 5,
+      "speaker": "none",
+      "caption": "legenda desliga",
+      "useWhen": "o fecho com o selo Zeus",
+      "avoid": "no meio do vídeo",
+      "durationFrames": [
+        90,
+        150
+      ],
+      "components": [
+        "selo Zeus (§1)"
+      ],
+      "transition": "exit 24q"
+    },
+    {
+      "id": "ACENTO_DE_PASSAGEM",
+      "density": 1,
+      "speaker": "herda da cena base",
+      "caption": "a legenda nao muda",
+      "useWhen": "a fala toca numa plataforma, mensagem ou metrica de passagem, dentro de um beat cujo assunto e outro",
+      "avoid": "em cena de densidade 4 ou 5; dois acentos em beats vizinhos; acento que precisa de mais de 60 quadros",
+      "durationFrames": [
+        40,
+        60
+      ],
+      "components": [
+        "interface.* (variante motion, recortada, a 0,55-0,7 de escala)"
+      ],
+      "transition": "reveal 12q na entrada, exit 12q na saida, sobre a cena base"
+    }
+  ]
+}

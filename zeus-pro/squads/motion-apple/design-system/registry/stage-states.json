@@ -1,0 +1,134 @@
+{
+  "_doc": "Estados de palco por formato e orientacao. Fonte da regra: DIRECAO-DINAMICA.md secoes 0, 1 e 2. Os estados do reels-call NAO sao copiados aqui: ficam onde sempre estiveram, em design-router.json chave pieces, e aqui so aparecem por referencia. Lido por scripts/beats.js, scripts/ds-router.js, scripts/ds-auditar.js e por squads/motion/src/core/palco.ts.",
+  "version": "1.0",
+  "updated_at": "2026-09-08",
+  "eixos": {
+    "tipo": [
+      "reels-call",
+      "vertical-mao",
+      "aula"
+    ],
+    "orientacao": [
+      "vertical",
+      "horizontal"
+    ]
+  },
+  "formatos": {
+    "reels-call": {
+      "descricao": "dois videos de gente conversando; o que o squad ja fazia",
+      "estadosRef": "design-router.json > pieces (dois-videos-palco, um-video-palco-maior, esquema-tela-inteira, close-interface)",
+      "usaEstadosDinamicos": false
+    },
+    "aula": {
+      "descricao": "gravacao longa de ensino com tela compartilhada; recorte da propria gravacao",
+      "usaEstadosDinamicos": false
+    },
+    "vertical-mao": {
+      "descricao": "uma pessoa gravada de frente, na mao, falando pra camera",
+      "usaEstadosDinamicos": true,
+      "canvas": {
+        "vertical": [
+          1080,
+          1920
+        ],
+        "horizontal": [
+          1920,
+          1080
+        ]
+      },
+      "estados": {
+        "A": {
+          "nome": "dividido",
+          "papel": "estado de trabalho: onde o rosto aparece",
+          "vertical": {
+            "esquema": {
+              "y": 0,
+              "h": 1039
+            },
+            "titulo": {
+              "y": 96,
+              "h": 104
+            },
+            "costura": {
+              "y": 1039,
+              "h": 122
+            },
+            "rosto": {
+              "y": 1161,
+              "h": 759
+            }
+          },
+          "horizontal": {
+            "via": "transformStage (MOTION secao 12c) e colunasWide de core/layout.ts",
+            "rostoFracaoLargura": 0.4,
+            "legenda": "sob o rosto, dentro da mascara"
+          },
+          "temRosto": true,
+          "temLegenda": true,
+          "temTitulo": true,
+          "aceitaRecursos": [
+            "molde",
+            "interface",
+            "imagem",
+            "cena-composta"
+          ]
+        },
+        "B": {
+          "nome": "heroi",
+          "papel": "virada, epifania, pergunta retorica",
+          "fundo": "escuro (darkened, MOTION secao 12c)",
+          "conteudo": "N3 palavra-conceito ou frase de 2 a 4 palavras, no centro optico",
+          "temRosto": false,
+          "temLegenda": false,
+          "temTitulo": false,
+          "pesoFaixa": [
+            7,
+            10
+          ],
+          "aceitaRecursos": [
+            "lettering",
+            "simbolo",
+            "imagem-metafora"
+          ],
+          "extras": "simbolo pequeno acima OU imagem de metafora abaixo, nunca os dois"
+        },
+        "C": {
+          "nome": "cinetico",
+          "papel": "tese, afirmacao forte, reenquadramento",
+          "fundo": "branco do sistema",
+          "conteudo": "N2 palavra a palavra no centro optico; tonica com enfase do sistema",
+          "temRosto": false,
+          "temLegenda": false,
+          "temTitulo": false,
+          "pesoFaixa": [
+            5,
+            8
+          ],
+          "aceitaRecursos": [
+            "lettering",
+            "interface-pequena"
+          ],
+          "extras": "elemento pequeno de interface abaixo, nunca molde inteiro"
+        }
+      },
+      "alternancia": {
+        "rostoVoltaEmAteQuadros": 480,
+        "doisBSeguidos": "proibido, salvo continuacao da mesma frase",
+        "cNaoAbre": true,
+        "abreEm": "A",
+        "fechaEm": "A",
+        "somaBCPercentualMin": 30,
+        "somaBCPercentualMax": 45,
+        "mesmoEstadoTresVezes": "so com titulo persistente trocando"
+      },
+      "tituloPersistente": {
+        "maxTitulosPorEsquema": 3,
+        "palavrasMin": 2,
+        "palavrasMax": 4,
+        "pontoFinal": true,
+        "trocaEmQuadrosAntesDaTonica": 6,
+        "passagem": "substituir-no-lugar (MOTION secao 8d): sai 10q subindo 6px, entra 14q vindo de baixo, overlap 6q"
+      }
+    }
+  }
+}

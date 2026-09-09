@@ -1,0 +1,168 @@
+name: select-ui-library
+title: Select Perfect UI Library
+description: Recommend the ideal UI library based on project requirements
+
+type: decision-engine
+version: 1.0.0
+tags:
+  - ui-selection
+  - architecture
+  - decision-making
+
+agent: ui-library-selector
+activated_by:
+  - "which ui library should"
+  - "recommend ui library"
+  - "best component library"
+  - "*select-library"
+
+steps:
+  - step: 1
+    name: Gather Project Context
+    description: Understand the project requirements
+    elicit: true
+    prompt: |
+      I need to understand your project to recommend the perfect UI library.
+
+      Please provide:
+      1. **Project Type**: Landing page, Dashboard, SaaS, E-commerce, Mobile app, etc
+      2. **Framework**: React, Vue, Angular, Vanilla JS, Next.js, etc
+      3. **Design Style**: Minimalista, Enterprise, Trendy, Premium, Playful, etc
+      4. **Key Requirements**:
+         - Performance critical? (Yes/No)
+         - Accessibility important? (Yes/No)
+         - Animation-heavy? (Yes/No)
+         - Customization needed? (High/Medium/Low)
+      5. **Timeline**: ASAP, 2-4 weeks, flexible
+      6. **Team Size & Experience**: Solo, small team, large team; Junior/Senior
+
+  - step: 2
+    name: Analyze Requirements
+    description: Process the input against library database
+    analysis:
+      - Category: Identify if project needs (Shadcn-based, All-in-one, Minimalista, Animation, Tailwind, Enterprise, Blocks)
+      - Performance: Evaluate bundle size constraints
+      - Learning Curve: Consider team experience
+      - Maturity: Open-source stable vs experimental
+
+  - step: 3
+    name: Generate Recommendations
+    description: Recommend TOP 3 libraries with detailed reasoning
+    output: |
+      # UI Library Recommendation Report
+
+      ## Context
+      - Project: {type}
+      - Framework: {framework}
+      - Style: {style}
+
+      ## Recommendation #1 (PRIMARY)
+      **Library:** {lib_name}
+      **Reason:** {detailed_reasoning}
+      **Pros:**
+        - {pro1}
+        - {pro2}
+        - {pro3}
+      **Cons:**
+        - {con1}
+        - {con2}
+      **Bundle Size:** {size}
+      **Learning Curve:** {curve}
+      **Setup Time:** {time}
+      **Best For:** {use_case}
+
+      ## Recommendation #2 (CONSERVATIVE)
+      {same_structure}
+
+      ## Recommendation #3 (EXPERIMENTAL)
+      {same_structure}
+
+      ## Comparison Table
+      | Aspect | PRIMARY | ALT 1 | ALT 2 |
+      |--------|---------|-------|-------|
+      | Bundle Size | {size} | {size} | {size} |
+      | Learning Curve | {curve} | {curve} | {curve} |
+      | Customization | {level} | {level} | {level} |
+      | Community | {size} | {size} | {size} |
+
+      ## Installation Guide
+      ```bash
+      # For {PRIMARY}
+      npm install {package}
+      npx {cli-command} setup
+      ```
+
+      ## Next Steps
+      1. Review components catalog
+      2. Set up TypeScript (if needed)
+      3. Create component library structure
+      4. Implement theming system
+
+library_database:
+  reference: awesome-ui-libraries-master/README.md
+  categories:
+    shadcn_based:
+      - shadcn/ui
+      - Magic UI
+      - Aceternity
+      - Animate UI
+      - dotUI
+      - Alignui
+    all_in_one:
+      - Chakra UI
+      - Mantine
+      - Hero UI
+      - ARK
+      - Radix Themes
+    minimalist:
+      - Radix Primitives
+      - HeadlessUI
+      - Base UI
+      - Ariakit
+    animation:
+      - Motion Primitives
+      - Framer Motion
+      - visual-effect
+    tailwind:
+      - DaisyUI
+      - Flowbite
+      - Float UI
+      - Tailgrids
+    enterprise:
+      - Ant Design
+      - Material UI (MUI)
+      - PRIMEReact
+      - Fluent UI
+    blocks:
+      - blocks.so
+      - Puck
+      - PatternCraft
+
+recommendation_rules:
+  startup_landing: shadcn_based
+  corporate_dashboard: enterprise
+  rapid_development: all_in_one
+  performance_critical: minimalist
+  animation_heavy: animation
+  design_system_needed: enterprise
+  rapid_prototyping: shadcn_based
+  mobile_first: all_in_one
+  custom_design: minimalist
+  production_ready: all_in_one
+
+output_format: markdown_report
+delivery:
+  - detailed_recommendation
+  - comparison_table
+  - installation_guide
+  - next_steps
+
+metrics:
+  success: "User selects one of the 3 recommendations and proceeds to implementation"
+  quality: "Recommendation matches project requirements accurately"
+
+---
+
+This skill is part of the **UI Design Squad Enhancement** initiative.
+Powered by: @ui-library-selector (Uma)
+Database: awesome-ui-libraries-master (150+ libraries)

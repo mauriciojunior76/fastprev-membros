@@ -1,0 +1,293 @@
+{
+ "composition": "ClodoaldoZeusReels",
+ "fps": 60,
+ "source": "clodoaldo-cortado.mp4",
+ "durationSec": 56.03,
+ "origem": "Mentoria VIP, Clodoaldo Filipe e esposa, 27/08/2026. Monologo do o dono do canal contando que pediu pro Zeus construir a apresentacao da palestra de Foz do Iguacu, e o Zeus fez sozinho (texto, imagens, cores, conceito).",
+ "video": {
+  "topic": "o Zeus construiu uma apresentacao inteira sozinho, no estilo visual pedido",
+  "audience": "mentorados que ja usam o Zeus e podem nao saber que ele monta apresentacao/material visual completo",
+  "promise": "o Zeus nao so escreve, ele executa a parte visual inteira sozinho, do jeito que voce pede"
+ },
+ "beats": [
+  {
+   "id": "b01",
+   "startFrame": 7,
+   "endFrameExclusive": 199,
+   "words": {
+    "from": 0,
+    "to": 8
+   },
+   "text": "As apresentações que o Zeus faz são bem interessantes.",
+   "topic": "tese do video",
+   "idea": "as apresentacoes que o Zeus monta impressionam",
+   "role": "hook",
+   "density": 2,
+   "structures": [
+    "PROMESSA"
+   ],
+   "anchorWord": {
+    "i": 8,
+    "text": "interessantes.",
+    "startFrame": 169
+   },
+   "confidence": "alta"
+  },
+  {
+   "id": "b02",
+   "startFrame": 201,
+   "endFrameExclusive": 448,
+   "words": {
+    "from": 9,
+    "to": 20
+   },
+   "text": "Eu vou palestrar num evento agora em Foz, esse final de semana,",
+   "topic": "contexto do evento",
+   "idea": "ele vai palestrar em Foz do Iguacu naquele fim de semana",
+   "role": "context",
+   "density": 2,
+   "structures": [
+    "ITEM_UNICO"
+   ],
+   "anchorWord": {
+    "i": 16,
+    "text": "Foz,",
+    "startFrame": 299
+   },
+   "confidence": "alta"
+  },
+  {
+   "id": "b03",
+   "startFrame": 459,
+   "endFrameExclusive": 667,
+   "words": {
+    "from": 21,
+    "to": 29
+   },
+   "text": "e eu pedi para o Zeus construir uma apresentação",
+   "topic": "o pedido pro Zeus",
+   "idea": "ele pediu pro Zeus construir a apresentacao da palestra",
+   "role": "context",
+   "density": 2,
+   "structures": [
+    "IDEIA_UNICA"
+   ],
+   "anchorWord": {
+    "i": 27,
+    "text": "construir",
+    "startFrame": 512
+   },
+   "confidence": "alta"
+  },
+  {
+   "id": "b04",
+   "startFrame": 667,
+   "endFrameExclusive": 934,
+   "words": {
+    "from": 30,
+    "to": 36
+   },
+   "text": "no padrão visual do estilo do evento.",
+   "topic": "seguindo o padrao do evento",
+   "idea": "o Zeus seguiu o estilo visual do proprio evento",
+   "role": "explanation",
+   "density": 4,
+   "structures": [
+    "PROVA"
+   ],
+   "anchorWord": {
+    "i": 31,
+    "text": "padrão",
+    "startFrame": 683
+   },
+   "confidence": "alta",
+   "nota": "TELA_ENTRA_S (11,48s / frame 689) cai dentro deste beat: a tela e a prova, sem grafico no palco."
+  },
+  {
+   "id": "b05",
+   "startFrame": 945,
+   "endFrameExclusive": 1013,
+   "words": {
+    "from": 37,
+    "to": 42
+   },
+   "text": "E ele foi lá e fez.",
+   "topic": "confirmacao do resultado",
+   "idea": "confirmacao curta e seca de que ele executou",
+   "role": "proof",
+   "density": 3,
+   "structures": [
+    "IDEIA_UNICA"
+   ],
+   "anchorWord": {
+    "i": 42,
+    "text": "fez.",
+    "startFrame": 997
+   },
+   "confidence": "alta"
+  },
+  {
+   "id": "b06",
+   "startFrame": 1035,
+   "endFrameExclusive": 1598,
+   "words": {
+    "from": 43,
+    "to": 65
+   },
+   "text": "Ele fez o texto, conforme a aula que eu queria passar, ele fez o prompt da imagem, ele colocou a imagem na apresentação,",
+   "topic": "lista do trabalho, parte 1",
+   "idea": "texto pela aula dele, prompt da imagem, imagem posta na apresentacao",
+   "role": "explanation",
+   "density": 3,
+   "structures": [
+    "LISTA"
+   ],
+   "anchorWord": {
+    "i": 57,
+    "text": "prompt",
+    "startFrame": 1412
+   },
+   "confidence": "alta"
+  },
+  {
+   "id": "b07",
+   "startFrame": 1598,
+   "endFrameExclusive": 1888,
+   "words": {
+    "from": 66,
+    "to": 80
+   },
+   "text": "ele organizou a apresentação, as cores, o estilo, o conceito, do jeito que eu expliquei.",
+   "topic": "lista do trabalho, parte 2",
+   "idea": "organizacao, cores, estilo e conceito seguindo a explicacao dele",
+   "role": "explanation",
+   "density": 3,
+   "structures": [
+    "LISTA"
+   ],
+   "anchorWord": {
+    "i": 75,
+    "text": "conceito,",
+    "startFrame": 1804
+   },
+   "confidence": "alta",
+   "nota": "continuacao do mesmo palco de b06 (regra 'continuidade vence novidade')."
+  },
+  {
+   "id": "b08",
+   "startFrame": 1891,
+   "endFrameExclusive": 2253,
+   "words": {
+    "from": 81,
+    "to": 99
+   },
+   "text": "Só que olha só que interessante, eu falei para ele, eu gosto de imagens com alto contraste, com contraluz.",
+   "topic": "o pedido especifico de estilo fotografico",
+   "idea": "ele pediu alto contraste e contraluz, sem mais explicar",
+   "role": "example",
+   "density": 3,
+   "structures": [
+    "PROVA"
+   ],
+   "anchorWord": {
+    "i": 99,
+    "text": "contraluz.",
+    "startFrame": 2212
+   },
+   "confidence": "alta"
+  },
+  {
+   "id": "b09",
+   "startFrame": 2278,
+   "endFrameExclusive": 2723,
+   "words": {
+    "from": 100,
+    "to": 115
+   },
+   "text": "Todas as imagens da apresentação ele fez sozinho do estilo que eu queria que ele fizesse.",
+   "topic": "autonomia na execucao visual",
+   "idea": "todas as imagens, sozinho, no estilo pedido",
+   "role": "climax",
+   "density": 4,
+   "structures": [
+    "PALAVRA_CHAVE"
+   ],
+   "anchorWord": {
+    "i": 107,
+    "text": "sozinho",
+    "startFrame": 2422
+   },
+   "confidence": "alta"
+  },
+  {
+   "id": "b10",
+   "startFrame": 2727,
+   "endFrameExclusive": 2932,
+   "words": {
+    "from": 116,
+    "to": 129
+   },
+   "text": "E era bem o conceito que eu queria passar, não só as minhas cores,",
+   "topic": "fidelidade ao conceito, nao so a cor",
+   "idea": "foi alem da cor, capturou o conceito certo",
+   "role": "explanation",
+   "density": 2,
+   "structures": [
+    "COMPARACAO"
+   ],
+   "anchorWord": {
+    "i": 120,
+    "text": "conceito",
+    "startFrame": 2790
+   },
+   "confidence": "alta",
+   "nota": "TELA_SAI_S (48,92s / frame 2935) cai logo apos o fim deste beat (48,87s): a pausa real de 180ms bate quase exato com a saida da tela."
+  },
+  {
+   "id": "b11",
+   "startFrame": 2943,
+   "endFrameExclusive": 3217,
+   "words": {
+    "from": 130,
+    "to": 140
+   },
+   "text": "mas essas são as cores do evento, da marca do evento.",
+   "topic": "as cores certas: as do evento",
+   "idea": "usou a identidade visual real do evento, nao a dele",
+   "role": "proof",
+   "density": 2,
+   "structures": [
+    "PROVA"
+   ],
+   "anchorWord": {
+    "i": 138,
+    "text": "marca",
+    "startFrame": 3146
+   },
+   "confidence": "alta"
+  },
+  {
+   "id": "b12",
+   "startFrame": 3233,
+   "endFrameExclusive": 3362,
+   "words": {
+    "from": 141,
+    "to": 146
+   },
+   "text": "Ele fez a apresentação inteira sozinho.",
+   "topic": "fecho da tese",
+   "idea": "repeticao reforcada da tese central: sozinho",
+   "role": "close",
+   "density": 5,
+   "structures": [
+    "PALAVRA_CHAVE"
+   ],
+   "anchorWord": {
+    "i": 146,
+    "text": "sozinho.",
+    "startFrame": 3338
+   },
+   "confidence": "alta"
+  }
+ ]
+}

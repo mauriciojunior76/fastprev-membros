@@ -1,0 +1,152 @@
+{
+  "brand": "AXIS",
+  "generated_at": "2025-03-05T00:00:00Z",
+  "reviewed_by": "Vale (image-reviewer)",
+  "review_status": "APROVADO",
+  "assets": [
+    {
+      "id": "isotipo-positivo",
+      "priority": 1,
+      "description": "AXIS symbol — two intersecting axis lines, slightly rotated 7 degrees, on white background",
+      "prompt": {
+        "positive": "Minimalist financial brand logo mark, two precise geometric lines intersecting at center forming a cross symbol rotated 7 degrees, deep navy blue color on pure white background, ultra clean vector design, mathematical precision, Swiss design aesthetic, negative space composition, centered isolated mark, premium financial technology brand identity, razor sharp edges, scalable icon design, no text no letters, inspired by coordinate axis mathematics",
+        "negative": "text, letters, alphabet, words, wordmark, tagline, clipart, stock icon, emoji, cartoon, playful, financial chart bars, bulls bears, currency symbols, gradients, photorealism, human elements, drop shadow, bevel, gloss, chrome, blur, noise, low quality, pixelated, multiple marks, busy composition, rounded corners, decorative flourishes, arrows",
+        "model": "dall-e-3",
+        "size": "1024x1024",
+        "quality": "hd",
+        "style": "vivid"
+      },
+      "output": {
+        "filename": "axis-isotipo-positivo.png",
+        "folder": "02-isotipo-simbolo",
+        "background": "white"
+      }
+    },
+    {
+      "id": "isotipo-negativo",
+      "priority": 2,
+      "description": "AXIS symbol — white on deep navy (#0A1628) background",
+      "prompt": {
+        "positive": "Minimalist financial brand logo mark, two precise geometric white lines intersecting at center forming a cross symbol rotated 7 degrees, pure white symbol on deep midnight navy #0A1628 background, ultra clean vector design, mathematical precision, premium brand identity, razor sharp edges, centered composition, no text no letters",
+        "negative": "text, letters, alphabet, gradients, photorealism, human elements, drop shadow, bevel, gloss, chrome, blur, noise, low quality, multiple marks, busy composition, decorative elements, warm colors, financial chart symbols",
+        "model": "dall-e-3",
+        "size": "1024x1024",
+        "quality": "hd",
+        "style": "vivid"
+      },
+      "output": {
+        "filename": "axis-isotipo-negativo.png",
+        "folder": "02-isotipo-simbolo",
+        "background": "#0A1628"
+      }
+    },
+    {
+      "id": "paleta-visual",
+      "priority": 3,
+      "description": "AXIS official color palette — deep navy, steel graphite, burnished gold, off-white",
+      "prompt": {
+        "positive": "Professional financial brand color palette design board, four rectangular color swatches in horizontal layout, deep midnight navy #0A1628, steel graphite #1C2B3A, burnished gold #C9A84C, off-white pearl #F5F7FA, each swatch labeled with precise hex code in clean minimal sans-serif font, white background, editorial design style guide page, premium financial brand aesthetic, clean typographic labels, print quality presentation",
+        "negative": "random colors, neon, fluorescent, handwritten labels, decorative borders, gradients between swatches, photography, human elements, clashing colors, rounded swatches, shadows on swatches, messy layout",
+        "model": "dall-e-3",
+        "size": "1792x1024",
+        "quality": "hd",
+        "style": "natural"
+      },
+      "output": {
+        "filename": "axis-paleta-oficial.png",
+        "folder": "04-cores-oficiais",
+        "background": "white"
+      }
+    },
+    {
+      "id": "typography-specimen",
+      "priority": 4,
+      "description": "AXIS typography specimen — Canela serif + Space Grotesk sans hierarchy",
+      "prompt": {
+        "positive": "Premium typography specimen design page, elegant serif display typeface 'AXIS FINANCIAL DATA' in large headline at top in light weight, space grotesk sans-serif body text below in multiple weights showing Regular Medium Semibold Bold, complete alphabet display A through Z in both uppercase and lowercase, off-white #F5F7FA text on deep navy #0A1628 background, clean editorial layout, financial brand style guide typography page, professional typographic hierarchy, precise letter spacing, print design aesthetic",
+        "negative": "handwriting, cursive, distorted letters, broken characters, cluttered layout, random decorative text, photography, illustrations, icons, background textures, gradients between sections, colorful text",
+        "model": "dall-e-3",
+        "size": "1792x1024",
+        "quality": "hd",
+        "style": "natural"
+      },
+      "output": {
+        "filename": "axis-tipografia-specimen.png",
+        "folder": "05-tipografia",
+        "background": "#0A1628"
+      }
+    },
+    {
+      "id": "hero-dashboard",
+      "priority": 5,
+      "description": "AXIS product hero — dark analytics dashboard with financial data visualization",
+      "prompt": {
+        "positive": "Premium financial analytics dashboard interface, dark deep navy #0A1628 background, multiple data visualization panels, line charts showing portfolio performance over time in off-white and burnished gold accents, numerical data in monospace font, clean grid layout, high information density with clear hierarchy, modern fintech product screenshot, professional financial software UI, no human faces, data-driven editorial aesthetic, subtle grid lines, real-time market data display",
+        "negative": "photorealism of people, stock photos, cartoons, illustrations, excessive color, neon colors, mobile UI, simple design, amateur interface, cluttered messy layout, non-financial data, social media elements, gaming aesthetic",
+        "model": "dall-e-3",
+        "size": "1792x1024",
+        "quality": "hd",
+        "style": "natural"
+      },
+      "output": {
+        "filename": "axis-hero-dashboard.png",
+        "folder": "08-aplicacoes",
+        "background": "#0A1628"
+      }
+    },
+    {
+      "id": "brand-pattern",
+      "priority": 6,
+      "description": "AXIS geometric brand pattern — repeating axis cross motif",
+      "prompt": {
+        "positive": "Minimal geometric brand pattern, repeating cross/axis intersection motifs rotated 7 degrees in a precise grid, deep navy #0A1628 background with subtle graphite #1C2B3A elements, very low contrast pattern suitable for backgrounds and textures, Swiss grid design aesthetic, mathematical precision, seamless tile, premium financial brand texture, architectural blueprint quality",
+        "negative": "high contrast, colorful, random placement, organic shapes, curves, floral, decorative, busy, text, logos, photographic elements",
+        "model": "dall-e-3",
+        "size": "1024x1024",
+        "quality": "hd",
+        "style": "natural"
+      },
+      "output": {
+        "filename": "axis-pattern-background.png",
+        "folder": "06-patterns",
+        "background": "#0A1628"
+      }
+    },
+    {
+      "id": "business-card",
+      "priority": 7,
+      "description": "AXIS business card mockup — premium dark editorial design",
+      "prompt": {
+        "positive": "Premium financial technology business card design mockup, horizontal format, deep navy #0A1628 background, minimal AXIS wordmark in serif light weight in off-white top left, title and contact information in small clean sans-serif below, burnished gold #C9A84C geometric cross symbol mark top right, subtle texture on card surface suggesting premium matte finish material, professional photography studio lighting, two cards showing front and back, white background for mockup",
+        "negative": "cheap paper quality, colorful design, gradients, rounded corners, playful fonts, stock photo people, landscape backgrounds, casual aesthetic, low quality print simulation",
+        "model": "dall-e-3",
+        "size": "1792x1024",
+        "quality": "hd",
+        "style": "natural"
+      },
+      "output": {
+        "filename": "axis-cartao-visita.png",
+        "folder": "08-aplicacoes",
+        "background": "white"
+      }
+    },
+    {
+      "id": "deck-cover",
+      "priority": 8,
+      "description": "AXIS presentation deck cover — dark editorial premium slide",
+      "prompt": {
+        "positive": "Premium financial brand presentation slide cover, wide 16:9 format, deep navy #0A1628 full bleed background, subtle topographic data visualization lines as background texture very low opacity, large AXIS wordmark centered in Canela serif light weight in off-white, 'PLATAFORMA DE ANALYTICS FINANCEIRO' subtitle in small space grotesk uppercase with wide tracking below in gray, burnished gold horizontal rule line accent above title, bottom right corner shows geometric axis cross symbol small, minimal and authoritative editorial design",
+        "negative": "busy layout, multiple colors, gradients, stock photos, clipart, corporate generic design, PowerPoint template aesthetic, rounded elements, informal typography",
+        "model": "dall-e-3",
+        "size": "1792x1024",
+        "quality": "hd",
+        "style": "natural"
+      },
+      "output": {
+        "filename": "axis-deck-cover.png",
+        "folder": "08-aplicacoes",
+        "background": "#0A1628"
+      }
+    }
+  ]
+}

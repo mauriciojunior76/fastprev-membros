@@ -1,0 +1,451 @@
+{
+  "_doc": "TESTES DE RECUPERAÇÃO. Cada teste parte de uma frase falada, classifica a estrutura, consulta o semantic-registry e confere se o recurso esperado está entre os candidatos. Rodado na v2.2. Os quatro últimos testam as regras de relação (palavra-gatilho que NÃO deve decidir).",
+  "version": "2.2",
+  "ran_at": "2026-09-05",
+  "total": 22,
+  "passed": 22,
+  "failed": 0,
+  "tests": [
+    {
+      "speech": "Existem três caminhos para resolver isso.",
+      "structures": [
+        "RAMIFICACAO",
+        "BIFURCACAO"
+      ],
+      "structuresFound": [
+        "RAMIFICACAO",
+        "BIFURCACAO"
+      ],
+      "candidatesRetrieved": 2,
+      "candidates": [
+        "branch.tree.v1",
+        "branch.decision.v1"
+      ],
+      "expected": "branch.tree.v1",
+      "retrieved": true,
+      "note": ""
+    },
+    {
+      "speech": "Primeiro você atrai, depois qualifica, agenda e vende.",
+      "structures": [
+        "SEQUENCIA",
+        "PASSOS",
+        "PROCESSO"
+      ],
+      "structuresFound": [
+        "SEQUENCIA",
+        "PASSOS",
+        "PROCESSO"
+      ],
+      "candidatesRetrieved": 8,
+      "candidates": [
+        "process.steps.v1",
+        "flow.timeline.v1",
+        "interface.chat.audio.v1",
+        "flow.cycle.v1",
+        "compare.manual-auto.v1",
+        "interface.checklist.v1"
+      ],
+      "expected": "process.steps.v1",
+      "retrieved": true,
+      "note": ""
+    },
+    {
+      "speech": "Eu mandei uma mensagem no WhatsApp e ele respondeu.",
+      "structures": [
+        "CHAT",
+        "WHATSAPP"
+      ],
+      "structuresFound": [
+        "CHAT",
+        "WHATSAPP"
+      ],
+      "candidatesRetrieved": 2,
+      "candidates": [
+        "interface.chat.audio.v1",
+        "interface.chat.text.v1"
+      ],
+      "expected": "interface.chat.text.v1",
+      "retrieved": true,
+      "note": ""
+    },
+    {
+      "speech": "Eu uso WhatsApp.",
+      "structures": [
+        "PLATAFORMA"
+      ],
+      "structuresFound": [
+        "PLATAFORMA"
+      ],
+      "candidatesRetrieved": 9,
+      "candidates": [
+        "interface.instagram.profile.v1",
+        "interface.player.v1",
+        "interface.videocall.v1",
+        "interface.mobile.form.v1",
+        "interface.mobile.chat.v1",
+        "interface.mobile.notification.v1"
+      ],
+      "expected": "mini-selo (nível 1, menção)",
+      "retrieved": true,
+      "note": ""
+    },
+    {
+      "speech": "Você pode continuar sozinho ou montar uma equipe.",
+      "structures": [
+        "BIFURCACAO",
+        "DECISAO"
+      ],
+      "structuresFound": [
+        "BIFURCACAO",
+        "DECISAO"
+      ],
+      "candidatesRetrieved": 2,
+      "candidates": [
+        "branch.tree.v1",
+        "branch.decision.v1"
+      ],
+      "expected": "branch.decision.v1",
+      "retrieved": true,
+      "note": ""
+    },
+    {
+      "speech": "Tem que ter foto, bio e destaques.",
+      "structures": [
+        "LISTA"
+      ],
+      "structuresFound": [
+        "LISTA"
+      ],
+      "candidatesRetrieved": 12,
+      "candidates": [
+        "set.trio.v1",
+        "set.grid.v1",
+        "interface.checklist.v1",
+        "interface.checks.pure.v1",
+        "interface.checks.list.v1",
+        "interface.instagram.highlights.v1"
+      ],
+      "expected": "set.trio.v1",
+      "retrieved": true,
+      "note": ""
+    },
+    {
+      "speech": "Mentoria é diferente de curso.",
+      "structures": [
+        "COMPARACAO",
+        "A_VS_B"
+      ],
+      "structuresFound": [
+        "COMPARACAO",
+        "A_VS_B"
+      ],
+      "candidatesRetrieved": 9,
+      "candidates": [
+        "compare.right-wrong.v1",
+        "compare.table.v1",
+        "compare.balance.v1",
+        "compare.mirror.v1",
+        "compare.manual-auto.v1",
+        "profile.audience-card.v1"
+      ],
+      "expected": "compare.table.v1",
+      "retrieved": true,
+      "note": ""
+    },
+    {
+      "speech": "Tudo isso se ramifica do mesmo tema.",
+      "structures": [
+        "MAPA_MENTAL",
+        "ARVORE"
+      ],
+      "structuresFound": [
+        "MAPA_MENTAL",
+        "ARVORE"
+      ],
+      "candidatesRetrieved": 1,
+      "candidates": [
+        "branch.tree.v1"
+      ],
+      "expected": "branch.tree.v1",
+      "retrieved": true,
+      "note": ""
+    },
+    {
+      "speech": "No dia 1 você monta, em 30 dias já vende.",
+      "structures": [
+        "TIMELINE"
+      ],
+      "structuresFound": [
+        "TIMELINE"
+      ],
+      "candidatesRetrieved": 5,
+      "candidates": [
+        "flow.timeline.v1",
+        "interface.calendar.v1",
+        "interface.countdown.v1",
+        "number.time.v1",
+        "number.date.v1"
+      ],
+      "expected": "flow.timeline.v1",
+      "retrieved": true,
+      "note": ""
+    },
+    {
+      "speech": "Cresceu 184% em alunos.",
+      "structures": [
+        "PORCENTAGEM"
+      ],
+      "structuresFound": [
+        "PORCENTAGEM"
+      ],
+      "candidatesRetrieved": 1,
+      "candidates": [
+        "number.percent.v1"
+      ],
+      "expected": "number.percent.v1",
+      "retrieved": true,
+      "note": ""
+    },
+    {
+      "speech": "Chega o relatório da semana no e-mail.",
+      "structures": [
+        "EMAIL"
+      ],
+      "structuresFound": [
+        "EMAIL"
+      ],
+      "candidatesRetrieved": 1,
+      "candidates": [
+        "interface.email.v1"
+      ],
+      "expected": "interface.email.v1",
+      "retrieved": true,
+      "note": ""
+    },
+    {
+      "speech": "A lista de leads vai enchendo.",
+      "structures": [
+        "CRM"
+      ],
+      "structuresFound": [
+        "CRM"
+      ],
+      "candidatesRetrieved": 1,
+      "candidates": [
+        "interface.leads.v1"
+      ],
+      "expected": "interface.leads.v1",
+      "retrieved": true,
+      "note": ""
+    },
+    {
+      "speech": "Você não tem tempo, então responde tarde e o lead esfria.",
+      "structures": [
+        "CAUSA_E_EFEITO"
+      ],
+      "structuresFound": [
+        "CAUSA_E_EFEITO"
+      ],
+      "candidatesRetrieved": 2,
+      "candidates": [
+        "scheme.equation.v1",
+        "relation.cause-effect.v1"
+      ],
+      "expected": "relation.cause-effect.v1",
+      "retrieved": true,
+      "note": ""
+    },
+    {
+      "speech": "Tem três níveis de consciência.",
+      "structures": [
+        "HIERARQUIA"
+      ],
+      "structuresFound": [
+        "HIERARQUIA"
+      ],
+      "candidatesRetrieved": 4,
+      "candidates": [
+        "hierarchy.levels.v1",
+        "hierarchy.layers.v1",
+        "relation.concentric.v1",
+        "interface.ranking.v1"
+      ],
+      "expected": "hierarchy.levels.v1",
+      "retrieved": true,
+      "note": ""
+    },
+    {
+      "speech": "Muito esforço e pouco resultado é o pior quadrante.",
+      "structures": [
+        "MATRIZ",
+        "QUADRANTES",
+        "FRAMEWORK"
+      ],
+      "structuresFound": [
+        "MATRIZ",
+        "QUADRANTES",
+        "FRAMEWORK"
+      ],
+      "candidatesRetrieved": 3,
+      "candidates": [
+        "matrix.quadrants.v1",
+        "hierarchy.layers.v1",
+        "scheme.equation.v1"
+      ],
+      "expected": "matrix.quadrants.v1",
+      "retrieved": true,
+      "note": ""
+    },
+    {
+      "speech": "O mesmo processo, feito à mão ou pelo Zeus.",
+      "structures": [
+        "TRANSFORMACAO"
+      ],
+      "structuresFound": [
+        "TRANSFORMACAO"
+      ],
+      "candidatesRetrieved": 4,
+      "candidates": [
+        "flow.journey-ab.v1",
+        "compare.mirror.v1",
+        "flow.gap.v1",
+        "compare.manual-auto.v1"
+      ],
+      "expected": "compare.manual-auto.v1",
+      "retrieved": true,
+      "note": ""
+    },
+    {
+      "speech": "Isso trava na etapa de aprovação.",
+      "structures": [
+        "PROBLEMA_E_SOLUCAO"
+      ],
+      "structuresFound": [
+        "PROBLEMA_E_SOLUCAO"
+      ],
+      "candidatesRetrieved": 3,
+      "candidates": [
+        "flow.gap.v1",
+        "flow.bottleneck.v1",
+        "relation.cause-effect.v1"
+      ],
+      "expected": "flow.bottleneck.v1",
+      "retrieved": true,
+      "note": ""
+    },
+    {
+      "speech": "Pelo menos 12 conteúdos no feed.",
+      "structures": [
+        "QUANTIDADE",
+        "SOCIAL_MEDIA"
+      ],
+      "structuresFound": [
+        "QUANTIDADE",
+        "SOCIAL_MEDIA"
+      ],
+      "candidatesRetrieved": 11,
+      "candidates": [
+        "set.count-grid.v1",
+        "flow.funnel.v1",
+        "interface.checks.pure.v1",
+        "interface.instagram.feed.v1",
+        "interface.calendar.v1",
+        "number.count.v1"
+      ],
+      "expected": "interface.instagram.feed.v1",
+      "retrieved": true,
+      "note": ""
+    },
+    {
+      "speech": "Repara nesse print aqui.",
+      "structures": [
+        "PROVA",
+        "ALERTA"
+      ],
+      "structuresFound": [
+        "PROVA",
+        "ALERTA"
+      ],
+      "candidatesRetrieved": 6,
+      "candidates": [
+        "proof.annotated.v1",
+        "proof.testimonial.v1",
+        "interface.comments.v1",
+        "interface.notification.v1",
+        "interface.countdown.v1",
+        "interface.pointer.v1"
+      ],
+      "expected": "proof.annotated.v1",
+      "retrieved": true,
+      "note": ""
+    },
+    {
+      "speech": "Quero mais clareza no meu posicionamento.",
+      "structures": [
+        "PALAVRA_CHAVE"
+      ],
+      "structuresFound": [
+        "PALAVRA_CHAVE"
+      ],
+      "candidatesRetrieved": 2,
+      "candidates": [
+        "emphasis.word.v1",
+        "emphasis.attribute.v1"
+      ],
+      "expected": "emphasis.attribute.v1 (NÃO equação: \"mais\" é adjetivo)",
+      "retrieved": true,
+      "note": ""
+    },
+    {
+      "speech": "Liga para o cliente no mesmo dia.",
+      "structures": [
+        "CHAT",
+        "PLATAFORMA"
+      ],
+      "structuresFound": [
+        "CHAT",
+        "PLATAFORMA"
+      ],
+      "candidatesRetrieved": 11,
+      "candidates": [
+        "interface.chat.audio.v1",
+        "interface.chat.text.v1",
+        "interface.instagram.profile.v1",
+        "interface.player.v1",
+        "interface.videocall.v1",
+        "interface.mobile.form.v1"
+      ],
+      "expected": "interface.chat.text.v1 (NÃO toggle: ação humana)",
+      "retrieved": true,
+      "note": ""
+    },
+    {
+      "speech": "Só tenho 3 vagas.",
+      "structures": [
+        "NUMERO"
+      ],
+      "structuresFound": [
+        "NUMERO"
+      ],
+      "candidatesRetrieved": 11,
+      "candidates": [
+        "set.count-grid.v1",
+        "interface.metrics.v1",
+        "interface.goal.v1",
+        "interface.checkout.v1",
+        "interface.countdown.v1",
+        "number.count.v1"
+      ],
+      "expected": "number.hero.v1 (NÃO contagem regressiva: sem prazo)",
+      "retrieved": true,
+      "note": ""
+    }
+  ],
+  "limitations": [
+    "Autoria única: os registries e os testes foram escritos pelo mesmo agente, então o teste mede consistência interna (a estrutura tem candidato?), não acerto de julgamento.",
+    "Dois testes usam assertiva fraca: 'Eu uso WhatsApp' (esperado 'mini-selo') e os casos de relação verificam a REGRA no design-router.json, não uma entrada do registry.",
+    "Não foi testada a escolha ENTRE candidatos (isso depende de ler useWhen/dontUseWhen) nem a montagem da cena.",
+    "Teste que falta: dar a um agente novo apenas AI_USAGE_GUIDE.md + registries e uma transcrição inédita, e comparar as decisões com decision-examples.md."
+  ]
+}

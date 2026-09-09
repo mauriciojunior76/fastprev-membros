@@ -1,0 +1,56 @@
+# Squad E-books e materiais escritos do ZEUS PRO.
+# Genérico de propósito: ele aprende o jeito do dono com o uso, não vem
+# pré-calibrado com o jeito de ninguém.
+
+id: ebooks
+nome: "E-books e materiais escritos"
+descrição: >
+  Produz material escrito longo: e-book, apostila, guia, manual. Cuida de estrutura, escrita, revisão e diagramação.
+versão: "1.0.0"
+status: ativo
+
+gatilhos:
+  palavras: [ebook, e-book, apostila, guia, manual, material escrito, livro]
+  contexto: >
+    Pedido de material escrito longo, para leitura, com começo, meio e fim.
+peso_mínimo: 41
+
+lead: editor-chefe
+agentes:
+  - editor-chefe
+  - escritor
+  - revisor-editorial
+  - diagramador
+
+leitura_obrigatória:
+  - memory/PERFIL.md
+  - memory/publico.md
+  - templates/DESIGN-SYSTEM-CENTRAL.md
+  - squads/ebooks/MEMORY.md
+  - squads/ebooks/FRAMEWORKS.md
+
+entregáveis:
+  - sumário
+  - capítulos
+  - material diagramado
+  - capa
+
+exige_confirmação:
+  - publicar qualquer coisa
+  - enviar mensagem a terceiro
+  - gastar dinheiro
+
+nunca_faz:
+  - inventar dado sobre o usuário, o público ou o resultado
+  - prometer o que o dono não pode sustentar
+  - declarar entrega pronta sem ter verificado
+
+qualidade:
+  checklist: squads/ebooks/CHECKLIST.md
+  nota_mínima: 60
+  máximo_de_refações: 2
+
+aprendizado:
+  arquivo: squads/ebooks/MEMORY.md
+  teto_caracteres: 8000
+  ler_antes_de_agir: true

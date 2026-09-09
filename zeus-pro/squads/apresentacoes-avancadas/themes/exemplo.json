@@ -1,0 +1,41 @@
+{
+  "id": "exemplo",
+  "name": "Exemplo",
+  "description": "Dark + rosegold editorial. Luxo minimalista. Tema padrão Zeus Show.",
+  "_fonte_canonica": "templates/design-tokens/brands/exemplo-1.json",
+  "_nota": "As cores accent-1/2/3 e os fundos vêm do brand json do design-core. Mudança de cor da Exemplo nasce lá e desce pra cá, nunca ao contrário. Apresentação da própria Exemplo (prelúdio, aula, masterclass) NÃO usa este tema: vai pelo squad exemplo-presentation. Este tema serve pra material de terceiro que precisa da cara da Exemplo.",
+  "mood": ["luxo", "dark", "editorial", "sofisticado"],
+  "tokens": {
+    "bg": "#0a0806",
+    "bg-alt": "#0e0c08",
+    "bg-card": "#141210",
+    "accent-1": "#b8887a",
+    "accent-2": "#d4a08a",
+    "accent-3": "#f0c8b0",
+    "text": "#ffffff",
+    "text-muted": "rgba(255, 255, 255, 0.55)",
+    "text-label": "#d4a08a",
+    "border": "rgba(212, 160, 138, 0.18)",
+    "divider": "rgba(255, 255, 255, 0.08)"
+  },
+  "fonts": {
+    "title": "Inter",
+    "title-weight": "800",
+    "body": "DM Sans",
+    "body-weight": "400",
+    "mono": "JetBrains Mono"
+  },
+  "effects": {
+    "grain": true,
+    "grain-opacity": 0.4,
+    "blur-reveal": true,
+    "word-by-word": true,
+    "motion": "cubic-bezier(0.16, 1, 0.3, 1)",
+    "motion-profile": "smooth"
+  },
+  "icons": {
+    "style": "animated",
+    "stroke": 1.0,
+    "library": "exemplo"
+  }
+}

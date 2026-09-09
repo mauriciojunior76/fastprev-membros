@@ -1,0 +1,37 @@
+{
+  "_doc": "Registro de ícones por vídeo. Um objeto por uso. Consultar antes de escolher (regras em DESIGN-SYSTEM-REELS-APPLE-v2.md §7).",
+  "entries": [
+    {
+      "video": "PauloRuizReels",
+      "segundo": null,
+      "molde": "trio",
+      "icone": "crown",
+      "conceito": "experiência",
+      "assinatura": false
+    },
+    {
+      "video": "PauloRuizReels",
+      "segundo": null,
+      "molde": "trio",
+      "icone": "trophy",
+      "conceito": "resultados",
+      "assinatura": false
+    },
+    {
+      "video": "PauloRuizReels",
+      "segundo": null,
+      "molde": "trio",
+      "icone": "square-check-big",
+      "conceito": "depoimentos",
+      "assinatura": false
+    },
+    {
+      "video": "PauloRuizReels",
+      "segundo": null,
+      "molde": "grade-conceitos",
+      "icone": "crown",
+      "conceito": "autoridade",
+      "assinatura": true
+    }
+  ]
+}

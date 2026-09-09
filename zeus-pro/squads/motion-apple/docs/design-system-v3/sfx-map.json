@@ -1,0 +1,414 @@
+{
+  "_doc": "Mapa de efeitos sonoros por movimento. PESO 0–10 = quanto o gesto pesa visualmente; o peso escolhe o arquivo e o volume na biblioteca do squad (pasta de SFX do PC). Peso 0 = silêncio obrigatório. Regra: o som sai do peso do gesto, nunca da escolha de quem monta — dois gestos iguais nunca recebem sons diferentes.",
+  "weight_scale": {
+    "0": "silêncio (o gesto não soa: traço, contagem em curso, legenda, playback de áudio real)",
+    "1-2": "tick mínimo, -20 a -22 dB: repetição, detalhe, digitação",
+    "3-4": "tick/sweep/pop suave, -15 a -18 dB: cascata, migração de anel, item de lista, conector",
+    "5-6": "médio/ding/click, -12 a -14 dB: nó, painel, check, badge, número que assenta, botão",
+    "7-8": "grave/whoosh longo, -10 a -11 dB: N2, gargalo que libera, tônica do lettering",
+    "9-10": "whoosh longo + grave, -9 dB: N3 (palavra conceito) e selo de fecho — no máximo 2 por vídeo"
+  },
+  "rules": [
+    "Densidade: no máximo 1 som a cada 2,5s. Se dois eventos caem a menos de 8q, o de menor peso é cortado (não somado).",
+    "Cascata longa (≥6 irmãos): soam o primeiro, o do meio e o último; os outros são silenciosos.",
+    "Nunca dois sons de peso ≥7 em menos de 3s.",
+    "Som de saída de cena e de entrada da próxima nunca soam juntos: escolha o da cena que carrega a informação nova.",
+    "O som marca o frame em que o movimento COMEÇA (ataque junto do 1º frame), exceto ding/click de conclusão, que marcam o frame em que o movimento PARA.",
+    "Sobre fala: qualquer som ≥7 entra em pausa da voz; se não houver pausa, baixa 3 dB.",
+    "Pan segue a origem espacial: balão do usuário +20% R, do Zeus 20% L, conector segue a direção do traço; resto centrado.",
+    "Peso 0 é obrigatório, não opcional: traço da palavra, contagem em curso, legenda e playback de áudio real nunca recebem SFX.",
+    "Um mesmo esquema pode ter 3 a 6 sons (ex.: jornada = nó A 4 + conector 4 + chevron 5 + anel nasce 5); a soma dos pesos de uma cena não deve passar de 22.",
+    "Sem trilha nova, sem ducking automático e sem reverb: a biblioteca do squad já tem os arquivos; este mapa só escolhe qual e quando."
+  ],
+  "events": [
+    {
+      "id": "cena-entra",
+      "where": "qualquer molde: painel/esquema aparece",
+      "weight": 6,
+      "category": "whoosh-medio",
+      "dB": -13,
+      "sync": "no 1º frame da entrada (t0), 24q"
+    },
+    {
+      "id": "cena-sai",
+      "where": "qualquer molde",
+      "weight": 4,
+      "category": "whoosh-curto",
+      "dB": -15,
+      "sync": "no 1º frame da saída; nunca dobrar com a entrada da próxima (só um dos dois soa)"
+    },
+    {
+      "id": "palavra-conceito",
+      "where": "N3: palavra + traço",
+      "weight": 10,
+      "category": "whoosh-longo",
+      "dB": -9,
+      "sync": "na 1ª letra; o traço NÃO leva som próprio"
+    },
+    {
+      "id": "traco-desenha",
+      "where": "N3, headline",
+      "weight": 0,
+      "category": "—",
+      "dB": null,
+      "sync": "silencioso: faz parte do gesto da palavra"
+    },
+    {
+      "id": "frase-icone",
+      "where": "N2: círculo + frase",
+      "weight": 7,
+      "category": "grave",
+      "dB": -11,
+      "sync": "no círculo; a frase entra sem som"
+    },
+    {
+      "id": "atributo-solo",
+      "where": "N1",
+      "weight": 4,
+      "category": "medio",
+      "dB": -15,
+      "sync": "no círculo"
+    },
+    {
+      "id": "lettering-linha",
+      "where": "lettering: cada linha",
+      "weight": 3,
+      "category": "ding-seco",
+      "dB": -18,
+      "sync": "uma por linha, ≥12q entre; a tônica leva 8"
+    },
+    {
+      "id": "lettering-tonica",
+      "where": "lettering: palavra tônica",
+      "weight": 8,
+      "category": "grave-longo",
+      "dB": -10,
+      "sync": "na 1ª letra da tônica"
+    },
+    {
+      "id": "anel-migra",
+      "where": "troca de foco (trio, grade, esquema, interface)",
+      "weight": 3,
+      "category": "tick-suave",
+      "dB": -18,
+      "sync": "no frame em que o anel começa a deslizar"
+    },
+    {
+      "id": "anel-nasce",
+      "where": "1º foco da cena",
+      "weight": 5,
+      "category": "medio-curto",
+      "dB": -14,
+      "sync": "quando o anel aparece"
+    },
+    {
+      "id": "celula-preenche",
+      "where": "grade com contagem, calendário",
+      "weight": 2,
+      "category": "tick",
+      "dB": -20,
+      "sync": "uma por célula, 4q entre; ≥8 células → só a 1ª, a 5ª e a última soam"
+    },
+    {
+      "id": "numero-conta",
+      "where": "contagem, meta, KPI",
+      "weight": 0,
+      "category": "—",
+      "dB": null,
+      "sync": "silencioso durante a contagem; o som é do elemento que a dispara"
+    },
+    {
+      "id": "numero-assenta",
+      "where": "fim da contagem",
+      "weight": 5,
+      "category": "ding",
+      "dB": -14,
+      "sync": "no frame em que o número para"
+    },
+    {
+      "id": "bloco-cascata",
+      "where": "grade de conceitos, feed, matriz",
+      "weight": 3,
+      "category": "tick-suave",
+      "dB": -18,
+      "sync": "um por bloco, 4q entre; ≥6 blocos → só 1º e último"
+    },
+    {
+      "id": "conector-desenha",
+      "where": "jornada, causa-efeito, ciclo, ramificação, lacuna",
+      "weight": 4,
+      "category": "sweep",
+      "dB": -15,
+      "sync": "início do dashoffset; duração = duração do traço"
+    },
+    {
+      "id": "chevron-chega",
+      "where": "ponta da seta",
+      "weight": 5,
+      "category": "tick-forte",
+      "dB": -14,
+      "sync": "nos últimos 8q do conector"
+    },
+    {
+      "id": "no-nasce",
+      "where": "esquema: nó entra",
+      "weight": 4,
+      "category": "medio",
+      "dB": -15,
+      "sync": "um por nó; ≥4 nós → alterna 4 e 2 para não cansar"
+    },
+    {
+      "id": "barra-cresce",
+      "where": "funil, níveis, ranking, gráfico de barras",
+      "weight": 3,
+      "category": "sweep-curto",
+      "dB": -18,
+      "sync": "uma por barra, 8q entre"
+    },
+    {
+      "id": "balanca-inclina",
+      "where": "balança",
+      "weight": 5,
+      "category": "grave-curto",
+      "dB": -14,
+      "sync": "no início da inclinação"
+    },
+    {
+      "id": "filtro-rejeita",
+      "where": "filtro por critérios",
+      "weight": 2,
+      "category": "tick-seco",
+      "dB": -20,
+      "sync": "quando as unidades saem para o destino"
+    },
+    {
+      "id": "gargalo-libera",
+      "where": "gargalo",
+      "weight": 7,
+      "category": "whoosh-longo",
+      "dB": -11,
+      "sync": "no frame em que a restrição abre"
+    },
+    {
+      "id": "comparacao-errado",
+      "where": "comparação: lado errado + badge X",
+      "weight": 6,
+      "category": "grave-baixo",
+      "dB": -13,
+      "sync": "no badge X"
+    },
+    {
+      "id": "comparacao-certo",
+      "where": "comparação: lado certo + badge check",
+      "weight": 7,
+      "category": "ding-positivo",
+      "dB": -11,
+      "sync": "no badge check, 8q depois do X"
+    },
+    {
+      "id": "check-confirma",
+      "where": "checklist, confirmação, etapa concluída",
+      "weight": 6,
+      "category": "ding-positivo",
+      "dB": -12,
+      "sync": "quando o check desenha"
+    },
+    {
+      "id": "selo-fecho",
+      "where": "selo Zeus no fecho do vídeo",
+      "weight": 10,
+      "category": "whoosh-longo + grave",
+      "dB": -9,
+      "sync": "no 1º frame do selo; único peso 10 além do N3/lettering"
+    },
+    {
+      "id": "painel-interface",
+      "where": "simulação de interface: painel entra",
+      "weight": 5,
+      "category": "medio-macio",
+      "dB": -14,
+      "sync": "no 1º frame"
+    },
+    {
+      "id": "balao-chega",
+      "where": "chat: balão entra",
+      "weight": 4,
+      "category": "pop-suave",
+      "dB": -15,
+      "sync": "um por balão; do lado de quem fala (pan L/R ±20%)"
+    },
+    {
+      "id": "digitando",
+      "where": "chat: 3 pontos pulsando",
+      "weight": 1,
+      "category": "tick-minimo",
+      "dB": -22,
+      "sync": "só se a espera é parte da história; loop discreto"
+    },
+    {
+      "id": "digitacao-campo",
+      "where": "formulário, busca",
+      "weight": 2,
+      "category": "tick-teclado",
+      "dB": -20,
+      "sync": "a cada 3 letras, não a cada letra"
+    },
+    {
+      "id": "slider-desliza",
+      "where": "painel de configuração, escala, meta",
+      "weight": 3,
+      "category": "sweep-curto",
+      "dB": -18,
+      "sync": "durante o deslize; termina com tick no destino"
+    },
+    {
+      "id": "toggle-liga",
+      "where": "configurações",
+      "weight": 4,
+      "category": "click",
+      "dB": -16,
+      "sync": "no frame em que o knob chega"
+    },
+    {
+      "id": "botao-aciona",
+      "where": "checkout, envio",
+      "weight": 6,
+      "category": "click-forte",
+      "dB": -13,
+      "sync": "no feedback (6–10q), antes do resultado"
+    },
+    {
+      "id": "audio-playback",
+      "where": "chat de áudio, player",
+      "weight": 0,
+      "category": "—",
+      "dB": null,
+      "sync": "o áudio real É o som; nenhum SFX por cima"
+    },
+    {
+      "id": "progresso-conclui",
+      "where": "progresso, temporizador",
+      "weight": 6,
+      "category": "ding-positivo",
+      "dB": -12,
+      "sync": "quando chega a 100%"
+    },
+    {
+      "id": "notificacao-chega",
+      "where": "notificação, lead novo, comentário",
+      "weight": 5,
+      "category": "pop",
+      "dB": -14,
+      "sync": "uma por cartão; ≥3 na pilha → só a que a fala lê"
+    },
+    {
+      "id": "item-lista-entra",
+      "where": "leads, comentários, ranking",
+      "weight": 3,
+      "category": "pop-suave",
+      "dB": -18,
+      "sync": "um por item, 8q entre"
+    },
+    {
+      "id": "zoom-entra",
+      "where": "evidência anotada, zoom de detalhe",
+      "weight": 5,
+      "category": "sweep-grave",
+      "dB": -14,
+      "sync": "no início do reenquadramento"
+    },
+    {
+      "id": "anotacao-entra",
+      "where": "evidência: anotação",
+      "weight": 3,
+      "category": "tick-suave",
+      "dB": -18,
+      "sync": "12q após o zoom assentar"
+    },
+    {
+      "id": "legenda-entra",
+      "where": "legenda palavra a palavra",
+      "weight": 0,
+      "category": "—",
+      "dB": null,
+      "sync": "silenciosa sempre"
+    },
+    {
+      "id": "erro-indica",
+      "where": "estado de erro",
+      "weight": 6,
+      "category": "grave-seco",
+      "dB": -13,
+      "sync": "no elemento, não na cena"
+    }
+  ],
+  "gestos_pedidos_ainda_nao_catalogados": [
+    {
+      "gesto": "arco-fecha",
+      "onde": "ciclo: o arco que fecha o loop no primeiro nó",
+      "peso_sugerido": 6,
+      "status": "precisa de decisão humana"
+    },
+    {
+      "gesto": "marco-chega",
+      "onde": "linha-do-tempo: o preenchimento alcança o marco atual",
+      "peso_sugerido": 5,
+      "status": "precisa de decisão humana"
+    },
+    {
+      "gesto": "intersecao-nasce",
+      "onde": "venn: a lente da interseção aparece",
+      "peso_sugerido": 6,
+      "status": "precisa de decisão humana"
+    },
+    {
+      "gesto": "quadrante-foco",
+      "onde": "matriz-2x2: o contorno nasce no quadrante",
+      "peso_sugerido": 4,
+      "status": "precisa de decisão humana"
+    },
+    {
+      "gesto": "camada-entra",
+      "onde": "camadas: cada camada empilhando",
+      "peso_sugerido": 4,
+      "status": "precisa de decisão humana"
+    },
+    {
+      "gesto": "veu-sobe",
+      "onde": "evidencia-anotada: o véu branco cobre a fonte",
+      "peso_sugerido": 3,
+      "status": "precisa de decisão humana"
+    },
+    {
+      "gesto": "vao-abre",
+      "onde": "lacuna: o vão entre atual e desejado se estabelece",
+      "peso_sugerido": 4,
+      "status": "precisa de decisão humana"
+    },
+    {
+      "gesto": "resultado-assenta",
+      "onde": "equacao: o nó do resultado recebe o anel",
+      "peso_sugerido": 6,
+      "status": "precisa de decisão humana"
+    },
+    {
+      "gesto": "painel-par-entra",
+      "onde": "espelho: os dois painéis entrando juntos",
+      "peso_sugerido": 5,
+      "status": "precisa de decisão humana"
+    },
+    {
+      "gesto": "anel-guia-entra",
+      "onde": "concentrico: pills e linhas-guia",
+      "peso_sugerido": 3,
+      "status": "precisa de decisão humana"
+    },
+    {
+      "gesto": "poligono-desenha",
+      "onde": "radar: o polígono fechando vértice a vértice",
+      "peso_sugerido": 4,
+      "status": "precisa de decisão humana"
+    }
+  ],
+  "nota_de_uso": "Enquanto um gesto pedido não for catalogado, o molde usa o gesto mais próximo do catálogo e declara a lacuna em build-registry → sound.missingGesture. Nunca inventar nome de gesto."
+}

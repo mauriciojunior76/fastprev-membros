@@ -1,0 +1,70 @@
+/* GERADO AUTOMATICAMENTE. Nao edite este arquivo. */
+/* Fonte: core.json + brands/exemplo.json */
+/* Regerar: node templates/design-tokens/build.js exemplo */
+
+:root {
+  /* cores */
+  --cor-primaria: #2F5D50;
+  --cor-secundaria: #8A9A5B;
+  --cor-fundo-claro: #FAF9F6;
+  --cor-fundo-escuro: #1C1F1E;
+  --cor-texto-principal: #1C1F1E;
+  --cor-texto-secundario: #5A6260;
+  --cor-destaque: #C77D3A;
+  --cor-sucesso: #3E7C4A;
+  --cor-alerta: #B8860B;
+  --cor-erro: #A93226;
+
+  /* famílias */
+  --fonte-titulo: Georgia, 'Times New Roman', serif;
+  --fonte-texto: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --fonte-apoio: ui-monospace, 'Cascadia Code', Consolas, monospace;
+
+  /* escala tipográfica fluida: calculada, cresce com a tela */
+  --texto-menor1: clamp(0.833rem, 0.811rem + 0.099vw, 0.900rem);
+  --texto-t0: clamp(1.000rem, 0.958rem + 0.185vw, 1.125rem);
+  --texto-t1: clamp(1.200rem, 1.131rem + 0.306vw, 1.406rem);
+  --texto-t2: clamp(1.440rem, 1.334rem + 0.471vw, 1.758rem);
+  --texto-t3: clamp(1.728rem, 1.572rem + 0.695vw, 2.197rem);
+  --texto-t4: clamp(2.074rem, 1.849rem + 0.997vw, 2.747rem);
+  --texto-t5: clamp(2.488rem, 2.173rem + 1.400vw, 3.433rem);
+
+  /* espaçamento */
+  --espaco-0: 0px;
+  --espaco-0-5: 4px;
+  --espaco-1: 8px;
+  --espaco-1-5: 12px;
+  --espaco-2: 16px;
+  --espaco-3: 24px;
+  --espaco-4: 32px;
+  --espaco-6: 48px;
+  --espaco-8: 64px;
+  --espaco-12: 96px;
+  --espaco-16: 128px;
+
+  /* geometria */
+  --raio-nenhum: 0;
+  --raio-pequeno: 4px;
+  --raio-medio: 10px;
+  --raio-grande: 20px;
+  --raio-total: 999px;
+  --borda-fina: 1px;
+  --borda-media: 2px;
+  --raio-padrao: var(--raio-medio);
+
+  /* transições */
+  --transicao-rapida: 120ms;
+  --transicao-media: 240ms;
+  --transicao-lenta: 420ms;
+  --transicao-suave: cubic-bezier(0.4, 0, 0.2, 1);
+  --transicao-saida: cubic-bezier(0, 0, 0.2, 1);
+  --transicao-entrada: cubic-bezier(0.4, 0, 1, 1);
+}
+
+/* respeita quem pediu menos movimento no sistema operacional */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

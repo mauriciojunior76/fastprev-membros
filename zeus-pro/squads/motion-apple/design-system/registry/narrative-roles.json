@@ -1,0 +1,240 @@
+{
+  "_doc": "Funcao narrativa do beat: o papel que ele cumpre no arco do video. Fonte da regra: DIRECAO-DINAMICA.md secao 3. O papel decide o ESTADO DE PALCO; o estado filtra os recursos; so entao o molde e escolhido pelo verbo (MANUAL-DE-ESCOLHA e MOTION-MANUAL secao 6). Nesta ordem, nunca ao contrario. Lido por scripts/beats.js (propoe) e scripts/ds-router.js (filtra). Cada papel traz `equivaleA`: o papel antigo do squad (hook, context, problem, explanation, example, proof, climax, cta, breath, close), que continua valendo no formato reels-call. Os 13 daqui sao o refinamento do formato vertical-mao, nao um vocabulario paralelo.",
+  "version": "1.0",
+  "updated_at": "2026-09-08",
+  "formato": "vertical-mao",
+  "arco_tipico": [
+    "gancho",
+    "tensao",
+    "experimento",
+    "dor",
+    "epifania",
+    "tese",
+    "mecanismo",
+    "implicacao",
+    "reenquadramento",
+    "contraste",
+    "habilidade",
+    "prova",
+    "cta"
+  ],
+  "roles": [
+    {
+      "id": "gancho",
+      "nome": "Gancho",
+      "estadoPadrao": "A",
+      "estadoAlternativo": "A",
+      "peso": 6,
+      "naTela": "esquema do produto ou do problema, com titulo",
+      "lexico": [
+        "olha isso",
+        "olha so",
+        "acabou de sair",
+        "foi lancado",
+        "repara",
+        "presta atencao"
+      ],
+      "posicao": "primeiro beat sempre",
+      "equivaleA": "hook"
+    },
+    {
+      "id": "tensao",
+      "nome": "Tensao",
+      "estadoPadrao": "B",
+      "estadoAlternativo": "C",
+      "peso": 7,
+      "naTela": "N3 ou frase curta: a inquietacao",
+      "lexico": [
+        "tem uma coisa",
+        "so que",
+        "mas",
+        "porem",
+        "o problema e",
+        "acontece que"
+      ],
+      "equivaleA": "problem"
+    },
+    {
+      "id": "experimento",
+      "nome": "Experimento",
+      "estadoPadrao": "A",
+      "estadoAlternativo": "A",
+      "peso": 5,
+      "naTela": "interface em uso, digitacao, resposta",
+      "lexico": [
+        "comecei a testar",
+        "fui la e",
+        "pedi pra ele",
+        "resolvi testar",
+        "fui tentar"
+      ],
+      "equivaleA": "example"
+    },
+    {
+      "id": "dor",
+      "nome": "Dor do passado",
+      "estadoPadrao": "A",
+      "estadoAlternativo": "B",
+      "peso": 6,
+      "naTela": "esquema do jeito antigo, com titulo persistente",
+      "lexico": [
+        "antes",
+        "pouco tempo atras",
+        "precisaria",
+        "tinha que",
+        "era preciso",
+        "no passado"
+      ],
+      "equivaleA": "problem"
+    },
+    {
+      "id": "epifania",
+      "nome": "Epifania",
+      "estadoPadrao": "B",
+      "estadoAlternativo": "B",
+      "peso": 8,
+      "naTela": "N3 isolada: a virada",
+      "lexico": [
+        "caiu a ficha",
+        "ai eu entendi",
+        "foi quando",
+        "percebi que",
+        "me toquei"
+      ],
+      "equivaleA": "climax"
+    },
+    {
+      "id": "tese",
+      "nome": "Tese",
+      "estadoPadrao": "C",
+      "estadoAlternativo": "B",
+      "peso": 7,
+      "naTela": "frase cinetica palavra a palavra",
+      "lexico": [
+        "a verdade e",
+        "na real",
+        "o fato e",
+        "esta comecando a",
+        "hoje ja"
+      ],
+      "equivaleA": "explanation"
+    },
+    {
+      "id": "mecanismo",
+      "nome": "Mecanismo",
+      "estadoPadrao": "A",
+      "estadoAlternativo": "C",
+      "peso": 5,
+      "naTela": "esquema de causa e efeito, tracado",
+      "lexico": [
+        "porque",
+        "funciona assim",
+        "entao",
+        "leva a",
+        "resulta em",
+        "por isso"
+      ],
+      "equivaleA": "explanation"
+    },
+    {
+      "id": "implicacao",
+      "nome": "Implicacao",
+      "estadoPadrao": "C",
+      "estadoAlternativo": "B",
+      "peso": 6,
+      "naTela": "frase cinetica: o que muda",
+      "lexico": [
+        "isso muda",
+        "significa que",
+        "ou seja",
+        "quer dizer que",
+        "muda muita coisa"
+      ],
+      "equivaleA": "explanation"
+    },
+    {
+      "id": "reenquadramento",
+      "nome": "Reenquadramento",
+      "estadoPadrao": "C",
+      "estadoAlternativo": "B",
+      "peso": 7,
+      "naTela": "frase cinetica com elemento pequeno de interface",
+      "lexico": [
+        "uma nova forma",
+        "nao e",
+        "na verdade",
+        "talvez",
+        "e outra coisa"
+      ],
+      "equivaleA": "climax"
+    },
+    {
+      "id": "contraste",
+      "nome": "Contraste",
+      "estadoPadrao": "A",
+      "estadoAlternativo": "A",
+      "peso": 6,
+      "naTela": "esquema comparativo ou muitos vira um",
+      "lexico": [
+        "em vez de",
+        "versus",
+        "nao precisa mais",
+        "ao inves de",
+        "ao contrario de",
+        "dez ferramentas"
+      ],
+      "equivaleA": "example"
+    },
+    {
+      "id": "habilidade",
+      "nome": "Nova habilidade",
+      "estadoPadrao": "A",
+      "estadoAlternativo": "C",
+      "peso": 5,
+      "naTela": "esquema de lista ou metafora, com titulo",
+      "lexico": [
+        "vai ser",
+        "o que importa e",
+        "a habilidade",
+        "o que vale e",
+        "voce precisa saber"
+      ],
+      "equivaleA": "explanation"
+    },
+    {
+      "id": "prova",
+      "nome": "Prova",
+      "estadoPadrao": "A",
+      "estadoAlternativo": "A",
+      "peso": 6,
+      "naTela": "evidencia: print, linha do tempo, o proprio video",
+      "lexico": [
+        "quer uma prova",
+        "esse video",
+        "olha o resultado",
+        "prova disso",
+        "veja voce mesmo"
+      ],
+      "equivaleA": "proof"
+    },
+    {
+      "id": "cta",
+      "nome": "Chamada",
+      "estadoPadrao": "A",
+      "estadoAlternativo": "A",
+      "peso": 6,
+      "naTela": "botao de acao e marca",
+      "lexico": [
+        "entra pra",
+        "clica",
+        "link na bio",
+        "vem pro",
+        "chama no",
+        "se voce quer aprender"
+      ],
+      "posicao": "ultimo beat sempre",
+      "equivaleA": "cta"
+    }
+  ],
+  "equivalencia_doc": "Os 10 papeis antigos continuam validos. Beat de vertical-mao pode declarar o papel refinado (epifania) ou o antigo (climax); o validate aceita os dois."
+}

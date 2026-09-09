@@ -1,0 +1,430 @@
+# ═══════════════════════════════════════════════════════════════════
+# Squad: Launch Paid (Lancamento Pago)
+# Domain: Lancamento Pago - Metodologia Baldan
+# Version: 1.0.0
+# ═══════════════════════════════════════════════════════════════════
+
+squad:
+  name: launch-paid
+  display_name: "Launch Paid Squad"
+  version: "1.0.0"
+  domain: "Lancamento pago - ingresso barato, evento 2 dias, pitch 3 etapas, conversao e recuperacao comercial"
+  description: |
+    Squad de 41 agentes especializados na metodologia de lancamento pago (Baldan).
+    Pipeline completo: pesquisa > promessa > copy > evento > criativos > comercial > metricas.
+    Cada agente domina uma etapa especifica do metodo com frameworks extraidos do documento-base.
+  keywords: [lancamento-pago, paid-launch, evento-pago, ingresso, pitch, conversao, trafego, comercial, metricas, oferta, baldan]
+  entry_agent: launch-chief
+  created_at: "2026-03-28"
+
+tiers:
+  tier_0:
+    name: "Comando Central"
+    agents: [launch-chief, launch-deputy]
+    purpose: "Orquestracao do pipeline completo, routing entre tiers, quality gate final, compliance com metodologia"
+  tier_1a:
+    name: "Estrategia e Promessa"
+    agents: [researcher, promise-architect, big-idea-specialist, narrative-analyst, strategic-planner]
+    purpose: "Pesquisa de mercado, criacao da promessa central, Big Idea, arco narrativo e planejamento macro"
+  tier_1b:
+    name: "Copy e Linguagem"
+    agents: [headline-specialist, page-copy-specialist, email-specialist, whatsapp-specialist, ad-copy-specialist, copy-reviewer]
+    purpose: "Copy de pagina (12 secoes), headlines, emails, WhatsApp, anuncios C0-C4, revisao de copy"
+  tier_1c:
+    name: "Evento e Conteudo"
+    agents: [event-architect, pitch-organizer, subject-organizer, subject-expert, seeding-specialist, event-reviewer]
+    purpose: "Estrutura do evento 2 dias, pitch 3 etapas, organizacao de assuntos, seeding, conteudo mao na massa"
+  tier_1d:
+    name: "Trafego e Criativos"
+    agents: [creative-planner, creative-script-writer, remarketing-specialist, traffic-data-planner, creative-reviewer]
+    purpose: "Plano tatico C0-C4, roteiros de criativos, remarketing Single Shot, dados de trafego, revisao"
+  tier_1e:
+    name: "Comercial e Pos-Pitch"
+    agents: [commercial-strategist, bonus-architect, followup-specialist, recording-vip-specialist, live-post-pitch-specialist, commercial-reviewer]
+    purpose: "Estrategia comercial pos-pitch, 11 toques por lead, bonus escalonados, follow-up, gravacoes, VIP, lives"
+  tier_1f:
+    name: "Metricas, Dados e Operacao"
+    agents: [metrics-analyst, diagnostics-specialist, checklist-manager, crm-operations-specialist, team-operations-planner, decision-notebook-specialist]
+    purpose: "KPIs, diagnostico por etapa, checklists operacionais, CRM, equipe, caderno de decisao diario"
+  tier_1g:
+    name: "Oferta e Produto"
+    agents: [offer-architect, ticket-strategist, post-event-product-planner, upgrade-designer, page-builder-coordinator]
+    purpose: "Arquitetura de oferta, ingresso/lotes, produto pos-evento, upgrades, coordenacao de paginas"
+
+agents:
+  # Tier 0
+  launch-chief:
+    file: agents/launch-chief.md
+    tier: 0
+    icon: "🎯"
+    focus: "Orquestracao geral, routing, pipeline completo"
+  launch-deputy:
+    file: agents/launch-deputy.md
+    tier: 0
+    icon: "🛡️"
+    focus: "Quality gate, veto, compliance com metodologia"
+  # Tier 1A
+  researcher:
+    file: agents/researcher.md
+    tier: 1a
+    icon: "🔍"
+    focus: "Pesquisa de mercado, ICP, concorrencia, dores"
+  promise-architect:
+    file: agents/promise-architect.md
+    tier: 1a
+    icon: "💡"
+    focus: "Promessa central: tempo + acao pratica + entrega visivel"
+  big-idea-specialist:
+    file: agents/big-idea-specialist.md
+    tier: 1a
+    icon: "⚡"
+    focus: "Big Idea, mecanismo unico, conceito central"
+  narrative-analyst:
+    file: agents/narrative-analyst.md
+    tier: 1a
+    icon: "📖"
+    focus: "Arco narrativo completo, seeding points, progressao de crencas"
+  strategic-planner:
+    file: agents/strategic-planner.md
+    tier: 1a
+    icon: "🗺️"
+    focus: "Plano mestre, calendario macro, fases do lancamento"
+  # Tier 1B
+  headline-specialist:
+    file: agents/headline-specialist.md
+    tier: 1b
+    icon: "📰"
+    focus: "Headlines H1 com checklist de 4 perguntas"
+  page-copy-specialist:
+    file: agents/page-copy-specialist.md
+    tier: 1b
+    icon: "📄"
+    focus: "Copy das 12 secoes da pagina de vendas"
+  email-specialist:
+    file: agents/email-specialist.md
+    tier: 1b
+    icon: "📧"
+    focus: "Emails: onboarding, lembretes, recuperacao, bonus, carrinho"
+  whatsapp-specialist:
+    file: agents/whatsapp-specialist.md
+    tier: 1b
+    icon: "💬"
+    focus: "Mensagens de grupo e comercial, 11 toques por lead"
+  ad-copy-specialist:
+    file: agents/ad-copy-specialist.md
+    tier: 1b
+    icon: "📢"
+    focus: "Copy para criativos C0 viral, C1 oportunidade, C2 objecao, C3 prova, C4 remarketing"
+  copy-reviewer:
+    file: agents/copy-reviewer.md
+    tier: 1b
+    icon: "🔎"
+    focus: "Revisao de toda copy contra regras do metodo"
+  # Tier 1C
+  event-architect:
+    file: agents/event-architect.md
+    tier: 1c
+    icon: "🏛️"
+    focus: "Estrutura 2 dias, 80/20, 9 blocos, curva de energia"
+  pitch-organizer:
+    file: agents/pitch-organizer.md
+    tier: 1c
+    icon: "🎤"
+    focus: "Pitch 3 etapas: ancoragem, oferta, abertura"
+  subject-organizer:
+    file: agents/subject-organizer.md
+    tier: 1c
+    icon: "📋"
+    focus: "Distribuicao de assuntos nos 9 blocos do evento"
+  subject-expert:
+    file: agents/subject-expert.md
+    tier: 1c
+    icon: "🎓"
+    focus: "Especialista no conteudo ensinado, garante mao na massa"
+  seeding-specialist:
+    file: agents/seeding-specialist.md
+    tier: 1c
+    icon: "🌱"
+    focus: "Planta ideias que tornam a oferta premium obvia"
+  event-reviewer:
+    file: agents/event-reviewer.md
+    tier: 1c
+    icon: "✅"
+    focus: "Valida 80/20, timing pitch, conteudo apos pitch final"
+  # Tier 1D
+  creative-planner:
+    file: agents/creative-planner.md
+    tier: 1d
+    icon: "🎨"
+    focus: "Plano tatico C0-C4, budget, briefings"
+  creative-script-writer:
+    file: agents/creative-script-writer.md
+    tier: 1d
+    icon: "🎬"
+    focus: "Roteiros de video e storyboards, hook 3-5s"
+  remarketing-specialist:
+    file: agents/remarketing-specialist.md
+    tier: 1d
+    icon: "🔄"
+    focus: "Single Shot, lembretes inteligentes, remarketing"
+  traffic-data-planner:
+    file: agents/traffic-data-planner.md
+    tier: 1d
+    icon: "📊"
+    focus: "Pixel, eventos, connect rate, UTM, checkout"
+  creative-reviewer:
+    file: agents/creative-reviewer.md
+    tier: 1d
+    icon: "🔬"
+    focus: "Valida C0-C4, hook, linguagem, Single Shot"
+  # Tier 1E
+  commercial-strategist:
+    file: agents/commercial-strategist.md
+    tier: 1e
+    icon: "💰"
+    focus: "11 toques por lead, cada um com razao nova"
+  bonus-architect:
+    file: agents/bonus-architect.md
+    tier: 1e
+    icon: "🎁"
+    focus: "Bonus escalonados que respondem objecoes reais"
+  followup-specialist:
+    file: agents/followup-specialist.md
+    tier: 1e
+    icon: "📞"
+    focus: "Recuperacao por 6 perfis de lead"
+  recording-vip-specialist:
+    file: agents/recording-vip-specialist.md
+    tier: 1e
+    icon: "🎥"
+    focus: "Gravacao como curso, Sala VIP pos-evento"
+  live-post-pitch-specialist:
+    file: agents/live-post-pitch-specialist.md
+    tier: 1e
+    icon: "🔴"
+    focus: "Lives pos-pitch: energia, prova, bonus"
+  commercial-reviewer:
+    file: agents/commercial-reviewer.md
+    tier: 1e
+    icon: "⚖️"
+    focus: "Valida unicidade dos 11 toques, bonus vs objecoes"
+  # Tier 1F
+  metrics-analyst:
+    file: agents/metrics-analyst.md
+    tier: 1f
+    icon: "📈"
+    focus: "Comparecimento, CTR, CPA, ROAS, connect rate"
+  diagnostics-specialist:
+    file: agents/diagnostics-specialist.md
+    tier: 1f
+    icon: "🩺"
+    focus: "Diagnostico por etapa do lancamento"
+  checklist-manager:
+    file: agents/checklist-manager.md
+    tier: 1f
+    icon: "☑️"
+    focus: "3 checklists criticos + SOPs"
+  crm-operations-specialist:
+    file: agents/crm-operations-specialist.md
+    tier: 1f
+    icon: "🔗"
+    focus: "CRM, pipeline, formularios, segmentacao"
+  team-operations-planner:
+    file: agents/team-operations-planner.md
+    tier: 1f
+    icon: "👥"
+    focus: "9 funcoes operacionais, ritual diario, post-mortem"
+  decision-notebook-specialist:
+    file: agents/decision-notebook-specialist.md
+    tier: 1f
+    icon: "📓"
+    focus: "5 perguntas diarias, decisao + responsavel + prazo"
+  # Tier 1G
+  offer-architect:
+    file: agents/offer-architect.md
+    tier: 1g
+    icon: "🏗️"
+    focus: "Oferta principal, order bumps, upsell/downsell"
+  ticket-strategist:
+    file: agents/ticket-strategist.md
+    tier: 1g
+    icon: "🎟️"
+    focus: "Ingresso R$19-49, lotes, urgencia, qualificacao"
+  post-event-product-planner:
+    file: agents/post-event-product-planner.md
+    tier: 1g
+    icon: "🛤️"
+    focus: "Cronograma do produto vendido pos-evento"
+  upgrade-designer:
+    file: agents/upgrade-designer.md
+    tier: 1g
+    icon: "⬆️"
+    focus: "Upgrades de ingresso: gravacao, templates, grupo"
+  page-builder-coordinator:
+    file: agents/page-builder-coordinator.md
+    tier: 1g
+    icon: "🔗"
+    focus: "Bridge para PAGE-FORGE, brief, validacao"
+
+handoffs:
+  # Tier 0 routes to all
+  launch-chief:
+    routes_to: [researcher, promise-architect, big-idea-specialist, narrative-analyst, strategic-planner, headline-specialist, page-copy-specialist, email-specialist, whatsapp-specialist, ad-copy-specialist, event-architect, pitch-organizer, subject-organizer, creative-planner, commercial-strategist, bonus-architect, metrics-analyst, offer-architect, ticket-strategist, page-builder-coordinator]
+    escalates_to: [launch-deputy]
+  launch-deputy:
+    routes_to: [launch-chief]
+    collaborates_with: [copy-reviewer, event-reviewer, creative-reviewer, commercial-reviewer]
+
+  # Tier 1A sequential
+  researcher:
+    routes_to: [promise-architect, strategic-planner]
+    escalates_to: [launch-chief]
+  promise-architect:
+    routes_to: [big-idea-specialist, headline-specialist]
+    escalates_to: [launch-chief]
+  big-idea-specialist:
+    routes_to: [narrative-analyst, headline-specialist, ad-copy-specialist]
+    escalates_to: [launch-chief]
+  narrative-analyst:
+    routes_to: [seeding-specialist, subject-organizer]
+    escalates_to: [launch-chief]
+  strategic-planner:
+    routes_to: [launch-chief]
+    collaborates_with: [team-operations-planner, checklist-manager]
+    escalates_to: [launch-chief]
+
+  # Tier 1B
+  headline-specialist:
+    routes_to: [page-copy-specialist, ad-copy-specialist]
+    escalates_to: [copy-reviewer]
+  page-copy-specialist:
+    routes_to: [email-specialist, whatsapp-specialist, page-builder-coordinator]
+    escalates_to: [copy-reviewer]
+  email-specialist:
+    escalates_to: [copy-reviewer]
+  whatsapp-specialist:
+    escalates_to: [copy-reviewer]
+  ad-copy-specialist:
+    routes_to: [creative-script-writer]
+    escalates_to: [copy-reviewer]
+  copy-reviewer:
+    routes_to: [launch-deputy]
+    escalates_to: [launch-chief]
+
+  # Tier 1C
+  subject-organizer:
+    routes_to: [subject-expert, event-architect]
+    escalates_to: [event-reviewer]
+  subject-expert:
+    routes_to: [event-architect]
+    escalates_to: [event-reviewer]
+  event-architect:
+    routes_to: [pitch-organizer, seeding-specialist]
+    escalates_to: [event-reviewer]
+  pitch-organizer:
+    routes_to: [seeding-specialist, commercial-strategist]
+    escalates_to: [event-reviewer]
+  seeding-specialist:
+    escalates_to: [event-reviewer]
+  event-reviewer:
+    routes_to: [launch-deputy]
+    escalates_to: [launch-chief]
+
+  # Tier 1D
+  creative-planner:
+    routes_to: [creative-script-writer, remarketing-specialist, traffic-data-planner]
+    escalates_to: [creative-reviewer]
+  creative-script-writer:
+    escalates_to: [creative-reviewer]
+  remarketing-specialist:
+    escalates_to: [creative-reviewer]
+  traffic-data-planner:
+    escalates_to: [creative-reviewer]
+  creative-reviewer:
+    routes_to: [launch-deputy]
+    escalates_to: [launch-chief]
+
+  # Tier 1E
+  commercial-strategist:
+    routes_to: [followup-specialist, live-post-pitch-specialist, recording-vip-specialist]
+    escalates_to: [commercial-reviewer]
+  bonus-architect:
+    routes_to: [commercial-strategist]
+    escalates_to: [commercial-reviewer]
+  followup-specialist:
+    escalates_to: [commercial-reviewer]
+  recording-vip-specialist:
+    escalates_to: [commercial-reviewer]
+  live-post-pitch-specialist:
+    escalates_to: [commercial-reviewer]
+  commercial-reviewer:
+    routes_to: [launch-deputy]
+    escalates_to: [launch-chief]
+
+  # Tier 1F
+  metrics-analyst:
+    routes_to: [diagnostics-specialist]
+    escalates_to: [launch-chief]
+  diagnostics-specialist:
+    routes_to: [launch-chief]
+    escalates_to: [launch-chief]
+  checklist-manager:
+    collaborates_with: [all]
+    escalates_to: [launch-chief]
+  crm-operations-specialist:
+    collaborates_with: [commercial-strategist, followup-specialist, traffic-data-planner]
+    escalates_to: [launch-chief]
+  team-operations-planner:
+    collaborates_with: [strategic-planner, checklist-manager]
+    escalates_to: [launch-chief]
+  decision-notebook-specialist:
+    collaborates_with: [metrics-analyst, diagnostics-specialist]
+    escalates_to: [launch-chief]
+
+  # Tier 1G
+  offer-architect:
+    routes_to: [pitch-organizer, bonus-architect, ticket-strategist]
+    escalates_to: [launch-chief]
+  ticket-strategist:
+    routes_to: [page-copy-specialist]
+    escalates_to: [launch-chief]
+  post-event-product-planner:
+    escalates_to: [launch-chief]
+  upgrade-designer:
+    routes_to: [ticket-strategist]
+    escalates_to: [launch-chief]
+  page-builder-coordinator:
+    escalates_to: [launch-chief]
+
+cross_squad:
+  - squad: page-forge
+    trigger: "page-builder-coordinator precisa construir pagina"
+    agents_used: [iris]
+  - squad: copy-squad
+    trigger: "copy profundo ou especializado"
+    agents_used: [copy-chief, gary-halbert, eugene-schwartz]
+  - squad: ads
+    trigger: "execucao de trafego pago"
+    agents_used: [bolt]
+  - squad: storytelling
+    trigger: "arco narrativo profundo ou pitch script"
+    agents_used: [story-chief, oren-klaff]
+
+settings:
+  activation:
+    prefix: "launch-paid"
+    example: "@launch-paid:launch-chief"
+  methodology:
+    source: "ebook_lancamento_pago_baldan.md"
+    rules:
+      - "Promessa com formula: tempo curto + acao pratica + entrega visivel"
+      - "Verbos proibidos: aprender, descobrir, faturar, desbloquear, conquistar, segredos"
+      - "Evento 2 dias: 80% conteudo, 20% pitch"
+      - "Pitch em 3 etapas: ancoragem (D1 10:30), oferta (D2 11:30), abertura (D2 16:40)"
+      - "Conteudo retorna APOS pitch final (regra de ouro)"
+      - "Ingresso R$19-49 como qualificador, nao como lucro"
+      - "Comercial pos-pitch: ate 11 toques, cada um com razao nova"
+      - "Bonus escalonados que respondem objecoes reais"
+      - "Single Shot remarketing: aparece uma vez, depois acaba"
+      - "Lembrete inteligente: beneficio, nao contagem regressiva"
+      - "Modelo simples vence modelo complexo"

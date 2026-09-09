@@ -1,0 +1,262 @@
+{
+  "_doc": "REGISTRO DE INTERFACES. A pergunta que decide tudo: a fala MENCIONA a plataforma ou MOSTRA uma AÇÃO dentro dela? Menção → nível 1 (mini-selo, 40q, sem painel). Ação → nível 3 (painel motion). Nunca desenhe uma interface porque o nome do app apareceu.",
+  "version": "2.2",
+  "test": {
+    "mention": {
+      "signals": [
+        "o nome do app é objeto de uma frase de contexto ('eu uso WhatsApp', 'lá no Instagram')",
+        "não há verbo de ação com consequência",
+        "nenhum dado é citado"
+      ],
+      "do": "ACENTO DE PASSAGEM (ver acento_de_passagem): a variante motion da plataforma entra pequena, 40 a 60 quadros, sobre a cena que ja esta no palco, e sai — sem trocar o molde principal. Nao e mais \"mini-selo e nada mais\": o mini-selo sozinho e o caso mais pobre, para quando nem a variante cabe.",
+      "dont": "painel em tamanho cheio, troca de cena, mais de um acento no mesmo beat"
+    },
+    "show": {
+      "signals": [
+        "há verbo de ação com consequência ('mandei e ele respondeu', 'configurei o orçamento')",
+        "há sequência temporal ('cinco minutos depois')",
+        "há dado citado (valor, contagem, horário)",
+        "a fala descreve o que a pessoa VÊ na tela"
+      ],
+      "do": "painel motion da entrada correspondente, nível 3; só a ação narrada acontece; contexto entra pronto",
+      "dont": "mostrar dados reais inventados; mais de uma ação por cena"
+    }
+  },
+  "frame_rule": "Moldura de celular só quando a fala diz 'no celular', 'na tela dela', 'a pessoa abre'. Senão, painel solto (mais espaço para a ação).",
+  "symbol_rule": "No vídeo, interface é SÍMBOLO: todo texto vira barra; só o dado que a fala lê vira texto real. A versão completa (#s04g) é para landing, site e deck.",
+  "platforms": {
+    "whatsapp": {
+      "mention": "mini-selo",
+      "show": [
+        "interface.chat.text.v1",
+        "interface.chat.audio.v1"
+      ]
+    },
+    "telegram": {
+      "mention": "mini-selo",
+      "show": [
+        "interface.chat.audio.v1"
+      ]
+    },
+    "instagram": {
+      "mention": "mini-selo",
+      "show": [
+        "interface.instagram.profile.v1",
+        "interface.instagram.feed.v1",
+        "interface.instagram.highlights.v1",
+        "interface.social.post.v1",
+        "interface.comments.v1",
+        "interface.poll.v1"
+      ]
+    },
+    "email": {
+      "mention": "ícone mail",
+      "show": [
+        "interface.email.v1"
+      ]
+    },
+    "calendario": {
+      "mention": "ícone calendar",
+      "show": [
+        "interface.calendar.v1",
+        "interface.schedule.v1"
+      ]
+    },
+    "crm": {
+      "mention": "mini-selo",
+      "show": [
+        "interface.leads.v1",
+        "interface.data-table.v1"
+      ]
+    },
+    "busca": {
+      "mention": "ícone search",
+      "show": [
+        "interface.search.v1"
+      ]
+    },
+    "gerenciador_de_anuncios": {
+      "mention": "mini-selo",
+      "show": [
+        "interface.adsmanager.panel.v1",
+        "interface.metrics.v1",
+        "interface.chart.growth.v1"
+      ]
+    },
+    "checkout": {
+      "mention": "ícone credit-card",
+      "show": [
+        "interface.checkout.v1",
+        "interface.confirmation.v1"
+      ]
+    },
+    "formulario": {
+      "mention": "—",
+      "show": [
+        "interface.form.v1",
+        "interface.mobile.form.v1"
+      ]
+    },
+    "dashboard": {
+      "mention": "—",
+      "show": [
+        "interface.metrics.v1",
+        "interface.data-table.v1",
+        "interface.goal.v1"
+      ]
+    },
+    "ai_chat_zeus": {
+      "mention": "mini-selo Zeus",
+      "show": [
+        "interface.chat.audio.v1",
+        "interface.progress.v1"
+      ]
+    },
+    "area_de_membros": {
+      "mention": "—",
+      "show": [
+        "interface.player.v1"
+      ]
+    },
+    "videochamada": {
+      "mention": "—",
+      "show": [
+        "interface.videocall.v1"
+      ]
+    }
+  },
+  "examples": [
+    {
+      "speech": "Eu uso WhatsApp.",
+      "decision": "menção",
+      "resource": "mini-selo",
+      "level": 1
+    },
+    {
+      "speech": "Eu mandei uma mensagem e ele respondeu cinco minutos depois.",
+      "decision": "ação (sequência temporal)",
+      "resource": "interface.chat.text.v1",
+      "level": 3
+    },
+    {
+      "speech": "Você abre o Telegram e fala: como estão minhas campanhas?",
+      "decision": "ação (verbo + fala dentro do app)",
+      "resource": "interface.chat.audio.v1",
+      "level": 3
+    },
+    {
+      "speech": "Tem que ter lá no feed pelo menos 12 conteúdos.",
+      "decision": "ação (dado + objeto da tela)",
+      "resource": "interface.instagram.feed.v1",
+      "level": 4
+    }
+  ],
+  "versao": "3.3",
+  "acento_de_passagem": {
+    "_doc": "A nota que nao pertence a escala. Quando a fala TOCA numa plataforma sem que o beat seja sobre ela, a variante motion entra como acento: rapida, pequena, por cima, e sai. E o que faltava para as 31 variantes serem recrutadas fora das cenas de interface.",
+    "quando": "a fala menciona plataforma, mensagem, notificacao, e-mail, chat, agenda, pagamento, perfil ou metrica de passagem, dentro de um beat cujo assunto e outro",
+    "como": {
+      "densidade": 1,
+      "duracao_quadros": [
+        40,
+        60
+      ],
+      "escala": "0,55 a 0,7 do tamanho normal do painel (o painel de 700 entra a 385-490)",
+      "posicao": "canto superior direito ou inferior direito do palco, com 24 de margem; nunca no centro (o centro e do molde principal)",
+      "opacidade": 1,
+      "entrada": "reveal 12q, y -16 para 0",
+      "saida": "exit 12q, y 0 para -12",
+      "cor": "o acento NAO leva o portador: o portador continua no molde principal. Se o acento precisar de cor, o molde principal cede o anel por 24q e retoma"
+    },
+    "limites": [
+      "um acento por beat",
+      "nunca dois acentos seguidos em beats vizinhos",
+      "o acento nunca cobre rotulo nem numero do molde principal",
+      "se o acento precisa de mais de 60 quadros para ser entendido, o beat era sobre a plataforma: promova para cena de interface (densidade 3)",
+      "o acento nao entra em cena de densidade 4 ou 5 (o palco esta cheio)"
+    ],
+    "catalogo_de_acentos": [
+      {
+        "fala": "me manda no WhatsApp",
+        "acento": "interface.chat.text.v1",
+        "recorte": "um balao so, 320 de largura"
+      },
+      {
+        "fala": "caiu a notificacao",
+        "acento": "interface.notification.v1",
+        "recorte": "um cartao glass de 380"
+      },
+      {
+        "fala": "chegou no e-mail",
+        "acento": "interface.email.v1",
+        "recorte": "remetente e assunto, sem corpo"
+      },
+      {
+        "fala": "ele respondeu por audio",
+        "acento": "interface.chat.audio.v1",
+        "recorte": "um balao com a onda, 340"
+      },
+      {
+        "fala": "olha lá no perfil",
+        "acento": "interface.instagram.profile.v1",
+        "recorte": "avatar com anel e as 3 metricas, 360"
+      },
+      {
+        "fala": "aparece no feed dela",
+        "acento": "interface.instagram.feed.v1",
+        "recorte": "3x2 de miniaturas, 300"
+      },
+      {
+        "fala": "comentario chegou",
+        "acento": "interface.comments.v1",
+        "recorte": "uma linha de comentario, 360"
+      },
+      {
+        "fala": "a pessoa pesquisa seu nome",
+        "acento": "interface.search.v1",
+        "recorte": "campo pill com o cursor, 340"
+      },
+      {
+        "fala": "ja tem 3 sessoes marcadas",
+        "acento": "interface.schedule.v1",
+        "recorte": "3 blocos de horario, 300"
+      },
+      {
+        "fala": "entrou a venda",
+        "acento": "interface.confirmation.v1",
+        "recorte": "check em anel, 200"
+      },
+      {
+        "fala": "pagou no cartao",
+        "acento": "interface.checkout.v1",
+        "recorte": "botao pill com o valor, 320"
+      },
+      {
+        "fala": "o numero subiu",
+        "acento": "interface.metrics.v1",
+        "recorte": "um KPI so, 240"
+      },
+      {
+        "fala": "a lista ta enchendo",
+        "acento": "interface.leads.v1",
+        "recorte": "3 linhas com avatar, 360"
+      },
+      {
+        "fala": "ele ligou o piloto automatico",
+        "acento": "interface.toggles.v1",
+        "recorte": "um toggle com rotulo, 280"
+      },
+      {
+        "fala": "ta rodando agora",
+        "acento": "interface.progress.v1",
+        "recorte": "barra com sparkles, 320"
+      },
+      {
+        "fala": "no celular dela",
+        "acento": "interface.mobile.notification.v1",
+        "recorte": "moldura 300 cortada em 200 de altura"
+      }
+    ],
+    "promocao": "se a fala descreve a ACAO dentro da plataforma (verbo com consequencia, sequencia temporal, dado citado), nao e acento: e cena de interface em densidade 3. O teste de mencao x acao continua valendo — o acento e para a mencao, que antes nao tinha peca nenhuma."
+  }
+}

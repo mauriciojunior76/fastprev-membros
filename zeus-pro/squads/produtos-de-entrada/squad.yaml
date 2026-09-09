@@ -1,0 +1,56 @@
+# Squad Produtos de entrada do ZEUS PRO.
+# Genérico de propósito: ele aprende o jeito do dono com o uso, não vem
+# pré-calibrado com o jeito de ninguém.
+
+id: produtos-de-entrada
+nome: "Produtos de entrada"
+descrição: >
+  Cria e estrutura produto de entrada: identificar problema específico, validar ideia, montar oferta, definir entrega e desenhar a esteira.
+versão: "1.0.0"
+status: ativo
+
+gatilhos:
+  palavras: [produto de entrada, produto barato, infoproduto, produto novo, esteira, oferta, baixo ticket, low ticket]
+  contexto: >
+    Pedido para criar, validar ou reposicionar um produto, especialmente o de menor preço da esteira.
+peso_mínimo: 41
+
+lead: arquiteto-de-produto
+agentes:
+  - arquiteto-de-produto
+  - designer-de-oferta
+  - validador
+
+leitura_obrigatória:
+  - memory/PERFIL.md
+  - memory/publico.md
+  - memory/produtos/
+  - memory/objetivos.md
+  - squads/produtos-de-entrada/MEMORY.md
+  - squads/produtos-de-entrada/FRAMEWORKS.md
+
+entregáveis:
+  - definição de produto
+  - estrutura de oferta
+  - plano de entrega
+  - esteira de preços
+
+exige_confirmação:
+  - publicar qualquer coisa
+  - enviar mensagem a terceiro
+  - gastar dinheiro
+
+nunca_faz:
+  - inventar dado sobre o usuário, o público ou o resultado
+  - prometer o que o dono não pode sustentar
+  - declarar entrega pronta sem ter verificado
+
+qualidade:
+  checklist: squads/produtos-de-entrada/CHECKLIST.md
+  nota_mínima: 60
+  máximo_de_refações: 2
+
+aprendizado:
+  arquivo: squads/produtos-de-entrada/MEMORY.md
+  teto_caracteres: 8000
+  ler_antes_de_agir: true

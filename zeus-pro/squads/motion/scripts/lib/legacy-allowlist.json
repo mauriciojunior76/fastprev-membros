@@ -1,0 +1,48 @@
+{
+  "_comment": "Reforma do motion design system, 19/08/2026. Duas listas congeladas: NUNCA adicionar composicao nova aqui (composicao nova SEM choreography.ts falha no pre-render-validate). Item so sai da lista noSpec quando ganha um choreography.ts de verdade (ex.: ZeusTrafegoReels na fase 4 da reforma).",
+  "_politica_de_migracao": "MIGRACAO NO TOQUE, decidida na Fase 6 da auditoria audiovisual (27/08/2026). As 29 composicoes abaixo NAO migram em massa: o custo e alto (29 spec de coreografia pra escrever) e a maior parte nunca sera re-renderizada. Regra: composicao legada so ganha choreography.ts (e sai desta lista) quando for RE-RENDERIZADA por demanda real do o dono do canal. Nunca renderizou de novo, fica como esta pra sempre. O padrao 'ci() copiado por valor' (helper local reimplementando o que ja existe em core/primitives.ts) e intocado nestas 29: e proibido em composicao NOVA (o lint ja cobre isso), mas nao e defeito a corrigir aqui.",
+  "noSpec": [
+    "Ads007",
+    "AgenteArquiteto",
+    "AgenteArquitetoV2",
+    "AiDemo",
+    "ArrowExplainer",
+    "CheckoutDemo",
+    "Conhecimento",
+    "ConhecimentoBrian",
+    "DataStory",
+    "DeviceDemo",
+    "FabricaMentores",
+    "GroovyMotion",
+    "ExemploCaptura",
+    "ExemploMotion",
+    "ExemploUltraPremium",
+    "MaquinaMentoria",
+    "MaquinaNeoanalogiaca",
+    "MaquinaNeoanalogiaca2",
+    "MentoriaEstrutura21Dias",
+    "MentoriaPitch",
+    "MotionMassofy",
+    "PriceReveal",
+    "ProblemSolution",
+    "RaioXLucroAzul",
+    "SquadPromo",
+    "SquadPromoExemplo",
+    "TextReveal",
+    "TrafegoIA",
+    "TrafegoIAAzulRoxo",
+    "VideoMixer"
+  ],
+  "deprecatedComponentsUsage": {
+    "_comment": "modules/motion-primitives/FadeIn|SlideIn|ScaleIn. Grep em 19/08/2026: ZERO composicoes usam hoje (confirmado, orfaos). Allowlist vazia de proposito: qualquer uso, legado ou novo, e sinal de que deveria ser entryFrom/exitTo do nucleo.",
+    "allowed": []
+  },
+  "sfxEvents": {
+    "_leia": "Compositions que ainda nao declaram SFX_EVENTS nos componentes. Lista CONGELADA: peca nova nasce declarando, e as antigas saem daqui conforme forem migradas. Enquanto estiverem aqui, o check de som nao bloqueia o render delas. As tres pecas do o dono do canal (Hamilton, ZeusTrafego, Bernardo) sairam desta lista em 05/09/2026: passaram a declarar som, entao o gate cobra delas.",
+    "allowed": [
+      "AgenteArquiteto",
+      "MotionMassofy",
+      "NeoAnalogiaca"
+    ]
+  }
+}

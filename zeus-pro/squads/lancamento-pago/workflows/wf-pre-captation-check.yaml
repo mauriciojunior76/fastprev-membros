@@ -1,0 +1,59 @@
+workflow:
+  id: wf-pre-captation-check
+  name: "Validacao Pre-Captacao"
+  version: "1.0.0"
+  description: |
+    Verifica todos os 10 itens do checklist pre-captacao.
+    Cada item e roteado ao agente responsavel para confirmacao.
+    Bloqueante: nao iniciar captacao sem aprovacao.
+  trigger: "*pre-check"
+  entry_agent: checklist-manager
+  estimated_duration: "30-60 minutos"
+  type: parallel-validation
+
+phases:
+  - id: load_checklist
+    name: "Carregar Checklist"
+    agent: checklist-manager
+    description: "Carregar os 10 itens do checklist pre-captacao"
+
+  - id: validate_items
+    name: "Validar Itens"
+    depends_on: [load_checklist]
+    parallel: true
+    steps:
+      - item: "Promessa com imagem mental"
+        validator: promise-architect
+      - item: "Headline de execucao"
+        validator: headline-specialist
+      - item: "Pagina com 12 secoes"
+        validator: page-copy-specialist
+      - item: "Lote inicial atraente"
+        validator: ticket-strategist
+      - item: "Plano criativos C0-C4"
+        validator: creative-planner
+      - item: "Pixel e eventos configurados"
+        validator: traffic-data-planner
+      - item: "Checkout testado"
+        validator: page-builder-coordinator
+      - item: "CRM pronto"
+        validator: crm-operations-specialist
+      - item: "Equipe alinhada"
+        validator: team-operations-planner
+      - item: "Metas por fase"
+        validator: metrics-analyst
+
+  - id: compile_results
+    name: "Compilar Resultados"
+    agent: checklist-manager
+    depends_on: [validate_items]
+    description: "Compilar pass/fail de cada item"
+
+  - id: gate
+    name: "Gate de Aprovacao"
+    agent: launch-deputy
+    depends_on: [compile_results]
+    checkpoint:
+      gate: "Todos os 10 itens aprovados"
+      blocker: true
+      on_fail: "Listar itens pendentes com responsaveis e prazos"

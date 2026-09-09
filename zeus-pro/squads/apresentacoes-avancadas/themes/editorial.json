@@ -1,0 +1,39 @@
+{
+  "id": "editorial",
+  "name": "Editorial",
+  "description": "Revista premium. Serifa + sans, contraste preto/branco, acento vermelho.",
+  "mood": ["elegante", "magazine", "sofisticado", "letrado"],
+  "tokens": {
+    "bg": "#ffffff",
+    "bg-alt": "#f8f8f8",
+    "bg-card": "#fafafa",
+    "accent-1": "#000000",
+    "accent-2": "#c41e3a",
+    "accent-3": "#666666",
+    "text": "#000000",
+    "text-muted": "#444444",
+    "text-label": "#c41e3a",
+    "border": "rgba(0, 0, 0, 0.15)",
+    "divider": "rgba(0, 0, 0, 0.08)"
+  },
+  "fonts": {
+    "title": "Playfair Display",
+    "title-weight": "900",
+    "body": "Inter",
+    "body-weight": "400",
+    "mono": "IBM Plex Mono"
+  },
+  "effects": {
+    "grain": false,
+    "grain-opacity": 0,
+    "blur-reveal": true,
+    "word-by-word": false,
+    "motion": "cubic-bezier(0.25, 0.1, 0.25, 1)",
+    "motion-profile": "gentle"
+  },
+  "icons": {
+    "style": "static",
+    "stroke": 1.2,
+    "library": "phosphor"
+  }
+}

@@ -1,0 +1,206 @@
+{
+  "_doc": "Especificação dos números do Zeus Reels (peça mais usada). Painel: #s06-numeros · guia §11. Todo número é Inter com tabular-nums e sempre acompanhado de rótulo com unidade.",
+  "base": {
+    "font": "Inter",
+    "numeric": "tabular-nums",
+    "color": "#1d1d1f",
+    "label": "Inter 600, caixa alta, letter-spacing .08em; corpo pela escala de rótulos (30 palco · 24 pill/esquema · 18 meta) — nunca 17 ou 20; pill de rótulo 48 de altura, padding 20, texto 24 — unidade de número em foco: mínimo 24; rótulo de elemento recuado pode usar 18",
+    "label_gap": 24,
+    "rule": "número nunca aparece sem rótulo com unidade"
+  },
+  "scale_by_role": {
+    "protagonista_sozinho": 200,
+    "com_rotulo_grande": 150,
+    "em_par_ou_trio": 120,
+    "hora_duracao": 96,
+    "secundario_data": 88,
+    "dentro_de_painel": 64,
+    "kpi": 34,
+    "metadado": 24,
+    "min_se_falado": 22
+  },
+  "types": [
+    {
+      "id": "contagem",
+      "examples": [
+        "12 conteúdos",
+        "3 pilares",
+        "7 leads"
+      ],
+      "size": [
+        160,
+        200
+      ],
+      "weight": 900,
+      "tracking": "-.04em",
+      "behavior": "conta",
+      "note": "a quantidade é o argumento"
+    },
+    {
+      "id": "dinheiro",
+      "examples": [
+        "R$ 15.000",
+        "R$ 2.997",
+        "R$ 4,10"
+      ],
+      "size": [
+        120,
+        160
+      ],
+      "weight": 900,
+      "tracking": "-.04em",
+      "behavior": "conta se a evolução é o argumento; preço de oferta revela",
+      "prefix": {
+        "text": "R$",
+        "size_ratio": 0.4,
+        "weight": 700,
+        "color": "#6e6e73",
+        "align": "baseline"
+      },
+      "format": "milhar com ponto, sem centavos (centavos só se reais)"
+    },
+    {
+      "id": "hora_duracao",
+      "examples": [
+        "05:00",
+        "48h",
+        "04:12",
+        "30min"
+      ],
+      "size": [
+        76,
+        96
+      ],
+      "weight": 700,
+      "tracking": "-.02em",
+      "behavior": "cronômetro em tempo real (linear); duração citada revela",
+      "format": "2 dígitos sempre"
+    },
+    {
+      "id": "data_ano",
+      "examples": [
+        "2024",
+        "2026",
+        "MARÇO"
+      ],
+      "size": [
+        76,
+        88
+      ],
+      "weight": 700,
+      "tracking": "-.02em",
+      "behavior": "revela (nunca conta)",
+      "format": "ano com 4 dígitos; mês por nome no rótulo"
+    },
+    {
+      "id": "percentual_multiplo",
+      "examples": [
+        "184%",
+        "+18%",
+        "3,8x"
+      ],
+      "size": [
+        110,
+        150
+      ],
+      "weight": 900,
+      "tracking": "-.03em",
+      "behavior": "conta quando é resultado medido",
+      "suffix": {
+        "size_ratio": 0.4,
+        "color": "#6e6e73"
+      },
+      "format": "% colado; múltiplo com x minúsculo; sinal só em variação"
+    },
+    {
+      "id": "grande_impacto",
+      "examples": [
+        "48,2k",
+        "1.284"
+      ],
+      "size": [
+        110,
+        200
+      ],
+      "weight": [
+        700,
+        900
+      ],
+      "tracking": "-.03em",
+      "behavior": "conta ou revela conforme o beat",
+      "format": "k só acima de 10.000 e nunca em dinheiro"
+    }
+  ],
+  "format_ptbr": [
+    "milhar com ponto, decimal com vírgula",
+    "dinheiro sem centavos por padrão",
+    "k só > 10.000, nunca em dinheiro; 'mil' escrito só na legenda",
+    "hora com 2 dígitos; 48h, 30min, 5min",
+    "percentual colado (184%); múltiplo 3,8x",
+    "data com ano de 4 dígitos; mês por nome em caixa alta no rótulo",
+    "ordinal com º (1º)",
+    "zero à esquerda só em hora e em contagem em curso (08 de 12)",
+    "na legenda, sempre algarismo (nunca 'doze')"
+  ],
+  "motion": {
+    "conta": {
+      "easing": "settleSoft",
+      "from": 0,
+      "arrive": "6 frames antes do fim do gesto",
+      "duration_frames": {
+        "<=20": 40,
+        "<=100": 50,
+        ">100": 60
+      },
+      "rounding": "Math.round no render",
+      "start": "t(palavra do número) − 6 frames"
+    },
+    "revela": {
+      "properties": "opacity 0→1 + blur 6→0",
+      "duration_frames": 12
+    },
+    "tempo_real": {
+      "easing": "linear",
+      "use": "cronômetro, regressiva, playback"
+    },
+    "max_duration_frames": 60
+  },
+  "sound": {
+    "contagem_em_curso": {
+      "weight": 0,
+      "note": "silêncio obrigatório"
+    },
+    "numero_assenta": {
+      "weight": 5,
+      "category": "ding",
+      "dB": -14,
+      "sfx_event": "numero-assenta"
+    }
+  },
+  "color": {
+    "default": "#1d1d1f",
+    "allowed": [
+      "traço de espectro sob o valor protagonista: largura 95% da caixa do NÚMERO (prefixo R$/% fora da medição), centrado, 12px abaixo, só após assentar",
+      "contorno do cartão que contém o número em foco"
+    ],
+    "forbidden": [
+      "número colorido",
+      "gradiente no dígito",
+      "verde/vermelho fora de juízo explícito certo/errado"
+    ]
+  },
+  "focus": {
+    "trio": "máx. 3 números por cena; só o citado ganha cartão branco + contorno + corpo maior (110 vs 76); os outros gray400"
+  },
+  "fallback": [
+    "fala não deu o número → mostrar rótulo e omitir o valor; nunca inventar",
+    "número com mais de 7 dígitos → abreviar em k/mi no palco e escrever completo na legenda",
+    "dois números no mesmo beat → um protagonista, o outro em 60% do corpo"
+  ],
+  "reuse": {
+    "contagem": "grade com contagem do molde 04: células 96, raio 24, respiro 18, 4 colunas",
+    "data_percentual": "linha do tempo do esquema 04c: trilho 6, ponto de partida 24, marco atual 44 com anel",
+    "hora": "par antes/depois com ícone em círculo + pill + conector com seta",
+    "trio": "cartões iguais 274×208, gap 24, regra do foco"
+  }
+}

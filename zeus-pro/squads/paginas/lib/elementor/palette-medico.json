@@ -1,0 +1,12 @@
+{
+  "gradient1": "#0077B6",
+  "gradient2": "#00B4D8",
+  "accentLight": "#90E0EF",
+  "shadowColor": "rgba(0,180,216,0.35)",
+  "bgLight": "#F0F7FF",
+  "bgDark": "#06101C",
+  "bgAlt": "#0D1B2E",
+  "textDark": "#1E2A3A",
+  "textLight": "#E0EFF8",
+  "textMuted": "#6B8299"
+}

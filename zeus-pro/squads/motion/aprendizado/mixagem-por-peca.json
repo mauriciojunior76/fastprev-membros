@@ -1,0 +1,26 @@
+{
+  "_leia": "Como cada peca se mixa: qual estilo e qual trilha. Existe porque o verificador de nivel precisa medir a peca com o som DELA. Antes ele pegava o mp4 mais novo de uma pasta comum e a trilha chutada, o que fazia revisar o Hamilton medir o video do Paulo. Peca nova entra aqui na mesma sessao em que ganha som.",
+  "atualizado_em": "2026-09-05",
+  "pecas": {
+    "PauloRuizReels": {
+      "estilo": "apple-conceitual",
+      "trilha": "instrumental-videos.mp3",
+      "nota": "trilha escolhida por ele em 04/09/2026, entre tres candidatas"
+    },
+    "HamiltonZeusReels": {
+      "estilo": "apple-conceitual",
+      "trilha": "black-banner-ascend.mp3",
+      "nota": "trilha aprovada de ouvido na v18, ja entregue"
+    },
+    "ZeusTrafegoReels": {
+      "estilo": "popular",
+      "trilha": null,
+      "nota": "estilo Popular e so voz, por regra do proprio estilo"
+    },
+    "BernardoDepoimentoReels": {
+      "estilo": "depoimento",
+      "trilha": null,
+      "nota": "depoimento e so voz: musica de fundo competiria com a fala do depoente"
+    }
+  }
+}

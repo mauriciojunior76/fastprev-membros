@@ -1,0 +1,45 @@
+{
+  "name": "zeus-show",
+  "version": "1.0.0",
+  "description": "Squad de 52 agentes para criar apresentações sob medida para mentores. Prelúdio, aula e ebook com memória persistente e 6 temas visuais.",
+  "main": "scripts/new-presentation.js",
+  "scripts": {
+    "install-squad": "node scripts/install.js",
+    "new": "node scripts/new-presentation.js",
+    "validate": "node scripts/validate-output.js",
+    "deploy": "node scripts/deploy.js",
+    "gen-agents": "node scripts/gen-agents.js --force"
+  },
+  "keywords": [
+    "apresentacao",
+    "preludio",
+    "aula",
+    "ebook",
+    "slides",
+    "mentores",
+    "ai-squad",
+    "aios",
+    "synkra",
+    "exemplo"
+  ],
+  "author": "um mentor de referencia / Synkra AIOS",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/seu-usuario/zeus-show.git"
+  },
+  "bugs": {
+    "url": "https://github.com/seu-usuario/zeus-show/issues"
+  },
+  "homepage": "https://seu-dominio.com.br",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0",
+    "playwright": "^1.42.0",
+    "inquirer": "^9.2.0",
+    "chalk": "^5.3.0",
+    "node-fetch": "^3.3.2"
+  }
+}

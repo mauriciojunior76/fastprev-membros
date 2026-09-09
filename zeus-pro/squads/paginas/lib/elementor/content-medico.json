@@ -1,0 +1,156 @@
+{
+  "title": "Método R1 — Residência Médica",
+  "fonts": {
+    "display": "Inter",
+    "body": "Inter",
+    "accent": "DM Sans"
+  },
+  "sections": {
+    "alert-banner": {
+      "text": "🩺 ÚLTIMA TURMA DE 2025 — MAIS DE 500 MÉDICOS APROVADOS COM ESTE MÉTODO"
+    },
+    "hero": {
+      "logoUrl": "",
+      "title": "Passe na Residência Médica em 12 Meses — Mesmo Estudando Entre Plantões",
+      "subtitle": "O método que treina sua mente para responder questões com velocidade e precisão, sem depender de memorização bruta. Validado por mais de 500 aprovados em hospitais públicos e privados.",
+      "ctaText": "QUERO MINHA VAGA AGORA",
+      "ctaUrl": "#formulario",
+      "bgImageUrl": "",
+      "heroImageUrl": ""
+    },
+    "pain-points": {
+      "title": "Você se identifica com algum desses problemas?",
+      "items": [
+        {
+          "icon": "fas fa-clock",
+          "title": "Sem tempo para estudar",
+          "description": "Você sai do plantão exausto, abre o livro e apaga. Tenta estudar no dia de folga mas a cabeça não para. O tempo é o seu maior inimigo."
+        },
+        {
+          "icon": "fas fa-brain",
+          "title": "Método que não funciona",
+          "description": "Já leu tratados inteiros, fez cursinhos, mas na hora da prova trava. Você estuda muito e aprova pouco — o problema não é dedicação, é método."
+        },
+        {
+          "icon": "fas fa-chart-bar",
+          "title": "Pontuação estagnada",
+          "description": "Simulado após simulado, a nota não sobe. Você erra as mesmas questões, não sabe o que está faltando e sente que está andando em círculos."
+        },
+        {
+          "icon": "fas fa-fire",
+          "title": "Burnout e desistência",
+          "description": "O cansaço está pesando. Você questiona se vale a pena continuar. A residência que sempre quis parece cada vez mais distante."
+        }
+      ]
+    },
+    "features": {
+      "title": "O que você vai conquistar com o Método R1",
+      "subtitle": "Tecnologia de aprendizado acelerado aplicada à medicina. Cada recurso foi desenvolvido para o médico que tem pouco tempo e resultados urgentes.",
+      "ctaText": "GARANTIR MINHA VAGA",
+      "ctaUrl": "#formulario",
+      "items": [
+        {
+          "imageUrl": "",
+          "title": "Cronograma Adaptativo",
+          "description": "Plano de estudos que se ajusta à sua escala de plantão automaticamente"
+        },
+        {
+          "imageUrl": "",
+          "title": "8.000 Questões Comentadas",
+          "description": "Banco atualizado com questões das principais provas de residência do Brasil"
+        },
+        {
+          "imageUrl": "",
+          "title": "Mentoria com Aprovados",
+          "description": "Sessões ao vivo com médicos aprovados nas residências mais concorridas"
+        },
+        {
+          "imageUrl": "",
+          "title": "Simulados Especializados",
+          "description": "Treino específico por especialidade com análise de desempenho detalhada"
+        }
+      ]
+    },
+    "how-it-works": {
+      "title": "4 Passos para a sua Aprovação",
+      "steps": [
+        {
+          "imageUrl": "",
+          "title": "Diagnóstico Preciso",
+          "description": "Avaliamos sua rotina, nível atual e pontos críticos para montar um plano sob medida"
+        },
+        {
+          "imageUrl": "",
+          "title": "Plano Personalizado",
+          "description": "Você recebe um cronograma semana a semana adaptado à sua escala real de trabalho"
+        },
+        {
+          "imageUrl": "",
+          "title": "Imersão Acelerada",
+          "description": "Módulos intensivos por especialidade com repetição espaçada e revisão ativa"
+        },
+        {
+          "imageUrl": "",
+          "title": "Prova e Aprovação",
+          "description": "Simulados finais com correção individual e preparação psicológica para o dia da prova"
+        }
+      ],
+      "detailsHtml": ""
+    },
+    "offer": {
+      "title": "Tudo que você recebe ao entrar",
+      "items": [
+        {
+          "icon": "fas fa-video",
+          "title": "Aulas por Especialidade",
+          "bulletPoints": ["Clínica Médica, Cirurgia, Pediatria, GO e Saúde Pública", "Mais de 400 horas de conteúdo gravado", "Acesso vitalício — assista quantas vezes precisar"]
+        },
+        {
+          "icon": "fas fa-question-circle",
+          "title": "Banco de 8.000 Questões",
+          "bulletPoints": ["Todas as principais provas dos últimos 10 anos", "Comentários por professores especialistas", "Sistema de revisão automática por desempenho"]
+        },
+        {
+          "icon": "fas fa-users",
+          "title": "Mentoria em Grupo",
+          "bulletPoints": ["4 sessões ao vivo por mês com Dr. Carlos Mendes", "Plantão de dúvidas via WhatsApp", "Grupo exclusivo de aprovados e aprovandos"]
+        },
+        {
+          "icon": "fas fa-file-medical",
+          "title": "Simulados e Correção",
+          "bulletPoints": ["Simulados mensais no formato das provas reais", "Análise de desempenho individualizada", "Relatório de evolução semana a semana"]
+        }
+      ],
+      "anchorLabel": "Valor total do programa",
+      "anchorPrice": "R$ 9.764",
+      "savingsLabel": "Você economiza",
+      "savingsValue": "R$ 6.200",
+      "investLabel": "Você investe apenas",
+      "installmentPrefix": "12x de",
+      "priceCurrency": "R$",
+      "installmentValue": "297",
+      "cashLabel": "Ou à vista por apenas",
+      "cashPrice": "R$ 2.497",
+      "cashBonus": "Economize R$ 1.067 no pagamento à vista",
+      "guarantee": "7 dias de garantia — risco zero",
+      "ctaText": "GARANTIR MINHA VAGA NA ÚLTIMA TURMA",
+      "ctaUrl": "#formulario"
+    },
+    "bio": {
+      "name": "Dr. Carlos Mendes",
+      "title": "Aprovado em Cardiologia (InCor) e Clínica Médica (HC-FMUSP)",
+      "bio": "Plantões, estudos e aprovação. Passei por tudo isso. Fui reprovado na primeira tentativa, estudei do jeito errado por anos, e quase desisti. Quando mudei o método, fui aprovado em duas das residências mais concorridas do Brasil no mesmo ano. Hoje, mais de 500 médicos já foram aprovados usando o que aprendi. O Método R1 nasceu da minha dor — e foi construído para acabar com a sua.",
+      "imageUrl": ""
+    },
+    "cta-final": {
+      "title": "As vagas para a última turma de 2025 estão acabando.",
+      "subtitle": "Cada semana que passa é uma semana a menos de preparação. Não deixe mais um ano inteiro de espera por falta de decisão.",
+      "ctaText": "QUERO MINHA VAGA AGORA",
+      "ctaUrl": "#formulario"
+    },
+    "footer": {
+      "logoUrl": "",
+      "copyrightText": "© 2025 Método R1 — Todos os direitos reservados. Este produto não é afiliado ao CFM ou a nenhuma instituição de saúde pública."
+    }
+  }
+}

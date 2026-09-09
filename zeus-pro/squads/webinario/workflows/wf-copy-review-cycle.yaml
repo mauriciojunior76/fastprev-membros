@@ -1,0 +1,128 @@
+workflow:
+  id: wf-copy-review-cycle
+  name: "Ciclo de Revisao de Copy do Webinario"
+  version: "1.0.0"
+  description: |
+    Fluxo iterativo de revisao de copy.
+    Lupa revisa, identifica problemas, agente corrige, resubmete.
+    Maximo 3 iteracoes. Se 3 falhas, escala para Corte.
+  trigger: "*review-copy"
+  entry_agent: copy-reviewer
+  estimated_duration: "1-3 horas por peca"
+  type: iterative
+  max_iterations: 3
+
+  input_required:
+    - "Peca de copy para revisao (LP captura, LP vendas, emails, WhatsApp, ads)"
+    - "Briefing original ou promessa aprovada"
+    - "ICP e nivel de consciencia do publico"
+
+criteria:
+  universal:
+    - "Acentuacao perfeita em portugues (zero erros)"
+    - "Sem travessao (U+2014) em nenhum texto"
+    - "Tom compativel com o expert e o publico"
+    - "Promessa consistente com Big Idea aprovada"
+  by_type:
+    pagina_captura:
+      - "Headline com resultado concreto + tempo + mecanismo"
+      - "Subheadline que complementa (nao repete) a headline"
+      - "Bullets com beneficio real (nao features)"
+      - "CTA claro e unico"
+      - "Prova social presente"
+      - "Sem distracao (sem menu, sem links externos)"
+    pagina_vendas:
+      - "Headline de oferta forte"
+      - "Stack de valor com ancoragem"
+      - "Depoimentos relevantes"
+      - "FAQ que antecipa objecoes"
+      - "Multiplos CTAs ao longo da pagina"
+      - "Garantia visivel"
+    emails:
+      - "Subject line com curiosidade ou beneficio (nao clickbait vazio)"
+      - "Primeira frase gera vontade de ler a segunda"
+      - "CTA unico por email"
+      - "Cada email tem um objetivo claro"
+      - "Sequencia com progressao logica"
+    whatsapp:
+      - "Mensagens curtas (maximo 3 linhas por bloco)"
+      - "Tom conversacional (nao formal)"
+      - "Enquetes com opcoes claras"
+      - "Lembretes com beneficio (nao apenas data/hora)"
+    ads:
+      - "Gancho nos primeiros 3 segundos (video) ou primeira linha (texto)"
+      - "Angulo claro e especifico"
+      - "CTA compativel com o destino"
+      - "Sem promessas que a LP nao sustenta"
+
+iterations:
+  - id: iter_1
+    name: "Primeira Revisao"
+    steps:
+      - agent: copy-reviewer
+        action: "Revisar peca contra criterios universais + criterios do tipo"
+        output: "review-report-v1.md"
+        format:
+          - "APROVADO: itens que passam"
+          - "PROBLEMA: item > descricao > sugestao de correcao"
+          - "SCORE: nota 0-100"
+      - decision:
+          if_score_gte_80: "Aprovar. Fim do ciclo."
+          if_score_lt_80: "Enviar para correcao. Ir para iter_2."
+      - agent: "{agente_original}"
+        action: "Corrigir problemas identificados"
+        input: "review-report-v1.md"
+        output: "copy-v2-{peca}.md"
+
+  - id: iter_2
+    name: "Segunda Revisao"
+    depends_on: [iter_1]
+    condition: "score da iter_1 < 80"
+    steps:
+      - agent: copy-reviewer
+        action: "Revisar versao corrigida"
+        output: "review-report-v2.md"
+      - decision:
+          if_score_gte_80: "Aprovar. Fim do ciclo."
+          if_score_lt_80: "Enviar para correcao. Ir para iter_3."
+      - agent: "{agente_original}"
+        action: "Corrigir problemas remanescentes"
+        input: "review-report-v2.md"
+        output: "copy-v3-{peca}.md"
+
+  - id: iter_3
+    name: "Terceira Revisao (Final)"
+    depends_on: [iter_2]
+    condition: "score da iter_2 < 80"
+    steps:
+      - agent: copy-reviewer
+        action: "Revisao final"
+        output: "review-report-v3.md"
+      - decision:
+          if_score_gte_70: "Aprovar com ressalvas. Fim do ciclo."
+          if_score_lt_70: "ESCALAR para Corte (webinar-chief)."
+
+  escalation:
+    name: "Escalacao para Corte"
+    condition: "3 iteracoes com score < 70"
+    agents: [webinar-chief, copy-reviewer]
+    actions:
+      - "Webinar-chief avalia se o problema e de copy ou de briefing"
+      - "Se briefing: voltar para fase_1 (promessa/Big Idea)"
+      - "Se copy: recrutar especialista adicional do Copy Squad"
+      - "Reescrever do zero com novo agente"
+    output: "escalation-report-{peca}.md"
+
+quality_gates:
+  acentuacao:
+    description: "Verificacao automatica de acentuacao em portugues"
+    action: "Gate bloqueante. Nenhuma peca passa sem acentuacao perfeita."
+    agent: copy-reviewer
+  consistencia:
+    description: "Promessa da copy alinhada com Big Idea aprovada"
+    action: "Se desalinhada, rejeitar independente do score."
+    agent: copy-reviewer
+  tom:
+    description: "Tom compativel com perfil do expert"
+    action: "Se o expert e informal, copy nao pode ser corporativa. E vice-versa."
+    agent: copy-reviewer

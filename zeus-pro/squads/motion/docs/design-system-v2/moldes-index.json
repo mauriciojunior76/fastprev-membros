@@ -1,0 +1,1590 @@
+{
+  "_doc": "Índice combinável de moldes, esquemas e simulações. Buscar por tags do trecho da fala; compor quando nenhuma entrada cobre a ideia (painel de uma + gesto de outra + peças de terceira). Novas entradas: mesmo formato + specimen no painel. Campo 'where' aponta seção do guia e âncora do painel; 'triggers' são frases da fala que ativam a entrada (ver design-router.json para o algoritmo).",
+  "pieces": [
+    "painel",
+    "balao",
+    "barra",
+    "trilho",
+    "circulo-check",
+    "anel",
+    "no",
+    "conector",
+    "rotulo",
+    "pill",
+    "linha-item",
+    "avatar",
+    "miniatura",
+    "numero",
+    "traco",
+    "selo"
+  ],
+  "gestures": [
+    "range",
+    "lista",
+    "contador",
+    "tracado",
+    "playback",
+    "digitacao",
+    "confirmacao",
+    "foco-migra",
+    "cascata",
+    "contagem"
+  ],
+  "entries": [
+    {
+      "id": "palavra-conceito",
+      "family": "destaque",
+      "level": "N3",
+      "tags": [
+        "#palavra",
+        "#conceito",
+        "#abstrato",
+        "#anota-isso"
+      ],
+      "pieces": [
+        "traco"
+      ],
+      "gesture": "cascata",
+      "combine": [
+        "mini-selo"
+      ],
+      "where": {
+        "guide": "§6 + §6a",
+        "panel": "#s04-moldes / #s04d-enfase"
+      },
+      "triggers": [
+        "anota isso",
+        "presta atenção",
+        "o nome disso é",
+        "isso se chama"
+      ]
+    },
+    {
+      "id": "frase-com-icone",
+      "family": "destaque",
+      "level": "N2",
+      "tags": [
+        "#frase",
+        "#tese",
+        "#definicao"
+      ],
+      "pieces": [
+        "anel",
+        "rotulo"
+      ],
+      "gesture": "cascata",
+      "where": {
+        "guide": "§6a",
+        "panel": "#s04d-enfase"
+      },
+      "triggers": [
+        "promessa específica",
+        "isca de sardinha",
+        "frase de 2 a 4 palavras com pausa"
+      ]
+    },
+    {
+      "id": "atributo-solo",
+      "family": "destaque",
+      "level": "N1",
+      "tags": [
+        "#simbolo",
+        "#enfase-voz"
+      ],
+      "pieces": [
+        "anel",
+        "pill"
+      ],
+      "gesture": "foco-migra",
+      "where": {
+        "guide": "§6a",
+        "panel": "#s04d-enfase"
+      },
+      "triggers": [
+        "ênfase de voz em UMA coisa que se desenha"
+      ]
+    },
+    {
+      "id": "trio-atributos",
+      "family": "molde",
+      "tags": [
+        "#tres",
+        "#lista-curta",
+        "#atributos"
+      ],
+      "pieces": [
+        "anel",
+        "pill"
+      ],
+      "gesture": "foco-migra",
+      "combine": [
+        "grade-conceitos"
+      ],
+      "where": {
+        "guide": "§6",
+        "panel": "#s04-moldes"
+      },
+      "triggers": [
+        "três coisas",
+        "tem que ter a, b e c",
+        "três pilares",
+        "alguns pontos"
+      ]
+    },
+    {
+      "id": "grade-conceitos",
+      "family": "molde",
+      "tags": [
+        "#quatro-a-seis",
+        "#conceitos",
+        "#lista"
+      ],
+      "pieces": [
+        "anel",
+        "rotulo"
+      ],
+      "gesture": "cascata",
+      "where": {
+        "guide": "§6",
+        "panel": "#s04-moldes"
+      },
+      "triggers": [
+        "quatro",
+        "cinco",
+        "seis",
+        "vários conceitos",
+        "cada conteúdo",
+        "um para… outro para"
+      ]
+    },
+    {
+      "id": "grade-contagem",
+      "family": "molde",
+      "tags": [
+        "#numero",
+        "#quantidade",
+        "#12",
+        "#feed"
+      ],
+      "pieces": [
+        "numero",
+        "miniatura"
+      ],
+      "gesture": "contagem",
+      "combine": [
+        "feed-capas"
+      ],
+      "where": {
+        "guide": "§6",
+        "panel": "#s04-moldes"
+      },
+      "triggers": [
+        "12 conteúdos",
+        "quantos",
+        "pelo menos",
+        "número de"
+      ]
+    },
+    {
+      "id": "comparacao-certo-errado",
+      "family": "molde",
+      "tags": [
+        "#certo",
+        "#errado",
+        "#nao-faca",
+        "#foto"
+      ],
+      "pieces": [
+        "avatar",
+        "pill"
+      ],
+      "gesture": "cascata",
+      "where": {
+        "guide": "§6",
+        "panel": "#s04-moldes"
+      },
+      "triggers": [
+        "não tenha",
+        "tem que ter",
+        "errado",
+        "certo",
+        "em vez de"
+      ]
+    },
+    {
+      "id": "jornada-ab",
+      "family": "esquema",
+      "tags": [
+        "#de-para",
+        "#transformacao",
+        "#antes-depois"
+      ],
+      "pieces": [
+        "no",
+        "conector",
+        "rotulo"
+      ],
+      "gesture": "tracado",
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "triggers": [
+        "de onde ela sai",
+        "onde ela chega",
+        "de x para y",
+        "sair do",
+        "chegar em",
+        "transformação",
+        "antes e depois"
+      ]
+    },
+    {
+      "id": "tabela-comparativa",
+      "family": "esquema",
+      "tags": [
+        "#versus",
+        "#diferenca",
+        "#mentoria-vs-curso"
+      ],
+      "pieces": [
+        "pill",
+        "linha-item",
+        "painel"
+      ],
+      "gesture": "lista",
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "triggers": [
+        "diferença entre",
+        "mentoria é",
+        "curso é",
+        "de um lado",
+        "do outro",
+        "versus"
+      ]
+    },
+    {
+      "id": "passos",
+      "family": "esquema",
+      "tags": [
+        "#primeiro-depois",
+        "#passo-a-passo",
+        "#metodo"
+      ],
+      "pieces": [
+        "no",
+        "conector"
+      ],
+      "gesture": "foco-migra",
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "triggers": [
+        "primeiro",
+        "depois",
+        "então",
+        "passo",
+        "etapa",
+        "em seguida"
+      ]
+    },
+    {
+      "id": "funil",
+      "family": "esquema",
+      "tags": [
+        "#funil",
+        "#poucos-chegam",
+        "#conversao"
+      ],
+      "pieces": [
+        "barra",
+        "numero"
+      ],
+      "gesture": "foco-migra",
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "triggers": [
+        "poucos chegam",
+        "funil",
+        "filtrar",
+        "qualificar",
+        "dos que entram"
+      ]
+    },
+    {
+      "id": "ciclo",
+      "family": "esquema",
+      "tags": [
+        "#ciclo",
+        "#gera",
+        "#volta",
+        "#loop"
+      ],
+      "pieces": [
+        "no",
+        "conector"
+      ],
+      "gesture": "tracado",
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "triggers": [
+        "gera",
+        "que gera",
+        "volta",
+        "ciclo",
+        "roda",
+        "de novo"
+      ]
+    },
+    {
+      "id": "niveis",
+      "family": "esquema",
+      "tags": [
+        "#nivel",
+        "#consciencia",
+        "#estagio"
+      ],
+      "pieces": [
+        "barra",
+        "conector"
+      ],
+      "gesture": "foco-migra",
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "triggers": [
+        "nível",
+        "estágio",
+        "consciência",
+        "do básico",
+        "avançado",
+        "sobe"
+      ]
+    },
+    {
+      "id": "ramificacao",
+      "family": "esquema",
+      "tags": [
+        "#um-vira-tres",
+        "#causas",
+        "#formatos"
+      ],
+      "pieces": [
+        "no",
+        "conector"
+      ],
+      "gesture": "foco-migra",
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "triggers": [
+        "um vira três",
+        "vários formatos",
+        "três causas",
+        "se divide",
+        "desdobra",
+        "ramifica"
+      ]
+    },
+    {
+      "id": "chat-audio",
+      "family": "interface",
+      "tags": [
+        "#telegram",
+        "#whatsapp",
+        "#audio",
+        "#zeus",
+        "#conversa"
+      ],
+      "pieces": [
+        "painel",
+        "balao",
+        "barra",
+        "selo"
+      ],
+      "gesture": "playback",
+      "combine": [
+        "chat-texto",
+        "progresso"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "triggers": [
+        "telegram",
+        "whatsapp",
+        "manda um áudio",
+        "por áudio",
+        "ele responde"
+      ]
+    },
+    {
+      "id": "chat-texto",
+      "family": "interface",
+      "tags": [
+        "#telegram",
+        "#whatsapp",
+        "#dm",
+        "#zeus",
+        "#digitando"
+      ],
+      "pieces": [
+        "painel",
+        "balao",
+        "selo"
+      ],
+      "gesture": "digitacao",
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "triggers": [
+        "digita",
+        "escreve pra ele",
+        "pergunta pra ele",
+        "ele vai dizer"
+      ]
+    },
+    {
+      "id": "painel-configuracao",
+      "family": "interface",
+      "tags": [
+        "#gerenciador",
+        "#ads",
+        "#ajuste",
+        "#orcamento",
+        "#zeus-configura"
+      ],
+      "pieces": [
+        "painel",
+        "trilho",
+        "anel",
+        "numero"
+      ],
+      "gesture": "range",
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "triggers": [
+        "gerenciador",
+        "configura",
+        "orçamento",
+        "ajusta",
+        "campanha",
+        "otimiza"
+      ]
+    },
+    {
+      "id": "grafico",
+      "family": "interface",
+      "tags": [
+        "#crescimento",
+        "#dados",
+        "#resultado",
+        "#evolucao"
+      ],
+      "pieces": [
+        "painel",
+        "numero",
+        "anel"
+      ],
+      "gesture": "tracado",
+      "combine": [
+        "metricas"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "triggers": [
+        "cresceu",
+        "crescimento",
+        "evolução",
+        "subiu",
+        "resultado ao longo",
+        "dados",
+        "análise"
+      ]
+    },
+    {
+      "id": "checklist-minimo",
+      "family": "interface",
+      "tags": [
+        "#etapas",
+        "#feito",
+        "#pronto"
+      ],
+      "pieces": [
+        "painel",
+        "circulo-check"
+      ],
+      "gesture": "contador",
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "triggers": [
+        "já tá feito",
+        "pronto",
+        "concluído",
+        "isso, isso, isso",
+        "feito"
+      ]
+    },
+    {
+      "id": "checks-puros",
+      "family": "interface",
+      "tags": [
+        "#contar",
+        "#uma-duas-tres"
+      ],
+      "pieces": [
+        "circulo-check"
+      ],
+      "gesture": "contador",
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "triggers": []
+    },
+    {
+      "id": "checks-lista",
+      "family": "interface",
+      "tags": [
+        "#isso-isso-isso",
+        "#lista-vertical"
+      ],
+      "pieces": [
+        "circulo-check"
+      ],
+      "gesture": "contador",
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "triggers": []
+    },
+    {
+      "id": "perfil-instagram",
+      "family": "interface",
+      "tags": [
+        "#instagram",
+        "#perfil",
+        "#bio",
+        "#seguidores"
+      ],
+      "pieces": [
+        "painel",
+        "avatar",
+        "numero",
+        "miniatura"
+      ],
+      "gesture": "foco-migra",
+      "combine": [
+        "feed-capas",
+        "destaques"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "triggers": [
+        "perfil",
+        "bio",
+        "foto de perfil",
+        "seguidores"
+      ]
+    },
+    {
+      "id": "post-reel",
+      "family": "interface",
+      "tags": [
+        "#post",
+        "#reel",
+        "#curtida",
+        "#salvar"
+      ],
+      "pieces": [
+        "painel",
+        "avatar",
+        "anel"
+      ],
+      "gesture": "foco-migra",
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "triggers": [
+        "post",
+        "reel",
+        "curtida",
+        "salvou",
+        "compartilhou"
+      ]
+    },
+    {
+      "id": "notificacao",
+      "family": "interface",
+      "tags": [
+        "#notificacao",
+        "#chegou",
+        "#aviso",
+        "#lead"
+      ],
+      "pieces": [
+        "selo",
+        "rotulo"
+      ],
+      "gesture": "lista",
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "triggers": [
+        "chegou",
+        "notificação",
+        "avisou",
+        "novo lead"
+      ]
+    },
+    {
+      "id": "metricas-kpi",
+      "family": "interface",
+      "tags": [
+        "#metricas",
+        "#alcance",
+        "#leads",
+        "#custo"
+      ],
+      "pieces": [
+        "painel",
+        "numero",
+        "anel"
+      ],
+      "gesture": "contagem",
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "triggers": [
+        "alcance",
+        "leads",
+        "custo por",
+        "métrica",
+        "kpi",
+        "resultado do mês"
+      ]
+    },
+    {
+      "id": "destaques",
+      "family": "interface",
+      "tags": [
+        "#destaques",
+        "#stories",
+        "#experiencia",
+        "#depoimentos"
+      ],
+      "pieces": [
+        "painel",
+        "avatar",
+        "pill"
+      ],
+      "gesture": "foco-migra",
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "triggers": [
+        "destaques",
+        "stories fixados",
+        "experiência, resultados, depoimentos"
+      ]
+    },
+    {
+      "id": "feed-capas",
+      "family": "interface",
+      "tags": [
+        "#feed",
+        "#capas",
+        "#12-conteudos",
+        "#estrategia"
+      ],
+      "pieces": [
+        "painel",
+        "miniatura",
+        "rotulo"
+      ],
+      "gesture": "cascata",
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "triggers": [
+        "feed",
+        "capas",
+        "últimas postagens",
+        "posts"
+      ]
+    },
+    {
+      "id": "cartao-publico",
+      "family": "interface",
+      "tags": [
+        "#publico",
+        "#isca",
+        "#baleia",
+        "#sardinha",
+        "#persona"
+      ],
+      "pieces": [
+        "painel",
+        "anel",
+        "rotulo"
+      ],
+      "gesture": "foco-migra",
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "triggers": [
+        "isca",
+        "baleia",
+        "sardinha",
+        "público que",
+        "quem já tem",
+        "quem ainda"
+      ]
+    },
+    {
+      "id": "cartao-headline",
+      "family": "interface",
+      "tags": [
+        "#promessa",
+        "#oferta",
+        "#headline",
+        "#frase"
+      ],
+      "pieces": [
+        "painel",
+        "traco",
+        "selo"
+      ],
+      "gesture": "cascata",
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "triggers": [
+        "promessa",
+        "te ajudo a",
+        "eu te ensino",
+        "headline",
+        "oferta"
+      ]
+    },
+    {
+      "id": "progresso",
+      "family": "interface",
+      "tags": [
+        "#minutos",
+        "#configurando",
+        "#carregando",
+        "#zeus-trabalhando"
+      ],
+      "pieces": [
+        "painel",
+        "barra",
+        "anel",
+        "numero"
+      ],
+      "gesture": "playback",
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "triggers": [
+        "5 minutos",
+        "enquanto",
+        "configurando",
+        "tomando um café",
+        "ele faz"
+      ]
+    },
+    {
+      "id": "calendario",
+      "family": "interface",
+      "tags": [
+        "#rotina",
+        "#todo-dia",
+        "#consistencia",
+        "#dias"
+      ],
+      "pieces": [
+        "painel",
+        "circulo-check",
+        "numero"
+      ],
+      "gesture": "contador",
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "triggers": [
+        "todo dia",
+        "rotina",
+        "consistência",
+        "dias seguidos",
+        "semana"
+      ]
+    },
+    {
+      "id": "depoimento",
+      "family": "interface",
+      "tags": [
+        "#depoimento",
+        "#aluno",
+        "#prova-social"
+      ],
+      "pieces": [
+        "painel",
+        "avatar",
+        "anel"
+      ],
+      "gesture": "cascata",
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "triggers": [
+        "aluno",
+        "depoimento",
+        "ele disse",
+        "o que achou",
+        "agradecer"
+      ]
+    },
+    {
+      "id": "lista-leads",
+      "family": "interface",
+      "tags": [
+        "#leads",
+        "#novo",
+        "#respondeu",
+        "#agendou"
+      ],
+      "pieces": [
+        "painel",
+        "avatar",
+        "linha-item"
+      ],
+      "gesture": "lista",
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "triggers": [
+        "lista de leads",
+        "respondeu",
+        "agendou",
+        "novos contatos"
+      ]
+    },
+    {
+      "id": "meta-progresso",
+      "family": "interface",
+      "tags": [
+        "#meta",
+        "#50-mil",
+        "#faturar",
+        "#por-mes"
+      ],
+      "pieces": [
+        "painel",
+        "numero",
+        "trilho",
+        "anel"
+      ],
+      "gesture": "range",
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "triggers": [
+        "meta",
+        "50 mil",
+        "por mês",
+        "faturar",
+        "chegar em"
+      ]
+    },
+    {
+      "id": "enquete",
+      "family": "interface",
+      "tags": [
+        "#enquete",
+        "#pergunta",
+        "#story",
+        "#audiencia"
+      ],
+      "pieces": [
+        "painel",
+        "barra",
+        "numero"
+      ],
+      "gesture": "range",
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "triggers": [
+        "enquete",
+        "caixa de perguntas",
+        "pergunta pro público",
+        "o que trava"
+      ]
+    },
+    {
+      "id": "busca",
+      "family": "interface",
+      "tags": [
+        "#busca",
+        "#explorar",
+        "#nicho",
+        "#encontrar"
+      ],
+      "pieces": [
+        "painel",
+        "avatar",
+        "linha-item"
+      ],
+      "gesture": "digitacao",
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "triggers": [
+        "busca",
+        "procura",
+        "explorar",
+        "encontrar",
+        "nicho"
+      ]
+    },
+    {
+      "id": "comentarios",
+      "family": "interface",
+      "tags": [
+        "#comentarios",
+        "#engajamento",
+        "#pergunta-do-publico"
+      ],
+      "pieces": [
+        "painel",
+        "avatar",
+        "linha-item"
+      ],
+      "gesture": "lista",
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "triggers": [
+        "comentário",
+        "comentaram",
+        "perguntaram no post"
+      ]
+    },
+    {
+      "id": "agenda",
+      "family": "interface",
+      "tags": [
+        "#agenda",
+        "#horario",
+        "#sessao",
+        "#vagas"
+      ],
+      "pieces": [
+        "painel",
+        "numero",
+        "anel"
+      ],
+      "gesture": "contador",
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "triggers": [
+        "agenda",
+        "horário",
+        "sessão",
+        "vaga",
+        "marca uma"
+      ]
+    },
+    {
+      "id": "confirmacao",
+      "family": "interface",
+      "tags": [
+        "#venda",
+        "#fechou",
+        "#pagamento",
+        "#inscricao"
+      ],
+      "pieces": [
+        "circulo-check",
+        "numero",
+        "anel"
+      ],
+      "gesture": "confirmacao",
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "triggers": [
+        "fechou",
+        "vendeu",
+        "pagamento",
+        "entrou aluno",
+        "inscrição"
+      ]
+    },
+    {
+      "id": "lettering",
+      "family": "destaque",
+      "tags": [
+        "#climax",
+        "#frase-resumo",
+        "#quebra-de-padrao"
+      ],
+      "pieces": [
+        "pill",
+        "anel"
+      ],
+      "gesture": "cascata",
+      "where": {
+        "guide": "§5c",
+        "panel": "#s04e-lettering"
+      },
+      "triggers": [
+        "frase que resume o vídeo",
+        "6 a 22 palavras",
+        "clímax"
+      ]
+    },
+    {
+      "id": "balanca",
+      "family": "esquema",
+      "tags": [
+        "#trade-off",
+        "#pesa-mais",
+        "#preco-valor"
+      ],
+      "pieces": [
+        "conector",
+        "pill"
+      ],
+      "gesture": "foco-migra",
+      "triggers": [
+        "pesa mais",
+        "x ou y",
+        "preço ou valor",
+        "vale mais"
+      ],
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      }
+    },
+    {
+      "id": "linha-do-tempo",
+      "family": "esquema",
+      "tags": [
+        "#tempo",
+        "#dias",
+        "#marcos",
+        "#prazo"
+      ],
+      "pieces": [
+        "conector",
+        "no",
+        "rotulo"
+      ],
+      "gesture": "tracado",
+      "triggers": [
+        "no dia 1",
+        "em 30 dias",
+        "primeira semana",
+        "depois de 90 dias"
+      ],
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      }
+    },
+    {
+      "id": "venn",
+      "family": "esquema",
+      "tags": [
+        "#intersecao",
+        "#encontro",
+        "#onde-x-encontra-y"
+      ],
+      "pieces": [
+        "no",
+        "anel",
+        "rotulo"
+      ],
+      "gesture": "cascata",
+      "triggers": [
+        "onde x encontra y",
+        "a interseção",
+        "o que você sabe e o que pagam"
+      ],
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      }
+    },
+    {
+      "id": "matriz-2x2",
+      "family": "esquema",
+      "tags": [
+        "#quadrantes",
+        "#esforco-resultado",
+        "#dois-eixos"
+      ],
+      "pieces": [
+        "conector",
+        "rotulo"
+      ],
+      "gesture": "cascata",
+      "triggers": [
+        "muito esforço pouco resultado",
+        "quatro cenários",
+        "quadrante"
+      ],
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      }
+    },
+    {
+      "id": "escala-intensidade",
+      "family": "esquema",
+      "tags": [
+        "#frio-morno-quente",
+        "#de-1-a-10",
+        "#intensidade"
+      ],
+      "pieces": [
+        "trilho",
+        "anel",
+        "rotulo"
+      ],
+      "gesture": "range",
+      "triggers": [
+        "frio",
+        "morno",
+        "quente",
+        "de 1 a 10",
+        "nível de"
+      ],
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      }
+    },
+    {
+      "id": "espelho",
+      "family": "esquema",
+      "tags": [
+        "#sem-com",
+        "#estado",
+        "#contraste-sem-seta"
+      ],
+      "pieces": [
+        "painel",
+        "anel",
+        "rotulo"
+      ],
+      "gesture": "foco-migra",
+      "triggers": [
+        "sem x",
+        "com x",
+        "quem não tem",
+        "quem tem"
+      ],
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      }
+    },
+    {
+      "id": "camadas",
+      "family": "esquema",
+      "tags": [
+        "#empilhar",
+        "#em-cima-disso",
+        "#base"
+      ],
+      "pieces": [
+        "barra",
+        "rotulo"
+      ],
+      "gesture": "cascata",
+      "triggers": [
+        "em cima disso",
+        "a base é",
+        "primeiro a base",
+        "camada"
+      ],
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      }
+    },
+    {
+      "id": "equacao",
+      "family": "esquema",
+      "tags": [
+        "#soma",
+        "#x-mais-y",
+        "#resultado"
+      ],
+      "pieces": [
+        "no",
+        "anel",
+        "rotulo"
+      ],
+      "gesture": "cascata",
+      "triggers": [
+        "mais",
+        "é igual a",
+        "x mais y é",
+        "a soma"
+      ],
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      }
+    },
+    {
+      "id": "lacuna",
+      "family": "esquema",
+      "tags": [
+        "#gap",
+        "#onde-esta-onde-deveria",
+        "#distancia"
+      ],
+      "pieces": [
+        "barra",
+        "conector",
+        "rotulo"
+      ],
+      "gesture": "tracado",
+      "triggers": [
+        "onde está",
+        "onde deveria",
+        "a distância entre",
+        "o gap"
+      ],
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      }
+    },
+    {
+      "id": "concentrico",
+      "family": "esquema",
+      "tags": [
+        "#proximidade",
+        "#circulos",
+        "#audiencia"
+      ],
+      "pieces": [
+        "anel",
+        "rotulo"
+      ],
+      "gesture": "cascata",
+      "triggers": [
+        "quem te segue",
+        "quem não te conhece",
+        "círculo de",
+        "mais próximo"
+      ],
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      }
+    },
+    {
+      "id": "email",
+      "family": "interface",
+      "tags": [
+        "#email",
+        "#relatorio",
+        "#segunda"
+      ],
+      "pieces": [
+        "painel",
+        "selo",
+        "rotulo"
+      ],
+      "gesture": "lista",
+      "triggers": [
+        "e-mail",
+        "relatório",
+        "chega na caixa"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      }
+    },
+    {
+      "id": "checkout",
+      "family": "interface",
+      "tags": [
+        "#oferta",
+        "#preco",
+        "#botao",
+        "#comprar"
+      ],
+      "pieces": [
+        "painel",
+        "numero",
+        "anel"
+      ],
+      "gesture": "contagem",
+      "triggers": [
+        "quero entrar",
+        "o preço é",
+        "parcela",
+        "checkout"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      }
+    },
+    {
+      "id": "player-aula",
+      "family": "interface",
+      "tags": [
+        "#aula",
+        "#area-de-membros",
+        "#video"
+      ],
+      "pieces": [
+        "painel",
+        "anel",
+        "barra",
+        "numero"
+      ],
+      "gesture": "playback",
+      "triggers": [
+        "na aula",
+        "área de membros",
+        "assiste",
+        "módulo"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      }
+    },
+    {
+      "id": "videochamada",
+      "family": "interface",
+      "tags": [
+        "#sessao",
+        "#call",
+        "#ao-vivo",
+        "#acompanhamento"
+      ],
+      "pieces": [
+        "painel",
+        "anel",
+        "pill",
+        "numero"
+      ],
+      "gesture": "foco-migra",
+      "triggers": [
+        "na sessão",
+        "na call",
+        "ao vivo",
+        "encontro"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      }
+    },
+    {
+      "id": "tabela-dados",
+      "family": "interface",
+      "tags": [
+        "#planilha",
+        "#dados",
+        "#colunas",
+        "#cpl"
+      ],
+      "pieces": [
+        "painel",
+        "linha-item",
+        "numero"
+      ],
+      "gesture": "cascata",
+      "triggers": [
+        "na planilha",
+        "os dados",
+        "por criativo",
+        "tabela"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      }
+    },
+    {
+      "id": "ranking",
+      "family": "interface",
+      "tags": [
+        "#top-3",
+        "#o-que-mais-funciona",
+        "#ranking"
+      ],
+      "pieces": [
+        "painel",
+        "anel",
+        "barra"
+      ],
+      "gesture": "cascata",
+      "triggers": [
+        "o que mais funciona",
+        "top 3",
+        "em primeiro lugar",
+        "ranking"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      }
+    },
+    {
+      "id": "formulario",
+      "family": "interface",
+      "tags": [
+        "#captura",
+        "#formulario",
+        "#whatsapp",
+        "#lead"
+      ],
+      "pieces": [
+        "painel",
+        "anel",
+        "rotulo"
+      ],
+      "gesture": "digitacao",
+      "triggers": [
+        "deixa o whatsapp",
+        "página de captura",
+        "preenche",
+        "formulário"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      }
+    },
+    {
+      "id": "toggles",
+      "family": "interface",
+      "tags": [
+        "#configuracoes",
+        "#automatico",
+        "#ativa"
+      ],
+      "pieces": [
+        "painel",
+        "anel",
+        "linha-item"
+      ],
+      "gesture": "range",
+      "triggers": [
+        "ativa isso",
+        "deixa automático",
+        "liga",
+        "configurações"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      }
+    },
+    {
+      "id": "teste-ab",
+      "family": "interface",
+      "tags": [
+        "#teste",
+        "#ab",
+        "#criativo",
+        "#converteu"
+      ],
+      "pieces": [
+        "painel",
+        "anel",
+        "numero"
+      ],
+      "gesture": "contagem",
+      "triggers": [
+        "testei dois",
+        "a/b",
+        "qual converteu",
+        "o b ganhou"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      }
+    },
+    {
+      "id": "contagem-regressiva",
+      "family": "interface",
+      "tags": [
+        "#vagas",
+        "#encerra",
+        "#urgencia",
+        "#tempo"
+      ],
+      "pieces": [
+        "anel",
+        "numero"
+      ],
+      "gesture": "playback",
+      "triggers": [
+        "vagas",
+        "encerra em",
+        "últimas",
+        "sobraram"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      }
+    }
+  ]
+}

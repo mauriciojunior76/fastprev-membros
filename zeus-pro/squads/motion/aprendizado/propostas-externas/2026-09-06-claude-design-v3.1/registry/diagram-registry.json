@@ -1,0 +1,137 @@
+{
+  "_doc": "REGISTRO DE DIAGRAMAS. Entre pela RELAÇÃO que a fala afirma. Se a fala não afirma relação nenhuma, não é diagrama: é destaque, número ou legenda. Não transforme relação em cards, nem em ícones, nem em texto.",
+  "version": "2.3",
+  "relations": [
+    {
+      "relation": "X leva a Y",
+      "resource": "relation.cause-effect.v1",
+      "alt": "flow.journey-ab.v1"
+    },
+    {
+      "relation": "A depende de B",
+      "resource": "hierarchy.layers.v1",
+      "alt": "relation.cause-effect.v1"
+    },
+    {
+      "relation": "existem três caminhos",
+      "resource": "branch.tree.v1",
+      "alt": "branch.decision.v1"
+    },
+    {
+      "relation": "se X, então A; se não, B",
+      "resource": "branch.decision.v1",
+      "alt": "branch.tree.v1"
+    },
+    {
+      "relation": "existem quatro etapas",
+      "resource": "process.steps.v1",
+      "alt": "flow.timeline.v1"
+    },
+    {
+      "relation": "um elemento se divide em três",
+      "resource": "branch.tree.v1",
+      "alt": "flow.funnel.v1"
+    },
+    {
+      "relation": "três elementos convergem em um",
+      "resource": "scheme.equation.v1",
+      "alt": "relation.venn.v1"
+    },
+    {
+      "relation": "uma coisa contém outra",
+      "resource": "relation.concentric.v1",
+      "alt": "hierarchy.layers.v1"
+    },
+    {
+      "relation": "há níveis hierárquicos",
+      "resource": "hierarchy.levels.v1",
+      "alt": "scale.intensity.v1"
+    },
+    {
+      "relation": "quanto mais X, mais Y",
+      "resource": "scale.intensity.v1",
+      "alt": "interface.chart.growth.v1"
+    },
+    {
+      "relation": "X e Y se encontram em Z",
+      "resource": "relation.venn.v1",
+      "alt": "scheme.equation.v1"
+    },
+    {
+      "relation": "dois critérios cruzados",
+      "resource": "matrix.quadrants.v1",
+      "alt": "compare.table.v1"
+    },
+    {
+      "relation": "poucos passam de N para 1",
+      "resource": "flow.funnel.v1",
+      "alt": "flow.filter.v1"
+    },
+    {
+      "relation": "passa quem tem A, B e C",
+      "resource": "flow.filter.v1",
+      "alt": "flow.funnel.v1"
+    },
+    {
+      "relation": "trava nesta etapa",
+      "resource": "flow.bottleneck.v1",
+      "alt": "flow.funnel.v1"
+    },
+    {
+      "relation": "o último gera o primeiro",
+      "resource": "flow.cycle.v1",
+      "alt": "process.steps.v1"
+    },
+    {
+      "relation": "está aqui e deveria estar ali",
+      "resource": "flow.gap.v1",
+      "alt": "flow.journey-ab.v1"
+    },
+    {
+      "relation": "sem X é assim, com X é assim",
+      "resource": "compare.mirror.v1",
+      "alt": "compare.table.v1"
+    },
+    {
+      "relation": "X pesa mais que Y",
+      "resource": "compare.balance.v1",
+      "alt": "compare.table.v1"
+    },
+    {
+      "relation": "no dia 1, em 30 dias",
+      "resource": "flow.timeline.v1",
+      "alt": "process.steps.v1"
+    },
+    {
+      "relation": "6 passos manual × 2 com o Zeus",
+      "resource": "compare.manual-auto.v1",
+      "alt": "process.steps.v1"
+    },
+    {
+      "relation": "X por cento do total",
+      "resource": "chart.donut.v1",
+      "alt": "number.percent.v1"
+    },
+    {
+      "relation": "compara 2 ou 3 valores do mesmo dado",
+      "resource": "chart.columns.v1",
+      "alt": "interface.chart.growth.v1"
+    },
+    {
+      "relation": "está entre dois extremos opostos",
+      "resource": "scale.semantic.v1",
+      "alt": "scale.intensity.v1"
+    },
+    {
+      "relation": "diagnóstico em 5 ou 6 frentes",
+      "resource": "chart.radar.v1",
+      "alt": "matrix.quadrants.v1"
+    }
+  ],
+  "anti_rules": [
+    "não vire cards um conteúdo relacional (perde a relação)",
+    "não vire ícones uma sequência (perde a ordem)",
+    "não vire texto uma comparação (perde o contraste)",
+    "não desenhe relação que a fala não afirmou (inferência é invenção)"
+  ]
+}

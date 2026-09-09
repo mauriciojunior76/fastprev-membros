@@ -1,0 +1,881 @@
+{
+ "_leia": "PONTE DE SOM. O design system nomeia o gesto pelo que se move; o motor nomeia pelo peso que aquilo tem. Esta tabela traduz um no outro. O motor MANDA: nenhum par aqui existe fora do public/_sfx/catalogo.json, e nenhum arquivo novo foi inventado. Quem implementa uma cena le o build-registry, acha o gesto e usa o par do motor desta tabela no SFX_EVENTS.",
+ "versao": "1.0",
+ "criado_em": "2026-09-06",
+ "fonte_pacote": "design-system/registry/build-registry.json",
+ "fonte_motor": "squads/motion/public/_sfx/catalogo.json",
+ "regra_de_posicao": "o som comeca no quadro do gesto MENOS o tempo de pico do arquivo; gesto no inicio da peca precisa de quadro maior ou igual a tempo_de_pico vezes 60",
+ "total_pares_pacote": 67,
+ "total_traduzidos": 66,
+ "total_silencio_proposital": 1,
+ "total_faltantes": 0,
+ "pontes": [
+  {
+   "categoriaPacote": "emphasis",
+   "gestoPacote": "anel-migra",
+   "usadoPor": [
+    "emphasis.attribute.v1"
+   ],
+   "motor": "serie-itens/item",
+   "peso": 4,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "o anel migrando marca o item da vez"
+  },
+  {
+   "categoriaPacote": "set",
+   "gestoPacote": "anel-migra",
+   "usadoPor": [
+    "set.trio.v1"
+   ],
+   "motor": "serie-itens/item",
+   "peso": 4,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "o anel migrando marca o item da vez"
+  },
+  {
+   "categoriaPacote": "process",
+   "gestoPacote": "anel-migra",
+   "usadoPor": [
+    "process.steps.v1"
+   ],
+   "motor": "serie-itens/item",
+   "peso": 4,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "o anel migrando marca o item da vez"
+  },
+  {
+   "categoriaPacote": "flow",
+   "gestoPacote": "anel-migra",
+   "usadoPor": [
+    "flow.funnel.v1"
+   ],
+   "motor": "serie-itens/item",
+   "peso": 4,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "o anel migrando marca o item da vez"
+  },
+  {
+   "categoriaPacote": "hierarchy",
+   "gestoPacote": "anel-migra",
+   "usadoPor": [
+    "hierarchy.levels.v1"
+   ],
+   "motor": "serie-itens/item",
+   "peso": 4,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "o anel migrando marca o item da vez"
+  },
+  {
+   "categoriaPacote": "branch",
+   "gestoPacote": "anel-migra",
+   "usadoPor": [
+    "branch.tree.v1",
+    "branch.decision.v1"
+   ],
+   "motor": "serie-itens/item",
+   "peso": 4,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "o anel migrando marca o item da vez"
+  },
+  {
+   "categoriaPacote": "compare",
+   "gestoPacote": "anel-migra",
+   "usadoPor": [
+    "compare.balance.v1",
+    "compare.mirror.v1"
+   ],
+   "motor": "serie-itens/item",
+   "peso": 4,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "o anel migrando marca o item da vez"
+  },
+  {
+   "categoriaPacote": "interface",
+   "gestoPacote": "anel-migra",
+   "usadoPor": [
+    "interface.instagram.profile.v1",
+    "interface.social.post.v1",
+    "interface.instagram.highlights.v1",
+    "profile.audience-card.v1",
+    "interface.videocall.v1",
+    "compare.panels.v1",
+    "interface.pointer.v1",
+    "interface.mobile.post.v1",
+    "interface.mobile.profile.v1"
+   ],
+   "motor": "serie-itens/item",
+   "peso": 4,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "o anel migrando marca o item da vez"
+  },
+  {
+   "categoriaPacote": "grafico",
+   "gestoPacote": "anel-migra",
+   "usadoPor": [
+    "chart.radar.v1"
+   ],
+   "motor": "serie-itens/item",
+   "peso": 4,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "o anel migrando marca o item da vez"
+  },
+  {
+   "categoriaPacote": "grafico",
+   "gestoPacote": "anel-nasce",
+   "usadoPor": [
+    "chart.donut.v1",
+    "chart.columns.v1",
+    "scale.semantic.v1"
+   ],
+   "motor": "serie-itens/item",
+   "peso": 4,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "primeiro item da serie"
+  },
+  {
+   "categoriaPacote": "esquema",
+   "gestoPacote": "anel-nasce",
+   "usadoPor": [
+    "flow.bridge.v1",
+    "relation.lever.v1",
+    "compare.swap.v1"
+   ],
+   "motor": "serie-itens/item",
+   "peso": 4,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "primeiro item da serie"
+  },
+  {
+   "categoriaPacote": "proof",
+   "gestoPacote": "anotacao-entra",
+   "usadoPor": [
+    "proof.annotated.v1"
+   ],
+   "motor": "serie-itens/item",
+   "peso": 4,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "anotacao e marca leve sobre elemento que ja esta na tela"
+  },
+  {
+   "categoriaPacote": "interface",
+   "gestoPacote": "audio-playback",
+   "usadoPor": [
+    "interface.chat.audio.v1",
+    "interface.progress.v1",
+    "interface.player.v1",
+    "interface.countdown.v1"
+   ],
+   "motor": null,
+   "arquivo": null,
+   "silencioProposital": true,
+   "por_que": "o proprio audio tocando ja e o som da cena; efeito por cima suja a fala"
+  },
+  {
+   "categoriaPacote": "esquema",
+   "gestoPacote": "balanca-inclina",
+   "usadoPor": [
+    "relation.lever.v1"
+   ],
+   "motor": "jornada/chegada",
+   "peso": 4,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "o prato que ganha e o destino do gesto"
+  },
+  {
+   "categoriaPacote": "grafico",
+   "gestoPacote": "barra-cresce",
+   "usadoPor": [
+    "chart.donut.v1",
+    "chart.columns.v1"
+   ],
+   "motor": "serie-itens/item",
+   "peso": 4,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "barra que cresce e item medido"
+  },
+  {
+   "categoriaPacote": "emphasis",
+   "gestoPacote": "bloco-cascata",
+   "usadoPor": [
+    "emphasis.word.v1",
+    "emphasis.icon-phrase.v1",
+    "emphasis.lettering.v1"
+   ],
+   "motor": "serie-itens/item",
+   "peso": 4,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "blocos em cascata sao serie"
+  },
+  {
+   "categoriaPacote": "set",
+   "gestoPacote": "bloco-cascata",
+   "usadoPor": [
+    "set.grid.v1"
+   ],
+   "motor": "serie-itens/item",
+   "peso": 4,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "blocos em cascata sao serie"
+  },
+  {
+   "categoriaPacote": "compare",
+   "gestoPacote": "bloco-cascata",
+   "usadoPor": [
+    "compare.right-wrong.v1"
+   ],
+   "motor": "serie-itens/item",
+   "peso": 4,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "blocos em cascata sao serie"
+  },
+  {
+   "categoriaPacote": "relation",
+   "gestoPacote": "bloco-cascata",
+   "usadoPor": [
+    "relation.venn.v1",
+    "relation.concentric.v1"
+   ],
+   "motor": "serie-itens/item",
+   "peso": 4,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "blocos em cascata sao serie"
+  },
+  {
+   "categoriaPacote": "matrix",
+   "gestoPacote": "bloco-cascata",
+   "usadoPor": [
+    "matrix.quadrants.v1"
+   ],
+   "motor": "serie-itens/item",
+   "peso": 4,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "blocos em cascata sao serie"
+  },
+  {
+   "categoriaPacote": "hierarchy",
+   "gestoPacote": "bloco-cascata",
+   "usadoPor": [
+    "hierarchy.layers.v1"
+   ],
+   "motor": "serie-itens/item",
+   "peso": 4,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "blocos em cascata sao serie"
+  },
+  {
+   "categoriaPacote": "scheme",
+   "gestoPacote": "bloco-cascata",
+   "usadoPor": [
+    "scheme.equation.v1"
+   ],
+   "motor": "serie-itens/item",
+   "peso": 4,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "blocos em cascata sao serie"
+  },
+  {
+   "categoriaPacote": "flow",
+   "gestoPacote": "bloco-cascata",
+   "usadoPor": [
+    "flow.filter.v1"
+   ],
+   "motor": "serie-itens/item",
+   "peso": 4,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "blocos em cascata sao serie"
+  },
+  {
+   "categoriaPacote": "interface",
+   "gestoPacote": "bloco-cascata",
+   "usadoPor": [
+    "interface.instagram.feed.v1",
+    "emphasis.headline-card.v1",
+    "proof.testimonial.v1",
+    "interface.data-table.v1",
+    "interface.ranking.v1",
+    "scheme.description.v1"
+   ],
+   "motor": "serie-itens/item",
+   "peso": 4,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "blocos em cascata sao serie"
+  },
+  {
+   "categoriaPacote": "interface",
+   "gestoPacote": "check-confirma",
+   "usadoPor": [
+    "interface.checklist.v1",
+    "interface.checks.pure.v1",
+    "interface.checks.list.v1",
+    "interface.calendar.v1",
+    "interface.schedule.v1",
+    "interface.confirmation.v1",
+    "interface.approval.v1",
+    "interface.mobile.checkout.v1"
+   ],
+   "motor": "numero-protagonista/fechamento",
+   "peso": 3,
+   "arquivo": "peso-03-ding.wav",
+   "por_que": "confirmacao seca, peso baixo"
+  },
+  {
+   "categoriaPacote": "flow",
+   "gestoPacote": "chevron-chega",
+   "usadoPor": [
+    "flow.journey-ab.v1",
+    "flow.cycle.v1",
+    "flow.timeline.v1",
+    "flow.gap.v1",
+    "flow.bottleneck.v1"
+   ],
+   "motor": "jornada/chegada",
+   "peso": 4,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "a seta chegando no destino"
+  },
+  {
+   "categoriaPacote": "relation",
+   "gestoPacote": "chevron-chega",
+   "usadoPor": [
+    "relation.cause-effect.v1"
+   ],
+   "motor": "jornada/chegada",
+   "peso": 4,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "a seta chegando no destino"
+  },
+  {
+   "categoriaPacote": "compare",
+   "gestoPacote": "chevron-chega",
+   "usadoPor": [
+    "compare.manual-auto.v1"
+   ],
+   "motor": "jornada/chegada",
+   "peso": 4,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "a seta chegando no destino"
+  },
+  {
+   "categoriaPacote": "interface",
+   "gestoPacote": "chevron-chega",
+   "usadoPor": [
+    "interface.chart.growth.v1"
+   ],
+   "motor": "jornada/chegada",
+   "peso": 4,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "a seta chegando no destino"
+  },
+  {
+   "categoriaPacote": "flow",
+   "gestoPacote": "conector-desenha",
+   "usadoPor": [
+    "flow.journey-ab.v1",
+    "flow.cycle.v1",
+    "flow.timeline.v1",
+    "flow.gap.v1",
+    "flow.bottleneck.v1"
+   ],
+   "motor": "jornada/partida",
+   "peso": 4,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "o conector sai de um ponto para outro"
+  },
+  {
+   "categoriaPacote": "relation",
+   "gestoPacote": "conector-desenha",
+   "usadoPor": [
+    "relation.cause-effect.v1"
+   ],
+   "motor": "jornada/partida",
+   "peso": 4,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "o conector sai de um ponto para outro"
+  },
+  {
+   "categoriaPacote": "compare",
+   "gestoPacote": "conector-desenha",
+   "usadoPor": [
+    "compare.manual-auto.v1"
+   ],
+   "motor": "jornada/partida",
+   "peso": 4,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "o conector sai de um ponto para outro"
+  },
+  {
+   "categoriaPacote": "interface",
+   "gestoPacote": "conector-desenha",
+   "usadoPor": [
+    "interface.chart.growth.v1"
+   ],
+   "motor": "jornada/partida",
+   "peso": 4,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "o conector sai de um ponto para outro"
+  },
+  {
+   "categoriaPacote": "grafico",
+   "gestoPacote": "conector-desenha",
+   "usadoPor": [
+    "chart.radar.v1"
+   ],
+   "motor": "jornada/partida",
+   "peso": 4,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "o conector sai de um ponto para outro"
+  },
+  {
+   "categoriaPacote": "esquema",
+   "gestoPacote": "conector-desenha",
+   "usadoPor": [
+    "flow.bridge.v1"
+   ],
+   "motor": "jornada/partida",
+   "peso": 4,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "o conector sai de um ponto para outro"
+  },
+  {
+   "categoriaPacote": "interface",
+   "gestoPacote": "digitacao-campo",
+   "usadoPor": [
+    "interface.chat.text.v1",
+    "interface.search.v1",
+    "interface.form.v1",
+    "interface.mobile.form.v1"
+   ],
+   "motor": "interface-mensagem/chega",
+   "peso": 4,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "texto entrando no campo"
+  },
+  {
+   "categoriaPacote": "compare",
+   "gestoPacote": "item-lista-entra",
+   "usadoPor": [
+    "compare.table.v1"
+   ],
+   "motor": "serie-itens/item",
+   "peso": 4,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "item de lista"
+  },
+  {
+   "categoriaPacote": "interface",
+   "gestoPacote": "item-lista-entra",
+   "usadoPor": [
+    "interface.notification.v1",
+    "interface.leads.v1",
+    "interface.comments.v1",
+    "interface.email.v1",
+    "interface.list.v1",
+    "interface.mobile.chat.v1",
+    "interface.mobile.notification.v1"
+   ],
+   "motor": "serie-itens/item",
+   "peso": 4,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "item de lista"
+  },
+  {
+   "categoriaPacote": "esquema",
+   "gestoPacote": "item-lista-entra",
+   "usadoPor": [
+    "compare.swap.v1"
+   ],
+   "motor": "serie-itens/item",
+   "peso": 4,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "item de lista"
+  },
+  {
+   "categoriaPacote": "flow",
+   "gestoPacote": "no-nasce",
+   "usadoPor": [
+    "flow.journey-ab.v1",
+    "flow.cycle.v1",
+    "flow.timeline.v1",
+    "flow.gap.v1",
+    "flow.bottleneck.v1"
+   ],
+   "motor": "serie-itens/item",
+   "peso": 4,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "no de esquema entrando, um por vez"
+  },
+  {
+   "categoriaPacote": "relation",
+   "gestoPacote": "no-nasce",
+   "usadoPor": [
+    "relation.cause-effect.v1"
+   ],
+   "motor": "serie-itens/item",
+   "peso": 4,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "no de esquema entrando, um por vez"
+  },
+  {
+   "categoriaPacote": "compare",
+   "gestoPacote": "no-nasce",
+   "usadoPor": [
+    "compare.manual-auto.v1"
+   ],
+   "motor": "serie-itens/item",
+   "peso": 4,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "no de esquema entrando, um por vez"
+  },
+  {
+   "categoriaPacote": "interface",
+   "gestoPacote": "no-nasce",
+   "usadoPor": [
+    "interface.chart.growth.v1"
+   ],
+   "motor": "serie-itens/item",
+   "peso": 4,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "no de esquema entrando, um por vez"
+  },
+  {
+   "categoriaPacote": "esquema",
+   "gestoPacote": "no-nasce",
+   "usadoPor": [
+    "flow.bridge.v1",
+    "relation.lever.v1"
+   ],
+   "motor": "serie-itens/item",
+   "peso": 4,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "no de esquema entrando, um por vez"
+  },
+  {
+   "categoriaPacote": "set",
+   "gestoPacote": "numero-assenta",
+   "usadoPor": [
+    "set.count-grid.v1"
+   ],
+   "motor": "numero-protagonista/fechamento",
+   "peso": 3,
+   "arquivo": "peso-03-ding.wav",
+   "por_que": "numero parando no alvo"
+  },
+  {
+   "categoriaPacote": "interface",
+   "gestoPacote": "numero-assenta",
+   "usadoPor": [
+    "interface.metrics.v1",
+    "interface.checkout.v1",
+    "interface.ab-test.v1"
+   ],
+   "motor": "numero-protagonista/fechamento",
+   "peso": 3,
+   "arquivo": "peso-03-ding.wav",
+   "por_que": "numero parando no alvo"
+  },
+  {
+   "categoriaPacote": "number",
+   "gestoPacote": "numero-assenta",
+   "usadoPor": [
+    "number.count.v1",
+    "number.money.v1",
+    "number.time.v1",
+    "number.date.v1",
+    "number.percent.v1",
+    "number.hero.v1"
+   ],
+   "motor": "numero-protagonista/fechamento",
+   "peso": 3,
+   "arquivo": "peso-03-ding.wav",
+   "por_que": "numero parando no alvo"
+  },
+  {
+   "categoriaPacote": "grafico",
+   "gestoPacote": "numero-assenta",
+   "usadoPor": [
+    "chart.donut.v1"
+   ],
+   "motor": "numero-protagonista/fechamento",
+   "peso": 3,
+   "arquivo": "peso-03-ding.wav",
+   "por_que": "numero parando no alvo"
+  },
+  {
+   "categoriaPacote": "number",
+   "gestoPacote": "numero-conta",
+   "usadoPor": [
+    "number.count.v1",
+    "number.money.v1",
+    "number.time.v1",
+    "number.date.v1",
+    "number.percent.v1",
+    "number.hero.v1"
+   ],
+   "motor": "numero-protagonista/entrada",
+   "peso": 7,
+   "arquivo": "peso-07-whoosh-grave.wav",
+   "por_que": "numero comecando a contar"
+  },
+  {
+   "categoriaPacote": "emphasis",
+   "gestoPacote": "painel-interface",
+   "usadoPor": [
+    "emphasis.word.v1",
+    "emphasis.icon-phrase.v1",
+    "emphasis.attribute.v1",
+    "emphasis.lettering.v1"
+   ],
+   "motor": "interface-mensagem/abre",
+   "peso": 5,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "painel de aplicativo abrindo"
+  },
+  {
+   "categoriaPacote": "set",
+   "gestoPacote": "painel-interface",
+   "usadoPor": [
+    "set.trio.v1",
+    "set.grid.v1",
+    "set.count-grid.v1"
+   ],
+   "motor": "interface-mensagem/abre",
+   "peso": 5,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "painel de aplicativo abrindo"
+  },
+  {
+   "categoriaPacote": "compare",
+   "gestoPacote": "painel-interface",
+   "usadoPor": [
+    "compare.right-wrong.v1",
+    "compare.table.v1",
+    "compare.balance.v1",
+    "compare.mirror.v1"
+   ],
+   "motor": "interface-mensagem/abre",
+   "peso": 5,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "painel de aplicativo abrindo"
+  },
+  {
+   "categoriaPacote": "process",
+   "gestoPacote": "painel-interface",
+   "usadoPor": [
+    "process.steps.v1"
+   ],
+   "motor": "interface-mensagem/abre",
+   "peso": 5,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "painel de aplicativo abrindo"
+  },
+  {
+   "categoriaPacote": "flow",
+   "gestoPacote": "painel-interface",
+   "usadoPor": [
+    "flow.funnel.v1",
+    "flow.filter.v1"
+   ],
+   "motor": "interface-mensagem/abre",
+   "peso": 5,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "painel de aplicativo abrindo"
+  },
+  {
+   "categoriaPacote": "hierarchy",
+   "gestoPacote": "painel-interface",
+   "usadoPor": [
+    "hierarchy.levels.v1",
+    "hierarchy.layers.v1"
+   ],
+   "motor": "interface-mensagem/abre",
+   "peso": 5,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "painel de aplicativo abrindo"
+  },
+  {
+   "categoriaPacote": "branch",
+   "gestoPacote": "painel-interface",
+   "usadoPor": [
+    "branch.tree.v1",
+    "branch.decision.v1"
+   ],
+   "motor": "interface-mensagem/abre",
+   "peso": 5,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "painel de aplicativo abrindo"
+  },
+  {
+   "categoriaPacote": "relation",
+   "gestoPacote": "painel-interface",
+   "usadoPor": [
+    "relation.venn.v1",
+    "relation.concentric.v1"
+   ],
+   "motor": "interface-mensagem/abre",
+   "peso": 5,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "painel de aplicativo abrindo"
+  },
+  {
+   "categoriaPacote": "matrix",
+   "gestoPacote": "painel-interface",
+   "usadoPor": [
+    "matrix.quadrants.v1"
+   ],
+   "motor": "interface-mensagem/abre",
+   "peso": 5,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "painel de aplicativo abrindo"
+  },
+  {
+   "categoriaPacote": "scale",
+   "gestoPacote": "painel-interface",
+   "usadoPor": [
+    "scale.intensity.v1"
+   ],
+   "motor": "interface-mensagem/abre",
+   "peso": 5,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "painel de aplicativo abrindo"
+  },
+  {
+   "categoriaPacote": "scheme",
+   "gestoPacote": "painel-interface",
+   "usadoPor": [
+    "scheme.equation.v1"
+   ],
+   "motor": "interface-mensagem/abre",
+   "peso": 5,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "painel de aplicativo abrindo"
+  },
+  {
+   "categoriaPacote": "interface",
+   "gestoPacote": "painel-interface",
+   "usadoPor": [
+    "interface.chat.audio.v1",
+    "interface.chat.text.v1",
+    "interface.adsmanager.panel.v1",
+    "interface.checklist.v1",
+    "interface.checks.pure.v1",
+    "interface.checks.list.v1",
+    "interface.instagram.profile.v1",
+    "interface.social.post.v1",
+    "interface.notification.v1",
+    "interface.metrics.v1",
+    "interface.instagram.highlights.v1",
+    "interface.instagram.feed.v1",
+    "profile.audience-card.v1",
+    "emphasis.headline-card.v1",
+    "interface.progress.v1",
+    "interface.calendar.v1",
+    "proof.testimonial.v1",
+    "interface.leads.v1",
+    "interface.goal.v1",
+    "interface.poll.v1",
+    "interface.search.v1",
+    "interface.comments.v1",
+    "interface.schedule.v1",
+    "interface.confirmation.v1",
+    "interface.email.v1",
+    "interface.checkout.v1",
+    "interface.player.v1",
+    "interface.videocall.v1",
+    "interface.data-table.v1",
+    "interface.ranking.v1",
+    "interface.form.v1",
+    "interface.toggles.v1",
+    "interface.ab-test.v1",
+    "interface.countdown.v1",
+    "interface.list.v1",
+    "interface.approval.v1",
+    "compare.panels.v1",
+    "scheme.description.v1",
+    "interface.pointer.v1",
+    "interface.mobile.form.v1",
+    "interface.mobile.chat.v1",
+    "interface.mobile.notification.v1",
+    "interface.mobile.post.v1",
+    "interface.mobile.checkout.v1",
+    "interface.mobile.profile.v1"
+   ],
+   "motor": "interface-mensagem/abre",
+   "peso": 5,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "painel de aplicativo abrindo"
+  },
+  {
+   "categoriaPacote": "grafico",
+   "gestoPacote": "painel-interface",
+   "usadoPor": [
+    "chart.donut.v1",
+    "chart.columns.v1",
+    "scale.semantic.v1",
+    "chart.radar.v1"
+   ],
+   "motor": "interface-mensagem/abre",
+   "peso": 5,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "painel de aplicativo abrindo"
+  },
+  {
+   "categoriaPacote": "esquema",
+   "gestoPacote": "painel-interface",
+   "usadoPor": [
+    "compare.swap.v1"
+   ],
+   "motor": "interface-mensagem/abre",
+   "peso": 5,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "painel de aplicativo abrindo"
+  },
+  {
+   "categoriaPacote": "scale",
+   "gestoPacote": "slider-desliza",
+   "usadoPor": [
+    "scale.intensity.v1"
+   ],
+   "motor": "jornada/partida",
+   "peso": 4,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "deslocamento continuo de controle"
+  },
+  {
+   "categoriaPacote": "interface",
+   "gestoPacote": "slider-desliza",
+   "usadoPor": [
+    "interface.adsmanager.panel.v1",
+    "interface.goal.v1",
+    "interface.poll.v1",
+    "interface.toggles.v1"
+   ],
+   "motor": "jornada/partida",
+   "peso": 4,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "deslocamento continuo de controle"
+  },
+  {
+   "categoriaPacote": "grafico",
+   "gestoPacote": "slider-desliza",
+   "usadoPor": [
+    "scale.semantic.v1"
+   ],
+   "motor": "jornada/partida",
+   "peso": 4,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "deslocamento continuo de controle"
+  },
+  {
+   "categoriaPacote": "proof",
+   "gestoPacote": "zoom-entra",
+   "usadoPor": [
+    "proof.annotated.v1"
+   ],
+   "motor": "interface-mensagem/abre",
+   "peso": 5,
+   "arquivo": "peso-04-stamp.wav",
+   "por_que": "aproximacao de imagem e bloco novo ocupando a tela"
+  }
+ ],
+ "faltantes": []
+}

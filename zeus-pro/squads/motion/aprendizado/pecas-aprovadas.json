@@ -1,0 +1,53 @@
+{
+  "_leia": "Pecas que o o dono do canal aprovou. O estado de cada uma no dia da aprovacao e a referencia do que e certo: licao que ela respeita ganha uma prova a favor, e regressao se mede contra ela.",
+  "pecas": [
+    {
+      "composition": "PauloRuizReels",
+      "aprovada_em": "2026-09-04",
+      "licoes_que_passaram": [
+        "cor-de-marca",
+        "imagem-repetida",
+        "enquadramento-de-foto",
+        "som-por-movimento",
+        "organizacao-de-material",
+        "letras-jornada",
+        "nivel-do-fecho"
+      ]
+    },
+    {
+      "composition": "FernandaEsteiraReels",
+      "aprovada_em": null,
+      "licoes_que_passaram": [
+        "cor-de-marca",
+        "imagem-repetida",
+        "enquadramento-de-foto",
+        "som-por-movimento",
+        "letras-jornada",
+        "espacamento-e-alinhamento",
+        "design-system-do-indice",
+        "material-de-terceiro",
+        "geometria-do-molde",
+        "estrutura-nasce-cheia",
+        "texto-em-dois-canais"
+      ]
+    },
+    {
+      "composition": "ClodoaldoZeusReels",
+      "aprovada_em": null,
+      "licoes_que_passaram": [
+        "cor-de-marca",
+        "imagem-repetida",
+        "enquadramento-de-foto",
+        "som-por-movimento",
+        "letras-jornada",
+        "espacamento-e-alinhamento",
+        "design-system-do-indice",
+        "material-de-terceiro",
+        "cadencia-do-tile",
+        "geometria-do-molde",
+        "estrutura-nasce-cheia",
+        "texto-em-dois-canais"
+      ]
+    }
+  ]
+}

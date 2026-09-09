@@ -1,0 +1,519 @@
+{
+  "_leia": "Fonte unica dos sons do squad. Quem edita: o o dono do canal aprova som e peso; as medidas sao preenchidas por scripts/analisar-sfx.py --catalogo, nunca a mao. Documentacao: docs/LOGICA-EFEITOS-SONOROS.md.",
+  "versao": 1,
+  "atualizado_em": "2026-09-06",
+  "sons": {
+    "peso-10-whoosh-longo.wav": {
+      "peso": 10,
+      "familia": "whoosh",
+      "usar_em": "palavra conceito com traco colorido, a peca de maior peso do video",
+      "aprovado_por": "o dono do canal",
+      "aprovado_em": "2026-09-04",
+      "origem": "colecao Woosh, arquivo 2",
+      "pico_s": 0.34,
+      "decaimento_s": 0.75,
+      "duracao_s": 2.3,
+      "rms_db": -22.7,
+      "grave_pct": 14.0
+    },
+    "peso-07-whoosh-grave.wav": {
+      "peso": 7,
+      "familia": "whoosh",
+      "usar_em": "peca estrutural pesada (grade, numero grande) e a frase de maior peso",
+      "aprovado_por": "o dono do canal",
+      "aprovado_em": "2026-09-04",
+      "origem": "colecao Woosh, arquivo 11",
+      "pico_s": 0.79,
+      "decaimento_s": 0.33,
+      "duracao_s": 1.64,
+      "rms_db": -18.8,
+      "grave_pct": 95.5
+    },
+    "peso-06-whoosh-forte.wav": {
+      "peso": 6,
+      "familia": "whoosh",
+      "usar_em": "revelacao positiva, frase grande, grade fechando",
+      "aprovado_por": "o dono do canal",
+      "aprovado_em": "2026-09-04",
+      "origem": "colecao Woosh, arquivo 6",
+      "pico_s": 0.81,
+      "decaimento_s": 0.33,
+      "duracao_s": 1.7,
+      "rms_db": -19.0,
+      "grave_pct": 95.6
+    },
+    "peso-04-whoosh-medio.wav": {
+      "peso": 4,
+      "familia": "whoosh",
+      "usar_em": "troca simples de cena, chegada de elemento, item de serie",
+      "aprovado_por": "o dono do canal",
+      "aprovado_em": "2026-09-04",
+      "origem": "colecao Woosh, arquivo 5",
+      "pico_s": 0.46,
+      "decaimento_s": 0.19,
+      "duracao_s": 0.91,
+      "rms_db": -16.9,
+      "grave_pct": 94.3
+    },
+    "peso-04-stamp.wav": {
+      "peso": 4,
+      "familia": "stamp",
+      "usar_em": "badge, selo ou icone assentando com escala. Nunca whoosh aqui: whoosh e deslocamento, stamp e chegada",
+      "aprovado_por": "uso aprovado na v22 do PauloRuizReels",
+      "aprovado_em": "2026-09-04",
+      "origem": "biblioteca do squad",
+      "pico_s": 0.02,
+      "decaimento_s": 0.05,
+      "duracao_s": 0.51,
+      "rms_db": -25.1,
+      "grave_pct": 83.3
+    },
+    "peso-03-ding.wav": {
+      "peso": 3,
+      "familia": "ding",
+      "usar_em": "check de aprovacao e fim de contagem de numero",
+      "aprovado_por": "uso aprovado na v22 do PauloRuizReels",
+      "aprovado_em": "2026-09-04",
+      "origem": "remotion.media",
+      "pico_s": 0.21,
+      "decaimento_s": 0.65,
+      "duracao_s": 1.4,
+      "rms_db": -19.1,
+      "grave_pct": 0.0
+    },
+    "peso-05-caixa-registradora.wav": {
+      "peso": 5,
+      "familia": "registradora",
+      "usar_em": "o instante em que a fala nomeia COMPRA ou VENDA e um elemento na tela vira o comprador. Um por video: e um evento, nao um enfeite",
+      "aprovado_por": "pedido do o dono do canal em 06/09/2026: \"trocar por uma pessoa com um cifrao ao lado e um barulho de cifrao, o efeito de caixa registradora\". Ele mandou buscar pronto na internet, sem IA e sem custo",
+      "aprovado_em": "2026-09-06",
+      "origem": "Mixkit (assets.mixkit.co), uso comercial livre sem atribuicao obrigatoria",
+      "_escolha": "quatro candidatos medidos. Este ganhou por ter DOIS ataques em 0,09 e 0,19s (o mecanismo e o sino, que e o que faz soar como caixa registradora de verdade) e pico imediato, que permite cravar no frame da palavra. Os outros tres: um com pico so em 0,39s, um com 83 por cento de agudo (moeda sintetica) e um de 15s que era ambiente de loja",
+      "pico_s": 0.09,
+      "decaimento_s": 0.3,
+      "duracao_s": 1.3,
+      "rms_db": -18.9,
+      "grave_pct": 4.8,
+      "teto_por_peca": 1
+    },
+    "peso-09-shimmer-revelacao.wav": {
+      "peso": 9,
+      "familia": "shimmer",
+      "usar_em": "a UNICA cena mais importante do video, ou a segunda mais importante. Teto duro de 2 por peca, e nunca duas seguidas. Comeca JUNTO com a cena e roda por baixo dela inteira: nao e build que estoura, e colchao de brilho que sustenta",
+      "nao_usar_em": "entrada comum, item de lista, qualquer cena que se repita. Usado tres vezes, deixa de significar importancia e vira textura de fundo",
+      "aprovado_por": "enviado pelo o dono do canal em 06/09/2026: \"efeito sonoro luminoso para algo bem importante, usado uma no maximo 2 vez em cada video, a ideia e mostrar que e importante e bom\"",
+      "aprovado_em": "2026-09-06",
+      "origem": "arquivo enviado pelo o dono do canal (Luminous Futuristic Rising Shimmer)",
+      "_medicao": "o bruto tinha 6,45s com 370ms de silencio na frente e cauda morta. Preparado: corte de 0,48s a 4,23s, sumico de 350ms no fim, ganho por PICO (nunca loudnorm: a primeira tentativa com loudnorm LRA=11 achatou a curva e matou a subida)",
+      "_curva": "RMS por oitavo: -21,2 / -10,9 / -10,0 / -9,9 / -10,2 / -10,8 / -10,6 / -20,2. Sobe em 0,5s, sustenta PLANO por 2,8s e sai. Nao tem pico dramatico no fim, entao NAO pede impacto depois: ele se basta",
+      "pico_s": 1.14,
+      "decaimento_s": 0.35,
+      "duracao_s": 3.75,
+      "rms_db": -11.5,
+      "teto_por_peca": 2
+    },
+    "peso-04-ping-confirmacao.wav": {
+      "peso": 4,
+      "familia": "ping",
+      "usar_em": "confirmacao: check que sela, dado que entra, campo que valida, item aprovado. Ataque em 0,01s permite cravar no quadro exato da palavra",
+      "nao_usar_em": "movimento sem conclusao (isso e whoosh) e veredito pesado (isso pede impacto grave)",
+      "aprovado_por": "enviado pelo o dono do canal em 06/09/2026: \"efeito curto, pra mim parece quando alguem submete um formulario ou algo semelhante\". Leitura dele confere com a medicao",
+      "aprovado_em": "2026-09-06",
+      "origem": "arquivo enviado pelo o dono do canal (Crisp Premium Digital Confirmation Ping)",
+      "_medicao": "o bruto tinha 1,81s, sendo 1,66s de silencio morto no fim. Cortado em 0,55s",
+      "_curva": "pico em 0,04s, cauda a -30 dB em 0,18s. Tres ataques finos em 0,01, 0,02 e 0,10s: e o que da a sensacao de tom subindo",
+      "pico_s": 0.04,
+      "decaimento_s": 0.18,
+      "duracao_s": 0.55,
+      "rms_db": -15.4
+    },
+    "peso-06-sweep-transicao.wav": {
+      "peso": 6,
+      "familia": "sweep",
+      "usar_em": "movimento que TERMINA em alguma coisa: elemento que viaja e assenta, painel que abre, passagem de bloco. A cauda tonal entrega o elemento; casar o fim da cauda (0,65s) com o quadro em que a peca para",
+      "nao_usar_em": "elemento que so aparece parado (isso e ping ou whoosh curto)",
+      "aprovado_por": "enviado pelo o dono do canal em 06/09/2026: \"parece que acontece um movimento que termina em algo\". Leitura dele confere com a medicao",
+      "aprovado_em": "2026-09-06",
+      "origem": "arquivo enviado pelo o dono do canal (Premium Futuristic Transition Sweep)",
+      "_medicao": "o bruto tinha 2,77s com 150ms de frente e cauda longa demais. Corte de 0,14s a 1,44s",
+      "_curva": "RMS por oitavo: -23,4 / -10,2 / -10,4 / -15,0 / -19,7 / -23,9 / -28,1 / -36,5. Pico logo no comeco e queda continua: o movimento acontece na frente e a cauda e a chegada",
+      "pico_s": 0.23,
+      "decaimento_s": 0.65,
+      "duracao_s": 1.3,
+      "rms_db": -15.1
+    },
+    "peso-05-erro-grave.wav": {
+      "peso": 5,
+      "familia": "erro",
+      "usar_em": "o quadro em que a tela mostra que algo esta ERRADO: badge de X, opcao descartada, caminho que nao funciona",
+      "nao_usar_em": "risco ou tensao (isso e alarme) e recuo neutro de elemento (isso e whoosh)",
+      "aprovado_em": "2026-09-06",
+      "origem": "Kenney (kenney.nl), pack Interface Sounds / Digital Audio, CC0 1.0 (dominio publico, uso comercial livre, sem atribuicao obrigatoria). Achado via repositorio kapishdima/soundcn no GitHub, licenca conferida no License.txt do proprio pack",
+      "_escolha": "oito candidatos de erro medidos. Este ganhou por ser o MAIS GRAVE de todos (4 por cento de energia no agudo) com pico em 0,04s. Duas notas graves descendo e o padrao universal de 'errado', e o grave evita o tom comico de desenho animado que os outros sete tinham",
+      "pico_s": 0.06,
+      "decaimento_s": 0.12,
+      "duracao_s": 0.46,
+      "rms_db": -13.5
+    },
+    "peso-03-check-certo.wav": {
+      "peso": 3,
+      "familia": "check",
+      "usar_em": "o par do erro numa comparacao certo e errado: o lado que da certo. Curto e brilhante, crava no quadro",
+      "nao_usar_em": "confirmacao de envio ou validacao, que tem som proprio (familia ping, mais encorpado)",
+      "aprovado_em": "2026-09-06",
+      "origem": "Kenney (kenney.nl), pack Interface Sounds / Digital Audio, CC0 1.0 (dominio publico, uso comercial livre, sem atribuicao obrigatoria). Achado via repositorio kapishdima/soundcn no GitHub, licenca conferida no License.txt do proprio pack",
+      "_escolha": "quatro confirmacoes medidas. Esta ganhou por ser a mais brilhante (83 por cento de agudo) e a mais curta com pico imediato. As outras eram graves demais e soavam como fechamento, nao como acerto",
+      "pico_s": 0.01,
+      "decaimento_s": 0.29,
+      "duracao_s": 0.32,
+      "rms_db": -12.0
+    },
+    "peso-02-tique-contagem.wav": {
+      "peso": 2,
+      "familia": "tique",
+      "usar_em": "numero correndo, contador, porcentagem subindo. Feito para TOCAR REPETIDO: 20 ms e neutro o bastante para nao cansar em serie",
+      "nao_usar_em": "evento unico. Sozinho ele e imperceptivel; so faz sentido em serie",
+      "_como_usar": "um por decimo de segundo enquanto o numero corre, e o som de peso maior fecha quando o numero para",
+      "aprovado_em": "2026-09-06",
+      "origem": "Kenney (kenney.nl), pack Interface Sounds / Digital Audio, CC0 1.0 (dominio publico, uso comercial livre, sem atribuicao obrigatoria). Achado via repositorio kapishdima/soundcn no GitHub, licenca conferida no License.txt do proprio pack",
+      "_escolha": "cinco cliques e tres tiques medidos. Este ganhou por ser o mais curto com pico imediato e 91 por cento de agudo: agudo e curto nao acumula grave quando repete rapido",
+      "pico_s": 0.01,
+      "decaimento_s": 0.01,
+      "duracao_s": 0.02,
+      "rms_db": -15.3
+    },
+    "peso-03-cronometro-tique.wav": {
+      "peso": 3,
+      "familia": "cronometro",
+      "usar_em": "tempo passando, prazo, urgencia. Tem TRES ataques em 60 ms (o mecanismo do relogio), o que da corpo de tique-taque",
+      "nao_usar_em": "contagem de numero, que pede o tique neutro da familia tique",
+      "_como_usar": "cronometro nao e um arquivo, e uma CADENCIA: repetir a cada 0,5s (ou 1s para tempo mais lento) enquanto a ideia de tempo estiver na tela. Nunca mais de 6 repeticoes seguidas",
+      "aprovado_em": "2026-09-06",
+      "origem": "Kenney (kenney.nl), pack Interface Sounds / Digital Audio, CC0 1.0 (dominio publico, uso comercial livre, sem atribuicao obrigatoria). Achado via repositorio kapishdima/soundcn no GitHub, licenca conferida no License.txt do proprio pack",
+      "pico_s": 0.04,
+      "decaimento_s": 0.05,
+      "duracao_s": 0.06,
+      "rms_db": -12.6
+    },
+    "peso-06-alarme-tensao.wav": {
+      "peso": 6,
+      "familia": "alarme",
+      "usar_em": "a fala aponta um RISCO, uma perda ou um erro comum que custa caro. Tres notas graves em sequencia: tensao, nao susto",
+      "nao_usar_em": "erro pontual na tela (isso e a familia erro) e qualquer cena positiva",
+      "_atencao": "o pico esta em 0,53s, entao ele NAO crava no quadro como os outros. Comecar o som 0,53s ANTES do quadro alvo para o peso cair na palavra certa",
+      "teto_por_peca": 1,
+      "aprovado_em": "2026-09-06",
+      "origem": "Kenney (kenney.nl), pack Interface Sounds / Digital Audio, CC0 1.0 (dominio publico, uso comercial livre, sem atribuicao obrigatoria). Achado via repositorio kapishdima/soundcn no GitHub, licenca conferida no License.txt do proprio pack",
+      "_escolha": "doze candidatos de alarme medidos (glitch, question, phaser). Este ganhou por ter 1 por cento de energia no agudo, o mais grave de todos, com cinco ataques em um segundo. Os glitch eram curtos demais (20 ms, viram clique) e os question soavam de videogame",
+      "pico_s": 0.53,
+      "decaimento_s": 0.8,
+      "duracao_s": 0.95,
+      "rms_db": -11.4
+    }
+  },
+  "vinheta": {
+    "arquivo": "vinheta-zeus-violino-teste.wav",
+    "_leia": "TESTE 07/09/2026 a pedido do o dono do canal: a voz feminina 'ficou muito tech'. Candidata: musica gerada no Suno ('zeus remix.mp3', violino), letra embutida no proprio arquivo (tag lyrics-eng): '[Whoosh sound effect] / Zeus, IA para mentores / [riser end]'. Cortado de 8,9s a 13,9s do arquivo original (removeu o trecho so-instrumental antes da voz, mais da metade do arquivo, como pedido), fade-in 0,15s, fade-out 0,4s. NAO REVERTER pra vinheta-zeus-voz-feminina.wav sem o o dono do canal ouvir e aprovar (ou reprovar) este teste.",
+    "fala": "Zeus, IA para mentores",
+    "origem": "zeus remix.mp3 (Downloads do o dono do canal), gerado no Suno. Trecho de 8,9s a 13,9s do arquivo de 15,96s.",
+    "palavra_zeus_s": 0.4,
+    "_palavra_zeus": "instante em que a voz canta ZEUS, medido por transcricao (whisper large-v3) + forma de onda no arquivo ja cortado. IMPORTANTE (doutrina de 06/09/2026, mantida no teste): a ancora da vinheta e o MAIOR valor entre o frame do selo e o fim da fala + respiro — nunca se move pra encaixar a palavra. Quem se move e a revelacao do texto no ZeusSealClose.tsx (SOZINHO_LOCAL_FRAME_ZEUS), pra casar com ONDE QUER QUE a vinheta caia. Recalculado nesta troca: local_frame 24 -> 33 (ver ZeusSealClose.tsx).",
+    "pico_s": 0.5,
+    "decaimento_s": 3.8,
+    "duracao_s": 5.0,
+    "rms_db": -17.5,
+    "ancora": "REVOGADA a ancora antiga em 06/09/2026. Ela dizia 'o inicio do arquivo cai no frame em que o tile do selo comeca a aparecer', e era isso que fazia a vinheta tocar por cima da locucao: a palavra ZEUS sumia embaixo da voz. A ancora agora e o MAIOR valor entre o frame do selo e o fim da ultima palavra do narration.json mais 0,5s de respiro (RESPIRO_APOS_A_FALA_S em sfx-mapa.js). Quem calcula e scripts/lib/sfx-mapa.js, e o mapa grava qual dos dois venceu no campo ancoradaEm. O mixar-final.js reprova sobreposicao.",
+    "anterior": "vinheta-zeus-voz-feminina.wav",
+    "_decaimento": "arquivo de teste: 3,8s de cauda do riser/fade do Suno, com fade-out de 0,4s aplicado no corte pra nao terminar seco."
+  },
+  "tabela_de_peso": {
+    "_leia": "Lei 7. O peso do gesto escolhe o arquivo e o volume. Nenhum componente declara som nem volume.",
+    "10": {
+      "som": "peso-10-whoosh-longo.wav",
+      "volume_db": -9
+    },
+    "7": {
+      "som": "peso-07-whoosh-grave.wav",
+      "volume_db": -11
+    },
+    "6": {
+      "som": "peso-06-whoosh-forte.wav",
+      "volume_db": -13
+    },
+    "5": {
+      "som": "peso-04-whoosh-medio.wav",
+      "volume_db": -14
+    },
+    "4": {
+      "som": "peso-04-whoosh-medio.wav",
+      "volume_db": -15
+    },
+    "3": {
+      "som": "peso-03-ding.wav",
+      "volume_db": -18
+    }
+  },
+  "categorias": {
+    "_leia": "Vocabulario FECHADO. Categoria ou gesto fora daqui reprova no choreo-lint, antes do render. Categoria nova e decisao do o dono do canal, nunca do agente. Um gesto e o PESO (numero) ou {peso, familia} quando aquele peso tem mais de um som no catalogo: peso 4 tem whoosh-medio e stamp, e stamp e chegada, nunca deslocamento.",
+    "palavra-conceito": {
+      "descricao": "a palavra que sustenta o argumento, com traco do espectro embaixo",
+      "gestos": {
+        "entrada": 5,
+        "traco": 10
+      }
+    },
+    "grade-conteudos": {
+      "descricao": "grade de posts com contador. Aparece duas vezes num video (feed e recap) e leva som identico nas duas",
+      "gestos": {
+        "entrada": 7,
+        "fechamento": 3
+      }
+    },
+    "frase-grande": {
+      "descricao": "lettering que ocupa o canal da fala, sem elemento",
+      "gestos": {
+        "entrada": 7,
+        "frase": 7
+      }
+    },
+    "selo-marca": {
+      "descricao": "logo de marca de terceiro entrando, no gancho ou no fecho de resultado",
+      "gestos": {
+        "entrada": 6
+      }
+    },
+    "check-aprovacao": {
+      "descricao": "o check que sela um resultado. Um por video",
+      "gestos": {
+        "sela": 3
+      }
+    },
+    "numero-protagonista": {
+      "descricao": "numero grande contando do zero ate o alvo",
+      "gestos": {
+        "entrada": 7,
+        "fechamento": 3
+      }
+    },
+    "comparacao-veredito": {
+      "descricao": "duas pecas lado a lado, uma certa e uma errada, com badge de veredito",
+      "gestos": {
+        "entrada": 4,
+        "badge": {
+          "peso": 4,
+          "familia": "stamp"
+        }
+      }
+    },
+    "jornada": {
+      "descricao": "dois pontos e a distancia entre eles",
+      "gestos": {
+        "partida": 4,
+        "chegada": 4
+      }
+    },
+    "serie-itens": {
+      "descricao": "itens do mesmo tipo entrando um a um. Mesmo som em todas as etapas, caindo 1 dB por etapa",
+      "gestos": {
+        "item": 4
+      }
+    },
+    "selo-zeus": {
+      "descricao": "o selo de fecho da marca Zeus assentando",
+      "gestos": {
+        "assenta": 6
+      }
+    },
+    "selo-exemplo": {
+      "descricao": "o selo de fecho da marca Exemplo assentando. Separado do selo-zeus porque a vinheta falada e do Zeus: peca da Exemplo fecha com o som de assentar, sem a fala",
+      "gestos": {
+        "assenta": 6
+      }
+    },
+    "objeto-3d": {
+      "descricao": "objeto de estudio com um gesto unico: anzol, baleia e sardinha, celular, carteira. Peso 6 porque e revelacao de peca inteira, nao troca simples",
+      "gestos": {
+        "entrada": 6
+      }
+    },
+    "interface-mensagem": {
+      "descricao": "tela de aplicativo se comportando: mensagem chegando, painel abrindo, contagem de verba fechando. Tres gestos porque os tres pesam diferente",
+      "gestos": {
+        "chega": 4,
+        "abre": 5,
+        "fechamento": 3
+      }
+    },
+    "grafico-sobe": {
+      "descricao": "curva sendo desenhada, com marcacoes ao longo dela. A curva pesa mais que cada marco",
+      "gestos": {
+        "entrada": 5,
+        "marco": 3
+      }
+    },
+    "revelacao": {
+      "descricao": "a cena entrega uma conquista, nao apenas informacao (trofeu, resultado alcancado)",
+      "gestos": {
+        "entrada": 6
+      }
+    },
+    "conceito-com-icone": {
+      "descricao": "molde N2 do Design System v2.1 (05/09/2026): circulo com anel de espectro mais icone, e a frase que o nomeia. Peso 7, aditivo (mesmo som de frase-grande, reaproveitado): nao mexe em peca aprovada, nenhuma peca aprovada usa este molde ainda.",
+      "gestos": {
+        "entrada": 7
+      }
+    },
+    "_sem_som_aprovado": {
+      "_leia": "Categorias que existem no video mas ainda nao tem som escolhido pelo o dono do canal. O mapa avisa e nao posiciona som. As outras quatro que moravam aqui (objeto-3d, interface-mensagem, e as ligadas a grafico e revelacao) saíram em 05/09/2026: ganharam PESO, e o peso escolhe um dos seis sons ja aprovados. Nenhum arquivo novo entrou. Se ele quiser um som proprio para 'mensagem chegando', troca aqui, sem tocar em componente nenhum.",
+      "digitacao": "texto aparecendo letra por letra. Usa frase-grande/entrada ate ele aprovar um som de rastro",
+      "abertura": "assinatura sonora dos tres primeiros segundos"
+    },
+    "venda-acontece": {
+      "descricao": "a fala nomeia compra ou venda e a tela mostra quem compra",
+      "_leia": "som SEMANTICO: a familia manda, nao o peso. Sem declarar familia, a tabela de peso devolve o whoosh generico, que foi o que aconteceu na primeira tentativa (06/09/2026).",
+      "gestos": {
+        "vende": {
+          "peso": 5,
+          "familia": "registradora"
+        }
+      }
+    },
+    "revelacao-importante": {
+      "descricao": "a cena mais importante da peca inteira",
+      "_leia": "TETO DE 2 POR VIDEO, checado na revisao. Som semantico: declara familia, nunca so o peso",
+      "gestos": {
+        "revela": {
+          "peso": 9,
+          "familia": "shimmer"
+        }
+      }
+    },
+    "confirmacao": {
+      "descricao": "algo se confirma, valida ou sela",
+      "gestos": {
+        "confirma": {
+          "peso": 4,
+          "familia": "ping"
+        }
+      }
+    },
+    "transicao-com-chegada": {
+      "descricao": "movimento que termina em um elemento que assenta",
+      "gestos": {
+        "assenta": {
+          "peso": 6,
+          "familia": "sweep"
+        }
+      }
+    },
+    "erro-na-tela": {
+      "descricao": "a tela mostra que algo esta errado",
+      "gestos": {
+        "erra": {
+          "peso": 5,
+          "familia": "erro"
+        }
+      }
+    },
+    "certo-na-tela": {
+      "descricao": "o lado que da certo numa comparacao",
+      "gestos": {
+        "acerta": {
+          "peso": 3,
+          "familia": "check"
+        }
+      }
+    },
+    "contagem": {
+      "descricao": "numero correndo ou contador subindo",
+      "_leia": "som de serie: toca repetido, um por decimo de segundo",
+      "gestos": {
+        "conta": {
+          "peso": 2,
+          "familia": "tique"
+        }
+      }
+    },
+    "tempo-passando": {
+      "descricao": "prazo, urgencia, cronometro",
+      "_leia": "cadencia de 0,5s, no maximo 6 repeticoes",
+      "gestos": {
+        "corre": {
+          "peso": 3,
+          "familia": "cronometro"
+        }
+      }
+    },
+    "risco-alerta": {
+      "descricao": "a fala aponta um risco ou uma perda",
+      "_leia": "TETO DE 1 POR PECA. O pico esta em 0,53s: comecar o som antes do quadro alvo",
+      "gestos": {
+        "alerta": {
+          "peso": 6,
+          "familia": "alarme"
+        }
+      }
+    }
+  },
+  "regras": {
+    "_leia": "Leis 2, 4, 5 e 6, na forma que o codigo aplica.",
+    "distancia_minima_s": 0.25,
+    "serie_queda_db_por_etapa": 1,
+    "serie_maximo_etapas": 6,
+    "densidade_por_estilo": {
+      "apple-conceitual": {
+        "segundos_por_som": 2.0,
+        "_leia": "Era 2,5s ate 06/09/2026. Mudou por ordem do o dono do canal: 'tem que organizar os efeitos sonoros para aparecer em cada movimento, alguns mais importantes vai ter um tipo, outros menos importante vai ter outro efeito sonoro'. O teto antigo foi calibrado para o estilo SO VOZ, onde cada som fica exposto no silencio; com trilha musical por baixo o som de movimento se integra e a mesma densidade deixa de pesar. Nao e afrouxamento por conveniencia: com o teto velho, seis conceitos de uma grade nao cabiam, e tres deles entravam mudos, que foi exatamente a falha que ele ouviu.",
+        "_anterior": 2.5
+      },
+      "popular": {
+        "segundos_por_som": 1.8,
+        "cena_curta_s": 1.5,
+        "cena_curta_regra": "so o gesto principal, nunca o de fechamento"
+      },
+      "depoimento": {
+        "segundos_por_som": 2.5
+      }
+    }
+  },
+  "_pendente_ouvido_08_09": {
+    "_leia": "Triado do zip 'EFEITOS SONOROS' (312 arquivos medidos por analisar-sfx.py) em 08/09/2026. NADA aqui esta aprovado nem tocado no catalogo oficial: sao 6 candidatos copiados para pendente-ouvido/, escolhidos por medida (pico, decaimento, grave/agudo) comparada aos sons ja aprovados. o dono do canal ouve e aprova ou reprova um a um; nenhum entra em peca antes disso.",
+    "pendente-interface-chega.wav": {
+      "proposta_para": "interface-mensagem/chega (peso 4, hoje sem som proprio, cai no whoosh generico)",
+      "por_que": "pico em 0,14s, sem grave, decaimento de 0,04s: cravavel no quadro, neutro, nao compete com fala",
+      "origem": "pasta POP UP do zip, arquivo POP UP 01.wav"
+    },
+    "pendente-interface-abre.mp3": {
+      "proposta_para": "interface-mensagem/abre (peso 5, hoje sem som proprio)",
+      "por_que": "pico em 0,05s mas decaimento de 0,31s: mais encorpado que o de 'chega', soa como painel abrindo em vez de mensagem pontual",
+      "origem": "Futuristic Motion Graphics UI Kit, Chime Button 1.mp3"
+    },
+    "pendente-abertura.wav": {
+      "proposta_para": "categoria 'abertura' (assinatura dos 3 primeiros segundos, hoje em _sem_som_aprovado)",
+      "por_que": "unico candidato com grave E agudo juntos (54% e 44%): tem corpo pra abrir e brilho pra soar atual. 2,8s cabe nos 3s da assinatura. RMS baixo (-30dB), precisa ganho na hora de aplicar",
+      "origem": "pasta WOOSH do zip, Futuristic Reveal.wav"
+    },
+    "pendente-whoosh-variante.wav": {
+      "proposta_para": "variante B do peso-06/07-whoosh (nunca repetir o mesmo arquivo em toda troca de cena pesada)",
+      "por_que": "grave 97,1%, mais grave que os dois whoosh ja aprovados (95,5% e 95,6%), pico mais cedo (0,17s). Mesma familia sonora, cara diferente",
+      "origem": "pasta WOOSH do zip, strong blow woosh.wav"
+    },
+    "pendente-glitch-sutil.wav": {
+      "proposta_para": "categoria nova (nao existe ainda: 'falha-tecnica' ou 'defeito-sistema', pra quando a fala aponta erro de ferramenta ou trava)",
+      "por_que": "decision pendente do o dono do canal: nao ha categoria pra glitch no catalogo hoje. Este e o mais sutil (decaimento 0,19s, agudo moderado)",
+      "origem": "pasta GLITCH do zip, Glitch Item 04.wav"
+    },
+    "pendente-glitch-agressivo.wav": {
+      "proposta_para": "mesma categoria nova acima, versao mais forte",
+      "por_que": "pico em 0,57s, agudo 83,8%: mais dramatico que o sutil, pra falha maior ou momento de tensao mais alto",
+      "origem": "pasta GLITCH do zip, Glitch Asset 02.wav"
+    },
+    "_descartado_teclado_digitacao": "12 arquivos de teclado no zip (pasta TECLADOS) sao loops longos de 3,7 a 4s com pico tardio e RMS muito baixo (-34 a -40dB): servem pra fundo continuo, nao pra evento cravado por letra. Nenhum bom pra 'digitacao'. Continua usando peso-02-tique-contagem repetido como som provisorio ate aparecer candidato melhor",
+    "_descartado_impact_venda": "pasta IMPACT do zip so tinha 2 arquivos uteis e nenhum supera o shimmer/whoosh ja aprovados; os 3 sons de caixa registradora/dinheiro do zip sao mais fracos que o peso-05-caixa-registradora ja aprovado (que tem dois ataques medidos, mecanismo real). Nao propus nenhum dos dois"
+  },
+  "bancos": {
+    "banco-nao-aprovado/": "59 arquivos medidos, incluindo a colecao inteira de whoosh, whoosh magic e riser. O o dono do canal reprovou a maioria de ouvido. Nada daqui entra num video sem ele aprovar um a um.",
+    "_versions/": "os mesmos sons aprovados com os nomes antigos, antes da organizacao por peso",
+    "../sounds/": "biblioteca funcional antiga (tick, switch, reveal, impact, downer). Fica como banco nao aprovado ate ele ouvir"
+  }
+}

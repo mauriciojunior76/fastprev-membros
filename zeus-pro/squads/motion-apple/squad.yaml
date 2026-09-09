@@ -1,0 +1,183 @@
+name: motion-apple
+version: "1.0.0"
+created: 2026-09-05
+description: >
+  Squad unico do fluxo "video de Zoom vira Reel no estilo Apple Conceitual".
+  Formato fixo 1080x1920 a 60 fps, fundo branco, dois cartoes de video no topo,
+  fala virando legenda, palco com UM elemento por ideia.
+  Este squad e o CEREBRO: transcricao, beats por significado, classificacao da estrutura
+  da informacao, consulta ao design system, plano de cenas sincronizado por palavra,
+  auditorias de ritmo, estagnacao, som e uso do design system.
+  O MOTOR (Remotion, legenda, curvas, som, render, validadores) continua em squads/motion
+  e e usado por caminho, nunca copiado.
+
+apelidos:            # como o o dono do canal chama este squad
+  - Zeus Motion/Apple-Style
+  - motion estilo apple
+  - reels estilo apple
+  - squad reels
+
+lead: motion-apple-master
+category: video-reels
+domain: D2  # interno (Exemplo e mentorados)
+
+inherits_from:
+  - squads/_core-team/squad.yaml
+
+# ─── MOTOR COMPARTILHADO (nunca copiar codigo pra ca) ──────────────────────────
+motor:
+  raiz: squads/motion
+  doc: squads/motion-apple/docs/MOTOR-COMPARTILHADO.md
+  regra: correcao no motor se faz dentro do zeus-motion, uma vez so, e vale pros dois squads
+  usa:
+    compositions: squads/motion/src/compositions/     # as pecas *Reels continuam aqui
+    core: squads/motion/src/core/                     # layout, choreo, springs, curvas, sfx
+    legenda: squads/motion/src/modules/text-system/Captions.tsx
+    transcricao: squads/motion/scripts/transcribe-words.py
+    storyboard: squads/motion/scripts/storyboard.js
+    lint: squads/motion/scripts/choreo-lint.js
+    pre_render: squads/motion/scripts/pre-render-validate.js
+    qa_frames: squads/motion/scripts/qa-frames.js
+    qa_approve: squads/motion/scripts/qa-approve.js
+    render: squads/motion/scripts/render.js
+    aprendizado: squads/motion/scripts/aprendizado.js
+    nova_composition: squads/motion/scripts/new-composition.js
+    sfx_catalogo: squads/motion/public/_sfx/catalogo.json
+    icones: squads/motion/public/_icones/icons-map.json
+    contrato_codigo: squads/motion/docs/zeus-motion-design-system.md
+
+# ─── DESIGN SYSTEM (fonte dos indices) ────────────────────────────────────────
+design_system:
+  raiz: squads/motion-apple/design-system/
+  versao: "3.3"
+  indice: squads/motion-apple/design-system/INDEX.md          # <= 8k chars, injetado pelo roteador
+  guia_ia: squads/motion-apple/design-system/AI_USAGE_GUIDE.md
+  roteador: squads/motion-apple/design-system/design-router.json
+  registros: squads/motion-apple/design-system/registry/
+  lei_local: squads/motion-apple/docs/DESIGN-SYSTEM-REELS-APPLE.md
+  overrides: squads/motion-apple/design-system/local-overrides.json
+  governanca: squads/motion-apple/docs/COMO-ATUALIZAR-O-DESIGN-SYSTEM.md
+  regra: a lei local vence o design system quando conflitam (decisao provada nao muda por sugestao externa)
+
+docs:
+  arquitetura: squads/motion-apple/docs/ARQUITETURA.md
+  processo: squads/motion-apple/docs/PROCESSO.md
+  playbook: squads/motion-apple/docs/ZOOM-REEL-MOTION.md
+  camadas: squads/motion-apple/docs/PROCESSO-REEL-ZOOM.md
+  livro_de_estilo: squads/motion-apple/docs/STYLE-APPLE-CONCEITUAL.md
+  heuristicas: squads/motion-apple/docs/HEURISTICAS-E-FRAMEWORKS.md
+  moldes: squads/motion-apple/docs/BIBLIOTECA-DE-MOLDES.md
+  erros_visuais: squads/motion-apple/docs/CATALOGO-DE-ERROS-VISUAIS.md
+  som: squads/motion-apple/docs/LOGICA-EFEITOS-SONOROS.md
+  lei_on_demand: docs/rules-on-demand/squad-reels-transcript-first.md
+
+output:
+  formato: VERTICAL 1080x1920
+  fps: 60
+  render_path: "sua-pasta-do-zeus"
+  organizacao: squads/motion-apple/docs/ORGANIZACAO-E-NOMES.md
+
+# ─── ESTEIRA (ordem obrigatoria; nada pula etapa) ─────────────────────────────
+# tipo: AUTOMATICO = script decide · PADRAO = script com escolha guardada · PENSADO = modelo julga
+esteira:
+  R0_materia_prima:
+    tipo: AUTOMATICO
+    scripts: [scripts/video/cortar-fala.js, squads/motion/scripts/mapear-redundancia.js, scripts/video/face_track.py]
+    saida: video cortado + audio-final.wav
+  R1_transcricao:
+    tipo: AUTOMATICO
+    script: squads/motion/scripts/transcribe-words.py
+    saida: src/compositions/<Comp>/data/narration.json
+    regra: o modelo NUNCA le words[]; le o digest
+  R2_beats:
+    tipo: PENSADO
+    script: squads/motion-apple/scripts/beats.js
+    agentes: [transcript-analyst, semantic-content-architect]
+    saida: [plan/01-transcript-digest.md, plan/02-beats.json, plan/03-visual-opportunities.json]
+    gate: beats.js --validate
+  R3_scene_plan:
+    tipo: PENSADO
+    script: squads/motion-apple/scripts/ds-router.js --plan
+    agentes: [design-system-router, reels-motion-director]
+    saida: [plan/04-ds-retrieval.json, plan/05-scene-plan.json]
+    gate: [ds-cena.js, ds-sfx.js]
+  R4_storyboard:
+    tipo: PADRAO
+    scripts: [squads/motion-apple/scripts/scene-plan-to-tokens.js, squads/motion/scripts/storyboard.js]
+    gate: OK do o dono do canal na folha
+    regra: NENHUM render antes do OK
+  R5_build:
+    tipo: PENSADO
+    agente: motion-dev
+    saida: components/<Cena>.tsx + SFX_EVENTS
+  R6_lint:
+    tipo: AUTOMATICO
+    scripts: [squads/motion/scripts/choreo-lint.js, squads/motion/scripts/pre-render-validate.js, squads/motion-apple/scripts/ds-auditar.js]
+  R7_qa:
+    tipo: PENSADO
+    scripts: [squads/motion/scripts/qa-frames.js, scripts/video/qa-beats.js]
+    agentes: [visual-reviewer]
+    subagente: .claude/agents/revisor-visual-motion.md
+    gate: qa-approve.js F1..F7 todas >= 8
+  R8_render:
+    tipo: AUTOMATICO
+    script: squads/motion/scripts/render.js
+    exige: approval.json valido
+  R9_revisao_dono:
+    tipo: PENSADO
+    quem: o dono do canal assiste; reclamacao vira aprendizado.js --reclamacao
+  R10_aprendizado:
+    tipo: AUTOMATICO
+    script: squads/motion/scripts/aprendizado.js --aprovado
+    registra: chosen.id em aprendizado/pecas-aprovadas.json
+
+agents:
+  - id: motion-apple-master
+    role: Orquestrador da esteira R0 a R10
+    tier: 0
+    file: agents/motion-apple-master.md
+  - id: transcript-analyst
+    role: Le o digest e monta os beats com topico, ideia e papel narrativo
+    tier: 1
+    file: agents/transcript-analyst.md
+  - id: semantic-content-architect
+    role: Classifica a estrutura da informacao de cada beat
+    tier: 1
+    file: agents/semantic-content-architect.md
+  - id: design-system-router
+    role: Escolhe o recurso do design system entre os candidatos, com motivo
+    tier: 1
+    file: agents/design-system-router.md
+  - id: reels-motion-director
+    role: Transforma a escolha em tempo, foco, gesto e som por cena
+    tier: 1
+    file: agents/reels-motion-director.md
+  - id: motion-dev
+    role: Escreve os componentes Remotion de cada cena
+    tier: 2
+    file: agents/motion-dev.md
+  - id: visual-reviewer
+    role: Regua unica de revisao (F1 a F7 + uso do design system + estagnacao)
+    tier: 2
+    file: agents/visual-reviewer.md
+
+routing:
+  keywords:
+    - zeus motion apple
+    - estilo apple
+    - reels estilo apple
+    - motion estilo apple
+    - squad reels
+    - vira reel
+    - scene plan
+    - plano de cenas
+    - beats do video
+  nao_e_deste_squad:
+    - video narrado por TTS (zeus-motion)
+    - estilo Popular, Depoimento, Exemplo, Neoanalogica, Vintage (zeus-motion)
+    - edicao de aula e face-cam longa (video-editor-exemplo)
+
+learning:
+  memoria: squads/motion-apple/MEMORY.md
+  licoes: squads/motion/aprendizado/licoes.json     # escada 1x registrado, 2x checagem, 3x gate
+  regra: a contagem sobe so por reclamacao do dono; script nunca se auto-incrementa

@@ -1,0 +1,199 @@
+{
+  "_doc": "REGRAS DE COMPOSICAO. Quando duas pecas podem ocupar a mesma cena, quem manda, quanto tempo cada parte fica e o que e proibido. Sem esta regra, a implementacao inventa transformacoes que o sistema nao tem.",
+  "versao": "2.3",
+  "principio": "Uma cena = um beat = uma relacao afirmada. Duas pecas na mesma cena so quando UMA delas e a base (contexto que permanece) e a outra e uma transformacao DAQUELA base, preservando um invariante visivel: o mesmo contentor, a mesma posicao ou o mesmo rotulo. Sem invariante preservado, nao e combinacao: e substituicao, e substituicao pede duas cenas.",
+  "teste_do_invariante": [
+    "1. O que fica imovel entre as duas partes? Se a resposta for nada, sao duas cenas.",
+    "2. O espectador consegue apontar de onde a segunda peca nasceu? Se nao, sao duas cenas.",
+    "3. Os dados sao os mesmos itens? Se a segunda peca traz dados novos que a primeira nao continha, sao duas cenas."
+  ],
+  "pares_permitidos": [
+    {
+      "base": "interface.checks.list.v1",
+      "transformacao": "interface.pointer.v1",
+      "invariante": "as mesmas linhas, na mesma posicao",
+      "manda": "a lista (base): o apontamento so muda o foco",
+      "tempo": {
+        "base": [
+          60,
+          90
+        ],
+        "transformacao": [
+          40,
+          60
+        ]
+      },
+      "quadro_da_troca": "na palavra que aponta",
+      "nota": "apontar um item da propria lista"
+    },
+    {
+      "base": "set.trio.v1",
+      "transformacao": "emphasis.attribute.v1",
+      "invariante": "o circulo e o rotulo do item apontado, que crescem no lugar",
+      "manda": "o trio: um dos tres se expande",
+      "tempo": {
+        "base": [
+          90,
+          120
+        ],
+        "transformacao": [
+          60,
+          90
+        ]
+      },
+      "quadro_da_troca": "na palavra do item",
+      "nota": "zoom no item, os irmaos recuam por contraste e permanecem na cena"
+    },
+    {
+      "base": "interface.metrics.v1",
+      "transformacao": "number.hero.v1",
+      "invariante": "o numero citado, que cresce da posicao do KPI",
+      "manda": "as metricas",
+      "tempo": {
+        "base": [
+          60,
+          90
+        ],
+        "transformacao": [
+          60,
+          90
+        ]
+      },
+      "quadro_da_troca": "na palavra do numero"
+    },
+    {
+      "base": "flow.journey-ab.v1",
+      "transformacao": "number.count.v1",
+      "invariante": "o no de chegada, onde o numero nasce",
+      "manda": "a jornada",
+      "tempo": {
+        "base": [
+          90,
+          120
+        ],
+        "transformacao": [
+          40,
+          60
+        ]
+      },
+      "quadro_da_troca": "quando a fala da o numero do destino"
+    },
+    {
+      "base": "interface.instagram.profile.v1",
+      "transformacao": "interface.instagram.feed.v1",
+      "invariante": "a grade do feed, que ja estava no perfil e ocupa a tela",
+      "manda": "o perfil",
+      "tempo": {
+        "base": [
+          90,
+          120
+        ],
+        "transformacao": [
+          120,
+          180
+        ]
+      },
+      "quadro_da_troca": "quando a fala passa do perfil para os conteudos",
+      "nota": "reenquadramento, nao troca de assunto"
+    },
+    {
+      "base": "chart.radar.v1",
+      "transformacao": "emphasis.attribute.v1",
+      "invariante": "o rotulo do eixo, que se destaca no lugar",
+      "manda": "o radar",
+      "tempo": {
+        "base": [
+          120,
+          180
+        ],
+        "transformacao": [
+          60,
+          90
+        ]
+      },
+      "quadro_da_troca": "na palavra do eixo"
+    },
+    {
+      "base": "chart.donut.v1",
+      "transformacao": "number.percent.v1",
+      "invariante": "o numero do centro, que cresce sem sair do lugar",
+      "manda": "a rosca",
+      "tempo": {
+        "base": [
+          90,
+          120
+        ],
+        "transformacao": [
+          40,
+          60
+        ]
+      },
+      "quadro_da_troca": "quando a fala repete o percentual"
+    },
+    {
+      "base": "proof.annotated.v1",
+      "transformacao": "emphasis.word.v1",
+      "invariante": "nenhum elemento permanece: excecao autorizada porque a evidencia SAI antes",
+      "manda": "a evidencia, e a palavra so entra depois do out completo",
+      "tempo": {
+        "base": [
+          120,
+          180
+        ],
+        "transformacao": [
+          60,
+          90
+        ]
+      },
+      "quadro_da_troca": "apos o out da evidencia (overlap 10)",
+      "nota": "e o unico par sequencial autorizado dentro do mesmo beat, porque a palavra e a conclusao da prova"
+    }
+  ],
+  "combinacoes_proibidas": [
+    {
+      "par": "interface.checks.list.v1 + interface.schedule.v1",
+      "por_que": "nao ha invariante: a lista de criterios e o cartao de agenda nao compartilham contentor, posicao nem itens, e a agenda traz dados novos (horario) que a lista nao continha. E substituicao disfarcada de transformacao.",
+      "faca": "duas cenas. Cena 1: os criterios em checks-lista, hold 60. Cena 2: interface.schedule.v1 com o horario, entrando por reveal depois do out da primeira (overlap 10). O rosto e a legenda garantem a continuidade; o palco nao precisa fingir metamorfose.",
+      "caso": "este e o caso concreto que motivou esta regra"
+    },
+    {
+      "par": "dois esquemas de relacao na mesma cena",
+      "por_que": "duas relacoes afirmadas ao mesmo tempo nao se leem: o espectador escolhe uma e perde a outra"
+    },
+    {
+      "par": "duas interfaces de plataformas diferentes",
+      "por_que": "duas molduras competem e a cena deixa de ter contexto unico"
+    },
+    {
+      "par": "dois portadores de cor",
+      "por_que": "quebra a regra de um portador por quadro (guia secao 1)"
+    },
+    {
+      "par": "emphasis.word.v1 + qualquer molde no palco",
+      "por_que": "a palavra-conceito ocupa o palco inteiro e desliga a legenda; qualquer peca ao lado disputa a leitura"
+    },
+    {
+      "par": "emphasis.lettering.v1 + qualquer coisa",
+      "por_que": "o lettering usa o palco de 820x497 inteiro"
+    },
+    {
+      "par": "grafico + grafico",
+      "por_que": "duas series em duas geometrias diferentes na mesma cena: use um grafico com duas series (radar comparado) ou duas cenas"
+    }
+  ],
+  "orcamento_por_cena": {
+    "itens_de_significado": 5,
+    "portadores_de_cor": 1,
+    "solidos_pretos": 3,
+    "soma_de_pesos_de_som": 22,
+    "partes_combinadas": 2,
+    "nota": "nunca tres pecas; se a fala pede tres, o beat esta grande demais e deve virar duas cenas"
+  },
+  "tempo_minimo": {
+    "parte_base": 60,
+    "parte_transformacao": 40,
+    "hold_da_cena_inteira": 60,
+    "overlap_entre_cenas": 10,
+    "nota": "se a soma nao cabe na duracao da fala, corte a transformacao, nunca o hold"
+  }
+}

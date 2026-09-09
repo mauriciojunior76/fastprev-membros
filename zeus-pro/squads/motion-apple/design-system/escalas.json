@@ -1,0 +1,489 @@
+{
+  "_doc": "Escalas fechadas do Zeus Reels v2.1, como dado legível por script. Fonte: guia §4/§5/§7/§9c e tokens/reels-tokens.css. Todo número de molde deve sair daqui; valor fora exige exceção declarada no campo 'excecao' do molde.",
+  "versao": "6.0",
+  "canvas": {
+    "largura": 1080,
+    "altura": 1920,
+    "fps": 60,
+    "margem": 88,
+    "safe_top": 160,
+    "safe_bottom": 1536,
+    "centro_optico": 816
+  },
+  "palco": {
+    "seguro": {
+      "x": 88,
+      "y": 1162,
+      "largura": 904,
+      "altura": 374,
+      "uso": "conteúdo legível: rótulo, número, texto",
+      "fonte": "gabarito, limite inferior 1536 declarado (não medido)"
+    },
+    "desenhavel": {
+      "x": 88,
+      "y": 1203,
+      "largura": 904,
+      "altura": 429,
+      "uso": "geometria sem texto: teia, trilho, conector, célula vazia, folga de anel",
+      "fonte": "motor, zona morta 1632 (não medida)"
+    },
+    "expandido": {
+      "x": 88,
+      "y": 1133,
+      "largura": 904,
+      "altura": 499,
+      "uso": "um vídeo, legenda ligada",
+      "fonte": "motor"
+    },
+    "expandido_legenda_no_topo": {
+      "x": 88,
+      "y": 785,
+      "largura": 904,
+      "altura": 847,
+      "uso": "um vídeo, legenda no topo",
+      "fonte": "derivado no palco-veredito.md"
+    },
+    "tela_cheia": {
+      "x": 88,
+      "y": 326,
+      "largura": 904,
+      "altura": 1306,
+      "uso": "sem vídeo, legenda no topo",
+      "fonte": "derivado no palco-veredito.md; o preset antigo dizia 1254"
+    },
+    "lettering": {
+      "x": 130,
+      "y": 1039,
+      "largura": 820,
+      "altura": 497
+    },
+    "pendencia": "as duas caixas dependem de UMA medida no aparelho: em que Y começa a área coberta pela UI do Reels. Ver registry/palco-veredito.md"
+  },
+  "video": {
+    "largura": 940,
+    "altura": 400,
+    "x": 70,
+    "y_primeiro": 180,
+    "y_segundo": 596
+  },
+  "legenda": {
+    "y": 1039,
+    "altura": 122,
+    "centro": 1100,
+    "largura_util": 904,
+    "corpo": 58,
+    "corpo_enfase": 62,
+    "linhas_max": 2
+  },
+  "espaco": {
+    "palco": [
+      6,
+      12,
+      18,
+      24,
+      44,
+      88
+    ],
+    "painel": [
+      4,
+      8,
+      12,
+      16,
+      20,
+      24
+    ]
+  },
+  "raio": {
+    "palco": {
+      "box": 10,
+      "bolha": 18,
+      "celula": 24,
+      "cartao": 32,
+      "selo": 52,
+      "pill": 999
+    },
+    "painel": {
+      "miniatura": 8,
+      "controle": 14,
+      "bolha": 18
+    }
+  },
+  "rotulo": {
+    "palco": 30,
+    "esquema": 24,
+    "interface": 22,
+    "meta": 18,
+    "micro": 16,
+    "minimo_em_foco": 22,
+    "unidade_em_foco": 24,
+    "tracking": {
+      "palco": "0.08em",
+      "celula": "0.06em",
+      "overline": "0.16em"
+    }
+  },
+  "icone": {
+    "tamanhos": [
+      30,
+      40,
+      64,
+      116
+    ],
+    "solo_max": 180,
+    "traco_alvo_px": 6.5,
+    "traco_formula": "clamp(1, 2, 6.5 * 24 / tamanho)",
+    "traco_viewbox_max": 2,
+    "traco_viewbox_min": 1
+  },
+  "anel": {
+    "ate_48": 3,
+    "de_49_a_100": 4,
+    "acima_de_100": 6,
+    "mini": 14,
+    "opacidade": 0.7,
+    "borda_foco": 2,
+    "borda_foco_grande": 3
+  },
+  "borda": {
+    "hairline": 1,
+    "padrao": 2,
+    "foco": 3,
+    "conector": 6,
+    "trilho": 6,
+    "traco_palavra": 6
+  },
+  "tipografia": {
+    "palavra": {
+      "corpo_max": 140,
+      "peso": 900,
+      "tracking": "-0.032em"
+    },
+    "numero": {
+      "corpo": [
+        24,
+        34,
+        64,
+        76,
+        88,
+        96,
+        104,
+        110,
+        150,
+        170,
+        200
+      ],
+      "peso_dado": 900,
+      "peso_tempo_data": 700,
+      "tracking": "-0.04em"
+    },
+    "legenda": {
+      "corpo": 58,
+      "peso": 700
+    },
+    "pill": {
+      "corpo": [
+        17,
+        18,
+        20,
+        22
+      ],
+      "peso": 600
+    },
+    "rotulo_celula": {
+      "corpo": 26,
+      "peso": 700
+    }
+  },
+  "solido_preto": {
+    "teto_por_item": 64,
+    "excecao": "célula de contagem 96 em movimento",
+    "max_por_cena": 3,
+    "area_max_percentual": 1
+  },
+  "cor": {
+    "portadores_permitidos": [
+      "anel",
+      "traco",
+      "selo"
+    ],
+    "max_por_cena": 1,
+    "area_max_percentual": 5,
+    "proibido": [
+      "preenchimento",
+      "texto",
+      "icone",
+      "gradiente em fundo"
+    ],
+    "semantica": {
+      "ok": "#1DB954",
+      "erro": "#E02B2B",
+      "uso": "apenas check/X em certo-errado; nunca leva anel"
+    },
+    "espectro_oficial": {
+      "_doc": "O espectro tem DUAS formas do mesmo conjunto de cores. A geometria escolhe a forma: fechada para volta completa, aberta para percurso de A a B.",
+      "fechada": {
+        "token": "--z-spectrum",
+        "tipo": "conic-gradient(from 0deg, ...)",
+        "paradas": [
+          [
+            "{{marca.traco}}",
+            0
+          ],
+          [
+            "{{marca.espectro.2}}",
+            0.14
+          ],
+          [
+            "{{marca.espectro.3}}",
+            0.28
+          ],
+          [
+            "{{marca.espectro.4}}",
+            0.42
+          ],
+          [
+            "{{marca.espectro.5}}",
+            0.56
+          ],
+          [
+            "{{marca.espectro.6}}",
+            0.7
+          ],
+          [
+            "{{marca.espectro.7}}",
+            0.84
+          ],
+          [
+            "{{marca.traco}}",
+            1
+          ]
+        ],
+        "total_de_paradas": 8,
+        "nota": "a 8ª parada repete a 1ª para fechar a volta sem costura",
+        "usar_em": [
+          "anel",
+          "arco",
+          "selo",
+          "contorno de cartão",
+          "fatia de rosca",
+          "anel de vértice"
+        ],
+        "compressao_em_arco": "Quando o arco não é a volta inteira (fatia de rosca, arco de progresso), as 8 paradas são multiplicadas pela fração do arco (parada × p), para o espectro aparecer inteiro dentro dele. Sem isso, o arco mostra só um trecho da paleta e lê como cor inventada."
+      },
+      "aberta": {
+        "token": "--z-spectrum-line",
+        "tipo": "linear-gradient(90deg, ...)",
+        "paradas": [
+          [
+            "{{marca.traco}}",
+            0
+          ],
+          [
+            "{{marca.espectro.2}}",
+            0.17
+          ],
+          [
+            "{{marca.espectro.3}}",
+            0.33
+          ],
+          [
+            "{{marca.espectro.4}}",
+            0.5
+          ],
+          [
+            "{{marca.espectro.5}}",
+            0.67
+          ],
+          [
+            "{{marca.espectro.6}}",
+            0.84
+          ],
+          [
+            "{{marca.espectro.7}}",
+            1
+          ]
+        ],
+        "total_de_paradas": 7,
+        "nota": "sem parada de fechamento: o percurso vai de uma ponta à outra",
+        "usar_em": [
+          "traço da palavra-conceito",
+          "traço do lettering",
+          "traço sob o número",
+          "sublinhado",
+          "conector quando excepcionalmente colorido"
+        ]
+      },
+      "regra": "A forma sai da geometria, não do gosto: volta completa usa a fechada (8 paradas), percurso de A a B usa a aberta (7 paradas). As cores e a ordem são as mesmas nas duas; nunca um subconjunto, nunca ordem própria, nunca outro ângulo de leitura.",
+      "opacidade": 0.7,
+      "implementacao": "Em SVG, cada instância define o gradiente com id ÚNICO (gz-<molde> ou gz-<instanceId>): url(#id) resolve na primeira definição em ordem de documento, então id repetido faz um molde pintar o outro. Em CSS, são os tokens --z-spectrum e --z-spectrum-line."
+    }
+  },
+  "grade": {
+    "colunas_quadradas": 3,
+    "colunas_blocos_largos": 3,
+    "colunas_blocos_baixos": 4,
+    "excecao_4": "4 itens = 2x2",
+    "linha_incompleta": "em cima, centrada",
+    "arranjos": {
+      "2": [
+        2
+      ],
+      "3": [
+        3
+      ],
+      "4": [
+        2,
+        2
+      ],
+      "5": [
+        2,
+        3
+      ],
+      "6": [
+        3,
+        3
+      ],
+      "7": [
+        1,
+        3,
+        3
+      ],
+      "8": [
+        2,
+        3,
+        3
+      ],
+      "9": [
+        3,
+        3,
+        3
+      ],
+      "10": [
+        1,
+        3,
+        3,
+        3
+      ],
+      "12": [
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    "altura_max_celula": {
+      "3_linhas": 108,
+      "4_linhas": 78
+    }
+  },
+  "itens": {
+    "significado_max": 5,
+    "celulas_contagem_max": 12,
+    "barras_texto_por_bloco_max": 3
+  },
+  "curvas": {
+    "response": "cubic-bezier(.1,.45,.75,1)",
+    "transfer": "cubic-bezier(.45,0,.15,1)",
+    "reveal": "cubic-bezier(.12,.4,.8,1)",
+    "exit": "cubic-bezier(.33,0,.67,1)",
+    "linear": "apenas playback e progresso real"
+  },
+  "duracoes_quadros": {
+    "feedback": [
+      6,
+      10
+    ],
+    "reveal": [
+      10,
+      16
+    ],
+    "transfer": [
+      16,
+      24
+    ],
+    "reorganizacao": [
+      20,
+      32
+    ],
+    "reenquadramento": [
+      24,
+      36
+    ],
+    "hold_minimo": 60,
+    "cena_out": 24,
+    "cena_in": 24,
+    "overlap": 10
+  },
+  "stagger_quadros": {
+    "letra": 1.5,
+    "palavra": 3,
+    "bloco": 4,
+    "linha": 6
+  },
+  "sincronia": {
+    "lead_da_palavra": 6,
+    "entrada_padrao": 20
+  },
+  "recuo": {
+    "dito": {
+      "tinta": "gray600",
+      "opacidade": 0.8,
+      "blur_max": 2,
+      "blur_em_rotulo": false
+    },
+    "fundo": {
+      "tinta": "gray400",
+      "opacidade": 0.6,
+      "blur": 0
+    }
+  },
+  "som_pesos": {
+    "0": "silêncio obrigatório",
+    "1-2": [
+      -22,
+      -20
+    ],
+    "3-4": [
+      -18,
+      -15
+    ],
+    "5-6": [
+      -14,
+      -12
+    ],
+    "7-8": [
+      -11,
+      -10
+    ],
+    "9-10": [
+      -9,
+      -9
+    ],
+    "soma_max_por_cena": 22,
+    "min_intervalo_segundos": 2.5
+  },
+  "estilos": {
+    "_doc": "Estilo de traco: muda a ESTRUTURA do desenho, nao so a cor. Quem recebe o pacote escolhe o dele no onboarding (src/brand/marca.json campo estilo). Mudar cor sem mudar estrutura ainda deixa a peca com cara de copia.",
+    "apple-conceitual": {
+      "borda_padrao": 2,
+      "borda_traco_palavra": 6,
+      "raio_cartao": 32,
+      "raio_celula": 24,
+      "vidro": true,
+      "serifa": false,
+      "respiro": "amplo"
+    },
+    "classico": {
+      "borda_padrao": 3,
+      "borda_traco_palavra": 9,
+      "raio_cartao": 12,
+      "raio_celula": 8,
+      "vidro": false,
+      "serifa": true,
+      "respiro": "medio"
+    },
+    "proprio": {
+      "_doc": "valores definidos pela pessoa na propria marca.json, campo traco"
+    }
+  }
+}

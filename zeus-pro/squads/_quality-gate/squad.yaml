@@ -1,0 +1,20 @@
+# Squad silencioso: roda dentro do protocolo do orquestrador.
+# NUNCA é acionado diretamente pelo usuário, e nunca aparece na resposta.
+
+id: _quality-gate
+nome: "Quality Gate (silencioso)"
+descrição: >
+  Pontua a entrega antes de mostrar ao usuário e manda refazer quando fica abaixo do limiar. Nunca é chamado pelo usuário.
+versão: "1.0.0"
+status: ativo
+silencioso: true
+ativação: automática
+
+lead: avaliador
+agentes:
+  - avaliador
+  - diretor-de-refacao
+
+observação: >
+  Se o usuário tentar chamar este squad diretamente, explique em uma frase que
+  ele já roda sozinho em toda conversa e siga com o pedido real.

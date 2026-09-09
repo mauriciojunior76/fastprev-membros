@@ -1,0 +1,15 @@
+# Manifesto gerado automaticamente por squads-memory-sync em 2026-07-25.
+# stub: true significa que a descricao NAO foi revisada por humano. Completar.
+name: "PAGE-FORGE SQUAD"
+description: "PAGE-FORGE combina dois superpoders:"
+version: "0.1.0"
+stub: true
+
+# Autoaprendizado (squads-memory-sync, 2026-07-25)
+learning:
+  memory_file: MEMORY.md
+  format: memoria-squad-v1
+  global_log: memory/erros-aprendidos.md
+  squad_tag: page-forge
+  read_before_acting: true
+  max_chars: 8000

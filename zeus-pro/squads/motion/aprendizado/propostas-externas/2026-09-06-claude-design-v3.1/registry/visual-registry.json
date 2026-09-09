@@ -1,0 +1,4727 @@
+{
+  "_doc": "REGISTRO MESTRE. Um recurso por entrada, com ID estável (familia.nome.v1). Cada entrada ensina as 4 coisas obrigatórias: o que sou (name/semantic), quando me usar (useWhen), quando NÃO me usar (dontUseWhen), que conteúdo represento (semantic + items). Movimento: o comportamento padrão está em motion-registry.json por 'gesture'; desvios estão no painel (where.panel) e no guia (where.guide). legacyId liga ao moldes-index.json e ao design-router.json.",
+  "version": "2.2",
+  "id_scheme": "familia.nome.vN — famílias: emphasis, set, compare, flow, process, branch, hierarchy, matrix, scale, relation, scheme, proof, profile, interface, number",
+  "required_fields": [
+    "id",
+    "name",
+    "family",
+    "semantic",
+    "useWhen",
+    "dontUseWhen",
+    "items",
+    "durationFrames",
+    "density",
+    "speakerVisible",
+    "fullScreen",
+    "caption",
+    "alternatives",
+    "commonErrors"
+  ],
+  "count": 87,
+  "entries": [
+    {
+      "id": "emphasis.word.v1",
+      "legacyId": "palavra-conceito",
+      "name": "Palavra-conceito (N3)",
+      "family": "emphasis",
+      "semantic": [
+        "IDEIA_UNICA",
+        "PALAVRA_CHAVE",
+        "CLIMAX"
+      ],
+      "useWhen": "a fala krava UMA palavra que é a tese do beat (\"autoridade\", \"atalho\"); ênfase máxima de voz",
+      "dontUseWhen": "a frase tem 2+ ideias; a palavra é genérica (\"coisas\", \"negócio\"); já houve um N3 nos últimos 15s",
+      "input": "1 palavra ≤10 letras",
+      "items": {
+        "min": 1,
+        "ideal": 1,
+        "max": 1
+      },
+      "durationFrames": [
+        60,
+        90
+      ],
+      "density": 4,
+      "speakerVisible": false,
+      "fullScreen": true,
+      "caption": "substitui a legenda (o palco já é tipografia)",
+      "alternatives": [
+        "emphasis.icon-phrase.v1",
+        "emphasis.attribute.v1"
+      ],
+      "commonErrors": [
+        "palavra longa que estoura 904",
+        "dois N3 seguidos",
+        "traço colorido competindo com outro portador"
+      ],
+      "gesture": "cascata",
+      "pieces": [
+        "traco"
+      ],
+      "triggers": [
+        "anota isso",
+        "presta atenção",
+        "o nome disso é",
+        "isso se chama"
+      ],
+      "where": {
+        "guide": "§6 + §6a",
+        "panel": "#s04-moldes / #s04d-enfase"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "emphasis.icon-phrase.v1",
+      "legacyId": "frase-com-icone",
+      "name": "Frase com ícone (N2)",
+      "family": "emphasis",
+      "semantic": [
+        "FRASE_IMPORTANTE",
+        "DEFINICAO",
+        "PROMESSA"
+      ],
+      "useWhen": "a fala faz uma promessa ou definição em 2 linhas e existe um símbolo que a representa",
+      "dontUseWhen": "não há símbolo honesto para a ideia; a frase passa de 12 palavras",
+      "input": "frase ≤12 palavras + 1 ícone do mapa",
+      "items": {
+        "min": 1,
+        "ideal": 1,
+        "max": 1
+      },
+      "durationFrames": [
+        70,
+        110
+      ],
+      "density": 3,
+      "speakerVisible": false,
+      "fullScreen": true,
+      "caption": "substitui a legenda",
+      "alternatives": [
+        "emphasis.word.v1",
+        "scheme.description.v1"
+      ],
+      "commonErrors": [
+        "ícone decorativo sem relação",
+        "frase de 3 linhas"
+      ],
+      "gesture": "cascata",
+      "pieces": [
+        "anel",
+        "rotulo"
+      ],
+      "triggers": [
+        "promessa específica",
+        "isca de sardinha",
+        "frase de 2 a 4 palavras com pausa"
+      ],
+      "where": {
+        "guide": "§6a",
+        "panel": "#s04d-enfase"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "emphasis.attribute.v1",
+      "legacyId": "atributo-solo",
+      "name": "Atributo solo (N1)",
+      "family": "emphasis",
+      "semantic": [
+        "PALAVRA_CHAVE",
+        "EXEMPLO",
+        "ITEM_UNICO"
+      ],
+      "useWhen": "ênfase média: uma coisa nomeada onde o símbolo pesa mais que a palavra",
+      "dontUseWhen": "a palavra é a tese do vídeo (use N3); há três coisas (use trio)",
+      "input": "1 palavra + 1 ícone",
+      "items": {
+        "min": 1,
+        "ideal": 1,
+        "max": 1
+      },
+      "durationFrames": [
+        40,
+        60
+      ],
+      "density": 2,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua",
+      "alternatives": [
+        "emphasis.word.v1",
+        "set.trio.v1"
+      ],
+      "commonErrors": [
+        "usar N1 em clímax",
+        "repetir o mesmo ícone do beat anterior"
+      ],
+      "gesture": "foco",
+      "pieces": [
+        "anel",
+        "pill"
+      ],
+      "triggers": [
+        "ênfase de voz em UMA coisa que se desenha"
+      ],
+      "where": {
+        "guide": "§6a",
+        "panel": "#s04d-enfase"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "emphasis.lettering.v1",
+      "legacyId": "lettering",
+      "name": "Lettering multi-fonte",
+      "family": "emphasis",
+      "semantic": [
+        "FRASE_IMPORTANTE",
+        "CITACAO",
+        "CLIMAX",
+        "METAFORA"
+      ],
+      "useWhen": "uma frase de 6 a 22 palavras que resume o vídeo, em momento raro (1 por vídeo)",
+      "dontUseWhen": "frase curta (use N3); mais de 22 palavras; já houve lettering no vídeo",
+      "input": "frase 6–22 palavras + 1 palavra tônica",
+      "items": {
+        "min": 6,
+        "ideal": 12,
+        "max": 22
+      },
+      "durationFrames": [
+        150,
+        240
+      ],
+      "density": 5,
+      "speakerVisible": false,
+      "fullScreen": true,
+      "caption": "legenda desliga",
+      "alternatives": [
+        "emphasis.word.v1",
+        "scheme.equation.v1"
+      ],
+      "commonErrors": [
+        "duas fontes sem hierarquia",
+        "tônica colorida em texto (só anel/retângulo)"
+      ],
+      "gesture": "cascata",
+      "pieces": [
+        "pill",
+        "anel"
+      ],
+      "triggers": [
+        "frase que resume o vídeo",
+        "6 a 22 palavras",
+        "clímax"
+      ],
+      "where": {
+        "guide": "§5c",
+        "panel": "#s04e-lettering"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "set.trio.v1",
+      "legacyId": "trio-atributos",
+      "name": "Trio de atributos",
+      "family": "set",
+      "semantic": [
+        "LISTA",
+        "BULLETS",
+        "X_TEM_A_B_C"
+      ],
+      "useWhen": "a fala lista exatamente 3 coisas sem ordem entre elas",
+      "dontUseWhen": "há ordem/sequência (use process.steps); são 4+ (use grade); só 1 (use N1/N2)",
+      "input": "3 rótulos + 3 ícones",
+      "items": {
+        "min": 3,
+        "ideal": 3,
+        "max": 3
+      },
+      "durationFrames": [
+        180,
+        300
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda troca por item",
+      "alternatives": [
+        "set.grid.v1",
+        "process.steps.v1"
+      ],
+      "commonErrors": [
+        "4 itens no trio",
+        "anel em dois círculos",
+        "rótulos com blur"
+      ],
+      "gesture": "foco",
+      "pieces": [
+        "anel",
+        "pill"
+      ],
+      "triggers": [
+        "três coisas",
+        "tem que ter a, b e c",
+        "três pilares",
+        "alguns pontos"
+      ],
+      "where": {
+        "guide": "§6",
+        "panel": "#s04-moldes"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "set.grid.v1",
+      "legacyId": "grade-conceitos",
+      "name": "Grade de conceitos",
+      "family": "set",
+      "semantic": [
+        "LISTA",
+        "BULLETS",
+        "CATEGORIAS"
+      ],
+      "useWhen": "4 a 6 itens sem ordem, cada um com nome curto",
+      "dontUseWhen": "há ordem (process.steps); são 3 (trio); são 7+ (dividir a cena)",
+      "input": "4–6 rótulos + ícones",
+      "items": {
+        "min": 4,
+        "ideal": 6,
+        "max": 6
+      },
+      "durationFrames": [
+        240,
+        420
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda troca por item",
+      "alternatives": [
+        "set.trio.v1",
+        "set.count-grid.v1"
+      ],
+      "commonErrors": [
+        "7+ itens",
+        "blocos de larguras diferentes"
+      ],
+      "gesture": "cascata",
+      "pieces": [
+        "anel",
+        "rotulo"
+      ],
+      "triggers": [
+        "quatro",
+        "cinco",
+        "seis",
+        "vários conceitos",
+        "cada conteúdo",
+        "um para… outro para"
+      ],
+      "where": {
+        "guide": "§6",
+        "panel": "#s04-moldes"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "set.count-grid.v1",
+      "legacyId": "grade-contagem",
+      "name": "Grade com contagem",
+      "family": "set",
+      "semantic": [
+        "NUMERO",
+        "QUANTIDADE",
+        "PROGRESSO"
+      ],
+      "useWhen": "a fala dá uma quantidade contável de coisas iguais (12 conteúdos, 30 dias)",
+      "dontUseWhen": "os itens são diferentes entre si (use grade de conceitos); número sem itens (use number.hero)",
+      "input": "n (contagem) + rótulo com unidade",
+      "items": {
+        "min": 4,
+        "ideal": 12,
+        "max": 30
+      },
+      "durationFrames": [
+        120,
+        200
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua",
+      "alternatives": [
+        "number.count.v1",
+        "set.grid.v1"
+      ],
+      "commonErrors": [
+        "tick sonoro em todas as células",
+        "número sem rótulo de unidade"
+      ],
+      "gesture": "contagem",
+      "pieces": [
+        "numero",
+        "miniatura"
+      ],
+      "triggers": [
+        "12 conteúdos",
+        "quantos",
+        "pelo menos",
+        "número de"
+      ],
+      "where": {
+        "guide": "§6",
+        "panel": "#s04-moldes"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "compare.right-wrong.v1",
+      "legacyId": "comparacao-certo-errado",
+      "name": "Comparação certo × errado",
+      "family": "compare",
+      "semantic": [
+        "COMPARACAO",
+        "A_VS_B",
+        "ACERTO",
+        "ERRO",
+        "EXEMPLO"
+      ],
+      "useWhen": "a fala julga duas versões da mesma coisa e existe material visual (print, foto)",
+      "dontUseWhen": "não há imagem (use compare.mirror); não há juízo, só diferença (use compare.table)",
+      "input": "2 imagens + 2 rótulos",
+      "items": {
+        "min": 2,
+        "ideal": 2,
+        "max": 2
+      },
+      "durationFrames": [
+        180,
+        300
+      ],
+      "density": 4,
+      "speakerVisible": false,
+      "fullScreen": true,
+      "caption": "legenda continua curta",
+      "alternatives": [
+        "compare.mirror.v1",
+        "compare.table.v1"
+      ],
+      "commonErrors": [
+        "anel do Instagram nos dois lados",
+        "verde/vermelho fora do badge"
+      ],
+      "gesture": "cascata",
+      "pieces": [
+        "avatar",
+        "pill"
+      ],
+      "triggers": [
+        "não tenha",
+        "tem que ter",
+        "errado",
+        "certo",
+        "em vez de"
+      ],
+      "where": {
+        "guide": "§6",
+        "panel": "#s04-moldes"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "flow.journey-ab.v1",
+      "legacyId": "jornada-ab",
+      "name": "Jornada de A para B",
+      "family": "flow",
+      "semantic": [
+        "JORNADA",
+        "TRANSFORMACAO",
+        "ENTRADA_E_SAIDA",
+        "PROGRESSAO"
+      ],
+      "useWhen": "a fala nomeia origem e destino (\"sai de X, chega em Y\")",
+      "dontUseWhen": "há etapas entre eles (process.steps); só dois estados sem caminho (compare.mirror)",
+      "input": "2 nós + 2 rótulos",
+      "items": {
+        "min": 2,
+        "ideal": 2,
+        "max": 2
+      },
+      "durationFrames": [
+        120,
+        200
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua",
+      "alternatives": [
+        "process.steps.v1",
+        "compare.mirror.v1",
+        "flow.gap.v1"
+      ],
+      "commonErrors": [
+        "conector colorido junto com o anel",
+        "seta curva desenhada à mão"
+      ],
+      "gesture": "tracado",
+      "pieces": [
+        "no",
+        "conector",
+        "rotulo"
+      ],
+      "triggers": [
+        "de onde ela sai",
+        "onde ela chega",
+        "de x para y",
+        "sair do",
+        "chegar em",
+        "transformação",
+        "antes e depois"
+      ],
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "compare.table.v1",
+      "legacyId": "tabela-comparativa",
+      "name": "Tabela comparativa",
+      "family": "compare",
+      "semantic": [
+        "COMPARACAO",
+        "A_VS_B",
+        "PROS_E_CONTRAS"
+      ],
+      "useWhen": "dois lados com 2 a 5 atributos cada (\"mentoria x curso\")",
+      "dontUseWhen": "um atributo por lado (compare.mirror); há juízo certo/errado (compare.right-wrong)",
+      "input": "2 títulos + 2 listas de 2–5",
+      "items": {
+        "min": 2,
+        "ideal": 3,
+        "max": 5
+      },
+      "durationFrames": [
+        240,
+        420
+      ],
+      "density": 4,
+      "speakerVisible": false,
+      "fullScreen": true,
+      "caption": "legenda continua",
+      "alternatives": [
+        "compare.mirror.v1",
+        "compare.balance.v1"
+      ],
+      "commonErrors": [
+        "grade completa (vira planilha)",
+        "colunas de larguras diferentes"
+      ],
+      "gesture": "lista",
+      "pieces": [
+        "pill",
+        "linha-item",
+        "painel"
+      ],
+      "triggers": [
+        "diferença entre",
+        "mentoria é",
+        "curso é",
+        "de um lado",
+        "do outro",
+        "versus"
+      ],
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "process.steps.v1",
+      "legacyId": "passos",
+      "name": "Passos (sequência)",
+      "family": "process",
+      "semantic": [
+        "SEQUENCIA",
+        "PASSOS",
+        "PROCESSO",
+        "PIPELINE"
+      ],
+      "useWhen": "a ordem importa e são 3 a 5 etapas (\"primeiro, depois, então\")",
+      "dontUseWhen": "sem ordem (trio/grade); as quantidades caem (funil); volta ao início (ciclo)",
+      "input": "3–5 rótulos ordenados",
+      "items": {
+        "min": 3,
+        "ideal": 4,
+        "max": 5
+      },
+      "durationFrames": [
+        240,
+        420
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda troca por passo",
+      "alternatives": [
+        "flow.funnel.v1",
+        "flow.timeline.v1",
+        "flow.cycle.v1"
+      ],
+      "commonErrors": [
+        "numerar itens que não têm ordem",
+        "5+ passos numa cena"
+      ],
+      "gesture": "foco",
+      "pieces": [
+        "no",
+        "conector"
+      ],
+      "triggers": [
+        "primeiro",
+        "depois",
+        "então",
+        "passo",
+        "etapa",
+        "em seguida"
+      ],
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "flow.funnel.v1",
+      "legacyId": "funil",
+      "name": "Funil",
+      "family": "flow",
+      "semantic": [
+        "FUNIL",
+        "PIPELINE",
+        "QUEDA",
+        "QUANTIDADE"
+      ],
+      "useWhen": "as quantidades diminuem a cada etapa e a perda é o argumento",
+      "dontUseWhen": "não há perda (process.steps); a perda é por critério nomeado (flow.filter)",
+      "input": "3–4 etapas + números",
+      "items": {
+        "min": 3,
+        "ideal": 3,
+        "max": 4
+      },
+      "durationFrames": [
+        200,
+        320
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua",
+      "alternatives": [
+        "flow.filter.v1",
+        "process.steps.v1"
+      ],
+      "commonErrors": [
+        "funil sem números",
+        "barras que não respeitam a proporção"
+      ],
+      "gesture": "foco",
+      "pieces": [
+        "barra",
+        "numero"
+      ],
+      "triggers": [
+        "poucos chegam",
+        "funil",
+        "filtrar",
+        "qualificar",
+        "dos que entram"
+      ],
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "flow.cycle.v1",
+      "legacyId": "ciclo",
+      "name": "Ciclo (loop)",
+      "family": "flow",
+      "semantic": [
+        "CICLO",
+        "LOOP",
+        "PROCESSO"
+      ],
+      "useWhen": "o último passo gera o primeiro e a fala descreve o retorno",
+      "dontUseWhen": "a sequência termina (process.steps)",
+      "input": "3–4 etapas",
+      "items": {
+        "min": 3,
+        "ideal": 3,
+        "max": 4
+      },
+      "durationFrames": [
+        200,
+        320
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua",
+      "alternatives": [
+        "process.steps.v1"
+      ],
+      "commonErrors": [
+        "girar como relógio",
+        "fechar o loop antes da fala dizer o retorno"
+      ],
+      "gesture": "tracado",
+      "pieces": [
+        "no",
+        "conector"
+      ],
+      "triggers": [
+        "gera",
+        "que gera",
+        "volta",
+        "ciclo",
+        "roda",
+        "de novo"
+      ],
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "hierarchy.levels.v1",
+      "legacyId": "niveis",
+      "name": "Níveis (pirâmide)",
+      "family": "hierarchy",
+      "semantic": [
+        "HIERARQUIA",
+        "ESCALA",
+        "PROGRESSAO",
+        "CAMADAS"
+      ],
+      "useWhen": "hierarquia de baixo para cima, com o topo como objetivo",
+      "dontUseWhen": "sem hierarquia (grade); a base sustenta as de cima (hierarchy.layers)",
+      "input": "3–4 níveis",
+      "items": {
+        "min": 3,
+        "ideal": 3,
+        "max": 4
+      },
+      "durationFrames": [
+        200,
+        320
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua",
+      "alternatives": [
+        "hierarchy.layers.v1",
+        "scale.intensity.v1"
+      ],
+      "commonErrors": [
+        "pirâmide para lista sem hierarquia"
+      ],
+      "gesture": "foco",
+      "pieces": [
+        "barra",
+        "conector"
+      ],
+      "triggers": [
+        "nível",
+        "estágio",
+        "consciência",
+        "do básico",
+        "avançado",
+        "sobe"
+      ],
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "branch.tree.v1",
+      "legacyId": "ramificacao",
+      "name": "Ramificação (mapa mental)",
+      "family": "branch",
+      "semantic": [
+        "RAMIFICACAO",
+        "ARVORE",
+        "MAPA_MENTAL",
+        "REDE",
+        "BIFURCACAO"
+      ],
+      "useWhen": "uma coisa se abre em 2 a 5 partes sem ordem entre elas",
+      "dontUseWhen": "as partes têm ordem (process.steps); há condição se/senão (branch.decision)",
+      "input": "1 raiz + 2–5 folhas",
+      "items": {
+        "min": 2,
+        "ideal": 3,
+        "max": 5
+      },
+      "durationFrames": [
+        200,
+        360
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua",
+      "alternatives": [
+        "branch.decision.v1",
+        "set.grid.v1"
+      ],
+      "commonErrors": [
+        "3 níveis numa cena só",
+        "folhas com stagger aleatório"
+      ],
+      "gesture": "foco",
+      "pieces": [
+        "no",
+        "conector"
+      ],
+      "triggers": [
+        "um vira três",
+        "vários formatos",
+        "três causas",
+        "se divide",
+        "desdobra",
+        "ramifica"
+      ],
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "compare.balance.v1",
+      "legacyId": "balanca",
+      "name": "Balança",
+      "family": "compare",
+      "semantic": [
+        "COMPARACAO",
+        "ESCOLHA",
+        "PROS_E_CONTRAS"
+      ],
+      "useWhen": "escolha entre dois pesos, e a fala diz qual pesa mais",
+      "dontUseWhen": "três ou mais opções (grade); sem juízo de peso (compare.table)",
+      "input": "2 lados + peso",
+      "items": {
+        "min": 2,
+        "ideal": 2,
+        "max": 2
+      },
+      "durationFrames": [
+        160,
+        260
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua",
+      "alternatives": [
+        "compare.table.v1",
+        "branch.decision.v1"
+      ],
+      "commonErrors": [
+        "inclinar antes da fala dizer o peso"
+      ],
+      "gesture": "foco",
+      "pieces": [
+        "conector",
+        "pill"
+      ],
+      "triggers": [
+        "pesa mais",
+        "x ou y",
+        "preço ou valor",
+        "vale mais"
+      ],
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "flow.timeline.v1",
+      "legacyId": "linha-do-tempo",
+      "name": "Linha do tempo",
+      "family": "flow",
+      "semantic": [
+        "TIMELINE",
+        "PROGRESSAO",
+        "SEQUENCIA"
+      ],
+      "useWhen": "marcos com data ou prazo (\"no dia 1, em 30 dias\")",
+      "dontUseWhen": "sem tempo (process.steps)",
+      "input": "2–4 marcos + datas",
+      "items": {
+        "min": 2,
+        "ideal": 3,
+        "max": 4
+      },
+      "durationFrames": [
+        200,
+        340
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua",
+      "alternatives": [
+        "process.steps.v1",
+        "number.date.v1"
+      ],
+      "commonErrors": [
+        "contar a data (data revela, não conta)"
+      ],
+      "gesture": "tracado",
+      "pieces": [
+        "conector",
+        "no",
+        "rotulo"
+      ],
+      "triggers": [
+        "no dia 1",
+        "em 30 dias",
+        "primeira semana",
+        "depois de 90 dias"
+      ],
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "relation.venn.v1",
+      "legacyId": "venn",
+      "name": "Interseção (Venn)",
+      "family": "relation",
+      "semantic": [
+        "CONEXAO",
+        "RELACAO",
+        "INTERSECAO"
+      ],
+      "useWhen": "a ideia está no encontro de duas coisas",
+      "dontUseWhen": "não há interseção real (compare.mirror)",
+      "input": "2 conjuntos + 1 interseção",
+      "items": {
+        "min": 2,
+        "ideal": 2,
+        "max": 3
+      },
+      "durationFrames": [
+        160,
+        260
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua",
+      "alternatives": [
+        "compare.mirror.v1",
+        "scheme.equation.v1"
+      ],
+      "commonErrors": [
+        "texto dentro dos círculos (colide)"
+      ],
+      "gesture": "cascata",
+      "pieces": [
+        "no",
+        "anel",
+        "rotulo"
+      ],
+      "triggers": [
+        "onde x encontra y",
+        "a interseção",
+        "o que você sabe e o que pagam"
+      ],
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "matrix.quadrants.v1",
+      "legacyId": "matriz-2x2",
+      "name": "Matriz 2×2",
+      "family": "matrix",
+      "semantic": [
+        "MATRIZ",
+        "QUADRANTES",
+        "FRAMEWORK"
+      ],
+      "useWhen": "dois critérios cruzados geram quatro cenários",
+      "dontUseWhen": "um critério só (scale.intensity)",
+      "input": "2 eixos + 4 quadrantes",
+      "items": {
+        "min": 4,
+        "ideal": 4,
+        "max": 4
+      },
+      "durationFrames": [
+        240,
+        400
+      ],
+      "density": 4,
+      "speakerVisible": false,
+      "fullScreen": true,
+      "caption": "legenda continua",
+      "alternatives": [
+        "scale.intensity.v1",
+        "compare.table.v1"
+      ],
+      "commonErrors": [
+        "rótulos de eixo pequenos",
+        "quatro quadrantes com foco simultâneo"
+      ],
+      "gesture": "cascata",
+      "pieces": [
+        "conector",
+        "rotulo"
+      ],
+      "triggers": [
+        "muito esforço pouco resultado",
+        "quatro cenários",
+        "quadrante"
+      ],
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "scale.intensity.v1",
+      "legacyId": "escala-intensidade",
+      "name": "Escala de intensidade",
+      "family": "scale",
+      "semantic": [
+        "ESCALA",
+        "PROGRESSAO",
+        "NIVEL_DE_CONSCIENCIA"
+      ],
+      "useWhen": "grau contínuo de uma coisa (frio → quente)",
+      "dontUseWhen": "categorias discretas (hierarchy.levels)",
+      "input": "3–5 paradas",
+      "items": {
+        "min": 3,
+        "ideal": 4,
+        "max": 5
+      },
+      "durationFrames": [
+        180,
+        300
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua",
+      "alternatives": [
+        "hierarchy.levels.v1",
+        "matrix.quadrants.v1"
+      ],
+      "commonErrors": [
+        "escala com itens que não são graus do mesmo eixo"
+      ],
+      "gesture": "range",
+      "pieces": [
+        "trilho",
+        "anel",
+        "rotulo"
+      ],
+      "triggers": [
+        "frio",
+        "morno",
+        "quente",
+        "de 1 a 10",
+        "nível de"
+      ],
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "compare.mirror.v1",
+      "legacyId": "espelho",
+      "name": "Espelho (sem X × com X)",
+      "family": "compare",
+      "semantic": [
+        "COMPARACAO",
+        "ANTES_E_DEPOIS",
+        "TRANSFORMACAO"
+      ],
+      "useWhen": "\"sem isso é assim, com isso é assim\", um atributo por lado",
+      "dontUseWhen": "há caminho entre os dois (flow.journey-ab); 2+ atributos (compare.table)",
+      "input": "2 estados",
+      "items": {
+        "min": 2,
+        "ideal": 2,
+        "max": 2
+      },
+      "durationFrames": [
+        160,
+        260
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua",
+      "alternatives": [
+        "compare.table.v1",
+        "flow.journey-ab.v1"
+      ],
+      "commonErrors": [
+        "os dois lados com mesmo peso visual quando a fala escolhe um"
+      ],
+      "gesture": "foco",
+      "pieces": [
+        "painel",
+        "anel",
+        "rotulo"
+      ],
+      "triggers": [
+        "sem x",
+        "com x",
+        "quem não tem",
+        "quem tem"
+      ],
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "hierarchy.layers.v1",
+      "legacyId": "camadas",
+      "name": "Camadas (o que sustenta)",
+      "family": "hierarchy",
+      "semantic": [
+        "CAMADAS",
+        "HIERARQUIA",
+        "FRAMEWORK"
+      ],
+      "useWhen": "constrói de baixo para cima e cada camada depende da anterior",
+      "dontUseWhen": "sem dependência (grade); é grau (scale.intensity)",
+      "input": "3–4 camadas",
+      "items": {
+        "min": 3,
+        "ideal": 3,
+        "max": 4
+      },
+      "durationFrames": [
+        200,
+        320
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua",
+      "alternatives": [
+        "hierarchy.levels.v1",
+        "set.grid.v1"
+      ],
+      "commonErrors": [
+        "camadas sem dependência real"
+      ],
+      "gesture": "cascata",
+      "pieces": [
+        "barra",
+        "rotulo"
+      ],
+      "triggers": [
+        "em cima disso",
+        "a base é",
+        "primeiro a base",
+        "camada"
+      ],
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "scheme.equation.v1",
+      "legacyId": "equacao",
+      "name": "Equação (A + B = C)",
+      "family": "scheme",
+      "semantic": [
+        "EQUACAO",
+        "FRAMEWORK",
+        "CAUSA_E_EFEITO"
+      ],
+      "useWhen": "partes somam um resultado nomeado (\"X mais Y é Z\")",
+      "dontUseWhen": "sem resultado nomeado (trio); \"mais\" como adjetivo (\"mais clareza\")",
+      "input": "2–3 termos + 1 resultado",
+      "items": {
+        "min": 2,
+        "ideal": 2,
+        "max": 3
+      },
+      "durationFrames": [
+        180,
+        300
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua",
+      "alternatives": [
+        "set.trio.v1",
+        "relation.venn.v1"
+      ],
+      "commonErrors": [
+        "tratar \"mais\" adjetivo como soma"
+      ],
+      "gesture": "cascata",
+      "pieces": [
+        "no",
+        "anel",
+        "rotulo"
+      ],
+      "triggers": [
+        "mais",
+        "é igual a",
+        "x mais y é",
+        "a soma"
+      ],
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "flow.gap.v1",
+      "legacyId": "lacuna",
+      "name": "Lacuna (atual × desejado)",
+      "family": "flow",
+      "semantic": [
+        "PROBLEMA_E_SOLUCAO",
+        "TRANSFORMACAO",
+        "JORNADA"
+      ],
+      "useWhen": "distância entre onde está e onde deveria estar, sem etapas nomeadas",
+      "dontUseWhen": "há etapas (process.steps); há caminho descrito (flow.journey-ab)",
+      "input": "2 estados + a lacuna",
+      "items": {
+        "min": 2,
+        "ideal": 2,
+        "max": 2
+      },
+      "durationFrames": [
+        160,
+        260
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua",
+      "alternatives": [
+        "flow.journey-ab.v1",
+        "compare.mirror.v1"
+      ],
+      "commonErrors": [
+        "lacuna sem deixar claro o vão (espessura/rótulo)"
+      ],
+      "gesture": "tracado",
+      "pieces": [
+        "barra",
+        "conector",
+        "rotulo"
+      ],
+      "triggers": [
+        "onde está",
+        "onde deveria",
+        "a distância entre",
+        "o gap"
+      ],
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "relation.concentric.v1",
+      "legacyId": "concentrico",
+      "name": "Círculos de proximidade",
+      "family": "relation",
+      "semantic": [
+        "REDE",
+        "HIERARQUIA",
+        "RELACAO"
+      ],
+      "useWhen": "proximidade a partir de um centro (você → seguidores → desconhecidos)",
+      "dontUseWhen": "sem centro (hierarchy.levels)",
+      "input": "3 anéis",
+      "items": {
+        "min": 2,
+        "ideal": 3,
+        "max": 3
+      },
+      "durationFrames": [
+        200,
+        320
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua",
+      "alternatives": [
+        "hierarchy.levels.v1",
+        "relation.venn.v1"
+      ],
+      "commonErrors": [
+        "rótulo dentro do anel (colide) — usar pills com linha"
+      ],
+      "gesture": "cascata",
+      "pieces": [
+        "anel",
+        "rotulo"
+      ],
+      "triggers": [
+        "quem te segue",
+        "quem não te conhece",
+        "círculo de",
+        "mais próximo"
+      ],
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "flow.bottleneck.v1",
+      "legacyId": "gargalo",
+      "name": "Gargalo e vazão",
+      "family": "flow",
+      "semantic": [
+        "PROBLEMA_E_SOLUCAO",
+        "FUNIL",
+        "PIPELINE"
+      ],
+      "useWhen": "UMA etapa trava o resto e a fala aponta essa etapa",
+      "dontUseWhen": "a perda é gradual em todas (flow.funnel)",
+      "input": "etapas + fila + vazão",
+      "items": {
+        "min": 2,
+        "ideal": 3,
+        "max": 4
+      },
+      "durationFrames": [
+        240,
+        400
+      ],
+      "density": 4,
+      "speakerVisible": false,
+      "fullScreen": true,
+      "caption": "legenda continua",
+      "alternatives": [
+        "flow.funnel.v1",
+        "flow.filter.v1"
+      ],
+      "commonErrors": [
+        "liberar o gargalo antes da fala descrever a intervenção"
+      ],
+      "gesture": "tracado",
+      "pieces": [
+        "no",
+        "conector",
+        "rotulo"
+      ],
+      "triggers": [
+        "o problema está nesta etapa",
+        "trava aqui",
+        "gargalo",
+        "fila"
+      ],
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "relation.cause-effect.v1",
+      "legacyId": "causa-efeito",
+      "name": "Causa, mecanismo e efeito",
+      "family": "relation",
+      "semantic": [
+        "CAUSA_E_EFEITO",
+        "RELACAO",
+        "PROBLEMA_E_SOLUCAO"
+      ],
+      "useWhen": "\"isso acontece porque…\" e existe um mecanismo entre origem e consequência",
+      "dontUseWhen": "só sucessão no tempo (flow.timeline)",
+      "input": "causa + mecanismo + efeito",
+      "items": {
+        "min": 2,
+        "ideal": 3,
+        "max": 3
+      },
+      "durationFrames": [
+        180,
+        300
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua",
+      "alternatives": [
+        "flow.timeline.v1",
+        "flow.gap.v1"
+      ],
+      "commonErrors": [
+        "destacar o efeito antes da relação estar desenhada"
+      ],
+      "gesture": "tracado",
+      "pieces": [
+        "no",
+        "conector",
+        "rotulo"
+      ],
+      "triggers": [
+        "isso acontece porque",
+        "por isso",
+        "o que causa",
+        "consequência"
+      ],
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "branch.decision.v1",
+      "legacyId": "arvore-decisao",
+      "name": "Árvore de decisão",
+      "family": "branch",
+      "semantic": [
+        "BIFURCACAO",
+        "DECISAO",
+        "ESCOLHA"
+      ],
+      "useWhen": "uma condição abre dois caminhos (\"se já tem X… se não…\")",
+      "dontUseWhen": "os caminhos não se excluem (branch.tree)",
+      "input": "1 condição + 2 ramos",
+      "items": {
+        "min": 2,
+        "ideal": 2,
+        "max": 2
+      },
+      "durationFrames": [
+        200,
+        340
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua",
+      "alternatives": [
+        "branch.tree.v1",
+        "compare.balance.v1"
+      ],
+      "commonErrors": [
+        "esconder o ramo não escolhido",
+        "3 níveis de decisão"
+      ],
+      "gesture": "foco",
+      "pieces": [
+        "no",
+        "conector",
+        "rotulo"
+      ],
+      "triggers": [
+        "se já tem",
+        "se não tem",
+        "depende",
+        "dois caminhos"
+      ],
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "flow.filter.v1",
+      "legacyId": "filtro-criterios",
+      "name": "Filtro por critérios",
+      "family": "flow",
+      "semantic": [
+        "FUNIL",
+        "ESCOLHA",
+        "QUALIFICACAO"
+      ],
+      "useWhen": "critérios nomeados explicam quem passa e quem fica fora",
+      "dontUseWhen": "só a quantidade cai, sem critério (flow.funnel)",
+      "input": "itens + 2–3 critérios",
+      "items": {
+        "min": 2,
+        "ideal": 3,
+        "max": 3
+      },
+      "durationFrames": [
+        240,
+        400
+      ],
+      "density": 4,
+      "speakerVisible": false,
+      "fullScreen": true,
+      "caption": "legenda continua",
+      "alternatives": [
+        "flow.funnel.v1",
+        "flow.bottleneck.v1"
+      ],
+      "commonErrors": [
+        "itens desaparecendo sem destino nomeado"
+      ],
+      "gesture": "cascata",
+      "pieces": [
+        "no",
+        "conector",
+        "rotulo"
+      ],
+      "triggers": [
+        "não é qualquer pessoa",
+        "critério",
+        "quem passa",
+        "qualificado"
+      ],
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "proof.annotated.v1",
+      "legacyId": "evidencia-anotada",
+      "name": "Evidência anotada",
+      "family": "proof",
+      "semantic": [
+        "EXEMPLO",
+        "PROVA",
+        "ALERTA"
+      ],
+      "useWhen": "há material real (print, mensagem, tela) e a fala aponta um trecho",
+      "dontUseWhen": "não há material (scheme.description); é comparação de dois (compare.right-wrong)",
+      "input": "1 asset + 1 recorte + 1 anotação",
+      "items": {
+        "min": 1,
+        "ideal": 1,
+        "max": 1
+      },
+      "durationFrames": [
+        200,
+        340
+      ],
+      "density": 4,
+      "speakerVisible": false,
+      "fullScreen": true,
+      "caption": "legenda continua",
+      "alternatives": [
+        "compare.right-wrong.v1",
+        "scheme.description.v1"
+      ],
+      "commonErrors": [
+        "zoom que remove o contexto",
+        "fonte fictícia"
+      ],
+      "gesture": "reveal",
+      "pieces": [
+        "painel",
+        "anel",
+        "rotulo"
+      ],
+      "triggers": [
+        "repara nesse trecho",
+        "olha o print",
+        "aqui a prova",
+        "veja isso"
+      ],
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "compare.manual-auto.v1",
+      "legacyId": "manual-automatizado",
+      "name": "Manual × automatizado",
+      "family": "compare",
+      "semantic": [
+        "COMPARACAO",
+        "TRANSFORMACAO",
+        "PROCESSO"
+      ],
+      "useWhen": "duas trajetórias da mesma tarefa, com contagem de passos",
+      "dontUseWhen": "é atributo × atributo (compare.table)",
+      "input": "2 trilhas + 2 contagens",
+      "items": {
+        "min": 2,
+        "ideal": 2,
+        "max": 2
+      },
+      "durationFrames": [
+        200,
+        340
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua",
+      "alternatives": [
+        "compare.table.v1",
+        "process.steps.v1"
+      ],
+      "commonErrors": [
+        "comparar tempo sem dado",
+        "escopos diferentes nas trilhas"
+      ],
+      "gesture": "tracado",
+      "pieces": [
+        "no",
+        "conector",
+        "anel"
+      ],
+      "triggers": [
+        "manualmente",
+        "automático",
+        "o zeus faz",
+        "em vez de você"
+      ],
+      "where": {
+        "guide": "§6b",
+        "panel": "#s04c-esquemas"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "interface.chat.audio.v1",
+      "legacyId": "chat-audio",
+      "name": "Chat de áudio (Telegram/WhatsApp)",
+      "family": "interface",
+      "semantic": [
+        "CHAT",
+        "WHATSAPP",
+        "INTERFACE",
+        "SEQUENCIA"
+      ],
+      "useWhen": "a fala descreve mandar/receber ÁUDIO e a troca é o argumento (\"falo por áudio e ele responde\")",
+      "dontUseWhen": "a mensagem é texto (interface.chat.text.v1); só citou o app (use o mini-selo)",
+      "ifOnlyMentioned": "logo/mini-selo no canto por 40q, sem painel",
+      "items": {
+        "min": 2,
+        "ideal": 3,
+        "max": 4
+      },
+      "durationFrames": [
+        200,
+        360
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua (a interface não é tipografia)",
+      "alternatives": [
+        "interface.chat.text.v1",
+        "interface.progress.v1"
+      ],
+      "commonErrors": [
+        "SFX por cima do áudio real (peso 0)",
+        "onda aleatória: alturas vêm de tabela"
+      ],
+      "modes": [
+        "motion",
+        "completa"
+      ],
+      "gesture": "playback",
+      "pieces": [
+        "painel",
+        "balao",
+        "barra",
+        "selo"
+      ],
+      "triggers": [
+        "telegram",
+        "whatsapp",
+        "manda um áudio",
+        "por áudio",
+        "ele responde"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "interface.chat.text.v1",
+      "legacyId": "chat-texto",
+      "name": "Chat de texto",
+      "family": "interface",
+      "semantic": [
+        "CHAT",
+        "WHATSAPP",
+        "INTERFACE",
+        "PERGUNTA",
+        "RESPOSTA"
+      ],
+      "useWhen": "a fala descreve uma conversa escrita, com pergunta e resposta",
+      "dontUseWhen": "é áudio (audio.v1); é e-mail (interface.email.v1)",
+      "ifOnlyMentioned": "mini-selo do app",
+      "items": {
+        "min": 2,
+        "ideal": 3,
+        "max": 4
+      },
+      "durationFrames": [
+        200,
+        360
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua (a interface não é tipografia)",
+      "alternatives": [
+        "interface.chat.audio.v1",
+        "interface.comments.v1"
+      ],
+      "commonErrors": [
+        "digitar resposta longa em tempo ilegível"
+      ],
+      "modes": [
+        "motion",
+        "completa"
+      ],
+      "gesture": "digitacao",
+      "pieces": [
+        "painel",
+        "balao",
+        "selo"
+      ],
+      "triggers": [
+        "digita",
+        "escreve pra ele",
+        "pergunta pra ele",
+        "ele vai dizer"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "interface.adsmanager.panel.v1",
+      "legacyId": "painel-configuracao",
+      "name": "Painel de configuração (gerenciador)",
+      "family": "interface",
+      "semantic": [
+        "DASHBOARD",
+        "INTERFACE",
+        "FORMULARIO"
+      ],
+      "useWhen": "a fala descreve ajustar uma configuração (orçamento, público)",
+      "dontUseWhen": "só citou \"gerenciador\" (use mini-selo); é resultado, não ajuste (interface.metrics.v1)",
+      "ifOnlyMentioned": "mini-selo + rótulo",
+      "items": {
+        "min": 1,
+        "ideal": 2,
+        "max": 3
+      },
+      "durationFrames": [
+        200,
+        340
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua (a interface não é tipografia)",
+      "alternatives": [
+        "interface.toggles.v1",
+        "interface.metrics.v1"
+      ],
+      "commonErrors": [
+        "mais de 2 ajustes na cena",
+        "números reais inventados"
+      ],
+      "modes": [
+        "motion",
+        "completa"
+      ],
+      "gesture": "range",
+      "pieces": [
+        "painel",
+        "trilho",
+        "anel",
+        "numero"
+      ],
+      "triggers": [
+        "gerenciador",
+        "configura",
+        "orçamento",
+        "ajusta",
+        "campanha",
+        "otimiza"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "interface.chart.growth.v1",
+      "legacyId": "grafico",
+      "name": "Gráfico de crescimento",
+      "family": "interface",
+      "semantic": [
+        "GRAFICO",
+        "CRESCIMENTO",
+        "DADO",
+        "PROGRESSAO"
+      ],
+      "useWhen": "a fala afirma evolução de uma quantidade no tempo",
+      "dontUseWhen": "não há evolução (number.hero); os dados caem e isso importa (usar variante com dados reais)",
+      "ifOnlyMentioned": "número solo (number.hero.v1)",
+      "items": {
+        "min": 1,
+        "ideal": 1,
+        "max": 2
+      },
+      "durationFrames": [
+        180,
+        300
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua (a interface não é tipografia)",
+      "alternatives": [
+        "number.hero.v1",
+        "interface.metrics.v1"
+      ],
+      "commonErrors": [
+        "curva monotônica em cena marcada como dados reais",
+        "eixos móveis"
+      ],
+      "modes": [
+        "motion",
+        "completa"
+      ],
+      "gesture": "tracado",
+      "pieces": [
+        "painel",
+        "numero",
+        "anel"
+      ],
+      "triggers": [
+        "cresceu",
+        "crescimento",
+        "evolução",
+        "subiu",
+        "resultado ao longo",
+        "dados",
+        "análise"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "interface.checklist.v1",
+      "legacyId": "checklist-minimo",
+      "name": "Checklist",
+      "family": "interface",
+      "semantic": [
+        "LISTA",
+        "PROCESSO",
+        "ACERTO"
+      ],
+      "useWhen": "etapas a cumprir, com estado (feito/agora/futuro)",
+      "dontUseWhen": "sem estado, só nomes (set.grid.v1); é aprovação/reprovação (interface.approval.v1)",
+      "ifOnlyMentioned": "—",
+      "items": {
+        "min": 3,
+        "ideal": 4,
+        "max": 5
+      },
+      "durationFrames": [
+        200,
+        340
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua (a interface não é tipografia)",
+      "alternatives": [
+        "interface.checks.pure.v1",
+        "process.steps.v1"
+      ],
+      "commonErrors": [
+        "check antecipado",
+        "confete/bounce"
+      ],
+      "modes": [
+        "motion",
+        "completa"
+      ],
+      "gesture": "contador",
+      "pieces": [
+        "painel",
+        "circulo-check"
+      ],
+      "triggers": [
+        "já tá feito",
+        "pronto",
+        "concluído",
+        "isso, isso, isso",
+        "feito"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "interface.checks.pure.v1",
+      "legacyId": "checks-puros",
+      "name": "Checks puros (sem texto)",
+      "family": "interface",
+      "semantic": [
+        "LISTA",
+        "ACERTO",
+        "QUANTIDADE"
+      ],
+      "useWhen": "a fala só conta quantas coisas ficam prontas, sem nomeá-las",
+      "dontUseWhen": "a fala nomeia cada item (interface.checks.list.v1)",
+      "ifOnlyMentioned": "—",
+      "items": {
+        "min": 3,
+        "ideal": 5,
+        "max": 8
+      },
+      "durationFrames": [
+        120,
+        200
+      ],
+      "density": 2,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua (a interface não é tipografia)",
+      "alternatives": [
+        "interface.checks.list.v1",
+        "set.count-grid.v1"
+      ],
+      "commonErrors": [
+        "tick sonoro em cada check (usar 1º/meio/último)"
+      ],
+      "modes": [
+        "motion",
+        "completa"
+      ],
+      "gesture": "contador",
+      "pieces": [
+        "circulo-check"
+      ],
+      "triggers": [],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "interface.checks.list.v1",
+      "legacyId": "checks-lista",
+      "name": "Checks em lista",
+      "family": "interface",
+      "semantic": [
+        "LISTA",
+        "BULLETS",
+        "ACERTO"
+      ],
+      "useWhen": "a fala nomeia itens que vão sendo aprovados um a um",
+      "dontUseWhen": "os itens não são aprovações (set.grid.v1)",
+      "ifOnlyMentioned": "—",
+      "items": {
+        "min": 3,
+        "ideal": 4,
+        "max": 6
+      },
+      "durationFrames": [
+        200,
+        340
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua (a interface não é tipografia)",
+      "alternatives": [
+        "interface.checklist.v1",
+        "interface.checks.pure.v1"
+      ],
+      "commonErrors": [
+        "barra de texto e rótulo real na mesma lista"
+      ],
+      "modes": [
+        "motion",
+        "completa"
+      ],
+      "gesture": "contador",
+      "pieces": [
+        "circulo-check"
+      ],
+      "triggers": [],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "interface.instagram.profile.v1",
+      "legacyId": "perfil-instagram",
+      "name": "Perfil do Instagram",
+      "family": "interface",
+      "semantic": [
+        "SOCIAL_MEDIA",
+        "INTERFACE",
+        "PLATAFORMA"
+      ],
+      "useWhen": "a fala descreve o perfil como objeto (foto, bio, destaques, feed)",
+      "dontUseWhen": "a fala é sobre um post (interface.social.post.v1); só citou o Instagram (mini-selo)",
+      "ifOnlyMentioned": "mini-selo do Instagram",
+      "items": {
+        "min": 1,
+        "ideal": 1,
+        "max": 1
+      },
+      "durationFrames": [
+        240,
+        400
+      ],
+      "density": 4,
+      "speakerVisible": false,
+      "fullScreen": true,
+      "caption": "legenda continua (a interface não é tipografia)",
+      "alternatives": [
+        "interface.instagram.feed.v1",
+        "interface.instagram.highlights.v1"
+      ],
+      "commonErrors": [
+        "anel do Instagram + espectro na mesma cena",
+        "retângulo colorido sólido"
+      ],
+      "modes": [
+        "motion",
+        "completa"
+      ],
+      "gesture": "foco",
+      "pieces": [
+        "painel",
+        "avatar",
+        "numero",
+        "miniatura"
+      ],
+      "triggers": [
+        "perfil",
+        "bio",
+        "foto de perfil",
+        "seguidores"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "interface.social.post.v1",
+      "legacyId": "post-reel",
+      "name": "Post / Reel",
+      "family": "interface",
+      "semantic": [
+        "SOCIAL_MEDIA",
+        "INTERFACE"
+      ],
+      "useWhen": "a fala descreve um post específico e a ação sobre ele (curtir, salvar)",
+      "dontUseWhen": "é o perfil todo (profile.v1); é o feed (feed.v1)",
+      "ifOnlyMentioned": "mini-selo",
+      "items": {
+        "min": 1,
+        "ideal": 1,
+        "max": 1
+      },
+      "durationFrames": [
+        180,
+        300
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua (a interface não é tipografia)",
+      "alternatives": [
+        "interface.instagram.feed.v1",
+        "interface.comments.v1"
+      ],
+      "commonErrors": [
+        "coração preenchido (ícone é sempre contorno)"
+      ],
+      "modes": [
+        "motion",
+        "completa"
+      ],
+      "gesture": "foco",
+      "pieces": [
+        "painel",
+        "avatar",
+        "anel"
+      ],
+      "triggers": [
+        "post",
+        "reel",
+        "curtida",
+        "salvou",
+        "compartilhou"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "interface.notification.v1",
+      "legacyId": "notificacao",
+      "name": "Notificação",
+      "family": "interface",
+      "semantic": [
+        "NOTIFICACAO",
+        "ALERTA",
+        "INTERFACE"
+      ],
+      "useWhen": "algo chega de fora e a chegada é o evento (\"caiu um lead\")",
+      "dontUseWhen": "é uma lista que já existia (interface.leads.v1)",
+      "ifOnlyMentioned": "—",
+      "items": {
+        "min": 1,
+        "ideal": 2,
+        "max": 3
+      },
+      "durationFrames": [
+        120,
+        200
+      ],
+      "density": 2,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua (a interface não é tipografia)",
+      "alternatives": [
+        "interface.leads.v1",
+        "interface.email.v1"
+      ],
+      "commonErrors": [
+        "3 notificações soando juntas"
+      ],
+      "modes": [
+        "motion",
+        "completa"
+      ],
+      "gesture": "lista",
+      "pieces": [
+        "selo",
+        "rotulo"
+      ],
+      "triggers": [
+        "chegou",
+        "notificação",
+        "avisou",
+        "novo lead"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "interface.metrics.v1",
+      "legacyId": "metricas-kpi",
+      "name": "Métricas / KPI",
+      "family": "interface",
+      "semantic": [
+        "DADO",
+        "NUMERO",
+        "DASHBOARD"
+      ],
+      "useWhen": "2 a 4 indicadores e a fala cita um deles",
+      "dontUseWhen": "um número só (number.hero.v1); evolução no tempo (chart.growth.v1)",
+      "ifOnlyMentioned": "number.hero.v1",
+      "items": {
+        "min": 2,
+        "ideal": 3,
+        "max": 4
+      },
+      "durationFrames": [
+        180,
+        300
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua (a interface não é tipografia)",
+      "alternatives": [
+        "number.hero.v1",
+        "interface.chart.growth.v1"
+      ],
+      "commonErrors": [
+        "blur nos KPIs (todos precisam ser lidos)"
+      ],
+      "modes": [
+        "motion",
+        "completa"
+      ],
+      "gesture": "contagem",
+      "pieces": [
+        "painel",
+        "numero",
+        "anel"
+      ],
+      "triggers": [
+        "alcance",
+        "leads",
+        "custo por",
+        "métrica",
+        "kpi",
+        "resultado do mês"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "interface.instagram.highlights.v1",
+      "legacyId": "destaques",
+      "name": "Destaques (stories fixados)",
+      "family": "interface",
+      "semantic": [
+        "SOCIAL_MEDIA",
+        "LISTA",
+        "CATEGORIAS"
+      ],
+      "useWhen": "a fala lista os destaques do perfil (experiência, resultados, depoimentos)",
+      "dontUseWhen": "é o feed (feed.v1); são conceitos sem relação com o perfil (set.trio.v1)",
+      "ifOnlyMentioned": "mini-selo",
+      "items": {
+        "min": 3,
+        "ideal": 4,
+        "max": 5
+      },
+      "durationFrames": [
+        200,
+        340
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua (a interface não é tipografia)",
+      "alternatives": [
+        "set.trio.v1",
+        "interface.instagram.profile.v1"
+      ],
+      "commonErrors": [
+        "rótulos mudando de posição na migração do anel"
+      ],
+      "modes": [
+        "motion",
+        "completa"
+      ],
+      "gesture": "foco",
+      "pieces": [
+        "painel",
+        "avatar",
+        "pill"
+      ],
+      "triggers": [
+        "destaques",
+        "stories fixados",
+        "experiência, resultados, depoimentos"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "interface.instagram.feed.v1",
+      "legacyId": "feed-capas",
+      "name": "Feed com capas estratégicas",
+      "family": "interface",
+      "semantic": [
+        "SOCIAL_MEDIA",
+        "LISTA",
+        "CATEGORIAS",
+        "QUANTIDADE"
+      ],
+      "useWhen": "a fala fala do conjunto de posts e da função de cada capa",
+      "dontUseWhen": "é um post só (social.post.v1); é contagem sem função (set.count-grid.v1)",
+      "ifOnlyMentioned": "mini-selo",
+      "items": {
+        "min": 6,
+        "ideal": 12,
+        "max": 12
+      },
+      "durationFrames": [
+        240,
+        420
+      ],
+      "density": 4,
+      "speakerVisible": false,
+      "fullScreen": true,
+      "caption": "legenda continua (a interface não é tipografia)",
+      "alternatives": [
+        "set.count-grid.v1",
+        "interface.instagram.profile.v1"
+      ],
+      "commonErrors": [
+        "fundo preto grande nas capas",
+        "capas sem ícone quando a fala nomeia a função"
+      ],
+      "modes": [
+        "motion",
+        "completa"
+      ],
+      "gesture": "cascata",
+      "pieces": [
+        "painel",
+        "miniatura",
+        "rotulo"
+      ],
+      "triggers": [
+        "feed",
+        "capas",
+        "últimas postagens",
+        "posts"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "profile.audience-card.v1",
+      "legacyId": "cartao-publico",
+      "name": "Cartão de público",
+      "family": "interface",
+      "semantic": [
+        "COMPARACAO",
+        "EXEMPLO",
+        "DEFINICAO"
+      ],
+      "useWhen": "dois perfis de público contrastados (baleia × sardinha)",
+      "dontUseWhen": "é um público só (scheme.description.v1)",
+      "ifOnlyMentioned": "—",
+      "items": {
+        "min": 2,
+        "ideal": 2,
+        "max": 3
+      },
+      "durationFrames": [
+        200,
+        340
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua (a interface não é tipografia)",
+      "alternatives": [
+        "compare.table.v1",
+        "scheme.description.v1"
+      ],
+      "commonErrors": [
+        "dois contornos na mesma peça (anel aninhado)"
+      ],
+      "modes": [
+        "motion",
+        "completa"
+      ],
+      "gesture": "foco",
+      "pieces": [
+        "painel",
+        "anel",
+        "rotulo"
+      ],
+      "triggers": [
+        "isca",
+        "baleia",
+        "sardinha",
+        "público que",
+        "quem já tem",
+        "quem ainda"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "emphasis.headline-card.v1",
+      "legacyId": "cartao-headline",
+      "name": "Cartão de headline",
+      "family": "interface",
+      "semantic": [
+        "FRASE_IMPORTANTE",
+        "PROMESSA",
+        "DEFINICAO"
+      ],
+      "useWhen": "a fala enuncia uma promessa/oferta em formato de manchete",
+      "dontUseWhen": "é uma palavra só (emphasis.word.v1)",
+      "ifOnlyMentioned": "—",
+      "items": {
+        "min": 1,
+        "ideal": 1,
+        "max": 1
+      },
+      "durationFrames": [
+        180,
+        300
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua (a interface não é tipografia)",
+      "alternatives": [
+        "emphasis.icon-phrase.v1",
+        "emphasis.word.v1"
+      ],
+      "commonErrors": [
+        "assinatura sem sentido no rodapé"
+      ],
+      "modes": [
+        "motion",
+        "completa"
+      ],
+      "gesture": "cascata",
+      "pieces": [
+        "painel",
+        "traco",
+        "selo"
+      ],
+      "triggers": [
+        "promessa",
+        "te ajudo a",
+        "eu te ensino",
+        "headline",
+        "oferta"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "interface.progress.v1",
+      "legacyId": "progresso",
+      "name": "Progresso (o Zeus trabalhando)",
+      "family": "interface",
+      "semantic": [
+        "PROGRESSO",
+        "PROCESSO",
+        "INTERFACE"
+      ],
+      "useWhen": "algo está sendo executado e a conclusão importa",
+      "dontUseWhen": "é playback de mídia (player.v1); é meta de negócio (interface.goal.v1)",
+      "ifOnlyMentioned": "—",
+      "items": {
+        "min": 1,
+        "ideal": 1,
+        "max": 1
+      },
+      "durationFrames": [
+        180,
+        300
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua (a interface não é tipografia)",
+      "alternatives": [
+        "interface.goal.v1",
+        "interface.countdown.v1"
+      ],
+      "commonErrors": [
+        "ease que falsifica tempo",
+        "progresso sem dado (usar indeterminado)"
+      ],
+      "modes": [
+        "motion",
+        "completa"
+      ],
+      "gesture": "playback",
+      "pieces": [
+        "painel",
+        "barra",
+        "anel",
+        "numero"
+      ],
+      "triggers": [
+        "5 minutos",
+        "enquanto",
+        "configurando",
+        "tomando um café",
+        "ele faz"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "interface.calendar.v1",
+      "legacyId": "calendario",
+      "name": "Calendário / rotina",
+      "family": "interface",
+      "semantic": [
+        "CALENDARIO",
+        "TIMELINE",
+        "QUANTIDADE"
+      ],
+      "useWhen": "a fala fala de constância ou de dias marcados",
+      "dontUseWhen": "é um horário só (interface.schedule.v1); é prazo (interface.countdown.v1)",
+      "ifOnlyMentioned": "—",
+      "items": {
+        "min": 7,
+        "ideal": 30,
+        "max": 31
+      },
+      "durationFrames": [
+        180,
+        300
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua (a interface não é tipografia)",
+      "alternatives": [
+        "interface.schedule.v1",
+        "set.count-grid.v1"
+      ],
+      "commonErrors": [
+        "dia marcado em preto sólido grande"
+      ],
+      "modes": [
+        "motion",
+        "completa"
+      ],
+      "gesture": "contador",
+      "pieces": [
+        "painel",
+        "circulo-check",
+        "numero"
+      ],
+      "triggers": [
+        "todo dia",
+        "rotina",
+        "consistência",
+        "dias seguidos",
+        "semana"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "proof.testimonial.v1",
+      "legacyId": "depoimento",
+      "name": "Cartão de depoimento",
+      "family": "interface",
+      "semantic": [
+        "CITACAO",
+        "PROVA",
+        "EXEMPLO"
+      ],
+      "useWhen": "há uma fala real de terceiro para citar",
+      "dontUseWhen": "a prova é um print (proof.annotated.v1)",
+      "ifOnlyMentioned": "—",
+      "items": {
+        "min": 1,
+        "ideal": 1,
+        "max": 2
+      },
+      "durationFrames": [
+        240,
+        400
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua (a interface não é tipografia)",
+      "alternatives": [
+        "proof.annotated.v1",
+        "interface.comments.v1"
+      ],
+      "commonErrors": [
+        "estrelas de avaliação",
+        "reescrever a citação em caixa baixa sem pontuação"
+      ],
+      "modes": [
+        "motion",
+        "completa"
+      ],
+      "gesture": "cascata",
+      "pieces": [
+        "painel",
+        "avatar",
+        "anel"
+      ],
+      "triggers": [
+        "aluno",
+        "depoimento",
+        "ele disse",
+        "o que achou",
+        "agradecer"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "interface.leads.v1",
+      "legacyId": "lista-leads",
+      "name": "Lista de leads",
+      "family": "interface",
+      "semantic": [
+        "LISTA",
+        "DADO",
+        "CRM"
+      ],
+      "useWhen": "a fala fala de leads/contatos entrando ou sendo trabalhados",
+      "dontUseWhen": "é notificação única (notification.v1); é ranking (ranking.v1)",
+      "ifOnlyMentioned": "—",
+      "items": {
+        "min": 3,
+        "ideal": 4,
+        "max": 6
+      },
+      "durationFrames": [
+        180,
+        300
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua (a interface não é tipografia)",
+      "alternatives": [
+        "interface.notification.v1",
+        "interface.crm.v1"
+      ],
+      "commonErrors": [
+        "nomes reais de pessoas"
+      ],
+      "modes": [
+        "motion",
+        "completa"
+      ],
+      "gesture": "lista",
+      "pieces": [
+        "painel",
+        "avatar",
+        "linha-item"
+      ],
+      "triggers": [
+        "lista de leads",
+        "respondeu",
+        "agendou",
+        "novos contatos"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "interface.goal.v1",
+      "legacyId": "meta-progresso",
+      "name": "Meta com progresso",
+      "family": "interface",
+      "semantic": [
+        "META",
+        "NUMERO",
+        "PROGRESSO"
+      ],
+      "useWhen": "há um alvo numérico e uma posição atual",
+      "dontUseWhen": "não há alvo (number.hero.v1)",
+      "ifOnlyMentioned": "number.hero.v1",
+      "items": {
+        "min": 1,
+        "ideal": 1,
+        "max": 2
+      },
+      "durationFrames": [
+        180,
+        300
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua (a interface não é tipografia)",
+      "alternatives": [
+        "number.hero.v1",
+        "interface.progress.v1"
+      ],
+      "commonErrors": [
+        "número e range dessincronizados"
+      ],
+      "modes": [
+        "motion",
+        "completa"
+      ],
+      "gesture": "range",
+      "pieces": [
+        "painel",
+        "numero",
+        "trilho",
+        "anel"
+      ],
+      "triggers": [
+        "meta",
+        "50 mil",
+        "por mês",
+        "faturar",
+        "chegar em"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "interface.poll.v1",
+      "legacyId": "enquete",
+      "name": "Enquete / caixa de perguntas",
+      "family": "interface",
+      "semantic": [
+        "PERGUNTA",
+        "DADO",
+        "SOCIAL_MEDIA"
+      ],
+      "useWhen": "a fala cita uma pergunta feita ao público e/ou o resultado",
+      "dontUseWhen": "não há pergunta (interface.metrics.v1)",
+      "ifOnlyMentioned": "mini-selo",
+      "items": {
+        "min": 2,
+        "ideal": 2,
+        "max": 4
+      },
+      "durationFrames": [
+        180,
+        300
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua (a interface não é tipografia)",
+      "alternatives": [
+        "interface.comments.v1",
+        "interface.metrics.v1"
+      ],
+      "commonErrors": [
+        "percentuais que não somam 100"
+      ],
+      "modes": [
+        "motion",
+        "completa"
+      ],
+      "gesture": "range",
+      "pieces": [
+        "painel",
+        "barra",
+        "numero"
+      ],
+      "triggers": [
+        "enquete",
+        "caixa de perguntas",
+        "pergunta pro público",
+        "o que trava"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "interface.search.v1",
+      "legacyId": "busca",
+      "name": "Busca",
+      "family": "interface",
+      "semantic": [
+        "BUSCA",
+        "INTERFACE",
+        "PERGUNTA"
+      ],
+      "useWhen": "a fala descreve procurar algo e o resultado importa",
+      "dontUseWhen": "é chat com IA (chat.text.v1)",
+      "ifOnlyMentioned": "mini-selo",
+      "items": {
+        "min": 2,
+        "ideal": 3,
+        "max": 4
+      },
+      "durationFrames": [
+        180,
+        300
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua (a interface não é tipografia)",
+      "alternatives": [
+        "interface.chat.text.v1",
+        "interface.instagram.profile.v1"
+      ],
+      "commonErrors": [
+        "digitar letra a letra com som em cada letra"
+      ],
+      "modes": [
+        "motion",
+        "completa"
+      ],
+      "gesture": "digitacao",
+      "pieces": [
+        "painel",
+        "avatar",
+        "linha-item"
+      ],
+      "triggers": [
+        "busca",
+        "procura",
+        "explorar",
+        "encontrar",
+        "nicho"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "interface.comments.v1",
+      "legacyId": "comentarios",
+      "name": "Comentários",
+      "family": "interface",
+      "semantic": [
+        "SOCIAL_MEDIA",
+        "PROVA",
+        "LISTA"
+      ],
+      "useWhen": "a fala fala da reação do público em texto",
+      "dontUseWhen": "é depoimento estruturado (proof.testimonial.v1)",
+      "ifOnlyMentioned": "mini-selo",
+      "items": {
+        "min": 2,
+        "ideal": 3,
+        "max": 4
+      },
+      "durationFrames": [
+        180,
+        300
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua (a interface não é tipografia)",
+      "alternatives": [
+        "proof.testimonial.v1",
+        "interface.poll.v1"
+      ],
+      "commonErrors": [
+        "coração preenchido"
+      ],
+      "modes": [
+        "motion",
+        "completa"
+      ],
+      "gesture": "lista",
+      "pieces": [
+        "painel",
+        "avatar",
+        "linha-item"
+      ],
+      "triggers": [
+        "comentário",
+        "comentaram",
+        "perguntaram no post"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "interface.schedule.v1",
+      "legacyId": "agenda",
+      "name": "Agenda / horários",
+      "family": "interface",
+      "semantic": [
+        "CALENDARIO",
+        "ESCOLHA",
+        "INTERFACE"
+      ],
+      "useWhen": "a fala fala de escolher/preencher horários",
+      "dontUseWhen": "é rotina no mês (calendar.v1)",
+      "ifOnlyMentioned": "—",
+      "items": {
+        "min": 4,
+        "ideal": 8,
+        "max": 8
+      },
+      "durationFrames": [
+        180,
+        300
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua (a interface não é tipografia)",
+      "alternatives": [
+        "interface.calendar.v1",
+        "interface.videocall.v1"
+      ],
+      "commonErrors": [
+        "bloco escolhido em preto sólido grande"
+      ],
+      "modes": [
+        "motion",
+        "completa"
+      ],
+      "gesture": "contador",
+      "pieces": [
+        "painel",
+        "numero",
+        "anel"
+      ],
+      "triggers": [
+        "agenda",
+        "horário",
+        "sessão",
+        "vaga",
+        "marca uma"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "interface.confirmation.v1",
+      "legacyId": "confirmacao",
+      "name": "Confirmação (venda fechada)",
+      "family": "interface",
+      "semantic": [
+        "ACERTO",
+        "FEEDBACK",
+        "INTERFACE"
+      ],
+      "useWhen": "algo se conclui e a fala marca a conclusão",
+      "dontUseWhen": "é o processo (interface.progress.v1); é o preço (checkout.v1)",
+      "ifOnlyMentioned": "—",
+      "items": {
+        "min": 1,
+        "ideal": 1,
+        "max": 1
+      },
+      "durationFrames": [
+        120,
+        200
+      ],
+      "density": 2,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua (a interface não é tipografia)",
+      "alternatives": [
+        "interface.checkout.v1",
+        "interface.progress.v1"
+      ],
+      "commonErrors": [
+        "ícone de check em sólido grande (usar vazado + anel)"
+      ],
+      "modes": [
+        "motion",
+        "completa"
+      ],
+      "gesture": "confirmacao",
+      "pieces": [
+        "circulo-check",
+        "numero",
+        "anel"
+      ],
+      "triggers": [
+        "fechou",
+        "vendeu",
+        "pagamento",
+        "entrou aluno",
+        "inscrição"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "interface.email.v1",
+      "legacyId": "email",
+      "name": "E-mail",
+      "family": "interface",
+      "semantic": [
+        "EMAIL",
+        "INTERFACE",
+        "NOTIFICACAO"
+      ],
+      "useWhen": "a fala descreve enviar/receber e-mail ou relatório",
+      "dontUseWhen": "é chat (chat.text.v1)",
+      "ifOnlyMentioned": "mini-selo",
+      "items": {
+        "min": 1,
+        "ideal": 2,
+        "max": 2
+      },
+      "durationFrames": [
+        180,
+        300
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua (a interface não é tipografia)",
+      "alternatives": [
+        "interface.chat.text.v1",
+        "interface.notification.v1"
+      ],
+      "commonErrors": [
+        "corpo com texto real longo (usar barras)"
+      ],
+      "modes": [
+        "motion",
+        "completa"
+      ],
+      "gesture": "lista",
+      "pieces": [
+        "painel",
+        "selo",
+        "rotulo"
+      ],
+      "triggers": [
+        "e-mail",
+        "relatório",
+        "chega na caixa"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "interface.checkout.v1",
+      "legacyId": "checkout",
+      "name": "Checkout / oferta",
+      "family": "interface",
+      "semantic": [
+        "PAGAMENTO",
+        "NUMERO",
+        "INTERFACE"
+      ],
+      "useWhen": "a fala diz o preço ou a condição de compra",
+      "dontUseWhen": "é confirmação (confirmation.v1); é meta (goal.v1)",
+      "ifOnlyMentioned": "number.money.v1",
+      "items": {
+        "min": 1,
+        "ideal": 1,
+        "max": 2
+      },
+      "durationFrames": [
+        180,
+        300
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua (a interface não é tipografia)",
+      "alternatives": [
+        "number.money.v1",
+        "interface.confirmation.v1"
+      ],
+      "commonErrors": [
+        "contar o preço (preço revela)"
+      ],
+      "modes": [
+        "motion",
+        "completa"
+      ],
+      "gesture": "contagem",
+      "pieces": [
+        "painel",
+        "numero",
+        "anel"
+      ],
+      "triggers": [
+        "quero entrar",
+        "o preço é",
+        "parcela",
+        "checkout"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "interface.player.v1",
+      "legacyId": "player-aula",
+      "name": "Player de aula",
+      "family": "interface",
+      "semantic": [
+        "INTERFACE",
+        "PLATAFORMA",
+        "PROCESSO"
+      ],
+      "useWhen": "a fala fala do conteúdo da área de membros",
+      "dontUseWhen": "é videochamada (videocall.v1)",
+      "ifOnlyMentioned": "mini-selo",
+      "items": {
+        "min": 1,
+        "ideal": 1,
+        "max": 3
+      },
+      "durationFrames": [
+        180,
+        300
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua (a interface não é tipografia)",
+      "alternatives": [
+        "interface.videocall.v1",
+        "interface.progress.v1"
+      ],
+      "commonErrors": [
+        "ponto vermelho para \"live\" (vermelho é só erro)"
+      ],
+      "modes": [
+        "motion",
+        "completa"
+      ],
+      "gesture": "playback",
+      "pieces": [
+        "painel",
+        "anel",
+        "barra",
+        "numero"
+      ],
+      "triggers": [
+        "na aula",
+        "área de membros",
+        "assiste",
+        "módulo"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "interface.videocall.v1",
+      "legacyId": "videochamada",
+      "name": "Videochamada / sessão",
+      "family": "interface",
+      "semantic": [
+        "INTERFACE",
+        "PLATAFORMA",
+        "EXEMPLO"
+      ],
+      "useWhen": "a fala descreve a sessão ao vivo com a pessoa",
+      "dontUseWhen": "é aula gravada (player.v1)",
+      "ifOnlyMentioned": "mini-selo",
+      "items": {
+        "min": 2,
+        "ideal": 2,
+        "max": 4
+      },
+      "durationFrames": [
+        180,
+        300
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua (a interface não é tipografia)",
+      "alternatives": [
+        "interface.player.v1",
+        "interface.schedule.v1"
+      ],
+      "commonErrors": [
+        "câmeras com mesmo peso quando a fala tem sujeito"
+      ],
+      "modes": [
+        "motion",
+        "completa"
+      ],
+      "gesture": "foco",
+      "pieces": [
+        "painel",
+        "anel",
+        "pill",
+        "numero"
+      ],
+      "triggers": [
+        "na sessão",
+        "na call",
+        "ao vivo",
+        "encontro"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "interface.data-table.v1",
+      "legacyId": "tabela-dados",
+      "name": "Tabela de dados",
+      "family": "interface",
+      "semantic": [
+        "DADO",
+        "DASHBOARD",
+        "COMPARACAO"
+      ],
+      "useWhen": "a fala fala de planilha/relatório com linhas e colunas",
+      "dontUseWhen": "é comparação conceitual (compare.table.v1)",
+      "ifOnlyMentioned": "interface.metrics.v1",
+      "items": {
+        "min": 3,
+        "ideal": 4,
+        "max": 6
+      },
+      "durationFrames": [
+        200,
+        340
+      ],
+      "density": 4,
+      "speakerVisible": false,
+      "fullScreen": true,
+      "caption": "legenda continua (a interface não é tipografia)",
+      "alternatives": [
+        "compare.table.v1",
+        "interface.metrics.v1"
+      ],
+      "commonErrors": [
+        "grade completa com bordas em tudo"
+      ],
+      "modes": [
+        "motion",
+        "completa"
+      ],
+      "gesture": "cascata",
+      "pieces": [
+        "painel",
+        "linha-item",
+        "numero"
+      ],
+      "triggers": [
+        "na planilha",
+        "os dados",
+        "por criativo",
+        "tabela"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "interface.ranking.v1",
+      "legacyId": "ranking",
+      "name": "Ranking top 3",
+      "family": "interface",
+      "semantic": [
+        "DADO",
+        "HIERARQUIA",
+        "LISTA"
+      ],
+      "useWhen": "a fala ordena por desempenho",
+      "dontUseWhen": "sem ordem (set.grid.v1); sem valores (usar barras iguais)",
+      "ifOnlyMentioned": "—",
+      "items": {
+        "min": 3,
+        "ideal": 3,
+        "max": 5
+      },
+      "durationFrames": [
+        180,
+        300
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua (a interface não é tipografia)",
+      "alternatives": [
+        "interface.metrics.v1",
+        "hierarchy.levels.v1"
+      ],
+      "commonErrors": [
+        "barras proporcionais sem valores de origem"
+      ],
+      "modes": [
+        "motion",
+        "completa"
+      ],
+      "gesture": "cascata",
+      "pieces": [
+        "painel",
+        "anel",
+        "barra"
+      ],
+      "triggers": [
+        "o que mais funciona",
+        "top 3",
+        "em primeiro lugar",
+        "ranking"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "interface.form.v1",
+      "legacyId": "formulario",
+      "name": "Formulário / captura",
+      "family": "interface",
+      "semantic": [
+        "FORMULARIO",
+        "INTERFACE",
+        "ENTRADA_E_SAIDA"
+      ],
+      "useWhen": "a fala descreve a pessoa deixando o contato",
+      "dontUseWhen": "é checkout (checkout.v1); é busca (search.v1)",
+      "ifOnlyMentioned": "—",
+      "items": {
+        "min": 2,
+        "ideal": 2,
+        "max": 3
+      },
+      "durationFrames": [
+        180,
+        300
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua (a interface não é tipografia)",
+      "alternatives": [
+        "interface.checkout.v1",
+        "interface.leads.v1"
+      ],
+      "commonErrors": [
+        "dados reais em vez de barras",
+        "campo sem ícone/rótulo (não lê como formulário)"
+      ],
+      "modes": [
+        "motion",
+        "completa"
+      ],
+      "gesture": "digitacao",
+      "pieces": [
+        "painel",
+        "anel",
+        "rotulo"
+      ],
+      "triggers": [
+        "deixa o whatsapp",
+        "página de captura",
+        "preenche",
+        "formulário"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "interface.toggles.v1",
+      "legacyId": "toggles",
+      "name": "Configurações / toggles",
+      "family": "interface",
+      "semantic": [
+        "INTERFACE",
+        "ESCOLHA",
+        "FEEDBACK"
+      ],
+      "useWhen": "a fala descreve ligar/desligar uma configuração",
+      "dontUseWhen": "\"liga para o cliente\" (ação humana, não toggle)",
+      "ifOnlyMentioned": "—",
+      "items": {
+        "min": 2,
+        "ideal": 3,
+        "max": 4
+      },
+      "durationFrames": [
+        160,
+        260
+      ],
+      "density": 2,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua (a interface não é tipografia)",
+      "alternatives": [
+        "interface.adsmanager.panel.v1",
+        "interface.checklist.v1"
+      ],
+      "commonErrors": [
+        "knob elástico (overshoot)"
+      ],
+      "modes": [
+        "motion",
+        "completa"
+      ],
+      "gesture": "range",
+      "pieces": [
+        "painel",
+        "anel",
+        "linha-item"
+      ],
+      "triggers": [
+        "ativa isso",
+        "deixa automático",
+        "liga",
+        "configurações"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "interface.ab-test.v1",
+      "legacyId": "teste-ab",
+      "name": "Teste A/B",
+      "family": "interface",
+      "semantic": [
+        "COMPARACAO",
+        "DADO",
+        "EXEMPLO"
+      ],
+      "useWhen": "a fala fala de testar duas versões e comparar resultado",
+      "dontUseWhen": "é comparação conceitual (compare.table.v1); é certo/errado (compare.right-wrong.v1)",
+      "ifOnlyMentioned": "—",
+      "items": {
+        "min": 2,
+        "ideal": 2,
+        "max": 2
+      },
+      "durationFrames": [
+        180,
+        300
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua (a interface não é tipografia)",
+      "alternatives": [
+        "compare.right-wrong.v1",
+        "interface.metrics.v1"
+      ],
+      "commonErrors": [
+        "declarar vencedor sem número"
+      ],
+      "modes": [
+        "motion",
+        "completa"
+      ],
+      "gesture": "contagem",
+      "pieces": [
+        "painel",
+        "anel",
+        "numero"
+      ],
+      "triggers": [
+        "testei dois",
+        "a/b",
+        "qual converteu",
+        "o b ganhou"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "interface.countdown.v1",
+      "legacyId": "contagem-regressiva",
+      "name": "Contagem regressiva",
+      "family": "interface",
+      "semantic": [
+        "ALERTA",
+        "NUMERO",
+        "TIMELINE"
+      ],
+      "useWhen": "a fala dá prazo ou escassez COM tempo/quantidade",
+      "dontUseWhen": "\"vagas\" sem prazo (number.hero.v1 ou confirmation)",
+      "ifOnlyMentioned": "number.hero.v1",
+      "items": {
+        "min": 1,
+        "ideal": 1,
+        "max": 2
+      },
+      "durationFrames": [
+        120,
+        200
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua (a interface não é tipografia)",
+      "alternatives": [
+        "number.time.v1",
+        "interface.goal.v1"
+      ],
+      "commonErrors": [
+        "relógio girando sem prazo real"
+      ],
+      "modes": [
+        "motion",
+        "completa"
+      ],
+      "gesture": "playback",
+      "pieces": [
+        "anel",
+        "numero"
+      ],
+      "triggers": [
+        "vagas",
+        "encerra em",
+        "últimas",
+        "sobraram"
+      ],
+      "where": {
+        "guide": "§6b2",
+        "panel": "#s04g-interfaces"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "interface.list.v1",
+      "legacyId": "lista-motion",
+      "name": "Lista genérica (motion)",
+      "family": "interface",
+      "semantic": [
+        "LISTA",
+        "BULLETS"
+      ],
+      "useWhen": "itens entrando ou saindo de uma lista, sem semântica de check",
+      "dontUseWhen": "os itens são aprovações (interface.checks.list.v1)",
+      "ifOnlyMentioned": "—",
+      "items": {
+        "min": 3,
+        "ideal": 4,
+        "max": 6
+      },
+      "durationFrames": [
+        160,
+        280
+      ],
+      "density": 2,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua (a interface não é tipografia)",
+      "alternatives": [
+        "interface.checks.list.v1",
+        "set.grid.v1"
+      ],
+      "commonErrors": [
+        "fade geral que apaga a continuidade"
+      ],
+      "modes": [
+        "motion",
+        "completa"
+      ],
+      "gesture": "lista",
+      "pieces": [
+        "painel",
+        "avatar",
+        "linha-item",
+        "anel"
+      ],
+      "triggers": [
+        "lista",
+        "vários",
+        "um por um"
+      ],
+      "where": {
+        "guide": "§6b3",
+        "panel": "#s04h-motion"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "interface.approval.v1",
+      "legacyId": "aprovacao-reprovacao",
+      "name": "Aprovação × reprovação",
+      "family": "interface",
+      "semantic": [
+        "ACERTO",
+        "ERRO",
+        "LISTA",
+        "PROS_E_CONTRAS"
+      ],
+      "useWhen": "a fala julga item por item (\"isso sim, isso não\")",
+      "dontUseWhen": "há imagem (compare.right-wrong.v1); sem juízo (interface.list.v1)",
+      "ifOnlyMentioned": "—",
+      "items": {
+        "min": 2,
+        "ideal": 4,
+        "max": 6
+      },
+      "durationFrames": [
+        200,
+        340
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua (a interface não é tipografia)",
+      "alternatives": [
+        "compare.right-wrong.v1",
+        "interface.checks.list.v1"
+      ],
+      "commonErrors": [
+        "anel além do verde/vermelho (a cor semântica já é o evento)"
+      ],
+      "modes": [
+        "motion",
+        "completa"
+      ],
+      "gesture": "contador",
+      "pieces": [
+        "circulo-check",
+        "linha-item"
+      ],
+      "triggers": [
+        "isso sim isso não",
+        "aprova",
+        "reprova",
+        "pode",
+        "não pode"
+      ],
+      "where": {
+        "guide": "§6b3",
+        "panel": "#s04h-motion"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "compare.panels.v1",
+      "legacyId": "comparativo-ab",
+      "name": "Comparativo A × B (painéis)",
+      "family": "interface",
+      "semantic": [
+        "COMPARACAO",
+        "A_VS_B"
+      ],
+      "useWhen": "\"X faz isso, Y faz aquilo\" com a mesma estrutura nos dois lados",
+      "dontUseWhen": "é atributo × atributo em lista (compare.table.v1)",
+      "ifOnlyMentioned": "—",
+      "items": {
+        "min": 2,
+        "ideal": 2,
+        "max": 3
+      },
+      "durationFrames": [
+        200,
+        340
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua (a interface não é tipografia)",
+      "alternatives": [
+        "compare.table.v1",
+        "profile.audience-card.v1"
+      ],
+      "commonErrors": [
+        "contorno nos dois painéis"
+      ],
+      "modes": [
+        "motion",
+        "completa"
+      ],
+      "gesture": "foco",
+      "pieces": [
+        "painel",
+        "anel"
+      ],
+      "triggers": [
+        "x faz isso y faz aquilo",
+        "de um lado do outro",
+        "comparando"
+      ],
+      "where": {
+        "guide": "§6b3",
+        "panel": "#s04h-motion"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "scheme.description.v1",
+      "legacyId": "descricao",
+      "name": "Descrição (cartão de ideia)",
+      "family": "interface",
+      "semantic": [
+        "DEFINICAO",
+        "EXEMPLO",
+        "IDEIA_UNICA"
+      ],
+      "useWhen": "um conceito sendo explicado, sem relação estrutural com outros",
+      "dontUseWhen": "a fala afirma relação (usar esquema correspondente)",
+      "ifOnlyMentioned": "—",
+      "items": {
+        "min": 1,
+        "ideal": 1,
+        "max": 1
+      },
+      "durationFrames": [
+        180,
+        300
+      ],
+      "density": 2,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua (a interface não é tipografia)",
+      "alternatives": [
+        "emphasis.icon-phrase.v1",
+        "proof.annotated.v1"
+      ],
+      "commonErrors": [
+        "mais de 3 barras de texto por bloco"
+      ],
+      "modes": [
+        "motion",
+        "completa"
+      ],
+      "gesture": "cascata",
+      "pieces": [
+        "painel",
+        "anel",
+        "rotulo"
+      ],
+      "triggers": [
+        "o que é",
+        "significa",
+        "funciona assim",
+        "explico"
+      ],
+      "where": {
+        "guide": "§6b3",
+        "panel": "#s04h-motion"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "interface.pointer.v1",
+      "legacyId": "apontamento",
+      "name": "Apontamento (isto aqui)",
+      "family": "interface",
+      "semantic": [
+        "ALERTA",
+        "EXEMPLO",
+        "FEEDBACK"
+      ],
+      "useWhen": "a fala aponta UMA linha no meio de várias",
+      "dontUseWhen": "a fala nomeia todas (interface.list.v1)",
+      "ifOnlyMentioned": "—",
+      "items": {
+        "min": 3,
+        "ideal": 4,
+        "max": 6
+      },
+      "durationFrames": [
+        160,
+        280
+      ],
+      "density": 2,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua (a interface não é tipografia)",
+      "alternatives": [
+        "proof.annotated.v1",
+        "interface.list.v1"
+      ],
+      "commonErrors": [
+        "ponto sólido de espectro (usar mini-anel 14)"
+      ],
+      "modes": [
+        "motion",
+        "completa"
+      ],
+      "gesture": "foco",
+      "pieces": [
+        "painel",
+        "linha-item"
+      ],
+      "triggers": [
+        "olha esse",
+        "esse aqui",
+        "repara nisso",
+        "este ponto"
+      ],
+      "where": {
+        "guide": "§6b3",
+        "panel": "#s04h-motion"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "interface.mobile.form.v1",
+      "legacyId": "formulario-celular",
+      "name": "Formulário no celular",
+      "family": "interface",
+      "variantOf": "interface.form.v1",
+      "semantic": [
+        "INTERFACE",
+        "MOBILE_APP",
+        "PLATAFORMA"
+      ],
+      "useWhen": "a fala diz explicitamente \"no celular\", \"na tela dela\", \"a pessoa abre\" — o aparelho é o contexto",
+      "dontUseWhen": "a fala é sobre a ação e não sobre o aparelho (use o painel solto: mais espaço)",
+      "ifOnlyMentioned": "painel solto da variante base",
+      "items": {
+        "min": 1,
+        "ideal": 1,
+        "max": 1
+      },
+      "durationFrames": [
+        200,
+        340
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua",
+      "alternatives": [
+        "interface.form.v1"
+      ],
+      "commonErrors": [
+        "dois celulares na mesma cena",
+        "vidro dentro de vidro (a tela é o painel)"
+      ],
+      "modes": [
+        "motion"
+      ],
+      "gesture": "digitacao",
+      "pieces": [
+        "painel",
+        "anel"
+      ],
+      "triggers": [
+        "no celular",
+        "na tela dela",
+        "a pessoa abre"
+      ],
+      "where": {
+        "guide": "§6b3",
+        "panel": "#s04h-motion"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "interface.mobile.chat.v1",
+      "legacyId": "chat-celular",
+      "name": "Chat no celular",
+      "family": "interface",
+      "variantOf": "interface.chat.text.v1",
+      "semantic": [
+        "INTERFACE",
+        "MOBILE_APP",
+        "PLATAFORMA"
+      ],
+      "useWhen": "a fala diz explicitamente \"no celular\", \"na tela dela\", \"a pessoa abre\" — o aparelho é o contexto",
+      "dontUseWhen": "a fala é sobre a ação e não sobre o aparelho (use o painel solto: mais espaço)",
+      "ifOnlyMentioned": "painel solto da variante base",
+      "items": {
+        "min": 1,
+        "ideal": 1,
+        "max": 1
+      },
+      "durationFrames": [
+        200,
+        340
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua",
+      "alternatives": [
+        "interface.chat.text.v1"
+      ],
+      "commonErrors": [
+        "dois celulares na mesma cena",
+        "vidro dentro de vidro (a tela é o painel)"
+      ],
+      "modes": [
+        "motion"
+      ],
+      "gesture": "lista",
+      "pieces": [
+        "painel",
+        "balao",
+        "selo"
+      ],
+      "triggers": [
+        "no celular",
+        "ele responde no telegram"
+      ],
+      "where": {
+        "guide": "§6b3",
+        "panel": "#s04h-motion"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "interface.mobile.notification.v1",
+      "legacyId": "notificacao-celular",
+      "name": "Notificações no celular",
+      "family": "interface",
+      "variantOf": "interface.notification.v1",
+      "semantic": [
+        "INTERFACE",
+        "MOBILE_APP",
+        "PLATAFORMA"
+      ],
+      "useWhen": "a fala diz explicitamente \"no celular\", \"na tela dela\", \"a pessoa abre\" — o aparelho é o contexto",
+      "dontUseWhen": "a fala é sobre a ação e não sobre o aparelho (use o painel solto: mais espaço)",
+      "ifOnlyMentioned": "painel solto da variante base",
+      "items": {
+        "min": 1,
+        "ideal": 1,
+        "max": 1
+      },
+      "durationFrames": [
+        200,
+        340
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua",
+      "alternatives": [
+        "interface.notification.v1"
+      ],
+      "commonErrors": [
+        "dois celulares na mesma cena",
+        "vidro dentro de vidro (a tela é o painel)"
+      ],
+      "modes": [
+        "motion"
+      ],
+      "gesture": "lista",
+      "pieces": [
+        "selo",
+        "rotulo"
+      ],
+      "triggers": [
+        "aparece a notificação",
+        "chega no celular"
+      ],
+      "where": {
+        "guide": "§6b3",
+        "panel": "#s04h-motion"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "interface.mobile.post.v1",
+      "legacyId": "post-celular",
+      "name": "Post no celular",
+      "family": "interface",
+      "variantOf": "interface.social.post.v1",
+      "semantic": [
+        "INTERFACE",
+        "MOBILE_APP",
+        "PLATAFORMA"
+      ],
+      "useWhen": "a fala diz explicitamente \"no celular\", \"na tela dela\", \"a pessoa abre\" — o aparelho é o contexto",
+      "dontUseWhen": "a fala é sobre a ação e não sobre o aparelho (use o painel solto: mais espaço)",
+      "ifOnlyMentioned": "painel solto da variante base",
+      "items": {
+        "min": 1,
+        "ideal": 1,
+        "max": 1
+      },
+      "durationFrames": [
+        200,
+        340
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua",
+      "alternatives": [
+        "interface.social.post.v1"
+      ],
+      "commonErrors": [
+        "dois celulares na mesma cena",
+        "vidro dentro de vidro (a tela é o painel)"
+      ],
+      "modes": [
+        "motion"
+      ],
+      "gesture": "foco",
+      "pieces": [
+        "painel",
+        "anel"
+      ],
+      "triggers": [
+        "a pessoa vê o post",
+        "no feed dela"
+      ],
+      "where": {
+        "guide": "§6b3",
+        "panel": "#s04h-motion"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "interface.mobile.checkout.v1",
+      "legacyId": "checkout-celular",
+      "name": "Checkout no celular",
+      "family": "interface",
+      "variantOf": "interface.checkout.v1",
+      "semantic": [
+        "INTERFACE",
+        "MOBILE_APP",
+        "PLATAFORMA"
+      ],
+      "useWhen": "a fala diz explicitamente \"no celular\", \"na tela dela\", \"a pessoa abre\" — o aparelho é o contexto",
+      "dontUseWhen": "a fala é sobre a ação e não sobre o aparelho (use o painel solto: mais espaço)",
+      "ifOnlyMentioned": "painel solto da variante base",
+      "items": {
+        "min": 1,
+        "ideal": 1,
+        "max": 1
+      },
+      "durationFrames": [
+        200,
+        340
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua",
+      "alternatives": [
+        "interface.checkout.v1"
+      ],
+      "commonErrors": [
+        "dois celulares na mesma cena",
+        "vidro dentro de vidro (a tela é o painel)"
+      ],
+      "modes": [
+        "motion"
+      ],
+      "gesture": "confirmacao",
+      "pieces": [
+        "painel",
+        "numero",
+        "anel"
+      ],
+      "triggers": [
+        "compra pelo celular",
+        "paga ali"
+      ],
+      "where": {
+        "guide": "§6b3",
+        "panel": "#s04h-motion"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "interface.mobile.profile.v1",
+      "legacyId": "perfil-celular",
+      "name": "Perfil no celular",
+      "family": "interface",
+      "variantOf": "interface.instagram.profile.v1",
+      "semantic": [
+        "INTERFACE",
+        "MOBILE_APP",
+        "PLATAFORMA"
+      ],
+      "useWhen": "a fala diz explicitamente \"no celular\", \"na tela dela\", \"a pessoa abre\" — o aparelho é o contexto",
+      "dontUseWhen": "a fala é sobre a ação e não sobre o aparelho (use o painel solto: mais espaço)",
+      "ifOnlyMentioned": "painel solto da variante base",
+      "items": {
+        "min": 1,
+        "ideal": 1,
+        "max": 1
+      },
+      "durationFrames": [
+        200,
+        340
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua",
+      "alternatives": [
+        "interface.instagram.profile.v1"
+      ],
+      "commonErrors": [
+        "dois celulares na mesma cena",
+        "vidro dentro de vidro (a tela é o painel)"
+      ],
+      "modes": [
+        "motion"
+      ],
+      "gesture": "foco",
+      "pieces": [
+        "painel",
+        "avatar"
+      ],
+      "triggers": [
+        "abre o seu perfil",
+        "entra no perfil"
+      ],
+      "where": {
+        "guide": "§6b3",
+        "panel": "#s04h-motion"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "number.count.v1",
+      "name": "Contagem",
+      "family": "number",
+      "legacyId": "numbers-spec.json",
+      "semantic": [
+        "NUMERO",
+        "QUANTIDADE"
+      ],
+      "useWhen": "a quantidade é o argumento (12 conteúdos, 3 pilares) — conta do zero",
+      "dontUseWhen": "o número não evolui (revele)",
+      "ifOnlyMentioned": "legenda com o número em algarismo",
+      "items": {
+        "min": 1,
+        "ideal": 1,
+        "max": 3
+      },
+      "durationFrames": [
+        120,
+        200
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua",
+      "alternatives": [
+        "set.count-grid.v1",
+        "interface.metrics.v1"
+      ],
+      "commonErrors": [
+        "número sem rótulo de unidade",
+        "dígito colorido",
+        "contar o que não evolui"
+      ],
+      "spec": "numbers-spec.json",
+      "where": {
+        "guide": "§11",
+        "panel": "#s06-numeros"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "number.money.v1",
+      "name": "Valor em dinheiro",
+      "family": "number",
+      "legacyId": "numbers-spec.json",
+      "semantic": [
+        "NUMERO",
+        "DADO",
+        "PAGAMENTO"
+      ],
+      "useWhen": "faturamento, preço, ticket — R$ em 40% do corpo, sem centavos",
+      "dontUseWhen": "preço de oferta conta (revela)",
+      "ifOnlyMentioned": "legenda com o número em algarismo",
+      "items": {
+        "min": 1,
+        "ideal": 1,
+        "max": 3
+      },
+      "durationFrames": [
+        120,
+        200
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua",
+      "alternatives": [
+        "set.count-grid.v1",
+        "interface.metrics.v1"
+      ],
+      "commonErrors": [
+        "número sem rótulo de unidade",
+        "dígito colorido",
+        "contar o que não evolui"
+      ],
+      "spec": "numbers-spec.json",
+      "where": {
+        "guide": "§11",
+        "panel": "#s06-numeros"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "number.time.v1",
+      "name": "Hora e duração",
+      "family": "number",
+      "legacyId": "numbers-spec.json",
+      "semantic": [
+        "NUMERO",
+        "TIMELINE"
+      ],
+      "useWhen": "hora, duração, cronômetro — peso 700, 2 dígitos",
+      "dontUseWhen": "contar tempo já passado",
+      "ifOnlyMentioned": "legenda com o número em algarismo",
+      "items": {
+        "min": 1,
+        "ideal": 1,
+        "max": 3
+      },
+      "durationFrames": [
+        120,
+        200
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua",
+      "alternatives": [
+        "set.count-grid.v1",
+        "interface.metrics.v1"
+      ],
+      "commonErrors": [
+        "número sem rótulo de unidade",
+        "dígito colorido",
+        "contar o que não evolui"
+      ],
+      "spec": "numbers-spec.json",
+      "where": {
+        "guide": "§11",
+        "panel": "#s06-numeros"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "number.date.v1",
+      "name": "Data e ano",
+      "family": "number",
+      "legacyId": "numbers-spec.json",
+      "semantic": [
+        "NUMERO",
+        "TIMELINE"
+      ],
+      "useWhen": "marco no tempo — sempre revelado, nunca contado",
+      "dontUseWhen": "contar a data",
+      "ifOnlyMentioned": "legenda com o número em algarismo",
+      "items": {
+        "min": 1,
+        "ideal": 1,
+        "max": 3
+      },
+      "durationFrames": [
+        100,
+        160
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua",
+      "alternatives": [
+        "set.count-grid.v1",
+        "interface.metrics.v1"
+      ],
+      "commonErrors": [
+        "número sem rótulo de unidade",
+        "dígito colorido",
+        "contar o que não evolui"
+      ],
+      "spec": "numbers-spec.json",
+      "where": {
+        "guide": "§11",
+        "panel": "#s06-numeros"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "number.percent.v1",
+      "name": "Percentual e múltiplo",
+      "family": "number",
+      "legacyId": "numbers-spec.json",
+      "semantic": [
+        "NUMERO",
+        "PORCENTAGEM",
+        "DADO"
+      ],
+      "useWhen": "resultado medido (184%, 3,8x) — % em 40% do corpo",
+      "dontUseWhen": "percentual sem dado de origem",
+      "ifOnlyMentioned": "legenda com o número em algarismo",
+      "items": {
+        "min": 1,
+        "ideal": 1,
+        "max": 3
+      },
+      "durationFrames": [
+        120,
+        200
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua",
+      "alternatives": [
+        "set.count-grid.v1",
+        "interface.metrics.v1"
+      ],
+      "commonErrors": [
+        "número sem rótulo de unidade",
+        "dígito colorido",
+        "contar o que não evolui"
+      ],
+      "spec": "numbers-spec.json",
+      "where": {
+        "guide": "§11",
+        "panel": "#s06-numeros"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "number.hero.v1",
+      "name": "Número de impacto",
+      "family": "number",
+      "legacyId": "numbers-spec.json",
+      "semantic": [
+        "NUMERO",
+        "CLIMAX",
+        "DADO"
+      ],
+      "useWhen": "um número sozinho no palco como protagonista do beat",
+      "dontUseWhen": "há 2+ números (use trio ou métricas)",
+      "ifOnlyMentioned": "legenda com o número em algarismo",
+      "items": {
+        "min": 1,
+        "ideal": 1,
+        "max": 3
+      },
+      "durationFrames": [
+        150,
+        240
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua",
+      "alternatives": [
+        "set.count-grid.v1",
+        "interface.metrics.v1"
+      ],
+      "commonErrors": [
+        "número sem rótulo de unidade",
+        "dígito colorido",
+        "contar o que não evolui"
+      ],
+      "spec": "numbers-spec.json",
+      "where": {
+        "guide": "§11",
+        "panel": "#s06-numeros"
+      },
+      "version": "2.2",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "chart.donut.v1",
+      "legacyId": "pizza-rosca",
+      "name": "Pizza (rosca)",
+      "family": "chart",
+      "semantic": [
+        "PORCENTAGEM",
+        "DADO",
+        "GRAFICO",
+        "PARTES_DE_UM_TODO"
+      ],
+      "useWhen": "partes de um todo em que uma parte é o argumento, com percentuais reais que somam 100",
+      "dontUseWhen": "um valor só sem todo (number.percent); 5+ fatias (tabela-dados); partes que não somam (trio-atributos)",
+      "input": "valores reais na mesma escala + rótulos",
+      "items": {
+        "min": 2,
+        "ideal": 3,
+        "max": 4
+      },
+      "durationFrames": [
+        180,
+        300
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua",
+      "alternatives": [
+        "number.percent.v1",
+        "interface.data-table.v1"
+      ],
+      "commonErrors": [
+        "pizza cheia em vez de rosca vazada",
+        "uma cor por fatia",
+        "percentuais que não fecham 100",
+        "rótulo dentro da fatia"
+      ],
+      "gesture": "tracado",
+      "pieces": [
+        "trilho",
+        "anel",
+        "rotulo",
+        "numero"
+      ],
+      "triggers": [
+        "por cento do",
+        "a maior parte",
+        "metade",
+        "fatia do",
+        "divide em",
+        "do total"
+      ],
+      "where": {
+        "guide": "§6b4",
+        "panel": "#s07-graficos"
+      },
+      "version": "2.3",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "chart.columns.v1",
+      "legacyId": "colunas-comparadas",
+      "name": "Colunas comparadas",
+      "family": "chart",
+      "semantic": [
+        "GRAFICO",
+        "DADO",
+        "COMPARACAO",
+        "QUANTIDADE"
+      ],
+      "useWhen": "a fala compara 2 ou 3 períodos ou categorias do mesmo dado e o tamanho é o argumento",
+      "dontUseWhen": "um valor só (number.hero); evolução contínua (chart.growth); 4+ categorias (data-table); partes de um todo (chart.donut)",
+      "input": "valores reais na mesma escala + rótulos",
+      "items": {
+        "min": 2,
+        "ideal": 3,
+        "max": 3
+      },
+      "durationFrames": [
+        180,
+        300
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua",
+      "alternatives": [
+        "interface.chart.growth.v1",
+        "interface.data-table.v1"
+      ],
+      "commonErrors": [
+        "coluna preenchida de preto (massa acima do teto de sólido)",
+        "mais de 3 colunas",
+        "alturas que não respeitam a proporção dos valores",
+        "verde e vermelho para alta e baixa: cor semântica é só certo/errado"
+      ],
+      "gesture": "tracado",
+      "pieces": [
+        "trilho",
+        "anel",
+        "rotulo",
+        "numero"
+      ],
+      "triggers": [
+        "era tanto e agora é",
+        "comparando os três",
+        "mês passado e esse",
+        "de um lado tanto",
+        "o dobro de",
+        "três vezes mais"
+      ],
+      "where": {
+        "guide": "§6b4",
+        "panel": "#s07-graficos"
+      },
+      "version": "2.3",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "scale.semantic.v1",
+      "legacyId": "escala-semantica",
+      "name": "Escala semântica (dois polos)",
+      "family": "scale",
+      "semantic": [
+        "ESCALA",
+        "COMPARACAO",
+        "NIVEL_DE_CONSCIENCIA",
+        "DIAGNOSTICO"
+      ],
+      "useWhen": "a fala situa alguém entre dois extremos nomeados e opostos",
+      "dontUseWhen": "eixo crescente sem polo oposto (scale.intensity); categorias (hierarchy.levels); dois critérios (matrix.quadrants); enquete com percentual (interface.poll)",
+      "input": "valores reais na mesma escala + rótulos",
+      "items": {
+        "min": 3,
+        "ideal": 5,
+        "max": 7
+      },
+      "durationFrames": [
+        160,
+        280
+      ],
+      "density": 3,
+      "speakerVisible": true,
+      "fullScreen": false,
+      "caption": "legenda continua",
+      "alternatives": [
+        "scale.intensity.v1",
+        "matrix.quadrants.v1"
+      ],
+      "commonErrors": [
+        "confundir com escala de intensidade",
+        "7 pontos no palco normal",
+        "polo colorido"
+      ],
+      "gesture": "range",
+      "pieces": [
+        "trilho",
+        "anel",
+        "rotulo",
+        "numero"
+      ],
+      "triggers": [
+        "de um extremo ao outro",
+        "mais para o lado",
+        "entre barato e caro",
+        "amador ou profissional",
+        "onde você se encaixa",
+        "quanto mais para"
+      ],
+      "where": {
+        "guide": "§6b4",
+        "panel": "#s07-graficos"
+      },
+      "version": "2.3",
+      "status": "aprovado-visual"
+    },
+    {
+      "id": "chart.radar.v1",
+      "legacyId": "radar",
+      "name": "Radar (diagnóstico)",
+      "family": "chart",
+      "semantic": [
+        "FRAMEWORK",
+        "DIAGNOSTICO",
+        "MATRIZ",
+        "ESCALA",
+        "DADO"
+      ],
+      "useWhen": "diagnóstico multidimensional com 5 a 6 critérios na mesma escala, e a fala percorre os eixos",
+      "dontUseWhen": "4 ou menos critérios (set.grid); escalas diferentes (compare.table); dois critérios cruzados (matrix.quadrants); um eixo só (emphasis.attribute)",
+      "input": "valores reais na mesma escala + rótulos",
+      "items": {
+        "min": 5,
+        "ideal": 5,
+        "max": 6
+      },
+      "durationFrames": [
+        240,
+        420
+      ],
+      "density": 4,
+      "speakerVisible": false,
+      "fullScreen": true,
+      "caption": "legenda continua",
+      "alternatives": [
+        "matrix.quadrants.v1",
+        "set.grid.v1"
+      ],
+      "commonErrors": [
+        "radar no palco normal",
+        "7+ eixos",
+        "polígono preenchido",
+        "dois polígonos pretos",
+        "escalas diferentes por eixo"
+      ],
+      "gesture": "tracado",
+      "pieces": [
+        "trilho",
+        "anel",
+        "rotulo",
+        "numero"
+      ],
+      "triggers": [
+        "diagnóstico",
+        "em cinco frentes",
+        "onde você está bem e onde está mal",
+        "avaliação geral",
+        "pontos fortes e fracos"
+      ],
+      "where": {
+        "guide": "§6b4",
+        "panel": "#s07-graficos"
+      },
+      "version": "2.3",
+      "status": "aprovado-visual"
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+# Squad Branding e identidade visual do ZEUS PRO.
+# Genérico de propósito: ele aprende o jeito do dono com o uso, não vem
+# pré-calibrado com o jeito de ninguém.
+
+id: branding
+nome: "Branding e identidade visual"
+descrição: >
+  Cuida da identidade visual: diagnóstico, referências, criação de marca do zero (plataforma, nome, direções), paleta, tipografia, sistema visual, manual e verificação de consistência.
+versão: "1.1.0"
+status: ativo
+
+gatilhos:
+  palavras: [marca, identidade visual, logo, paleta, cores, tipografia, design system, manual da marca]
+  contexto: >
+    Pedido sobre como a marca se apresenta visualmente, ou criação de identidade do zero.
+peso_mínimo: 41
+
+lead: diretor-de-arte
+agentes:
+  - diretor-de-arte
+  - construtor-de-marca
+  - pesquisador-visual
+  - sistematizador
+
+leitura_obrigatória:
+  - memory/PERFIL.md
+  - memory/posicionamento.md
+  - templates/DESIGN-SYSTEM-CENTRAL.md
+  - squads/branding/MEMORY.md
+  - squads/branding/FRAMEWORKS.md
+
+entregáveis:
+  - plataforma da marca
+  - opções de nome
+  - direção visual
+  - paleta
+  - sistema tipográfico
+  - manual de aplicação
+
+exige_confirmação:
+  - publicar qualquer coisa
+  - enviar mensagem a terceiro
+  - gastar dinheiro
+
+nunca_faz:
+  - inventar dado sobre o usuário, o público ou o resultado
+  - prometer o que o dono não pode sustentar
+  - declarar entrega pronta sem ter verificado
+
+qualidade:
+  checklist: squads/branding/CHECKLIST.md
+  nota_mínima: 60
+  máximo_de_refações: 2
+
+aprendizado:
+  arquivo: squads/branding/MEMORY.md
+  teto_caracteres: 8000
+  ler_antes_de_agir: true

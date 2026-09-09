@@ -1,0 +1,39 @@
+{
+  "id": "vintage",
+  "name": "Vintage",
+  "description": "Tons terra, serifa clássica, textura papel envelhecido. Nostalgia editorial.",
+  "mood": ["nostalgico", "quente", "artesanal", "classico"],
+  "tokens": {
+    "bg": "#f5ede0",
+    "bg-alt": "#ebe0cc",
+    "bg-card": "#fff9ed",
+    "accent-1": "#8b4513",
+    "accent-2": "#c97a4a",
+    "accent-3": "#d4a574",
+    "text": "#2c1810",
+    "text-muted": "#5c4433",
+    "text-label": "#8b4513",
+    "border": "rgba(139, 69, 19, 0.22)",
+    "divider": "rgba(139, 69, 19, 0.1)"
+  },
+  "fonts": {
+    "title": "Playfair Display",
+    "title-weight": "700",
+    "body": "Lora",
+    "body-weight": "400",
+    "mono": "IBM Plex Mono"
+  },
+  "effects": {
+    "grain": true,
+    "grain-opacity": 0.6,
+    "blur-reveal": true,
+    "word-by-word": true,
+    "motion": "cubic-bezier(0.25, 0.1, 0.25, 1)",
+    "motion-profile": "gentle"
+  },
+  "icons": {
+    "style": "static",
+    "stroke": 1.2,
+    "library": "phosphor"
+  }
+}

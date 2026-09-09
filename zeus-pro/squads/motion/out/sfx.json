@@ -1,0 +1,618 @@
+{
+  "composition": "PorOndeComecarReels",
+  "estilo": "apple-conceitual",
+  "fps": 60,
+  "hookFrames": 0,
+  "duracaoS": 61.516666666666666,
+  "eventos": [
+    {
+      "id": "gancho-por-onde-comecar/entrada",
+      "cena": "gancho-por-onde-comecar",
+      "componente": "GanchoPorOndeComecar",
+      "categoria": "frase-grande",
+      "gesto": "entrada",
+      "etapa": null,
+      "peso": 7,
+      "frameLocal": 6,
+      "gestoS": 0.1,
+      "som": "peso-07-whoosh-grave.wav",
+      "volumeDb": -11,
+      "inicioS": 0,
+      "inicioMs": 0,
+      "fimS": 0.43,
+      "fadeOutS": null
+    },
+    {
+      "id": "gancho-por-onde-comecar/frase",
+      "cena": "gancho-por-onde-comecar",
+      "componente": "GanchoPorOndeComecar",
+      "categoria": "frase-grande",
+      "gesto": "frase",
+      "etapa": null,
+      "peso": 7,
+      "frameLocal": 190,
+      "gestoS": 3.167,
+      "som": "peso-07-whoosh-grave.wav",
+      "volumeDb": -11,
+      "inicioS": 2.377,
+      "inicioMs": 2377,
+      "fimS": 3.497,
+      "fadeOutS": null
+    },
+    {
+      "id": "passo1-pesquisa/item",
+      "cena": "passo1-pesquisa",
+      "componente": "TrilhaPassos",
+      "categoria": "serie-itens",
+      "gesto": "item",
+      "etapa": 1,
+      "peso": 4,
+      "frameLocal": 78,
+      "gestoS": 7.117,
+      "som": "peso-04-whoosh-medio.wav",
+      "volumeDb": -15,
+      "inicioS": 6.657,
+      "inicioMs": 6657,
+      "fimS": 7.307,
+      "fadeOutS": null
+    },
+    {
+      "id": "trio-o-que-a-pesquisa-entrega/item",
+      "cena": "trio-o-que-a-pesquisa-entrega",
+      "componente": "TrioPesquisa",
+      "categoria": "serie-itens",
+      "gesto": "item",
+      "etapa": 1,
+      "peso": 4,
+      "frameLocal": 40,
+      "gestoS": 10.767,
+      "som": "peso-04-whoosh-medio.wav",
+      "volumeDb": -15,
+      "inicioS": 10.307,
+      "inicioMs": 10307,
+      "fimS": 10.957,
+      "fadeOutS": null
+    },
+    {
+      "id": "trio-o-que-a-pesquisa-entrega/item",
+      "cena": "trio-o-que-a-pesquisa-entrega",
+      "componente": "TrioPesquisa",
+      "categoria": "serie-itens",
+      "gesto": "item",
+      "etapa": 2,
+      "peso": 4,
+      "frameLocal": 193,
+      "gestoS": 13.317,
+      "som": "peso-04-whoosh-medio.wav",
+      "volumeDb": -16,
+      "inicioS": 12.857,
+      "inicioMs": 12857,
+      "fimS": 13.507,
+      "fadeOutS": null
+    },
+    {
+      "id": "trio-o-que-a-pesquisa-entrega/item",
+      "cena": "trio-o-que-a-pesquisa-entrega",
+      "componente": "TrioPesquisa",
+      "categoria": "serie-itens",
+      "gesto": "item",
+      "etapa": 3,
+      "peso": 4,
+      "frameLocal": 280,
+      "gestoS": 14.767,
+      "som": "peso-04-whoosh-medio.wav",
+      "volumeDb": -17,
+      "inicioS": 14.307,
+      "inicioMs": 14307,
+      "fimS": 14.957,
+      "fadeOutS": null
+    },
+    {
+      "id": "passo2-icp/entrada",
+      "cena": "passo2-icp",
+      "componente": "PalavraICP",
+      "categoria": "palavra-conceito",
+      "gesto": "entrada",
+      "etapa": null,
+      "peso": 5,
+      "frameLocal": 8,
+      "gestoS": 18.4,
+      "som": "peso-04-whoosh-medio.wav",
+      "volumeDb": -14,
+      "inicioS": 17.94,
+      "inicioMs": 17940,
+      "fimS": 18.59,
+      "fadeOutS": null
+    },
+    {
+      "id": "passo2-icp/traco",
+      "cena": "passo2-icp",
+      "componente": "PalavraICP",
+      "categoria": "palavra-conceito",
+      "gesto": "traco",
+      "etapa": null,
+      "peso": 10,
+      "frameLocal": 36,
+      "gestoS": 18.867,
+      "som": "peso-10-whoosh-longo.wav",
+      "volumeDb": -9,
+      "inicioS": 18.527,
+      "inicioMs": 18527,
+      "fimS": 19.617,
+      "fadeOutS": null
+    },
+    {
+      "id": "icp-e-o-mapa/entrada",
+      "cena": "icp-e-o-mapa",
+      "componente": "MapaDeQuemCompra",
+      "categoria": "conceito-com-icone",
+      "gesto": "entrada",
+      "etapa": null,
+      "peso": 7,
+      "frameLocal": 8,
+      "gestoS": 20.617,
+      "som": "peso-07-whoosh-grave.wav",
+      "volumeDb": -11,
+      "inicioS": 19.827,
+      "inicioMs": 19827,
+      "fimS": 20.947,
+      "fadeOutS": null
+    },
+    {
+      "id": "passo3-promessa/entrada",
+      "cena": "passo3-promessa",
+      "componente": "PromessaPublica",
+      "categoria": "conceito-com-icone",
+      "gesto": "entrada",
+      "etapa": null,
+      "peso": 7,
+      "frameLocal": 6,
+      "gestoS": 24.3,
+      "som": "peso-07-whoosh-grave.wav",
+      "volumeDb": -11,
+      "inicioS": 23.51,
+      "inicioMs": 23510,
+      "fimS": 24.63,
+      "fadeOutS": null
+    },
+    {
+      "id": "promessa-atrai-quem-tem-o-problema/partida",
+      "cena": "promessa-atrai-quem-tem-o-problema",
+      "componente": "PromessaAtrai",
+      "categoria": "jornada",
+      "gesto": "partida",
+      "etapa": null,
+      "peso": 4,
+      "frameLocal": 18,
+      "gestoS": 27.617,
+      "som": "peso-04-whoosh-medio.wav",
+      "volumeDb": -15,
+      "inicioS": 27.157,
+      "inicioMs": 27157,
+      "fimS": 27.807,
+      "fadeOutS": null
+    },
+    {
+      "id": "promessa-atrai-quem-tem-o-problema/chegada",
+      "cena": "promessa-atrai-quem-tem-o-problema",
+      "componente": "PromessaAtrai",
+      "categoria": "jornada",
+      "gesto": "chegada",
+      "etapa": null,
+      "peso": 4,
+      "frameLocal": 78,
+      "gestoS": 28.617,
+      "som": "peso-04-whoosh-medio.wav",
+      "volumeDb": -15,
+      "inicioS": 28.157,
+      "inicioMs": 28157,
+      "fimS": 28.807,
+      "fadeOutS": null
+    },
+    {
+      "id": "passo4-copy/item",
+      "cena": "passo4-copy",
+      "componente": "TrilhaPassosCopy",
+      "categoria": "serie-itens",
+      "gesto": "item",
+      "etapa": 1,
+      "peso": 4,
+      "frameLocal": 116,
+      "gestoS": 33.067,
+      "som": "peso-04-whoosh-medio.wav",
+      "volumeDb": -15,
+      "inicioS": 32.607,
+      "inicioMs": 32607,
+      "fimS": 33.257,
+      "fadeOutS": null
+    },
+    {
+      "id": "onde-a-copy-vive/item",
+      "cena": "onde-a-copy-vive",
+      "componente": "OndeACopyVive",
+      "categoria": "serie-itens",
+      "gesto": "item",
+      "etapa": 1,
+      "peso": 4,
+      "frameLocal": 30,
+      "gestoS": 35.933,
+      "som": "peso-04-whoosh-medio.wav",
+      "volumeDb": -15,
+      "inicioS": 35.473,
+      "inicioMs": 35473,
+      "fimS": 36.123,
+      "fadeOutS": null
+    },
+    {
+      "id": "onde-a-copy-vive/item",
+      "cena": "onde-a-copy-vive",
+      "componente": "OndeACopyVive",
+      "categoria": "serie-itens",
+      "gesto": "item",
+      "etapa": 2,
+      "peso": 4,
+      "frameLocal": 98,
+      "gestoS": 37.067,
+      "som": "peso-04-whoosh-medio.wav",
+      "volumeDb": -16,
+      "inicioS": 36.607,
+      "inicioMs": 36607,
+      "fimS": 37.257,
+      "fadeOutS": null
+    },
+    {
+      "id": "onde-a-copy-vive/item",
+      "cena": "onde-a-copy-vive",
+      "componente": "OndeACopyVive",
+      "categoria": "serie-itens",
+      "gesto": "item",
+      "etapa": 3,
+      "peso": 4,
+      "frameLocal": 161,
+      "gestoS": 38.117,
+      "som": "peso-04-whoosh-medio.wav",
+      "volumeDb": -17,
+      "inicioS": 37.657,
+      "inicioMs": 37657,
+      "fimS": 38.307,
+      "fadeOutS": null
+    },
+    {
+      "id": "so-agora-se-constroi/entrada",
+      "cena": "so-agora-se-constroi",
+      "componente": "AiSim",
+      "categoria": "palavra-conceito",
+      "gesto": "entrada",
+      "etapa": null,
+      "peso": 5,
+      "frameLocal": 4,
+      "gestoS": 39.367,
+      "som": "peso-04-whoosh-medio.wav",
+      "volumeDb": -14,
+      "inicioS": 38.907,
+      "inicioMs": 38907,
+      "fimS": 39.557,
+      "fadeOutS": null
+    },
+    {
+      "id": "so-agora-se-constroi/traco",
+      "cena": "so-agora-se-constroi",
+      "componente": "AiSim",
+      "categoria": "palavra-conceito",
+      "gesto": "traco",
+      "etapa": null,
+      "peso": 10,
+      "frameLocal": 34,
+      "gestoS": 39.867,
+      "som": "peso-10-whoosh-longo.wav",
+      "volumeDb": -9,
+      "inicioS": 39.527,
+      "inicioMs": 39527,
+      "fimS": 40.617,
+      "fadeOutS": null
+    },
+    {
+      "id": "o-que-se-constroi/entrada",
+      "cena": "o-que-se-constroi",
+      "componente": "OQueSeConstroi",
+      "categoria": "grade-conteudos",
+      "gesto": "entrada",
+      "etapa": null,
+      "peso": 7,
+      "frameLocal": 0,
+      "gestoS": 41.333,
+      "som": "peso-07-whoosh-grave.wav",
+      "volumeDb": -11,
+      "inicioS": 40.543,
+      "inicioMs": 40543,
+      "fimS": 41.663,
+      "fadeOutS": null
+    },
+    {
+      "id": "o-que-se-constroi/item",
+      "cena": "o-que-se-constroi",
+      "componente": "OQueSeConstroi",
+      "categoria": "serie-itens",
+      "gesto": "item",
+      "etapa": 1,
+      "peso": 4,
+      "frameLocal": 100,
+      "gestoS": 43,
+      "som": "peso-04-whoosh-medio.wav",
+      "volumeDb": -15,
+      "inicioS": 42.54,
+      "inicioMs": 42540,
+      "fimS": 43.19,
+      "fadeOutS": null
+    },
+    {
+      "id": "o-que-se-constroi/item",
+      "cena": "o-que-se-constroi",
+      "componente": "OQueSeConstroi",
+      "categoria": "serie-itens",
+      "gesto": "item",
+      "etapa": 2,
+      "peso": 4,
+      "frameLocal": 205,
+      "gestoS": 44.75,
+      "som": "peso-04-whoosh-medio.wav",
+      "volumeDb": -16,
+      "inicioS": 44.29,
+      "inicioMs": 44290,
+      "fimS": 44.94,
+      "fadeOutS": null
+    },
+    {
+      "id": "seis-meses-sozinha/entrada",
+      "cena": "seis-meses-sozinha",
+      "componente": "SeisMeses",
+      "categoria": "numero-protagonista",
+      "gesto": "entrada",
+      "etapa": null,
+      "peso": 7,
+      "frameLocal": 24,
+      "gestoS": 46.9,
+      "som": "peso-07-whoosh-grave.wav",
+      "volumeDb": -11,
+      "inicioS": 46.11,
+      "inicioMs": 46110,
+      "fimS": 47.23,
+      "fadeOutS": null
+    },
+    {
+      "id": "seis-meses-sozinha/fechamento",
+      "cena": "seis-meses-sozinha",
+      "componente": "SeisMeses",
+      "categoria": "numero-protagonista",
+      "gesto": "fechamento",
+      "etapa": null,
+      "peso": 3,
+      "frameLocal": 56,
+      "gestoS": 47.433,
+      "som": "peso-03-ding.wav",
+      "volumeDb": -18,
+      "inicioS": 47.223,
+      "inicioMs": 47223,
+      "fimS": 48.083,
+      "fadeOutS": null
+    },
+    {
+      "id": "seis-meses-contra-21-dias/badge",
+      "cena": "seis-meses-contra-21-dias",
+      "componente": "SeisMesesVs21Dias",
+      "categoria": "comparacao-veredito",
+      "gesto": "badge",
+      "etapa": null,
+      "peso": 4,
+      "frameLocal": 90,
+      "gestoS": 54.433,
+      "som": "peso-04-stamp.wav",
+      "volumeDb": -15,
+      "inicioS": 54.413,
+      "inicioMs": 54413,
+      "fimS": 54.483,
+      "fadeOutS": null
+    }
+  ],
+  "descartados": [
+    {
+      "id": "o-que-se-constroi/fechamento",
+      "cena": "o-que-se-constroi",
+      "componente": "OQueSeConstroi",
+      "categoria": "grade-conteudos",
+      "gesto": "fechamento",
+      "etapa": null,
+      "peso": 3,
+      "frameLocal": 205,
+      "gestoS": 44.75,
+      "som": "peso-03-ding.wav",
+      "volumeDb": -18,
+      "inicioS": 44.54,
+      "inicioMs": 44540,
+      "fimS": 45.4,
+      "fadeOutS": null,
+      "motivoDescarte": "a 0.000s de o-que-se-constroi/item, peso menor ou igual"
+    }
+  ],
+  "series": [
+    {
+      "chave": "passo1-pesquisa/serie-itens",
+      "etapas": 1,
+      "volumes": [
+        -15
+      ],
+      "ordemOk": true
+    },
+    {
+      "chave": "trio-o-que-a-pesquisa-entrega/serie-itens",
+      "etapas": 3,
+      "volumes": [
+        -15,
+        -16,
+        -17
+      ],
+      "ordemOk": true
+    },
+    {
+      "chave": "passo4-copy/serie-itens",
+      "etapas": 1,
+      "volumes": [
+        -15
+      ],
+      "ordemOk": true
+    },
+    {
+      "chave": "onde-a-copy-vive/serie-itens",
+      "etapas": 3,
+      "volumes": [
+        -15,
+        -16,
+        -17
+      ],
+      "ordemOk": true
+    },
+    {
+      "chave": "o-que-se-constroi/serie-itens",
+      "etapas": 2,
+      "volumes": [
+        -15,
+        -16
+      ],
+      "ordemOk": true
+    }
+  ],
+  "categorias": {
+    "frase-grande": {
+      "aparicoes": [
+        "gancho-por-onde-comecar"
+      ],
+      "gestos": {
+        "entrada": {
+          "som": "peso-07-whoosh-grave.wav",
+          "volumeDb": -11
+        },
+        "frase": {
+          "som": "peso-07-whoosh-grave.wav",
+          "volumeDb": -11
+        }
+      }
+    },
+    "serie-itens": {
+      "aparicoes": [
+        "passo1-pesquisa",
+        "trio-o-que-a-pesquisa-entrega",
+        "passo4-copy",
+        "onde-a-copy-vive",
+        "o-que-se-constroi"
+      ],
+      "gestos": {
+        "item": {
+          "som": "peso-04-whoosh-medio.wav",
+          "volumeDb": -15
+        }
+      }
+    },
+    "palavra-conceito": {
+      "aparicoes": [
+        "passo2-icp",
+        "so-agora-se-constroi"
+      ],
+      "gestos": {
+        "entrada": {
+          "som": "peso-04-whoosh-medio.wav",
+          "volumeDb": -14
+        },
+        "traco": {
+          "som": "peso-10-whoosh-longo.wav",
+          "volumeDb": -9
+        }
+      }
+    },
+    "conceito-com-icone": {
+      "aparicoes": [
+        "icp-e-o-mapa",
+        "passo3-promessa"
+      ],
+      "gestos": {
+        "entrada": {
+          "som": "peso-07-whoosh-grave.wav",
+          "volumeDb": -11
+        }
+      }
+    },
+    "jornada": {
+      "aparicoes": [
+        "promessa-atrai-quem-tem-o-problema"
+      ],
+      "gestos": {
+        "partida": {
+          "som": "peso-04-whoosh-medio.wav",
+          "volumeDb": -15
+        },
+        "chegada": {
+          "som": "peso-04-whoosh-medio.wav",
+          "volumeDb": -15
+        }
+      }
+    },
+    "grade-conteudos": {
+      "aparicoes": [
+        "o-que-se-constroi"
+      ],
+      "gestos": {
+        "entrada": {
+          "som": "peso-07-whoosh-grave.wav",
+          "volumeDb": -11
+        }
+      }
+    },
+    "numero-protagonista": {
+      "aparicoes": [
+        "seis-meses-sozinha"
+      ],
+      "gestos": {
+        "entrada": {
+          "som": "peso-07-whoosh-grave.wav",
+          "volumeDb": -11
+        },
+        "fechamento": {
+          "som": "peso-03-ding.wav",
+          "volumeDb": -18
+        }
+      }
+    },
+    "comparacao-veredito": {
+      "aparicoes": [
+        "seis-meses-contra-21-dias"
+      ],
+      "gestos": {
+        "badge": {
+          "som": "peso-04-stamp.wav",
+          "volumeDb": -15
+        }
+      }
+    }
+  },
+  "vinheta": {
+    "arquivo": "vinheta-zeus-violino-teste.wav",
+    "duracaoS": 5,
+    "inicioS": 56.585,
+    "ancoradaEm": "fim-da-fala",
+    "fimDaFalaS": 56.085,
+    "fimDaFalaNaTranscricaoS": 55.06,
+    "fimDaFalaMedidoS": 56.085,
+    "nivelar_com_a_fala": true
+  },
+  "densidade": {
+    "sons": 24,
+    "duracaoS": 61.52,
+    "mediaS": 2.56,
+    "tetoS": 2,
+    "ok": true
+  },
+  "semDeclaracao": [],
+  "avisos": [
+    "gancho-por-onde-comecar/entrada: o som comecaria antes do inicio do video, cortado em zero"
+  ],
+  "problemas": []
+}

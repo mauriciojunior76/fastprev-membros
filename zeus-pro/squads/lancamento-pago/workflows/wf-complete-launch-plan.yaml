@@ -1,0 +1,225 @@
+name: wf-complete-launch-plan
+version: "1.0.0"
+title: "Plano Completo de Lancamento Pago - Metodo Baldan"
+description: |
+  Workflow principal do LAUNCH-PAID. Entrega o plano completo do lancamento:
+  big idea, copy, pagina, emails, mensagens, anuncios, campanhas, remarketing,
+  publicos, orcamento, operacao - tudo 100% dentro do metodo Baldan.
+
+  Comeca com o briefing, passa por todos os agentes e entrega um pacote completo
+  pronto para execucao.
+
+trigger:
+  manual: true
+  keyword:
+    - "plano completo de lancamento"
+    - "planejar lancamento pago"
+    - "quero montar um lancamento"
+    - "preciso do plano do lancamento"
+
+phases:
+
+  phase_0_briefing:
+    name: "FASE 0 - Briefing e Questionamento"
+    description: "Coletar todas as informacoes necessarias antes de comecar qualquer producao"
+    gates:
+      - "Briefing nos 6 blocos: produto, publico, evento, trafego, comercial, operacao"
+      - "Datas definidas: inicio captacao, viradas de lote, D-0 do evento"
+      - "Budget disponivel confirmado"
+    agents:
+      - id: launch-intake-specialist
+        action: "Conduzir coleta de briefing completo (30 perguntas em 6 blocos)"
+        output: "launch-brief-{project}.md"
+      - id: launch-questioner
+        action: "Questionar premissas criticas - aprovar ou solicitar revisao antes de prosseguir"
+        output: "questoes-criticas-{project}.md"
+    deliverable: "Briefing validado e aprovado. Sem isso, nenhuma outra fase inicia."
+
+  phase_1_estrategia:
+    name: "FASE 1 - Estrategia e Promessa"
+    description: "Big Idea, promessa, narrativa e plano mestre do lancamento"
+    depends_on: phase_0_briefing
+    agents:
+      - id: researcher
+        action: "Pesquisa de mercado, ICP profundo, mapeamento de concorrentes"
+        output: "market-research-{project}.md"
+      - id: promise-architect
+        action: "Promessa central com formula execucao + tempo + entrega visivel"
+        output: "promise-{project}.md"
+      - id: big-idea-specialist
+        action: "Big Idea da campanha - mecanismo unico que diferencia o lancamento"
+        output: "big-idea-{project}.md"
+      - id: narrative-analyst
+        action: "Arco narrativo: do anuncio ate o pos-pitch. Seeding points."
+        output: "narrative-arc-{project}.md"
+      - id: strategic-planner
+        action: "Plano mestre 30 dias com calendario macro e fases"
+        output: "master-plan-{project}.md"
+    deliverable: "Estrategia completa aprovada. Base para todo o restante."
+
+  phase_2_oferta:
+    name: "FASE 2 - Oferta e Ingresso"
+    description: "Produto principal, ingresso, lotes, bonus e upgrades"
+    depends_on: phase_1_estrategia
+    agents:
+      - id: offer-architect
+        action: "Produto principal como proximo passo natural, order bumps, upsell"
+        output: "offer-{project}.md"
+      - id: ticket-strategist
+        action: "Ingresso R$19-49, estrutura de lotes, timing de viradas, barra de progresso"
+        output: "ticket-strategy-{project}.md"
+      - id: bonus-architect
+        action: "Bonus escalonados por posicao de compra (1o, 10 primeiros, 30, 50, ultimo dia)"
+        output: "bonuses-{project}.md"
+      - id: upgrade-designer
+        action: "Upgrades de ingresso: gravacao, workbook, grupo VIP, templates"
+        output: "upgrades-{project}.md"
+
+  phase_3_copy:
+    name: "FASE 3 - Copy Completa"
+    description: "Todas as pecas de copy do lancamento"
+    depends_on: phase_2_oferta
+    agents:
+      - id: headline-specialist
+        action: "Headlines para pagina, emails, anuncios e WhatsApp"
+        output: "headlines-{project}.md"
+      - id: page-copy-specialist
+        action: "Copy das 12 secoes da pagina de inscricao"
+        output: "page-copy-{project}.md"
+      - id: email-specialist
+        action: "Sequencia completa de emails: onboarding, lembretes, comercial, carrinho"
+        output: "emails-{project}.md"
+      - id: whatsapp-specialist
+        action: "Sequencia de ate 11 toques por lead no WhatsApp"
+        output: "whatsapp-{project}.md"
+      - id: ad-copy-specialist
+        action: "Copy para criativos C0-C4 e Single Shot"
+        output: "ad-copy-{project}.md"
+      - id: copy-reviewer
+        action: "Revisar toda a copy contra regras do metodo (verbos proibidos, tom, etc)"
+        output: "copy-review-{project}.md"
+
+  phase_4_evento:
+    name: "FASE 4 - Estrutura do Evento"
+    description: "Cronograma, pitch 3 etapas, seeding e conteudo"
+    depends_on: phase_3_copy
+    agents:
+      - id: event-architect
+        action: "Estrutura dos 2 dias: 9 blocos, 80/20, curva de energia"
+        output: "event-structure-{project}.md"
+      - id: pitch-organizer
+        action: "3 momentos de pitch: ancoragem D1, oferta D2 11:30, abertura D2 16:40"
+        output: "pitch-plan-{project}.md"
+      - id: subject-organizer
+        action: "Distribuir assuntos nos 9 blocos com progressao logica"
+        output: "curriculum-{project}.md"
+      - id: seeding-specialist
+        action: "Pontos de seeding que tornam a oferta premium obvia"
+        output: "seeding-plan-{project}.md"
+      - id: event-reviewer
+        action: "Validar 80/20, timing de pitch, conteudo apos pitch final"
+        output: "event-review-{project}.md"
+
+  phase_5_trafego:
+    name: "FASE 5 - Trafego e Criativos"
+    description: "Plano de 8 campanhas, roteiros, remarketing e dados"
+    depends_on: phase_3_copy
+    agents:
+      - id: creative-planner
+        action: "Plano tatico C0-C4, distribuicao de budget, 8 campanhas"
+        output: "creative-plan-{project}.md"
+      - id: creative-script-writer
+        action: "Roteiros de video e storyboards para criativos"
+        output: "scripts-{project}.md"
+      - id: remarketing-specialist
+        action: "Single Shot, corredor polones, campanha 7 e 8, barra sincronizada"
+        output: "remarketing-plan-{project}.md"
+      - id: traffic-data-planner
+        action: "Pixel, eventos, UTM, connect rate, checklist pre-lancamento"
+        output: "traffic-data-plan-{project}.md"
+      - id: creative-reviewer
+        action: "Validar criativos C0-C4, hooks, linguagem, Single Shot"
+        output: "creative-review-{project}.md"
+
+  phase_6_comercial:
+    name: "FASE 6 - Comercial e Pos-Pitch"
+    description: "11 toques, lives pos-pitch, gravacao, VIP"
+    depends_on: phase_4_evento
+    agents:
+      - id: commercial-strategist
+        action: "Plano dos 11 toques pos-pitch, cada um com razao nova"
+        output: "commercial-plan-{project}.md"
+      - id: followup-specialist
+        action: "Recuperacao por 6 perfis: sem resposta, faltou, adiou, etc"
+        output: "followup-plan-{project}.md"
+      - id: recording-vip-specialist
+        action: "Gravacao como curso (nao replay), Sala VIP 1 semana depois"
+        output: "recording-vip-plan-{project}.md"
+      - id: live-post-pitch-specialist
+        action: "Lives pos-pitch: reviver energia, empilhar prova, reapresentar bonus"
+        output: "lives-plan-{project}.md"
+      - id: commercial-reviewer
+        action: "Validar unicidade dos 11 toques, bonus vs objecoes"
+        output: "commercial-review-{project}.md"
+
+  phase_7_operacao:
+    name: "FASE 7 - Metricas, Operacao e Pagina"
+    description: "KPIs, checklists, CRM, time e construcao da pagina"
+    depends_on: [phase_5_trafego, phase_6_comercial]
+    agents:
+      - id: metrics-analyst
+        action: "Dashboard de KPIs: comparecimento, CTR, CPA, ROAS, connect rate"
+        output: "metrics-dashboard-{project}.md"
+      - id: stage-process-analyst
+        action: "Analise de cada etapa do funil com pontos de falha e plano de mitigacao"
+        output: "process-analysis-{project}.md"
+      - id: checklist-manager
+        action: "3 checklists: pre-captacao, pre-evento, pos-pitch + SOPs"
+        output: "checklists-{project}.md"
+      - id: crm-operations-specialist
+        action: "CRM, pipeline, segmentacao, automacoes"
+        output: "crm-plan-{project}.md"
+      - id: team-operations-planner
+        action: "9 funcoes operacionais, ritual diario, post-mortem"
+        output: "team-plan-{project}.md"
+      - id: page-builder-coordinator
+        action: "Brief completo para PAGE-FORGE: 12 secoes + barra de progresso Hotmart"
+        output: "page-brief-{project}.md"
+
+  phase_final_revisao:
+    name: "FASE FINAL - Revisao e Aprovacao"
+    description: "Quality gate final antes de ir ao ar"
+    depends_on: phase_7_operacao
+    agents:
+      - id: launch-final-reviewer
+        action: "Checklist de 50 itens em 7 categorias. Aprovar ou bloquear por criterio critico."
+        output: "final-review-{project}.md"
+      - id: launch-deputy
+        action: "Veto final e compliance geral do metodo"
+        output: "deputy-review-{project}.md"
+      - id: launch-master-planner
+        action: "Compilar todos os entregáveis no Plano Completo final"
+        output: "complete-launch-plan-{project}.md"
+
+output:
+  primary: "complete-launch-plan-{project}.md"
+  description: |
+    Documento unico com os 12 capitulos do plano completo:
+    1. Big Idea e Promessa Central
+    2. Posicionamento e Narrativa
+    3. Estrutura do Evento (9 blocos, horarios, temas)
+    4. Oferta Principal + Ingresso + Lotes
+    5. Copy da Pagina de Inscricao (12 secoes)
+    6. Sequencia de Emails
+    7. Sequencia de WhatsApp (11 toques)
+    8. Criativos de Anuncio (C0-C4 + Single Shot)
+    9. Campanhas de Trafego (8 campanhas com publico, budget, eventos)
+    10. Remarketing e Recuperacao
+    11. Comercial Pos-Pitch (11 toques, bonus, lives)
+    12. Checklists e Operacao
+
+tools:
+  progressbar_hotmart:
+    location: "squads/launch-paid/tools/progressbar-hotmart/"
+    setup: "python setup-wizard.py"
+    docs: "README-INTEGRACAO.md"

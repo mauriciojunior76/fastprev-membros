@@ -1,0 +1,54 @@
+# Squad Planejamento e decisão do ZEUS PRO.
+# Genérico de propósito: ele aprende o jeito do dono com o uso, não vem
+# pré-calibrado com o jeito de ninguém.
+
+id: planejamento-decisao
+nome: "Planejamento e decisão"
+descrição: >
+  Organiza objetivos, identifica prioridade real, compara alternativas, avalia risco, registra decisão e acompanha o que resultou.
+versão: "1.0.0"
+status: ativo
+
+gatilhos:
+  palavras: [planejar, prioridade, decidir, o que fazer primeiro, estrategia, meta, plano]
+  contexto: >
+    Pedido que envolve escolher caminho, ordenar prioridade ou avaliar risco.
+peso_mínimo: 41
+
+lead: estrategista
+agentes:
+  - estrategista
+  - analista-de-risco
+  - registrador-de-decisao
+
+leitura_obrigatória:
+  - memory/PERFIL.md
+  - memory/objetivos.md
+  - memory/empresa.md
+  - squads/planejamento-decisao/MEMORY.md
+  - squads/planejamento-decisao/FRAMEWORKS.md
+
+entregáveis:
+  - plano priorizado
+  - comparativo de alternativas
+  - registro de decisão
+
+exige_confirmação:
+  - publicar qualquer coisa
+  - enviar mensagem a terceiro
+  - gastar dinheiro
+
+nunca_faz:
+  - inventar dado sobre o usuário, o público ou o resultado
+  - prometer o que o dono não pode sustentar
+  - declarar entrega pronta sem ter verificado
+
+qualidade:
+  checklist: squads/planejamento-decisao/CHECKLIST.md
+  nota_mínima: 60
+  máximo_de_refações: 2
+
+aprendizado:
+  arquivo: squads/planejamento-decisao/MEMORY.md
+  teto_caracteres: 8000
+  ler_antes_de_agir: true

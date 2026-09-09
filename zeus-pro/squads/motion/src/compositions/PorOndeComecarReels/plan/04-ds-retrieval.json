@@ -1,0 +1,1931 @@
+{
+  "composition": "PorOndeComecarReels",
+  "dsVersion": "3.6",
+  "geradoDe": "02-beats.json",
+  "beats": [
+    {
+      "id": "b01",
+      "texto": "Como começar, né? Por onde começar? Como começar?",
+      "estruturas": [
+        "PERGUNTA",
+        "FRASE_IMPORTANTE"
+      ],
+      "confianca": "media",
+      "plataforma": null,
+      "candidatos": [
+        {
+          "id": "emphasis.icon-phrase.v1",
+          "family": "emphasis",
+          "density": 3,
+          "useWhen": "a fala faz uma promessa ou definição em 2 linhas e existe um símbolo que a representa",
+          "dontUseWhen": "não há símbolo honesto para a ideia; a frase passa de 12 palavras",
+          "input": "frase ≤12 palavras + 1 ícone do mapa",
+          "durationFrames": [
+            70,
+            110
+          ],
+          "gesture": "cascata",
+          "caption": "substitui a legenda",
+          "speakerVisible": false,
+          "alternatives": [
+            "emphasis.word.v1",
+            "scheme.description.v1"
+          ],
+          "where": {
+            "guide": "§6a",
+            "panel": "#s04d-enfase"
+          },
+          "familiaCena": "HOOK",
+          "score": 8,
+          "porque": [
+            "candidato de PERGUNTA",
+            "candidato de FRASE_IMPORTANTE"
+          ],
+          "origem": "ds"
+        },
+        {
+          "id": "emphasis.word.v1",
+          "family": "emphasis",
+          "density": 4,
+          "useWhen": "a fala krava UMA palavra que é a tese do beat (\"autoridade\", \"atalho\"); ênfase máxima de voz",
+          "dontUseWhen": "a frase tem 2+ ideias; a palavra é genérica (\"coisas\", \"negócio\"); já houve um N3 nos últimos 15s",
+          "input": "1 palavra ≤10 letras",
+          "durationFrames": [
+            60,
+            90
+          ],
+          "gesture": "cascata",
+          "caption": "substitui a legenda (o palco já é tipografia)",
+          "speakerVisible": false,
+          "alternatives": [
+            "emphasis.icon-phrase.v1",
+            "emphasis.attribute.v1"
+          ],
+          "where": {
+            "guide": "§6 + §6a",
+            "panel": "#s04-moldes / #s04d-enfase"
+          },
+          "familiaCena": "FULL_SCREEN_TYPOGRAPHY",
+          "score": 3,
+          "porque": [
+            "candidato de PERGUNTA"
+          ],
+          "origem": "ds"
+        },
+        {
+          "id": "emphasis.lettering.v1",
+          "family": "emphasis",
+          "density": 5,
+          "useWhen": "uma frase de 6 a 22 palavras que resume o vídeo, em momento raro (1 por vídeo)",
+          "dontUseWhen": "frase curta (use N3); mais de 22 palavras; já houve lettering no vídeo",
+          "input": "frase 6–22 palavras + 1 palavra tônica",
+          "durationFrames": [
+            150,
+            240
+          ],
+          "gesture": "cascata",
+          "caption": "legenda desliga",
+          "speakerVisible": false,
+          "alternatives": [
+            "emphasis.word.v1",
+            "scheme.equation.v1"
+          ],
+          "where": {
+            "guide": "§5c",
+            "panel": "#s04e-lettering"
+          },
+          "familiaCena": "HOOK",
+          "score": 3,
+          "porque": [
+            "candidato de FRASE_IMPORTANTE"
+          ],
+          "origem": "ds"
+        },
+        {
+          "id": "interface.chat.text.v1",
+          "family": "interface",
+          "density": 3,
+          "useWhen": "a fala descreve uma conversa escrita, com pergunta e resposta",
+          "dontUseWhen": "é áudio (audio.v1); é e-mail (interface.email.v1)",
+          "durationFrames": [
+            200,
+            360
+          ],
+          "gesture": "digitacao",
+          "caption": "legenda continua (a interface não é tipografia)",
+          "speakerVisible": true,
+          "alternatives": [
+            "interface.chat.audio.v1",
+            "interface.comments.v1"
+          ],
+          "where": {
+            "guide": "§6b2",
+            "panel": "#s04g-interfaces"
+          },
+          "familiaCena": "SPEAKER_PLUS_INTERFACE",
+          "score": 2,
+          "porque": [
+            "candidato de PERGUNTA"
+          ],
+          "origem": "ds"
+        }
+      ],
+      "relacao": [],
+      "fallback": null
+    },
+    {
+      "id": "b02",
+      "texto": "Você começa fazendo uma pesquisa de mercado pra vender mentoria.",
+      "estruturas": [
+        "PASSOS",
+        "PALAVRA_CHAVE"
+      ],
+      "confianca": "media",
+      "plataforma": null,
+      "candidatos": [
+        {
+          "id": "process.steps.v1",
+          "family": "process",
+          "density": 3,
+          "useWhen": "a ordem importa e são 3 a 5 etapas (\"primeiro, depois, então\")",
+          "dontUseWhen": "sem ordem (trio/grade); as quantidades caem (funil); volta ao início (ciclo)",
+          "input": "3–5 rótulos ordenados",
+          "durationFrames": [
+            240,
+            420
+          ],
+          "gesture": "foco",
+          "caption": "legenda troca por passo",
+          "speakerVisible": true,
+          "alternatives": [
+            "flow.funnel.v1",
+            "flow.timeline.v1",
+            "flow.cycle.v1"
+          ],
+          "where": {
+            "guide": "§6b",
+            "panel": "#s04c-esquemas"
+          },
+          "familiaCena": "SPEAKER_PLUS_DIAGRAM",
+          "score": 4,
+          "porque": [
+            "candidato de PASSOS"
+          ],
+          "origem": "ds"
+        },
+        {
+          "id": "emphasis.word.v1",
+          "family": "emphasis",
+          "density": 4,
+          "useWhen": "a fala krava UMA palavra que é a tese do beat (\"autoridade\", \"atalho\"); ênfase máxima de voz",
+          "dontUseWhen": "a frase tem 2+ ideias; a palavra é genérica (\"coisas\", \"negócio\"); já houve um N3 nos últimos 15s",
+          "input": "1 palavra ≤10 letras",
+          "durationFrames": [
+            60,
+            90
+          ],
+          "gesture": "cascata",
+          "caption": "substitui a legenda (o palco já é tipografia)",
+          "speakerVisible": false,
+          "alternatives": [
+            "emphasis.icon-phrase.v1",
+            "emphasis.attribute.v1"
+          ],
+          "where": {
+            "guide": "§6 + §6a",
+            "panel": "#s04-moldes / #s04d-enfase"
+          },
+          "familiaCena": "FULL_SCREEN_TYPOGRAPHY",
+          "score": 4,
+          "porque": [
+            "candidato de PALAVRA_CHAVE"
+          ],
+          "origem": "ds"
+        },
+        {
+          "id": "emphasis.attribute.v1",
+          "family": "emphasis",
+          "density": 2,
+          "useWhen": "ênfase média: uma coisa nomeada onde o símbolo pesa mais que a palavra",
+          "dontUseWhen": "a palavra é a tese do vídeo (use N3); há três coisas (use trio)",
+          "input": "1 palavra + 1 ícone",
+          "durationFrames": [
+            40,
+            60
+          ],
+          "gesture": "foco",
+          "caption": "legenda continua",
+          "speakerVisible": true,
+          "alternatives": [
+            "emphasis.word.v1",
+            "set.trio.v1"
+          ],
+          "where": {
+            "guide": "§6a",
+            "panel": "#s04d-enfase"
+          },
+          "familiaCena": "HOOK",
+          "score": 3,
+          "porque": [
+            "candidato de PALAVRA_CHAVE"
+          ],
+          "origem": "ds"
+        },
+        {
+          "id": "emphasis.pill-phrase.v1",
+          "family": "emphasis",
+          "density": 2,
+          "useWhen": "a fala nomeia uma coisa em 2 a 4 palavras e o simbolo pesa tanto quanto elas; uma palavra so mentiria",
+          "dontUseWhen": "e uma palavra so (emphasis.attribute) ; passa de 4 palavras (emphasis.tonic-phrase ou emphasis.icon-phrase) ; nao existe simbolo honesto (emphasis.tonic-phrase)",
+          "input": "2 a 4 palavras + 1 conceito de icone",
+          "durationFrames": [
+            150,
+            260
+          ],
+          "gesture": "foco",
+          "caption": "liga",
+          "speakerVisible": true,
+          "alternatives": [
+            "emphasis.attribute.v1",
+            "emphasis.tonic-phrase.v1"
+          ],
+          "where": {
+            "guide": "§5d",
+            "panel": "#s04d-enfase"
+          },
+          "familiaCena": "HOOK",
+          "score": 2,
+          "porque": [
+            "candidato de PALAVRA_CHAVE"
+          ],
+          "origem": "ds"
+        }
+      ],
+      "relacao": [],
+      "fallback": null
+    },
+    {
+      "id": "b03",
+      "texto": "Você vai saber quem que é o público que vai comprar, o quanto essas pessoas podem pagar, qual produto elas querem.",
+      "estruturas": [
+        "X_TEM_A_B_C",
+        "LISTA"
+      ],
+      "confianca": "alta",
+      "plataforma": null,
+      "candidatos": [
+        {
+          "id": "profile.audience-card.v1",
+          "family": "interface",
+          "density": 3,
+          "useWhen": "dois perfis de público contrastados (baleia × sardinha)",
+          "dontUseWhen": "é um público só (scheme.description.v1)",
+          "durationFrames": [
+            200,
+            340
+          ],
+          "gesture": "foco",
+          "caption": "legenda continua (a interface não é tipografia)",
+          "speakerVisible": true,
+          "alternatives": [
+            "compare.table.v1",
+            "scheme.description.v1"
+          ],
+          "where": {
+            "guide": "§6b2",
+            "panel": "#s04g-interfaces"
+          },
+          "familiaCena": "EXAMPLE",
+          "score": 10,
+          "porque": [
+            "casou \"publico que\"",
+            "casou \"publico que\""
+          ],
+          "origem": "ds"
+        },
+        {
+          "id": "set.trio.v1",
+          "family": "set",
+          "density": 3,
+          "useWhen": "a fala lista exatamente 3 coisas sem ordem entre elas",
+          "dontUseWhen": "há ordem/sequência (use process.steps); são 4+ (use grade); só 1 (use N1/N2)",
+          "input": "3 rótulos + 3 ícones",
+          "durationFrames": [
+            180,
+            300
+          ],
+          "gesture": "foco",
+          "caption": "legenda troca por item",
+          "speakerVisible": true,
+          "alternatives": [
+            "set.grid.v1",
+            "process.steps.v1"
+          ],
+          "where": {
+            "guide": "§6",
+            "panel": "#s04-moldes"
+          },
+          "familiaCena": "SPEAKER_PLUS_LIST",
+          "score": 8,
+          "porque": [
+            "candidato de X_TEM_A_B_C",
+            "candidato de LISTA"
+          ],
+          "origem": "ds"
+        },
+        {
+          "id": "interface.approval.v1",
+          "family": "interface",
+          "density": 3,
+          "useWhen": "a fala julga item por item (\"isso sim, isso não\")",
+          "dontUseWhen": "há imagem (compare.right-wrong.v1); sem juízo (interface.list.v1)",
+          "durationFrames": [
+            200,
+            340
+          ],
+          "gesture": "contador",
+          "caption": "legenda continua (a interface não é tipografia)",
+          "speakerVisible": true,
+          "alternatives": [
+            "compare.right-wrong.v1",
+            "interface.checks.list.v1"
+          ],
+          "where": {
+            "guide": "§6b3",
+            "panel": "#s04h-motion"
+          },
+          "familiaCena": "SPEAKER_PLUS_INTERFACE",
+          "score": 7,
+          "porque": [
+            "candidato de LISTA",
+            "casou \"pode\"",
+            "casou \"pode\""
+          ],
+          "origem": "ds"
+        },
+        {
+          "id": "set.grid.v1",
+          "family": "set",
+          "density": 3,
+          "useWhen": "4 a 6 itens sem ordem, cada um com nome curto",
+          "dontUseWhen": "há ordem (process.steps); são 3 (trio); são 7+ (dividir a cena)",
+          "input": "4–6 rótulos + ícones",
+          "durationFrames": [
+            240,
+            420
+          ],
+          "gesture": "cascata",
+          "caption": "legenda troca por item",
+          "speakerVisible": true,
+          "alternatives": [
+            "set.trio.v1",
+            "set.count-grid.v1"
+          ],
+          "where": {
+            "guide": "§6",
+            "panel": "#s04-moldes"
+          },
+          "familiaCena": null,
+          "score": 3,
+          "porque": [
+            "candidato de LISTA"
+          ],
+          "origem": "ds"
+        }
+      ],
+      "relacao": [],
+      "fallback": null
+    },
+    {
+      "id": "b04",
+      "texto": "Aí depois de fazer a pesquisa de mercado, você vai fazer",
+      "estruturas": [
+        "SEQUENCIA",
+        "PASSOS",
+        "PROCESSO",
+        "PIPELINE"
+      ],
+      "confianca": "media",
+      "plataforma": null,
+      "candidatos": [
+        {
+          "id": "process.steps.v1",
+          "family": "process",
+          "density": 3,
+          "useWhen": "a ordem importa e são 3 a 5 etapas (\"primeiro, depois, então\")",
+          "dontUseWhen": "sem ordem (trio/grade); as quantidades caem (funil); volta ao início (ciclo)",
+          "input": "3–5 rótulos ordenados",
+          "durationFrames": [
+            240,
+            420
+          ],
+          "gesture": "foco",
+          "caption": "legenda troca por passo",
+          "speakerVisible": true,
+          "alternatives": [
+            "flow.funnel.v1",
+            "flow.timeline.v1",
+            "flow.cycle.v1"
+          ],
+          "where": {
+            "guide": "§6b",
+            "panel": "#s04c-esquemas"
+          },
+          "familiaCena": "SPEAKER_PLUS_DIAGRAM",
+          "score": 20,
+          "porque": [
+            "candidato de SEQUENCIA",
+            "candidato de PASSOS",
+            "candidato de PROCESSO"
+          ],
+          "origem": "ds"
+        },
+        {
+          "id": "flow.timeline.v1",
+          "family": "flow",
+          "density": 3,
+          "useWhen": "marcos com data ou prazo (\"no dia 1, em 30 dias\")",
+          "dontUseWhen": "sem tempo (process.steps)",
+          "input": "2–4 marcos + datas",
+          "durationFrames": [
+            200,
+            340
+          ],
+          "gesture": "tracado",
+          "caption": "legenda continua",
+          "speakerVisible": true,
+          "alternatives": [
+            "process.steps.v1",
+            "number.date.v1"
+          ],
+          "where": {
+            "guide": "§6b",
+            "panel": "#s04c-esquemas"
+          },
+          "familiaCena": "SPEAKER_PLUS_DIAGRAM",
+          "score": 4,
+          "porque": [
+            "candidato de SEQUENCIA",
+            "alternativa de \"depois\""
+          ],
+          "origem": "ds"
+        },
+        {
+          "id": "flow.cycle.v1",
+          "family": "flow",
+          "density": 3,
+          "useWhen": "o último passo gera o primeiro e a fala descreve o retorno",
+          "dontUseWhen": "a sequência termina (process.steps)",
+          "input": "3–4 etapas",
+          "durationFrames": [
+            200,
+            320
+          ],
+          "gesture": "tracado",
+          "caption": "legenda continua",
+          "speakerVisible": true,
+          "alternatives": [
+            "process.steps.v1"
+          ],
+          "where": {
+            "guide": "§6b",
+            "panel": "#s04c-esquemas"
+          },
+          "familiaCena": "SPEAKER_PLUS_DIAGRAM",
+          "score": 4,
+          "porque": [
+            "candidato de PROCESSO",
+            "alternativa de \"depois\""
+          ],
+          "origem": "ds"
+        },
+        {
+          "id": "flow.funnel.v1",
+          "family": "flow",
+          "density": 3,
+          "useWhen": "as quantidades diminuem a cada etapa e a perda é o argumento",
+          "dontUseWhen": "não há perda (process.steps); a perda é por critério nomeado (flow.filter)",
+          "input": "3–4 etapas + números",
+          "durationFrames": [
+            200,
+            320
+          ],
+          "gesture": "foco",
+          "caption": "legenda continua",
+          "speakerVisible": true,
+          "alternatives": [
+            "flow.filter.v1",
+            "process.steps.v1"
+          ],
+          "where": {
+            "guide": "§6b",
+            "panel": "#s04c-esquemas"
+          },
+          "familiaCena": "SPEAKER_PLUS_DIAGRAM",
+          "score": 4,
+          "porque": [
+            "candidato de PIPELINE",
+            "alternativa de \"depois\""
+          ],
+          "origem": "ds"
+        }
+      ],
+      "relacao": [],
+      "fallback": null
+    },
+    {
+      "id": "b05",
+      "texto": "a parte de ICP,",
+      "estruturas": [
+        "PALAVRA_CHAVE",
+        "PASSOS"
+      ],
+      "confianca": "media",
+      "plataforma": null,
+      "candidatos": [
+        {
+          "id": "emphasis.word.v1",
+          "family": "emphasis",
+          "density": 4,
+          "useWhen": "a fala krava UMA palavra que é a tese do beat (\"autoridade\", \"atalho\"); ênfase máxima de voz",
+          "dontUseWhen": "a frase tem 2+ ideias; a palavra é genérica (\"coisas\", \"negócio\"); já houve um N3 nos últimos 15s",
+          "input": "1 palavra ≤10 letras",
+          "durationFrames": [
+            60,
+            90
+          ],
+          "gesture": "cascata",
+          "caption": "substitui a legenda (o palco já é tipografia)",
+          "speakerVisible": false,
+          "alternatives": [
+            "emphasis.icon-phrase.v1",
+            "emphasis.attribute.v1"
+          ],
+          "where": {
+            "guide": "§6 + §6a",
+            "panel": "#s04-moldes / #s04d-enfase"
+          },
+          "familiaCena": "FULL_SCREEN_TYPOGRAPHY",
+          "score": 4,
+          "porque": [
+            "candidato de PALAVRA_CHAVE"
+          ],
+          "origem": "ds"
+        },
+        {
+          "id": "emphasis.attribute.v1",
+          "family": "emphasis",
+          "density": 2,
+          "useWhen": "ênfase média: uma coisa nomeada onde o símbolo pesa mais que a palavra",
+          "dontUseWhen": "a palavra é a tese do vídeo (use N3); há três coisas (use trio)",
+          "input": "1 palavra + 1 ícone",
+          "durationFrames": [
+            40,
+            60
+          ],
+          "gesture": "foco",
+          "caption": "legenda continua",
+          "speakerVisible": true,
+          "alternatives": [
+            "emphasis.word.v1",
+            "set.trio.v1"
+          ],
+          "where": {
+            "guide": "§6a",
+            "panel": "#s04d-enfase"
+          },
+          "familiaCena": "HOOK",
+          "score": 3,
+          "porque": [
+            "candidato de PALAVRA_CHAVE"
+          ],
+          "origem": "ds"
+        },
+        {
+          "id": "emphasis.pill-phrase.v1",
+          "family": "emphasis",
+          "density": 2,
+          "useWhen": "a fala nomeia uma coisa em 2 a 4 palavras e o simbolo pesa tanto quanto elas; uma palavra so mentiria",
+          "dontUseWhen": "e uma palavra so (emphasis.attribute) ; passa de 4 palavras (emphasis.tonic-phrase ou emphasis.icon-phrase) ; nao existe simbolo honesto (emphasis.tonic-phrase)",
+          "input": "2 a 4 palavras + 1 conceito de icone",
+          "durationFrames": [
+            150,
+            260
+          ],
+          "gesture": "foco",
+          "caption": "liga",
+          "speakerVisible": true,
+          "alternatives": [
+            "emphasis.attribute.v1",
+            "emphasis.tonic-phrase.v1"
+          ],
+          "where": {
+            "guide": "§5d",
+            "panel": "#s04d-enfase"
+          },
+          "familiaCena": "HOOK",
+          "score": 2,
+          "porque": [
+            "candidato de PALAVRA_CHAVE"
+          ],
+          "origem": "ds"
+        },
+        {
+          "id": "process.steps.v1",
+          "family": "process",
+          "density": 3,
+          "useWhen": "a ordem importa e são 3 a 5 etapas (\"primeiro, depois, então\")",
+          "dontUseWhen": "sem ordem (trio/grade); as quantidades caem (funil); volta ao início (ciclo)",
+          "input": "3–5 rótulos ordenados",
+          "durationFrames": [
+            240,
+            420
+          ],
+          "gesture": "foco",
+          "caption": "legenda troca por passo",
+          "speakerVisible": true,
+          "alternatives": [
+            "flow.funnel.v1",
+            "flow.timeline.v1",
+            "flow.cycle.v1"
+          ],
+          "where": {
+            "guide": "§6b",
+            "panel": "#s04c-esquemas"
+          },
+          "familiaCena": "SPEAKER_PLUS_DIAGRAM",
+          "score": 2,
+          "porque": [
+            "candidato de PASSOS",
+            "ja usado nos 3 beats anteriores (variedade)"
+          ],
+          "origem": "ds"
+        }
+      ],
+      "relacao": [],
+      "fallback": null
+    },
+    {
+      "id": "b06",
+      "texto": "que é um perfil do cliente ideal, é um mapa de quem vai comprar de você.",
+      "estruturas": [
+        "DEFINICAO",
+        "MAPA_MENTAL"
+      ],
+      "confianca": "media",
+      "plataforma": null,
+      "candidatos": [
+        {
+          "id": "interface.instagram.profile.v1",
+          "family": "interface",
+          "density": 4,
+          "useWhen": "a fala descreve o perfil como objeto (foto, bio, destaques, feed)",
+          "dontUseWhen": "a fala é sobre um post (interface.social.post.v1); só citou o Instagram (mini-selo)",
+          "durationFrames": [
+            240,
+            400
+          ],
+          "gesture": "foco",
+          "caption": "legenda continua (a interface não é tipografia)",
+          "speakerVisible": false,
+          "alternatives": [
+            "interface.instagram.feed.v1",
+            "interface.instagram.highlights.v1"
+          ],
+          "where": {
+            "guide": "§6b2",
+            "panel": "#s04g-interfaces"
+          },
+          "familiaCena": "SPEAKER_PLUS_INTERFACE",
+          "score": 6,
+          "porque": [
+            "casou \"perfil\"",
+            "casou \"perfil\""
+          ],
+          "origem": "ds"
+        },
+        {
+          "id": "emphasis.icon-phrase.v1",
+          "family": "emphasis",
+          "density": 3,
+          "useWhen": "a fala faz uma promessa ou definição em 2 linhas e existe um símbolo que a representa",
+          "dontUseWhen": "não há símbolo honesto para a ideia; a frase passa de 12 palavras",
+          "input": "frase ≤12 palavras + 1 ícone do mapa",
+          "durationFrames": [
+            70,
+            110
+          ],
+          "gesture": "cascata",
+          "caption": "substitui a legenda",
+          "speakerVisible": false,
+          "alternatives": [
+            "emphasis.word.v1",
+            "scheme.description.v1"
+          ],
+          "where": {
+            "guide": "§6a",
+            "panel": "#s04d-enfase"
+          },
+          "familiaCena": "HOOK",
+          "score": 4,
+          "porque": [
+            "candidato de DEFINICAO"
+          ],
+          "origem": "ds"
+        },
+        {
+          "id": "branch.tree.v1",
+          "family": "branch",
+          "density": 3,
+          "useWhen": "uma coisa se abre em 2 a 5 partes sem ordem entre elas",
+          "dontUseWhen": "as partes têm ordem (process.steps); há condição se/senão (branch.decision)",
+          "input": "1 raiz + 2–5 folhas",
+          "durationFrames": [
+            200,
+            360
+          ],
+          "gesture": "foco",
+          "caption": "legenda continua",
+          "speakerVisible": true,
+          "alternatives": [
+            "branch.decision.v1",
+            "set.grid.v1"
+          ],
+          "where": {
+            "guide": "§6b",
+            "panel": "#s04c-esquemas"
+          },
+          "familiaCena": "SPEAKER_PLUS_DIAGRAM",
+          "score": 4,
+          "porque": [
+            "candidato de MAPA_MENTAL"
+          ],
+          "origem": "ds"
+        },
+        {
+          "id": "emphasis.headline-card.v1",
+          "family": "interface",
+          "density": 3,
+          "useWhen": "a fala enuncia uma promessa/oferta em formato de manchete",
+          "dontUseWhen": "é uma palavra só (emphasis.word.v1)",
+          "durationFrames": [
+            180,
+            300
+          ],
+          "gesture": "cascata",
+          "caption": "legenda continua (a interface não é tipografia)",
+          "speakerVisible": true,
+          "alternatives": [
+            "emphasis.icon-phrase.v1",
+            "emphasis.word.v1"
+          ],
+          "where": {
+            "guide": "§6b2",
+            "panel": "#s04g-interfaces"
+          },
+          "familiaCena": "FULL_SCREEN_TYPOGRAPHY",
+          "score": 2,
+          "porque": [
+            "candidato de DEFINICAO"
+          ],
+          "origem": "ds"
+        }
+      ],
+      "relacao": [],
+      "fallback": null
+    },
+    {
+      "id": "b07",
+      "texto": "Depois você vai ter que fazer uma promessa pública",
+      "estruturas": [
+        "PROMESSA",
+        "PASSOS"
+      ],
+      "confianca": "media",
+      "plataforma": null,
+      "candidatos": [
+        {
+          "id": "emphasis.headline-card.v1",
+          "family": "interface",
+          "density": 3,
+          "useWhen": "a fala enuncia uma promessa/oferta em formato de manchete",
+          "dontUseWhen": "é uma palavra só (emphasis.word.v1)",
+          "durationFrames": [
+            180,
+            300
+          ],
+          "gesture": "cascata",
+          "caption": "legenda continua (a interface não é tipografia)",
+          "speakerVisible": true,
+          "alternatives": [
+            "emphasis.icon-phrase.v1",
+            "emphasis.word.v1"
+          ],
+          "where": {
+            "guide": "§6b2",
+            "panel": "#s04g-interfaces"
+          },
+          "familiaCena": "FULL_SCREEN_TYPOGRAPHY",
+          "score": 9,
+          "porque": [
+            "candidato de PROMESSA",
+            "casou \"promessa\"",
+            "casou \"promessa\""
+          ],
+          "origem": "ds"
+        },
+        {
+          "id": "process.steps.v1",
+          "family": "process",
+          "density": 3,
+          "useWhen": "a ordem importa e são 3 a 5 etapas (\"primeiro, depois, então\")",
+          "dontUseWhen": "sem ordem (trio/grade); as quantidades caem (funil); volta ao início (ciclo)",
+          "input": "3–5 rótulos ordenados",
+          "durationFrames": [
+            240,
+            420
+          ],
+          "gesture": "foco",
+          "caption": "legenda troca por passo",
+          "speakerVisible": true,
+          "alternatives": [
+            "flow.funnel.v1",
+            "flow.timeline.v1",
+            "flow.cycle.v1"
+          ],
+          "where": {
+            "guide": "§6b",
+            "panel": "#s04c-esquemas"
+          },
+          "familiaCena": "SPEAKER_PLUS_DIAGRAM",
+          "score": 8,
+          "porque": [
+            "candidato de PASSOS",
+            "casou \"depois\"",
+            "casou \"depois\""
+          ],
+          "origem": "ds"
+        },
+        {
+          "id": "emphasis.icon-phrase.v1",
+          "family": "emphasis",
+          "density": 3,
+          "useWhen": "a fala faz uma promessa ou definição em 2 linhas e existe um símbolo que a representa",
+          "dontUseWhen": "não há símbolo honesto para a ideia; a frase passa de 12 palavras",
+          "input": "frase ≤12 palavras + 1 ícone do mapa",
+          "durationFrames": [
+            70,
+            110
+          ],
+          "gesture": "cascata",
+          "caption": "substitui a legenda",
+          "speakerVisible": false,
+          "alternatives": [
+            "emphasis.word.v1",
+            "scheme.description.v1"
+          ],
+          "where": {
+            "guide": "§6a",
+            "panel": "#s04d-enfase"
+          },
+          "familiaCena": "HOOK",
+          "score": 5,
+          "porque": [
+            "candidato de PROMESSA",
+            "alternativa de \"promessa\""
+          ],
+          "origem": "ds"
+        },
+        {
+          "id": "emphasis.tonic-phrase.v1",
+          "family": "emphasis",
+          "density": 3,
+          "useWhen": "a fala tem uma frase de 2 a 6 palavras com UMA tonica dentro: a enfase e a diferenca entre o apoio e a tonica, nao caixa alta em tudo",
+          "dontUseWhen": "a palavra sozinha basta (emphasis.word) ; a frase passa de 6 palavras (emphasis.icon-phrase, com icone) ; ha duas tonicas (escolha uma) ; e citacao de terceiro (emphasis.lettering)",
+          "input": "a frase de 2 a 6 palavras + qual palavra e a tonica",
+          "durationFrames": [
+            160,
+            280
+          ],
+          "gesture": "cascata",
+          "caption": "cala (o palco ja e tipografia)",
+          "speakerVisible": false,
+          "alternatives": [
+            "emphasis.word.v1",
+            "emphasis.icon-phrase.v1"
+          ],
+          "where": {
+            "guide": "§5d",
+            "panel": "#s04d-enfase"
+          },
+          "familiaCena": "HOOK",
+          "score": 2,
+          "porque": [
+            "candidato de PROMESSA"
+          ],
+          "origem": "ds"
+        }
+      ],
+      "relacao": [],
+      "fallback": null
+    },
+    {
+      "id": "b08",
+      "texto": "pra atrair as pessoas que têm o problema que você resolve.",
+      "estruturas": [
+        "RELACAO",
+        "PROBLEMA_E_SOLUCAO"
+      ],
+      "confianca": "media",
+      "plataforma": null,
+      "candidatos": [
+        {
+          "id": "relation.venn.v1",
+          "family": "relation",
+          "density": 3,
+          "useWhen": "a ideia está no encontro de duas coisas",
+          "dontUseWhen": "não há interseção real (compare.mirror)",
+          "input": "2 conjuntos + 1 interseção",
+          "durationFrames": [
+            160,
+            260
+          ],
+          "gesture": "cascata",
+          "caption": "legenda continua",
+          "speakerVisible": true,
+          "alternatives": [
+            "compare.mirror.v1",
+            "scheme.equation.v1"
+          ],
+          "where": {
+            "guide": "§6b",
+            "panel": "#s04c-esquemas"
+          },
+          "familiaCena": "SPEAKER_PLUS_DIAGRAM",
+          "score": 4,
+          "porque": [
+            "candidato de RELACAO"
+          ],
+          "origem": "ds"
+        },
+        {
+          "id": "relation.cause-effect.v1",
+          "family": "relation",
+          "density": 3,
+          "useWhen": "\"isso acontece porque…\" e existe um mecanismo entre origem e consequência",
+          "dontUseWhen": "só sucessão no tempo (flow.timeline)",
+          "input": "causa + mecanismo + efeito",
+          "durationFrames": [
+            180,
+            300
+          ],
+          "gesture": "tracado",
+          "caption": "legenda continua",
+          "speakerVisible": true,
+          "alternatives": [
+            "flow.timeline.v1",
+            "flow.gap.v1"
+          ],
+          "where": {
+            "guide": "§6b",
+            "panel": "#s04c-esquemas"
+          },
+          "familiaCena": "SPEAKER_PLUS_DIAGRAM",
+          "score": 4,
+          "porque": [
+            "candidato de RELACAO",
+            "candidato de PROBLEMA_E_SOLUCAO"
+          ],
+          "origem": "ds"
+        },
+        {
+          "id": "flow.gap.v1",
+          "family": "flow",
+          "density": 3,
+          "useWhen": "distância entre onde está e onde deveria estar, sem etapas nomeadas",
+          "dontUseWhen": "há etapas (process.steps); há caminho descrito (flow.journey-ab)",
+          "input": "2 estados + a lacuna",
+          "durationFrames": [
+            160,
+            260
+          ],
+          "gesture": "tracado",
+          "caption": "legenda continua",
+          "speakerVisible": true,
+          "alternatives": [
+            "flow.journey-ab.v1",
+            "compare.mirror.v1"
+          ],
+          "where": {
+            "guide": "§6b",
+            "panel": "#s04c-esquemas"
+          },
+          "familiaCena": "SPEAKER_PLUS_DIAGRAM",
+          "score": 4,
+          "porque": [
+            "candidato de PROBLEMA_E_SOLUCAO"
+          ],
+          "origem": "ds"
+        },
+        {
+          "id": "relation.concentric.v1",
+          "family": "relation",
+          "density": 3,
+          "useWhen": "proximidade a partir de um centro (você → seguidores → desconhecidos)",
+          "dontUseWhen": "sem centro (hierarchy.levels)",
+          "input": "3 anéis",
+          "durationFrames": [
+            200,
+            320
+          ],
+          "gesture": "cascata",
+          "caption": "legenda continua",
+          "speakerVisible": true,
+          "alternatives": [
+            "hierarchy.levels.v1",
+            "relation.venn.v1"
+          ],
+          "where": {
+            "guide": "§6b",
+            "panel": "#s04c-esquemas"
+          },
+          "familiaCena": "SPEAKER_PLUS_DIAGRAM",
+          "score": 3,
+          "porque": [
+            "candidato de RELACAO"
+          ],
+          "origem": "ds"
+        }
+      ],
+      "relacao": [],
+      "fallback": null
+    },
+    {
+      "id": "b09",
+      "texto": "Depois você vai fazer a parte de copy, né? Que é copywriting, que é todos os textos.",
+      "estruturas": [
+        "PALAVRA_CHAVE",
+        "PASSOS"
+      ],
+      "confianca": "media",
+      "plataforma": null,
+      "candidatos": [
+        {
+          "id": "process.steps.v1",
+          "family": "process",
+          "density": 3,
+          "useWhen": "a ordem importa e são 3 a 5 etapas (\"primeiro, depois, então\")",
+          "dontUseWhen": "sem ordem (trio/grade); as quantidades caem (funil); volta ao início (ciclo)",
+          "input": "3–5 rótulos ordenados",
+          "durationFrames": [
+            240,
+            420
+          ],
+          "gesture": "foco",
+          "caption": "legenda troca por passo",
+          "speakerVisible": true,
+          "alternatives": [
+            "flow.funnel.v1",
+            "flow.timeline.v1",
+            "flow.cycle.v1"
+          ],
+          "where": {
+            "guide": "§6b",
+            "panel": "#s04c-esquemas"
+          },
+          "familiaCena": "SPEAKER_PLUS_DIAGRAM",
+          "score": 10,
+          "porque": [
+            "candidato de PASSOS",
+            "casou \"depois\"",
+            "casou \"depois\""
+          ],
+          "origem": "ds"
+        },
+        {
+          "id": "emphasis.word.v1",
+          "family": "emphasis",
+          "density": 4,
+          "useWhen": "a fala krava UMA palavra que é a tese do beat (\"autoridade\", \"atalho\"); ênfase máxima de voz",
+          "dontUseWhen": "a frase tem 2+ ideias; a palavra é genérica (\"coisas\", \"negócio\"); já houve um N3 nos últimos 15s",
+          "input": "1 palavra ≤10 letras",
+          "durationFrames": [
+            60,
+            90
+          ],
+          "gesture": "cascata",
+          "caption": "substitui a legenda (o palco já é tipografia)",
+          "speakerVisible": false,
+          "alternatives": [
+            "emphasis.icon-phrase.v1",
+            "emphasis.attribute.v1"
+          ],
+          "where": {
+            "guide": "§6 + §6a",
+            "panel": "#s04-moldes / #s04d-enfase"
+          },
+          "familiaCena": "FULL_SCREEN_TYPOGRAPHY",
+          "score": 4,
+          "porque": [
+            "candidato de PALAVRA_CHAVE"
+          ],
+          "origem": "ds"
+        },
+        {
+          "id": "emphasis.attribute.v1",
+          "family": "emphasis",
+          "density": 2,
+          "useWhen": "ênfase média: uma coisa nomeada onde o símbolo pesa mais que a palavra",
+          "dontUseWhen": "a palavra é a tese do vídeo (use N3); há três coisas (use trio)",
+          "input": "1 palavra + 1 ícone",
+          "durationFrames": [
+            40,
+            60
+          ],
+          "gesture": "foco",
+          "caption": "legenda continua",
+          "speakerVisible": true,
+          "alternatives": [
+            "emphasis.word.v1",
+            "set.trio.v1"
+          ],
+          "where": {
+            "guide": "§6a",
+            "panel": "#s04d-enfase"
+          },
+          "familiaCena": "HOOK",
+          "score": 3,
+          "porque": [
+            "candidato de PALAVRA_CHAVE"
+          ],
+          "origem": "ds"
+        },
+        {
+          "id": "emphasis.pill-phrase.v1",
+          "family": "emphasis",
+          "density": 2,
+          "useWhen": "a fala nomeia uma coisa em 2 a 4 palavras e o simbolo pesa tanto quanto elas; uma palavra so mentiria",
+          "dontUseWhen": "e uma palavra so (emphasis.attribute) ; passa de 4 palavras (emphasis.tonic-phrase ou emphasis.icon-phrase) ; nao existe simbolo honesto (emphasis.tonic-phrase)",
+          "input": "2 a 4 palavras + 1 conceito de icone",
+          "durationFrames": [
+            150,
+            260
+          ],
+          "gesture": "foco",
+          "caption": "liga",
+          "speakerVisible": true,
+          "alternatives": [
+            "emphasis.attribute.v1",
+            "emphasis.tonic-phrase.v1"
+          ],
+          "where": {
+            "guide": "§5d",
+            "panel": "#s04d-enfase"
+          },
+          "familiaCena": "HOOK",
+          "score": 2,
+          "porque": [
+            "candidato de PALAVRA_CHAVE"
+          ],
+          "origem": "ds"
+        }
+      ],
+      "relacao": [],
+      "fallback": null
+    },
+    {
+      "id": "b10",
+      "texto": "Textos da página, textos do anúncio, textos do bot de captação.",
+      "estruturas": [
+        "X_TEM_A_B_C",
+        "PLATAFORMA"
+      ],
+      "confianca": "media",
+      "plataforma": null,
+      "candidatos": [
+        {
+          "id": "set.trio.v1",
+          "family": "set",
+          "density": 3,
+          "useWhen": "a fala lista exatamente 3 coisas sem ordem entre elas",
+          "dontUseWhen": "há ordem/sequência (use process.steps); são 4+ (use grade); só 1 (use N1/N2)",
+          "input": "3 rótulos + 3 ícones",
+          "durationFrames": [
+            180,
+            300
+          ],
+          "gesture": "foco",
+          "caption": "legenda troca por item",
+          "speakerVisible": true,
+          "alternatives": [
+            "set.grid.v1",
+            "process.steps.v1"
+          ],
+          "where": {
+            "guide": "§6",
+            "panel": "#s04-moldes"
+          },
+          "familiaCena": "SPEAKER_PLUS_LIST",
+          "score": 4,
+          "porque": [
+            "candidato de X_TEM_A_B_C"
+          ],
+          "origem": "ds"
+        },
+        {
+          "id": "interface.instagram.profile.v1",
+          "family": "interface",
+          "density": 4,
+          "useWhen": "a fala descreve o perfil como objeto (foto, bio, destaques, feed)",
+          "dontUseWhen": "a fala é sobre um post (interface.social.post.v1); só citou o Instagram (mini-selo)",
+          "durationFrames": [
+            240,
+            400
+          ],
+          "gesture": "foco",
+          "caption": "legenda continua (a interface não é tipografia)",
+          "speakerVisible": false,
+          "alternatives": [
+            "interface.instagram.feed.v1",
+            "interface.instagram.highlights.v1"
+          ],
+          "where": {
+            "guide": "§6b2",
+            "panel": "#s04g-interfaces"
+          },
+          "familiaCena": "SPEAKER_PLUS_INTERFACE",
+          "score": 4,
+          "porque": [
+            "candidato de PLATAFORMA"
+          ],
+          "origem": "ds"
+        },
+        {
+          "id": "interface.player.v1",
+          "family": "interface",
+          "density": 3,
+          "useWhen": "a fala fala do conteúdo da área de membros",
+          "dontUseWhen": "é videochamada (videocall.v1)",
+          "durationFrames": [
+            180,
+            300
+          ],
+          "gesture": "playback",
+          "caption": "legenda continua (a interface não é tipografia)",
+          "speakerVisible": true,
+          "alternatives": [
+            "interface.videocall.v1",
+            "interface.progress.v1"
+          ],
+          "where": {
+            "guide": "§6b2",
+            "panel": "#s04g-interfaces"
+          },
+          "familiaCena": "SPEAKER_PLUS_INTERFACE",
+          "score": 3,
+          "porque": [
+            "candidato de PLATAFORMA"
+          ],
+          "origem": "ds"
+        },
+        {
+          "id": "interface.videocall.v1",
+          "family": "interface",
+          "density": 3,
+          "useWhen": "a fala descreve a sessão ao vivo com a pessoa",
+          "dontUseWhen": "é aula gravada (player.v1)",
+          "durationFrames": [
+            180,
+            300
+          ],
+          "gesture": "foco",
+          "caption": "legenda continua (a interface não é tipografia)",
+          "speakerVisible": true,
+          "alternatives": [
+            "interface.player.v1",
+            "interface.schedule.v1"
+          ],
+          "where": {
+            "guide": "§6b2",
+            "panel": "#s04g-interfaces"
+          },
+          "familiaCena": "SPEAKER_PLUS_INTERFACE",
+          "score": 2,
+          "porque": [
+            "candidato de PLATAFORMA"
+          ],
+          "origem": "ds"
+        }
+      ],
+      "relacao": [],
+      "fallback": null
+    },
+    {
+      "id": "b11",
+      "texto": "Aí sim você vai construir páginas,",
+      "estruturas": [
+        "FRASE_IMPORTANTE",
+        "SEQUENCIA"
+      ],
+      "confianca": "media",
+      "plataforma": null,
+      "candidatos": [
+        {
+          "id": "emphasis.icon-phrase.v1",
+          "family": "emphasis",
+          "density": 3,
+          "useWhen": "a fala faz uma promessa ou definição em 2 linhas e existe um símbolo que a representa",
+          "dontUseWhen": "não há símbolo honesto para a ideia; a frase passa de 12 palavras",
+          "input": "frase ≤12 palavras + 1 ícone do mapa",
+          "durationFrames": [
+            70,
+            110
+          ],
+          "gesture": "cascata",
+          "caption": "substitui a legenda",
+          "speakerVisible": false,
+          "alternatives": [
+            "emphasis.word.v1",
+            "scheme.description.v1"
+          ],
+          "where": {
+            "guide": "§6a",
+            "panel": "#s04d-enfase"
+          },
+          "familiaCena": "HOOK",
+          "score": 4,
+          "porque": [
+            "candidato de FRASE_IMPORTANTE"
+          ],
+          "origem": "ds"
+        },
+        {
+          "id": "emphasis.lettering.v1",
+          "family": "emphasis",
+          "density": 5,
+          "useWhen": "uma frase de 6 a 22 palavras que resume o vídeo, em momento raro (1 por vídeo)",
+          "dontUseWhen": "frase curta (use N3); mais de 22 palavras; já houve lettering no vídeo",
+          "input": "frase 6–22 palavras + 1 palavra tônica",
+          "durationFrames": [
+            150,
+            240
+          ],
+          "gesture": "cascata",
+          "caption": "legenda desliga",
+          "speakerVisible": false,
+          "alternatives": [
+            "emphasis.word.v1",
+            "scheme.equation.v1"
+          ],
+          "where": {
+            "guide": "§5c",
+            "panel": "#s04e-lettering"
+          },
+          "familiaCena": "HOOK",
+          "score": 3,
+          "porque": [
+            "candidato de FRASE_IMPORTANTE"
+          ],
+          "origem": "ds"
+        },
+        {
+          "id": "flow.timeline.v1",
+          "family": "flow",
+          "density": 3,
+          "useWhen": "marcos com data ou prazo (\"no dia 1, em 30 dias\")",
+          "dontUseWhen": "sem tempo (process.steps)",
+          "input": "2–4 marcos + datas",
+          "durationFrames": [
+            200,
+            340
+          ],
+          "gesture": "tracado",
+          "caption": "legenda continua",
+          "speakerVisible": true,
+          "alternatives": [
+            "process.steps.v1",
+            "number.date.v1"
+          ],
+          "where": {
+            "guide": "§6b",
+            "panel": "#s04c-esquemas"
+          },
+          "familiaCena": "SPEAKER_PLUS_DIAGRAM",
+          "score": 3,
+          "porque": [
+            "candidato de SEQUENCIA"
+          ],
+          "origem": "ds"
+        },
+        {
+          "id": "emphasis.headline-card.v1",
+          "family": "interface",
+          "density": 3,
+          "useWhen": "a fala enuncia uma promessa/oferta em formato de manchete",
+          "dontUseWhen": "é uma palavra só (emphasis.word.v1)",
+          "durationFrames": [
+            180,
+            300
+          ],
+          "gesture": "cascata",
+          "caption": "legenda continua (a interface não é tipografia)",
+          "speakerVisible": true,
+          "alternatives": [
+            "emphasis.icon-phrase.v1",
+            "emphasis.word.v1"
+          ],
+          "where": {
+            "guide": "§6b2",
+            "panel": "#s04g-interfaces"
+          },
+          "familiaCena": "FULL_SCREEN_TYPOGRAPHY",
+          "score": 2,
+          "porque": [
+            "candidato de FRASE_IMPORTANTE"
+          ],
+          "origem": "ds"
+        }
+      ],
+      "relacao": [],
+      "fallback": null
+    },
+    {
+      "id": "b12",
+      "texto": "campanhas de tráfego, automações, integrações CRM.",
+      "estruturas": [
+        "LISTA",
+        "CATEGORIAS"
+      ],
+      "confianca": "media",
+      "plataforma": {
+        "plataforma": "crm",
+        "modo": "mention",
+        "show": [
+          "interface.leads.v1",
+          "interface.data-table.v1"
+        ],
+        "mention": "mini-selo",
+        "acento": {
+          "id": "interface.leads.v1",
+          "recorte": "3 linhas com avatar, 360"
+        }
+      },
+      "candidatos": [
+        {
+          "id": "set.grid.v1",
+          "family": "set",
+          "density": 3,
+          "useWhen": "4 a 6 itens sem ordem, cada um com nome curto",
+          "dontUseWhen": "há ordem (process.steps); são 3 (trio); são 7+ (dividir a cena)",
+          "input": "4–6 rótulos + ícones",
+          "durationFrames": [
+            240,
+            420
+          ],
+          "gesture": "cascata",
+          "caption": "legenda troca por item",
+          "speakerVisible": true,
+          "alternatives": [
+            "set.trio.v1",
+            "set.count-grid.v1"
+          ],
+          "where": {
+            "guide": "§6",
+            "panel": "#s04-moldes"
+          },
+          "familiaCena": null,
+          "score": 7,
+          "porque": [
+            "candidato de LISTA",
+            "candidato de CATEGORIAS"
+          ],
+          "origem": "ds"
+        },
+        {
+          "id": "set.trio.v1",
+          "family": "set",
+          "density": 3,
+          "useWhen": "a fala lista exatamente 3 coisas sem ordem entre elas",
+          "dontUseWhen": "há ordem/sequência (use process.steps); são 4+ (use grade); só 1 (use N1/N2)",
+          "input": "3 rótulos + 3 ícones",
+          "durationFrames": [
+            180,
+            300
+          ],
+          "gesture": "foco",
+          "caption": "legenda troca por item",
+          "speakerVisible": true,
+          "alternatives": [
+            "set.grid.v1",
+            "process.steps.v1"
+          ],
+          "where": {
+            "guide": "§6",
+            "panel": "#s04-moldes"
+          },
+          "familiaCena": "SPEAKER_PLUS_LIST",
+          "score": 2,
+          "porque": [
+            "candidato de LISTA",
+            "ja usado nos 3 beats anteriores (variedade)"
+          ],
+          "origem": "ds"
+        }
+      ],
+      "relacao": [],
+      "fallback": null
+    },
+    {
+      "id": "b13",
+      "texto": "Você pode fazer sozinha e levar seis meses fazendo,",
+      "estruturas": [
+        "NUMERO",
+        "ESCOLHA"
+      ],
+      "confianca": "media",
+      "plataforma": null,
+      "candidatos": [
+        {
+          "id": "interface.approval.v1",
+          "family": "interface",
+          "density": 3,
+          "useWhen": "a fala julga item por item (\"isso sim, isso não\")",
+          "dontUseWhen": "há imagem (compare.right-wrong.v1); sem juízo (interface.list.v1)",
+          "durationFrames": [
+            200,
+            340
+          ],
+          "gesture": "contador",
+          "caption": "legenda continua (a interface não é tipografia)",
+          "speakerVisible": true,
+          "alternatives": [
+            "compare.right-wrong.v1",
+            "interface.checks.list.v1"
+          ],
+          "where": {
+            "guide": "§6b3",
+            "panel": "#s04h-motion"
+          },
+          "familiaCena": "SPEAKER_PLUS_INTERFACE",
+          "score": 6,
+          "porque": [
+            "casou \"pode\"",
+            "casou \"pode\""
+          ],
+          "origem": "ds"
+        },
+        {
+          "id": "set.count-grid.v1",
+          "family": "set",
+          "density": 3,
+          "useWhen": "a fala dá uma quantidade contável de coisas iguais (12 conteúdos, 30 dias)",
+          "dontUseWhen": "os itens são diferentes entre si (use grade de conceitos); número sem itens (use number.hero)",
+          "input": "n (contagem) + rótulo com unidade",
+          "durationFrames": [
+            120,
+            200
+          ],
+          "gesture": "contagem",
+          "caption": "legenda continua",
+          "speakerVisible": true,
+          "alternatives": [
+            "number.count.v1",
+            "set.grid.v1"
+          ],
+          "where": {
+            "guide": "§6",
+            "panel": "#s04-moldes"
+          },
+          "familiaCena": null,
+          "score": 5,
+          "porque": [
+            "candidato de NUMERO",
+            "alternativa de \"seis\""
+          ],
+          "origem": "ds"
+        },
+        {
+          "id": "compare.balance.v1",
+          "family": "compare",
+          "density": 3,
+          "useWhen": "escolha entre dois pesos, e a fala diz qual pesa mais",
+          "dontUseWhen": "três ou mais opções (grade); sem juízo de peso (compare.table)",
+          "input": "2 lados + peso",
+          "durationFrames": [
+            160,
+            260
+          ],
+          "gesture": "foco",
+          "caption": "legenda continua",
+          "speakerVisible": true,
+          "alternatives": [
+            "compare.table.v1",
+            "branch.decision.v1"
+          ],
+          "where": {
+            "guide": "§6b",
+            "panel": "#s04c-esquemas"
+          },
+          "familiaCena": null,
+          "score": 4,
+          "porque": [
+            "candidato de ESCOLHA"
+          ],
+          "origem": "ds"
+        },
+        {
+          "id": "set.grid.v1",
+          "family": "set",
+          "density": 3,
+          "useWhen": "4 a 6 itens sem ordem, cada um com nome curto",
+          "dontUseWhen": "há ordem (process.steps); são 3 (trio); são 7+ (dividir a cena)",
+          "input": "4–6 rótulos + ícones",
+          "durationFrames": [
+            240,
+            420
+          ],
+          "gesture": "cascata",
+          "caption": "legenda troca por item",
+          "speakerVisible": true,
+          "alternatives": [
+            "set.trio.v1",
+            "set.count-grid.v1"
+          ],
+          "where": {
+            "guide": "§6",
+            "panel": "#s04-moldes"
+          },
+          "familiaCena": null,
+          "score": 4,
+          "porque": [
+            "casou \"seis\"",
+            "casou \"seis\"",
+            "ja usado nos 3 beats anteriores (variedade)"
+          ],
+          "origem": "ds"
+        }
+      ],
+      "relacao": [],
+      "fallback": null
+    },
+    {
+      "id": "b14",
+      "texto": "ou você pode contratar a minha equipe e",
+      "estruturas": [
+        "ESCOLHA"
+      ],
+      "confianca": "media",
+      "plataforma": null,
+      "candidatos": [
+        {
+          "id": "compare.balance.v1",
+          "family": "compare",
+          "density": 3,
+          "useWhen": "escolha entre dois pesos, e a fala diz qual pesa mais",
+          "dontUseWhen": "três ou mais opções (grade); sem juízo de peso (compare.table)",
+          "input": "2 lados + peso",
+          "durationFrames": [
+            160,
+            260
+          ],
+          "gesture": "foco",
+          "caption": "legenda continua",
+          "speakerVisible": true,
+          "alternatives": [
+            "compare.table.v1",
+            "branch.decision.v1"
+          ],
+          "where": {
+            "guide": "§6b",
+            "panel": "#s04c-esquemas"
+          },
+          "familiaCena": null,
+          "score": 4,
+          "porque": [
+            "candidato de ESCOLHA"
+          ],
+          "origem": "ds"
+        },
+        {
+          "id": "interface.approval.v1",
+          "family": "interface",
+          "density": 3,
+          "useWhen": "a fala julga item por item (\"isso sim, isso não\")",
+          "dontUseWhen": "há imagem (compare.right-wrong.v1); sem juízo (interface.list.v1)",
+          "durationFrames": [
+            200,
+            340
+          ],
+          "gesture": "contador",
+          "caption": "legenda continua (a interface não é tipografia)",
+          "speakerVisible": true,
+          "alternatives": [
+            "compare.right-wrong.v1",
+            "interface.checks.list.v1"
+          ],
+          "where": {
+            "guide": "§6b3",
+            "panel": "#s04h-motion"
+          },
+          "familiaCena": "SPEAKER_PLUS_INTERFACE",
+          "score": 4,
+          "porque": [
+            "casou \"pode\"",
+            "casou \"pode\"",
+            "ja usado nos 3 beats anteriores (variedade)"
+          ],
+          "origem": "ds"
+        },
+        {
+          "id": "branch.decision.v1",
+          "family": "branch",
+          "density": 3,
+          "useWhen": "uma condição abre dois caminhos (\"se já tem X… se não…\")",
+          "dontUseWhen": "os caminhos não se excluem (branch.tree)",
+          "input": "1 condição + 2 ramos",
+          "durationFrames": [
+            200,
+            340
+          ],
+          "gesture": "foco",
+          "caption": "legenda continua",
+          "speakerVisible": true,
+          "alternatives": [
+            "branch.tree.v1",
+            "compare.balance.v1"
+          ],
+          "where": {
+            "guide": "§6b",
+            "panel": "#s04c-esquemas"
+          },
+          "familiaCena": "SPEAKER_PLUS_DIAGRAM",
+          "score": 3,
+          "porque": [
+            "candidato de ESCOLHA"
+          ],
+          "origem": "ds"
+        },
+        {
+          "id": "flow.filter.v1",
+          "family": "flow",
+          "density": 4,
+          "useWhen": "critérios nomeados explicam quem passa e quem fica fora",
+          "dontUseWhen": "só a quantidade cai, sem critério (flow.funnel)",
+          "input": "itens + 2–3 critérios",
+          "durationFrames": [
+            240,
+            400
+          ],
+          "gesture": "cascata",
+          "caption": "legenda continua",
+          "speakerVisible": false,
+          "alternatives": [
+            "flow.funnel.v1",
+            "flow.bottleneck.v1"
+          ],
+          "where": {
+            "guide": "§6b",
+            "panel": "#s04c-esquemas"
+          },
+          "familiaCena": "SPEAKER_PLUS_DIAGRAM",
+          "score": 2,
+          "porque": [
+            "candidato de ESCOLHA"
+          ],
+          "origem": "ds"
+        }
+      ],
+      "relacao": [],
+      "fallback": null
+    },
+    {
+      "id": "b15",
+      "texto": "receber essa estrutura pronta em 21 dias.",
+      "estruturas": [
+        "A_VS_B",
+        "NUMERO"
+      ],
+      "confianca": "media",
+      "plataforma": null,
+      "candidatos": [
+        {
+          "id": "compare.right-wrong.v1",
+          "family": "compare",
+          "density": 4,
+          "useWhen": "a fala julga duas versões da mesma coisa e existe material visual (print, foto)",
+          "dontUseWhen": "não há imagem (use compare.mirror); não há juízo, só diferença (use compare.table)",
+          "input": "2 imagens + 2 rótulos",
+          "durationFrames": [
+            180,
+            300
+          ],
+          "gesture": "cascata",
+          "caption": "legenda continua curta",
+          "speakerVisible": false,
+          "alternatives": [
+            "compare.mirror.v1",
+            "compare.table.v1"
+          ],
+          "where": {
+            "guide": "§6",
+            "panel": "#s04-moldes"
+          },
+          "familiaCena": "EXAMPLE",
+          "score": 4,
+          "porque": [
+            "candidato de A_VS_B"
+          ],
+          "origem": "ds"
+        },
+        {
+          "id": "set.count-grid.v1",
+          "family": "set",
+          "density": 3,
+          "useWhen": "a fala dá uma quantidade contável de coisas iguais (12 conteúdos, 30 dias)",
+          "dontUseWhen": "os itens são diferentes entre si (use grade de conceitos); número sem itens (use number.hero)",
+          "input": "n (contagem) + rótulo com unidade",
+          "durationFrames": [
+            120,
+            200
+          ],
+          "gesture": "contagem",
+          "caption": "legenda continua",
+          "speakerVisible": true,
+          "alternatives": [
+            "number.count.v1",
+            "set.grid.v1"
+          ],
+          "where": {
+            "guide": "§6",
+            "panel": "#s04-moldes"
+          },
+          "familiaCena": null,
+          "score": 4,
+          "porque": [
+            "candidato de NUMERO"
+          ],
+          "origem": "ds"
+        },
+        {
+          "id": "compare.table.v1",
+          "family": "compare",
+          "density": 4,
+          "useWhen": "dois lados com 2 a 5 atributos cada (\"mentoria x curso\")",
+          "dontUseWhen": "um atributo por lado (compare.mirror); há juízo certo/errado (compare.right-wrong)",
+          "input": "2 títulos + 2 listas de 2–5",
+          "durationFrames": [
+            240,
+            420
+          ],
+          "gesture": "lista",
+          "caption": "legenda continua",
+          "speakerVisible": false,
+          "alternatives": [
+            "compare.mirror.v1",
+            "compare.balance.v1"
+          ],
+          "where": {
+            "guide": "§6b",
+            "panel": "#s04c-esquemas"
+          },
+          "familiaCena": "SPEAKER_PLUS_COMPARISON",
+          "score": 3,
+          "porque": [
+            "candidato de A_VS_B"
+          ],
+          "origem": "ds"
+        },
+        {
+          "id": "interface.metrics.v1",
+          "family": "interface",
+          "density": 3,
+          "useWhen": "2 a 4 indicadores e a fala cita um deles",
+          "dontUseWhen": "um número só (number.hero.v1); evolução no tempo (chart.growth.v1)",
+          "durationFrames": [
+            180,
+            300
+          ],
+          "gesture": "contagem",
+          "caption": "legenda continua (a interface não é tipografia)",
+          "speakerVisible": true,
+          "alternatives": [
+            "number.hero.v1",
+            "interface.chart.growth.v1"
+          ],
+          "where": {
+            "guide": "§6b2",
+            "panel": "#s04g-interfaces"
+          },
+          "familiaCena": "SPEAKER_PLUS_INTERFACE",
+          "score": 3,
+          "porque": [
+            "candidato de NUMERO"
+          ],
+          "origem": "ds"
+        }
+      ],
+      "relacao": [],
+      "fallback": null
+    }
+  ]
+}

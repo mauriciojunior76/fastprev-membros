@@ -1,0 +1,93 @@
+{
+  "_template": true,
+  "_version": "2.0",
+  "_engine": "Nano Banana Pro (Gemini) — SEMPRE usar --pro para simbolos",
+  "_instructions": "Substitua todos os valores {placeholder}. Gere via: node scripts/generate-image.js --prompt '...' --pro",
+  "_estetica": "ESTETICA ACIMA DE TUDO. Simbolo unico, nunca visto, bonito. PROIBIDO: formas genericas (triangulo+circulo, seta, engrenagem, lampada, escudo).",
+  "brand": "{nome-da-marca}",
+  "generated_at": "{ISO-8601-timestamp}",
+  "assets": [
+    {
+      "id": "simbolo-principal",
+      "priority": 1,
+      "description": "Simbolo principal da marca — preto no branco — UNICO e INEDITO",
+      "prompt_template": {
+        "layer_1_tecnica": "Award-winning logo symbol. Pure white background. Single solid black color. No gradients, no shadows, no outlines, no fill patterns. Vector-clean edges, mathematically precise curves. Must work perfectly at 16x16px favicon AND 500x500px print. No text, no letters, no numbers. Pure abstract symbol only.",
+        "layer_2_conceito": "The symbol represents the invisible moment where {CONCEITO_1} transforms into {CONCEITO_2}, captured through the visual language of {CONCEITO_3}. NOT a literal representation. NOT an obvious geometric shape. The symbol should feel like it was discovered, not designed. Think: the elegance of the Apple logo, the tension of the Nike swoosh, the hidden meaning of the FedEx arrow, the duality of the Beats logo.",
+        "layer_3_anticliche": "CRITICAL CONSTRAINTS: Do NOT create a circle with something inside it. Do NOT create a triangle, diamond, or hexagon as the base shape. Do NOT use arrows, checkmarks, lightbulbs, gears, shields, or crowns. Do NOT stack basic geometric shapes on top of each other. The silhouette must be UNIQUE — not recognizable as any existing logo. Use negative space as a design element, not just background. Asymmetry is welcome if it creates visual tension. The symbol must have a discovery moment — a hidden detail that rewards closer inspection.",
+        "assembly": "{layer_1_tecnica} {layer_2_conceito} {layer_3_anticliche}"
+      },
+      "model": "--pro",
+      "count": 3,
+      "output": {
+        "filename": "{marca}-symbol",
+        "folder": "clientes/{marca}/"
+      },
+      "quality_checklist": [
+        "O simbolo e UNICO? Nao lembra nenhum logo existente?",
+        "Funciona em 16x16px? A silhueta e reconhecivel?",
+        "Tem um momento de descoberta visual?",
+        "NAO e uma forma geometrica basica?",
+        "E esteticamente BONITO, nao apenas funcional?"
+      ]
+    },
+    {
+      "id": "simbolo-accent",
+      "priority": 2,
+      "description": "Simbolo na cor accent da marca no fundo escuro",
+      "prompt_template": {
+        "prompt": "Award-winning logo symbol on dark charcoal #1a1a2e background. Single solid {COR_ACCENT_INGLES} color. Same exact symbol as the brand mark: {DESCRICAO_DO_SIMBOLO}. No gradients, no shadows, no outlines. Vector-clean edges, mathematically precise curves. No text, no letters. Pure abstract symbol only. Premium brand identity quality."
+      },
+      "model": "--pro",
+      "count": 1,
+      "output": {
+        "filename": "{marca}-symbol-accent",
+        "folder": "clientes/{marca}/"
+      }
+    }
+  ],
+  "conceitos_proibidos": [
+    "triangulo dentro de circulo",
+    "seta apontando para cima",
+    "engrenagem ou roda dentada",
+    "lampada ou ideia",
+    "escudo ou brasao",
+    "coroa ou trono",
+    "estrela generica",
+    "infinito basico",
+    "circuito ou chip",
+    "montanha com sol",
+    "folha generica",
+    "mao ou punho",
+    "globo terrestre",
+    "asa ou passaro simples",
+    "olho basico"
+  ],
+  "conceitos_exemplos_bons": [
+    "espiral fibonacci interrompida no momento aureo",
+    "silhueta de eclipse parcial revelando forma oculta",
+    "DNA deformado em helice aberta com fragmento flutuante",
+    "fissura geometrica onde a luz vaza entre planos",
+    "ondas sonoras cristalizadas em forma solida",
+    "origami inacabado entre 2D e 3D",
+    "gota no instante antes do impacto, deformada pela tensao superficial",
+    "topografia de cratera invertida vista de cima",
+    "moebius strip fragmentado com lacuna intencional",
+    "cristal de bismuto simplificado em 3 planos",
+    "chama ascendente que sugere silhueta feminina em curvas S",
+    "fita caligrafica que afilam como pena de tinteiro",
+    "pingente/joia abstrata com loop circular como ancora",
+    "diamante facetado embutido dentro de uma letra",
+    "letra aberta/quebrada revelando conceito da marca",
+    "ligatura decorativa unica entre duas letras de um wordmark"
+  ],
+  "categorias": {
+    "A": "Abstrato Organico-Geometrico",
+    "B": "Figura Estilizada em Linhas",
+    "C": "Minimalismo Geometrico Puro",
+    "D": "Construcao Arquitetural em Linhas",
+    "E": "Frame com Conteudo Interno",
+    "F": "Feminino Caligrafico",
+    "G": "Alto Luxo Tipografico"
+  }
+}

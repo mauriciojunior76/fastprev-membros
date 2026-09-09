@@ -1,0 +1,86 @@
+{
+  "_leia": "Numeros da mixagem, fonte unica. Antes disto a receita estava escrita em tres documentos com valores diferentes (ducking 0,25 e 3 num, 0,2 e 5 noutro). Quem muda numero aqui muda em todo lugar. Lido por scripts/video/mixar-final.js e por mixar-trilha.js.",
+  "versao": 1,
+  "atualizado_em": "2026-09-04",
+  "voz": {
+    "ganho_db": 3,
+    "_ganho_db_por_que": "a conversao de mono para estereo derruba 3 dB. Sem compensar, a voz sai por baixo da trilha e o defeito e silencioso: so aparece ouvindo",
+    "fade_saida_s": 0.4,
+    "apad": true,
+    "_apad_por_que": "nestas pecas o video e mais longo que a fala, porque o fecho e imagem sem voz. Sem apad o -shortest corta o video na ultima palavra e come o selo (ERRO 329)"
+  },
+  "trilha": {
+    "volume_db": -17,
+    "_volume_db_por_que": "era -16. Corrigido 07/09/2026: feedback recorrente do o dono do canal, mais de uma peca, 'o volume ficou muito alto'. Padrao novo baixa a trilha em ~10% (~1 dB) na fonte, pra nao depender de lembrar de baixar peca por peca. Se ainda soar alto numa trilha especifica, o problema e a trilha (grave/mastering), nao o padrao: ver _highpass_ajuste antes de tocar aqui de novo.",
+    "highpass_hz": 180,
+    "highpass_se_grave_acima_de_pct": 30,
+    "_highpass_por_que": "trilha com muito grave ocupa a mesma faixa dos whooshes, que sao quase todos graves. Os dois brigam e o efeito perde a batida",
+    "fade_entrada_s": 1.2,
+    "fade_saida_s": 0.8,
+    "sai_na_vinheta": true,
+    "ducking": {
+      "threshold": 0.2,
+      "ratio": 5,
+      "attack_ms": 20,
+      "release_ms": 350,
+      "_leia": "a trilha abaixa sozinha quando a voz fala, por cadeia lateral"
+    },
+    "_highpass_ajuste": "Trilha com mais de 80 por cento da energia no grave morre com o corte de 180 Hz. Medir antes e usar --trilha-highpass 90 (ou 110). Caso Carlos Seme, 06/09/2026: 94 por cento de grave, o padrao deixou a trilha 39,7 dB abaixo da voz. O acerto foi corte 90 Hz, volume -6 dB, ducking 3, que deu 9 dB abaixo da voz."
+  },
+  "regua_de_trilha": {
+    "_leia": "Lei 8. Usada por scripts/trilha-avaliar.py para ordenar candidatas. O o dono do canal escolhe entre as ordenadas.",
+    "grave_pct_maximo": 30,
+    "bpm_ideal": [
+      70,
+      90
+    ],
+    "bpm_aceitavel": [
+      60,
+      120
+    ],
+    "ataque_maximo": 2,
+    "_ataque_por_que": "percussao marcada e o que mais atrapalha whoosh",
+    "dinamica_db_maxima": 18,
+    "_dinamica_por_que": "trilha e chao, nao evento. Evento e o whoosh"
+  },
+  "gates": {
+    "duracao_tolerancia_s": 0.2,
+    "voz_preservada_db": [
+      0,
+      1.5
+    ],
+    "_voz_preservada": "a mixagem pode somar um pouco de trilha em cima da voz, nunca tirar",
+    "batida_no_lugar_raio_s": 0.3,
+    "batida_janela_s": 0.04,
+    "silencio_no_fim_janela_s": 0.15,
+    "silencio_no_fim_media_db_maxima": -50,
+    "_silencio_no_fim": "medido pela media, nao pelo pico: a cauda de reverb marca -44 de pico no v18 aprovado e nao se ouve. Quando a vinheta falada termina dentro da janela final, o teto absoluto nao vale: a peca acaba COM a vinheta de proposito. Ai a regra vira queda, ver fim_com_vinheta_abaixo_da_fala_db",
+    "trilha_saiu_media_db_maxima": -45,
+    "vinheta_contra_fala_db_maxima": 3,
+    "_vinheta_contra_fala": "lei 9. Na v19 a vinheta estava 6 dB acima da fala e o estrondo 10. Ninguem acerta isso de ouvido",
+    "pico_global_db_maximo": -1,
+    "pico_por_janela_s": 0.5,
+    "_pico_por_janela": "Lei 10. Varrer em janelas para apontar o instante e o evento culpado, em vez de so dizer que reprovou. TETO CORRIGIDO em 05/09/2026, de -3 para -1: o -3 era invencao minha, calibrada numa peca so. Medindo as TRES que o o dono do canal aprovou, os picos sao -0,0 (Hamilton), -1,2 (ZeusTrafego) e -3,3 (Paulo): o teto antigo reprovava duas delas. -1 dB e o padrao real de entrega para Reels, e continua barrando mix estourado de verdade.",
+    "rms_divergencia_db_maxima": 1,
+    "_rms_divergencia": "se o rms medido do arquivo divergir do catalogo, alguem trocou o som sem recalibrar o volume",
+    "fim_com_vinheta_abaixo_da_fala_db": 3,
+    "_fim_com_vinheta": "com vinheta terminando junto do video, o fim so precisa estar em queda: pelo menos este tanto abaixo da fala. Silencio absoluto ali cortaria a propria vinheta",
+    "_calibracao_do_pico": {
+      "hamilton_v18": 0,
+      "zeustrafego_v36": -1.2,
+      "paulo_v24": -3.3,
+      "medido_em": "2026-09-05"
+    }
+  },
+  "referencia_aprovada": {
+    "_leia": "Medidas da versao que o o dono do canal aprovou. Servem de alvo para qualquer mixagem nova destas pecas.",
+    "PauloRuizReels": {
+      "fala_normal_db": -20.9,
+      "vinheta_db": -20.1,
+      "estrondo_db": -18.7,
+      "pico_global_db": -3.1,
+      "trilha": "instrumental-videos.mp3",
+      "eventos": 28
+    }
+  }
+}

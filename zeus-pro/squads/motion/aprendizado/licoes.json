@@ -1,0 +1,317 @@
+{
+  "_leia": "Registro vivo do que o o dono do canal ja teve que corrigir neste squad, com quantas VEZES ele precisou falar cada coisa. A contagem e o que manda: 1 vez e registro, 2 vezes significa que a explicacao nao pegou e a licao TEM que virar checagem mecanica, 3 ou mais vira gate que bloqueia a entrega. Quem edita: o script scripts/aprendizado.js (nunca a mao, para a contagem nao ser chutada).",
+  "versao": 1,
+  "atualizado_em": "2026-09-05",
+  "escada": {
+    "1": {
+      "estado": "registrado",
+      "significa": "aconteceu uma vez. Fica escrito, o agente le antes de comecar."
+    },
+    "2": {
+      "estado": "checagem",
+      "significa": "ele teve que falar DUAS vezes: a explicacao em texto nao pegou. Vira checagem que roda sozinha e avisa."
+    },
+    "3": {
+      "estado": "gate",
+      "significa": "tres ou mais: nao se confia mais em atencao. Vira gate que BLOQUEIA a entrega ate passar."
+    }
+  },
+  "sinais": {
+    "errei": "o o dono do canal reclama, corrige, repete um pedido, ou usa palavra de irritacao (ta horrivel, cansado, mal feito, de novo, ainda, pela N vez). Toda reclamacao dele e um erro meu registrado, mesmo quando parece detalhe.",
+    "acertei": "o o dono do canal aprova a peca ou diz que gostou. Nesse instante o estado daquela peca vira REFERENCIA do que e certo, e as licoes que ela respeita ganham uma prova a favor.",
+    "_leia": "Nao existe terceira fonte de verdade. O sistema nao adivinha acerto por conta propria: acerto e o que ele aprova, erro e o que ele reclama."
+  },
+  "licoes": [
+    {
+      "id": "letras-jornada",
+      "titulo": "Elemento pedido explicitamente que nao apareceu na tela",
+      "vezes": 5,
+      "contado_por": "ele mesmo, na quinta vez",
+      "evidencia": "agora pela 5 vez eu to te falando tem que ter uma letra A bem grande e a letra B bem grande e a animacao da seta",
+      "quando": [
+        "2026-09-04"
+      ],
+      "por_que_aconteceu": "Eu interpretei o pedido em vez de executar o literal. Ele pediu letra GRANDE; eu entreguei ponto de partida e chegada com rotulo pequeno, achando que comunicava a mesma coisa. Comunicava para mim, nao para ele.",
+      "como_evitar": "Pedido que nomeia um elemento concreto (letra A, retangulo, jogo da velha, seta) vira item de lista antes de tocar no codigo, e a conferencia e no PRINT da cena, nunca no codigo. Elemento nomeado que nao aparece no print e entrega reprovada.",
+      "estado": "gate",
+      "verificador": "scripts/checar-pedido-literal.js: --extrair le a mensagem dele e sugere cada elemento nomeado; --novo registra com a prova; a revisao reprova enquanto houver item em aberto",
+      "automatizado": "sim",
+      "falta": null
+    },
+    {
+      "id": "cor-de-marca",
+      "titulo": "Cor de marca de terceiro inventada em vez de copiada da referencia",
+      "vezes": 4,
+      "contado_por": "contagem das reclamacoes na sessao",
+      "evidencia": "ta horrivel essa cor da palavra instagram tu mentiu pra mim e eu to cansado / era pra ser o colorido com as cores do arco iris nao ficar repetindo cores / tu ainda nao colocou as cores que eu mandei tu inventou cores / ainda ficou lavada a cor",
+      "quando": [
+        "2026-09-04"
+      ],
+      "por_que_aconteceu": "Tres causas empilhadas, e eu tratei como uma so. Primeiro usei paleta pastel do proprio squad em vez da paleta que ele mandou. Depois o conversor de vetor deu a cada letra um deslocamento proprio, e o gradiente reiniciava a cada letra. Por fim tentei resolver com mascara, que trabalha por luminancia e lavou a cor. Cada tentativa parecia progresso e nenhuma atacava a causa.",
+      "como_evitar": "Cor de marca nao se escolhe: copia. A referencia que ele mandou e a fonte, e a conferencia e amostrar o pixel do resultado contra o pixel da referencia, nunca olhar e achar parecido. Mascara e opacidade sao proibidas para cor de marca.",
+      "estado": "gate",
+      "verificador": "scripts/checar-cor-de-marca.js",
+      "automatizado": "sim",
+      "falta": null
+    },
+    {
+      "id": "som-por-movimento",
+      "titulo": "Movimento com peso visual entrando sem som, ou com som diferente da vez anterior",
+      "vezes": 4,
+      "contado_por": "contagem das reclamacoes na sessao",
+      "evidencia": "faz falta sao efeitos sonoros em movimentos / apareceu o som no primeiro e nao apareceu nos outros que tem o mesmo peso / apareceu o numero 12 que deu um som legal depois tu mostrou a mesma coisa e nao deu o som / ainda falta em alguns casos ter 2 woosh um depois do outro",
+      "quando": [
+        "2026-09-04"
+      ],
+      "por_que_aconteceu": "O som era escolhido por aparicao, no olho, um a um. Sem vocabulario fechado, a segunda aparicao do mesmo elemento recebia outro som, e item de serie ficava sem nenhum.",
+      "como_evitar": "O componente declara O QUE acontece e QUANDO; o som vem do par categoria mais gesto no catalogo. Assim duas aparicoes da mesma categoria nao TEM COMO receber sons diferentes.",
+      "estado": "gate",
+      "verificador": "scripts/choreo-lint.js (checagem sfx) + scripts/sfx-mapa.js",
+      "automatizado": "sim",
+      "falta": null
+    },
+    {
+      "id": "espacamento-e-alinhamento",
+      "titulo": "Espacamento, alinhamento e composicao mal resolvidos",
+      "vezes": 4,
+      "contado_por": "contagem das reclamacoes na sessao",
+      "evidencia": "o retangulo ao redor delas esta muito encostado / a tabelinha ta errado o alinhamento ta mal formatado mal pensado / ficou mal feito mal organizado falta css falta layout / revise todos os alinhamentos os espacamentos pq nao ta legal ainda",
+      "quando": [
+        "2026-09-04"
+      ],
+      "por_que_aconteceu": "Composicao decidida no codigo, sem olhar o retangulo inteiro. Numero que parece certo na linha do arquivo fica errado na tela.",
+      "como_evitar": "Print de cada cena antes de qualquer entrega, e a leitura e da tela, nao do codigo.",
+      "estado": "gate",
+      "verificador": "scripts/checar-espacamento.js (grade: alinhamento e ritmo, medido no frame) + agente revisor-visual-motion (hierarquia e peso visual)",
+      "automatizado": "sim",
+      "falta": "hierarquia, peso visual e \"ficou bonito\" continuam com o revisor: nao existe medida para isso. O que virou numero foi a GRADE, que e onde ele reclamou (a tabelinha, os destaques).",
+      "achado_em_peca_entregue": "ZeusTrafegoReels, cena telegram-abre: tres elementos de mesma altura com topos em 378, 383 e 380. Desalinhamento de 5px que passou na entrega."
+    },
+    {
+      "id": "nivel-do-fecho",
+      "titulo": "Vinheta e trilha desproporcionais em volume",
+      "vezes": 3,
+      "contado_por": "contagem das reclamacoes na sessao",
+      "evidencia": "o cuidado tambem com o volume da vinheta final / a trilha sonora esta muito alta no meio do video reduz o volume / o som no final ainda ficou bem desproporcional no acabamento",
+      "quando": [
+        "2026-09-04"
+      ],
+      "por_que_aconteceu": "Nivel ajustado de ouvido. A vinheta chegou a ficar 6 dB acima da fala, o que ninguem acerta escutando.",
+      "como_evitar": "Nivel se mede. A vinheta e voz e nao pode passar de 3 dB de diferenca da fala; o pico geral tem teto.",
+      "estado": "gate",
+      "verificador": "scripts/video/mixar-final.js (gates de nivel)",
+      "automatizado": "sim",
+      "falta": null
+    },
+    {
+      "id": "enquadramento-de-foto",
+      "titulo": "Foto de pessoa mal enquadrada",
+      "vezes": 2,
+      "contado_por": "contagem das reclamacoes na sessao",
+      "evidencia": "no segundo 04 que aparece a foto da pessoa ta errada / o rosto da mulher ta mal enquadrado cortou o queixo tem que ter um respiro abaixo do rosto e a foto do homem tem barras brancas laterais",
+      "quando": [
+        "2026-09-04"
+      ],
+      "por_que_aconteceu": "Recorte feito pelo centro geometrico da imagem, nao pelo rosto. Sem respiro abaixo do queixo, e sem checar se a foto cobre a moldura inteira.",
+      "como_evitar": "Enquadramento sai do rosto: respiro abaixo do queixo e cobertura total da moldura, sem barra de fundo aparecendo.",
+      "estado": "checagem",
+      "verificador": "scripts/checar-foto-enquadramento.js",
+      "automatizado": "sim",
+      "falta": null
+    },
+    {
+      "id": "executar-tudo",
+      "titulo": "Lista de correcoes executada pela metade",
+      "vezes": 2,
+      "contado_por": "contagem das reclamacoes na sessao",
+      "evidencia": "tu nao fez tudo o que eu mandei nos segundo 35 / eu quero saber porque tu nao respeita tudo o que eu mando me responde porque tu nao faz o que eu mando?",
+      "quando": [
+        "2026-09-04"
+      ],
+      "por_que_aconteceu": "Mensagem longa dele com muitos pedidos virou execucao dos que eu achei mais importantes. Nao existia lista escrita, entao nao existia nada para conferir no fim.",
+      "como_evitar": "Toda mensagem de correcao vira lista numerada em arquivo antes da primeira edicao, e a resposta so sai quando cada item tem status.",
+      "estado": "checagem",
+      "verificador": "scripts/checar-pedido-literal.js (item com estado pendente reprova; --feito marca)",
+      "automatizado": "sim",
+      "falta": null
+    },
+    {
+      "id": "material-de-terceiro",
+      "titulo": "Logo ou imagem de marca desenhada a mao em vez de vir do arquivo oficial",
+      "vezes": 1,
+      "contado_por": "reclamacao unica, mas de regra permanente",
+      "evidencia": "a logo do instagram tu nao deveria criar deveria pegar na internet, logo de empresas marcas ou imagens padrao jamais deve criar sempre buscar em locais que tenham as imagens",
+      "quando": [
+        "2026-09-04"
+      ],
+      "por_que_aconteceu": "Desenhei os contornos aproximados porque parecia mais rapido do que achar o arquivo.",
+      "como_evitar": "Logo, marca e icone padrao de terceiro sempre do arquivo oficial. Desenhar a mao e proibido, mesmo que fique parecido.",
+      "estado": "registrado",
+      "verificador": "scripts/checar-origem-de-marca.js: componente que desenha marca de terceiro precisa de origem declarada em aprendizado/origem-de-marca.json",
+      "automatizado": "sim",
+      "falta": "nenhuma medida prova que um vetor foi desenhado a mao, entao a prova e declarada. Declarar exige olhar de onde veio, que e o proprio ponto."
+    },
+    {
+      "id": "imagem-repetida",
+      "titulo": "Mesma imagem reaproveitada entre producoes diferentes",
+      "vezes": 1,
+      "contado_por": "reclamacao unica",
+      "evidencia": "cada video e unico, cada cena e unica, o conceito e o estilo seguem iguais, mas as imagens nao podem ser iguais",
+      "quando": [
+        "2026-09-04"
+      ],
+      "por_que_aconteceu": "Reaproveitei o objeto de celular de outra peca por economia de tempo.",
+      "como_evitar": "Conceito e estilo se repetem entre pecas; imagem nunca. Antes de usar um asset, conferir se ele ja aparece em outra producao.",
+      "estado": "checagem",
+      "verificador": "scripts/checar-asset-repetido.js",
+      "automatizado": "sim",
+      "falta": null
+    },
+    {
+      "id": "entregar-o-que-nao-foi-pedido",
+      "titulo": "Entregar versao alem da que ele escolheu",
+      "vezes": 1,
+      "contado_por": "reclamacao unica",
+      "evidencia": "eu queria so a versao que eu aprovei no caso que e aquela com o audio instrumental videos mas se ta feito ok agora respeite os proximos",
+      "quando": [
+        "2026-09-04"
+      ],
+      "por_que_aconteceu": "Achei que oferecer opcao ajudava. Ele ja tinha escolhido, entao opcao virou ruido.",
+      "como_evitar": "Escolha feita e escolha fechada. Depois do aceite, entrega uma coisa so.",
+      "estado": "registrado",
+      "verificador": null,
+      "automatizado": "nao",
+      "falta": null
+    },
+    {
+      "id": "organizacao-de-material",
+      "titulo": "Producao guardada sem convencao de pasta e nome",
+      "vezes": 1,
+      "contado_por": "reclamacao unica",
+      "evidencia": "ele organizou mal feito tem que separar as versoes de cada criativo com o nome... tudo tem que ser organizado certinho",
+      "quando": [
+        "2026-09-04"
+      ],
+      "por_que_aconteceu": "Cada producao nasceu com o nome que parecia bom no dia, sem regra escrita nem gate.",
+      "como_evitar": "Pasta de trabalho com o assunto no nome, final sozinha em entregas, indice de cena pela fala.",
+      "estado": "checagem",
+      "verificador": "scripts/organizar-producao.js --auditar",
+      "automatizado": "sim",
+      "falta": null
+    },
+    {
+      "id": "cadencia-do-tile",
+      "titulo": "Rosto gravado em cadencia diferente da animacao, o olho le como engasgo",
+      "vezes": 1,
+      "contado_por": "observacao dele",
+      "evidencia": "vi que voce reduziu o FPS do video do rosto",
+      "quando": [
+        "2026-09-04"
+      ],
+      "por_que_aconteceu": "A imagem do rosto sai a 25 quadros e a animacao roda a 60. Como 60 nao e multiplo de 25, cada quadro se repete de forma irregular.",
+      "como_evitar": "Material de camera entra na cadencia da peca ou num divisor dela.",
+      "estado": "registrado",
+      "verificador": "scripts/checar-cadencia.js: compara a cadencia de cada video da peca com a da peca, antes de renderizar",
+      "automatizado": "sim",
+      "falta": "O AVISO ja existe e pega o caso real (o tile do Paulo roda a 24,97 numa peca de 60). O CONSERTO continua dependendo do arquivo bruto da call, que nao esta no repositorio: reexportar a 30 ou 60 resolve."
+    },
+    {
+      "id": "escape-em-heredoc",
+      "titulo": "Codigo gravado por heredoc com escape quebrou o arquivo",
+      "vezes": 4,
+      "contado_por": "contagem das vezes na sessao de 04/09/2026",
+      "evidencia": "quatro arquivos quebrados no mesmo dia: organizar-producao.js, mixar-final.js (duas vezes) e a expressao de busca do minerar-ganchos.js",
+      "quando": [
+        "2026-09-04"
+      ],
+      "por_que_aconteceu": "Gravei JavaScript passando por um heredoc de shell mais um script Python. Cada camada come uma barra: a quebra de linha escrita virava quebra real dentro do texto, e a barra da expressao de busca virava barra dupla. O codigo parecia certo no comando e nascia quebrado no arquivo.",
+      "como_evitar": "Codigo com quebra de linha em texto ou com expressao de busca se grava pela ferramenta de edicao direta, nunca por heredoc. Heredoc so para texto puro sem barra invertida. Depois de gravar, conferir a sintaxe antes de rodar.",
+      "estado": "gate",
+      "verificador": ".claude/hooks/syntax-check-guard.cjs (agora tambem apos comando de shell: confere todo .js e .json gravado nos ultimos 20s)",
+      "automatizado": "sim",
+      "falta": null
+    },
+    {
+      "id": "design-system-do-indice",
+      "titulo": "Molde desenhado no olho em vez de tirado do indice do design system",
+      "vezes": 4,
+      "contado_por": "ele mesmo",
+      "evidencia": "esse video nao seguiu o design systen padrao aple ... tem um padrao para tabelas co mtracado colorido tem o o padrao para o tracado colorid oque tu nao aplicou inclusive para os icones / A cena ta nao ta respeitando o design system / no segundo 11 tem erros que sao colunas e um x sem o padrao oficial do desin system pela segunda vez o mesmo erro jamais poderia repetir 2x o mesmo erro / no segundo 31 tem o mesmo erro um selo uma etique que jamais fez parte do desing sistem eu ja falei disso antes e se repetiu / no segundo 35 tem o fluxo com 4 etapas nao aparece o anel do padarao colorido ja tem no manual como deveria ser mas nao foi resapeitado / no segundo 10 foi inventada uma imitacao da ideia de esteira de produtos ta errado tem que pegar o design system escolher algo que tem la como referencia e aplicar o conceito real sem inventar nada / no segundo 8 nao segue o padrao visual do design system tem que encontrar algo para colocar ali",
+      "quando": [
+        "2026-09-05"
+      ],
+      "por_que_aconteceu": "Desenhei os componentes novos a partir do que eu achava que era o estilo, em vez de passar a fala pelo design-router.json, abrir a entrada do moldes-index.json e copiar a geometria de la. O resultado parece certo isolado e destoa do conjunto: chamei de lettering um apoio com frase em duas linhas quando o guia define poster de 6 a 9 linhas com tonica em pill e anel, deixei a grade sem o traco colorido que marca o item falado, e usei numeros fora das escalas fechadas (respiro 14, icone 42 e 56, padding 28, anel 2 em circulo de 88).",
+      "como_evitar": "Componente de cena NASCE do indice. Antes do primeiro pixel: rodar o roteador com a fala, abrir a entrada do indice, copiar a geometria e conferir cada numero contra as escalas fechadas do guia (secoes 4, 5 e 9c). O componente declara no cabecalho a linha 'MOLDE DO INDICE: <id>' dizendo de onde veio e por que. Se nenhuma entrada cobre a fala, isso e decisao do o dono do canal, nao licenca para inventar. Objeto citado na fala e a excecao declarada: 'MOLDE DO INDICE: objeto-lei-3b'.",
+      "verificador": "scripts/checar-design-system.js (molde declarado e escalas fechadas) e scripts/checar-build-registry.js (geometria contra o molde oficial). Os dois agora rodam DENTRO do pre-render-validate.js, e o comparador de geometria so liga quando a cena declara o campo `molde` no tokens.ts",
+      "estado": "gate",
+      "automatizado": "sim",
+      "falta": null
+    },
+    {
+      "id": "texto-igual-palco-e-legenda",
+      "titulo": "Mesma frase no palco e na legenda ao mesmo tempo",
+      "vezes": 2,
+      "contado_por": "ele mesmo",
+      "evidencia": "eu falei que jamais pode ter texto igual na legenda e no palco, quando o texto vai pro bullet no palco sai da legenda",
+      "quando": [
+        "2026-09-04",
+        "2026-09-06"
+      ],
+      "por_que_aconteceu": "O texto do palco e literal no TSX e o da legenda vem da transcricao montada em tempo de render. Sao dois universos que nenhum script lia junto, entao a repeticao so aparecia com o video pronto. O F6 da rubrica de aprovacao mede COLISAO de caixa, que e geometria: palco e legenda podem estar bem separados na tela e dizer a mesma frase, e o F6 da nota 10.",
+      "como_evitar": "Quem carrega o texto e UM canal so. Se o palco tem frase, rotulo ou bullet com a palavra da fala, a cena vai para caption muted no tokens.ts. Se a legenda carrega, o palco nao repete a palavra: usa outra, ou so estrutura. A conferencia e mecanica, cruzando os literais do componente com as palavras do narration.json na janela da cena.",
+      "estado": "checagem",
+      "verificador": "scripts/checar-texto-duplicado.js, plugado no pre-render-validate.js: cruza os literais do componente com as palavras do narration.json na janela da cena",
+      "automatizado": "sim",
+      "falta": null
+    },
+    {
+      "id": "estrutura-vazia-sem-rotulo",
+      "titulo": "Forma fechada que nasce vazia e sem nome no palco",
+      "vezes": 2,
+      "contado_por": "ele mesmo",
+      "evidencia": "no segundo 11 tem erros que sao colunas e um x sem o padrao oficial do design system",
+      "quando": [
+        "2026-09-04",
+        "2026-09-06"
+      ],
+      "por_que_aconteceu": "Contorno sem preenchimento no fundo branco da peca le como caixa vazia, e o rotulo que nomeava a estrutura nascia DEPOIS do veredito. Nos frames em que os dois nao coincidem, a tela mostra retangulos sem informacao nenhuma. O design system ainda se contradiz: uma linha manda o esquema entrar vazio e outra manda coluna e prato nascerem preenchidos, sem dizer qual vale quando.",
+      "como_evitar": "Forma fechada (coluna, degrau, anel, prato, celula) nasce preenchida E com conteudo proprio, numero ou rotulo, no MESMO frame em que aparece. Nada de estrutura esperando o rotulo chegar depois.",
+      "estado": "checagem",
+      "verificador": "scripts/checar-estrutura-vazia.js, plugado no pre-render-validate.js: acusa forma fechada com borda e miolo vazio sem conteudo dentro, e rotulo que nasce depois do gesto de veredito. Escape consciente por linha com // ev-ok:",
+      "automatizado": "sim",
+      "falta": null
+    },
+    {
+      "id": "vinheta-por-cima-da-fala",
+      "titulo": "Vinheta do fecho entrando antes de a locucao terminar",
+      "vezes": 1,
+      "contado_por": "ele mesmo",
+      "evidencia": "a vinheta no final cortou a palavra zeus",
+      "quando": [
+        "2026-09-06"
+      ],
+      "por_que_aconteceu": "A vinheta era ancorada so no frame do selo. Na Fernanda ela entrava em 49,983s e a fala seguia ate 51,80s, entao a palavra Zeus, que fica no comeco do arquivo, tocava por baixo da voz. Nao era corte, era sobreposicao, e nenhum gate media isso: os que existiam conferem o NIVEL da vinheta contra a fala e o SILENCIO no fim da peca, e os dois passavam.",
+      "como_evitar": "A vinheta entra no MAIOR valor entre o frame do selo e o fim da ultima palavra mais respiro. O mapa de som passou a carregar fimDaFalaS, e a mixagem reprova quando inicioS e menor que o fim da fala.",
+      "estado": "registrado",
+      "verificador": "scripts/lib/sfx-mapa.js ancora pelo fim da fala; scripts/video/mixar-final.js reprova sobreposicao",
+      "automatizado": "sim",
+      "falta": null
+    },
+    {
+      "id": "pergunta-que-perde-a-interrogacao",
+      "titulo": "Fala interrogativa destilada no palco sem o ponto de interrogacao",
+      "vezes": 1,
+      "contado_por": "ele mesmo",
+      "evidencia": "no segundo 9 era uma pergunta da frase menor e nao apareceu a pergunta",
+      "quando": [
+        "2026-09-06"
+      ],
+      "por_que_aconteceu": "O palco destila a fala em poucas palavras, e no encurtamento a pontuacao caiu. Com a legenda calada nessa cena, o palco era o unico canal do trecho, entao a pergunta virou afirmacao para quem assiste.",
+      "como_evitar": "Quando o trecho da fala e pergunta e o palco carrega a frase destilada, a interrogacao acompanha a frase grande. Vale sobretudo com legenda calada, quando nao ha outro canal para a entonacao.",
+      "estado": "registrado",
+      "verificador": null,
+      "automatizado": "nao",
+      "falta": "checar frase de palco em cena cuja fala termina em pergunta"
+    }
+  ]
+}

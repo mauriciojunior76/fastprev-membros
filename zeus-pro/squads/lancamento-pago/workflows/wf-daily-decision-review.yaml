@@ -1,0 +1,52 @@
+workflow:
+  id: wf-daily-decision-review
+  name: "Revisao de Decisao Diaria"
+  version: "1.0.0"
+  description: |
+    Ritual diario com 5 perguntas.
+    Cada resposta gera: decisao + responsavel + prazo + metrica.
+    Executar todos os dias durante captacao e pos-pitch.
+  trigger: "*daily-review"
+  entry_agent: decision-notebook-specialist
+  estimated_duration: "15-30 minutos"
+  type: sequential
+
+phases:
+  - id: perguntas
+    name: "5 Perguntas do Caderno de Decisao"
+    agent: decision-notebook-specialist
+    description: |
+      1. Qual e a promessa central em uma frase de execucao?
+      2. O que o participante tera criado/organizado/validado ao final dos 2 dias?
+      3. Qual lote esta ativo e qual o proximo gatilho de urgencia?
+      4. Que metrica do dia mais preocupa: CTR, connect rate, comparecimento, pitch ou comercial?
+      5. Qual acao simples gera maior impacto nas proximas 24 horas?
+
+  - id: dados
+    name: "Contexto de Dados"
+    agent: metrics-analyst
+    parallel: true
+    description: "Fornecer metricas do dia para informar as respostas"
+
+  - id: interpretacao
+    name: "Interpretacao dos Sinais"
+    agent: diagnostics-specialist
+    depends_on: [perguntas, dados]
+    description: "Interpretar o que as metricas estao dizendo"
+
+  - id: decisao
+    name: "Decisao"
+    agent: launch-chief
+    depends_on: [interpretacao]
+    description: "Tomar decisao baseada nos dados e interpretacao"
+
+  - id: registro
+    name: "Registro"
+    agent: decision-notebook-specialist
+    depends_on: [decisao]
+    description: |
+      Registrar para cada decisao:
+      - Decisao tomada
+      - Responsavel
+      - Prazo
+      - Metrica de validacao

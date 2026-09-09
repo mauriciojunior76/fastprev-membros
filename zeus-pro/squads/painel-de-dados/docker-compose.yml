@@ -1,0 +1,22 @@
+# Sobe o dashboard e o coletor de dados. Segredos vêm do .env (nunca ficam aqui).
+# Uso:  docker compose up -d     |     ver logs:  docker compose logs -f
+
+services:
+  dash:
+    build: .
+    restart: always
+    env_file: .env
+    ports:
+      - "${PORT:-3000}:${PORT:-3000}"
+    volumes:
+      - ./config.json:/app/config.json:ro
+
+  # Atualiza os dados sozinho de 3 em 3 horas (anúncios + vendas de reforço).
+  # Se você não usa Meta ou UTMify, o passo simplesmente é ignorado sem quebrar.
+  coletor:
+    build: .
+    restart: always
+    env_file: .env
+    volumes:
+      - ./config.json:/app/config.json:ro
+    entrypoint: ["/bin/sh", "-c", "while true; do node collectors/coletor-meta.js 3 || true; node collectors/coletor-utmify.js 3 || true; sleep 10800; done"]

@@ -1,0 +1,26 @@
+{
+  "_leia": "De onde veio cada desenho de marca de terceiro usado nas pecas. Existe por causa da licao 'material-de-terceiro': eu desenhei o logo do Instagram a mao porque parecia mais rapido que achar o arquivo. Nenhuma checagem consegue provar que um vetor foi desenhado em vez de baixado, entao a prova e DECLARADA: asset de marca sem linha aqui reprova.",
+  "atualizado_em": "2026-09-04",
+  "assets": {
+    "instagram-wordmark": {
+      "onde": "src/compositions/PauloRuizReels/components/icons/InstagramWordmark.tsx",
+      "origem": "arquivo oficial que o o dono do canal mandou em 04/09/2026 (logo instagram.avif), vetorizado com vtracer",
+      "desenhado_a_mao": false
+    },
+    "instagram-story-ring": {
+      "onde": "tokens.ts, INSTAGRAM_STORY_RING",
+      "origem": "gradiente oficial do Instagram para contorno de story",
+      "desenhado_a_mao": false
+    },
+    "instagram-grid": {
+      "onde": "src/compositions/PauloRuizReels/components/icons/InstagramGrid.tsx",
+      "origem": "grade de 12 posts, desenho proprio do squad. O que e do Instagram aqui e so a COR do anel de story, copiada do gradiente oficial; a grade em si nao e marca.",
+      "desenhado_a_mao": "sim, mas nao e marca: e a grade de posts, elemento generico"
+    },
+    "perfil-pronto": {
+      "onde": "src/compositions/PauloRuizReels/components/icons/PerfilPronto.tsx",
+      "origem": "cartao de perfil, desenho proprio do squad. Usa o wordmark oficial vetorizado e a cor oficial do anel de story.",
+      "desenhado_a_mao": "sim, mas nao e marca: e o cartao, nao o logo"
+    }
+  }
+}

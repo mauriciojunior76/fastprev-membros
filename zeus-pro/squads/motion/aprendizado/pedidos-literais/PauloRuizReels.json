@@ -1,0 +1,39 @@
+{
+  "_leia": "Elementos que o o dono do canal pediu pelo nome nesta peca. Cada um tem uma prova buscada no codigo. Pedido sem prova mecanica fica marcado para o print. A licao que gerou isto: ele teve que pedir a mesma letra 5 vezes.",
+  "composition": "PauloRuizReels",
+  "pedidos": [
+    {
+      "pediu": "letra A bem grande na jornada",
+      "quando": "2026-09-04",
+      "prova": {
+        "arquivo": "JornadaSeta.tsx",
+        "contem": "texto=\"A\""
+      }
+    },
+    {
+      "pediu": "letra B bem grande na jornada",
+      "quando": "2026-09-04",
+      "prova": {
+        "arquivo": "JornadaSeta.tsx",
+        "contem": "texto=\"B\""
+      }
+    },
+    {
+      "pediu": "animacao da seta entre A e B",
+      "quando": "2026-09-04",
+      "prova": {
+        "arquivo": "JornadaSeta.tsx",
+        "contem": "farpa"
+      },
+      "_nota": "a prova era SETA_PONTA, nome que eu chutei. O checador pegou a mentira antes do o dono do canal."
+    },
+    {
+      "pediu": "contorno colorido estilo story na foto",
+      "quando": "2026-09-04",
+      "prova": {
+        "arquivo": "FotoComparacao.tsx",
+        "contem": "INSTAGRAM_STORY_RING"
+      }
+    }
+  ]
+}

@@ -1,0 +1,513 @@
+# ===================================================================
+# Squad: Webinar Infalivel (Webinario Infalivel)
+# Domain: Webinario Infalivel - Metodologia Tayoba
+# Version: 1.0.0
+# ===================================================================
+
+squad:
+  name: webinar-infalivel
+  display_name: "Webinar Infalivel Squad"
+  version: "1.0.0"
+  domain: "Webinario infalivel - roteiro 14 blocos, pitch, aquecimento, replay, follow-up, downsell, evergreen e conversao"
+  description: |
+    Squad de 50 agentes especializados na metodologia Webinario Infalivel (Tayoba).
+    Pipeline completo: briefing > pesquisa > promessa > copy > webinario 14 blocos > criativos > pos-webinario > metricas.
+    Cada agente domina uma etapa especifica do metodo com frameworks extraidos do documento-base.
+  keywords: [webinario, webinar, tayoba, funil-webinario, pitch, replay, evergreen, comparecimento, conversao, trafego, comercial, metricas]
+  entry_agent: webinar-chief
+  created_at: "2026-03-29"
+
+tiers:
+  tier_0:
+    name: "Comando Central"
+    agents: [webinar-chief, webinar-deputy, webinar-master-planner, webinar-questioner, webinar-intake-specialist, webinar-final-reviewer]
+    purpose: "Orquestracao do pipeline completo, briefing, questionamento de premissas, routing entre tiers, quality gate final, compliance com metodologia"
+  tier_1a:
+    name: "Estrategia e Promessa"
+    agents: [researcher, promise-architect, big-idea-specialist, narrative-analyst, strategic-planner, financial-planner]
+    purpose: "Pesquisa de mercado, criacao da promessa central, Big Idea, arco narrativo, planejamento macro e economia do funil"
+  tier_1b:
+    name: "Copy e Linguagem"
+    agents: [headline-specialist, page-copy-specialist, email-specialist, whatsapp-specialist, ad-copy-specialist, copy-reviewer]
+    purpose: "Copy de pagina de captura e vendas, headlines, emails de aquecimento e recuperacao, WhatsApp, anuncios, revisao de copy"
+  tier_1c:
+    name: "Webinario e Conteudo"
+    agents: [webinar-architect, script-writer, pitch-specialist, warmup-specialist, authority-builder, belief-breaker, webinar-reviewer]
+    purpose: "Estrutura do webinario 14 blocos, roteiro completo, pitch, aquecimento pre-webinario, stack de autoridade, quebra de crencas"
+  tier_1d:
+    name: "Trafego e Criativos"
+    agents: [creative-planner, creative-script-writer, remarketing-specialist, traffic-data-planner, creative-reviewer]
+    purpose: "Plano tatico de criativos, roteiros de video, remarketing por comportamento, dados de trafego, revisao"
+  tier_1e:
+    name: "Pos-Webinario e Follow-up"
+    agents: [replay-strategist, scarcity-architect, followup-specialist, downsell-specialist, commercial-strategist, objection-handler, commercial-reviewer]
+    purpose: "Estrategia de replay, calendario de escassez, follow-up por comportamento, downsell, comercial, objecoes, revisao"
+  tier_1f:
+    name: "Metricas, Dados e Operacao"
+    agents: [metrics-analyst, diagnostics-specialist, checklist-manager, crm-operations-specialist, team-operations-planner, decision-notebook-specialist]
+    purpose: "KPIs, diagnostico por etapa, checklists operacionais, CRM, equipe, caderno de decisao diario"
+  tier_1g:
+    name: "Oferta, Produto e Automacao"
+    agents: [offer-architect, bonus-architect, funnel-architect, evergreen-specialist, page-builder-coordinator, compliance-specialist, post-webinar-product-planner]
+    purpose: "Arquitetura de oferta, bonus estrategicos, funil completo, automacao evergreen, coordenacao de paginas, compliance LGPD, produto pos-webinario"
+
+agents:
+  # Tier 0
+  webinar-chief:
+    file: agents/webinar-chief.md
+    tier: 0
+    icon: "🎯"
+    focus: "Orquestracao geral, routing, pipeline completo do webinario"
+  webinar-deputy:
+    file: agents/webinar-deputy.md
+    tier: 0
+    icon: "🛡️"
+    focus: "Quality gate, veto, compliance com metodologia Tayoba"
+  webinar-master-planner:
+    file: agents/webinar-master-planner.md
+    tier: 0
+    icon: "🗺️"
+    focus: "Plano mestre do webinario, timeline, dependencias entre fases"
+  webinar-questioner:
+    file: agents/webinar-questioner.md
+    tier: 0
+    icon: "❓"
+    focus: "Questiona premissas, identifica lacunas no briefing"
+  webinar-intake-specialist:
+    file: agents/webinar-intake-specialist.md
+    tier: 0
+    icon: "📥"
+    focus: "Coleta de briefing, informacoes do especialista e do produto"
+  webinar-final-reviewer:
+    file: agents/webinar-final-reviewer.md
+    tier: 0
+    icon: "✅"
+    focus: "Revisao final integrada de todos os entregaveis"
+  # Tier 1A
+  researcher:
+    file: agents/researcher.md
+    tier: 1a
+    icon: "🔍"
+    focus: "Pesquisa de mercado, ICP, concorrencia, dores, desejos"
+  promise-architect:
+    file: agents/promise-architect.md
+    tier: 1a
+    icon: "💡"
+    focus: "Promessa central: resultado concreto alcancavel em 60-120 minutos"
+  big-idea-specialist:
+    file: agents/big-idea-specialist.md
+    tier: 1a
+    icon: "⚡"
+    focus: "Big Idea, mecanismo unico, conceito central do webinario"
+  narrative-analyst:
+    file: agents/narrative-analyst.md
+    tier: 1a
+    icon: "📖"
+    focus: "Arco narrativo do webinario, progressao de crencas, jornada do espectador"
+  strategic-planner:
+    file: agents/strategic-planner.md
+    tier: 1a
+    icon: "📋"
+    focus: "Calendario macro, fases pre-webinario, dia do evento e pos-webinario"
+  financial-planner:
+    file: agents/financial-planner.md
+    tier: 1a
+    icon: "💲"
+    focus: "Economia do funil, CPL, CPA, ROAS projetado, break-even, simulacoes"
+  # Tier 1B
+  headline-specialist:
+    file: agents/headline-specialist.md
+    tier: 1b
+    icon: "📰"
+    focus: "Headlines para pagina de captura, replay e vendas"
+  page-copy-specialist:
+    file: agents/page-copy-specialist.md
+    tier: 1b
+    icon: "📄"
+    focus: "Copy da pagina de captura e pagina de vendas"
+  email-specialist:
+    file: agents/email-specialist.md
+    tier: 1b
+    icon: "📧"
+    focus: "Emails de confirmacao, aquecimento, lembrete, replay, carrinho"
+  whatsapp-specialist:
+    file: agents/whatsapp-specialist.md
+    tier: 1b
+    icon: "💬"
+    focus: "Mensagens de grupo, lembretes, follow-up comercial por WhatsApp"
+  ad-copy-specialist:
+    file: agents/ad-copy-specialist.md
+    tier: 1b
+    icon: "📢"
+    focus: "Copy para criativos de captacao, remarketing e replay"
+  copy-reviewer:
+    file: agents/copy-reviewer.md
+    tier: 1b
+    icon: "🔎"
+    focus: "Revisao de toda copy contra regras do metodo"
+  # Tier 1C
+  webinar-architect:
+    file: agents/webinar-architect.md
+    tier: 1c
+    icon: "🏛️"
+    focus: "Estrutura dos 14 blocos do webinario, timing, transicoes"
+  script-writer:
+    file: agents/script-writer.md
+    tier: 1c
+    icon: "🎬"
+    focus: "Roteiro completo do webinario, bloco a bloco"
+  pitch-specialist:
+    file: agents/pitch-specialist.md
+    tier: 1c
+    icon: "🎤"
+    focus: "Pitch de venda dentro do webinario, transicao conteudo-oferta"
+  warmup-specialist:
+    file: agents/warmup-specialist.md
+    tier: 1c
+    icon: "🔥"
+    focus: "Aquecimento pre-webinario, emails, posts, lives de preparacao"
+  authority-builder:
+    file: agents/authority-builder.md
+    tier: 1c
+    icon: "🏆"
+    focus: "Stack de autoridade, provas, cases, credenciais do especialista"
+  belief-breaker:
+    file: agents/belief-breaker.md
+    tier: 1c
+    icon: "💥"
+    focus: "Mapeamento e quebra de crencas limitantes da audiencia"
+  webinar-reviewer:
+    file: agents/webinar-reviewer.md
+    tier: 1c
+    icon: "✅"
+    focus: "Valida estrutura 14 blocos, timing, quebra de crencas, pitch"
+  # Tier 1D
+  creative-planner:
+    file: agents/creative-planner.md
+    tier: 1d
+    icon: "🎨"
+    focus: "Plano tatico de criativos, budget, briefings de captacao e remarketing"
+  creative-script-writer:
+    file: agents/creative-script-writer.md
+    tier: 1d
+    icon: "🎬"
+    focus: "Roteiros de video e storyboards, hook 3-5s"
+  remarketing-specialist:
+    file: agents/remarketing-specialist.md
+    tier: 1d
+    icon: "🔄"
+    focus: "Remarketing por comportamento, inscritos que nao compareceram, replay"
+  traffic-data-planner:
+    file: agents/traffic-data-planner.md
+    tier: 1d
+    icon: "📊"
+    focus: "Pixel, eventos, UTM, connect rate, tracking do funil"
+  creative-reviewer:
+    file: agents/creative-reviewer.md
+    tier: 1d
+    icon: "🔬"
+    focus: "Valida criativos, hook, linguagem, segmentacao"
+  # Tier 1E
+  replay-strategist:
+    file: agents/replay-strategist.md
+    tier: 1e
+    icon: "🔁"
+    focus: "Estrategia de replay, delay estrategico, pagina de replay"
+  scarcity-architect:
+    file: agents/scarcity-architect.md
+    tier: 1e
+    icon: "⏰"
+    focus: "Calendario de escassez, lotes, bonus por prazo, urgencia real"
+  followup-specialist:
+    file: agents/followup-specialist.md
+    tier: 1e
+    icon: "📞"
+    focus: "Follow-up por comportamento: assistiu, saiu antes do pitch, viu replay"
+  downsell-specialist:
+    file: agents/downsell-specialist.md
+    tier: 1e
+    icon: "🔽"
+    focus: "Downsell estrategico, timing certo, ticket adequado"
+  commercial-strategist:
+    file: agents/commercial-strategist.md
+    tier: 1e
+    icon: "💰"
+    focus: "Estrategia comercial pos-webinario, priorizacao por comportamento"
+  objection-handler:
+    file: agents/objection-handler.md
+    tier: 1e
+    icon: "🛡️"
+    focus: "Matriz de objecoes, respostas por perfil, scripts comerciais"
+  commercial-reviewer:
+    file: agents/commercial-reviewer.md
+    tier: 1e
+    icon: "⚖️"
+    focus: "Valida follow-up, escassez, downsell, objecoes"
+  # Tier 1F
+  metrics-analyst:
+    file: agents/metrics-analyst.md
+    tier: 1f
+    icon: "📈"
+    focus: "Comparecimento, show rate, CTR, CPA, ROAS, taxa de replay"
+  diagnostics-specialist:
+    file: agents/diagnostics-specialist.md
+    tier: 1f
+    icon: "🩺"
+    focus: "Diagnostico por etapa do funil de webinario"
+  checklist-manager:
+    file: agents/checklist-manager.md
+    tier: 1f
+    icon: "☑️"
+    focus: "Checklists pre-captacao, pre-webinario, pos-webinario, operacional"
+  crm-operations-specialist:
+    file: agents/crm-operations-specialist.md
+    tier: 1f
+    icon: "🔗"
+    focus: "CRM, pipeline, formularios, segmentacao por comportamento"
+  team-operations-planner:
+    file: agents/team-operations-planner.md
+    tier: 1f
+    icon: "👥"
+    focus: "Funcoes operacionais, ritual diario, post-mortem"
+  decision-notebook-specialist:
+    file: agents/decision-notebook-specialist.md
+    tier: 1f
+    icon: "📓"
+    focus: "5 perguntas diarias, decisao + responsavel + prazo"
+  # Tier 1G
+  offer-architect:
+    file: agents/offer-architect.md
+    tier: 1g
+    icon: "🏗️"
+    focus: "Oferta principal, order bumps, upsell"
+  bonus-architect:
+    file: agents/bonus-architect.md
+    tier: 1g
+    icon: "🎁"
+    focus: "Bonus estrategicos que respondem objecoes reais"
+  funnel-architect:
+    file: agents/funnel-architect.md
+    tier: 1g
+    icon: "🔀"
+    focus: "Arquitetura do funil completo, captacao ate pos-venda"
+  evergreen-specialist:
+    file: agents/evergreen-specialist.md
+    tier: 1g
+    icon: "♾️"
+    focus: "Automacao evergreen, webinario gravado, funil perpetuo"
+  page-builder-coordinator:
+    file: agents/page-builder-coordinator.md
+    tier: 1g
+    icon: "🔗"
+    focus: "Bridge para PAGE-FORGE, brief de paginas, validacao"
+  compliance-specialist:
+    file: agents/compliance-specialist.md
+    tier: 1g
+    icon: "📜"
+    focus: "Compliance LGPD, termos, politica de privacidade, consentimento"
+  post-webinar-product-planner:
+    file: agents/post-webinar-product-planner.md
+    tier: 1g
+    icon: "🛤️"
+    focus: "Cronograma do produto vendido, onboarding, entrega pos-compra"
+
+handoffs:
+  # Tier 0 routes to all tier leads
+  webinar-chief:
+    routes_to: [researcher, promise-architect, big-idea-specialist, narrative-analyst, strategic-planner, financial-planner, headline-specialist, page-copy-specialist, email-specialist, whatsapp-specialist, ad-copy-specialist, webinar-architect, script-writer, pitch-specialist, creative-planner, replay-strategist, scarcity-architect, commercial-strategist, metrics-analyst, offer-architect, bonus-architect, funnel-architect, page-builder-coordinator]
+    escalates_to: [webinar-deputy]
+  webinar-deputy:
+    routes_to: [webinar-chief]
+    collaborates_with: [copy-reviewer, webinar-reviewer, creative-reviewer, commercial-reviewer, webinar-final-reviewer]
+  webinar-master-planner:
+    routes_to: [strategic-planner, financial-planner, checklist-manager]
+    escalates_to: [webinar-chief]
+  webinar-questioner:
+    routes_to: [webinar-intake-specialist, researcher]
+    escalates_to: [webinar-chief]
+  webinar-intake-specialist:
+    routes_to: [researcher, webinar-questioner]
+    escalates_to: [webinar-chief]
+  webinar-final-reviewer:
+    routes_to: [webinar-deputy]
+    escalates_to: [webinar-chief]
+
+  # Tier 1A sequential
+  researcher:
+    routes_to: [promise-architect, strategic-planner]
+    escalates_to: [webinar-chief]
+  promise-architect:
+    routes_to: [big-idea-specialist, headline-specialist]
+    escalates_to: [webinar-chief]
+  big-idea-specialist:
+    routes_to: [narrative-analyst, headline-specialist, ad-copy-specialist]
+    escalates_to: [webinar-chief]
+  narrative-analyst:
+    routes_to: [webinar-architect, warmup-specialist, belief-breaker]
+    escalates_to: [webinar-chief]
+  strategic-planner:
+    routes_to: [webinar-architect, creative-planner, checklist-manager]
+    collaborates_with: [team-operations-planner, financial-planner]
+    escalates_to: [webinar-chief]
+  financial-planner:
+    routes_to: [offer-architect, strategic-planner, funnel-architect]
+    escalates_to: [webinar-chief]
+
+  # Tier 1B
+  headline-specialist:
+    routes_to: [page-copy-specialist, ad-copy-specialist]
+    escalates_to: [copy-reviewer]
+  page-copy-specialist:
+    routes_to: [email-specialist, whatsapp-specialist, page-builder-coordinator]
+    escalates_to: [copy-reviewer]
+  email-specialist:
+    escalates_to: [copy-reviewer]
+  whatsapp-specialist:
+    escalates_to: [copy-reviewer]
+  ad-copy-specialist:
+    routes_to: [creative-script-writer]
+    escalates_to: [copy-reviewer]
+  copy-reviewer:
+    routes_to: [webinar-deputy]
+    escalates_to: [webinar-chief]
+
+  # Tier 1C
+  webinar-architect:
+    routes_to: [script-writer, pitch-specialist, warmup-specialist, authority-builder, belief-breaker]
+    escalates_to: [webinar-reviewer]
+  script-writer:
+    routes_to: [pitch-specialist, warmup-specialist, authority-builder]
+    escalates_to: [webinar-reviewer]
+  pitch-specialist:
+    routes_to: [commercial-strategist, scarcity-architect]
+    escalates_to: [webinar-reviewer]
+  warmup-specialist:
+    routes_to: [email-specialist, whatsapp-specialist, creative-planner]
+    escalates_to: [webinar-reviewer]
+  authority-builder:
+    routes_to: [script-writer]
+    escalates_to: [webinar-reviewer]
+  belief-breaker:
+    routes_to: [script-writer, webinar-architect]
+    escalates_to: [webinar-reviewer]
+  webinar-reviewer:
+    routes_to: [webinar-deputy]
+    escalates_to: [webinar-chief]
+
+  # Tier 1D
+  creative-planner:
+    routes_to: [creative-script-writer, remarketing-specialist, traffic-data-planner]
+    escalates_to: [creative-reviewer]
+  creative-script-writer:
+    escalates_to: [creative-reviewer]
+  remarketing-specialist:
+    escalates_to: [creative-reviewer]
+  traffic-data-planner:
+    escalates_to: [creative-reviewer]
+  creative-reviewer:
+    routes_to: [webinar-deputy]
+    escalates_to: [webinar-chief]
+
+  # Tier 1E
+  replay-strategist:
+    routes_to: [scarcity-architect, followup-specialist]
+    escalates_to: [commercial-reviewer]
+  scarcity-architect:
+    routes_to: [commercial-strategist]
+    escalates_to: [commercial-reviewer]
+  commercial-strategist:
+    routes_to: [followup-specialist, downsell-specialist, objection-handler]
+    escalates_to: [commercial-reviewer]
+  followup-specialist:
+    escalates_to: [commercial-reviewer]
+  downsell-specialist:
+    routes_to: [followup-specialist, commercial-strategist]
+    escalates_to: [commercial-reviewer]
+  objection-handler:
+    routes_to: [followup-specialist, downsell-specialist, commercial-strategist]
+    escalates_to: [commercial-reviewer]
+  commercial-reviewer:
+    routes_to: [webinar-deputy]
+    escalates_to: [webinar-chief]
+
+  # Tier 1F
+  metrics-analyst:
+    routes_to: [diagnostics-specialist]
+    escalates_to: [webinar-chief]
+  diagnostics-specialist:
+    routes_to: [webinar-chief]
+    escalates_to: [webinar-chief]
+  checklist-manager:
+    collaborates_with: [strategic-planner, team-operations-planner, crm-operations-specialist, metrics-analyst, diagnostics-specialist, webinar-final-reviewer, webinar-deputy]
+    escalates_to: [webinar-chief]
+  crm-operations-specialist:
+    collaborates_with: [commercial-strategist, followup-specialist, traffic-data-planner]
+    escalates_to: [webinar-chief]
+  team-operations-planner:
+    collaborates_with: [strategic-planner, checklist-manager]
+    escalates_to: [webinar-chief]
+  decision-notebook-specialist:
+    collaborates_with: [metrics-analyst, diagnostics-specialist]
+    escalates_to: [webinar-chief]
+
+  # Tier 1G
+  offer-architect:
+    routes_to: [pitch-specialist, bonus-architect, funnel-architect]
+    escalates_to: [webinar-chief]
+  bonus-architect:
+    routes_to: [commercial-strategist, scarcity-architect]
+    escalates_to: [webinar-chief]
+  funnel-architect:
+    routes_to: [evergreen-specialist, page-builder-coordinator]
+    escalates_to: [webinar-chief]
+  evergreen-specialist:
+    routes_to: [metrics-analyst, page-builder-coordinator, compliance-specialist]
+    escalates_to: [webinar-chief]
+  page-builder-coordinator:
+    escalates_to: [webinar-chief]
+  compliance-specialist:
+    collaborates_with: [page-copy-specialist, email-specialist, page-builder-coordinator]
+    escalates_to: [webinar-chief]
+  post-webinar-product-planner:
+    escalates_to: [webinar-chief]
+
+cross_squad:
+  - squad: page-forge
+    trigger: "page-builder-coordinator precisa construir pagina de captura, replay ou vendas"
+    agents_used: [iris]
+  - squad: copy-squad
+    trigger: "copy profundo ou especializado para sales letter ou VSL"
+    agents_used: [copy-chief, gary-halbert, eugene-schwartz]
+  - squad: ads
+    trigger: "execucao de trafego pago para captacao e remarketing"
+    agents_used: [bolt]
+  - squad: storytelling
+    trigger: "arco narrativo profundo do webinario ou pitch script"
+    agents_used: [story-chief, oren-klaff]
+  - squad: hormozi
+    trigger: "framework de oferta irresistivel para o pitch"
+    agents_used: [hormozi-offers, hormozi-pricing]
+  - squad: launch-paid
+    trigger: "comparacao webinario vs lancamento pago ou hibridizacao de modelos"
+    agents_used: [launch-chief]
+
+settings:
+  activation:
+    prefix: "webinar-infalivel"
+    example: "@webinar-infalivel:webinar-chief"
+  methodology:
+    source: "webinario_infalivel_tayoba.md"
+    rules:
+      - "Webinario e sistema de aquisicao, qualificacao, educacao, conversao e retencao"
+      - "Promessa mostra resultado concreto alcancavel em 60-120 minutos"
+      - "Roteiro com 14 blocos: abertura > promessa > autoridade > diagnostico > quebra crencas > metodo > prova > transicao > pitch > bonus > garantia > urgencia > FAQ > CTA"
+      - "Comparecimento minimo 30% - aquecimento e obrigatorio"
+      - "Replay e parcela substancial do faturamento - delay estrategico obrigatorio"
+      - "Follow-up priorizado por comportamento, nao aleatorio"
+      - "Downsell quando faz sentido: timing certo, ticket adequado"
+      - "Modelo pode ser ao vivo, automatizado ou hibrido"
+      - "Automacao como diferencial: escala sem limite"
+      - "Compliance LGPD desde o inicio"
+      - "Modelo simples vence modelo complexo"
+      - "Retencao e mais importante que audiencia - 1000 que ficam valem mais que 10.000 que saem"
+      - "Diagnosticar sempre de tras pra frente - conversao baixa indica onde a cadeia quebrou"

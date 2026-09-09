@@ -1,0 +1,21 @@
+{
+  "_leia": "As cores oficiais de cada marca de terceiro que aparece nas pecas. Fonte: o arquivo ou a referencia que o o dono do canal mandou, nunca o que pareceu certo. Cor de marca se COPIA, nao se escolhe. Marca nova entra aqui antes de aparecer no video. Uma marca pode ter mais de um ELEMENTO, cada um com a sua paleta: o nome escrito do Instagram usa o arco iris aprovado por ele; o anel de story usa o gradiente oficial do Instagram. Misturar os dois foi parte do erro das 4 rodadas.",
+  "atualizado_em": "2026-09-04",
+  "marcas": {
+    "instagram": {
+      "aparece_como": "instagram",
+      "tolerancia": 45,
+      "elementos": {
+        "nome-escrito": {
+          "referencia": "arco iris saturado aprovado por ele em 04/09/2026, o mesmo do traco que grifa palavra importante",
+          "cores": ["#f01b1b", "#ff7a00", "#ffc400", "#00b341", "#0090ff", "#4a2ee0", "#a51fd0"]
+        },
+        "anel-de-story": {
+          "referencia": "gradiente oficial do Instagram para o contorno de foto com story",
+          "cores": ["#f09433", "#e6683c", "#dc2743", "#cc2366", "#bc1888"]
+        }
+      },
+      "cores_neutras_permitidas": ["#ffffff", "#000000", "#0d0d0d", "#111111", "#f5f5f5", "#fafafa"]
+    }
+  }
+}

@@ -1,0 +1,48 @@
+workflow:
+  id: wf-copy-review-cycle
+  name: "Ciclo de Revisao de Copy"
+  version: "1.0.0"
+  description: |
+    Revisao iterativa de copy contra regras da metodologia.
+    Maximo 3 iteracoes antes de escalacao.
+  trigger: "*review-copy"
+  entry_agent: copy-reviewer
+  estimated_duration: "10-20 minutos por iteracao"
+  type: iterative
+
+phases:
+  - id: submit
+    name: "Submissao de Copy"
+    agent: "{copy_agent}"
+    description: "Agente de copy submete draft para revisao"
+    outputs:
+      - draft: "copy draft para revisao"
+
+  - id: review
+    name: "Revisao contra Metodologia"
+    agent: copy-reviewer
+    depends_on: [submit]
+    description: |
+      Verificar contra:
+      - Verbos proibidos (aprender, descobrir, faturar, desbloquear, conquistar, segredos)
+      - Checklist 4 perguntas (headlines)
+      - 12 secoes completas (pagina)
+      - Linguagem de execucao (criando, fazendo, estruturando, montando, validando, aplicando)
+      - Tom direto, visual, aplicavel
+    outputs:
+      - review_result: "pass ou fail com correcoes especificas"
+
+  - id: iterate
+    name: "Iteracao"
+    depends_on: [review]
+    description: "Se fail: agente corrige e resubmete. Max 3 iteracoes."
+    max_iterations: 3
+    on_max_reached: "Escalar para launch-deputy"
+
+  - id: approve
+    name: "Aprovacao Final"
+    agent: copy-reviewer
+    depends_on: [iterate]
+    description: "Copy aprovado apos passar na revisao"
+    checkpoint:
+      gate: "Copy aprovado"

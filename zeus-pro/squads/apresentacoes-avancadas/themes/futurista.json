@@ -1,0 +1,40 @@
+{
+  "id": "futurista",
+  "name": "Futurista",
+  "description": "Dark neon, glow, cyberpunk sutil, tipografia geométrica.",
+  "mood": ["tecnologico", "dark", "neon", "disruptivo"],
+  "tokens": {
+    "bg": "#050510",
+    "bg-alt": "#0a0a1f",
+    "bg-card": "#101028",
+    "accent-1": "#00f5ff",
+    "accent-2": "#b400ff",
+    "accent-3": "#ff006e",
+    "text": "#ffffff",
+    "text-muted": "rgba(255, 255, 255, 0.6)",
+    "text-label": "#00f5ff",
+    "border": "rgba(0, 245, 255, 0.3)",
+    "divider": "rgba(180, 0, 255, 0.18)"
+  },
+  "fonts": {
+    "title": "Space Grotesk",
+    "title-weight": "700",
+    "body": "Inter",
+    "body-weight": "400",
+    "mono": "Fira Code"
+  },
+  "effects": {
+    "grain": false,
+    "grain-opacity": 0,
+    "blur-reveal": true,
+    "word-by-word": true,
+    "motion": "cubic-bezier(0.68, -0.55, 0.27, 1.55)",
+    "motion-profile": "sharp",
+    "glow": true
+  },
+  "icons": {
+    "style": "animated",
+    "stroke": 1.0,
+    "library": "tabler"
+  }
+}

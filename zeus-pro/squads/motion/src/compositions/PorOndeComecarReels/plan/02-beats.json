@@ -1,0 +1,368 @@
+{
+  "composition": "PorOndeComecarReels",
+  "fps": 60,
+  "source": "squads/motion/src/compositions/PorOndeComecarReels/data/narration.json",
+  "durationSec": 56.085,
+  "origem": "call Mentoria VIP de 25/08/2026, Kamila Nascimento e um mentor de referencia. Resposta do o dono do canal a pergunta 'por onde comecar': a ordem exata dos passos para vender mentoria.",
+  "ritmo": "173 palavras por minuto, 17 afirmacoes por minuto: faixa RAPIDA da MATRIZ-DE-CENAS (14 a 16 cenas). Moldes com quadroCompleto acima de 48 estao fora.",
+  "video": {
+    "topic": "a ordem certa dos passos para montar uma operacao que vende mentoria",
+    "audience": "mentora iniciante que ja tem conhecimento mas nao sabe qual e o primeiro passo",
+    "promise": "existe uma ordem, e ela comeca em pesquisa de mercado, nunca em pagina ou anuncio",
+    "ending": "sozinha leva seis meses, com a equipe a estrutura fica pronta em 21 dias"
+  },
+  "beats": [
+    {
+      "id": "b01",
+      "startFrame": 0,
+      "endFrameExclusive": 349,
+      "words": {
+        "from": 0,
+        "to": 7
+      },
+      "text": "Como começar? Por onde começar? Por onde começar?",
+      "topic": "a pergunta que trava todo mundo",
+      "idea": "por onde se comeca a vender mentoria",
+      "role": "hook",
+      "density": 4,
+      "structures": [
+        "PERGUNTA",
+        "FRASE_IMPORTANTE"
+      ],
+      "anchorWord": {
+        "i": 2,
+        "text": "Por",
+        "startFrame": 107
+      },
+      "confidence": "alta"
+    },
+    {
+      "id": "b02",
+      "startFrame": 349,
+      "endFrameExclusive": 606,
+      "words": {
+        "from": 8,
+        "to": 17
+      },
+      "text": "Você começa fazendo uma pesquisa de mercado para vender mentoria.",
+      "topic": "passo 1 da ordem",
+      "idea": "o primeiro passo e pesquisa de mercado, nao pagina nem anuncio",
+      "role": "explanation",
+      "density": 2,
+      "structures": [
+        "PASSOS",
+        "PALAVRA_CHAVE"
+      ],
+      "anchorWord": {
+        "i": 12,
+        "text": "pesquisa",
+        "startFrame": 436
+      },
+      "confidence": "alta"
+    },
+    {
+      "id": "b03",
+      "startFrame": 606,
+      "endFrameExclusive": 962,
+      "words": {
+        "from": 18,
+        "to": 37
+      },
+      "text": "Você vai saber quem é o público que vai comprar, o quanto essas pessoas podem pagar, qual produto elas querem.",
+      "topic": "o que a pesquisa entrega",
+      "idea": "a pesquisa responde tres coisas: quem compra, quanto paga, qual produto quer",
+      "role": "explanation",
+      "density": 3,
+      "structures": [
+        "X_TEM_A_B_C",
+        "LISTA"
+      ],
+      "anchorWord": {
+        "i": 21,
+        "text": "quem",
+        "startFrame": 647
+      },
+      "confidence": "alta"
+    },
+    {
+      "id": "b04",
+      "startFrame": 962,
+      "endFrameExclusive": 1096,
+      "words": {
+        "from": 38,
+        "to": 48
+      },
+      "text": "Aí depois de fazer a pesquisa de mercado, você vai fazer",
+      "topic": "passagem para o passo 2",
+      "idea": "retomada, sem afirmacao nova",
+      "role": "breath",
+      "density": 0,
+      "structures": [],
+      "anchorWord": {
+        "i": 38,
+        "text": "Aí",
+        "startFrame": 962
+      },
+      "confidence": "alta"
+    },
+    {
+      "id": "b05",
+      "startFrame": 1096,
+      "endFrameExclusive": 1229,
+      "words": {
+        "from": 49,
+        "to": 52
+      },
+      "text": "a parte de ICP,",
+      "topic": "passo 2 nomeado",
+      "idea": "o segundo passo se chama ICP",
+      "role": "explanation",
+      "density": 2,
+      "structures": [
+        "PALAVRA_CHAVE"
+      ],
+      "anchorWord": {
+        "i": 52,
+        "text": "ICP,",
+        "startFrame": 1189
+      },
+      "confidence": "alta"
+    },
+    {
+      "id": "b06",
+      "startFrame": 1229,
+      "endFrameExclusive": 1452,
+      "words": {
+        "from": 53,
+        "to": 68
+      },
+      "text": "que é um perfil do cliente ideal, é um mapa de quem vai comprar de você.",
+      "topic": "o que e ICP",
+      "idea": "ICP e o perfil do cliente ideal, o mapa de quem vai comprar",
+      "role": "explanation",
+      "density": 3,
+      "structures": [
+        "DEFINICAO"
+      ],
+      "anchorWord": {
+        "i": 62,
+        "text": "mapa",
+        "startFrame": 1349
+      },
+      "confidence": "alta"
+    },
+    {
+      "id": "b07",
+      "startFrame": 1452,
+      "endFrameExclusive": 1639,
+      "words": {
+        "from": 69,
+        "to": 78
+      },
+      "text": "Depois você vai ter que fazer uma promessa pública para",
+      "topic": "passo 3 nomeado",
+      "idea": "o terceiro passo e a promessa publica",
+      "role": "explanation",
+      "density": 2,
+      "structures": [
+        "PROMESSA"
+      ],
+      "anchorWord": {
+        "i": 76,
+        "text": "promessa",
+        "startFrame": 1547
+      },
+      "confidence": "alta"
+    },
+    {
+      "id": "b08",
+      "startFrame": 1639,
+      "endFrameExclusive": 1868,
+      "words": {
+        "from": 79,
+        "to": 88
+      },
+      "text": "atrair as pessoas que tem o problema que você resolve.",
+      "topic": "para que serve a promessa",
+      "idea": "a promessa atrai quem tem o problema que voce resolve",
+      "role": "explanation",
+      "density": 3,
+      "structures": [
+        "RELACAO",
+        "PROBLEMA_E_SOLUCAO"
+      ],
+      "anchorWord": {
+        "i": 79,
+        "text": "atrair",
+        "startFrame": 1639
+      },
+      "confidence": "alta"
+    },
+    {
+      "id": "b09",
+      "startFrame": 1868,
+      "endFrameExclusive": 2126,
+      "words": {
+        "from": 89,
+        "to": 104
+      },
+      "text": "Depois você vai fazer a parte de copy, que é copywriting, que é todos os textos.",
+      "topic": "passo 4 nomeado",
+      "idea": "o quarto passo e a copy, que e todo o texto",
+      "role": "explanation",
+      "density": 2,
+      "structures": [
+        "PALAVRA_CHAVE",
+        "PASSOS"
+      ],
+      "anchorWord": {
+        "i": 96,
+        "text": "copy,",
+        "startFrame": 1966
+      },
+      "confidence": "alta"
+    },
+    {
+      "id": "b10",
+      "startFrame": 2126,
+      "endFrameExclusive": 2358,
+      "words": {
+        "from": 105,
+        "to": 115
+      },
+      "text": "Textos da página, textos do anúncio, textos do bot de captação.",
+      "topic": "onde a copy aparece",
+      "idea": "a copy vive em tres lugares: pagina, anuncio e bot de captacao",
+      "role": "example",
+      "density": 3,
+      "structures": [
+        "X_TEM_A_B_C",
+        "PLATAFORMA"
+      ],
+      "anchorWord": {
+        "i": 107,
+        "text": "página,",
+        "startFrame": 2164
+      },
+      "confidence": "alta"
+    },
+    {
+      "id": "b11",
+      "startFrame": 2358,
+      "endFrameExclusive": 2480,
+      "words": {
+        "from": 116,
+        "to": 121
+      },
+      "text": "Aí sim você vai construir páginas,",
+      "topic": "so agora se constroi",
+      "idea": "a construcao vem por ultimo, nao primeiro",
+      "role": "climax",
+      "density": 2,
+      "structures": [
+        "FRASE_IMPORTANTE"
+      ],
+      "anchorWord": {
+        "i": 117,
+        "text": "sim",
+        "startFrame": 2375
+      },
+      "confidence": "alta"
+    },
+    {
+      "id": "b12",
+      "startFrame": 2480,
+      "endFrameExclusive": 2790,
+      "words": {
+        "from": 122,
+        "to": 127
+      },
+      "text": "campanhas de tráfego, automações, integrações CRM.",
+      "topic": "o que se constroi",
+      "idea": "paginas, trafego, automacoes, integracoes e CRM sao o ultimo passo",
+      "role": "explanation",
+      "density": 3,
+      "structures": [
+        "LISTA",
+        "CATEGORIAS"
+      ],
+      "anchorWord": {
+        "i": 122,
+        "text": "campanhas",
+        "startFrame": 2480
+      },
+      "confidence": "alta"
+    },
+    {
+      "id": "b13",
+      "startFrame": 2790,
+      "endFrameExclusive": 3025,
+      "words": {
+        "from": 128,
+        "to": 136
+      },
+      "text": "Você pode fazer sozinha e levar seis meses fazendo,",
+      "topic": "o custo de fazer sozinha",
+      "idea": "sozinha, esse caminho leva seis meses",
+      "role": "problem",
+      "density": 3,
+      "structures": [
+        "NUMERO"
+      ],
+      "anchorWord": {
+        "i": 134,
+        "text": "seis",
+        "startFrame": 2945
+      },
+      "confidence": "alta"
+    },
+    {
+      "id": "b14",
+      "startFrame": 3025,
+      "endFrameExclusive": 3176,
+      "words": {
+        "from": 137,
+        "to": 144
+      },
+      "text": "ou você pode contratar a minha equipe e",
+      "topic": "a outra saida",
+      "idea": "a alternativa e contratar a equipe",
+      "role": "cta",
+      "density": 2,
+      "structures": [
+        "FRASE_IMPORTANTE"
+      ],
+      "anchorWord": {
+        "i": 140,
+        "text": "contratar",
+        "startFrame": 3071
+      },
+      "confidence": "alta"
+    },
+    {
+      "id": "b15",
+      "startFrame": 3176,
+      "endFrameExclusive": 3346,
+      "words": {
+        "from": 145,
+        "to": 151
+      },
+      "text": "receber essa estrutura. Pronto em 21 dias.",
+      "topic": "o fecho",
+      "idea": "seis meses sozinha contra 21 dias com a equipe",
+      "role": "close",
+      "density": 4,
+      "structures": [
+        "A_VS_B",
+        "NUMERO"
+      ],
+      "anchorWord": {
+        "i": 150,
+        "text": "21",
+        "startFrame": 3269
+      },
+      "confidence": "alta"
+    }
+  ],
+  "_nota_corte": "07/09/2026: a fala 'Por onde comecar?' repetida no inicio VOLTOU. Era retorica do proprio o dono do canal antes de responder, nao muleta: os frames mostram ele falando e a Kamila so ouvindo. O gancho passou de 248 para 349 quadros e todo o resto deslocou."
+}

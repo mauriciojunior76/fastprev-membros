@@ -1,0 +1,154 @@
+name: launch-paid
+version: "2.0.0"
+short-title: "Launch Paid Squad"
+description: "Squad de 46 agentes especializados em lancamento pago (metodologia Baldan). Cobre briefing completo, planejamento mestre, promessa, copy, evento 2 dias, pitch 3 etapas, trafego C0-C4, comercial pos-pitch, metricas, oferta e operacao completa. Inclui barra de progresso Hotmart integrada."
+author: "Synkra AIOS"
+license: MIT
+slashPrefix: "launch-paid"
+
+aios:
+  minVersion: "4.0.0"
+  type: squad
+
+tags:
+  - lancamento-pago
+  - paid-launch
+  - evento-pago
+  - ingresso
+  - pitch
+  - conversao
+  - trafego
+  - comercial
+  - metricas
+  - oferta
+  - baldan
+
+components:
+  agents:
+    # Tier 0 - Comando Central + Quality Gates
+    - launch-chief.md
+    - launch-deputy.md
+    - launch-master-planner.md
+    - launch-questioner.md
+    - launch-final-reviewer.md
+    - launch-financial-planner.md
+    # Tier 1A - Estrategia e Promessa (inclui Briefing)
+    - launch-intake-specialist.md
+    - launch-scale-analyst.md
+    - researcher.md
+    - promise-architect.md
+    - big-idea-specialist.md
+    - narrative-analyst.md
+    - strategic-planner.md
+    # Tier 1B - Copy e Linguagem
+    - headline-specialist.md
+    - page-copy-specialist.md
+    - email-specialist.md
+    - whatsapp-specialist.md
+    - ad-copy-specialist.md
+    - copy-reviewer.md
+    # Tier 1C - Evento e Conteudo
+    - event-architect.md
+    - pitch-organizer.md
+    - subject-organizer.md
+    - subject-expert.md
+    - seeding-specialist.md
+    - event-reviewer.md
+    # Tier 1D - Trafego e Criativos
+    - creative-planner.md
+    - creative-script-writer.md
+    - remarketing-specialist.md
+    - traffic-data-planner.md
+    - creative-reviewer.md
+    # Tier 1E - Comercial e Pos-Pitch
+    - commercial-strategist.md
+    - bonus-architect.md
+    - followup-specialist.md
+    - recording-vip-specialist.md
+    - live-post-pitch-specialist.md
+    - commercial-reviewer.md
+    # Tier 1F - Metricas, Dados e Operacao
+    - metrics-analyst.md
+    - diagnostics-specialist.md
+    - stage-process-analyst.md
+    - checklist-manager.md
+    - crm-operations-specialist.md
+    - team-operations-planner.md
+    - decision-notebook-specialist.md
+    # Tier 1G - Oferta e Produto + Pagina
+    - offer-architect.md
+    - ticket-strategist.md
+    - post-event-product-planner.md
+    - upgrade-designer.md
+    - page-builder-coordinator.md
+    - page-section-architect.md
+    - page-promise-specialist.md
+    - page-proof-specialist.md
+    - page-copy-writer.md
+    - page-reviewer.md
+  tasks:
+    # Fase 0-1: Estrategia
+    - 01-market-research.md
+    - 02-create-promise.md
+    - 03-create-big-idea.md
+    - 04-design-narrative-arc.md
+    - 05-master-plan.md
+    # Fase 2: Oferta
+    - 18-build-offer.md
+    - 19-design-ticket.md
+    - 20-design-bonuses.md
+    - 30-design-upgrades.md
+    # Fase 3: Copy
+    - 06-write-headlines.md
+    - 07-write-page-copy.md
+    - 08-write-emails.md
+    - 09-write-whatsapp.md
+    - 10-write-ad-copy.md
+    # Fase 4: Evento
+    - 11-design-event.md
+    - 12-design-pitch.md
+    - 13-plan-curriculum.md
+    - 14-design-seeding.md
+    # Fase 5: Criativos
+    - 15-plan-creatives.md
+    - 16-write-creative-scripts.md
+    - 17-design-remarketing.md
+    # Fase 6: Comercial
+    - 21-plan-commercial.md
+    - 22-plan-followup.md
+    - 23-plan-recording-vip.md
+    - 24-plan-lives.md
+    # Fase 7: Operacao
+    - 25-setup-metrics.md
+    - 26-build-checklists.md
+    - 27-design-crm.md
+    - 28-plan-team.md
+    - 29-design-product-curriculum.md
+    - 31-build-page-brief.md
+    # Diagnostico e Revisao
+    - 32-run-diagnostic.md
+    - 33-decision-review.md
+  workflows:
+    - wf-complete-launch-plan.yaml
+    - wf-full-launch-pipeline.yaml
+    - wf-diagnostic-cycle.yaml
+    - wf-copy-review-cycle.yaml
+    - wf-pre-captation-check.yaml
+    - wf-daily-decision-review.yaml
+  checklists:
+    - pre-captation.md
+    - pre-event.md
+    - post-pitch.md
+    - operational.md
+
+config:
+  extends: extend
+
+# Autoaprendizado (squads-memory-sync, 2026-07-25)
+learning:
+  memory_file: MEMORY.md
+  format: memoria-squad-v1
+  global_log: memory/erros-aprendidos.md
+  squad_tag: launch-paid
+  read_before_acting: true
+  max_chars: 8000

@@ -1,0 +1,3145 @@
+{
+  "version": "0.4",
+  "title": "Método R1 — Residência Médica",
+  "type": "page",
+  "content": [
+    {
+      "id": "nn5ic5ht",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "flex_direction": "row",
+        "flex_justify_content": "center",
+        "flex_align_items": "center",
+        "background_background": "gradient",
+        "background_color": "#00B4D8",
+        "background_color_b": "#0077B6",
+        "background_gradient_angle": {
+          "unit": "deg",
+          "size": 90
+        },
+        "padding": {
+          "unit": "px",
+          "top": "14",
+          "right": "20",
+          "bottom": "14",
+          "left": "20",
+          "isLinked": false
+        },
+        "__globals__": {}
+      },
+      "elements": [
+        {
+          "id": "4yi66cvl",
+          "elType": "widget",
+          "isInner": false,
+          "widgetType": "heading",
+          "settings": {
+            "title": "🩺 ÚLTIMA TURMA DE 2025 — MAIS DE 500 MÉDICOS APROVADOS COM ESTE MÉTODO",
+            "header_size": "h6",
+            "align": "center",
+            "__globals__": {},
+            "title_color": "#1E2A3A",
+            "css_classes": "balance",
+            "typography_typography": "custom",
+            "typography_font_family": "Inter",
+            "typography_font_size": {
+              "unit": "px",
+              "size": 16
+            },
+            "typography_font_size_mobile": {
+              "unit": "px",
+              "size": 12
+            },
+            "typography_font_weight": "500"
+          },
+          "elements": []
+        }
+      ]
+    },
+    {
+      "id": "7wlcsxrh",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "flex_direction": "column",
+        "flex_justify_content": "flex-end",
+        "flex_align_items": "center",
+        "content_width": "boxed",
+        "boxed_width": {
+          "unit": "px",
+          "size": 1200
+        },
+        "background_background": "classic",
+        "background_color": "#06101C",
+        "padding": {
+          "unit": "px",
+          "top": "120",
+          "right": "40",
+          "bottom": "80",
+          "left": "40",
+          "isLinked": false
+        },
+        "padding_mobile": {
+          "unit": "px",
+          "top": "80",
+          "right": "20",
+          "bottom": "60",
+          "left": "20",
+          "isLinked": false
+        },
+        "min_height": {
+          "unit": "px",
+          "size": 800
+        },
+        "min_height_mobile": {
+          "unit": "px",
+          "size": 650
+        },
+        "__globals__": {}
+      },
+      "elements": [
+        {
+          "id": "exw1abbr",
+          "elType": "widget",
+          "isInner": false,
+          "widgetType": "spacer",
+          "settings": {
+            "space": {
+              "unit": "px",
+              "size": 40
+            },
+            "__globals__": {},
+            "space_mobile": {
+              "unit": "px",
+              "size": 20
+            }
+          },
+          "elements": []
+        },
+        {
+          "id": "2jvro5tr",
+          "elType": "widget",
+          "isInner": false,
+          "widgetType": "heading",
+          "settings": {
+            "title": "Passe na Residência Médica em 12 Meses — Mesmo Estudando Entre Plantões",
+            "header_size": "h1",
+            "align": "center",
+            "__globals__": {},
+            "title_color": "#E0EFF8",
+            "typography_typography": "custom",
+            "typography_font_family": "Inter",
+            "typography_font_size": {
+              "unit": "px",
+              "size": 52
+            },
+            "typography_font_size_tablet": {
+              "unit": "px",
+              "size": 44
+            },
+            "typography_font_size_mobile": {
+              "unit": "px",
+              "size": 32
+            },
+            "typography_font_weight": "700",
+            "typography_line_height": {
+              "unit": "em",
+              "size": 1.15
+            }
+          },
+          "elements": []
+        },
+        {
+          "id": "sddp329z",
+          "elType": "widget",
+          "isInner": false,
+          "widgetType": "text-editor",
+          "settings": {
+            "editor": "O método que treina sua mente para responder questões com velocidade e precisão, sem depender de memorização bruta. Validado por mais de 500 aprovados em hospitais públicos e privados.",
+            "align": "center",
+            "__globals__": {},
+            "text_color": "#6B8299",
+            "typography_typography": "custom",
+            "typography_font_family": "Inter",
+            "typography_font_size": {
+              "unit": "px",
+              "size": 28
+            },
+            "typography_font_size_mobile": {
+              "unit": "px",
+              "size": 20
+            },
+            "typography_font_weight": "400",
+            "typography_line_height": {
+              "unit": "em",
+              "size": 1.6
+            }
+          },
+          "elements": []
+        },
+        {
+          "id": "ckcdd2ca",
+          "elType": "widget",
+          "isInner": false,
+          "widgetType": "spacer",
+          "settings": {
+            "space": {
+              "unit": "px",
+              "size": 20
+            },
+            "__globals__": {},
+            "space_mobile": {
+              "unit": "px",
+              "size": 10
+            }
+          },
+          "elements": []
+        },
+        {
+          "id": "5u74k6on",
+          "elType": "widget",
+          "isInner": false,
+          "widgetType": "button",
+          "settings": {
+            "text": "QUERO MINHA VAGA AGORA",
+            "link": {
+              "url": "#formulario",
+              "is_external": false,
+              "nofollow": false
+            },
+            "align": "center",
+            "size": "lg",
+            "typography_typography": "custom",
+            "typography_font_size": {
+              "unit": "px",
+              "size": 14
+            },
+            "typography_font_weight": "700",
+            "typography_letter_spacing": {
+              "unit": "em",
+              "size": 0.12
+            },
+            "typography_text_transform": "uppercase",
+            "text_padding": {
+              "unit": "px",
+              "top": 16,
+              "right": 32,
+              "bottom": 16,
+              "left": 32,
+              "isLinked": false
+            },
+            "border_radius": {
+              "unit": "px",
+              "top": 4,
+              "right": 4,
+              "bottom": 4,
+              "left": 4,
+              "isLinked": true
+            },
+            "__globals__": {},
+            "typography_font_family": "Inter",
+            "button_text_color": "#1E2A3A",
+            "css_classes": "cta-button",
+            "button_background_background": "gradient",
+            "button_background_color": "#0077B6",
+            "button_background_color_b": "#00B4D8",
+            "button_background_gradient_angle": {
+              "unit": "deg",
+              "size": 90
+            }
+          },
+          "elements": []
+        }
+      ]
+    },
+    {
+      "id": "xfj85x1g",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "flex_direction": "column",
+        "flex_align_items": "center",
+        "content_width": "boxed",
+        "boxed_width": {
+          "unit": "px",
+          "size": 1200
+        },
+        "background_background": "classic",
+        "background_color": "#06101C",
+        "padding": {
+          "unit": "px",
+          "top": "100",
+          "right": "20",
+          "bottom": "100",
+          "left": "20",
+          "isLinked": false
+        },
+        "padding_tablet": {
+          "unit": "px",
+          "top": "80",
+          "right": "20",
+          "bottom": "80",
+          "left": "20",
+          "isLinked": false
+        },
+        "padding_mobile": {
+          "unit": "px",
+          "top": "60",
+          "right": "20",
+          "bottom": "60",
+          "left": "20",
+          "isLinked": false
+        },
+        "__globals__": {}
+      },
+      "elements": [
+        {
+          "id": "4u7rmi57",
+          "elType": "widget",
+          "isInner": false,
+          "widgetType": "heading",
+          "settings": {
+            "title": "Você se identifica com algum desses problemas?",
+            "header_size": "h2",
+            "align": "center",
+            "__globals__": {},
+            "title_color": "#E0EFF8",
+            "typography_typography": "custom",
+            "typography_font_family": "Inter",
+            "typography_font_size": {
+              "unit": "px",
+              "size": 52
+            },
+            "typography_font_size_tablet": {
+              "unit": "px",
+              "size": 44
+            },
+            "typography_font_size_mobile": {
+              "unit": "px",
+              "size": 32
+            },
+            "typography_font_weight": "700"
+          },
+          "elements": []
+        },
+        {
+          "id": "c36sg2pl",
+          "elType": "widget",
+          "isInner": false,
+          "widgetType": "spacer",
+          "settings": {
+            "space": {
+              "unit": "px",
+              "size": 50
+            },
+            "__globals__": {},
+            "space_mobile": {
+              "unit": "px",
+              "size": 30
+            }
+          },
+          "elements": []
+        },
+        {
+          "id": "89cikqoh",
+          "elType": "container",
+          "isInner": true,
+          "settings": {
+            "flex_direction": "row",
+            "flex_justify_content": "center",
+            "flex_gap": {
+              "unit": "px",
+              "size": 40
+            },
+            "gap_mobile": {
+              "unit": "px",
+              "size": 20
+            },
+            "flex_wrap": "wrap",
+            "content_width": "full",
+            "__globals__": {}
+          },
+          "elements": [
+            {
+              "id": "1q6t9864",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "background_background": "classic",
+                "background_color": "#0D1B2E",
+                "padding": {
+                  "unit": "px",
+                  "top": "30",
+                  "right": "30",
+                  "bottom": "30",
+                  "left": "30",
+                  "isLinked": false
+                },
+                "width": {
+                  "unit": "%",
+                  "size": 48
+                },
+                "width_mobile": {
+                  "unit": "%",
+                  "size": 100
+                },
+                "border_radius": {
+                  "unit": "px",
+                  "top": "12",
+                  "right": "12",
+                  "bottom": "12",
+                  "left": "12",
+                  "isLinked": true
+                },
+                "__globals__": {}
+              },
+              "elements": [
+                {
+                  "id": "h0tyg2hb",
+                  "elType": "widget",
+                  "isInner": false,
+                  "widgetType": "icon-box",
+                  "settings": {
+                    "selected_icon": {
+                      "value": "fas fa-clock",
+                      "library": "fa-solid"
+                    },
+                    "title_text": "Sem tempo para estudar",
+                    "description_text": "Você sai do plantão exausto, abre o livro e apaga. Tenta estudar no dia de folga mas a cabeça não para. O tempo é o seu maior inimigo.",
+                    "title_typography_typography": "custom",
+                    "title_typography_font_size": {
+                      "unit": "px",
+                      "size": 20
+                    },
+                    "title_typography_font_size_mobile": {
+                      "unit": "px",
+                      "size": 16
+                    },
+                    "title_typography_font_weight": "600",
+                    "icon_size": {
+                      "unit": "px",
+                      "size": 36
+                    },
+                    "__globals__": {},
+                    "title_typography_font_family": "Inter",
+                    "title_color": "#E0EFF8",
+                    "icon_color": "#0077B6",
+                    "description_typography_typography": "custom",
+                    "description_typography_font_family": "Inter",
+                    "description_typography_font_size": {
+                      "unit": "px",
+                      "size": 18
+                    },
+                    "description_color": "#6B8299"
+                  },
+                  "elements": []
+                }
+              ]
+            },
+            {
+              "id": "2xo2tvs5",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "background_background": "classic",
+                "background_color": "#0D1B2E",
+                "padding": {
+                  "unit": "px",
+                  "top": "30",
+                  "right": "30",
+                  "bottom": "30",
+                  "left": "30",
+                  "isLinked": false
+                },
+                "width": {
+                  "unit": "%",
+                  "size": 48
+                },
+                "width_mobile": {
+                  "unit": "%",
+                  "size": 100
+                },
+                "border_radius": {
+                  "unit": "px",
+                  "top": "12",
+                  "right": "12",
+                  "bottom": "12",
+                  "left": "12",
+                  "isLinked": true
+                },
+                "__globals__": {}
+              },
+              "elements": [
+                {
+                  "id": "flcmm6jx",
+                  "elType": "widget",
+                  "isInner": false,
+                  "widgetType": "icon-box",
+                  "settings": {
+                    "selected_icon": {
+                      "value": "fas fa-brain",
+                      "library": "fa-solid"
+                    },
+                    "title_text": "Método que não funciona",
+                    "description_text": "Já leu tratados inteiros, fez cursinhos, mas na hora da prova trava. Você estuda muito e aprova pouco — o problema não é dedicação, é método.",
+                    "title_typography_typography": "custom",
+                    "title_typography_font_size": {
+                      "unit": "px",
+                      "size": 20
+                    },
+                    "title_typography_font_size_mobile": {
+                      "unit": "px",
+                      "size": 16
+                    },
+                    "title_typography_font_weight": "600",
+                    "icon_size": {
+                      "unit": "px",
+                      "size": 36
+                    },
+                    "__globals__": {},
+                    "title_typography_font_family": "Inter",
+                    "title_color": "#E0EFF8",
+                    "icon_color": "#0077B6",
+                    "description_typography_typography": "custom",
+                    "description_typography_font_family": "Inter",
+                    "description_typography_font_size": {
+                      "unit": "px",
+                      "size": 18
+                    },
+                    "description_color": "#6B8299"
+                  },
+                  "elements": []
+                }
+              ]
+            },
+            {
+              "id": "hw2f36ge",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "background_background": "classic",
+                "background_color": "#0D1B2E",
+                "padding": {
+                  "unit": "px",
+                  "top": "30",
+                  "right": "30",
+                  "bottom": "30",
+                  "left": "30",
+                  "isLinked": false
+                },
+                "width": {
+                  "unit": "%",
+                  "size": 48
+                },
+                "width_mobile": {
+                  "unit": "%",
+                  "size": 100
+                },
+                "border_radius": {
+                  "unit": "px",
+                  "top": "12",
+                  "right": "12",
+                  "bottom": "12",
+                  "left": "12",
+                  "isLinked": true
+                },
+                "__globals__": {}
+              },
+              "elements": [
+                {
+                  "id": "mefb5jdp",
+                  "elType": "widget",
+                  "isInner": false,
+                  "widgetType": "icon-box",
+                  "settings": {
+                    "selected_icon": {
+                      "value": "fas fa-chart-bar",
+                      "library": "fa-solid"
+                    },
+                    "title_text": "Pontuação estagnada",
+                    "description_text": "Simulado após simulado, a nota não sobe. Você erra as mesmas questões, não sabe o que está faltando e sente que está andando em círculos.",
+                    "title_typography_typography": "custom",
+                    "title_typography_font_size": {
+                      "unit": "px",
+                      "size": 20
+                    },
+                    "title_typography_font_size_mobile": {
+                      "unit": "px",
+                      "size": 16
+                    },
+                    "title_typography_font_weight": "600",
+                    "icon_size": {
+                      "unit": "px",
+                      "size": 36
+                    },
+                    "__globals__": {},
+                    "title_typography_font_family": "Inter",
+                    "title_color": "#E0EFF8",
+                    "icon_color": "#0077B6",
+                    "description_typography_typography": "custom",
+                    "description_typography_font_family": "Inter",
+                    "description_typography_font_size": {
+                      "unit": "px",
+                      "size": 18
+                    },
+                    "description_color": "#6B8299"
+                  },
+                  "elements": []
+                }
+              ]
+            },
+            {
+              "id": "ojvj6vf2",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "background_background": "classic",
+                "background_color": "#0D1B2E",
+                "padding": {
+                  "unit": "px",
+                  "top": "30",
+                  "right": "30",
+                  "bottom": "30",
+                  "left": "30",
+                  "isLinked": false
+                },
+                "width": {
+                  "unit": "%",
+                  "size": 48
+                },
+                "width_mobile": {
+                  "unit": "%",
+                  "size": 100
+                },
+                "border_radius": {
+                  "unit": "px",
+                  "top": "12",
+                  "right": "12",
+                  "bottom": "12",
+                  "left": "12",
+                  "isLinked": true
+                },
+                "__globals__": {}
+              },
+              "elements": [
+                {
+                  "id": "yxvvk6uu",
+                  "elType": "widget",
+                  "isInner": false,
+                  "widgetType": "icon-box",
+                  "settings": {
+                    "selected_icon": {
+                      "value": "fas fa-fire",
+                      "library": "fa-solid"
+                    },
+                    "title_text": "Burnout e desistência",
+                    "description_text": "O cansaço está pesando. Você questiona se vale a pena continuar. A residência que sempre quis parece cada vez mais distante.",
+                    "title_typography_typography": "custom",
+                    "title_typography_font_size": {
+                      "unit": "px",
+                      "size": 20
+                    },
+                    "title_typography_font_size_mobile": {
+                      "unit": "px",
+                      "size": 16
+                    },
+                    "title_typography_font_weight": "600",
+                    "icon_size": {
+                      "unit": "px",
+                      "size": 36
+                    },
+                    "__globals__": {},
+                    "title_typography_font_family": "Inter",
+                    "title_color": "#E0EFF8",
+                    "icon_color": "#0077B6",
+                    "description_typography_typography": "custom",
+                    "description_typography_font_family": "Inter",
+                    "description_typography_font_size": {
+                      "unit": "px",
+                      "size": 18
+                    },
+                    "description_color": "#6B8299"
+                  },
+                  "elements": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "34mkfq4a",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "flex_direction": "row",
+        "flex_justify_content": "space-between",
+        "flex_align_items": "center",
+        "flex_gap": {
+          "unit": "px",
+          "size": 60
+        },
+        "gap_mobile": {
+          "unit": "px",
+          "size": 40
+        },
+        "flex_wrap": "wrap",
+        "content_width": "boxed",
+        "boxed_width": {
+          "unit": "px",
+          "size": 1200
+        },
+        "background_background": "classic",
+        "background_color": "#F0F7FF",
+        "padding": {
+          "unit": "px",
+          "top": "100",
+          "right": "20",
+          "bottom": "100",
+          "left": "20",
+          "isLinked": false
+        },
+        "padding_tablet": {
+          "unit": "px",
+          "top": "80",
+          "right": "20",
+          "bottom": "80",
+          "left": "20",
+          "isLinked": false
+        },
+        "padding_mobile": {
+          "unit": "px",
+          "top": "60",
+          "right": "20",
+          "bottom": "60",
+          "left": "20",
+          "isLinked": false
+        },
+        "__globals__": {}
+      },
+      "elements": [
+        {
+          "id": "e5gxd3kq",
+          "elType": "container",
+          "isInner": true,
+          "settings": {
+            "flex_direction": "column",
+            "flex_justify_content": "center",
+            "flex_gap": {
+              "unit": "px",
+              "size": 20
+            },
+            "width": {
+              "unit": "%",
+              "size": 45
+            },
+            "width_mobile": {
+              "unit": "%",
+              "size": 100
+            },
+            "__globals__": {}
+          },
+          "elements": [
+            {
+              "id": "v6a4eflp",
+              "elType": "widget",
+              "isInner": false,
+              "widgetType": "heading",
+              "settings": {
+                "title": "O que você vai conquistar com o Método R1",
+                "header_size": "h2",
+                "align": "left",
+                "__globals__": {},
+                "title_color": "#E0EFF8",
+                "typography_typography": "custom",
+                "typography_font_family": "Inter",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 52
+                },
+                "typography_font_size_tablet": {
+                  "unit": "px",
+                  "size": 44
+                },
+                "typography_font_size_mobile": {
+                  "unit": "px",
+                  "size": 32
+                },
+                "typography_font_weight": "700"
+              },
+              "elements": []
+            },
+            {
+              "id": "4s9nj39h",
+              "elType": "widget",
+              "isInner": false,
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "Tecnologia de aprendizado acelerado aplicada à medicina. Cada recurso foi desenvolvido para o médico que tem pouco tempo e resultados urgentes.",
+                "align": "left",
+                "__globals__": {},
+                "text_color": "#6B8299",
+                "typography_typography": "custom",
+                "typography_font_family": "Inter",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 18
+                },
+                "typography_font_size_mobile": {
+                  "unit": "px",
+                  "size": 16
+                },
+                "typography_font_weight": "400",
+                "typography_line_height": {
+                  "unit": "em",
+                  "size": 1.7
+                }
+              },
+              "elements": []
+            },
+            {
+              "id": "m09tbhwl",
+              "elType": "widget",
+              "isInner": false,
+              "widgetType": "spacer",
+              "settings": {
+                "space": {
+                  "unit": "px",
+                  "size": 20
+                },
+                "__globals__": {},
+                "space_mobile": {
+                  "unit": "px",
+                  "size": 10
+                }
+              },
+              "elements": []
+            },
+            {
+              "id": "9oxch0n8",
+              "elType": "widget",
+              "isInner": false,
+              "widgetType": "button",
+              "settings": {
+                "text": "GARANTIR MINHA VAGA",
+                "link": {
+                  "url": "#formulario",
+                  "is_external": false,
+                  "nofollow": false
+                },
+                "align": "center",
+                "size": "lg",
+                "typography_typography": "custom",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 14
+                },
+                "typography_font_weight": "700",
+                "typography_letter_spacing": {
+                  "unit": "em",
+                  "size": 0.12
+                },
+                "typography_text_transform": "uppercase",
+                "text_padding": {
+                  "unit": "px",
+                  "top": 16,
+                  "right": 32,
+                  "bottom": 16,
+                  "left": 32,
+                  "isLinked": false
+                },
+                "border_radius": {
+                  "unit": "px",
+                  "top": 4,
+                  "right": 4,
+                  "bottom": 4,
+                  "left": 4,
+                  "isLinked": true
+                },
+                "__globals__": {},
+                "typography_font_family": "Inter",
+                "button_text_color": "#1E2A3A",
+                "css_classes": "cta-button",
+                "button_background_background": "gradient",
+                "button_background_color": "#0077B6",
+                "button_background_color_b": "#00B4D8",
+                "button_background_gradient_angle": {
+                  "unit": "deg",
+                  "size": 90
+                }
+              },
+              "elements": []
+            }
+          ]
+        },
+        {
+          "id": "w93hh0rh",
+          "elType": "container",
+          "isInner": true,
+          "settings": {
+            "flex_direction": "row",
+            "flex_justify_content": "center",
+            "flex_gap": {
+              "unit": "px",
+              "size": 16
+            },
+            "gap_mobile": {
+              "unit": "px",
+              "size": 12
+            },
+            "flex_wrap": "wrap",
+            "width": {
+              "unit": "%",
+              "size": 50
+            },
+            "width_mobile": {
+              "unit": "%",
+              "size": 100
+            },
+            "__globals__": {}
+          },
+          "elements": [
+            {
+              "id": "p3ymvq59",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "background_background": "classic",
+                "background_color": "#0D1B2E",
+                "padding": {
+                  "unit": "px",
+                  "top": "20",
+                  "right": "20",
+                  "bottom": "20",
+                  "left": "20",
+                  "isLinked": false
+                },
+                "width": {
+                  "unit": "%",
+                  "size": 48
+                },
+                "width_mobile": {
+                  "unit": "%",
+                  "size": 100
+                },
+                "border_radius": {
+                  "unit": "px",
+                  "top": "12",
+                  "right": "12",
+                  "bottom": "12",
+                  "left": "12",
+                  "isLinked": true
+                },
+                "__globals__": {}
+              },
+              "elements": [
+                {
+                  "id": "bqh8w67w",
+                  "elType": "widget",
+                  "isInner": false,
+                  "widgetType": "image-box",
+                  "settings": {
+                    "image": {
+                      "url": "https://placehold.co/1200x600/111118/C8A951?text=TROCAR+IMAGEM",
+                      "id": "",
+                      "alt": "",
+                      "source": "library"
+                    },
+                    "title_text": "Cronograma Adaptativo",
+                    "description_text": "Plano de estudos que se ajusta à sua escala de plantão automaticamente",
+                    "position": "top",
+                    "title_typography_typography": "custom",
+                    "title_typography_font_size": {
+                      "unit": "px",
+                      "size": 18
+                    },
+                    "title_typography_font_size_mobile": {
+                      "unit": "px",
+                      "size": 16
+                    },
+                    "title_typography_font_weight": "600",
+                    "image_size": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "__globals__": {},
+                    "title_typography_font_family": "Inter",
+                    "title_color": "#E0EFF8",
+                    "description_typography_typography": "custom",
+                    "description_typography_font_family": "Inter",
+                    "description_typography_font_size": {
+                      "unit": "px",
+                      "size": 14
+                    },
+                    "description_color": "#6B8299",
+                    "image_size_mobile": {
+                      "unit": "%",
+                      "size": 100
+                    }
+                  },
+                  "elements": []
+                }
+              ]
+            },
+            {
+              "id": "166argod",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "background_background": "classic",
+                "background_color": "#0D1B2E",
+                "padding": {
+                  "unit": "px",
+                  "top": "20",
+                  "right": "20",
+                  "bottom": "20",
+                  "left": "20",
+                  "isLinked": false
+                },
+                "width": {
+                  "unit": "%",
+                  "size": 48
+                },
+                "width_mobile": {
+                  "unit": "%",
+                  "size": 100
+                },
+                "border_radius": {
+                  "unit": "px",
+                  "top": "12",
+                  "right": "12",
+                  "bottom": "12",
+                  "left": "12",
+                  "isLinked": true
+                },
+                "__globals__": {}
+              },
+              "elements": [
+                {
+                  "id": "j91tdtru",
+                  "elType": "widget",
+                  "isInner": false,
+                  "widgetType": "image-box",
+                  "settings": {
+                    "image": {
+                      "url": "https://placehold.co/1200x600/111118/C8A951?text=TROCAR+IMAGEM",
+                      "id": "",
+                      "alt": "",
+                      "source": "library"
+                    },
+                    "title_text": "8.000 Questões Comentadas",
+                    "description_text": "Banco atualizado com questões das principais provas de residência do Brasil",
+                    "position": "top",
+                    "title_typography_typography": "custom",
+                    "title_typography_font_size": {
+                      "unit": "px",
+                      "size": 18
+                    },
+                    "title_typography_font_size_mobile": {
+                      "unit": "px",
+                      "size": 16
+                    },
+                    "title_typography_font_weight": "600",
+                    "image_size": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "__globals__": {},
+                    "title_typography_font_family": "Inter",
+                    "title_color": "#E0EFF8",
+                    "description_typography_typography": "custom",
+                    "description_typography_font_family": "Inter",
+                    "description_typography_font_size": {
+                      "unit": "px",
+                      "size": 14
+                    },
+                    "description_color": "#6B8299",
+                    "image_size_mobile": {
+                      "unit": "%",
+                      "size": 100
+                    }
+                  },
+                  "elements": []
+                }
+              ]
+            },
+            {
+              "id": "z6gno35n",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "background_background": "classic",
+                "background_color": "#0D1B2E",
+                "padding": {
+                  "unit": "px",
+                  "top": "20",
+                  "right": "20",
+                  "bottom": "20",
+                  "left": "20",
+                  "isLinked": false
+                },
+                "width": {
+                  "unit": "%",
+                  "size": 48
+                },
+                "width_mobile": {
+                  "unit": "%",
+                  "size": 100
+                },
+                "border_radius": {
+                  "unit": "px",
+                  "top": "12",
+                  "right": "12",
+                  "bottom": "12",
+                  "left": "12",
+                  "isLinked": true
+                },
+                "__globals__": {}
+              },
+              "elements": [
+                {
+                  "id": "6ff2g6r8",
+                  "elType": "widget",
+                  "isInner": false,
+                  "widgetType": "image-box",
+                  "settings": {
+                    "image": {
+                      "url": "https://placehold.co/1200x600/111118/C8A951?text=TROCAR+IMAGEM",
+                      "id": "",
+                      "alt": "",
+                      "source": "library"
+                    },
+                    "title_text": "Mentoria com Aprovados",
+                    "description_text": "Sessões ao vivo com médicos aprovados nas residências mais concorridas",
+                    "position": "top",
+                    "title_typography_typography": "custom",
+                    "title_typography_font_size": {
+                      "unit": "px",
+                      "size": 18
+                    },
+                    "title_typography_font_size_mobile": {
+                      "unit": "px",
+                      "size": 16
+                    },
+                    "title_typography_font_weight": "600",
+                    "image_size": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "__globals__": {},
+                    "title_typography_font_family": "Inter",
+                    "title_color": "#E0EFF8",
+                    "description_typography_typography": "custom",
+                    "description_typography_font_family": "Inter",
+                    "description_typography_font_size": {
+                      "unit": "px",
+                      "size": 14
+                    },
+                    "description_color": "#6B8299",
+                    "image_size_mobile": {
+                      "unit": "%",
+                      "size": 100
+                    }
+                  },
+                  "elements": []
+                }
+              ]
+            },
+            {
+              "id": "ydkls3zv",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "background_background": "classic",
+                "background_color": "#0D1B2E",
+                "padding": {
+                  "unit": "px",
+                  "top": "20",
+                  "right": "20",
+                  "bottom": "20",
+                  "left": "20",
+                  "isLinked": false
+                },
+                "width": {
+                  "unit": "%",
+                  "size": 48
+                },
+                "width_mobile": {
+                  "unit": "%",
+                  "size": 100
+                },
+                "border_radius": {
+                  "unit": "px",
+                  "top": "12",
+                  "right": "12",
+                  "bottom": "12",
+                  "left": "12",
+                  "isLinked": true
+                },
+                "__globals__": {}
+              },
+              "elements": [
+                {
+                  "id": "f3zwtpmc",
+                  "elType": "widget",
+                  "isInner": false,
+                  "widgetType": "image-box",
+                  "settings": {
+                    "image": {
+                      "url": "https://placehold.co/1200x600/111118/C8A951?text=TROCAR+IMAGEM",
+                      "id": "",
+                      "alt": "",
+                      "source": "library"
+                    },
+                    "title_text": "Simulados Especializados",
+                    "description_text": "Treino específico por especialidade com análise de desempenho detalhada",
+                    "position": "top",
+                    "title_typography_typography": "custom",
+                    "title_typography_font_size": {
+                      "unit": "px",
+                      "size": 18
+                    },
+                    "title_typography_font_size_mobile": {
+                      "unit": "px",
+                      "size": 16
+                    },
+                    "title_typography_font_weight": "600",
+                    "image_size": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "__globals__": {},
+                    "title_typography_font_family": "Inter",
+                    "title_color": "#E0EFF8",
+                    "description_typography_typography": "custom",
+                    "description_typography_font_family": "Inter",
+                    "description_typography_font_size": {
+                      "unit": "px",
+                      "size": 14
+                    },
+                    "description_color": "#6B8299",
+                    "image_size_mobile": {
+                      "unit": "%",
+                      "size": 100
+                    }
+                  },
+                  "elements": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "w9lerlxh",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "flex_direction": "column",
+        "flex_align_items": "center",
+        "content_width": "boxed",
+        "boxed_width": {
+          "unit": "px",
+          "size": 1200
+        },
+        "background_background": "classic",
+        "background_color": "#06101C",
+        "padding": {
+          "unit": "px",
+          "top": "100",
+          "right": "20",
+          "bottom": "100",
+          "left": "20",
+          "isLinked": false
+        },
+        "padding_tablet": {
+          "unit": "px",
+          "top": "80",
+          "right": "20",
+          "bottom": "80",
+          "left": "20",
+          "isLinked": false
+        },
+        "padding_mobile": {
+          "unit": "px",
+          "top": "60",
+          "right": "20",
+          "bottom": "60",
+          "left": "20",
+          "isLinked": false
+        },
+        "__globals__": {}
+      },
+      "elements": [
+        {
+          "id": "1ip67tkf",
+          "elType": "widget",
+          "isInner": false,
+          "widgetType": "heading",
+          "settings": {
+            "title": "4 Passos para a sua Aprovação",
+            "header_size": "h2",
+            "align": "center",
+            "__globals__": {},
+            "title_color": "#E0EFF8",
+            "typography_typography": "custom",
+            "typography_font_family": "Inter",
+            "typography_font_size": {
+              "unit": "px",
+              "size": 52
+            },
+            "typography_font_size_tablet": {
+              "unit": "px",
+              "size": 44
+            },
+            "typography_font_size_mobile": {
+              "unit": "px",
+              "size": 32
+            },
+            "typography_font_weight": "700"
+          },
+          "elements": []
+        },
+        {
+          "id": "2i6w92gd",
+          "elType": "widget",
+          "isInner": false,
+          "widgetType": "spacer",
+          "settings": {
+            "space": {
+              "unit": "px",
+              "size": 50
+            },
+            "__globals__": {},
+            "space_mobile": {
+              "unit": "px",
+              "size": 30
+            }
+          },
+          "elements": []
+        },
+        {
+          "id": "n259snao",
+          "elType": "container",
+          "isInner": true,
+          "settings": {
+            "flex_direction": "row",
+            "flex_justify_content": "center",
+            "flex_gap": {
+              "unit": "px",
+              "size": 40
+            },
+            "gap_mobile": {
+              "unit": "px",
+              "size": 20
+            },
+            "flex_wrap": "wrap",
+            "content_width": "full",
+            "__globals__": {}
+          },
+          "elements": [
+            {
+              "id": "33wr17lm",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "flex_direction": "column",
+                "flex_align_items": "center",
+                "background_background": "classic",
+                "background_color": "#0D1B2E",
+                "padding": {
+                  "unit": "px",
+                  "top": "20",
+                  "right": "16",
+                  "bottom": "20",
+                  "left": "16",
+                  "isLinked": false
+                },
+                "width": {
+                  "unit": "%",
+                  "size": 24
+                },
+                "width_mobile": {
+                  "unit": "%",
+                  "size": 100
+                },
+                "border_radius": {
+                  "unit": "px",
+                  "top": "12",
+                  "right": "12",
+                  "bottom": "12",
+                  "left": "12",
+                  "isLinked": true
+                },
+                "__globals__": {}
+              },
+              "elements": [
+                {
+                  "id": "ipe5s3r9",
+                  "elType": "widget",
+                  "isInner": false,
+                  "widgetType": "heading",
+                  "settings": {
+                    "title": "1",
+                    "header_size": "h3",
+                    "align": "center",
+                    "__globals__": {},
+                    "title_color": "#0077B6",
+                    "typography_typography": "custom",
+                    "typography_font_family": "Inter",
+                    "typography_font_size": {
+                      "unit": "px",
+                      "size": 40
+                    },
+                    "typography_font_size_mobile": {
+                      "unit": "px",
+                      "size": 32
+                    },
+                    "typography_font_weight": "700"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "3g5v36yu",
+                  "elType": "widget",
+                  "isInner": false,
+                  "widgetType": "image-box",
+                  "settings": {
+                    "image": {
+                      "url": "https://placehold.co/1200x600/111118/C8A951?text=TROCAR+IMAGEM",
+                      "id": "",
+                      "alt": "",
+                      "source": "library"
+                    },
+                    "title_text": "Diagnóstico Preciso",
+                    "description_text": "Avaliamos sua rotina, nível atual e pontos críticos para montar um plano sob medida",
+                    "position": "top",
+                    "title_typography_typography": "custom",
+                    "title_typography_font_size": {
+                      "unit": "px",
+                      "size": 18
+                    },
+                    "title_typography_font_size_mobile": {
+                      "unit": "px",
+                      "size": 16
+                    },
+                    "title_typography_font_weight": "600",
+                    "image_size": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "__globals__": {},
+                    "title_typography_font_family": "Inter",
+                    "title_color": "#E0EFF8",
+                    "description_typography_typography": "custom",
+                    "description_typography_font_family": "Inter",
+                    "description_typography_font_size": {
+                      "unit": "px",
+                      "size": 14
+                    },
+                    "description_color": "#6B8299"
+                  },
+                  "elements": []
+                }
+              ]
+            },
+            {
+              "id": "wi3dnt0d",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "flex_direction": "column",
+                "flex_align_items": "center",
+                "background_background": "classic",
+                "background_color": "#0D1B2E",
+                "padding": {
+                  "unit": "px",
+                  "top": "20",
+                  "right": "16",
+                  "bottom": "20",
+                  "left": "16",
+                  "isLinked": false
+                },
+                "width": {
+                  "unit": "%",
+                  "size": 24
+                },
+                "width_mobile": {
+                  "unit": "%",
+                  "size": 100
+                },
+                "border_radius": {
+                  "unit": "px",
+                  "top": "12",
+                  "right": "12",
+                  "bottom": "12",
+                  "left": "12",
+                  "isLinked": true
+                },
+                "__globals__": {}
+              },
+              "elements": [
+                {
+                  "id": "3n8vbh3r",
+                  "elType": "widget",
+                  "isInner": false,
+                  "widgetType": "heading",
+                  "settings": {
+                    "title": "2",
+                    "header_size": "h3",
+                    "align": "center",
+                    "__globals__": {},
+                    "title_color": "#0077B6",
+                    "typography_typography": "custom",
+                    "typography_font_family": "Inter",
+                    "typography_font_size": {
+                      "unit": "px",
+                      "size": 40
+                    },
+                    "typography_font_size_mobile": {
+                      "unit": "px",
+                      "size": 32
+                    },
+                    "typography_font_weight": "700"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "hxj6uzgr",
+                  "elType": "widget",
+                  "isInner": false,
+                  "widgetType": "image-box",
+                  "settings": {
+                    "image": {
+                      "url": "https://placehold.co/1200x600/111118/C8A951?text=TROCAR+IMAGEM",
+                      "id": "",
+                      "alt": "",
+                      "source": "library"
+                    },
+                    "title_text": "Plano Personalizado",
+                    "description_text": "Você recebe um cronograma semana a semana adaptado à sua escala real de trabalho",
+                    "position": "top",
+                    "title_typography_typography": "custom",
+                    "title_typography_font_size": {
+                      "unit": "px",
+                      "size": 18
+                    },
+                    "title_typography_font_size_mobile": {
+                      "unit": "px",
+                      "size": 16
+                    },
+                    "title_typography_font_weight": "600",
+                    "image_size": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "__globals__": {},
+                    "title_typography_font_family": "Inter",
+                    "title_color": "#E0EFF8",
+                    "description_typography_typography": "custom",
+                    "description_typography_font_family": "Inter",
+                    "description_typography_font_size": {
+                      "unit": "px",
+                      "size": 14
+                    },
+                    "description_color": "#6B8299"
+                  },
+                  "elements": []
+                }
+              ]
+            },
+            {
+              "id": "puk3rmle",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "flex_direction": "column",
+                "flex_align_items": "center",
+                "background_background": "classic",
+                "background_color": "#0D1B2E",
+                "padding": {
+                  "unit": "px",
+                  "top": "20",
+                  "right": "16",
+                  "bottom": "20",
+                  "left": "16",
+                  "isLinked": false
+                },
+                "width": {
+                  "unit": "%",
+                  "size": 24
+                },
+                "width_mobile": {
+                  "unit": "%",
+                  "size": 100
+                },
+                "border_radius": {
+                  "unit": "px",
+                  "top": "12",
+                  "right": "12",
+                  "bottom": "12",
+                  "left": "12",
+                  "isLinked": true
+                },
+                "__globals__": {}
+              },
+              "elements": [
+                {
+                  "id": "w2x8ydf9",
+                  "elType": "widget",
+                  "isInner": false,
+                  "widgetType": "heading",
+                  "settings": {
+                    "title": "3",
+                    "header_size": "h3",
+                    "align": "center",
+                    "__globals__": {},
+                    "title_color": "#0077B6",
+                    "typography_typography": "custom",
+                    "typography_font_family": "Inter",
+                    "typography_font_size": {
+                      "unit": "px",
+                      "size": 40
+                    },
+                    "typography_font_size_mobile": {
+                      "unit": "px",
+                      "size": 32
+                    },
+                    "typography_font_weight": "700"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "bjua6hfg",
+                  "elType": "widget",
+                  "isInner": false,
+                  "widgetType": "image-box",
+                  "settings": {
+                    "image": {
+                      "url": "https://placehold.co/1200x600/111118/C8A951?text=TROCAR+IMAGEM",
+                      "id": "",
+                      "alt": "",
+                      "source": "library"
+                    },
+                    "title_text": "Imersão Acelerada",
+                    "description_text": "Módulos intensivos por especialidade com repetição espaçada e revisão ativa",
+                    "position": "top",
+                    "title_typography_typography": "custom",
+                    "title_typography_font_size": {
+                      "unit": "px",
+                      "size": 18
+                    },
+                    "title_typography_font_size_mobile": {
+                      "unit": "px",
+                      "size": 16
+                    },
+                    "title_typography_font_weight": "600",
+                    "image_size": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "__globals__": {},
+                    "title_typography_font_family": "Inter",
+                    "title_color": "#E0EFF8",
+                    "description_typography_typography": "custom",
+                    "description_typography_font_family": "Inter",
+                    "description_typography_font_size": {
+                      "unit": "px",
+                      "size": 14
+                    },
+                    "description_color": "#6B8299"
+                  },
+                  "elements": []
+                }
+              ]
+            },
+            {
+              "id": "ipwl6k8j",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "flex_direction": "column",
+                "flex_align_items": "center",
+                "background_background": "classic",
+                "background_color": "#0D1B2E",
+                "padding": {
+                  "unit": "px",
+                  "top": "20",
+                  "right": "16",
+                  "bottom": "20",
+                  "left": "16",
+                  "isLinked": false
+                },
+                "width": {
+                  "unit": "%",
+                  "size": 24
+                },
+                "width_mobile": {
+                  "unit": "%",
+                  "size": 100
+                },
+                "border_radius": {
+                  "unit": "px",
+                  "top": "12",
+                  "right": "12",
+                  "bottom": "12",
+                  "left": "12",
+                  "isLinked": true
+                },
+                "__globals__": {}
+              },
+              "elements": [
+                {
+                  "id": "0arzytu5",
+                  "elType": "widget",
+                  "isInner": false,
+                  "widgetType": "heading",
+                  "settings": {
+                    "title": "4",
+                    "header_size": "h3",
+                    "align": "center",
+                    "__globals__": {},
+                    "title_color": "#0077B6",
+                    "typography_typography": "custom",
+                    "typography_font_family": "Inter",
+                    "typography_font_size": {
+                      "unit": "px",
+                      "size": 40
+                    },
+                    "typography_font_size_mobile": {
+                      "unit": "px",
+                      "size": 32
+                    },
+                    "typography_font_weight": "700"
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "jbdvcqwi",
+                  "elType": "widget",
+                  "isInner": false,
+                  "widgetType": "image-box",
+                  "settings": {
+                    "image": {
+                      "url": "https://placehold.co/1200x600/111118/C8A951?text=TROCAR+IMAGEM",
+                      "id": "",
+                      "alt": "",
+                      "source": "library"
+                    },
+                    "title_text": "Prova e Aprovação",
+                    "description_text": "Simulados finais com correção individual e preparação psicológica para o dia da prova",
+                    "position": "top",
+                    "title_typography_typography": "custom",
+                    "title_typography_font_size": {
+                      "unit": "px",
+                      "size": 18
+                    },
+                    "title_typography_font_size_mobile": {
+                      "unit": "px",
+                      "size": 16
+                    },
+                    "title_typography_font_weight": "600",
+                    "image_size": {
+                      "unit": "%",
+                      "size": 100
+                    },
+                    "__globals__": {},
+                    "title_typography_font_family": "Inter",
+                    "title_color": "#E0EFF8",
+                    "description_typography_typography": "custom",
+                    "description_typography_font_family": "Inter",
+                    "description_typography_font_size": {
+                      "unit": "px",
+                      "size": 14
+                    },
+                    "description_color": "#6B8299"
+                  },
+                  "elements": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "oxo806rc",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "flex_direction": "column",
+        "flex_align_items": "center",
+        "content_width": "boxed",
+        "boxed_width": {
+          "unit": "px",
+          "size": 1200
+        },
+        "background_background": "classic",
+        "background_color": "#06101C",
+        "padding": {
+          "unit": "px",
+          "top": "100",
+          "right": "20",
+          "bottom": "100",
+          "left": "20",
+          "isLinked": false
+        },
+        "padding_tablet": {
+          "unit": "px",
+          "top": "80",
+          "right": "20",
+          "bottom": "80",
+          "left": "20",
+          "isLinked": false
+        },
+        "padding_mobile": {
+          "unit": "px",
+          "top": "60",
+          "right": "20",
+          "bottom": "60",
+          "left": "20",
+          "isLinked": false
+        },
+        "__globals__": {}
+      },
+      "elements": [
+        {
+          "id": "vcau9kkt",
+          "elType": "widget",
+          "isInner": false,
+          "widgetType": "heading",
+          "settings": {
+            "title": "Tudo que você recebe ao entrar",
+            "header_size": "h2",
+            "align": "center",
+            "__globals__": {},
+            "title_color": "#E0EFF8",
+            "typography_typography": "custom",
+            "typography_font_family": "Inter",
+            "typography_font_size": {
+              "unit": "px",
+              "size": 52
+            },
+            "typography_font_size_tablet": {
+              "unit": "px",
+              "size": 44
+            },
+            "typography_font_size_mobile": {
+              "unit": "px",
+              "size": 32
+            },
+            "typography_font_weight": "700"
+          },
+          "elements": []
+        },
+        {
+          "id": "txl0a9no",
+          "elType": "widget",
+          "isInner": false,
+          "widgetType": "spacer",
+          "settings": {
+            "space": {
+              "unit": "px",
+              "size": 50
+            },
+            "__globals__": {},
+            "space_mobile": {
+              "unit": "px",
+              "size": 30
+            }
+          },
+          "elements": []
+        },
+        {
+          "id": "ue7amupe",
+          "elType": "container",
+          "isInner": true,
+          "settings": {
+            "flex_direction": "row",
+            "flex_justify_content": "center",
+            "flex_gap": {
+              "unit": "px",
+              "size": 40
+            },
+            "gap_mobile": {
+              "unit": "px",
+              "size": 20
+            },
+            "flex_wrap": "wrap",
+            "content_width": "full",
+            "__globals__": {}
+          },
+          "elements": [
+            {
+              "id": "o0z9h0lp",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "flex_direction": "column",
+                "flex_gap": {
+                  "unit": "px",
+                  "size": 16
+                },
+                "background_background": "classic",
+                "background_color": "#0D1B2E",
+                "padding": {
+                  "unit": "px",
+                  "top": "28",
+                  "right": "28",
+                  "bottom": "28",
+                  "left": "28",
+                  "isLinked": false
+                },
+                "width": {
+                  "unit": "%",
+                  "size": 48
+                },
+                "width_mobile": {
+                  "unit": "%",
+                  "size": 100
+                },
+                "border_radius": {
+                  "unit": "px",
+                  "top": "12",
+                  "right": "12",
+                  "bottom": "12",
+                  "left": "12",
+                  "isLinked": true
+                },
+                "__globals__": {}
+              },
+              "elements": [
+                {
+                  "id": "4prphep8",
+                  "elType": "widget",
+                  "isInner": false,
+                  "widgetType": "icon-box",
+                  "settings": {
+                    "selected_icon": {
+                      "value": "fas fa-video",
+                      "library": "fa-solid"
+                    },
+                    "title_text": "Aulas por Especialidade",
+                    "description_text": "",
+                    "title_typography_typography": "custom",
+                    "title_typography_font_size": {
+                      "unit": "px",
+                      "size": 20
+                    },
+                    "title_typography_font_size_mobile": {
+                      "unit": "px",
+                      "size": 16
+                    },
+                    "title_typography_font_weight": "600",
+                    "icon_size": {
+                      "unit": "px",
+                      "size": 32
+                    },
+                    "__globals__": {},
+                    "title_typography_font_family": "Inter",
+                    "title_color": "#E0EFF8",
+                    "icon_color": "#0077B6",
+                    "description_typography_typography": "custom",
+                    "description_typography_font_size": {
+                      "unit": "px",
+                      "size": 14
+                    }
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "7756ff0p",
+                  "elType": "widget",
+                  "isInner": false,
+                  "widgetType": "icon-list",
+                  "settings": {
+                    "icon_list": [
+                      {
+                        "text": "Clínica Médica, Cirurgia, Pediatria, GO e Saúde Pública",
+                        "selected_icon": {
+                          "value": "fas fa-check",
+                          "library": "fa-solid"
+                        },
+                        "link": {
+                          "url": "",
+                          "is_external": false
+                        }
+                      },
+                      {
+                        "text": "Mais de 400 horas de conteúdo gravado",
+                        "selected_icon": {
+                          "value": "fas fa-check",
+                          "library": "fa-solid"
+                        },
+                        "link": {
+                          "url": "",
+                          "is_external": false
+                        }
+                      },
+                      {
+                        "text": "Acesso vitalício — assista quantas vezes precisar",
+                        "selected_icon": {
+                          "value": "fas fa-check",
+                          "library": "fa-solid"
+                        },
+                        "link": {
+                          "url": "",
+                          "is_external": false
+                        }
+                      }
+                    ],
+                    "icon_size": {
+                      "unit": "px",
+                      "size": 14
+                    },
+                    "space_between": {
+                      "unit": "px",
+                      "size": 8
+                    },
+                    "view": "traditional",
+                    "__globals__": {},
+                    "icon_color": "#0077B6",
+                    "text_color": "#6B8299",
+                    "typography_typography": "custom",
+                    "typography_font_family": "Inter",
+                    "typography_font_size": {
+                      "unit": "px",
+                      "size": 15
+                    },
+                    "typography_font_size_mobile": {
+                      "unit": "px",
+                      "size": 14
+                    }
+                  },
+                  "elements": []
+                }
+              ]
+            },
+            {
+              "id": "3bawl47b",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "flex_direction": "column",
+                "flex_gap": {
+                  "unit": "px",
+                  "size": 16
+                },
+                "background_background": "classic",
+                "background_color": "#0D1B2E",
+                "padding": {
+                  "unit": "px",
+                  "top": "28",
+                  "right": "28",
+                  "bottom": "28",
+                  "left": "28",
+                  "isLinked": false
+                },
+                "width": {
+                  "unit": "%",
+                  "size": 48
+                },
+                "width_mobile": {
+                  "unit": "%",
+                  "size": 100
+                },
+                "border_radius": {
+                  "unit": "px",
+                  "top": "12",
+                  "right": "12",
+                  "bottom": "12",
+                  "left": "12",
+                  "isLinked": true
+                },
+                "__globals__": {}
+              },
+              "elements": [
+                {
+                  "id": "aq4yt7r9",
+                  "elType": "widget",
+                  "isInner": false,
+                  "widgetType": "icon-box",
+                  "settings": {
+                    "selected_icon": {
+                      "value": "fas fa-question-circle",
+                      "library": "fa-solid"
+                    },
+                    "title_text": "Banco de 8.000 Questões",
+                    "description_text": "",
+                    "title_typography_typography": "custom",
+                    "title_typography_font_size": {
+                      "unit": "px",
+                      "size": 20
+                    },
+                    "title_typography_font_size_mobile": {
+                      "unit": "px",
+                      "size": 16
+                    },
+                    "title_typography_font_weight": "600",
+                    "icon_size": {
+                      "unit": "px",
+                      "size": 32
+                    },
+                    "__globals__": {},
+                    "title_typography_font_family": "Inter",
+                    "title_color": "#E0EFF8",
+                    "icon_color": "#0077B6",
+                    "description_typography_typography": "custom",
+                    "description_typography_font_size": {
+                      "unit": "px",
+                      "size": 14
+                    }
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "gnwbsytc",
+                  "elType": "widget",
+                  "isInner": false,
+                  "widgetType": "icon-list",
+                  "settings": {
+                    "icon_list": [
+                      {
+                        "text": "Todas as principais provas dos últimos 10 anos",
+                        "selected_icon": {
+                          "value": "fas fa-check",
+                          "library": "fa-solid"
+                        },
+                        "link": {
+                          "url": "",
+                          "is_external": false
+                        }
+                      },
+                      {
+                        "text": "Comentários por professores especialistas",
+                        "selected_icon": {
+                          "value": "fas fa-check",
+                          "library": "fa-solid"
+                        },
+                        "link": {
+                          "url": "",
+                          "is_external": false
+                        }
+                      },
+                      {
+                        "text": "Sistema de revisão automática por desempenho",
+                        "selected_icon": {
+                          "value": "fas fa-check",
+                          "library": "fa-solid"
+                        },
+                        "link": {
+                          "url": "",
+                          "is_external": false
+                        }
+                      }
+                    ],
+                    "icon_size": {
+                      "unit": "px",
+                      "size": 14
+                    },
+                    "space_between": {
+                      "unit": "px",
+                      "size": 8
+                    },
+                    "view": "traditional",
+                    "__globals__": {},
+                    "icon_color": "#0077B6",
+                    "text_color": "#6B8299",
+                    "typography_typography": "custom",
+                    "typography_font_family": "Inter",
+                    "typography_font_size": {
+                      "unit": "px",
+                      "size": 15
+                    },
+                    "typography_font_size_mobile": {
+                      "unit": "px",
+                      "size": 14
+                    }
+                  },
+                  "elements": []
+                }
+              ]
+            },
+            {
+              "id": "rv67e10t",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "flex_direction": "column",
+                "flex_gap": {
+                  "unit": "px",
+                  "size": 16
+                },
+                "background_background": "classic",
+                "background_color": "#0D1B2E",
+                "padding": {
+                  "unit": "px",
+                  "top": "28",
+                  "right": "28",
+                  "bottom": "28",
+                  "left": "28",
+                  "isLinked": false
+                },
+                "width": {
+                  "unit": "%",
+                  "size": 48
+                },
+                "width_mobile": {
+                  "unit": "%",
+                  "size": 100
+                },
+                "border_radius": {
+                  "unit": "px",
+                  "top": "12",
+                  "right": "12",
+                  "bottom": "12",
+                  "left": "12",
+                  "isLinked": true
+                },
+                "__globals__": {}
+              },
+              "elements": [
+                {
+                  "id": "9bcyuimy",
+                  "elType": "widget",
+                  "isInner": false,
+                  "widgetType": "icon-box",
+                  "settings": {
+                    "selected_icon": {
+                      "value": "fas fa-users",
+                      "library": "fa-solid"
+                    },
+                    "title_text": "Mentoria em Grupo",
+                    "description_text": "",
+                    "title_typography_typography": "custom",
+                    "title_typography_font_size": {
+                      "unit": "px",
+                      "size": 20
+                    },
+                    "title_typography_font_size_mobile": {
+                      "unit": "px",
+                      "size": 16
+                    },
+                    "title_typography_font_weight": "600",
+                    "icon_size": {
+                      "unit": "px",
+                      "size": 32
+                    },
+                    "__globals__": {},
+                    "title_typography_font_family": "Inter",
+                    "title_color": "#E0EFF8",
+                    "icon_color": "#0077B6",
+                    "description_typography_typography": "custom",
+                    "description_typography_font_size": {
+                      "unit": "px",
+                      "size": 14
+                    }
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "yvxzzvba",
+                  "elType": "widget",
+                  "isInner": false,
+                  "widgetType": "icon-list",
+                  "settings": {
+                    "icon_list": [
+                      {
+                        "text": "4 sessões ao vivo por mês com Dr. Carlos Mendes",
+                        "selected_icon": {
+                          "value": "fas fa-check",
+                          "library": "fa-solid"
+                        },
+                        "link": {
+                          "url": "",
+                          "is_external": false
+                        }
+                      },
+                      {
+                        "text": "Plantão de dúvidas via WhatsApp",
+                        "selected_icon": {
+                          "value": "fas fa-check",
+                          "library": "fa-solid"
+                        },
+                        "link": {
+                          "url": "",
+                          "is_external": false
+                        }
+                      },
+                      {
+                        "text": "Grupo exclusivo de aprovados e aprovandos",
+                        "selected_icon": {
+                          "value": "fas fa-check",
+                          "library": "fa-solid"
+                        },
+                        "link": {
+                          "url": "",
+                          "is_external": false
+                        }
+                      }
+                    ],
+                    "icon_size": {
+                      "unit": "px",
+                      "size": 14
+                    },
+                    "space_between": {
+                      "unit": "px",
+                      "size": 8
+                    },
+                    "view": "traditional",
+                    "__globals__": {},
+                    "icon_color": "#0077B6",
+                    "text_color": "#6B8299",
+                    "typography_typography": "custom",
+                    "typography_font_family": "Inter",
+                    "typography_font_size": {
+                      "unit": "px",
+                      "size": 15
+                    },
+                    "typography_font_size_mobile": {
+                      "unit": "px",
+                      "size": 14
+                    }
+                  },
+                  "elements": []
+                }
+              ]
+            },
+            {
+              "id": "pmqm5kd1",
+              "elType": "container",
+              "isInner": true,
+              "settings": {
+                "flex_direction": "column",
+                "flex_gap": {
+                  "unit": "px",
+                  "size": 16
+                },
+                "background_background": "classic",
+                "background_color": "#0D1B2E",
+                "padding": {
+                  "unit": "px",
+                  "top": "28",
+                  "right": "28",
+                  "bottom": "28",
+                  "left": "28",
+                  "isLinked": false
+                },
+                "width": {
+                  "unit": "%",
+                  "size": 48
+                },
+                "width_mobile": {
+                  "unit": "%",
+                  "size": 100
+                },
+                "border_radius": {
+                  "unit": "px",
+                  "top": "12",
+                  "right": "12",
+                  "bottom": "12",
+                  "left": "12",
+                  "isLinked": true
+                },
+                "__globals__": {}
+              },
+              "elements": [
+                {
+                  "id": "xd68fvgn",
+                  "elType": "widget",
+                  "isInner": false,
+                  "widgetType": "icon-box",
+                  "settings": {
+                    "selected_icon": {
+                      "value": "fas fa-file-medical",
+                      "library": "fa-solid"
+                    },
+                    "title_text": "Simulados e Correção",
+                    "description_text": "",
+                    "title_typography_typography": "custom",
+                    "title_typography_font_size": {
+                      "unit": "px",
+                      "size": 20
+                    },
+                    "title_typography_font_size_mobile": {
+                      "unit": "px",
+                      "size": 16
+                    },
+                    "title_typography_font_weight": "600",
+                    "icon_size": {
+                      "unit": "px",
+                      "size": 32
+                    },
+                    "__globals__": {},
+                    "title_typography_font_family": "Inter",
+                    "title_color": "#E0EFF8",
+                    "icon_color": "#0077B6",
+                    "description_typography_typography": "custom",
+                    "description_typography_font_size": {
+                      "unit": "px",
+                      "size": 14
+                    }
+                  },
+                  "elements": []
+                },
+                {
+                  "id": "w7dx6t56",
+                  "elType": "widget",
+                  "isInner": false,
+                  "widgetType": "icon-list",
+                  "settings": {
+                    "icon_list": [
+                      {
+                        "text": "Simulados mensais no formato das provas reais",
+                        "selected_icon": {
+                          "value": "fas fa-check",
+                          "library": "fa-solid"
+                        },
+                        "link": {
+                          "url": "",
+                          "is_external": false
+                        }
+                      },
+                      {
+                        "text": "Análise de desempenho individualizada",
+                        "selected_icon": {
+                          "value": "fas fa-check",
+                          "library": "fa-solid"
+                        },
+                        "link": {
+                          "url": "",
+                          "is_external": false
+                        }
+                      },
+                      {
+                        "text": "Relatório de evolução semana a semana",
+                        "selected_icon": {
+                          "value": "fas fa-check",
+                          "library": "fa-solid"
+                        },
+                        "link": {
+                          "url": "",
+                          "is_external": false
+                        }
+                      }
+                    ],
+                    "icon_size": {
+                      "unit": "px",
+                      "size": 14
+                    },
+                    "space_between": {
+                      "unit": "px",
+                      "size": 8
+                    },
+                    "view": "traditional",
+                    "__globals__": {},
+                    "icon_color": "#0077B6",
+                    "text_color": "#6B8299",
+                    "typography_typography": "custom",
+                    "typography_font_family": "Inter",
+                    "typography_font_size": {
+                      "unit": "px",
+                      "size": 15
+                    },
+                    "typography_font_size_mobile": {
+                      "unit": "px",
+                      "size": 14
+                    }
+                  },
+                  "elements": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "xglkuqiu",
+          "elType": "widget",
+          "isInner": false,
+          "widgetType": "spacer",
+          "settings": {
+            "space": {
+              "unit": "px",
+              "size": 40
+            },
+            "__globals__": {},
+            "space_mobile": {
+              "unit": "px",
+              "size": 24
+            }
+          },
+          "elements": []
+        },
+        {
+          "id": "sz0olzs3",
+          "elType": "container",
+          "isInner": true,
+          "settings": {
+            "flex_direction": "column",
+            "flex_align_items": "center",
+            "padding": {
+              "unit": "px",
+              "top": "30",
+              "right": "40",
+              "bottom": "30",
+              "left": "40",
+              "isLinked": false
+            },
+            "border_border": "solid",
+            "border_color": "#0077B6",
+            "border_width": {
+              "unit": "px",
+              "top": "1",
+              "right": "1",
+              "bottom": "1",
+              "left": "1",
+              "isLinked": true
+            },
+            "border_radius": {
+              "unit": "px",
+              "top": "12",
+              "right": "12",
+              "bottom": "12",
+              "left": "12",
+              "isLinked": true
+            },
+            "__globals__": {}
+          },
+          "elements": [
+            {
+              "id": "sklosvhn",
+              "elType": "widget",
+              "isInner": false,
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "Investimento Total",
+                "align": "center",
+                "__globals__": {},
+                "text_color": "#6B8299",
+                "typography_typography": "custom",
+                "typography_font_family": "Inter",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 18
+                },
+                "typography_font_size_mobile": {
+                  "unit": "px",
+                  "size": 16
+                },
+                "typography_font_weight": "400"
+              },
+              "elements": []
+            },
+            {
+              "id": "lg4z1o3z",
+              "elType": "widget",
+              "isInner": false,
+              "widgetType": "heading",
+              "settings": {
+                "title": "12x de R$ 297",
+                "header_size": "h2",
+                "align": "center",
+                "__globals__": {},
+                "title_color": "#0077B6",
+                "typography_typography": "custom",
+                "typography_font_family": "Inter",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 48
+                },
+                "typography_font_size_mobile": {
+                  "unit": "px",
+                  "size": 36
+                },
+                "typography_font_weight": "700"
+              },
+              "elements": []
+            }
+          ]
+        },
+        {
+          "id": "mhhv8a2w",
+          "elType": "widget",
+          "isInner": false,
+          "widgetType": "spacer",
+          "settings": {
+            "space": {
+              "unit": "px",
+              "size": 30
+            },
+            "__globals__": {},
+            "space_mobile": {
+              "unit": "px",
+              "size": 20
+            }
+          },
+          "elements": []
+        },
+        {
+          "id": "mk1obrb8",
+          "elType": "widget",
+          "isInner": false,
+          "widgetType": "button",
+          "settings": {
+            "text": "GARANTIR MINHA VAGA NA ÚLTIMA TURMA",
+            "link": {
+              "url": "#formulario",
+              "is_external": false,
+              "nofollow": false
+            },
+            "align": "center",
+            "size": "lg",
+            "typography_typography": "custom",
+            "typography_font_size": {
+              "unit": "px",
+              "size": 14
+            },
+            "typography_font_weight": "700",
+            "typography_letter_spacing": {
+              "unit": "em",
+              "size": 0.12
+            },
+            "typography_text_transform": "uppercase",
+            "text_padding": {
+              "unit": "px",
+              "top": 16,
+              "right": 32,
+              "bottom": 16,
+              "left": 32,
+              "isLinked": false
+            },
+            "border_radius": {
+              "unit": "px",
+              "top": 4,
+              "right": 4,
+              "bottom": 4,
+              "left": 4,
+              "isLinked": true
+            },
+            "__globals__": {},
+            "typography_font_family": "Inter",
+            "button_text_color": "#1E2A3A",
+            "css_classes": "cta-button",
+            "button_background_background": "gradient",
+            "button_background_color": "#0077B6",
+            "button_background_color_b": "#00B4D8",
+            "button_background_gradient_angle": {
+              "unit": "deg",
+              "size": 90
+            }
+          },
+          "elements": []
+        }
+      ]
+    },
+    {
+      "id": "kx31cl2x",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "flex_direction": "row",
+        "flex_justify_content": "space-between",
+        "flex_align_items": "center",
+        "flex_gap": {
+          "unit": "px",
+          "size": 40
+        },
+        "gap_mobile": {
+          "unit": "px",
+          "size": 30
+        },
+        "flex_wrap": "wrap",
+        "content_width": "boxed",
+        "boxed_width": {
+          "unit": "px",
+          "size": 1200
+        },
+        "background_background": "classic",
+        "background_color": "#0D1B2E",
+        "padding": {
+          "unit": "px",
+          "top": "100",
+          "right": "20",
+          "bottom": "100",
+          "left": "20",
+          "isLinked": false
+        },
+        "padding_tablet": {
+          "unit": "px",
+          "top": "80",
+          "right": "20",
+          "bottom": "80",
+          "left": "20",
+          "isLinked": false
+        },
+        "padding_mobile": {
+          "unit": "px",
+          "top": "60",
+          "right": "20",
+          "bottom": "60",
+          "left": "20",
+          "isLinked": false
+        },
+        "__globals__": {}
+      },
+      "elements": [
+        {
+          "id": "admqbtbq",
+          "elType": "container",
+          "isInner": true,
+          "settings": {
+            "flex_direction": "column",
+            "flex_justify_content": "center",
+            "flex_gap": {
+              "unit": "px",
+              "size": 12
+            },
+            "width": {
+              "unit": "%",
+              "size": 58
+            },
+            "width_mobile": {
+              "unit": "%",
+              "size": 100
+            },
+            "__globals__": {}
+          },
+          "elements": [
+            {
+              "id": "vnnaf5ys",
+              "elType": "widget",
+              "isInner": false,
+              "widgetType": "heading",
+              "settings": {
+                "title": "Dr. Carlos Mendes",
+                "header_size": "h2",
+                "align": "left",
+                "__globals__": {},
+                "title_color": "#E0EFF8",
+                "typography_typography": "custom",
+                "typography_font_family": "Inter",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 52
+                },
+                "typography_font_size_tablet": {
+                  "unit": "px",
+                  "size": 44
+                },
+                "typography_font_size_mobile": {
+                  "unit": "px",
+                  "size": 32
+                },
+                "typography_font_weight": "700"
+              },
+              "elements": []
+            },
+            {
+              "id": "3bh91y76",
+              "elType": "widget",
+              "isInner": false,
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "Aprovado em Cardiologia (InCor) e Clínica Médica (HC-FMUSP)",
+                "align": "left",
+                "__globals__": {},
+                "text_color": "#0077B6",
+                "typography_typography": "custom",
+                "typography_font_family": "DM Sans",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 28
+                },
+                "typography_font_size_mobile": {
+                  "unit": "px",
+                  "size": 20
+                },
+                "typography_font_weight": "500"
+              },
+              "elements": []
+            },
+            {
+              "id": "oiiohy18",
+              "elType": "widget",
+              "isInner": false,
+              "widgetType": "spacer",
+              "settings": {
+                "space": {
+                  "unit": "px",
+                  "size": 16
+                },
+                "__globals__": {},
+                "space_mobile": {
+                  "unit": "px",
+                  "size": 10
+                }
+              },
+              "elements": []
+            },
+            {
+              "id": "qyklanpb",
+              "elType": "widget",
+              "isInner": false,
+              "widgetType": "text-editor",
+              "settings": {
+                "editor": "Plantões, estudos e aprovação. Passei por tudo isso. Fui reprovado na primeira tentativa, estudei do jeito errado por anos, e quase desisti. Quando mudei o método, fui aprovado em duas das residências mais concorridas do Brasil no mesmo ano. Hoje, mais de 500 médicos já foram aprovados usando o que aprendi. O Método R1 nasceu da minha dor — e foi construído para acabar com a sua.",
+                "align": "left",
+                "__globals__": {},
+                "text_color": "#6B8299",
+                "typography_typography": "custom",
+                "typography_font_family": "Inter",
+                "typography_font_size": {
+                  "unit": "px",
+                  "size": 18
+                },
+                "typography_font_size_mobile": {
+                  "unit": "px",
+                  "size": 16
+                },
+                "typography_font_weight": "400",
+                "typography_line_height": {
+                  "unit": "em",
+                  "size": 1.7
+                }
+              },
+              "elements": []
+            }
+          ]
+        },
+        {
+          "id": "wyjpywmh",
+          "elType": "container",
+          "isInner": true,
+          "settings": {
+            "flex_direction": "column",
+            "flex_align_items": "center",
+            "width": {
+              "unit": "%",
+              "size": 38
+            },
+            "width_mobile": {
+              "unit": "%",
+              "size": 100
+            },
+            "__globals__": {}
+          },
+          "elements": [
+            {
+              "id": "e5aobnjd",
+              "elType": "widget",
+              "isInner": false,
+              "widgetType": "image",
+              "settings": {
+                "image": {
+                  "url": "https://placehold.co/1200x600/111118/C8A951?text=TROCAR+IMAGEM",
+                  "id": "",
+                  "alt": "Dr. Carlos Mendes",
+                  "source": "library",
+                  "size": ""
+                },
+                "image_size": "full",
+                "align": "center",
+                "__globals__": {}
+              },
+              "elements": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "d3e56ysc",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "flex_direction": "column",
+        "flex_align_items": "center",
+        "flex_gap": {
+          "unit": "px",
+          "size": 20
+        },
+        "gap_mobile": {
+          "unit": "px",
+          "size": 14
+        },
+        "content_width": "boxed",
+        "boxed_width": {
+          "unit": "px",
+          "size": 900
+        },
+        "background_background": "classic",
+        "background_color": "#06101C",
+        "padding": {
+          "unit": "px",
+          "top": "120",
+          "right": "40",
+          "bottom": "120",
+          "left": "40",
+          "isLinked": false
+        },
+        "padding_tablet": {
+          "unit": "px",
+          "top": "80",
+          "right": "20",
+          "bottom": "80",
+          "left": "20",
+          "isLinked": false
+        },
+        "padding_mobile": {
+          "unit": "px",
+          "top": "60",
+          "right": "20",
+          "bottom": "60",
+          "left": "20",
+          "isLinked": false
+        },
+        "__globals__": {}
+      },
+      "elements": [
+        {
+          "id": "fn4t5hsp",
+          "elType": "widget",
+          "isInner": false,
+          "widgetType": "heading",
+          "settings": {
+            "title": "As vagas para a última turma de 2025 estão acabando.",
+            "header_size": "h2",
+            "align": "center",
+            "__globals__": {},
+            "title_color": "#E0EFF8",
+            "typography_typography": "custom",
+            "typography_font_family": "Inter",
+            "typography_font_size": {
+              "unit": "px",
+              "size": 52
+            },
+            "typography_font_size_tablet": {
+              "unit": "px",
+              "size": 44
+            },
+            "typography_font_size_mobile": {
+              "unit": "px",
+              "size": 32
+            },
+            "typography_font_weight": "700"
+          },
+          "elements": []
+        },
+        {
+          "id": "wyv9k64g",
+          "elType": "widget",
+          "isInner": false,
+          "widgetType": "text-editor",
+          "settings": {
+            "editor": "Cada semana que passa é uma semana a menos de preparação. Não deixe mais um ano inteiro de espera por falta de decisão.",
+            "align": "center",
+            "__globals__": {},
+            "text_color": "#6B8299",
+            "typography_typography": "custom",
+            "typography_font_family": "Inter",
+            "typography_font_size": {
+              "unit": "px",
+              "size": 28
+            },
+            "typography_font_size_mobile": {
+              "unit": "px",
+              "size": 20
+            },
+            "typography_font_weight": "400",
+            "typography_line_height": {
+              "unit": "em",
+              "size": 1.6
+            }
+          },
+          "elements": []
+        },
+        {
+          "id": "x2urale6",
+          "elType": "widget",
+          "isInner": false,
+          "widgetType": "spacer",
+          "settings": {
+            "space": {
+              "unit": "px",
+              "size": 24
+            },
+            "__globals__": {},
+            "space_mobile": {
+              "unit": "px",
+              "size": 16
+            }
+          },
+          "elements": []
+        },
+        {
+          "id": "cm6r0ux4",
+          "elType": "widget",
+          "isInner": false,
+          "widgetType": "button",
+          "settings": {
+            "text": "QUERO MINHA VAGA AGORA",
+            "link": {
+              "url": "#formulario",
+              "is_external": false,
+              "nofollow": false
+            },
+            "align": "center",
+            "size": "lg",
+            "typography_typography": "custom",
+            "typography_font_size": {
+              "unit": "px",
+              "size": 16
+            },
+            "typography_font_weight": "700",
+            "typography_letter_spacing": {
+              "unit": "em",
+              "size": 0.12
+            },
+            "typography_text_transform": "uppercase",
+            "text_padding": {
+              "unit": "px",
+              "top": 20,
+              "right": 48,
+              "bottom": 20,
+              "left": 48,
+              "isLinked": false
+            },
+            "border_radius": {
+              "unit": "px",
+              "top": 4,
+              "right": 4,
+              "bottom": 4,
+              "left": 4,
+              "isLinked": true
+            },
+            "__globals__": {},
+            "typography_font_family": "Inter",
+            "button_text_color": "#1E2A3A",
+            "css_classes": "cta-button",
+            "button_background_background": "gradient",
+            "button_background_color": "#0077B6",
+            "button_background_color_b": "#00B4D8",
+            "button_background_gradient_angle": {
+              "unit": "deg",
+              "size": 90
+            }
+          },
+          "elements": []
+        }
+      ]
+    },
+    {
+      "id": "tpdflxjc",
+      "elType": "container",
+      "isInner": false,
+      "settings": {
+        "flex_direction": "column",
+        "flex_align_items": "center",
+        "flex_gap": {
+          "unit": "px",
+          "size": 16
+        },
+        "content_width": "boxed",
+        "boxed_width": {
+          "unit": "px",
+          "size": 800
+        },
+        "background_background": "classic",
+        "background_color": "#06101C",
+        "padding": {
+          "unit": "px",
+          "top": "40",
+          "right": "20",
+          "bottom": "40",
+          "left": "20",
+          "isLinked": false
+        },
+        "padding_mobile": {
+          "unit": "px",
+          "top": "30",
+          "right": "16",
+          "bottom": "30",
+          "left": "16",
+          "isLinked": false
+        },
+        "__globals__": {}
+      },
+      "elements": [
+        {
+          "id": "jmvu72k3",
+          "elType": "widget",
+          "isInner": false,
+          "widgetType": "divider",
+          "settings": {
+            "color": "#FFFFFF1A",
+            "style": "solid",
+            "weight": {
+              "unit": "px",
+              "size": 1
+            },
+            "width": {
+              "unit": "%",
+              "size": 100
+            },
+            "gap": {
+              "unit": "px",
+              "size": 15
+            },
+            "__globals__": {}
+          },
+          "elements": []
+        },
+        {
+          "id": "46ei9xs8",
+          "elType": "widget",
+          "isInner": false,
+          "widgetType": "text-editor",
+          "settings": {
+            "editor": "© 2025 Método R1 — Todos os direitos reservados. Este produto não é afiliado ao CFM ou a nenhuma instituição de saúde pública.",
+            "align": "center",
+            "__globals__": {},
+            "text_color": "#6B8299",
+            "typography_typography": "custom",
+            "typography_font_family": "Inter",
+            "typography_font_size": {
+              "unit": "px",
+              "size": 13
+            },
+            "typography_font_size_mobile": {
+              "unit": "px",
+              "size": 11
+            },
+            "typography_font_weight": "400"
+          },
+          "elements": []
+        }
+      ]
+    }
+  ],
+  "page_settings": {
+    "template": "elementor_canvas",
+    "post_status": "publish",
+    "background_background": "classic",
+    "background_color": "#06101C",
+    "margin": {
+      "unit": "px",
+      "top": "0",
+      "right": "0",
+      "bottom": "0",
+      "left": "0",
+      "isLinked": true
+    },
+    "padding": {
+      "unit": "px",
+      "top": "0",
+      "right": "0",
+      "bottom": "0",
+      "left": "0",
+      "isLinked": true
+    },
+    "custom_css": "selector { }\n.balance {\n    text-wrap: balance;\n}\n\n.gold, .gradient {\n    background-image: linear-gradient(90deg, #0077B6, #00B4D8);\n    color: transparent;\n    -webkit-background-clip: text;\n    background-clip: text;\n    -webkit-text-fill-color: transparent;\n}\n\n.cta-button .elementor-button {\n    text-decoration: none;\n    border: none;\n    cursor: pointer;\n    position: relative;\n    overflow: hidden;\n    transition: transform 0.3s ease, box-shadow 0.3s ease, outline 0.3s ease;\n    outline: 2px solid transparent;\n}\n\n.cta-button .elementor-button::before {\n    content: '';\n    position: absolute;\n    top: 0;\n    left: -100%;\n    width: 100%;\n    height: 100%;\n    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);\n    transition: left 0.5s ease;\n}\n\n.cta-button .elementor-button:hover {\n    transform: translateY(-3px);\n    box-shadow: 0 20px 40px rgba(0,180,216,0.35);\n    outline: 2px solid #90E0EF;\n    outline-offset: 4px;\n}\n\n.cta-button .elementor-button:hover::before {\n    left: 100%;\n}\n\n.cta-button .elementor-button-icon {\n    transition: transform 0.3s ease;\n}\n\n.cta-button .elementor-button:hover .elementor-button-icon {\n    transform: translateX(4px);\n}\n\nhtml::before {\n    content: \"\";\n    position: fixed;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    background-image: radial-gradient(at 20% 80%, #fff 1px, transparent 0px);\n    background-size: 3px 3px;\n    pointer-events: none;\n    z-index: 999;\n    opacity: 0.05;\n    mix-blend-mode: plus-lighter;\n    user-select: none;\n}"
+  }
+}

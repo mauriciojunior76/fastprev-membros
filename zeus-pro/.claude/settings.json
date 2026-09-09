@@ -1,0 +1,75 @@
+{
+  "$comentario": "Wiring dos hooks do ZEUS PRO. Os caminhos sao relativos a raiz do repositorio, entao funcionam em qualquer maquina e em qualquer sistema operacional. Rode 'node scripts/setup.js' apos clonar: ele confere se os hooks respondem.",
+  "hooks": {
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .claude/hooks/context-router.cjs",
+            "timeout": 5
+          },
+          {
+            "type": "command",
+            "command": "node .claude/hooks/captura-aprendizado.cjs",
+            "timeout": 3
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Bash|PowerShell|Edit|Write|NotebookEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .claude/hooks/licenca-guard.cjs",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "matcher": "Bash|PowerShell",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .claude/hooks/guard-acoes-criticas.cjs",
+            "timeout": 5
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Bash|PowerShell|Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .claude/hooks/captura-aprendizado.cjs",
+            "timeout": 3
+          }
+        ]
+      }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node .claude/hooks/abertura-zeus.cjs",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  },
+  "permissions": {
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(**/credenciais*)",
+      "Read(**/*.key)",
+      "Read(**/*.pem)"
+    ]
+  }
+}
