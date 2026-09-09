@@ -76,8 +76,37 @@ export const BRAND_ZEUS: BrandConfig = {
   "design_system_path": "templates/design-tokens/brands/zeus.json"
 };
 
+// BRAND_FASTPREV adicionada à mão em 2026-09-09: a ferramenta de sincronização de
+// marca não vem incluída no pacote (ver comentário no topo deste arquivo), então
+// esta entrada foi transcrita manualmente de templates/design-tokens/brands/fastprev.json,
+// seguindo o mesmo formato que a ferramenta geraria.
+export const BRAND_FASTPREV: BrandConfig = {
+  "client": "fastprev",
+  "style": "dark",
+  "colors": {
+    "primary": "#6CB33F",
+    "secondary": "#2B5C1A",
+    "accent": "#A8D87A",
+    "bg": "#030805",
+    "text": "#E8F4EC",
+    "text_secondary": "#7A9A80",
+    "highlight": "#A8D87A"
+  },
+  "typography": {
+    "display": "'Inter', system-ui, sans-serif",
+    "body": "'Inter', system-ui, sans-serif",
+    "weight_display": 800,
+    "weight_body": 500
+  },
+  "motion_preset": "elegant",
+  "icon_style": "line",
+  "design_system": true,
+  "design_system_path": "templates/design-tokens/brands/fastprev.json"
+};
+
 export const DESIGN_CORE_BRANDS: Record<string, BrandConfig> = {
   "exemplo-1": BRAND_EXEMPLO_1,
   "exemplo-2": BRAND_EXEMPLO_2,
   "zeus": BRAND_ZEUS,
+  "fastprev": BRAND_FASTPREV,
 };

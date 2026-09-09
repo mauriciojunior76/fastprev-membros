@@ -1,0 +1,6 @@
+{
+  "nome": "fastprev",
+  "paleta": ["#6CB33F", "#2B5C1A", "#A8D87A", "#030805", "#0B1A0D", "#E8F4EC", "#7A9A80", "#E0654F"],
+  "estilo": "proprio",
+  "tipografia": { "titulo": "Inter", "corpo": "Inter" }
+}
