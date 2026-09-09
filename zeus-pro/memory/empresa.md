@@ -16,11 +16,11 @@ relacionados: [[PERFIL]]
 
 # Empresa
 
-## O que a bio do Instagram diz, ao pé da letra
+## Especialização
 
-"Mentor/Cons e Assessoria em Arquitetura e seg do trabalho" — ou seja, além de
-laudos e regularizações (já registrado em `PERFIL.md`), o Mauricio também
-atua com **segurança do trabalho**. Isso não estava em nenhum outro arquivo.
+A especialização completa (arquitetura, laudos, regularizações e segurança
+do trabalho) está mesclada em `memory/PERFIL.md`, camada identidade — aqui
+fica só o operacional.
 
 ## Localização e atendimento
 

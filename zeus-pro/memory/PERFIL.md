@@ -1,9 +1,9 @@
 ---
 nome: PERFIL
-descrição: Quem é o dono desta instalação — Mauricio, arquiteto especialista em laudos e regularizações, fundador da Academia FastPrev.
+descrição: Quem é o dono desta instalação — Mauricio, arquiteto especialista em laudos, regularizações e segurança do trabalho, fundador da Academia FastPrev.
 camada: identidade
 tipo: declaração
-origem: entrevista de boot
+origem: entrevista de boot + Instagram (@mauricio_fastprev) via Windsor.ai
 confiança: alta
 sensibilidade: normal
 responsável: usuário
@@ -11,7 +11,7 @@ status: ativo
 criado_em: 2026-09-09
 atualizado_em: 2026-09-09
 validade: null
-relacionados: []
+relacionados: [[empresa]]
 ---
 
 # Perfil
@@ -25,8 +25,14 @@ o nome completo é JOSE MAURICIO DE MELO JUNIOR.)
 
 - Arquiteto.
 - Mentor e especialista em laudos, regularizações e atividades relacionadas
-  (declaração do próprio Mauricio).
-- Atua nessa área há aproximadamente 18 anos.
+  (declaração do próprio Mauricio no boot).
+- Também atua com **segurança do trabalho** — não foi dito no boot, veio da
+  bio do próprio Instagram ("Mentor/Cons e Assessoria em Arquitetura e seg
+  do trabalho"), lida via Windsor.ai. Mesmo nível de confiança de um fato
+  declarado: é a própria descrição pública que ele deu ao seu negócio.
+- Atua nessa área há aproximadamente 18 anos (declarado no boot) — um post
+  antigo do Instagram diz "aprox 17 anos"; a diferença é só arredondamento,
+  não uma contradição real, e não vale perguntar de novo.
 
 ## O que ele faz, por inferência dos artefatos do próprio negócio
 
