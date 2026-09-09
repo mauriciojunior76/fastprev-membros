@@ -37,6 +37,8 @@ Esta lista existe para o terceiro caso, que é a maioria.
 | 2026-09-09 | Cor de "alerta" (aviso, diferente de erro) da marca FastPrev | `templates/DESIGN-SYSTEM-CENTRAL.md` e `brands/fastprev.json` ficaram sem essa cor: nenhuma das três páginas do site tem uma cor de aviso distinta de erro | Perguntar ao dono se ele quer definir uma, ou se todo aviso do site deve usar a cor de erro (`#E0654F`) mesmo | media |
 | 2026-09-09 | O que a marca FastPrev representa, em uma frase, e os adjetivos que deve/nunca deve transmitir | Seção 1 do Design System Central ficou incompleta: só as cores e a tipografia foram transcritas do CSS, o posicionamento de marca não está em nenhum arquivo | Perguntar ao dono, ou conduzir o boot da inteligência | media |
 | 2026-09-09 | Regras de aplicação da marca por tipo de material (apresentação, e-book, anúncio, vídeo, documento formal) | Seção 6 do Design System Central ficou vazia: o site só mostra a aplicação em página, não em outros formatos | Perguntar ao dono quando o primeiro material desse tipo for pedido | baixa |
+| 2026-09-09 | Pontos fortes/fracos, conquista profissional e experiência marcante do Mauricio (Bloco 1 do boot) | `memory/PERFIL.md` ficou sem essa seção | NÃO PERGUNTAR DE NOVO: o Mauricio classificou como "perguntas irrelevantes" durante o boot e recusou responder. Só retomar se ele mesmo trouxer o assunto | baixa |
+| 2026-09-09 | Confirmação explícita do retrato de negócio inferido dos artefatos do site (produtos, formato de entrega da Academia FastPrev) | `memory/PERFIL.md` marcou essa seção como inferência, não confirmada frase a frase | Confirmar na Etapa 4 (retrato final) do boot da inteligência | alta |
 
 ## Lacunas fechadas
 
