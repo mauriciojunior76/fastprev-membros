@@ -1,0 +1,18 @@
+{
+  "_doc": "Marca FastPrev, transcrita das variáveis CSS reais de index.html, biblioteca.html e area-premium.html. Não editar cor aqui sem conferir contra o site: este arquivo é o espelho da marca, não uma reinterpretação.",
+  "nome": "fastprev",
+  "perfil_tipografico": "inter",
+  "cores": {
+    "primaria": "#6CB33F",
+    "secundaria": "#2B5C1A",
+    "fundo_claro": "#0B1A0D",
+    "fundo_escuro": "#030805",
+    "texto_principal": "#E8F4EC",
+    "texto_secundario": "#7A9A80",
+    "destaque": "#A8D87A",
+    "sucesso": "#6CB33F",
+    "erro": "#E0654F"
+  },
+  "geometria_preferida": "raio_medio",
+  "densidade": "equilibrada"
+}

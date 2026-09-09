@@ -42,6 +42,11 @@
       "titulo": "system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif",
       "texto": "system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif",
       "apoio": "ui-monospace, 'Cascadia Code', Consolas, monospace"
+    },
+    "inter": {
+      "titulo": "'Inter', system-ui, sans-serif",
+      "texto": "'Inter', system-ui, sans-serif",
+      "apoio": "ui-monospace, 'Cascadia Code', Consolas, monospace"
     }
   }
 }
