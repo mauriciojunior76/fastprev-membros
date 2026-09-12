@@ -344,6 +344,17 @@ body::after {
 
 .support-name { font-size: 13px; font-weight: 700; color: var(--txt); margin-bottom: 6px; }
 .support-desc { font-size: 12px; color: var(--txt-muted); line-height: 1.55; }
+.support-cta {
+  display: inline-flex; align-items: center; gap: 6px;
+  margin-top: 12px;
+  background: linear-gradient(135deg, var(--g1), var(--g2));
+  color: #fff; font-size: 11.5px; font-weight: 700;
+  text-decoration: none;
+  border-radius: 20px;
+  padding: 7px 14px;
+  transition: 0.22s ease;
+}
+.support-cta:hover { filter: brightness(1.12); box-shadow: 0 4px 16px var(--shadow-g); }
 
 /* ---- BONUS ---- */
 .bonus-grid {
@@ -431,7 +442,8 @@ body::after {
       <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
       Biblioteca
     </a>
-    <a class="nav-item" href="#">
+    <!-- TODO: substituir pelo link real da sala do Zoom -->
+    <a class="nav-item" href="COLOQUE_AQUI_O_LINK_DA_REUNIAO_ZOOM" target="_blank" rel="noopener">
       <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
       Mentorias ao Vivo
     </a>
@@ -651,6 +663,11 @@ body::after {
         <div class="support-body">
           <div class="support-name">Mentoria ao vivo — A cada 10 dias</div>
           <div class="support-desc">Análise de processos enviados pelos alunos. Estudos de casos reais. Correção de projetos, perguntas e respostas com Maurício.</div>
+          <!-- TODO: substituir pelo link real da sala do Zoom -->
+          <a class="support-cta" href="COLOQUE_AQUI_O_LINK_DA_REUNIAO_ZOOM" target="_blank" rel="noopener">
+            <svg width="13" height="13" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.55-2.9A1 1 0 0121 8v8a1 1 0 01-1.45.9L15 14M5 8h8a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2z"/></svg>
+            Entrar na Mentoria (Zoom)
+          </a>
         </div>
       </div>
 
